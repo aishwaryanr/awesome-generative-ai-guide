@@ -1,6 +1,6 @@
 # Applied LLMs Mastery 2024
 
-![mind_map.png](img/Applied_LLMs_Mastery_2024/Applied_LLMs_(6).png)
+![mind_map.png](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/img/Applied_LLMs_Mastery_2024/mind_map.png)
 
 # About This Course
 
