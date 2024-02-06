@@ -1,7 +1,5 @@
-# awesome-generative-ai-resources
+# awesome-generative-ai-resources (Generative AI Guide)
 A one stop repository for generative AI research updates, interview resources, notebooks and much more!
-
-# Prompt Engineering Guide
 
 Happy Learning!
 
