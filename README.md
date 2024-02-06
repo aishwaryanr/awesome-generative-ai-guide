@@ -28,7 +28,7 @@ Happy Learning!
 ---
 
 
-cite us as follows:
+To cite this guide, use the below format:
 
 ```
 @article{areganti_generative_ai_guide,
