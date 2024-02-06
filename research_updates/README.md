@@ -1,0 +1,49 @@
+# awesome-generative-ai-resources
+A one stop repository for generative AI research updates, interview resources, notebooks and much more!
+
+# Prompt Engineering Guide
+
+Happy Learning!
+
+---
+## Announcements
+
+
+---
+
+## Courses
+
+---
+
+## Resources
+
+
+---
+
+## Interview Prep
+
+
+---
+
+## Contributing
+
+---
+
+
+cite us as follows:
+
+```
+@article{areganti_generative_ai_guide,
+author = {Reganti, Aishwarya},
+journal = {https://github.com/aishwaryanr/awesome-generative-ai-resources},
+month = {01},
+title = {{Generative AI Guide}},
+year = {2024}
+}
+```
+
+## License
+
+[MIT License]
+
+
