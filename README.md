@@ -11,7 +11,8 @@ Happy Learning!
 
 ## :mortar_board: Courses
 #### [Ongoing] Applied LLMs Mastery 2024 
-####[Link](https://areganti.notion.site/Applied-LLMs-Mastery-2024-562ddaa27791463e9a1286199325045c) to the course website
+#### [Link](https://areganti.notion.site/Applied-LLMs-Mastery-2024-562ddaa27791463e9a1286199325045c) to the course website
+
 🗓️*Week 1 [Jan 15 2024]***: [Practical Introduction to LLMs](https://github.com/aishwaryanr/awesome-generative-ai-resources/tree/main/free_courses/Applied_LLMs_Mastery_2024/week1_practical_introduction)**
 - Applied LLM Foundations
 - Real World LLM Use Cases
