@@ -1,4 +1,4 @@
-# :star: :bookmark: awesome-generative-ai-resources (Generative AI Guide)
+# :star: :bookmark: awesome-generative-ai (Generative AI Guide)
 A one stop repository for generative AI research updates, interview resources, notebooks and much more!
 
 Happy Learning!
