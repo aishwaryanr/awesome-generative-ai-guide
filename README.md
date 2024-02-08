@@ -102,7 +102,9 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 - Self-Attention and Transformers
 - Neural Networks for Language
 
-#### List of Free GenAI Courses
+---
+
+#### :book: List of Free GenAI Courses
 ##### LLM Basics and Foundations
 
 1. [Large Language Models](https://rycolab.io/classes/llm-s23/) by ETH Zurich
@@ -175,7 +177,7 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 ---
 
 ## :paperclip: Resources
-- ICLR 2024 Paper Summaries
+- [ICLR 2024 Paper Summaries](https://areganti.notion.site/06f0d4fe46a94d62bff2ae001cfec22c?v=d501ca62e4b745768385d698f173ae14)
 
 
 ---
