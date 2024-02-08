@@ -1,14 +1,28 @@
 # :star: :bookmark: awesome-generative-ai-guide
-A one stop repository for generative AI research updates, interview resources, notebooks and much more!
+Generative AI is experiencing rapid growth, and this repository serves as a comprehensive hub for updates on generative AI research, interview materials, notebooks, and more! 
+
+Explore the following resources:
+
+1. [Monthly Best GenAI Papers List](https://github.com/aishwaryanr/awesome-generative-ai-guide?tab=readme-ov-file#star-best-genai-papers-list-january-2024)
+2. [GenAI Interview Resources](https://github.com/aishwaryanr/awesome-generative-ai-guide?tab=readme-ov-file#computer-interview-prep-coming-soon)
+3. [Applied LLMs Mastery 2024 (created by Aishwarya Naresh Reganti) course material](https://github.com/aishwaryanr/awesome-generative-ai-guide?tab=readme-ov-file#ongoing-applied-llms-mastery-2024)
+4. [List of all GenAI-related free courses (over 30 already listed)](https://github.com/aishwaryanr/awesome-generative-ai-guide?tab=readme-ov-file#book-list-of-free-genai-courses)
+5. [List of code repositories/notebooks for developing generative AI applications](https://github.com/aishwaryanr/awesome-generative-ai-guide?tab=readme-ov-file#notebook-code-notebooks)
+
+We'll be updating this repository regularly, so keep an eye out for the latest additions!
+
+
+
+
+
 
 Happy Learning!
 
 ---
 ## :speaker: Announcements
 - [Week 4] Applied LLMs Mastery content has been released- [RAG (Retrieval-Augmented Generation)](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/week4_RAG.md)
-- Top papers, blogs and resources from January 2024 (click here)!
 - ICLR 2024 paper summaries [click here](https://areganti.notion.site/06f0d4fe46a94d62bff2ae001cfec22c?v=d501ca62e4b745768385d698f173ae14)
-- List of free GenAI courses 
+- List of free GenAI courses [click here](https://github.com/aishwaryanr/awesome-generative-ai-guide#book-list-of-free-genai-courses) 
 
 
 
@@ -44,8 +58,10 @@ Happy Learning!
 
 
 ## :mortar_board: Courses
-#### [Ongoing] Applied LLMs Mastery 2024 
+#### [Ongoing] Applied LLMs Mastery 2024
+Join 1000+ students on this 10-week adventure as we delve into the application of LLMs across a variety of use cases
 #### [Link](https://areganti.notion.site/Applied-LLMs-Mastery-2024-562ddaa27791463e9a1286199325045c) to the course website
+##### [Feb 2024] Registrations are still open [click here](https://forms.gle/353sQMRvS951jDYu7) to register
 
 🗓️*Week 1 [Jan 15 2024]***: [Practical Introduction to LLMs](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/week1_part1_foundations.md)**
 - Applied LLM Foundations
