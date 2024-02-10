@@ -232,6 +232,7 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 #### Fine-Tuning Tutorials
 - [LLM Fine-tuning tutorials](https://github.com/ashishpatel26/LLM-Finetuning) by ashishpatel26
 - [PEFT](https://github.com/huggingface/peft/tree/main/examples) example notebooks by Huggingface
+- [Free LLM Fine-Tuning Notebooks](https://levelup.gitconnected.com/14-free-large-language-models-fine-tuning-notebooks-532055717cb7) by Youssef Hosni
 
 
 
