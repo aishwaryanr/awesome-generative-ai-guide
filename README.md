@@ -20,7 +20,7 @@ Happy Learning!
 
 ---
 ## :speaker: Announcements
-- 60 Common GenAI Interview Questions out now! ([Click Here](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/interview_prep/60_gen_ai_questions.md)
+- 60 Common GenAI Interview Questions out now! ([Click Here](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/interview_prep/60_gen_ai_questions.md))
 - [Week 4] Applied LLMs Mastery content has been released- [RAG (Retrieval-Augmented Generation)](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/week4_RAG.md)
 - ICLR 2024 paper summaries [click here](https://areganti.notion.site/06f0d4fe46a94d62bff2ae001cfec22c?v=d501ca62e4b745768385d698f173ae14)
 - List of free GenAI courses [click here](https://github.com/aishwaryanr/awesome-generative-ai-guide#book-list-of-free-genai-courses) 
