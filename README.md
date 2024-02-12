@@ -200,17 +200,17 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 ---
 
 
-## :computer: Interview Prep (Coming Soon!)
+## :computer: Interview Prep 
 #### Topic wise Questions:
-1. Most Common GenAI Interview Questions
-2. Prompting and Prompt Engineering
-3. Model Fine-Tuning Questions
-4. Model Evaluation
-5. MLOps for GenAI
-6. Generative Models Foundations
-7. Latest Research Trends
+1. [Common GenAI Interview Questions](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/interview_prep/60_gen_ai_questions.md)
+2. Prompting and Prompt Engineering (Coming Soon!)
+3. Model Fine-Tuning Questions (Coming Soon!)
+4. Model Evaluation (Coming Soon!)
+5. MLOps for GenAI (Coming Soon!)
+6. Generative Models Foundations (Coming Soon!)
+7. Latest Research Trends (Coming Soon!)
 
-#### GenAI System Design:
+#### GenAI System Design:(Coming Soon!)
 1.Designing an LLM-Powered Search Engine
 2. Building a Customer Support Chatbot
 3. Building a system for natural language interaction with your data.
