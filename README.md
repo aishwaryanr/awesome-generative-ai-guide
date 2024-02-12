@@ -211,7 +211,8 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 6. Generative Models Foundations (Coming Soon!)
 7. Latest Research Trends (Coming Soon!)
 
-#### GenAI System Design:(Coming Soon!)
+#### GenAI System Design (Coming Soon):
+
 1.Designing an LLM-Powered Search Engine
 2. Building a Customer Support Chatbot
 3. Building a system for natural language interaction with your data.
