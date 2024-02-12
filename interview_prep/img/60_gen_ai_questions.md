@@ -8,7 +8,7 @@ Owner: Aishwarya Nr
 - Answer:
     - Generative models, such as Variational Autoencoders (VAEs) and Generative Adversarial Networks (GANs), are designed to generate new data samples by understanding and capturing the underlying data distribution. Discriminative models, on the other hand, focus on distinguishing between different classes or categories within the data.
         
-        ![Untitled](Generative%20AI%20Foundations%20Interview%20Questions%2000ef53f474394c6eac3a103bc5189ce2/Untitled.png)
+        ![60_fig_8](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/interview_prep/img/60_fig_8.png)
         
         Image Source: [https://medium.com/@jordi299/about-generative-and-discriminative-models-d8958b67ad32](https://medium.com/@jordi299/about-generative-and-discriminative-models-d8958b67ad32)
         
@@ -20,7 +20,7 @@ Owner: Aishwarya Nr
     
     A Generative Adversarial Network comprises a generator and a discriminator. The generator produces synthetic data, attempting to mimic real data, while the discriminator evaluates the authenticity of the generated samples. During training, the generator and discriminator engage in a dynamic interplay, each striving to outperform the other. The generator aims to create more realistic data, and the discriminator seeks to improve its ability to differentiate between real and generated samples.
     
-    ![Untitled](Generative%20AI%20Foundations%20Interview%20Questions%2000ef53f474394c6eac3a103bc5189ce2/Untitled%201.png)
+    ![60_fig_1](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/interview_prep/img/60_fig_1.png)
     
     Image Source: [https://climate.com/tech-at-climate-corp/gans-disease-identification-model/](https://climate.com/tech-at-climate-corp/gans-disease-identification-model/)
     
@@ -32,7 +32,7 @@ Owner: Aishwarya Nr
     
     A Variational Autoencoder (VAE) is a type of neural network architecture used for unsupervised learning of latent representations of data. It consists of an encoder and a decoder network.
     
-    ![Untitled](Generative%20AI%20Foundations%20Interview%20Questions%2000ef53f474394c6eac3a103bc5189ce2/Untitled%202.png)
+    ![60_fig_2](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/interview_prep/img/60_fig_2.png)
     
     Image source: [https://towardsdatascience.com/understanding-variational-autoencoders-vaes-f70510919f73](https://towardsdatascience.com/understanding-variational-autoencoders-vaes-f70510919f73)
     
@@ -240,7 +240,7 @@ Owner: Aishwarya Nr
 2. Highlight the key differences between models like GPT (Generative Pre-trained Transformer) and BERT (Bidirectional Encoder Representations from Transformers)?
 - Answer:
     
-    ![Untitled](Generative%20AI%20Foundations%20Interview%20Questions%2000ef53f474394c6eac3a103bc5189ce2/Untitled%203.png)
+    ![60_fig_3](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/interview_prep/img/60_fig_3.png)
     
     Image Source: [https://heidloff.net/article/foundation-models-transformers-bert-and-gpt/](https://heidloff.net/article/foundation-models-transformers-bert-and-gpt/)
     
@@ -344,7 +344,7 @@ Owner: Aishwarya Nr
     
     **Weighted Sum and Output:** The attention scores are used to create a weighted sum of the value vectors, which forms the output for each element. This process allows the model to dynamically prioritize information from different parts of the input sequence based on the
     
-    ![Untitled](Generative%20AI%20Foundations%20Interview%20Questions%2000ef53f474394c6eac3a103bc5189ce2/Untitled%204.png)
+    ![60_fig_4](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/interview_prep/img/60_fig_4.png)
     
 
 ---
@@ -381,7 +381,7 @@ Owner: Aishwarya Nr
 10. What is RLHF, how is it used?
 - Answer:
     
-    ![Untitled](Generative%20AI%20Foundations%20Interview%20Questions%2000ef53f474394c6eac3a103bc5189ce2/Untitled%205.png)
+    ![60_fig_5](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/interview_prep/img/60_fig_5.png)
     
     Image Source: [https://huggingface.co/blog/rlhf](https://huggingface.co/blog/rlhf)
     
@@ -535,11 +535,11 @@ Owner: Aishwarya Nr
     
     Cross-modal attention mechanisms are pivotal in models like VisualBERT and CLIP, enabling these systems to dynamically focus on relevant parts of visual data in response to textual cues and vice versa. This mechanism works by allowing one modality (e.g., text) to guide the attention process in the other modality (e.g., image), thereby highlighting the features or areas that are most relevant to the task at hand.
     
-    ![Untitled](Generative%20AI%20Foundations%20Interview%20Questions%2000ef53f474394c6eac3a103bc5189ce2/Untitled%206.png)
+    ![60_fig_6](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/interview_prep/img/60_fig_6.png)
     
     **VisualBERT:** Uses cross-modal attention within the transformer architecture to attend to specific regions of an image based on the context of the text. This is crucial for tasks where understanding the visual context is essential for interpreting the textual content correctly.
     
-    ![Untitled](Generative%20AI%20Foundations%20Interview%20Questions%2000ef53f474394c6eac3a103bc5189ce2/Untitled%207.png)
+    ![60_fig_7](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/interview_prep/img/60_fig_7.png)
     
     **CLIP:** Though not using cross-modal attention in the same way as VisualBERT, CLIP learns to associate images and texts effectively by training on a vast dataset of image-text pairs. It uses contrastive learning to maximize the similarity between corresponding text and image embeddings while minimizing the similarity between non-corresponding pairs.
     
