@@ -85,7 +85,7 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 - Key components of RAG
 - Advanced RAG Methods
 
-🗓️*Week 5 [ Feb 12 2024]***: [Tools for building LLM Apps]**(https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/week5_tools_for_LLM_apps.md)
+🗓️*Week 5 [ Feb 12 2024]***: [Tools for building LLM Apps](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/week5_tools_for_LLM_apps.md)**
 - Fine-tuning Tools
 - RAG Tools
 - Tools for observability, prompting, serving, vector search etc.
