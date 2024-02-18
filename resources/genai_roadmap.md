@@ -1,4 +1,4 @@
-# 5-Day LLM Mastery Roadmap 2024
+# 5-Day LLM Foundations Roadmap 2024
 
 If you're feeling overwhelmed by the scattered knowledge about LLMs, this roadmap and curated resources from top sources are here to guide you. Dedicate 2-3 hours daily to understand the resources thoroughly, and by the fifth day, you'll be ready to develop your own LLM application! **This roadmap is designed for individuals with basic machine learning knowledge**. The optional content can be explored when time permits. Enjoy the learning journey! Once you've established your foundation, utilize this repository to delve into research papers, explore additional courses, and continue enhancing your skills.
 
