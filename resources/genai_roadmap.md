@@ -8,7 +8,7 @@ If you're feeling overwhelmed by the scattered knowledge about LLMs, this roadma
 
 **Watch these videos (1 hour):**
 
-1. LLM Foundations by FullStack ([link](https://www.notion.so/LLM-Mastery-5-Day-Roadmap-2024-659cc64530af404eac2244d2641365d2?pvs=21))
+1. LLM Foundations by FullStack ([link](https://fullstackdeeplearning.com/llm-bootcamp/spring-2023/llm-foundations/))
 
 **Read these resources (1 hour):**
 
@@ -23,7 +23,7 @@ If you're feeling overwhelmed by the scattered knowledge about LLMs, this roadma
 
 **Watch these videos (1 hour):**
 
-1. Prompt engineering course by [Deeplearning.AI](http://Deeplearning.AI) ([link](https://www.notion.so/Week-2-Prompting-and-Prompt-Engineering-57cd1d024ac24819a0c44830a514c41d?pvs=21))
+1. Prompt engineering course by [Deeplearning.AI](http://Deeplearning.AI) ([link](https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/))
 
 **Read these resources (1 hour):**
 
@@ -38,8 +38,8 @@ If you're feeling overwhelmed by the scattered knowledge about LLMs, this roadma
 **Watch these videos (30 mins):**
 
 1. What is RAG by [Deeplearning.AI](http://Deeplearning.AI) ([link](https://learn.deeplearning.ai/building-applications-vector-databases/lesson/3/retrieval-augmented-generation-(rag)))
-2. Building production ready RAG applications course by  [Deeplearning.AI](http://Deeplearning.AI) ([link](https://www.notion.so/LLM-Mastery-5-Day-Roadmap-2024-659cc64530af404eac2244d2641365d2?pvs=21))
-3. **(Optional**) RAG with pinecone and Langchain video ([link](https://www.notion.so/Week-3-Fine-Tuning-LLMs-14ca00d3071f4e528a762f41547868ef?pvs=21))
+2. Building production ready RAG applications course by LlamaIndex ([Link](https://www.youtube.com/watch?v=TRjq7t2Ms5I))
+3. **(Optional**) RAG with pinecone and Langchain video ([link](https://www.youtube.com/watch?v=J_tCD_J6w3s))
 
 **Read these resources (1 hour):**
 
