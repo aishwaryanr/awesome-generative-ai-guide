@@ -2,7 +2,7 @@
 
 If you're feeling overwhelmed by the scattered knowledge about LLMs, this roadmap and curated resources from top sources are here to guide you. Dedicate 2-3 hours daily to understand the resources thoroughly, and by the fifth day, you'll be ready to develop your own LLM application! **This roadmap is designed for individuals with basic machine learning knowledge**. The optional content can be explored when time permits. Enjoy the learning journey! Once you've established your foundation, utilize this repository to delve into research papers, explore additional courses, and continue enhancing your skills.
 
-![Applied LLMs (28).png](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/resources/img/tools_1.png/Applied_LLMs_(28).png)
+![Applied_LLMs_(28).png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/img/Applied_LLMs_(28).png)
 
 ## Day 1: LLM Basics and Foundations
 
