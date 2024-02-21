@@ -35,7 +35,7 @@ Commonly used tools for prompt testing include Promptfoo, PromptLayer, and other
 
 More recently there have also been methods to optimize prompts in an automatic manner, for instance-  [Zhou et al., (2022)](https://arxiv.org/abs/2211.01910) introduced Automatic Prompt EngineerAPE, a framework for automatically generating and selecting instructions. It treats prompt generation as a language synthesis problem and uses the LLM itself to generate and explore candidate solutions. First, an LLM generates prompt candidates based on output demonstrations. These candidates guide the search process. Then, the prompts are executed using a target model, and the best instruction is chosen based on evaluation scores.
 
-![eval_1.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/img/eval_1.png)
+![eval_1.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/eval_1.png)
 
 ### Evaluating Retrieval Pipeline
 
@@ -168,7 +168,7 @@ In the paper, the authors further dissect each of these dimensions into more spe
 
 💡This serves as a basic illustration of utilizing proxy tasks, datasets, and metrics to evaluate an LLM's performance within a specific dimension. The choice of which dimensions are relevant will vary based on your specific task, requiring you to select the most applicable ones for your needs.
 
-![Name.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/img/Name.png)
+![Name.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/Name.png)
 
 ### Task-Specific Metrics
 
@@ -196,7 +196,7 @@ Below, we outline some popular examples.
 
 The [Hugging Face OpenLLM Leaderboard](https://huggingface.co/spaces/HuggingFaceH4/open_llm_leaderboard) features an array of datasets and tasks used to assess foundational models and chatbots
 
-![eval_0.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/img/eval_0.png)
+![eval_0.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/eval_0.png)
 
 ## Read/Watch These Resources (Optional)
 
