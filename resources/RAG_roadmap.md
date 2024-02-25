@@ -6,7 +6,7 @@ This guide will introduce you to the fundamentals, show you how to develop appli
 
 Happy Learning!
 
-![RAG_roadmap.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/tree/main/resources/img/RAG_roadmap.png)
+![RAG_roadmap.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/img/RAG_roadmap.png)
 
 ## Day 1: Introduction to RAG
 
