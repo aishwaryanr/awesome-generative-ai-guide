@@ -38,25 +38,6 @@ Stay informed by registering for email notifications whenever new content is upl
 - Learning best practices for exploring and evaluating the usefulness of LLMs in specific scenarios
 - Proficiency in integrating and comprehending new updates in LLMs, effectively fitting each piece into the larger puzzle and understanding its relevance.
 
-# Course Outline
-
-You can register for this course anytime during the 10 weeks to start receiving emails with downloadable content. 
-
-
-### Click on the below topics to start learning!
-
-🗓️*Week 1 [Jan 15 2024]***: Practical Introduction to LLMs**
-🗓️*Week 1 [Jan 15 2024]***: Prompting and Prompt Engineering**
-🗓️*Week 1 [Jan 15 2024]***: LLM Fine-tuning**
-🗓️*Week 4 [Feb 5 2024]***: RAG (Retrieval-Augmented Generation)**
-🗓️*Week 5 [ Feb 12 2024]***: Tools for building LLM Apps**
-🗓️*Week 6 [Feb 19 2024]***: Evaluation Techniques**
-🗓️*Week 7 [Feb 26 2024]***: Building Your Own LLM Application**
-🗓️*Week 8 [March 4 2024]***: Advanced Features and Deployment**
-🗓️*Week 9 [March 11 2024]***: Challenges with LLMs**
-🗓️*Week 10 [March 18 2024]***: Emerging Research Trends**
-🗓️*Week 11 *Bonus* [March 25 2024]***: Foundations**
-
 
 
 # Disclaimer
