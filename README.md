@@ -20,9 +20,9 @@ Happy Learning!
 
 ---
 ## :speaker: Announcements
+-Applied LLMs Mastery full course content has been released- [Click Here](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024)
 - 5-day roadmap to learn LLM foundations out now! ([Click Here](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/genai_roadmap.md))
 - 60 Common GenAI Interview Questions out now! ([Click Here](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/interview_prep/60_gen_ai_questions.md))
-- [Week 6] Applied LLMs Mastery content has been released- [Evaluating LLM Applications](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/week6_llm_evaluation.md)
 - ICLR 2024 paper summaries [click here](https://areganti.notion.site/06f0d4fe46a94d62bff2ae001cfec22c?v=d501ca62e4b745768385d698f173ae14)
 - List of free GenAI courses [click here](https://github.com/aishwaryanr/awesome-generative-ai-guide#book-list-of-free-genai-courses) 
 
@@ -91,31 +91,31 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 - RAG Tools
 - Tools for observability, prompting, serving, vector search etc.
 
-🗓️*Week 6 [Feb 19 2024]***: Evaluation Techniques**(Coming Soon!)
+🗓️*Week 6 [Feb 19 2024]***: [Evaluation Techniques](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/week6_llm_evaluation.md)**
 - Types of Evaluation
 - Common Evaluation Benchmarks
 - Common Metrics
 
-🗓️*Week 7 [Feb 26 2024]***: Building Your Own LLM Application**(Coming Soon!)
+🗓️*Week 7 [Feb 26 2024]***: [Building Your Own LLM Application](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/week7_build_llm_app.md)**
 - Components of LLM application
 - Build your own LLM App end to end
 
-🗓️*Week 8 [March 4 2024]***: Advanced Features and Deployment**(Coming Soon!)
+🗓️*Week 8 [March 4 2024]***: [Advanced Features and Deployment](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/week8_advanced_features.md)**
 - LLM lifecycle and LLMOps
 - LLM Monitoring and Observability
 - Deployment strategies
 
-🗓️*Week 9 [March 11 2024]***: Challenges with LLMs**(Coming Soon!)
+🗓️*Week 9 [March 11 2024]***: [Challenges with LLMs](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/week9_challenges_with_llms.md)**
 - Scaling Challenges
 - Behavioral Challenges
 - Future directions
 
-🗓️*Week 10 [March 18 2024]***: Emerging Research Trends**(Coming Soon!)
+🗓️*Week 10 [March 18 2024]***: [Emerging Research Trends](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/week10_research_trends.md)**
 - Smaller and more performant models
 - Multimodal models
 - LLM Alignment
 
-🗓️*Week 11 *Bonus* [March 25 2024]***: Foundations**(Coming Soon!)
+🗓️*Week 11 *Bonus* [March 25 2024]***: [Foundations](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/week11_foundations.md)**
 - Generative Models Foundations
 - Self-Attention and Transformers
 - Neural Networks for Language
