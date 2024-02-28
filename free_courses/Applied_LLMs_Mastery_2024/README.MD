@@ -4,7 +4,6 @@
 
 # About This Course
 
-**[Feb 2024] Registrations are still open!! Register [here](https://forms.gle/353sQMRvS951jDYu7)**
 
 **[Official Course Website](https://areganti.notion.site/The-LevelUp-Org-Applied-LLMs-562ddaa27791463e9a1286199325045c)**
 
@@ -43,7 +42,6 @@ Stay informed by registering for email notifications whenever new content is upl
 
 You can register for this course anytime during the 10 weeks to start receiving emails with downloadable content. 
 
-Registrations are open now! Register [here](https://forms.gle/353sQMRvS951jDYu7)
 
 ### Click on the below topics to start learning!
 
