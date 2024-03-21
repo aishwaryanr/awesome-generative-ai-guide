@@ -57,7 +57,7 @@ $$
 
 Where k is the total number of chunks in contexts
 
-1. **Context Relevancy(From RAGas [documentation](https://docs.ragas.io/en/stable/concepts/metrics/context_precision.html))**
+2. **Context Relevancy(From RAGas [documentation](https://docs.ragas.io/en/stable/concepts/metrics/context_precision.html))**
 
 This metric gauges the relevancy of the retrieved context, calculated based on both the question and contexts. The values fall within the range of (0, 1), with higher values indicating better relevancy. Ideally, the retrieved context should exclusively contain essential information to address the provided query. To compute this, we initially estimate the value of
 by identifying sentences within the retrieved context that are relevant for answering the given question. The final score is determined by the following formula:
@@ -76,7 +76,7 @@ High context relevancy: France, in Western Europe, encompasses medieval cities, 
 Low context relevancy: France, in Western Europe, encompasses medieval cities, alpine villages and Mediterranean beaches. Paris, its capital, is famed for its fashion houses, classical art museums including the Louvre and monuments like the Eiffel Tower. The country is also renowned for its wines and sophisticated cuisine. Lascaux’s ancient cave drawings, Lyon’s Roman theater and the vast Palace of Versailles attest to its rich history.
 ```
 
-1. Context Recall**(From RAGas [documentation](https://docs.ragas.io/en/stable/concepts/metrics/context_precision.html)):** Context recall measures the extent to which the retrieved context aligns with the annotated answer, treated as the ground truth. It is computed based on the ground truth and the retrieved context, and the values range between 0 and 1, with higher values indicating better performance. To estimate context recall from the ground truth answer, each sentence in the ground truth answer is analyzed to determine whether it can be attributed to the retrieved context or not. In an ideal scenario, all sentences in the ground truth answer should be attributable to the retrieved context.
+3. Context Recall**(From RAGas [documentation](https://docs.ragas.io/en/stable/concepts/metrics/context_precision.html)):** Context recall measures the extent to which the retrieved context aligns with the annotated answer, treated as the ground truth. It is computed based on the ground truth and the retrieved context, and the values range between 0 and 1, with higher values indicating better performance. To estimate context recall from the ground truth answer, each sentence in the ground truth answer is analyzed to determine whether it can be attributed to the retrieved context or not. In an ideal scenario, all sentences in the ground truth answer should be attributable to the retrieved context.
     
     The formula for calculating context recall is as follows:
     
@@ -136,13 +136,13 @@ High faithfulness answer: Einstein was born in Germany on 14th March 1879.
 Low faithfulness answer: Einstein was born in Germany on 20th March 1879.
 ```
 
-1. **Answer Relevance(From RAGas [documentation](https://docs.ragas.io/en/stable/concepts/metrics/context_precision.html))**
+2. **Answer Relevance(From RAGas [documentation](https://docs.ragas.io/en/stable/concepts/metrics/context_precision.html))**
 
 The evaluation metric, Answer Relevancy, focuses on assessing how pertinent the generated answer is to the given prompt. A lower score is assigned to answers that are incomplete or contain redundant information. This metric is computed using the  question and the answer with values ranging between 0 and 1, where higher scores indicate better relevancy.
 
 An answer is deemed relevant when it directly and appropriately addresses the original question. Importantly, our assessment of answer relevance does not consider factuality but instead penalizes cases where the answer lacks completeness or contains redundant details. To calculate this score, the LLM is prompted to generate an appropriate question for the generated answer multiple times, and the mean cosine similarity between these generated questions and the original question is measured. The underlying idea is that if the generated answer accurately addresses the initial question, the LLM should be able to generate questions from the answer that align with the original question.
 
-1. **Answer semantic similarity(From RAGas [documentation](https://docs.ragas.io/en/stable/concepts/metrics/context_precision.html))**
+3. **Answer semantic similarity(From RAGas [documentation](https://docs.ragas.io/en/stable/concepts/metrics/context_precision.html))**
 
 The concept of Answer Semantic Similarity pertains to the assessment of the semantic resemblance between the generated answer and the ground truth. This evaluation is based on the ground truth answer and the generated LLM answer , with values falling within the range of 0 to 1. A higher score signifies a better alignment between the generated answer and the ground truth.
 
