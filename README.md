@@ -167,6 +167,9 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 18. [Introduction to Responsible AI](https://www.cloudskillsboost.google/course_templates/554) by Google Cloud
 19. [Fundamentals of Generative AI](https://learn.microsoft.com/en-us/training/modules/fundamentals-generative-ai/) by Microsoft Azure
 20. [Generative AI for Beginners](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-122979-leestott)  by Microsoft
+21. [ChatGPT for Beginners: The Ultimate Use Cases for Everyone](https://www.udemy.com/course/chatgpt-for-beginners-the-ultimate-use-cases-for-everyone/) by Udemy
+22. 
+
     
 
 
@@ -204,6 +207,7 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 20. [LLMOps](https://www.deeplearning.ai/short-courses/llmops/) by DeepLearning.AI
 21. [Build LLM Apps with LangChain.js](https://www.deeplearning.ai/short-courses/build-llm-apps-with-langchain-js/) by DeepLearning.AI
 22. [Advanced Retrieval for AI with Chroma](https://www.deeplearning.ai/short-courses/advanced-retrieval-for-ai/) by DeepLearning.AI
+23. [LangChain & Vector Databases in Production](https://learn.activeloop.ai/courses/langchain) by ActiveLoop
     
 
 ##### 3. Prompt Engineering, RAG and Fine-Tuning
@@ -237,6 +241,9 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 
 ##### Multimodal 
 1. [How Diffusion Models Work](https://www.deeplearning.ai/short-courses/how-diffusion-models-work/) by DeepLearning.AI
+2. [How to Use Midjourney, AI Art and ChatGPT to Create an Amazing Website](https://www.youtube.com/watch?v=5wdCev86RYE) by Brad Hussey
+3. [Build AI Apps with ChatGPT, DALL-E and GPT-4](https://scrimba.com/learn/buildaiapps) by Scrimba
+   
 
 
 
