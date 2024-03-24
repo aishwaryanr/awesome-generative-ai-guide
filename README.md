@@ -206,7 +206,6 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 20. [LLMOps](https://www.deeplearning.ai/short-courses/llmops/) by DeepLearning.AI
 21. [Build LLM Apps with LangChain.js](https://www.deeplearning.ai/short-courses/build-llm-apps-with-langchain-js/) by DeepLearning.AI
 22. [Advanced Retrieval for AI with Chroma](https://www.deeplearning.ai/short-courses/advanced-retrieval-for-ai/) by DeepLearning.AI
-23. [LangChain & Vector Databases in Production](https://learn.activeloop.ai/courses/langchain) by ActiveLoop
     
 
 ##### Prompt Engineering, RAG and Fine-Tuning
