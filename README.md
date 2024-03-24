@@ -204,6 +204,7 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 8. [Building Applications with Vector Databases](https://learn.deeplearning.ai/building-applications-vector-databases) by Deeplearning.AI
 9. [ChatGPT Prompt Engineering for Developers](https://learn.deeplearning.ai/chatgpt-prompt-eng/lesson/1/introduction) by Deeplearning.AI
 10. [Advanced RAG Orchestration series](https://www.youtube.com/watch?v=CeDS1yvw9E4) by LlamaIndex
+11. [Prompt Engineering Specialization](https://www.coursera.org/specializations/prompt-engineering) by Coursera
 
 ##### Evaluation
 1. [Building and Evaluating Advanced RAG Applications](https://learn.deeplearning.ai/building-evaluating-advanced-rag) by DeepLearning.AI
