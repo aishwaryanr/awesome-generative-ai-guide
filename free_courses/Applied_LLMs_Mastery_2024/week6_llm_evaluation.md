@@ -8,8 +8,8 @@ In this section of the content, we dive deep into the evaluation techniques appl
 
 Understanding whether LLMs meet our specific needs is crucial. We must establish clear metrics to gauge the value added by LLM applications. When we refer to "LLM evaluation" in this section, we encompass assessing the entire pipeline, including the LLM itself, all input sources, and the content processed by it. This includes the prompts used for the LLM and, in the case of RAG use-cases, the quality of retrieved documents. To evaluate systems effectively, we'll break down LLM evaluation into dimensions:
 
-1. **Pipeline Evaluation**: Assessing the effectiveness of individual components within the LLM pipeline, including prompts and retrieved documents.
-2. **Model Evaluation**: Evaluating the performance of the LLM model itself, focusing on the quality and relevance of its generated output.
+A. **Pipeline Evaluation**: Assessing the effectiveness of individual components within the LLM pipeline, including prompts and retrieved documents.
+B. **Model Evaluation**: Evaluating the performance of the LLM model itself, focusing on the quality and relevance of its generated output.
 
 Now we’ll dig deeper into each of these two dimensions
 
