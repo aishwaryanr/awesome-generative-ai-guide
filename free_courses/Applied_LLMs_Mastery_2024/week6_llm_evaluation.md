@@ -13,14 +13,14 @@ Understanding whether LLMs meet our specific needs is crucial. We must establish
 
 Now we’ll dig deeper into each of these two dimensions
 
-## LLM Pipeline Evaluation
+## A. LLM Pipeline Evaluation
 
 In this section, we’ll look at 2 types of evaluation:
 
 1. **Evaluating Prompts**: Given the significant impact prompts have on the output of LLM pipelines, we will delve into various methods for assessing and experimenting with prompts.
 2. **Evaluating the Retrieval Pipeline**: Essential for LLM pipelines incorporating RAG, this involves retrieving the top-k documents to assess the LLM's performance.
 
-### Evaluating Prompts
+### A1. Evaluating Prompts
 
 The effectiveness of prompts can be evaluated by experimenting with various prompts and observing the changes in LLM performance. This process is facilitated by prompt testing frameworks, which generally include:
 
@@ -37,7 +37,7 @@ More recently there have also been methods to optimize prompts in an automatic m
 
 ![eval_1.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/eval_1.png)
 
-### Evaluating Retrieval Pipeline
+### A2. Evaluating Retrieval Pipeline
 
 In RAG use-cases, solely assessing the end outcome doesn't capture the complete picture. Essentially, the LLM responds to queries based on the context provided. It's crucial to evaluate intermediate results, including the quality of retrieved documents. If the term RAG is unfamiliar to you, please refer to the Week 4 content explaining how RAG operates. Throughout this discussion, we'll refer to the top-k retrieved documents as "context" for the LLM, which requires evaluation. Below are some typical metrics to evaluate the quality of RAG context.
 
@@ -76,7 +76,7 @@ High context relevancy: France, in Western Europe, encompasses medieval cities, 
 Low context relevancy: France, in Western Europe, encompasses medieval cities, alpine villages and Mediterranean beaches. Paris, its capital, is famed for its fashion houses, classical art museums including the Louvre and monuments like the Eiffel Tower. The country is also renowned for its wines and sophisticated cuisine. Lascaux’s ancient cave drawings, Lyon’s Roman theater and the vast Palace of Versailles attest to its rich history.
 ```
 
-3. Context Recall**(From RAGas [documentation](https://docs.ragas.io/en/stable/concepts/metrics/context_precision.html)):** Context recall measures the extent to which the retrieved context aligns with the annotated answer, treated as the ground truth. It is computed based on the ground truth and the retrieved context, and the values range between 0 and 1, with higher values indicating better performance. To estimate context recall from the ground truth answer, each sentence in the ground truth answer is analyzed to determine whether it can be attributed to the retrieved context or not. In an ideal scenario, all sentences in the ground truth answer should be attributable to the retrieved context.
+3. **Context Recall(From RAGas [documentation](https://docs.ragas.io/en/stable/concepts/metrics/context_precision.html)):** Context recall measures the extent to which the retrieved context aligns with the annotated answer, treated as the ground truth. It is computed based on the ground truth and the retrieved context, and the values range between 0 and 1, with higher values indicating better performance. To estimate context recall from the ground truth answer, each sentence in the ground truth answer is analyzed to determine whether it can be attributed to the retrieved context or not. In an ideal scenario, all sentences in the ground truth answer should be attributable to the retrieved context.
     
     The formula for calculating context recall is as follows:
     
@@ -92,7 +92,7 @@ General retrieval metrics can also be used to evaluate the quality of retrieved 
 3. **Reciprocal Rank**: Focuses on the rank of the first relevant document, with higher scores for cases where the first relevant document is ranked higher.
 4. **Mean Reciprocal Rank (MRR)**: Averages the reciprocal ranks of results for a sample of queries. It is particularly used when the interest is in the rank of the first correct answer.
 
-## LLM Model Evaluation
+## B. LLM Model Evaluation
 
 Now that we've discussed evaluating LLM pipeline components, let's delve into the heart of the pipeline: the LLM model itself. Assessing LLM models isn't straightforward due to their broad applicability and versatility. Different use cases may require focusing on certain dimensions more than others. For instance, in applications where accuracy is paramount, evaluating whether the model avoids hallucinations (generating responses that are not factual) can be crucial. Conversely, in other scenarios where maintaining impartiality across different populations is essential, adherence to principles to avoid bias is paramount. LLM evaluation can be broadly categorized into these dimensions:
 
@@ -100,7 +100,7 @@ Now that we've discussed evaluating LLM pipeline components, let's delve into th
 - **Alignment Metrics**: Evaluate how well the model aligns with human preferences in the given use-case, in aspects such as fairness, robustness, and privacy.
 - **Task-Specific Metrics**: Gauge the performance of LLMs across different downstream tasks, such as multihop reasoning, mathematical reasoning, and more.
 
-### Relevance Metrics
+### B1. Relevance Metrics
 
 Some common response relevance metrics include:
 
@@ -148,7 +148,7 @@ The concept of Answer Semantic Similarity pertains to the assessment of the sema
 
 Measuring the semantic similarity between answers can offer valuable insights into the quality of the generated response. This evaluation utilizes a cross-encoder model to calculate the semantic similarity score.
 
-### Alignment Metrics
+### B2. Alignment Metrics
 
 Metrics of this type are crucial, especially when LLMs are utilized in applications that interact directly with people, to ensure they conform to acceptable human standards. The challenge with these metrics is their difficulty to quantify mathematically. Instead, the assessment of LLM alignment involves conducting specific tests on benchmarks designed to evaluate alignment, using the results as an indirect measure. For instance, to evaluate a model's fairness, datasets are employed where the model must recognize stereotypes, and its performance in this regard serves as an indirect indicator of the LLM's fairness alignment. Thus, there's no universally correct method for this evaluation. In our course, we will adopt the approaches outlined in the influential study “[TRUSTLLM: Trustworthiness in Large Language Models](https://arxiv.org/pdf/2401.05561.pdf)” to explore alignment dimensions and the proxy tasks that help gauge LLM alignment.
 
@@ -170,7 +170,7 @@ In the paper, the authors further dissect each of these dimensions into more spe
 
 ![Name.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/Name.png)
 
-### Task-Specific Metrics
+### B3. Task-Specific Metrics
 
 Often, it's necessary to create tailored benchmarks, including datasets and metrics, to evaluate an LLM's performance in a specific task. For example, if developing a chatbot requiring strong reasoning abilities, utilizing common-sense reasoning benchmarks can be beneficial. Similarly, for multilingual understanding, machine translation benchmarks are valuable. 
 
