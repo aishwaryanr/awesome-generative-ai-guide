@@ -1,4 +1,5 @@
-# :star2: Top RAG Papers from March 2023 to March 2024
+# :star2: Most Impactful RAG Papers 
+### (March 2023 to March 2024)
 
 The concept of Retrieval-Augmented Generation (RAG) was introduced in 2021 through a [seminal paper](https://arxiv.org/abs/2005.11401). Since then, there has been significant growth in RAG research, particularly in the past year, driven by the emergence of numerous LLMs. RAG has become one of the most widely used applications of LLMs. The below table provides summaries of top papers published between March 2023 and March 2024, covering various topics related to RAG research. These topics are:
 
