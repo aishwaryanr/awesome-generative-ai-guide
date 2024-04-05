@@ -61,13 +61,7 @@ Happy Learning!
 
 ---
 
-## Latest RAG Research from 2024
+## Latest RAG Research from 2023-2024
 
-1. [Corrective Retrieval Augmented Generation](https://arxiv.org/abs/2401.15884)
-2. [RAPTOR: Recursive Abstractive Processing for Tree-Organized Retrieval](https://arxiv.org/abs/2401.18059)
-3. [In-Context Learning for Extreme Multi-Label Classification](https://arxiv.org/abs/2401.12178)
-4. [The Power of Noise: Redefining Retrieval for RAG Systems](https://arxiv.org/abs/2401.14887)
-5. [MultiHop-RAG: Benchmarking Retrieval-Augmented Generation for Multi-Hop Queries](https://arxiv.org/abs/2401.15391)
-6. [Revolutionizing Retrieval-Augmented Generation with Enhanced PDF Structure Recognition](https://arxiv.org/abs/2401.12599)
-
+[Click Here](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/research_updates/rag_research_table.md)
 ---
