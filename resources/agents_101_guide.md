@@ -14,7 +14,7 @@ That's a tough question because it involves planning, budgeting, and finding inf
 
 To build this kind of virtual assistant, you'd need an LLM as the main "brain" to understand and respond to questions. But you'd also need other modules for planning, budgeting, and accessing travel information. Together, they would form an LLM agent capable of handling complex tasks and providing personalized assistance to users.
 
-![Screenshot 2024-04-07 at 2.39.12 PM.png](LLM%20Agents%20101%205637588da0bf4e649b80ff6bdaf1fbd3/Screenshot_2024-04-07_at_2.39.12_PM.png)
+![Screenshot 2024-04-07 at 2.39.12 PM.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/img/Screenshot_2024-04-07_at_2.39.12_PM.png)
 
 Image Source: [https://arxiv.org/pdf/2309.07864.pdf](https://arxiv.org/pdf/2309.07864.pdf)
 
@@ -36,7 +36,7 @@ In the preceding section, we discussed one framework for comprehending LLM agent
 
 This framework comprises the following essential elements:
 
-![Screenshot 2024-04-07 at 2.53.23 PM.png](LLM%20Agents%20101%205637588da0bf4e649b80ff6bdaf1fbd3/Screenshot_2024-04-07_at_2.53.23_PM.png)
+![Screenshot 2024-04-07 at 2.53.23 PM.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/img/Screenshot_2024-04-07_at_2.53.23_PM.png)
 
 Image Source: [https://developer.nvidia.com/blog/introduction-to-llm-agents/](https://developer.nvidia.com/blog/introduction-to-llm-agents/)
 
@@ -62,7 +62,7 @@ An LLM-based multi-agent system offers several advantages, primarily based on th
 
 Multi-agent interactions in LLM-based systems can be broadly categorized into cooperative and adversarial interactions.
 
-![Screenshot 2024-04-07 at 3.03.48 PM.png](LLM%20Agents%20101%205637588da0bf4e649b80ff6bdaf1fbd3/Screenshot_2024-04-07_at_3.03.48_PM.png)
+![Screenshot 2024-04-07 at 3.03.48 PM.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/img/Screenshot_2024-04-07_at_3.03.48_PM.png)
 
 Image source: [https://arxiv.org/pdf/2309.07864.pdf](https://arxiv.org/pdf/2309.07864.pdf)
 
