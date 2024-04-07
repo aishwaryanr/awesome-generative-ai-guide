@@ -96,7 +96,7 @@ BabyAGI is a popular task-driven autonomous agent designed to perform diverse ta
 4. Task Management (Planning Module):
     - The system maintains a task list using a deque data structure, enabling it to manage and prioritize tasks autonomously. It dynamically generates new tasks based on completed results and adjusts task priorities accordingly.
     
-    ![babyAGI](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/resources/img/babyAGI.png)
+    ![babyAGI](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/img/babyAGI.png)
     
     Image Source: [https://yoheinakajima.com/task-driven-autonomous-agent-utilizing-gpt-4-pinecone-and-langchain-for-diverse-applications/](https://yoheinakajima.com/task-driven-autonomous-agent-utilizing-gpt-4-pinecone-and-langchain-for-diverse-applications/)
     
