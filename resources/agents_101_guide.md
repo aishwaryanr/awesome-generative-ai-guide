@@ -1,6 +1,6 @@
 # LLM Agents 101
 
-![llm_guide.png](LLM%20Agents%20101%205637588da0bf4e649b80ff6bdaf1fbd3/llm_guide.png)
+![llm_guide.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/img/llm_guide.png)
 
 ## Introduction to LLM Agents
 
@@ -96,7 +96,7 @@ BabyAGI is a popular task-driven autonomous agent designed to perform diverse ta
 4. Task Management (Planning Module):
     - The system maintains a task list using a deque data structure, enabling it to manage and prioritize tasks autonomously. It dynamically generates new tasks based on completed results and adjusts task priorities accordingly.
     
-    ![babyAGI](resources/img/babyAGI.png)
+    ![babyAGI](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/resources/img/babyAGI.png)
     
     Image Source: [https://yoheinakajima.com/task-driven-autonomous-agent-utilizing-gpt-4-pinecone-and-langchain-for-diverse-applications/](https://yoheinakajima.com/task-driven-autonomous-agent-utilizing-gpt-4-pinecone-and-langchain-for-diverse-applications/)
     
@@ -121,7 +121,7 @@ Despite their remarkable performance in various domains, quantifying and objecti
 4. [ToolBench](https://arxiv.org/abs/2305.16504)
 5. [GentBench](https://arxiv.org/pdf/2308.04030.pdf)
 
-![Screenshot 2024-04-07 at 3.28.33 PM.png](LLM%20Agents%20101%205637588da0bf4e649b80ff6bdaf1fbd3/Screenshot_2024-04-07_at_3.28.33_PM.png)
+![Screenshot 2024-04-07 at 3.28.33 PM.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/img/Screenshot_2024-04-07_at_3.28.33_PM.png)
 
 Image: Tasks and Datasets supported by the GentBench framework
 
