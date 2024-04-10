@@ -47,9 +47,8 @@ If you’ve been looking to learn more about LLM agents and maybe even create yo
     - OS-Copilot: Towards Generalist Computer Agents with Self-Improvement ([link](https://arxiv.org/abs/2304.05376))
 
 4. Use these Github repos to check out the latest research in agents (use this as a reference only; it’s not required to read through everything)
-
-1. **[awesome-llm-powered-agent](https://github.com/hyp1231/awesome-llm-powered-agent)**
-2.  **[awesome-ai-agents](https://github.com/e2b-dev/awesome-ai-agents/tree/main)**
+    -  **[awesome-llm-powered-agent](https://github.com/hyp1231/awesome-llm-powered-agent)**
+    -  **[awesome-ai-agents](https://github.com/e2b-dev/awesome-ai-agents/tree/main)**
 
 ---
 
