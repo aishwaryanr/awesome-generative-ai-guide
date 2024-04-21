@@ -170,7 +170,7 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 20. [Generative AI for Beginners](https://github.com/microsoft/generative-ai-for-beginners?WT.mc_id=academic-122979-leestott)  by Microsoft
 21. [ChatGPT for Beginners: The Ultimate Use Cases for Everyone](https://www.udemy.com/course/chatgpt-for-beginners-the-ultimate-use-cases-for-everyone/) by Udemy
 22. [[1hr Talk] Intro to Large Language Models](https://www.youtube.com/watch?v=zjkBMFhNj_g) by Andrej Karpathy
-
+23. [ChatGPT for Everyone](https://learnprompting.org/courses/chatgpt-for-everyone) by Learn Prompting
     
 
 
@@ -239,7 +239,10 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 18. [Quantization Fundamentals with Hugging Face](https://www.deeplearning.ai/short-courses/quantization-fundamentals-with-hugging-face/) by Deeplearning.AI
 19. [Preprocessing Unstructured Data for LLM Applications](https://www.deeplearning.ai/short-courses/preprocessing-unstructured-data-for-llm-applications/) by Deeplearning.AI
 20. [Retrieval Augmented Generation for Production with LangChain & LlamaIndex](https://learn.activeloop.ai/courses/rag)  by Activeloop
-
+21. [Introduction to Prompt Engineering](https://learnprompting.org/courses/intro-to-prompt-engineering) by Learn Prompting
+22. [Advanced Prompt Engineering](https://learnprompting.org/courses/advanced-prompt-engineering) by Learn Prompting
+23. [Prompt Engineering for Marketing](https://learnprompting.org/courses/prompt-engineering-for-marketing) by Learn Prompting
+24. [Retrieval-Augmented Generation](https://learnprompting.org/courses/rag) by Learn Prompting
     
 
 ##### Evaluation
@@ -254,10 +257,13 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 2. [How to Use Midjourney, AI Art and ChatGPT to Create an Amazing Website](https://www.youtube.com/watch?v=5wdCev86RYE) by Brad Hussey
 3. [Build AI Apps with ChatGPT, DALL-E and GPT-4](https://scrimba.com/learn/buildaiapps) by Scrimba
 4. [11-777: Multimodal Machine Learning](https://www.youtube.com/playlist?list=PL-Fhd_vrvisNM7pbbevXKAbT_Xmub37fA) by Carnegie Mellon University
+5. [Image Creation with DALL·E 3](https://learnprompting.org/courses/image-creation-with-dalle3) by Learn Prompting
+6. [Introduction to Runway](https://learnprompting.org/courses/runway) by Learn Prompting
 
 #### Miscellaneous 
 1. [Avoiding AI Harm](https://www.coursera.org/learn/avoiding-ai-harm) by Coursera
 2. [Developing AI Policy](https://www.coursera.org/learn/developing-ai-policy) by Coursera
+3. [AI Safety](https://learnprompting.org/courses/ai-safety) by Learn Prompting
    
 
    
