@@ -17,7 +17,7 @@ If you’ve been looking to learn more about LLM agents and maybe even create yo
 
 ## **Day 2: Core Components**
 
-1. Harrison Chase - Agents Masterclass from LangChain Founder ([link](https://www.youtube.com/results?search_query=agents+llm))
+1. Harrison Chase - Agents Masterclass from LangChain Founder ([link](https://www.youtube.com/watch?v=DWUdGhRrv2c))
 2. Introduction to LLM Agents by Nvidia ([link](https://developer.nvidia.com/blog/introduction-to-llm-agents/))
 
 ---
