@@ -38,13 +38,13 @@ If you’ve been looking to learn more about LLM agents and maybe even create yo
 
 ## **Day 4- Real-World Agents**
 
-1. Harrison Chase - Agents Masterclass from LangChain Founder ([link](https://www.youtube.com/results?search_query=agents+llm))
+1. Harrison Chase - Agents Masterclass from LangChain Founder ([link](https://www.youtube.com/watch?v=DWUdGhRrv2c))
 2. What's next for AI agents ft. LangChain's Harrison Chase ([link](https://www.youtube.com/watch?v=pBBe1pk8hf4))
 3. Scaling AI Agents for Real-World Tasks with Parcha CEO AJ Asver ([link](https://www.youtube.com/watch?v=zCGWDWCTYkE))
 4. Learn about popular real world agents (read any one):
     - ChemCrow: Augmenting large-language models with chemistry tools ([link](https://arxiv.org/abs/2304.05376))
     - BabyAGI ([link](https://github.com/yoheinakajima/babyagi))
-    - OS-Copilot: Towards Generalist Computer Agents with Self-Improvement ([link](https://arxiv.org/abs/2304.05376))
+    - OS-Copilot: Towards Generalist Computer Agents with Self-Improvement ([link](https://arxiv.org/abs/2402.07456))
 
 4. Use these Github repos to check out the latest research in agents (use this as a reference only; it’s not required to read through everything)
     -  **[awesome-llm-powered-agent](https://github.com/hyp1231/awesome-llm-powered-agent)**
