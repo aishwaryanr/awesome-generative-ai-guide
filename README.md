@@ -329,9 +329,9 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 - [PEFT](https://github.com/huggingface/peft/tree/main/examples) example notebooks by Huggingface
 - [Free LLM Fine-Tuning Notebooks](https://levelup.gitconnected.com/14-free-large-language-models-fine-tuning-notebooks-532055717cb7) by Youssef Hosni
 
----
+
 #### Comprehensive LLM Code Repositories 
-- [LLM-PlayLab]((https://github.com/Sakil786/LLM-PlayLab "link ") This playlab encompasses a multitude of projects crafted through the utilization of Transformer Models
+- [LLM-PlayLab](https://github.com/Sakil786/LLM-PlayLab) This playlab encompasses a multitude of projects crafted through the utilization of Transformer Models
 
 
 ---
