@@ -330,6 +330,14 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 - [Free LLM Fine-Tuning Notebooks](https://levelup.gitconnected.com/14-free-large-language-models-fine-tuning-notebooks-532055717cb7) by Youssef Hosni
 
 ---
+## LLM-PlayLab
+| LLM Projects  |Respository Link   |
+| :------------: | :------------: |
+|This playlab encompasses a multitude of projects crafted through the utilization of Transformer Models, showcasing the versatility and impact of these models across various applications.   | [link ](https://github.com/Sakil786/LLM-PlayLab "link ") |
+
+
+
+---
 
 ## :black_nib: Contributing
 
