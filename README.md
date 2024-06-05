@@ -33,7 +33,7 @@ Happy Learning!
 
 ---
 
-## :star: Best GenAI Papers List (May 2024)
+## :star: Best Gen AI Papers List (May 2024)
 
 \*Updated at the end of every month
 | Date | Title | Abstract | Topics |
