@@ -20,7 +20,7 @@ Happy Learning!
 
 - A 20-day free introductory course based on reels/short videos (no AI background needed!)
 - Check out more information and register [here](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/generative_ai_genius/README.md)
-- Register soon! The course starts July 8th 2024!
+- Register soon! The course starts on July 8th 2024!
 
 ---
 
