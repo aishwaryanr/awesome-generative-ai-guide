@@ -81,6 +81,7 @@ Instagram: [https://www.instagram.com/aish_reganti/](https://www.instagram.com/a
 
 # 🎉The course starts on July 8th 2024. Stay tuned!
 
+---------YET TO APPEAR---------
 ## 🗓️ Day 0: Course Introduction
 
 ---
@@ -96,5 +97,3 @@ Reading Material:
 Video:
 
 Reading Material:
-
-<YET TO COME>
