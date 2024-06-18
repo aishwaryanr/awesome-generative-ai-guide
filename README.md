@@ -16,11 +16,7 @@ Happy Learning!
 
 ---
 
-## [June 2024] 🔥🔥 Registrations are now open for the "Generative AI Genius" course
-
-- Generative AI Genius is a free 20-day course for everyone interested in generative AI, and no ML background is needed.
-- ⭐ This is the first AI course based on reels or short videos.
-
+## [June 2024] 🔥🔥 Registrations are now open for "Generative AI Genius," a 20-day introductory course based on reels/short videos (no AI background needed!)
 Check out more information and register here: [link]
 
 ---
