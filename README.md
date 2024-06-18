@@ -16,6 +16,15 @@ Happy Learning!
 
 ---
 
+## [June 2024] 🔥🔥 Registrations are now open for the "Generative AI Genius" course
+
+- Generative AI Genius is a free 20-day course for everyone interested in generative AI, and no ML background is needed.
+- ⭐ This is the first AI course based on reels or short videos.
+
+Check out more information and register here: [link]
+
+---
+
 ## :speaker: Announcements
 
 - Applied LLMs Mastery full course content has been released!!! ([Click Here](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024))
