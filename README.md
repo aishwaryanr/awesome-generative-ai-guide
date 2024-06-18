@@ -18,8 +18,8 @@ Happy Learning!
 
 ## [June 2024] 🔥🔥 Registrations are now open for "Generative AI Genius"
 
-A 20-day introductory course based on reels/short videos (no AI background needed!)
-Check out more information and register here: [link]
+- A 20-day introductory course based on reels/short videos (no AI background needed!)
+- Check out more information and register here: [link]
 
 ---
 
