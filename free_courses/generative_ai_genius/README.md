@@ -1,6 +1,6 @@
 # Generative AI Genius 2024
 
-![Screenshot 2024-06-13 at 3.19.32 PM.png](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/free_courses/generative_ai_genius/img/genai_intro.png)
+![Screenshot 2024-06-13 at 3.19.32 PM.png](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/free_courses/generative_ai_genius/genai_intro.png)
 
 # 🎉The course starts on July 8th 2024, [Register Now](https://forms.gle/sDdjXcmn9ka8BSFg9)
 
