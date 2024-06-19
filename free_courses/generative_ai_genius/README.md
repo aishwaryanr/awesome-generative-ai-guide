@@ -37,6 +37,7 @@ This course heavily focuses on applied generative AI to help you get started wit
 - Basics of Fine-Tuning
 - Common Challenges and Evaluation
 - Future Trends in Generative AI
+
 Please note that this course emphasizes understanding applied concepts and building applications using generative AI. It won't teach you to build generative AI models, which requires a much more comprehensive course structure and a lot of prerequisites. If someone tells you otherwise, I'd double-check their credentials 🙂
 
 # What are the Prerequisites?
