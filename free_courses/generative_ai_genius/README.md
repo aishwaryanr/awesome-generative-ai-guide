@@ -28,6 +28,17 @@ If you're someone with a coding background who prefers hands-on learning, I'll b
 
 🚨**NOTE: The videos stand alone, so you can understand the concepts without needing to read the additional resources—they're just there to aid your understanding.**
 
+# What you'll learn
+This course heavily focuses on applied generative AI to help you get started with building applications. Here's an overview of the topics we'll cover, and if you don't understand some of these, don't worry—you'll get enough background during the course:
+
+- Basics of Generative AI and Large Language Models (LLMs)
+- Prompting Techniques
+- Building Generative AI Applications
+- Basics of Fine-Tuning
+- Common Challenges and Evaluation
+- Future Trends in Generative AI
+Please note that this course emphasizes understanding applied concepts and building applications using generative AI. It won't teach you to build generative AI models, which requires a much more comprehensive course structure and a lot of prerequisites. If someone tells you otherwise, I'd double-check their credentials 🙂
+
 # What are the Prerequisites?
 
 Honestly, this is a course I want people from all backgrounds to engage with and take away valuable insights at their preferred level of understanding. However, the amount of information you can absorb may vary depending on your background.
