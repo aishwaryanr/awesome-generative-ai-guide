@@ -110,7 +110,7 @@ Reading Material: None
 
 **Video**: 
 [Instagram]()
-[YouTube](https://youtu.be/ek2XdHgYe-4)
+[YouTube](https://youtu.be/J9VWyxOSJzA)
 
 **Reading Material**:
 - https://medium.com/womenintechnology/ai-c3412c5aa0ac
