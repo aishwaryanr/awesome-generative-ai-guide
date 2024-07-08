@@ -106,25 +106,25 @@ Reading Material: None
 ## 🗓️ Day 1: What is Generative AI
 
 ---
-Key Topics: AI, Generative AI, Neural Networks, Large Language Models(LLMs), Model Training
+**Key Topics**: AI, Generative AI, Neural Networks, Large Language Models(LLMs), Model Training
 
-Video: 
+**Video**: 
 [Instagram]()
 [YouTube](https://youtu.be/ek2XdHgYe-4)
 
-Reading Material:
+**Reading Material**:
 - https://medium.com/womenintechnology/ai-c3412c5aa0ac
 
 ## 🗓️ Day 2: How are LLMs like ChatGPT Trained?
 
 ---
-Key Topics: Training, Fine-Tuning, Reinforcement Learning, Alignment
+**Key Topics**: Training, Fine-Tuning, Reinforcement Learning, Alignment
 
-Video: 
+**Video**: 
 [Instagram]()
 [YouTube]()
 
-Reading Material:
+**Reading Material**:
 - https://snorkel.ai/large-language-model-training-three-phases-shape-llm-training/
 
 
