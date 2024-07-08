@@ -2,7 +2,7 @@
 
 ![Screenshot 2024-06-13 at 3.19.32 PM.png](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/free_courses/generative_ai_genius/genai_intro.png)
 
-# 🎉The course starts on July 8th 2024! [Register now](https://forms.gle/sDdjXcmn9ka8BSFg9)
+# 🎉The course starts on July 8th 2024! Registrations Closed (You can audit the course for free)
 
 # About the Course:
 
@@ -64,12 +64,12 @@ You have two options: auditing the course or registering, both of which are free
 
 **Auditing the Course:**
 
-- You can watch the daily videos first on [Instagram](https://rb.gy/ae4z68). Links will be posted here too, but there might be a delay. For quicker updates, follow my account.
+- You can watch the daily videos first on [Instagram](https://rb.gy/ae4z68) & [YouTube](https://www.youtube.com/@aishwaryanr4606). Links will be posted here too, but there might be a delay. For quicker updates, follow my account.
 - Access additional resources through this page daily; mini-project resources will also be available here.
 
 **Registering For the Course:**
 
-- If you prefer to register (you can register any day during the 20-day course): submit a form [here](https://forms.gle/sDdjXcmn9ka8BSFg9)
+- **Registrations are closed for this course, feel free to audit (watch videos and access content here)**
 - Registered participants will receive all the benefits mentioned above, plus
     - Priority RSVP to a 1 hour seminar on building generative AI applications for the real world
     - Updates regarding any future courses or events
@@ -87,13 +87,14 @@ LinkedIn: [https://www.linkedin.com/in/areganti/](https://www.linkedin.com/in/ar
 
 Instagram: [https://www.instagram.com/aish_reganti/](https://www.instagram.com/aish_reganti/)
 
+YouTube: [https://www.youtube.com/@aishwaryanr4606](https://www.youtube.com/@aishwaryanr4606)
+
 ---
 
 ---
 
 # 🎉The course starts on July 8th 2024. Stay tuned!
 
----------YET TO APPEAR---------
 ## 🗓️ Day 0: Course Introduction
 
 ---
@@ -105,13 +106,26 @@ Reading Material: None
 ## 🗓️ Day 1: What is Generative AI
 
 ---
+Key Topics: AI, Generative AI, Neural Networks, Large Language Models(LLMs), Model Training
 
-Video: [Day 1]
+Video: 
+[Instagram]()
+[YouTube](https://youtu.be/ek2XdHgYe-4)
 
 Reading Material:
 - https://medium.com/womenintechnology/ai-c3412c5aa0ac
 
+## 🗓️ Day 2: How are LLMs like ChatGPT Trained?
 
+---
+Key Topics: Training, Fine-Tuning, Reinforcement Learning, Alignment
+
+Video: 
+[Instagram]()
+[YouTube]()
+
+Reading Material:
+- https://snorkel.ai/large-language-model-training-three-phases-shape-llm-training/
 
 
 
