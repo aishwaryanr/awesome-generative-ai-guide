@@ -94,7 +94,7 @@ YouTube: [https://www.youtube.com/@aishwaryanr4606](https://www.youtube.com/@ais
 ---
 
 # 🎉The course starts on July 8th 2024. Stay tuned!
-The videos will be available here everyday at 7:30 PM, Pacific
+The videos will be available here everyday at 7:30 PM, Pacific Time
 1. [Instagram](https://www.instagram.com/aish_reganti)
 2. [YouTube](https://www.youtube.com/playlist?list=PLZoalK-hTD4VBBF03HAifKd6-DF68sYlC)
 
