@@ -94,24 +94,15 @@ YouTube: [https://www.youtube.com/@aishwaryanr4606](https://www.youtube.com/@ais
 ---
 
 # 🎉The course starts on July 8th 2024. Stay tuned!
+The videos will be available here everyday at 7:30 PM, Pacific
+1. [Instagram](https://www.instagram.com/aish_reganti)
+2. [YouTube](https://www.youtube.com/playlist?list=PLZoalK-hTD4VBBF03HAifKd6-DF68sYlC)
 
-## 🗓️ Day 0: Course Introduction
-
----
-
-Video: [Day 0](https://www.instagram.com/reel/C83L8pjym4F/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==)
-
-Reading Material: None
 
 ## 🗓️ Day 1: What is Generative AI (July 8th, 2024)
 
 ---
 **Key Topics**: AI, Generative AI, Neural Networks, Large Language Models(LLMs), Model Training
-
-**Video**: 
-[Instagram](https://www.instagram.com/reel/C9L2xR9SuyY/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==)
-[YouTube](https://youtu.be/J9VWyxOSJzA)
-
 **Reading Material**:
 - https://medium.com/womenintechnology/ai-c3412c5aa0ac
 
@@ -119,13 +110,15 @@ Reading Material: None
 
 ---
 **Key Topics**: Training, Fine-Tuning, Reinforcement Learning, Alignment
-
-**Video**: 
-[Instagram]
-[YouTube]
-
 **Reading Material**:
 - https://snorkel.ai/large-language-model-training-three-phases-shape-llm-training/
+
+## 🗓️ Day 3: Basics of Prompt Engineering (July 10th, 2024) -- [Not Yet Released]
+
+---
+**Key Topics**: Prompting, Prompt Engineering
+**Reading Material**:
+- https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api
 
 
 
