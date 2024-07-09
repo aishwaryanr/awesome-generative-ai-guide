@@ -109,7 +109,7 @@ Reading Material: None
 **Key Topics**: AI, Generative AI, Neural Networks, Large Language Models(LLMs), Model Training
 
 **Video**: 
-[Instagram]()
+[Instagram](https://www.instagram.com/reel/C9L2xR9SuyY/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==)
 [YouTube](https://youtu.be/J9VWyxOSJzA)
 
 **Reading Material**:
