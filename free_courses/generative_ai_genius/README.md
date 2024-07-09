@@ -103,7 +103,7 @@ Video: [Day 0](https://www.instagram.com/reel/C83L8pjym4F/?utm_source=ig_web_cop
 
 Reading Material: None
 
-## 🗓️ Day 1: What is Generative AI
+## 🗓️ Day 1: What is Generative AI (July 8th, 2024)
 
 ---
 **Key Topics**: AI, Generative AI, Neural Networks, Large Language Models(LLMs), Model Training
@@ -115,14 +115,14 @@ Reading Material: None
 **Reading Material**:
 - https://medium.com/womenintechnology/ai-c3412c5aa0ac
 
-## 🗓️ Day 2: How are LLMs like ChatGPT Trained?
+## 🗓️ Day 2: How are LLMs like ChatGPT Trained? (July 9th, 2024)
 
 ---
 **Key Topics**: Training, Fine-Tuning, Reinforcement Learning, Alignment
 
 **Video**: 
-[Instagram]()
-[YouTube]()
+[Instagram]
+[YouTube]
 
 **Reading Material**:
 - https://snorkel.ai/large-language-model-training-three-phases-shape-llm-training/
