@@ -124,7 +124,7 @@ The videos will be available here everyday at 7:30 PM, Pacific Time
 - https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api
 
 
-## 🗓️ Day 4: Basics of Prompt Engineering (July 10th, 2024) -- [Not Yet Released]
+## 🗓️ Day 4: Basics of Prompt Engineering (July 11th, 2024) -- [Not Yet Released]
 
 ---
 **Key Topics**: Chain of Thought Prompting, Self-Refine, Self-Consistency, Zero-Shot, Few-Shot
