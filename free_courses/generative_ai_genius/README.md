@@ -103,6 +103,7 @@ The videos will be available here everyday at 7:30 PM, Pacific Time
 
 ---
 **Key Topics**: AI, Generative AI, Neural Networks, Large Language Models(LLMs), Model Training
+
 **Reading Material**:
 - https://medium.com/womenintechnology/ai-c3412c5aa0ac
 
@@ -110,15 +111,26 @@ The videos will be available here everyday at 7:30 PM, Pacific Time
 
 ---
 **Key Topics**: Training, Fine-Tuning, Reinforcement Learning, Alignment
+
 **Reading Material**:
 - https://snorkel.ai/large-language-model-training-three-phases-shape-llm-training/
 
-## 🗓️ Day 3: Basics of Prompt Engineering (July 10th, 2024) -- [Not Yet Released]
+## 🗓️ Day 3: Basics of Prompt Engineering (July 10th, 2024)
 
 ---
 **Key Topics**: Prompting, Prompt Engineering
+
 **Reading Material**:
 - https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api
+
+
+## 🗓️ Day 4: Basics of Prompt Engineering (July 10th, 2024) -- [Not Yet Released]
+
+---
+**Key Topics**: Chain of Thought Prompting, Self-Refine, Self-Consistency, Zero-Shot, Few-Shot
+
+**Reading Material**:
+- https://www.promptingguide.ai/techniques
 
 
 
