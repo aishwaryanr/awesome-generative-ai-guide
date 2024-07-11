@@ -124,13 +124,21 @@ The videos will be available here everyday at 7:30 PM, Pacific Time
 - https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api
 
 
-## 🗓️ Day 4: Basics of Prompt Engineering (July 11th, 2024) -- [Not Yet Released]
-
+## 🗓️ Day 4: Advanced Prompt Engineering (July 11th, 2024) 
 ---
 **Key Topics**: Chain of Thought Prompting, Self-Refine, Self-Consistency, Zero-Shot, Few-Shot
 
 **Reading Material**:
 - https://www.promptingguide.ai/techniques
+- [Optional] [The Prompt Report: A Systematic Survey of Prompting Techniques](https://arxiv.org/pdf/2406.06608)
+
+## 🗓️ Day 5: Automatic Prompt Engineering (July 12th, 2024) 
+---
+**Key Topics**: Meta Prompting, Automatic Prompt Engineeering
+
+**Reading Material**:
+- [Claude Meta Prompting Engine](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/prompt-generator)
+- https://cobusgreyling.medium.com/automatic-prompt-engineering-907e230ece0
 
 
 
