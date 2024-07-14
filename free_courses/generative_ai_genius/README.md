@@ -149,6 +149,19 @@ The videos will be available here everyday at 7:30 PM, Pacific Time
 **Reading Material**:
 - https://www.iguazio.com/glossary/llm-hallucination/
 
+---
+## Mini-Project 1 (Build a GPT-3.5 backed Chatbot)
+In this mini-project, you'll complete a 1 hour course from Deeplearning.AI that can help you build a chatbot that does the following
+- Summarizing (e.g., summarizing user reviews for brevity)
+- Inferring (e.g., sentiment classification, topic extraction)
+- Transforming text (e.g., translation, spelling & grammar correction)
+- Expanding (e.g., automatically writing emails)
+Prerequisites: Familiarity with Python
+The course is completely free for everyone to take. Please find it here: https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/
+Happy coding!!
+---
+
+
 
 
 
