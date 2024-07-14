@@ -140,6 +140,14 @@ The videos will be available here everyday at 7:30 PM, Pacific Time
 - [Claude Meta Prompting Engine](https://docs.anthropic.com/en/docs/build-with-claude/prompt-engineering/prompt-generator)
 - https://cobusgreyling.medium.com/automatic-prompt-engineering-907e230ece0
 
+## 🗓️ Day 6: LLM Hallucinations and Causes (July 13th, 2024) 
+---
+**Key Topics**: Hallucinations, Sycophancy, Causes of Hallucinations
+
+**Reading Material**:
+- https://www.iguazio.com/glossary/llm-hallucination/
+
+
 
 
 
