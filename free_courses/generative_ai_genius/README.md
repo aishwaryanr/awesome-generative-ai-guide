@@ -165,6 +165,22 @@ The course is completely free for everyone to take. Please find it [here](https:
 Happy coding!!
 
 ---
+## 🗓️ Day 7: Context Length (July 14th, 2024) 
+---
+**Key Topics**: Definition, Needle in a haystack test, Lost in the middle problem
+
+**Reading Material**:
+- https://agi-sphere.com/context-length/
+---
+
+## 🗓️ Day 8: Retrieval Augmented Generation (RAG) (July 15th, 2024) 
+---
+**Key Topics**: Basics, 4 Phases of RAG
+
+**Reading Material**:
+- https://blogs.nvidia.com/blog/what-is-retrieval-augmented-generation/
+
+---
 
 
 
