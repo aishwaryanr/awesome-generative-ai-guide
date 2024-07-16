@@ -181,6 +181,14 @@ Happy coding!!
 - https://blogs.nvidia.com/blog/what-is-retrieval-augmented-generation/
 
 ---
+## 🗓️ Day 9:What are embeddings (July 16th, 2024) 
+---
+**Key Topics**: Word Vectors/Embeddings, Semantic Similarity, Embeddings in RAG
+
+**Reading Material**:
+- https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/rag/rag-generating-embeddings
+
+---
 
 
 
