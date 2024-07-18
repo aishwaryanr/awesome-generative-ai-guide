@@ -192,6 +192,7 @@ Happy coding!!
 ## 🗓️ Day 10:What are vector databases? (July 17th, 2024) 
 ---
 **Key Topics**: Embeddings, Vector databases, Similarity search
+
 **Reading Material**:
 - https://www.pinecone.io/learn/vector-database/
 ---
