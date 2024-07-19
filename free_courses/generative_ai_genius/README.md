@@ -196,6 +196,32 @@ Happy coding!!
 **Reading Material**:
 - https://www.pinecone.io/learn/vector-database/
 ---
+## 🗓️ Day 11: LLM Evaluation (July 18th, 2024) 
+---
+**Key Topics**: Evaluation Dimensions
+
+**Reading Material**:
+- https://www.labellerr.com/blog/evaluating-large-language-models/#:~:text=To%20ensure%20a%20comprehensive%20evaluation,of%20a%20set%20of%20prompts.
+---
+## 🗓️ Day 12: Fine-Tuning(July 18th, 2024) 
+---
+**Key Topics**: Definition, Resources
+
+**Reading Material**:
+- https://learn.microsoft.com/en-us/ai/playbook/technology-guidance/generative-ai/working-with-llms/fine-tuning
+- https://www.superannotate.com/blog/llm-fine-tuning
+  
+**Notebooks and Coding Courses/Tutorials**:
+- https://github.com/aishwaryanr/awesome-generative-ai-guide?tab=readme-ov-file#fine-tuning-tutorials
+- [Training & Fine-Tuning LLMs for Production](https://learn.activeloop.ai/courses/llms) by Activeloop
+- [Finetuning Large Language Models](https://www.deeplearning.ai/short-courses/finetuning-large-language-models/) by DeepLearning.AI
+- [Tutorial to Fine-Tune Mistal on your own data](https://github.com/brevdev/notebooks/blob/main/mistral-finetune-own-data.ipynb) by Brev.Dev
+
+**Apps to generate AI videos (like the one I created)**
+- https://www.heygen.com/
+- https://www.synthesia.io/
+- https://www.tryparrotai.com/
+---
 
 
 
