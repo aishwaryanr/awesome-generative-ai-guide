@@ -203,7 +203,7 @@ Happy coding!!
 **Reading Material**:
 - https://www.labellerr.com/blog/evaluating-large-language-models/#:~:text=To%20ensure%20a%20comprehensive%20evaluation,of%20a%20set%20of%20prompts.
 ---
-## 🗓️ Day 12: Fine-Tuning(July 18th, 2024) 
+## 🗓️ Day 12: Fine-Tuning(July 19th, 2024) 
 ---
 **Key Topics**: Definition, Resources
 
