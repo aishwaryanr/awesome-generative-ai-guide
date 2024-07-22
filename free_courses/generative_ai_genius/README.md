@@ -222,9 +222,19 @@ Happy coding!!
 - https://www.synthesia.io/
 - https://www.tryparrotai.com/
 ---
+## 🗓️ Day 13: RLHF (July 20th, 2024) 
+---
+**Key Topics**: Definition, Alignment, Reward model
 
+**Reading Material**:
+- https://huggingface.co/blog/rlhf
+  
+## 🗓️ Day 14: AI projects for your resume (July 21th, 2024) 
+---
 
-
+**Reading Material**:
+- https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/gen_ai_projects.md
+  
 
 
 
