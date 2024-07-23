@@ -229,11 +229,17 @@ Happy coding!!
 **Reading Material**:
 - https://huggingface.co/blog/rlhf
   
-## 🗓️ Day 14: AI projects for your resume (July 21th, 2024) 
+## 🗓️ Day 14: AI projects for your resume (July 21st, 2024) 
 ---
 
 **Reading Material**:
 - https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/gen_ai_projects.md
+---
+## 🗓️ Day 15: LLM Agents (July 22nd, 2024) 
+---
+
+**Reading Material**:
+- https://developer.nvidia.com/blog/introduction-to-llm-agents/
   
 
 
