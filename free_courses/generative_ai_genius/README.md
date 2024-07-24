@@ -240,6 +240,13 @@ Happy coding!!
 
 **Reading Material**:
 - https://developer.nvidia.com/blog/introduction-to-llm-agents/
+---
+## 🗓️ Day 16: Adversarial Attacks (July 23rd, 2024) 
+---
+
+**Reading Material**:
+- https://www.discovermagazine.com/technology/adversarial-attack-makes-chatgpt-produce-objectionable-content
+- Jailbreaking paper shown in the video ([link](https://chats-lab.github.io/persuasive_jailbreaker/))
   
 
 
