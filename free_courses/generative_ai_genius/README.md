@@ -247,6 +247,13 @@ Happy coding!!
 **Reading Material**:
 - https://www.discovermagazine.com/technology/adversarial-attack-makes-chatgpt-produce-objectionable-content
 - Jailbreaking paper shown in the video ([link](https://chats-lab.github.io/persuasive_jailbreaker/))
+---
+## 🗓️ Day 17: Emerging AI Trends (July 24th, 2024) 
+---
+
+**Reading Material**:
+- https://www.forbes.com/sites/janakirammsv/2024/01/02/exploring-the-future-5-cutting-edge-generative-ai-trends-in-2024/
+- https://vmblog.com/archive/2023/12/14/kognic-2024-predictions-the-year-of-embodied-ai.aspx
   
 
 
