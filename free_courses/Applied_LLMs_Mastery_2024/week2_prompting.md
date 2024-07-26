@@ -2,9 +2,7 @@
 
 ## ETMI5: Explain to Me in 5
 
-In this section, we delve into the limitations of general AI models in specialized domains, underscoring the significance of domain-adapted LLMs. We explore the advantages of these models, including depth, precision, improved user experiences, and addressing privacy concerns.
-
-We introduce three types of domain adaptation methods: Domain-Specific Pre-Training, Domain-Specific Fine-Tuning, and Retrieval Augmented Generation (RAG). Each method is outlined, providing details on types, training durations, and quick summaries. We then explain each of these methods in further detail with real-world examples. In the end, we provide an overview of when RAG should be used as opposed to model updating methods.
+In the section on prompting, you will learn the basics of formulating effective prompts to guide language models in generating desired outputs. You will explore prompt engineering techniques to refine these prompts for improved performance in various applications. We'll  cover the importance of contextual understanding, leveraging training data patterns, and utilizing transfer learning. Advanced prompting methods like Chain-of-Thought and Tree-of-Thought will be introduced, highlighting their roles in enhancing reasoning capabilities. Additionally, the section will address the risks associated with prompting, such as bias and prompt hacking, and provide strategies to mitigate these risks.
 
 ## Introduction
 
