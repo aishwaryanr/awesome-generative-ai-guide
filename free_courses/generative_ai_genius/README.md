@@ -237,12 +237,14 @@ Happy coding!!
 ---
 ## 🗓️ Day 15: LLM Agents (July 22nd, 2024) 
 ---
+**Key Topics**: Planning, Memory, Tools
 
 **Reading Material**:
 - https://developer.nvidia.com/blog/introduction-to-llm-agents/
 ---
 ## 🗓️ Day 16: Adversarial Attacks (July 23rd, 2024) 
 ---
+**Key Topics**: Jailbreaking, Attacks
 
 **Reading Material**:
 - https://www.discovermagazine.com/technology/adversarial-attack-makes-chatgpt-produce-objectionable-content
@@ -250,11 +252,18 @@ Happy coding!!
 ---
 ## 🗓️ Day 17: Emerging AI Trends (July 24th, 2024) 
 ---
+**Key Topics**: SLMs, Multimodal Models, Agents, Embodied AI
 
 **Reading Material**:
 - https://www.forbes.com/sites/janakirammsv/2024/01/02/exploring-the-future-5-cutting-edge-generative-ai-trends-in-2024/
 - https://vmblog.com/archive/2023/12/14/kognic-2024-predictions-the-year-of-embodied-ai.aspx
-  
+---
+## 🗓️ Day 18: Small Language Models(July 25th, 2024) 
+---
+**Key Topics**: Knowledge distillation, Pruning, Quantization
+
+**Reading Material**:
+- https://aisera.com/blog/small-language-models/
 
 
 
