@@ -1,4 +1,4 @@
-# Generative AI Projects for your resume
+# Generative AI projects for your resume
 
 Boost your resume with these amazing Generative AI project ideas, each designed to provide practical experience and highlight your skills with the latest technologies. 
 
