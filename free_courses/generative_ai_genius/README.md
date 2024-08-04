@@ -268,11 +268,17 @@ Happy coding!!
 
 ## 🗓️ Day 19: AI Engineer Interview Tips Part 1(July 25th, 2024) 
 ---
+
 **Key Topics**: AI Engineer Skill Checklist
+
 ---
+
+
 ## 🗓️ Day 20: AI Engineer Interview Tips Part 2(July 25th, 2024) 
 ---
+
 **Key Topics**: AI Engineer Interview Structure
+
 ---
 
 
