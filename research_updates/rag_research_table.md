@@ -11,7 +11,7 @@ The concept of Retrieval-Augmented Generation (RAG) was introduced in 2021 throu
 6. **RAG Evaluation**: Assessment of the performance and effectiveness of RAG models.
 7. **RAG Embeddings**: Methods for developing better embedding techniques optimized for RAG or retrieval in RAG.
 8. **Input Processing for RAG**:Techniques for preprocessing input data to optimize the performance and effectiveness of RAG models.
-9. ** RAG Framework **: An open-sourced tool/framework that can be used to implement RAG pipelines
+9. **RAG Framework**: An open-sourced tool/framework that can be used to implement RAG pipelines
 
 This table will continue to be updated regularly, so stay tuned for more updates!
 
