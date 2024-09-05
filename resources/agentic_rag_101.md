@@ -113,6 +113,16 @@ Agentic RAG systems can be classified based on how agents operate and the comple
     - This type is beneficial for highly complex tasks, where strategic decision-making is required at multiple levels. For example, hierarchical Agentic RAG is useful in systems that need to prioritize certain data sources or balance competing priorities.
 
 ---
+### Section 5: Implementing Agentic RAG
+
+Here are some resources you can use to get started with implementing Agentic RAG.
+
+1. https://medium.com/the-ai-forum/implementing-agentic-rag-using-langchain-b22af7f6a3b5
+2. https://github.com/benitomartin/agentic-rag-langchain-pinecone
+3. https://www.llamaindex.ai/blog/agentic-rag-with-llamaindex-2721b8a49ff6
+4. https://docs.llamaindex.ai/en/stable/examples/agent/agentic_rag_using_vertex_ai/
+5. 
+---
 
 ### Section 6: Agentic RAG Challenges and Future Directions
 
