@@ -1,6 +1,6 @@
 # Untitled
 
-![Screenshot 2024-09-05 at 2.43.16 PM.png](Untitled%20966c677209954fd09efe41e895997ec7/Screenshot_2024-09-05_at_2.43.16_PM.png)
+![main_agentic_rag.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/img/main_agentic_rag.png)
 
 Agentic Retrieval Augmented Generation or Agentic RAG is quickly becoming a popular approach in AI, as it combines the strengths of retrieval systems with the smart decision-making of agents. This makes it possible for large language models (LLMs) to pull in real-time data and use it to improve their answers. By doing this, these systems become more flexible and can handle more complex, ever-changing tasks.
 
@@ -20,7 +20,7 @@ When **RAG and agents** are combined, the agents take charge of the entire proce
 
 The table below provides a clear overview of how **Agents**, **RAG**, and **Agentic RAG** differ in terms of their key features and functionalities:
 
-![Screenshot 2024-09-05 at 2.40.09 PM.png](Untitled%20966c677209954fd09efe41e895997ec7/Screenshot_2024-09-05_at_2.40.09_PM.png)
+![differences.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/img/differences.png)
 
 **How Agentic RAG Works – Step-by-Step Example**
 
