@@ -1,4 +1,3 @@
-# Untitled
 
 ![main_agentic_rag.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/img/main_agentic_rag.png)
 
