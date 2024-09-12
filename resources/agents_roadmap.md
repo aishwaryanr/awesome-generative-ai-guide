@@ -61,6 +61,9 @@ Choose any one of these resources and follow the implementation guide in them to
 3. The Complete Guide to Building AI Agents for Beginners by VRSEN([link](https://www.youtube.com/watch?v=MOyl58VF2ak))
 4. Building a LangChain Custom Medical Agent with Memory by ****Sam Witteveen ([link](https://www.youtube.com/watch?v=6UFtRwWnHws))
 5. Langchain Agents [2024 UPDATE] - Beginner Friendly by Ryan Nolan Data ([link](https://www.youtube.com/watch?v=WVUITosaG-g))
+6. AI Agents in LangGraph course by Deeplearning.AI ([Link](https://www.deeplearning.ai/short-courses/ai-agents-in-langgraph/))
+7. Multi-agent Conversation Framework on Microsoft Autogen ([Link](https://microsoft.github.io/autogen/docs/Use-Cases/agent_chat/))
+
 
 ---
 
