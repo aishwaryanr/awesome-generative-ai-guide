@@ -282,6 +282,9 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 5. [Multi AI Agent Systems with crewAI](https://www.deeplearning.ai/short-courses/multi-ai-agent-systems-with-crewai/) by Deeplearning.AI
 6. [Building Agentic RAG with LlamaIndex](https://www.deeplearning.ai/short-courses/building-agentic-rag-with-llamaindex/) by Deeplearning.AI
 7. [LLM Observability: Agents, Tools, and Chains](https://courses.arize.com/p/agents-tools-and-chains) by Arize AI
+8. [Building Agentic RAG with LlamaIndex](https://www.deeplearning.ai/short-courses/building-agentic-rag-with-llamaindex/) by Deeplearning.AI
+9. [Agents Tools & Function Calling with Amazon Bedrock (How-to)](https://www.youtube.com/watch?app=desktop&v=2L_XE6g3atI) by AWS Developers
+10. [ChatGPT & Zapier: Agentic AI for Everyone](https://www.coursera.org/learn/agentic-ai-chatgpt-zapier) by Coursera
 
 
 
