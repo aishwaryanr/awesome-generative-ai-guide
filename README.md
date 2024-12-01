@@ -342,6 +342,7 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 - [LLM Applications for production](https://github.com/ray-project/llm-applications/tree/main) by ray-project
 - [LLM tutorials](https://github.com/ollama/ollama/tree/main/examples) by Ollama
 - [LLM Hub](https://github.com/mallahyari/llm-hub) by mallahyari
+- [RAG cookbook](https://docs.camel-ai.org/cookbooks/agents_with_rag.html) by CAMEL-AI
 
 #### Fine-Tuning Tutorials
 
