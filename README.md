@@ -19,7 +19,7 @@ Happy Learning!
 
 ---
 
-## 🌟🌟 Repo of the Month!
+## 🌟🌟 Repo of the Month<sup>**</sup>!
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/c71db8f5-658c-48d6-9125-3a1718c465c3" alt="image" width="200">
@@ -27,6 +27,8 @@ Happy Learning!
 
 Opik is an open-source framework for evaluating LLM systems. Designed to support RAG chatbots, code assistants, and agentic pipelines, it provides tools for tracing, evaluations, and dashboards to help improve performance and efficiency.
 Link: https://github.com/comet-ml/opik
+
+---
 
 ## :speaker: Announcements
 
@@ -385,3 +387,7 @@ year = {2024}
 ## License
 
 [MIT License]
+
+
+
+<sup>**</sup> This section is sponsored. We do not endorse or guarantee the product/service and are not responsible for any issues arising from its use. Please evaluate and use at your discretion.
