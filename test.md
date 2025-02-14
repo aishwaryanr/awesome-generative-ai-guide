@@ -19,9 +19,12 @@ This project uses a **multimodal LLM** for medical image analysis and diagnostic
 
 **Multimodal AI**, medical image analysis, diagnostic applications.
 
-### **Resources**:
+### **Resources:**
 
-(No direct URL provided in the sources, but search for tutorials on GPT-4 Vision for medical applications).
+- [Tutorial](https://www.youtube.com/watch?v=SzUGQMx0dkw)
+- [Code](https://github.com/AIAnytime/Medical-Help-App-using-GPT-4V)
+
+
 
 ---
 
@@ -39,7 +42,9 @@ This project focuses on developing a system that can answer questions based on v
 
 ### **Resources**:
 
-(No direct URL provided in the sources, but search for tutorials on IDEFICS 9B for VQA applications).
+- [Tutorial](https://www.youtube.com/watch?v=hyP1ekLKtiI)
+- [Code](https://github.com/AIAnytime/Fine-Tuning-Multimodal-LLM)
+- [HF Model](https://huggingface.co/HuggingFaceM4/idefics-9b-instruct)
 
 ---
 
@@ -55,9 +60,10 @@ This project involves creating a voice assistant that can understand and respond
 
 **Multimodal AI**, voice recognition, natural language processing, assistant applications.
 
-### **Resources**:
+### **Resources:**
 
-(No direct URL provided in the sources, but search for tutorials on "Llava" and Whisper for multimodal voice assistants).
+- [Tutorial](https://www.youtube.com/watch?v=77dJJBFPLpY)
+- [Code](https://github.com/AIAnytime/Multimodal-AI-App-using-Llava-7B)
 
 ---
 
@@ -73,9 +79,11 @@ This project focuses on building a model specialized for **optical character rec
 
 **OCR**, VQA, multimodal models, image and text processing.
 
-### **Resources**:
+### **Resources:**
 
-(No direct URL provided in the sources, but search for tutorials on Qwen2-VL for OCR and VQA).
+- [Tutorial](https://www.youtube.com/watch?v=lPlJR1xVF8c)
+- [Code](https://github.com/AIAnytime/Qwen2-VL-for-OCR-VQA)
+- [HF Model](https://huggingface.co/Qwen/Qwen2-VL-2B-Instruct)
 
 ---
 
@@ -91,9 +99,10 @@ This project is about creating an application that allows users to interact with
 
 Video understanding, **multimodal AI**, question answering.
 
-### **Resources**:
+### **Resources:**
 
-(No direct URL provided in the sources, but search for tutorials on Qwen2-VL for video understanding).
+- [Tutorial](https://www.youtube.com/watch?v=AAgx5p6vmTs)
+- [Code](https://github.com/AIAnytime/Chat-with-Video-using-Qwen2-VL)
 
 ---
 
@@ -109,9 +118,10 @@ This project combines **multimodal models with Retrieval Augmented Generation** 
 
 **Multimodal RAG**, image and text processing, retrieval systems.
 
-### **Resources**:
+### **Resources:**
 
-(No direct URL provided in the sources, but search for tutorials on multimodal RAG with Qwen-2 and ColPali).
+- [Tutorial](https://www.youtube.com/watch?v=XfPu044sCRI)
+- [Code](https://github.com/AIAnytime/MultiModal-RAG-using-Qwen-2-VL-and-Colpali)
 
 ---
 
@@ -127,9 +137,10 @@ This project uses a smaller model, **Janus 1.3B**, for image generation and retr
 
 Image generation, **RAG**, smaller LLM implementation.
 
-### **Resources**:
+### **Resources:**
 
-(No direct URL provided in the sources, but search for tutorials on Janus 1.3B for image generation and RAG).
+- [Tutorial](https://www.youtube.com/watch?v=WWrr8l82ZUU)
+- [Code](https://github.com/AIAnytime/Janus-1.3B)
 
 ---
 
@@ -145,9 +156,10 @@ This project is focused on video understanding, allowing users to chat, search, 
 
 Video processing, summarization, search, **multimodal models**.
 
-### **Resources**:
+### **Resources:**
 
-(No direct URL provided in the sources, but search for tutorials on video understanding with vision AI).
+- [Tutorial](https://www.youtube.com/watch?v=mahUBKhFvRQ)
+- [Code](https://github.com/AIAnytime/Qwen-2-VL-Video-Analysis)
 
 ---
 
@@ -163,9 +175,10 @@ This project involves developing a model to automate radiology reporting, integr
 
 **Multimodal AI**, medical imaging, report generation.
 
-### **Resources**:
+### **Resources:**
 
-(No direct URL provided in the sources, but search for tutorials on multimodal AI for radiology reporting).
+- [Tutorial](https://www.youtube.com/watch?v=Dp4ytX_gE0w)
+- [Code](https://github.com/AIAnytime/AI-based-Radiology-Reporting)
 
 ---
 
@@ -181,9 +194,10 @@ This project builds a system that allows for querying of video content using **L
 
 Video processing, **RAG**, vector databases, LlamaIndex.
 
-### **Resources**:
+### **Resources:**
 
-(No direct URL provided in the sources, but search for tutorials on multimodal RAG with LanceDB and LlamaIndex).
+- [Tutorial](https://www.youtube.com/watch?v=pvrioGzF-6s)
+- [Code](https://github.com/sunnysavita10/Generative-AI-Indepth-Basic-to-Advance/blob/main/MultiModal%20RAG/MultiModal_RAG_with_llamaIndex_and_LanceDB.ipynb)
 
 ---
 
@@ -199,8 +213,10 @@ This project involves extracting information from images, tables, and text from 
 
 **Multimodal AI**, real-time processing, data extraction.
 
-### **Resources**:
+### **Resources:**
 
+- [Tutorial](https://www.youtube.com/watch?v=SzUGQMx0dkw)
+- [Code](https://github.com/AIAnytime/Medical-Help-App-using-GPT-4V)
 
 
 ---
