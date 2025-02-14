@@ -5,7 +5,6 @@ Boost your resume with these amazing Generative AI project ideas, each designed 
 
 Here's a breakdown of each project, relevant tutorials, and code to help you get started and the skills you'll develop.
 
-Okay, here are some projects from the sources, formatted as you requested, with difficulty levels based on our previous discussion:
 
 ## 1. Medical Diagnostics App with GPT-4 Vision
 
