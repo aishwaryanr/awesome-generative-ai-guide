@@ -300,7 +300,8 @@ This project is about tailoring a smaller language model, **Phi-2**, for specifi
 
 ### **Resources**:
 
-(No direct URL provided in the sources, but search for tutorials on fine-tuning Phi-2).
+- [Tutorial](https://www.youtube.com/watch?v=eLy74j0KCrY)
+- [Code](https://github.com/AIAnytime/Phi-2-Fine-Tuning)
 
 ---
 
@@ -318,7 +319,8 @@ This project focuses on adapting the **IDEFICS 9B** model for visual question an
 
 ### **Resources**:
 
-(No direct URL provided in the sources, but search for tutorials on fine-tuning IDEFICS 9B for VQA).
+- [Tutorial](https://www.youtube.com/watch?v=usoTCfyQxjU)
+- [Code](https://github.com/AIAnytime/Fine-Tuning-Multimodal-LLM)
 
 ---
 
@@ -336,7 +338,8 @@ This project involves using **QLoRA** to fine-tune the multimodal **Idefics 2** 
 
 ### **Resources**:
 
-(No direct URL provided in the sources, but search for tutorials on fine-tuning Idefics 2 with QLoRA).
+- [Tutorial](https://www.youtube.com/watch?v=8GWmu99-sjA)
+- [Code](https://github.com/AIAnytime/Fine-Tune-Multimodal-LLM-Idefics-2)
 
 ---
 
@@ -353,6 +356,9 @@ This project involves fine-tuning the **Qwen2 VL model** for specific applicatio
 **Multimodal fine-tuning**, **Llama Factory**, model adaptation.
 
 ### **Resources**:
+
+- [Tutorial](https://www.youtube.com/watch?v=5IqkZ_yms4k)
+- [Code](https://github.com/AIAnytime/Qwen2-VL-Fine-Tuning)
 
 
 
@@ -372,7 +378,8 @@ This project uses fine-tuning techniques to create a medical diagnosis model tha
 
 ### **Resources**:
 
-(No direct URL provided in the sources, but search for tutorials on ReFT for medical diagnosis LLMs).
+- [Tutorial](https://www.youtube.com/watch?v=DcFv3APc8E8)
+- [Code](https://github.com/AIAnytime/ReFT-Fine-Tuning)
 
 ---
 
@@ -390,13 +397,14 @@ This project involves training the **DeepSeek model** on a custom dataset to tai
 
 ### **Resources**:
 
-(No direct URL provided in the sources, but search for tutorials on fine-tuning the DeepSeek model).
+- [Tutorial](https://www.youtube.com/watch?v=ZqoZDI0p1aI)
+- [Code](https://github.com/AIAnytime/Fine-Tune-DeepSeek)
 
 ---
 
 ## 21. GRPO Crash Course: Fine-Tuning DeepSeek for MATH!
 
-### **Difficulty Level**: 3/5
+### **Difficulty Level**: 1/5
 
 ### **Description**:
 
@@ -408,7 +416,8 @@ This project is focused on optimizing the **DeepSeek model** for math-related ta
 
 ### **Resources**:
 
-(No direct URL provided in the sources, but search for tutorials on GRPO for fine-tuning math LLMs).
+- [Tutorial](https://www.youtube.com/watch?v=8bIeSJ1WnC0)
+- [Code](https://github.com/AIAnytime/GRPO-explained-like-ELI5)
 
 ---
 
@@ -426,7 +435,8 @@ This project involves optimizing the **Llama 3 model** using the **ORPO techniqu
 
 ### **Resources**:
 
-(No direct URL provided in the sources, but search for tutorials on fine-tuning Llama 3 with ORPO).
+- [Tutorial](https://www.youtube.com/watch?v=nPIGVaYPQAg)
+- [Code](https://github.com/AIAnytime/Llama-3-ORPO-Fine-Tuning)
 
 ---
 
@@ -444,13 +454,14 @@ This project creates a model specifically for identifying disease symptoms. It i
 
 ### **Resources**:
 
-(No direct URL provided in the sources, but search for tutorials on training LLMs for disease symptoms).
+- [Tutorial](https://www.youtube.com/watch?v=1ILVm4IeNY8)
+- [Code](https://github.com/AIAnytime/Training-Small-Language-Model)
 
 ---
 
 ## 24. Make LLM Fine Tuning 5x Faster with Unsloth
 
-### **Difficulty Level**: 4/5
+### **Difficulty Level**: 2/5
 
 ### **Description**:
 
@@ -462,7 +473,9 @@ This project aims to improve **LLM fine-tuning speeds** by using **Unsloth**. It
 
 ### **Resources**:
 
-(No direct URL provided in the sources, but search for tutorials on using Unsloth to speed up fine-tuning).
+
+- [Tutorial](https://www.youtube.com/watch?v=sIFokbuATX4)
+- [Code](https://github.com/AIAnytime/Unsloth-Fine-Tuning)
 
 ---
 
@@ -480,7 +493,8 @@ This project is about fine-tuning large language models using multiple GPUs with
 
 ### **Resources**:
 
-(No direct URL provided in the sources, but search for tutorials on multi-GPU fine-tuning with DeepSpeed and Accelerate).
+- [Tutorial](https://www.youtube.com/watch?v=XWkUC1Y72Yc)
+- [Code](https://github.com/AIAnytime/Multi-GPU-Fine-Training-LLMs)
 
 ---
 # RAG (Retrieval Augmented Generation) Projects
