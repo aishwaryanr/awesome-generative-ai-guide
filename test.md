@@ -9,7 +9,7 @@ Here's a breakdown of each project, relevant tutorials, and code to help you get
 # Multimodal LLM Applications	
 ## 1. Medical Diagnostics App with GPT-4 Vision
 
-### **Difficulty Level**: 4/5
+### **Difficulty Level**: 3/5
 
 ### **Description**:
 
@@ -30,7 +30,7 @@ This project uses a **multimodal LLM** for medical image analysis and diagnostic
 
 ## 2. Visual Question Answering with IDEFICS 9B
 
-### **Difficulty Level**: 4/5
+### **Difficulty Level**: 3/5
 
 ### **Description**:
 
@@ -69,7 +69,7 @@ This project involves creating a voice assistant that can understand and respond
 
 ## 4. OCR & VQA with Qwen2-VL
 
-### **Difficulty Level**: 4/5
+### **Difficulty Level**: 3/5
 
 ### **Description**:
 
@@ -89,7 +89,7 @@ This project focuses on building a model specialized for **optical character rec
 
 ## 5. Chat with Video File using Qwen2 VL
 
-### **Difficulty Level**: 4/5
+### **Difficulty Level**: 3/5
 
 ### **Description**:
 
@@ -127,7 +127,7 @@ This project combines **multimodal models with Retrieval Augmented Generation** 
 
 ## 7. Janus 1.3B for Image Generation and RAG
 
-### **Difficulty Level**: 4/5
+### **Difficulty Level**: 3/5
 
 ### **Description**:
 
@@ -146,7 +146,7 @@ Image generation, **RAG**, smaller LLM implementation.
 
 ## 8. Chat, Search & Summarize any Video using Vision AI Model
 
-### **Difficulty Level**: 4/5
+### **Difficulty Level**: 2/5
 
 ### **Description**:
 
@@ -165,7 +165,7 @@ Video processing, summarization, search, **multimodal models**.
 
 ## 9. Multimodal AI Model for Radiology Reporting
 
-### **Difficulty Level**: 4/5
+### **Difficulty Level**: 3/5
 
 ### **Description**:
 
@@ -184,7 +184,7 @@ This project involves developing a model to automate radiology reporting, integr
 
 ## 10. MultiModal RAG Application Using LanceDB and LlamaIndex for Video Processing
 
-### **Difficulty Level**: 4/5
+### **Difficulty Level**: 3/5
 
 ### **Description**:
 
@@ -243,7 +243,7 @@ This project is about creating a summarization application that processes differ
 
 ## 13. Realtime Multimodal RAG Usecase with Google Gemini-Pro-Vision and Langchain
 
-### **Difficulty Level**: 4/5
+### **Difficulty Level**: 2/5
 
 ### **Description**:
 
@@ -288,7 +288,7 @@ This project creates an **ATS** that leverages multimodal models to process resu
 
 ## 15. Fine Tune Phi-2 Model on Your Dataset
 
-### **Difficulty Level**: 4/5
+### **Difficulty Level**: 3/5
 
 ### **Description**:
 
@@ -345,7 +345,7 @@ This project involves using **QLoRA** to fine-tune the multimodal **Idefics 2** 
 
 ## 18. Fine Tune Qwen2 VL Model using Llama Factory
 
-### **Difficulty Level**: 4/5
+### **Difficulty Level**: 3/5
 
 ### **Description**:
 
@@ -385,7 +385,7 @@ This project uses fine-tuning techniques to create a medical diagnosis model tha
 
 ## 20. Fine Tune DeepSeek Model on your Custom Dataset
 
-### **Difficulty Level**: 4/5
+### **Difficulty Level**: 3/5
 
 ### **Description**:
 
@@ -423,7 +423,7 @@ This project is focused on optimizing the **DeepSeek model** for math-related ta
 
 ## 22. Fine Tune Llama 3 using ORPO
 
-### **Difficulty Level**: 4/5
+### **Difficulty Level**: 3/5
 
 ### **Description**:
 
@@ -442,7 +442,7 @@ This project involves optimizing the **Llama 3 model** using the **ORPO techniqu
 
 ## 23. Train a Small Language Model for Disease Symptoms
 
-### **Difficulty Level**: 4/5
+### **Difficulty Level**: 3/5
 
 ### **Description**:
 
@@ -481,7 +481,7 @@ This project aims to improve **LLM fine-tuning speeds** by using **Unsloth**. It
 
 ## 25. Multi GPU Fine Tuning of LLM using DeepSpeed and Accelerate
 
-### **Difficulty Level**: 4/5
+### **Difficulty Level**: 3/5
 
 ### **Description**:
 
