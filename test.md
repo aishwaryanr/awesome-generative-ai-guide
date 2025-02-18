@@ -500,207 +500,10 @@ This project is about fine-tuning large language models using multiple GPUs with
 # RAG (Retrieval Augmented Generation) Projects
 ---
 
-## 26. Hybrid Search (Keyword + Vector Search)
 
-### **Difficulty Level**: 4/5
+## 37. End To End Advanced RAG Project using Open Source LLM Models And Groq Inferencing engine
 
-### **Description**:
-
-This project is a RAG system that combines both keyword and vector search for improved retrieval. It uses advanced techniques for retrieval.
-
-### **Skills Gained**:
-
-**RAG**, hybrid search, vector search, keyword search.
-
-### **Resources**:
-
-
-
----
-
-## 27. Reranking with Sentence Transformers and BM25 API
-
-### **Difficulty Level**: 4/5
-
-### **Description**:
-
-This project implements reranking techniques using **Sentence Transformers and the BM25 API** to improve the relevance of retrieved documents. It adds advanced retrieval techniques to RAG.
-
-### **Skills Gained**:
-
-**RAG**, reranking, **Sentence Transformers**, **BM25**.
-
-### **Resources**:
-
-
-
----
-
-## 28. Reranking with Cross Encoders, and Cohere API
-
-### **Difficulty Level**: 4/5
-
-### **Description**:
-
-This project uses cross-encoders and the **Cohere API** for reranking retrieved documents. It uses advanced retrieval techniques and APIs for RAG.
-
-### **Skills Gained**:
-
-**RAG**, reranking, cross-encoders, **Cohere API**.
-
-### **Resources**:
-
-
-
----
-
-## 29. Merger Retriever and LongContextReorder
-
-### **Difficulty Level**: 4/5
-
-### **Description**:
-
-This project is a RAG system that addresses the "lost in the middle" issue by reordering the document. It will require understanding the problems with long context models.
-
-### **Skills Gained**:
-
-**RAG**, document reordering, retrieval optimization.
-
-### **Resources**:
-
-(No direct URL provided in the sources, but search for tutorials on Merger Retriever and LongContextReorder).
-
----
-
-## 30. RAG Fusion
-
-### **Difficulty Level**: 4/5
-
-### **Description**:
-
-This project combines retrieval results using **RRF**. It will require understanding fusion and RRF techniques.
-
-### **Skills Gained**:
-
-**RAG**, result fusion, **RRF**.
-
-### **Resources**:
-
-(No direct URL provided in the sources, but search for tutorials on RAG fusion).
-
----
-
-## 31. Flash Reranker for Superfast Reranking
-
-### **Difficulty Level**: 4/5
-
-### **Description**:
-
-This project creates a RAG application that prioritizes the speed of reranking. It will require understanding of reranking and optimization.
-
-### **Skills Gained**:
-
-**RAG**, reranking, performance optimization.
-
-### **Resources**:
-
-
-
----
-
-## 32. Langchain Contextual Compression Retriever
-
-### **Difficulty Level**: 4/5
-
-### **Description**:
-
-This project uses **Langchain** to compress the context before retrieval, improving efficiency. It requires an understanding of Langchain as well as context compression techniques.
-
-### **Skills Gained**:
-
-**RAG**, **Langchain**, context compression, efficient retrieval.
-
-### **Resources**:
-
-(No direct URL provided in the sources, but search for tutorials on Langchain Contextual Compression Retriever).
-
----
-
-## 33. Self Querying Retriever
-
-### **Difficulty Level**: 4/5
-
-### **Description**:
-
-This project involves implementing self-querying techniques to enhance the retrieval process. This is an advanced retrieval technique.
-
-### **Skills Gained**:
-
-**RAG**, self-querying retrieval, query optimization.
-
-### **Resources**:
-
-
-
----
-
-## 34. Parent Document Retriever
-
-### **Difficulty Level**: 4/5
-
-### **Description**:
-
-This project is a RAG system using a parent document retriever to improve retrieval from documents with hierarchical content. It requires an understanding of hierarchical documents and advanced retrieval methods.
-
-### **Skills Gained**:
-
-**RAG**, hierarchical document retrieval, parent document retrieval.
-
-### **Resources**:
-
-
-
----
-
-## 35. Sentence Window Retriever
-
-### **Difficulty Level**: 4/5
-
-### **Description**:
-
-This project is a retrieval system using **LlamaIndex** and **qdrant**. It requires an understanding of these tools for RAG.
-
-### **Skills Gained**:
-
-**RAG**, **LlamaIndex**, sentence window retrieval, qdrant.
-
-### **Resources**:
-
-
-
----
-
-## 36. Merger Retriever and Hypothetical Document Embeddings(HyDE)
-
-### **Difficulty Level**: 4/5
-
-### **Description**:
-
-This project employs hypothetical document embeddings to improve the relevance of retrieved documents. It uses advanced techniques such as HyDE.
-
-### **Skills Gained**:
-
-**RAG**, hypothetical document embeddings, **HyDE**, merger retrieval.
-
-### **Resources**:
-
-
-
----
-
-## 37. End-to-End RAG Pipeline
-
-### **Difficulty Level**: 5/5
+### **Difficulty Level**: 3/5
 
 ### **Description**:
 
@@ -712,13 +515,16 @@ This project involves creating a full RAG pipeline with ingestion, retrieval, an
 
 ### **Resources**:
 
+- [Tutorial](https://www.youtube.com/watch?v=QQdiHrIc84o)
+- [Code](https://github.com/krishnaik06/Updated-Langchain/tree/main/groq)
+
 
 
 ---
 
 ## 38. RAG Pipeline from Scratch Using OLlama Python & Llama2
 
-### **Difficulty Level**: 3/5
+### **Difficulty Level**: 2/5
 
 ### **Description**:
 
@@ -729,6 +535,9 @@ This project builds a RAG pipeline using **OLlama, Python, and Llama 2**. It use
 **RAG**, **OLlama**, **Llama 2**, Python.
 
 ### **Resources**:
+
+- [Tutorial](https://www.youtube.com/watch?v=7k7tfxO4Zpw)
+- [Code](https://github.com/sunnysavita10/Generative-AI-Indepth-Basic-to-Advance/blob/main/RAG%20Pipeline%20from%20Scratch/RAG_Implementation_from%20_Scartch.ipynb)
 
 
 
@@ -748,6 +557,9 @@ This project implements RAG using **Langchain, OpenAI, and the FAISS vector data
 
 ### **Resources**:
 
+- [Tutorial](https://www.youtube.com/watch?v=y_act32Gjbc)
+- [Code](https://github.com/sunnysavita10/Generative-AI-Indepth-Basic-to-Advance/blob/90dfa5f67e97466079592ca2294d4fdd06e8ae5e/RAG%20App%20using%20Langchain%20OpenAI%20FAISS/RAG_Application_using_Langchain_OpenAI_API_and_FAISS.ipynb#L4)
+
 
 
 ---
@@ -765,6 +577,9 @@ This project uses **Mistral AI and Weviate** as part of the RAG architecture. It
 **RAG**, **Langchain**, **Mistral AI**, **Weaviate**.
 
 ### **Resources**:
+
+- [Tutorial](https://www.youtube.com/watch?v=TzQjqygMdz4)
+- [Code](https://github.com/sunnysavita10/Generative-AI-Indepth-Basic-to-Advance/blob/90dfa5f67e97466079592ca2294d4fdd06e8ae5e/RAG%20App%20using%20Langchain%20Mistral%20Weaviate/RAG_Application_Using_LangChain_Mistral_and_Weviate.ipynb)
 
 
 
@@ -784,6 +599,9 @@ This project utilizes **LlamaIndex and Mistral-AI** for a RAG system. It uses Ll
 
 ### **Resources**:
 
+- [Tutorial](https://www.youtube.com/watch?v=k18ab5HoHf8&t=1687s)
+- [Code](https://github.com/sunnysavita10/Generative-AI-Indepth-Basic-to-Advance/blob/90dfa5f67e97466079592ca2294d4fdd06e8ae5e/RAG%20App%20using%20LLAMAINDEX%20%26%20MistralAI/RAG_Application_Using_LlamaIndex_and_Mistral_AI.ipynb)
+
 
 
 ---
@@ -802,13 +620,16 @@ This project builds a RAG pipeline with the **Haystack framework and OpenAI**. I
 
 ### **Resources**:
 
+- [Tutorial](https://www.youtube.com/watch?v=th8WpWtxad0)
+- [Code]https://github.com/sunnysavita10/Generative-AI-Indepth-Basic-to-Advance/blob/main/RAG%20App%20using%20Haystack%20%26%20OpenAI/RAG_Application_Using_Haystack_and_OpenAI.ipynb)
+
 
 
 ---
 
 ## 43. RAG Application Using Haystack MistralAI Pinecone & FastAPI
 
-### **Difficulty Level**: 4/5
+### **Difficulty Level**: 5/5
 
 ### **Description**:
 
@@ -819,6 +640,9 @@ This project uses **Haystack, MistralAI, Pinecone, and FastAPI** to create an en
 **RAG**, **Haystack**, **MistralAI**, **Pinecone**, **FastAPI**.
 
 ### **Resources**:
+
+- [Tutorial](https://www.youtube.com/watch?v=5topvo0a4uY)
+- [Code](https://github.com/sunnysavita10/RAG-With-Haystack-MistralAI-Pinecone)
 
 
 
@@ -838,6 +662,9 @@ This project implements a RAG application with **Hugging Face, Google Gemma, and
 
 ### **Resources**:
 
+- [Tutorial](https://www.youtube.com/watch?v=dUWhUdW79Xs)
+- [Code](https://github.com/AIAnytime/ReFT-Fine-Tuning)
+
 
 
 ---
@@ -855,6 +682,10 @@ This project is a RAG pipeline for real-time applications using **MongoDB and Pi
 **RAG**, real-time processing, **MongoDB**, **Pinecone**.
 
 ### **Resources**:
+
+- [Tutorial-Part1](https://www.youtube.com/watch?v=dUWhUdW79Xs)
+- [Tutorial-Part2](https://www.youtube.com/watch?v=jAMYesZmGmw)
+- [Code](https://github.com/sunnysavita10/Generative-AI-Indepth-Basic-to-Advance/blob/main/MongoDB%20with%20Pinecone/Mongodb_with_Pinecone_Realtime_RAG_Pipeline_yt.ipynb)
 
 
 
@@ -874,6 +705,9 @@ This project creates a chatbot that can process multiple document types using **
 
 ### **Resources**:
 
+- [Tutorial](https://www.youtube.com/watch?v=WWorF-UMCKw)
+- [Code](https://github.com/sunnysavita10/Generative-AI-Indepth-Basic-to-Advance/blob/main/Chat%20with%20Multiple%20Doc%20using%20Astradb%20and%20Langchain/Chat_With_Multiple_Doc(pdfs%2C_docs%2C_txt%2C_pptx)_using_AstraDB_and_Langchain.ipynb)
+
 
 
 ---
@@ -892,13 +726,14 @@ This project uses **Vertex AI, AstraDB, and Langchain** to build a multimodal RA
 
 ### **Resources**:
 
-(No direct URL provided in the sources, but search for tutorials on multimodal RAG with Vertex AI, AstraDB, and Langchain).
+- [Tutorial](https://www.youtube.com/watch?v=zxxwGYx4bvU)
+- [Code](https://github.com/sunnysavita10/Generative-AI-Indepth-Basic-to-Advance/blob/main/MultiModal%20RAG/MultiModal%20RAG%20using%20Vertex%20AI%20AstraDB(Cassandra)%C2%A0%26%C2%A0Langchain.ipynb)
 
 ---
 
 ## 48. RAG Based Chatbot With Memory(Chat History)
 
-### **Difficulty Level**: 3/5
+### **Difficulty Level**: 2/5
 
 ### **Description**:
 
@@ -909,6 +744,136 @@ This project creates a RAG-based chatbot with chat history. It includes the extr
 **RAG**, chatbots, chat history management, memory implementation.
 
 ### **Resources**:
+
+- [Tutorial](https://www.youtube.com/watch?v=WMFuxUZiUCE)
+- [Code](https://github.com/sunnysavita10/Generative-AI-Indepth-Basic-to-Advance/blob/main/RAG_with_Conversation.ipynb)
+
+---
+
+# Agentic RAG Projects
+
+---
+
+## 1. AI Agents from Scratch using Open Source AI
+
+### **Difficulty Level**: 3/5
+
+### **Description**:
+
+This project is about how to build AI agents from scratch using open-source AI tools. Whether you’re a beginner or have some experience, you’ll learn how to create agents that can summarize, write, and sanitize sensitive information—all without relying on pre-built frameworks. Dive into hands-on coding with me as we leverage powerful open-source resources! plication that generates music from text. It focuses on music generation from text inputs.
+
+### **Skills Gained**:
+
+Music generation, generative AI.
+
+### **Resources**:
+
+- [Tutorial](https://www.youtube.com/watch?v=9xsi3ksyQR8&list=PLrLEqwuz-mRLLOov7hBru67qyiq9oZyF1&index=3)
+- [Code](https://github.com/AIAnytime/AI-Agents-from-Scratch-using-Ollama)
+
+
+
+## 2. AgentOps Library: Build Your Own AI Agents Monitoring Framework 
+
+### **Difficulty Level**: 3/5
+
+### **Description**:
+
+In this tutorial, I’ll show you how to build your own AgentOps library in python and publish it to pypi to monitor your AI agents effectively. We’ll go through the installation process, set up monitoring for key metrics, and visualize the data to keep everything running smoothly. 
+
+### **Skills Gained**:
+
+Music generation, generative AI.
+
+### **Resources**:
+
+- [Tutorial](https://www.youtube.com/watch?v=5rez0aU56dk&list=PLrLEqwuz-mRLLOov7hBru67qyiq9oZyF1&index=2)
+- [Code](https://github.com/AIAnytime/agent-watch)
+
+
+
+## 3. Build a Multi-Agent AI App from Scratch – no frameworks needed
+
+### **Difficulty Level**: 3/5
+
+### **Description**:
+
+ In this tutorial, I'm excited to walk you through building a Multi-Agent AI System from Scratch – no frameworks needed! 🤖 This Python-based app leverages OpenAI's GPT-4o model with a simple Streamlit web interface to tackle specialized tasks, perfect for beginners who want to learn how to create agentic systems without using orchestration frameworks like Crew AI or LangGraph.
+ 
+### **Skills Gained**:
+
+Music generation, generative AI.
+
+### **Resources**:
+
+- [Tutorial](https://www.youtube.com/watch?v=f3KHI1dpc1Q&list=PLrLEqwuz-mRLLOov7hBru67qyiq9oZyF1&index=4)
+- [Code](https://github.com/AIAnytime/Multi-Agents-System-from-Scratch)
+
+
+
+## 4. Autogen AI Agents: AI Debates – Pizza vs. Sushi
+
+### **Difficulty Level**: 3/5
+
+### **Description**:
+
+I dive into the world of Autogen, a framework by Microsoft that allows LLMs (Large Language Models) to collaborate and create multi-agent-like experiences. 🌟 I'll guide you through the process of setting up a system where LLMs like Claude by Anthropic and GPT-4o by OpenAI engage in a lively discussion on the topic: "Which is tastier, Pizza or Sushi?" 🍛🍜
+
+You'll see how the Group Chat Manager orchestrates the conversation, selecting agents to speak and facilitating a dynamic interaction.
+
+🔍 What you'll learn:
+✅ How to build a multi-agent system using Autogen
+✅ Setting up and managing agents with specific roles
+✅ Running a debate between LLMs on a fun and tasty topic
+
+### **Skills Gained**:
+
+Music generation, generative AI.
+
+### **Resources**:
+
+- [Tutorial](https://www.youtube.com/watch?v=GqBr08uGmOk&list=PLrLEqwuz-mRLLOov7hBru67qyiq9oZyF1&index=7)
+- [Code](https://github.com/AIAnytime/Autogen-AI-Agents)
+
+
+
+## 5. Production Grade AI Agents using LangGraph (Map Reduce Implementation)
+
+### **Difficulty Level**: 3/5
+
+### **Description**:
+
+ tutorial on LangGraph! In this video, I explain how to leverage the LangGraph framework to build robust, stateful, multi-actor applications using map-reduce patterns. You'll learn how to use the "Send" API to distribute tasks across multiple nodes, enabling parallel execution and aggregation of results. This is perfect for those looking to optimize their AI workflows and make the most out of LangGraph's powerful tools.
+ 
+### **Skills Gained**:
+
+Music generation, generative AI.
+
+### **Resources**:
+
+- [Tutorial](https://www.youtube.com/watch?v=GMPFt-LrOWc&list=PLrLEqwuz-mRLLOov7hBru67qyiq9oZyF1&index=8)
+- [Code](https://github.com/AIAnytime/Map-Reduce-implementation-using-LangGraph/tree/main)
+
+
+
+## 6. Build an Agentic RAG using Crew AI
+
+### **Difficulty Level**: 3/5
+
+### **Description**:
+
+we dive into the world of Agentic RAG using Crew AI. Watch as we demonstrate how to enhance AI capabilities by combining retrieval mechanisms with generative models to create intelligent, autonomous agents. Whether you're an AI enthusiast or a developer looking to leverage the latest in AI technology, this video has something for you!
+
+### **Skills Gained**:
+
+Music generation, generative AI.
+
+### **Resources**:
+
+- [Tutorial](https://www.youtube.com/watch?v=GtyiAd55XN0&list=PLrLEqwuz-mRLLOov7hBru67qyiq9oZyF1&index=12)
+- [Code](https://github.com/AIAnytime/Agentic-RAG-using-Crew-AI)
+
+
 
 
 ---
@@ -931,6 +896,9 @@ Audio generation, music generation, generative AI.
 
 ### **Resources**:
 
+- [Tutorial](https://www.youtube.com/watch?v=SbRC81kZBkE)
+- [Code](https://github.com/AIAnytime/musicai)
+
 
 ---
 
@@ -947,5 +915,62 @@ This project is about building an application that generates music from text. It
 Music generation, generative AI.
 
 ### **Resources**:
+
+- [Tutorial](https://www.youtube.com/watch?v=UqsW9IK8pCI)
+- [Code](https://github.com/AIAnytime/Text-to-Music-Generation-App)
+
+
+## 51. Generate Music using Text2Music AI Model MusicGen by Meta AI
+
+### **Difficulty Level**: 2/5
+
+### **Description**:
+
+This project is about building an application that generates music from text. It focuses on music generation from text inputs.
+
+### **Skills Gained**:
+
+Music generation, generative AI.
+
+### **Resources**:
+
+- [Tutorial](https://www.youtube.com/watch?v=vCJOR11txww&list=PLrLEqwuz-mRKG8NVx4Z_56mZgAs4vxiQB&index=4)
+- [Code](https://colab.research.google.com/drive/1fxGqfg96RBUvGxZ1XXN07s3DthrKUl4-?usp=sharing#scrollTo=yP3FfELNw6_k)
+
+
+## 52. Clone Any Voice to Generate Music and Speech
+
+### **Difficulty Level**: 3/5
+
+### **Description**:
+
+This project is about building an application that generates music from text. It focuses on music generation from text inputs.
+
+### **Skills Gained**:
+
+Music generation, generative AI.
+
+### **Resources**:
+
+- [Tutorial](https://www.youtube.com/watch?v=7np8uOfJfls&list=PLrLEqwuz-mRKG8NVx4Z_56mZgAs4vxiQB&index=5)
+- [Code](https://colab.research.google.com/drive/1eJfA2XUa-mXwdMy7DoYKVYHI1iTd9Vkt?usp=sharing#scrollTo=b5rDDPxrRAKa)
+
+
+## 53. Suno V3: Text to full Song in Seconds with AI
+
+### **Difficulty Level**: 3/5
+
+### **Description**:
+
+This project is about building an application that generates music from text. It focuses on music generation from text inputs.
+
+### **Skills Gained**:
+
+Music generation, generative AI.
+
+### **Resources**:
+
+- [Tutorial](https://www.youtube.com/watch?v=lJ6EVg1iPqY&list=PLrLEqwuz-mRKG8NVx4Z_56mZgAs4vxiQB&index=6)
+- [Code](https://github.com/suno-ai/bark/tree/main/notebooks)
 
 
