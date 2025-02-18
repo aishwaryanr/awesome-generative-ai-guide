@@ -234,7 +234,7 @@ Build a multimodal Retrieval-Augmented Generation (RAG) pipeline using LangChain
 
 ## 12. MultiModal Summarizer
 
-### **Difficulty Level**: 3/5
+### **Difficulty Level**: 2/5
 
 ### **Description**:
 
@@ -274,7 +274,7 @@ Uses Google's **Gemini Pro Vision with Langchain** for multimodal RAG applicatio
 
 ## 14. End To End Resume Application Tracking System(ATS) Using Google Gemini Pro Vision LIM Model
 
-### **Difficulty Level**: 5/5
+### **Difficulty Level**: 3/5
 
 ### **Description**:
 
