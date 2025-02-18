@@ -867,13 +867,59 @@ Agentic RAG, Crew AI, retrieval mechanisms, generative models, autonomous agents
 
 - [Code](https://github.com/AIAnytime/Agentic-RAG-using-Crew-AI)
 
+
+## 44. Build Multi-agent AI system for Investment Risk Analysis
+
+### **Difficulty Level**: 3/5
+
+### **Description**:
+
+ this tutorial, I'll guide you through creating a sophisticated multi-agent AI system designed for investment risk analysis. You'll learn how to configure and deploy agents like Data Analyst, Trading Strategy Developer, Trade Advisor, and Risk Advisor to monitor market data, develop trading strategies, plan executions, and assess risks.
+
+📈 Key Topics Covered:
+✅ Setting up your multi-agent framework
+✅ Developing and refining trading strategies
+✅ Proposing optimal trade executions
+✅ Conducting comprehensive risk assessments
+
+### **Skills Gained**:
+
+Agentic RAG, Crew AI, retrieval mechanisms, generative models, autonomous agents.
+
+### **Resources**:
+
+- [Tutorial](https://www.youtube.com/watch?v=gbWT-JP_NSo&list=PLrLEqwuz-mRLLOov7hBru67qyiq9oZyF1&index=13)
+
+- [Code](https://github.com/AIAnytime/Multi-AI-Agents-for-Investment-Risk-Analysis)
+
+
+## 45. Build a Research Assistant AI Agent using Crew AI
+
+### **Difficulty Level**: 3/5
+
+### **Description**:
+
+n this tutorial, you'll learn how to build a simple AI agent tailored for healthcare research using the Crew.ai framework. I'll guide you through the setup and implementation process in Google Colab, covering essential steps from configuring agents to executing tasks. Watch and follow along to create your own intelligent healthcare assistant!
+
+### **Skills Gained**:
+
+Agentic RAG, Crew AI, retrieval mechanisms, generative models, autonomous agents.
+
+### **Resources**:
+
+- [Tutorial](https://www.youtube.com/watch?v=f2g24bt_P6Q&list=PLrLEqwuz-mRLLOov7hBru67qyiq9oZyF1&index=15)
+
+- [Code](https://github.com/AIAnytime/AI-Agents-using-Crew-AI)
+
+
+
 ---
 
 # Music and Audio Generation Projects
 
 ---
 
-## 44. Text to Song Generation (With Vocals + Music) App using Generative AI
+## 46. Text to Song Generation (With Vocals + Music) App using Generative AI
 
 ### **Difficulty Level**: 3/5
 
@@ -893,7 +939,7 @@ Audio generation, music generation, generative AI.
 
 ---
 
-## 45. Text to Music Generation App using Generative AI
+## 47. Text to Music Generation App using Generative AI
 
 ### **Difficulty Level**: 3/5
 
@@ -911,7 +957,7 @@ Music generation, generative AI.
 
 - [Code](https://github.com/AIAnytime/Text-to-Music-Generation-App)
 
-## 46. Generate Music using Text2Music AI Model MusicGen by Meta AI
+## 48. Generate Music using Text2Music AI Model MusicGen by Meta AI
 
 ### **Difficulty Level**: 2/5
 
@@ -923,8 +969,15 @@ Generates music from text using the Text2Music AI Model MusicGen by Meta AI.
 
 Music generation, generative AI.
 
+### **Resources**:
 
-## 47. Clone Any Voice to Generate Music and Speech
+- [Tutorial](https://www.youtube.com/watch?v=vCJOR11txww)
+
+
+- [Code](https://colab.research.google.com/drive/1fxGqfg96RBUvGxZ1XXN07s3DthrKUl4-?usp=sharing#scrollTo=yP3FfELNw6_k)
+
+
+## 49. Clone Any Voice to Generate Music and Speech
 
 ### **Difficulty Level**: 3/5
 
@@ -943,7 +996,7 @@ Music generation, generative AI.
 
 - [Code](https://colab.research.google.com/drive/1eJfA2XUa-mXwdMy7DoYKVYHI1iTd9Vkt?usp=sharing#scrollTo=b5rDDPxrRAKa)
 
-## 48. Suno V3: Text to full Song in Seconds with AI
+## 50. Suno V3: Text to full Song in Seconds with AI
 
 ### **Difficulty Level**: 3/5
 
