@@ -201,29 +201,30 @@ Video processing, **RAG**, vector databases, LlamaIndex.
 
 ---
 
-## 11. Realtime Multimodal RAG Usecase
+## 11. Multimodal RAG: Chat with PDFs (Images & Tables) 
 
-### **Difficulty Level**: 4/5
+### **Difficulty Level**: 2/5
 
 ### **Description**:
 
-This project involves extracting information from images, tables, and text from documents in real-time. It is a more advanced RAG implementation, with real-time processing.
+This project guides you through building a multimodal Retrieval-Augmented Generation (RAG) pipeline using LangChain and the Unstructured library. You'll learn how to create an AI-powered system that can query complex documents, such as PDFs containing text, images, tables, and plots, by harnessing the multimodal capabilities of advanced Language Learning Models (LLMs) like GPT-4 with vision.
+
 
 ### **Skills Gained**:
 
-**Multimodal AI**, real-time processing, data extraction.
+**Multimodal AI**, data extraction.
 
 ### **Resources:**
 
-- [Tutorial](https://www.youtube.com/watch?v=SzUGQMx0dkw)
-- [Code](https://github.com/AIAnytime/Medical-Help-App-using-GPT-4V)
+- [Tutorial](https://www.youtube.com/watch?v=uLrReyH5cu0)
+- [Code](https://colab.research.google.com/gist/alejandro-ao/47db0b8b9d00b10a96ab42dd59d90b86/langchain-multimodal.ipynb)
 
 
 ---
 
 ## 12. MultiModal Summarizer
 
-### **Difficulty Level**: 4/5
+### **Difficulty Level**: 3/5
 
 ### **Description**:
 
@@ -235,7 +236,8 @@ This project is about creating a summarization application that processes differ
 
 ### **Resources**:
 
-(No direct URL provided in the sources, but search for tutorials on multimodal summarization).
+- [Tutorial](https://www.youtube.com/watch?v=yPr9BDFzau4)
+- [Code](https://github.com/sunnysavita10/Generative-AI-Indepth-Basic-to-Advance/blob/main/MultiModal%20RAG/Extract_Image%2CTable%2CText_from_Document_MultiModal_Summrizer_RAG_App.ipynb)
 
 ---
 
@@ -252,6 +254,9 @@ This project uses Google's **Gemini Pro Vision with Langchain** for multimodal R
 **Multimodal RAG**, Google Gemini, Langchain.
 
 ### **Resources**:
+
+- [Tutorial](https://www.youtube.com/watch?v=1a94Pfn6sIg)
+- [Code](https://github.com/sunnysavita10/Generative-AI-Indepth-Basic-to-Advance/blob/90dfa5f67e97466079592ca2294d4fdd06e8ae5e/MultiModal%20RAG/Multimodal_RAG_with_Gemini_Langchain_and_Google_AI_Studio_Yt.ipynb#L283)
 
 
 
@@ -270,6 +275,9 @@ This project creates an **ATS** that leverages multimodal models to process resu
 **Multimodal AI**, resume processing, **ATS development**.
 
 ### **Resources**:
+
+- [Tutorial](https://www.youtube.com/watch?v=VZOnp2YpY8Q)
+- [Code](https://github.com/krishnaik06/Google-Gemini-Crash-Course/tree/main/atsllm)
 
 
 ---
