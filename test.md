@@ -4,8 +4,9 @@
 Boost your resume with these amazing Generative AI project ideas, each designed to provide practical experience and highlight your skills with the latest technologies.
 
 Here's a breakdown of each project, relevant tutorials, and code to help you get started and the skills you'll develop.
+---
 
-
+# Multimodal LLM Applications	
 ## 1. Medical Diagnostics App with GPT-4 Vision
 
 ### **Difficulty Level**: 4/5
@@ -271,6 +272,9 @@ This project creates an **ATS** that leverages multimodal models to process resu
 ### **Resources**:
 
 
+---
+
+# LLM Fine-Tuning Projects
 
 ---
 
@@ -470,6 +474,8 @@ This project is about fine-tuning large language models using multiple GPUs with
 
 (No direct URL provided in the sources, but search for tutorials on multi-GPU fine-tuning with DeepSpeed and Accelerate).
 
+---
+# RAG (Retrieval Augmented Generation) Projects
 ---
 
 ## 26. Hybrid Search (Keyword + Vector Search)
@@ -883,6 +889,9 @@ This project creates a RAG-based chatbot with chat history. It includes the extr
 ### **Resources**:
 
 
+---
+
+# Music and Audio Generation Projects
 
 ---
 
@@ -899,7 +908,6 @@ This project creates an application that generates songs, including vocals, from
 Audio generation, music generation, generative AI.
 
 ### **Resources**:
-
 
 
 ---
