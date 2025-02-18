@@ -556,7 +556,7 @@ Builds a RAG pipeline using **OLlama, Python, and Llama 2**. Uses core libraries
 
 ## 28. RAG Application using Langchain, OpenAI and FAISS
 
-### **Difficulty Level**: 3/5
+### **Difficulty Level**: 2/5
 
 ### **Description**:
 
@@ -630,13 +630,13 @@ Builds a RAG pipeline with the **Haystack framework and OpenAI**. Requires under
 
 - [Tutorial](https://www.youtube.com/watch?v=th8WpWtxad0)
 
-- [Code]https://github.com/sunnysavita10/Generative-AI-Indepth-Basic-to-Advance/blob/main/RAG%20App%20using%20Haystack%20%26%20OpenAI/RAG_Application_Using_Haystack_and_OpenAI.ipynb)
+- [Code](https://github.com/sunnysavita10/Generative-AI-Indepth-Basic-to-Advance/blob/main/RAG%20App%20using%20Haystack%20%26%20OpenAI/RAG_Application_Using_Haystack_and_OpenAI.ipynb)
 
 ---
 
 ## 32. RAG Application Using Haystack MistralAI Pinecone & FastAPI
 
-### **Difficulty Level**: 5/5
+### **Difficulty Level**: 3/5
 
 ### **Description**:
 
@@ -654,29 +654,29 @@ Uses **Haystack, MistralAI, Pinecone, and FastAPI** to create an end-to-end RAG 
 
 ---
 
-## 33. End to End RAG App with Hugging face Google Gemma & MongoDB Vector Search
+## 33. End To End Document Q&A RAG App With Gemma And Groq API
 
-### **Difficulty Level**: 4/5
+### **Difficulty Level**: 3/5
 
 ### **Description**:
 
-Implements a RAG application with **Hugging Face, Google Gemma, and MongoDB**. Requires experience with a range of technologies to create the system.
+Implements a an end to end Document Q&A RAG App with Google Gemma And GRoq API
 
 ### **Skills Gained**:
 
-**RAG**, **Hugging Face**, **Google Gemma**, **MongoDB**.
+**RAG**, **Google Gemma**, **Groq API**.
 
 ### **Resources**:
 
-- [Tutorial](https://www.youtube.com/watch?v=dUWhUdW79Xs)
+- [Tutorial](https://www.youtube.com/watch?v=LOUaom9HZIg)
 
-- [Code](https://github.com/AIAnytime/ReFT-Fine-Tuning)
+- [Code](https://github.com/krishnaik06/Google-Gemini-Crash-Course/tree/main/End%20To%20End%20Document%20Q%26A%20With%20Google%20Gemma)
 
 ---
 
 ## 34. Building Real-Time RAG Pipeline With Mongodb and Pinecone
 
-### **Difficulty Level**: 4/5
+### **Difficulty Level**: 3/5
 
 ### **Description**:
 
@@ -718,7 +718,7 @@ Creates a chatbot that can process multiple document types using **AstraDB and L
 
 ## 36. Built Powerful Multimodal RAG using Vertex AI(GCP), AstraDb and Langchain
 
-### **Difficulty Level**: 4/5
+### **Difficulty Level**: 3/5
 
 ### **Description**:
 
