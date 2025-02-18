@@ -906,6 +906,25 @@ Agentic RAG, Crew AI, retrieval mechanisms, generative models, autonomous agents
 - [Code](https://github.com/AIAnytime/AI-Agents-using-Crew-AI)
 
 
+## 46. ADVANCED Python AI Multi-Agent Project
+
+### **Difficulty Level**: 3/5
+
+### **Description**:
+
+Build an advanced multi-agent AI app through Python, Langflow, Astra DB, Streamlit, and more.
+ 
+### **Skills Gained**:
+
+Agentic RAG, Streamlit, Langflow.
+
+### **Resources**:
+
+- [Tutorial](https://www.youtube.com/watch?v=msLovKSj8Q0)
+
+- [Code](https://github.com/techwithtim/Advanced-Multi-Agent-Workout-App)
+
+
 
 ---
 
@@ -913,7 +932,7 @@ Agentic RAG, Crew AI, retrieval mechanisms, generative models, autonomous agents
 
 ---
 
-## 46. Text to Song Generation (With Vocals + Music) App using Generative AI
+## 47. Text to Song Generation (With Vocals + Music) App using Generative AI
 
 ### **Difficulty Level**: 3/5
 
@@ -933,7 +952,7 @@ Audio generation, music generation, generative AI.
 
 ---
 
-## 47. Text to Music Generation App using Generative AI
+## 48. Text to Music Generation App using Generative AI
 
 ### **Difficulty Level**: 3/5
 
@@ -951,7 +970,7 @@ Music generation, generative AI.
 
 - [Code](https://github.com/AIAnytime/Text-to-Music-Generation-App)
 
-## 48. Generate Music using Text2Music AI Model MusicGen by Meta AI
+## 49. Generate Music using Text2Music AI Model MusicGen by Meta AI
 
 ### **Difficulty Level**: 2/5
 
@@ -971,9 +990,9 @@ Music generation, generative AI.
 - [Code](https://colab.research.google.com/drive/1fxGqfg96RBUvGxZ1XXN07s3DthrKUl4-?usp=sharing#scrollTo=yP3FfELNw6_k)
 
 
-## 49. Clone Any Voice to Generate Music and Speech
+## 50. Clone Any Voice to Generate Music and Speech
 
-### **Difficulty Level**: 3/5
+### **Difficulty Level**: 2/5
 
 ### **Description**:
 
@@ -989,22 +1008,3 @@ Music generation, generative AI.
 
 
 - [Code](https://colab.research.google.com/drive/1eJfA2XUa-mXwdMy7DoYKVYHI1iTd9Vkt?usp=sharing#scrollTo=b5rDDPxrRAKa)
-
-## 50. Suno V3: Text to full Song in Seconds with AI
-
-### **Difficulty Level**: 3/5
-
-### **Description**:
-
-Build an application that generates full songs from text quickly using AI.
-
-### **Skills Gained**:
-
-Music generation, generative AI.
-
-### **Resources**:
-
-- [Tutorial](https://www.youtube.com/watch?v=lJ6EVg1iPqY&list=PLrLEqwuz-mRKG8NVx4Z_56mZgAs4vxiQB&index=6)
-
-
-- [Code](https://github.com/suno-ai/bark/tree/main/notebooks)
