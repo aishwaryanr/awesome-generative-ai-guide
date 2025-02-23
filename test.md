@@ -5,15 +5,14 @@ Boost your resume with these amazing Generative AI project ideas, each designed 
 Here's a breakdown of each project, relevant tutorials, and code to help you get started and the skills you'll develop.
 
 
-
 | **Multimodal LLM Applications** | **LLM Fine-Tuning Projects** | **RAG (Retrieval Augmented Generation) Projects** | **Agentic RAG Projects** | **Music and Audio Generation Projects** |
-|-------------------------------|---------------------------|---------------------------------------------|-----------------------|---------------------------------------|
-| [Medical Diagnostics App with GPT-4 Vision](#1-medical-diagnostics-app-with-gpt-4-vision) | [Fine Tune Phi-2 Model on Your Dataset](#15-fine-tune-phi-2-model-on-your-dataset) | [End To End Advanced RAG Project using Open Source LLM Models And Groq Inferencing engine](#26-end-to-end-advanced-rag-project-using-open-source-llm-models-and-groq-inferencing-engine) | [AI Agents from Scratch using Open Source AI](#38-ai-agents-from-scratch-using-open-source-ai) | [Text to Song Generation (With Vocals + Music) App using Generative AI](#47-text-to-song-generation-with-vocals--music-app-using-generative-ai) |
-| [Visual Question Answering with IDEFICS 9B](#2-visual-question-answering-with-idefics-9b) | [Fine Tune a Multimodal LLM "IDEFICS 9B" for Visual Question Answering](#16-fine-tune-a-multimodal-llm-idefics-9b-for-visual-question-answering) | [RAG Pipeline from Scratch Using OLlama Python & Llama2](#27-rag-pipeline-from-scratch-using-ollama-python--llama2) | [AgentOps Library: Build Your Own AI Agents Monitoring Framework](#39-agentops-library-build-your-own-ai-agents-monitoring-framework) | [Text to Music Generation App using Generative AI](#48-text-to-music-generation-app-using-generative-ai) |
+|---|---|---|---|---|
+| [Medical Diagnostics App with GPT-4 Vision](#1-medical-diagnostics-app-with-gpt-4-vision) | [Fine Tune Phi-2 Model on Your Dataset](#15-fine-tune-phi-2-model-on-your-dataset) | [End To End Advanced RAG Project using Open Source LLM Models And Groq Inferencing engine](#26-end-to-end-advanced-rag-project-using-open-source-llm-models-and-groq-inferencing-engine) | [AI Agents from Scratch using Open Source AI](#38-ai-agents-from-scratch-using-open-source-ai) | [Text to Song Generation (With Vocals + Music) App using Generative AI](#57-text-to-song-generation-with-vocals--music-app-using-generative-ai) |
+| [Visual Question Answering with IDEFICS 9B](#2-visual-question-answering-with-idefics-9b) | [Fine Tune a Multimodal LLM "IDEFICS 9B" for Visual Question Answering](#16-fine-tune-a-multimodal-llm-idefics-9b-for-visual-question-answering) | [RAG Pipeline from Scratch Using OLlama Python & Llama2](#27-rag-pipeline-from-scratch-using-ollama-python--llama2) | [AgentOps Library: Build Your Own AI Agents Monitoring Framework](#39-agentops-library-build-your-own-ai-agents-monitoring-framework) | [Text to Music Generation App using Generative AI](#58-text-to-music-generation-app-using-generative-ai) |
 | [AI Voice Assistant App using Multimodal LLM "Llava" and Whisper](#3-ai-voice-assistant-app-using-multimodal-llm-llava-and-whisper) | [Fine Tune Multimodal LLM "Idefics 2" using QLoRA](#17-fine-tune-multimodal-llm-idefics-2-using-qlora) | [RAG Application using Langchain, OpenAI and FAISS](#28-rag-application-using-langchain-openai-and-faiss) | [Build a Multi-Agent AI App from Scratch – no frameworks needed](#40-build-a-multi-agent-ai-app-from-scratch--no-frameworks-needed) | [Generate Music using Text2Music AI Model MusicGen by Meta AI](#49-generate-music-using-text2music-ai-model-musicgen-by-meta-ai) |
 | [OCR & VQA with Qwen2-VL](#4-ocr--vqa-with-qwen2-vl) | [Fine Tune Qwen2 VL Model using Llama Factory](#18-fine-tune-qwen2-vl-model-using-llama-factory) | [RAG Application using Langchain Mistral AI and Weviate db](#29-rag-application-using-langchain-mistral-ai-and-weviate-db) | [Autogen AI Agents: AI Debates – Pizza vs. Sushi](#41-autogen-ai-agents-ai-debates--pizza-vs-sushi) | [Clone Any Voice to Generate Music and Speech](#50-clone-any-voice-to-generate-music-and-speech) |
-| [Chat with Video File using Qwen2 VL](#5-chat-with-video-file-using-qwen2-vl) | [Fine-Tuning with ReFT: Create an Emoji LLM for Medical Diagnosis](#19-fine-tuning-with-reft-create-an-emoji-llm-for-medical-diagnosis) | [RAG Application Using OpenSource Framework LlamaIndex and Mistral-AI](#30-rag-application-using-opensource-framework-llamaindex-and-mistral-ai) | [Production Grade AI Agents using LangGraph (Map Reduce Implementation)](#42-production-grade-ai-agents-using-langgraph-map-reduce-implementation) |  |
-| [Multimodal RAG with Qwen-2 and ColPali](#6-multimodal-rag-with-qwen-2-and-colpali) | [Fine Tune DeepSeek Model on your Custom Dataset](#20-fine-tune-deepseek-model-on-your-custom-dataset) | [RAG Pipeline Using Haystack and OpenAI](#31-rag-pipeline-using-haystack-and-openai) | [Build an Agentic RAG using Crew AI](#43-build-an-agentic-rag-using-crew-ai) |  |
+| [Chat with Video File using Qwen2 VL](#5-chat-with-video-file-using-qwen2-vl) | [Fine-Tuning with ReFT: Create an Emoji LLM for Medical Diagnosis](#19-fine-tuning-with-reft-create-an-emoji-llm-for-medical-diagnosis) | [RAG Application Using OpenSource Framework LlamaIndex and Mistral-AI](#30-rag-application-using-opensource-framework-llamaindex-and-mistral-ai) | [Production Grade AI Agents using LangGraph (Map Reduce Implementation)](#42-production-grade-ai-agents-using-langgraph-map-reduce-implementation) | [Career Assistant for Hackathons](#53-career-assistant-for-hackathons) |
+| [Multimodal RAG with Qwen-2 and ColPali](#6-multimodal-rag-with-qwen-2-and-colpali) | [Fine Tune DeepSeek Model on your Custom Dataset](#20-fine-tune-deepseek-model-on-your-custom-dataset) | [RAG Pipeline Using Haystack and OpenAI](#31-rag-pipeline-using-haystack-and-openai) | [Build an Agentic RAG using Crew AI](#43-build-an-agentic-rag-using-crew-ai) | [AInsight LangGraph](#54-ainsight-langgraph) |
 | [Janus 1.3B for Image Generation and RAG](#7-janus-13b-for-image-generation-and-rag) | [GRPO Crash Course: Fine-Tuning DeepSeek for MATH!](#21-grpo-crash-course-fine-tuning-deepseek-for-math) | [RAG Application Using Haystack MistralAI Pinecone & FastAPI](#32-rag-application-using-haystack-mistralai-pinecone--fastapi) | [Build Multi-agent AI system for Investment Risk Analysis](#44-build-multi-agent-ai-system-for-investment-risk-analysis) |  |
 | [Chat, Search & Summarize any Video using Vision AI Model](#8-chat-search--summarize-any-video-using-vision-ai-model) | [Fine Tune Llama 3 using ORPO](#22-fine-tune-llama-3-using-orpo) | [End To End Document Q&A RAG App With Gemma And Groq API](#33-end-to-end-document-qa-rag-app-with-gemma-and-groq-api) | [Build a Research Assistant AI Agent using Crew AI](#45-build-a-research-assistant-ai-agent-using-crew-ai) |  |
 | [Multimodal AI Model for Radiology Reporting](#9-multimodal-ai-model-for-radiology-reporting) | [Train a Small Language Model for Disease Symptoms](#23-train-a-small-language-model-for-disease-symptoms) | [Building Real-Time RAG Pipeline With Mongodb and Pinecone](#34-building-real-time-rag-pipeline-with-mongodb-and-pinecone) | [ADVANCED Python AI Multi-Agent Project](#46-advanced-python-ai-multi-agent-project) |  |
@@ -22,6 +21,15 @@ Here's a breakdown of each project, relevant tutorials, and code to help you get
 | [MultiModal Summarizer](#12-multimodal-summarizer) |  | [RAG Based Chatbot With Memory(Chat History)](#37-rag-based-chatbot-with-memorychat-history) |  |  |
 | [Realtime Multimodal RAG Usecase with Google Gemini-Pro-Vision and Langchain](#13-realtime-multimodal-rag-usecase-with-google-gemini-pro-vision-and-langchain) |  |  |  |  |
 | [End To End Resume Application Tracking System(ATS) Using Google Gemini Pro Vision LIM Model](#14-end-to-end-resume-application-tracking-systemats-using-google-gemini-pro-vision-lim-model) |  |  |  |  |
+|  | [Fine-tune a LLM for Code Generation](#47-fine-tune-a-llm-for-code-generation) |  |  |  |
+|  | [Fine-tune a LLM for Sentiment Analysis](#48-fine-tune-a-llm-for-sentiment-analysis) |  |  |  |
+|  |  | [Build a Simple RAG System with FAISS](#51-build-a-simple-rag-system-with-faiss) |  |  |
+|  |  | [Build a RAG System with ChromaDB](#52-build-a-rag-system-with-chromadb) |  |  |
+|  |  |  | [Build an AI Agent for Task Management](#55-build-an-ai-agent-for-task-management) |  |
+|  |  |  | [Build an AI Agent for Email Management](#56-build-an-ai-agent-for-email-management) |  |
+|  |  |  |  | [Generate Music using Jukebox](#59-generate-music-using-jukebox) |
+|  |  |  |  | [Generate Sound Effects using Generative AI](#60-generate-sound-effects-using-generative-ai) |
+
 
 
 
@@ -926,7 +934,6 @@ Agentic RAG, Crew AI, retrieval mechanisms, generative models, autonomous agents
 
 - [Code](https://github.com/AIAnytime/AI-Agents-using-Crew-AI)
 
-
 ## 46. ADVANCED Python AI Multi-Agent Project
 
 ### **Difficulty Level**: 3/5
@@ -946,6 +953,175 @@ Agentic RAG, Streamlit, Langflow.
 - [Code](https://github.com/techwithtim/Advanced-Multi-Agent-Workout-App)
 
 
+## 47. Academic Task and Learning Agent System
+
+### **Difficulty Level**: 4/5
+
+### **Description**:
+
+Build an intelligent multi-agent system that transforms the way students manage their academic life using LangGraph's workflow framework.
+
+### **Skills Gained**:
+
+Multi-agent systems, workflow orchestration, personalized academic support.
+
+### **Resources**:
+
+- [Code](https://github.com/NirDiamant/GenAI_Agents/blob/main/all_agents_tutorials/Academic_Task_Learning_Agent_LangGraph.ipynb)
+
+
+## 48. ClauseAI
+
+### **Difficulty Level**: 3/5
+
+### **Description**:
+
+Develop an AI agent to assist with legal clause analysis and management.
+
+### **Skills Gained**:
+
+Legal AI, text analysis, clause management.
+
+### **Resources**:
+
+- [Code](https://github.com/NirDiamant/GenAI_Agents/blob/main/all_agents_tutorials/ClauseAI.ipynb)
+
+
+## 49. Content Intelligence
+
+### **Difficulty Level**: 3/5
+
+### **Description**:
+
+Create an AI agent for content analysis and intelligence gathering.
+
+### **Skills Gained**:
+
+Content analysis, intelligence gathering, NLP techniques.
+
+### **Resources**:
+
+- [Code](https://github.com/NirDiamant/GenAI_Agents/blob/main/all_agents_tutorials/ContentIntelligence.ipynb)
+
+
+## 50. EU Green Compliance FAQ Bot
+
+### **Difficulty Level**: 3/5
+
+### **Description**:
+
+Build a FAQ bot to assist with EU Green Compliance queries.
+
+### **Skills Gained**:
+
+Compliance assistance, FAQ bots, question answering systems.
+
+### **Resources**:
+
+- [Code](https://github.com/NirDiamant/GenAI_Agents/blob/main/all_agents_tutorials/EU_Green_Compliance_FAQ_Bot.ipynb)
+
+
+## 51. ShopGenie
+
+### **Difficulty Level**: 3/5
+
+### **Description**:
+
+Develop an AI shopping assistant to help users find and compare products.
+
+### **Skills Gained**:
+
+Shopping assistance, product comparison, AI recommendations.
+
+### **Resources**:
+
+- [Code](https://github.com/NirDiamant/GenAI_Agents/blob/main/all_agents_tutorials/ShopGenie.ipynb)
+
+
+## 52. Weather Disaster Management AI Agent
+
+### **Difficulty Level**: 4/5
+
+### **Description**:
+
+Create an AI agent for managing and responding to weather disasters.
+
+### **Skills Gained**:
+
+Disaster management, weather forecasting, emergency response.
+
+### **Resources**:
+
+- [Code](https://github.com/NirDiamant/GenAI_Agents/blob/main/all_agents_tutorials/Weather_Disaster_Management_AI_AGENT.ipynb)
+
+
+## 53. Career Assistant for Hackathons
+
+### **Difficulty Level**: 3/5
+
+### **Description**:
+
+Develop an AI assistant to help users prepare for and participate in hackathons.
+
+### **Skills Gained**:
+
+Hackathon preparation, career assistance, AI guidance.
+
+### **Resources**:
+
+- [Code](https://github.com/NirDiamant/GenAI_Agents/blob/main/all_agents_tutorials/agent_hackathon_genAI_career_assistant.ipynb)
+
+
+## 54. AInsight LangGraph
+
+### **Difficulty Level**: 3/5
+
+### **Description**:
+
+Create an AI agent to provide insights and analysis using LangGraph.
+
+### **Skills Gained**:
+
+Data analysis, insights generation, LangGraph framework.
+
+### **Resources**:
+
+- [Code](https://github.com/NirDiamant/GenAI_Agents/blob/main/all_agents_tutorials/ainsight_langgraph.ipynb)
+
+
+## 55. Blog Writer Swarm
+
+### **Difficulty Level**: 3/5
+
+### **Description**:
+
+Develop a swarm of AI agents to assist with blog writing and content creation.
+
+### **Skills Gained**:
+
+Content creation, blog writing, swarm intelligence.
+
+### **Resources**:
+
+- [Code](https://github.com/NirDiamant/GenAI_Agents/blob/main/all_agents_tutorials/blog_writer_swarm.ipynb)
+
+
+## 56. Business Meme Generator
+
+### **Difficulty Level**: 3/5
+
+### **Description**:
+
+Build an AI agent to generate business-themed memes for marketing and social media.
+
+### **Skills Gained**:
+
+Meme generation, marketing assistance, AI creativity.
+
+### **Resources**:
+
+- [Code](https://github.com/NirDiamant/GenAI_Agents/blob/main/all_agents_tutorials/business_meme_generator.ipynb)
+
 
 ---
 
@@ -953,7 +1129,7 @@ Agentic RAG, Streamlit, Langflow.
 
 ---
 
-## 47. Text to Song Generation (With Vocals + Music) App using Generative AI
+## 57. Text to Song Generation (With Vocals + Music) App using Generative AI
 
 ### **Difficulty Level**: 3/5
 
@@ -973,7 +1149,7 @@ Audio generation, music generation, generative AI.
 
 ---
 
-## 48. Text to Music Generation App using Generative AI
+## 58. Text to Music Generation App using Generative AI
 
 ### **Difficulty Level**: 3/5
 
@@ -991,7 +1167,7 @@ Music generation, generative AI.
 
 - [Code](https://github.com/AIAnytime/Text-to-Music-Generation-App)
 
-## 49. Generate Music using Text2Music AI Model MusicGen by Meta AI
+## 59. Generate Music using Text2Music AI Model MusicGen by Meta AI
 
 ### **Difficulty Level**: 2/5
 
@@ -1011,7 +1187,7 @@ Music generation, generative AI.
 - [Code](https://colab.research.google.com/drive/1fxGqfg96RBUvGxZ1XXN07s3DthrKUl4-?usp=sharing#scrollTo=yP3FfELNw6_k)
 
 
-## 50. Clone Any Voice to Generate Music and Speech
+## 60. Clone Any Voice to Generate Music and Speech
 
 ### **Difficulty Level**: 2/5
 
