@@ -4,7 +4,7 @@ Boost your resume with these amazing Generative AI project ideas, each designed 
 
 Here's a breakdown of each project, relevant tutorials, and code to help you get started and the skills you'll develop.
 
-| **Multimodal LLM Applications** | **LLM Fine-Tuning Projects** | **RAG (Retrieval Augmented Generation) Projects** | **Agentic RAG Projects** | **Music and Audio Generation Projects** |
+| **Multimodal LLM Applications** | **LLM Fine-Tuning Projects** | **RAG (Retrieval Augmented Generation) Projects** | **Agentic AI Projects** | **Music and Audio Generation Projects** |
 |---|---|---|---|---|
 | [Medical Diagnostics App with GPT-4 Vision](#1-medical-diagnostics-app-with-gpt-4-vision) | [Fine Tune Phi-2 Model on Your Dataset](#15-fine-tune-phi-2-model-on-your-dataset) | [End To End Advanced RAG Project using Open Source LLM Models And Groq Inferencing engine](#26-end-to-end-advanced-rag-project-using-open-source-llm-models-and-groq-inferencing-engine) | [AI Agents from Scratch using Open Source AI](#38-ai-agents-from-scratch-using-open-source-ai) | [Text to Song Generation (With Vocals + Music) App using Generative AI](#57-text-to-song-generation-with-vocals--music-app-using-generative-ai) |
 | [Visual Question Answering with IDEFICS 9B](#2-visual-question-answering-with-idefics-9b) | [Fine Tune a Multimodal LLM "IDEFICS 9B" for Visual Question Answering](#16-fine-tune-a-multimodal-llm-idefics-9b-for-visual-question-answering) | [RAG Pipeline from Scratch Using OLlama Python & Llama2](#27-rag-pipeline-from-scratch-using-ollama-python--llama2) | [AgentOps Library: Build Your Own AI Agents Monitoring Framework](#39-agentops-library-build-your-own-ai-agents-monitoring-framework) | [Text to Music Generation App using Generative AI](#58-text-to-music-generation-app-using-generative-ai) |
@@ -780,7 +780,7 @@ Creates a RAG-based chatbot with chat history. Includes the extra level of compl
 
 ---
 
-# Agentic RAG Projects
+# Agentic AI Projects
 
 ---
 
