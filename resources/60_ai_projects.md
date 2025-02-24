@@ -38,7 +38,7 @@ Here's a breakdown of each project, relevant tutorials, and code to help you get
 
 ### **Description**:
 
-This project uses a **multimodal LLM** for medical image analysis to aid in diagnostics. Requires understanding of image processing and medical concepts.
+This project uses a **multimodal LLM** for medical image analysis to aid in diagnostics. 
 
 ### **Skills Gained**:
 
