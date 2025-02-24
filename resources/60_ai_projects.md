@@ -1056,7 +1056,7 @@ Disaster management, weather forecasting, emergency response.
 
 ### **Description**:
 
-Develop an AI assistant to help users prepare for and participate in hackathons.
+Develop an AI-powered mentor designed to simplify and support your journey in Generative AI learning, Resume preparation, Interview assistant and job hunting.
 
 ### **Skills Gained**:
 
@@ -1074,6 +1074,7 @@ Hackathon preparation, career assistance, AI guidance.
 ### **Description**:
 
 Create an AI agent to provide insights and analysis using LangGraph.
+AInsight automatically collects, processes, and summarizes AI/ML news for general audiences.
 
 ### **Skills Gained**:
 
