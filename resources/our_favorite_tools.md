@@ -112,14 +112,15 @@ By facilitating comparisons between different model versions and configurations,
 - [Comet Documentation on Evaluation](https://www.comet.ml/docs/)  
 - [YouTube: Comet Benchmarking Tutorials](https://www.youtube.com/results?search_query=comet+ml+benchmarking+getting+started)
 
-**Getting Started with Opik:**  
-- [Opik Documentation](https://www.comet.ml/docs/opik/quickstart)
-- [YouTube: Opik - Open-Source End-to-End LLM Development Platform - Install Locally](https://www.youtube.com/watch?v=8oOOIi6p5ik)
-
 
 ### Opik (Comet)
 
 Opik, a component of the Comet platform, provides robust monitoring and debugging capabilities specifically designed for AI systems. Unlike general-purpose monitoring tools, Opik focuses on the unique challenges of AI, offering features tailored to the complexities of machine learning models and their deployments.  This specialization allows for more precise insights and more effective troubleshooting.  Its integration with Comet's broader suite of tools provides a holistic view of the AI lifecycle, from experimentation to production monitoring.
+
+**Getting Started with Opik:**  
+- [Opik Documentation](https://www.comet.ml/docs/opik/quickstart)
+- [YouTube: Opik - Open-Source End-to-End LLM Development Platform - Install Locally](https://www.youtube.com/watch?v=8oOOIi6p5ik)
+
 
 
 
