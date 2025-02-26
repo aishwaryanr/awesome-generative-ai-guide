@@ -19,8 +19,8 @@ In recent developments, Anthropic is finalizing a $3.5 billion funding round, wh
 [Read the Reuters report](https://www.reuters.com/technology/artificial-intelligence/ai-startup-anthropic-finalizing-35-billion-funding-round-wsj-reports-2025-02-24/?utm_source=chatgpt.com)
 
 **Getting Started with Anthropic:**  
-- [Explore Anthropic's Website & Resources](https://www.anthropic.com/?utm_source=chatgpt.com)  
-- [YouTube: Anthropic QuickStart Tutorial :AI Projects in Minutes](https://www.youtube.com/watch?v=-p6VKXDQ_Y8)
+- [Explore Anthropic Docs](https://docs.anthropic.com/en/docs/welcome)  
+<!-- - [YouTube: Anthropic QuickStart Tutorial :AI Projects in Minutes](https://www.youtube.com/watch?v=-p6VKXDQ_Y8) -->
 
 ---
 
@@ -40,7 +40,7 @@ Developers can also access extensive guides, tutorials, and community support th
 
 **Getting Started with LangChain:**  
 - [Official Getting Started Guide](https://python.langchain.com/docs/introduction/?utm_source=chatgpt.com)  
-- [YouTube: LangChain Explained in 13 Minutes | QuickStart Tutorial for Beginners](https://www.youtube.com/watch?v=aywZrzNaKjs)
+<!-- - [YouTube: LangChain Explained in 13 Minutes | QuickStart Tutorial for Beginners](https://www.youtube.com/watch?v=aywZrzNaKjs) -->
 
 ---
 
@@ -66,7 +66,7 @@ The platform provides a range of pre-built components and templates that facilit
 By supporting a vast ecosystem of applications, Zapier makes it easy to set up triggers and actions between apps. This ensures consistency in automated tasks and reduces the potential for human error, ultimately enhancing productivity and efficiency.
 
 **Getting Started with Zapier:**  
-- [Zapier Getting Started](https://zapier.com/learn/)  
+- [Zapier Guides](https://zapier.com/learn/)  
 - [YouTube: Let's Get Started With Zapier! | Learn Zapier in 14 Days](https://www.youtube.com/watch?v=JZI-5qHX9jI)
 
 ---
