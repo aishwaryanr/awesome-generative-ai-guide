@@ -141,4 +141,4 @@ One of its latest features, Audio Overview, transforms text-based sources into e
 
 
 **Getting Started with NotebookLM:**  
-- [YouTube: Unlock 10X Productivity: NotebookLM Hacks That'll Transform Your Work in Just 10 Minutes](https://www.youtube.com/watch?v=ANuaIsXpOck)  
+- [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)  
