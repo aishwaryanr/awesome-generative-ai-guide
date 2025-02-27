@@ -18,7 +18,11 @@ We'll be updating this repository regularly, so keep an eye out for the latest a
 Happy Learning!
 
 ---
-### :star: Discover our favorite AI tools spanning every layer of AI application development. Click [here](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/our_favourite_ai_tools.md) to learn more.
+## :star: Top AI Tools List
+
+Discover our favorite AI tools spanning every layer of AI application development. Click [here](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/our_favourite_ai_tools.md) to learn more.
+
+---
 
 ## :speaker: Announcements
 
