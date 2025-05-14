@@ -12,11 +12,10 @@ Here's a breakdown of each project, relevant tutorials, and code to help you get
 | [OCR & VQA with Qwen2-VL](#4-ocr--vqa-with-qwen2-vl)                                                                                | [Fine Tune Qwen2 VL Model using Llama Factory](#18-fine-tune-qwen2-vl-model-using-llama-factory)                                                 | [RAG Application using Langchain Mistral AI and Weviate db](#29-rag-application-using-langchain-mistral-ai-and-weviate-db)                                                               | [Autogen AI Agents: AI Debates – Pizza vs. Sushi](#41-autogen-ai-agents-ai-debates--pizza-vs-sushi)                                                | [Clone Any Voice to Generate Music and Speech](#60-clone-any-voice-to-generate-music-and-speech)                                                |
 | [Chat with Video File using Qwen2 VL](#5-chat-with-video-file-using-qwen2-vl)                                                       | [Fine-Tuning with ReFT: Create an Emoji LLM for Medical Diagnosis](#19-fine-tuning-with-reft-create-an-emoji-llm-for-medical-diagnosis)          | [RAG Application Using OpenSource Framework LlamaIndex and Mistral-AI](#30-rag-application-using-opensource-framework-llamaindex-and-mistral-ai)                                         | [Production Grade AI Agents using LangGraph (Map Reduce Implementation)](#42-production-grade-ai-agents-using-langgraph-map-reduce-implementation) |                                                                                                                                                 |
 | [Multimodal RAG with Qwen-2 and ColPali](#6-multimodal-rag-with-qwen-2-and-colpali)                                                 | [Fine Tune DeepSeek Model on your Custom Dataset](#20-fine-tune-deepseek-model-on-your-custom-dataset)                                           | [RAG Pipeline Using Haystack and OpenAI](#31-rag-pipeline-using-haystack-and-openai)                                                                                                     | [Build an Agentic RAG using Crew AI](#43-build-an-agentic-rag-using-crew-ai)                                                                       |                                                                                                                                                 |
-|                                                                                                                                     |                                                                                                                                                  |                                                                                                                                                                                          | [Build AI Assistant With MCP Servers And Tools Using LangChain And Groq](https://www.youtube.com/watch?v=BG4F3b5QpjM)                              |                                                                                                                                                 |
-|                                                                                                                                     |                                                                                                                                                  |                                                                                                                                                                                          | [Build Agentic Games in MINUTES with MCP, Cursor, and Langflow 1.4](https://www.youtube.com/watch?v=YG17s2QR6oU)                                   |                                                                                                                                                 |
-|                                                                                                                                     |                                                                                                                                                  |                                                                                                                                                                                          | [Build an INBOX ZERO Agent using Langflow 1.4 with MCP](https://www.youtube.com/watch?v=0jhdQYMff6o)                                               |                                                                                                                                                 |
-|                                                                                                                                     |                                                                                                                                                  |                                                                                                                                                                                          | [Web App with A2A](https://github.com/google/A2A/tree/main/demo)                                                                                   |                                                                                                                                                 |
-
+|                                                                                                                                     |                                                                                                                                                  |                                                                                                                                                                                          | [Build AI Assistant With MCP Servers And Tools Using LangChain And Groq](#61-build-ai-assistant-with-mcp-servers-and-tools-using-langchain-and-groq) |                                                                                                                                                 |
+|                                                                                                                                     |                                                                                                                                                  |                                                                                                                                                                                          | [Build Agentic Games in MINUTES with MCP, Cursor, and Langflow 1.4](#62-build-agentic-games-in-minutes-with-mcp-cursor-and-langflow-14)           |                                                                                                                                                 |
+|                                                                                                                                     |                                                                                                                                                  |                                                                                                                                                                                          | [Build an INBOX ZERO Agent using Langflow 1.4 with MCP](#63-build-an-inbox-zero-agent-using-langflow-14-with-mcp)                                 |                                                                                                                                                 |
+|                                                                                                                                     |                                                                                                                                                  |                                                                                                                                                                                          | [Web App with A2A](#64-web-app-with-a2a)                                                                                                           |                                                                                                                                                 |
 
 
 
@@ -1193,3 +1192,62 @@ Music generation, generative AI.
 
 
 - [Code](https://colab.research.google.com/drive/1eJfA2XUa-mXwdMy7DoYKVYHI1iTd9Vkt?usp=sharing#scrollTo=b5rDDPxrRAKa)
+
+## 61. Build AI Assistant With MCP Servers And Tools Using LangChain And Groq
+
+### **Difficulty Level**: 3/5
+
+### **Description**:
+Build an interactive AI assistant that uses **Model Context Protocol (MCP)** servers and tools for retrieval and execution. This project stitches together LangChain for orchestration and Groq inferencing for high-throughput model execution.
+
+### **Skills Gained**:
+MCP integration, LangChain pipelines, Groq inferencing, retrieval-augmented workflows, tool execution.
+
+### **Resources**:
+- [Tutorial](https://www.youtube.com/watch?v=BG4F3b5QpjM)  
+  
+
+---
+
+## 62. Build Agentic Games in MINUTES with MCP, Cursor, and Langflow 1.4
+
+### **Difficulty Level**: 2/5
+
+### **Description**:
+Leverage **MCP**, **Cursor**, and **Langflow 1.4** to spin up interactive, agent-driven games in minutes. You’ll orchestrate multiple LLM agents for game logic, state management, and user interaction.
+
+### **Skills Gained**:
+Agent orchestration, MCP patterns, Langflow flows, Cursor integrations, rapid prototyping.
+
+### **Resources**:
+- [Tutorial](https://www.youtube.com/watch?v=YG17s2QR6oU)
+
+---
+
+## 63. Build an INBOX ZERO Agent using Langflow 1.4 with MCP
+
+### **Difficulty Level**: 3/5
+
+### **Description**:
+Create an autonomous **Inbox Zero** email agent that reads, categorizes, and responds to emails using **Langflow 1.4** flows and **MCP** servers. Automate triage, summarization, and follow-up generation.
+
+### **Skills Gained**:
+Email automation, MCP protocols, Langflow orchestration, LLM-driven summarization, workflow automation.
+
+### **Resources**:
+- [Tutorial](https://www.youtube.com/watch?v=0jhdQYMff6o)
+
+---
+
+## 64. Web App with A2A
+
+### **Difficulty Level**: 3/5
+
+### **Description**:
+Implement a web application using Google’s **Agent-to-Agent (A2A)** framework. Coordinate multiple specialized AI agents in a browser interface to handle user queries, data retrieval, and multi-step tasks.
+
+### **Skills Gained**:
+A2A framework, web development, multi-agent coordination, REST API integration, UI design.
+
+### **Resources**:
+- [Code & Demo (GitHub)](https://github.com/google/A2A/tree/main/demo)
