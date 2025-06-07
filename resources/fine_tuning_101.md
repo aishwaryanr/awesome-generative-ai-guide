@@ -1,4 +1,5 @@
-#Fine-Tuning 101 Guide
+# Fine-Tuning 101 Guide
+
 
 ![main_agentic_rag.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/img/main_agentic_rag.png)
 
@@ -404,4 +405,7 @@ Fine-tuned models must be evaluated based on task-specific performance, not gene
 * [Unsloth Fine-Tuning Notebooks](https://github.com/unslothai/unsloth)
 * [LLaMA Factory Framework](https://github.com/hiyouga/LLaMA-Factory)
 * [Awesome LLM Fine-Tuning List](https://github.com/Curated-Awesome-Lists/awesome-llms-fine-tuning)
+
+
+Written by [Towhidul Islam](https://www.linkedin.com/in/towhidultonmoy/)
 
