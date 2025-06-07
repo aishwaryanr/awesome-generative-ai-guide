@@ -1,7 +1,7 @@
 # Fine-Tuning 101 Guide
 
 
-![main_agentic_rag.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/img/main_agentic_rag.png)
+![main_agentic_rag.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/img/fine-tuning-main.png)
 
 
 ## What is Fine Tuning?
@@ -64,6 +64,8 @@ In practice, many organizations start with prompting to validate use cases, then
 
 ---
 
+
+
 ### Tools and Libraries
 
 The essential toolkit for LLM fine tuning includes:
@@ -75,7 +77,11 @@ The essential toolkit for LLM fine tuning includes:
 - **PEFT/LoRA libraries**: For parameter-efficient fine tuning methods  
 - **Weights & Biases** or **TensorBoard**: For experiment tracking and visualization  
 
+![main_agentic_rag.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/img/fine-tuning-stack.png)
+
+
 ---
+
 
 ### Hardware Requirements
 
