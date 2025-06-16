@@ -47,6 +47,15 @@ Developers can also access extensive guides, tutorials, and community support th
 # Low-Code/No-Code AI Tools  
 *Tools that make AI more accessible to non-technical users through simplified interfaces.*
 
+## Oumi
+**Oumi** is a fully open-source platform that streamlines the entire lifecycle of foundation models - from data preparation and training to evaluation and deployment. It makes this accessible and reproducible to all via no-code YAML configuration files and a CLI, or, alternatively, low-code via a Python library. And it is easily extendible with your own models, datasets, and so on.
+[Discover Oumi](https://oumi.ai/docs/en/latest/index.html)
+
+**Getting Started with Oumi**
+- [Oumi Quick-Start Guide](https://oumi.ai/docs/en/latest/get_started/quickstart.html)
+- [YouTube: 3 minute demo of Oumi](https://youtu.be/pPNbWDynRTs)
+- [YouTube: What is Oumi?](https://youtu.be/K9PqMSzQz24)
+
 ## LangFlow
 
 **LangFlow** is a low-code platform designed to democratize AI development by enabling users to create AI agents and workflows without extensive programming knowledge. Its visual interface allows for seamless integration of various APIs, models, and databases, streamlining the process of building AI-powered applications.  
