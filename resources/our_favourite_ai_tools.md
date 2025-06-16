@@ -48,7 +48,7 @@ Developers can also access extensive guides, tutorials, and community support th
 *Tools that make AI more accessible to non-technical users through simplified interfaces.*
 
 ## Oumi
-**Oumi** is a fully open-source platform that streamlines the entire lifecycle of foundation models - from data preparation and training to evaluation and deployment. It makes this accessible and reproducible to all via no-code YAML configuration files and a CLI, or, alternatively, low-code via a Python library. And it is easily extendible with your own models, datasets, and so on.
+**Oumi** is a fully open-source platform that streamlines the entire lifecycle of foundation models - from data preparation and training to evaluation and deployment. It makes model development accessible and reproducible to all via no-code YAML configuration files and a CLI, or, alternatively, low-code via a Python library. And it is easily extendible with your own models, datasets, and so on.
 [Discover Oumi](https://oumi.ai/docs/en/latest/index.html)
 
 **Getting Started with Oumi**
