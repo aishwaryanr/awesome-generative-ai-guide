@@ -1,4 +1,4 @@
-# Day 3: Tools — How Agents Actually Get Things Done
+# Part 3: What are Tools in AI?
 
 In the previous part, we talked about different types of agents, from rule-based to fully autonomous, and how the right level of autonomy depends on the problem you're solving.
 
@@ -149,3 +149,4 @@ Just remember this:
 In the next part, we’ll learn about **Retrieval-Augmented Generation (RAG)** — what it is, when to use it, and how it fits naturally into agentic pipelines as a memory or context layer.
 
 PS: We also teach a widely loved course on how to actually build AI systems in this fast-changing environment, using a problem-first approach. It’s designed for PMs, leaders, engineers, decision-makers etc. who are working within real-world constraints. Alumni come from Google, Meta, Apple, Netflix, AWS, Spotify, Snapchat, Deloitte, and more. Our next cohort starts soon. Our next cohort starts soon. Early bird pricing is live: use the code "GITHUB" to get $300 off (Valid only for August 2025) to [register here](https://maven.com/aishwarya-kiriti/genai-system-design)!!
+
