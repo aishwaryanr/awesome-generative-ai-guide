@@ -1,123 +1,66 @@
 # Agentic AI Crash Course
 
+![Agentic AI Crash Course Hero](./hero-image.png)
+
 **Everything you need to know about agentic AI in the real world**
 
-*Created by Aishwarya Reganti & Kriti Badam*
+*Created by [Aishwarya Reganti](https://www.linkedin.com/in/areganti/) & [Kiriti Badam](https://www.linkedin.com/in/sai-kiriti-badam/)*
 
 ---
 
-## 🚀 Course Overview
+## 📚 Course Parts
 
-Welcome to the Agentic AI Crash Course! This comprehensive course covers everything you need to understand and implement agentic AI systems in real-world applications. From foundational concepts to advanced multi-agent systems, you'll gain practical knowledge of the tools, frameworks, and methodologies driving the agentic AI revolution.
+### [Part 1: What Are AI Agents Anyway?](./part1_what_are_ai_agents_anyway.md)
+Understanding the fundamental differences between generative AI and agentic AI, core capabilities, and real-world applications.
 
-## 📚 Course Structure
+### [Part 2: The 4 Types of Agentic Systems (and When to Use What)](./part2_the_4_types_of_agentic_systems.md)
+Explore workflow agents, semi-autonomous agents, rule-based systems, and autonomous agents with decision frameworks.
 
-### Part 1: What are AI Agents anyway?
-- **Generative AI vs Agentic AI**
-- Understanding the fundamental differences
-- Core capabilities and characteristics
-- Real-world applications and use cases
+### [Part 3: What Are Tools in AI?](./part3_what_are_tools_in_ai.md)
+Learn about AI model integration, API connections, tool ecosystems, and custom tool development.
 
-### Part 2: The 4 Types of Agentic Systems (and When to Use What)
-- **Workflow Agents** - Structured, predictable tasks
-- **Semi-Autonomous Agents** - Balanced human-AI collaboration  
-- **RPA/Rule Based Systems** - Process automation
-- **Autonomous Agents** - Independent decision making
-- Decision framework for choosing the right type
+### [Part 4: What Is RAG, and What Does It Mean to Make It Agentic?](./part4_what_is_rag_and_agentic.md)
+Deep dive into Retrieval-Augmented Generation, traditional vs agentic RAG, and implementation patterns.
 
-### Part 3: What are tools in AI?
-- **AI Model Integration** - Working with different models
-- **API Connections** - External service integration
-- **Tool Ecosystem** - Popular tools and frameworks
-- **Custom Tool Development** - Building specialized capabilities
+### [Part 5: What Is MCP and Why Should You Care?](./part5_what_is_mcp_and_why_care.md)
+Understanding Model Context Protocol, AI model integration strategies, and enterprise implementation.
 
-### Part 4: What Is RAG, and What Does It Mean to Make It Agentic?
-- **Agentic RAG Overview**
-- Traditional RAG vs Agentic RAG
-- Dynamic retrieval strategies
-- Context-aware information gathering
-- Implementation patterns and best practices
+### [Part 6: Planning in Agents + Reasoning Models](./part6_planning_in_agents_reasoning_models.md)
+Agent planning strategies, reasoning model integration, and advanced reasoning capabilities.
 
-### Part 5: What Is MCP and Why Should You Care?
-- **Model Context Protocol (MCP)** fundamentals
-- **AI Model Integration** strategies
-- Cross-platform compatibility
-- Enterprise implementation considerations
-- Future of AI model interoperability
+### [Part 7: Memory in Agents](./part7_memory_in_agents.md)
+Short-term and long-term memory systems, architecture patterns, and performance optimization.
 
-### Part 6: Planning in Agents + Reasoning Models
-- **Agent Planning Strategies**
-- **Reasoning Model Integration**
-- Multi-step task decomposition
-- Decision trees and execution paths
-- Advanced reasoning capabilities
+### [Part 8: Multi-Agent Systems](./part8_multi_agent_systems.md)
+Multi-agent architecture, hierarchical patterns, coordination strategies, and scalability considerations.
 
-### Part 7: Memory in Agents
-- **Short-term Memory** - Session-based context
-- **Long-term Memory** - Persistent knowledge
-- Memory architecture patterns
-- Context management strategies
-- Performance optimization techniques
+### [Part 9: Real-World Agentic Systems (Under the Hood)](./part9_real_world_agentic_systems.md)
+Case studies of production systems, architecture patterns, and lessons from enterprise implementations.
 
-### Part 8: Multi-Agent Systems
-- **Multi-Agent Systems** architecture
-- **Hierarchical Patterns** - Structured agent collaboration
-- **Coordination Strategies** - Agent communication protocols
-- **Scalability Considerations** - Enterprise deployment
-- Real-world implementation examples
-
-### Part 9: Real-world Agentic Systems (Under the hood)
-- **Case Studies** of production systems
-- **Architecture Patterns** and design principles
-- **Performance Metrics** and monitoring
-- **Deployment Strategies** and best practices
-- Lessons learned from enterprise implementations
-
-### Part 10: AI Agent Lessons and What's Ahead
-- **Google AGENT2AGENT** - Latest developments
-- **Anthropic Computer Use** - Breakthrough capabilities
-- **OpenAI A2A** - Agent-to-agent communication
-- **MCP Integration** - Protocol standardization
-- **Future Trends** and emerging technologies
-- **Industry Roadmap** and predictions
+### [Part 10: AI Agent Lessons and What's Ahead](./part10_ai_agent_lessons_whats_ahead.md)
+Latest developments, future trends, industry roadmap, and emerging technologies in agentic AI.
 
 ---
 
-## 🎯 Learning Objectives
+## 🎥 Advanced Video Lectures
 
-By the end of this course, you will be able to:
+### Core System Design & Applications
+- [Master Generative AI System Design](https://maven.com/p/8c3221/master-generative-ai-system-design)
+- [Why AI Agents Aren't Enough for Real-World Applications](https://maven.com/p/20f0ed/why-ai-agents-aren-t-enough-for-real-world-applications)
+- [Designing Agentic AI Applications for Enterprise Use Cases](https://maven.com/p/497d05/designing-agentic-ai-applications-for-enterprise-use-cases)
+- [Building Agentic AI Applications in 2025](https://maven.com/p/82345a/building-agentic-ai-applications-in-2025)
+- [Evaluating Agentic AI Applications: Beyond Vibe Checks](https://maven.com/p/6f0e97/evaluating-agentic-ai-applications-beyond-vibe-checks)
 
-- ✅ Understand the fundamental concepts of agentic AI systems
-- ✅ Choose the appropriate agentic system type for different use cases
-- ✅ Implement RAG systems with agentic capabilities
-- ✅ Design and deploy multi-agent architectures
-- ✅ Integrate memory and planning systems in AI agents
-- ✅ Build production-ready agentic AI applications
-- ✅ Understand the latest developments in agentic AI technology
+### Product & Enterprise Implementation
+- [AI Native Products: What Every PM Needs to Know and Do](https://maven.com/p/9a34b0/ai-native-products-what-every-pm-needs-to-know-and-do)
+- [Designing Agentic AI Systems for Enterprise Use Cases - Part 1](https://maven.com/p/466e22/1-designing-agentic-ai-systems-for-enterprise-use-cases)
+- [Designing Agentic AI Systems for Enterprise Use Cases - Part 2](https://maven.com/p/a0cdf1/2-designing-agentic-ai-systems-for-enterprise-use-cases)
 
-## 🛠️ Prerequisites
-
-- Basic understanding of AI/ML concepts
-- Familiarity with Large Language Models (LLMs)
-- Python programming experience (recommended)
-- Understanding of API integrations (helpful)
-
-## 📖 Course Materials
-
-Each part includes:
-- Detailed explanations and concepts
-- Real-world examples and case studies
-- Practical implementation guidance
-- Additional resources and references
-- Interactive exercises and projects
-
-## 🔗 Additional Resources
-
-This course also includes links to **advanced video lectures on agentic AI Q2 2025 updates**, covering:
-- Single vs. multi-agent systems comparison
-- Latest AI protocols and standards
-- Industry trends and future directions
-- Expert interviews and insights
+### Advanced Topics & Q2 2025 Updates
+- [Building Agentic AI Applications: 2025 Q2 Updates - Part 1](https://maven.com/p/b8470c/1-building-agentic-ai-applications-2025-q2-updates)
+- [AI Protocols 101: What You Should Know About MCP, A2A, etc.](https://maven.com/p/e2b5db/2-ai-protocols-101-what-you-should-know-about-mcp-a2a-etc)
+- [Single vs Multi-Agent AI Systems](https://maven.com/p/0e0e15/3-single-vs-multi-agent-ai-systems)
+- [Don't Build AI Products Like Traditional Software](https://maven.com/p/88a325/don-t-build-ai-products-like-traditional-software) *(Coming soon - sign up to watch live)*
 
 ---
 
@@ -125,15 +68,7 @@ This course also includes links to **advanced video lectures on agentic AI Q2 20
 
 Navigate to **Part 1** to begin your journey into the world of agentic AI!
 
-[Start with Part 1: What are AI Agents anyway?](./part1.md)
-
----
-
-## 📞 Support & Community
-
-- 🐛 Found an issue? Please report it in the main repository
-- 💡 Have suggestions? We'd love to hear your feedback
-- 🤝 Want to contribute? Check out our contribution guidelines
+[🎯 Start with Part 1: What Are AI Agents Anyway?](./part1_what_are_ai_agents_anyway.md)
 
 ---
 
