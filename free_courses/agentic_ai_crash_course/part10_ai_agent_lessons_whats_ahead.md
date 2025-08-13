@@ -3,16 +3,16 @@
 
 ## A Quick Recap
 
-Here’s what we covered over the last 9 days:
+Here’s what we covered over the last 9 parts:
 
-- **Day 1 — What agents are:** Not just chatbots that generate text, but systems that can decide and act.  
-- **Day 2 — Types of agents:** From tightly controlled workflow agents to fully autonomous ones, depending on how much decision-making you hand over.  
-- **Days 3–4 — Tools and RAG:** The bread and butter of agent action and knowledge grounding.  
-- **Day 5 — MCP:** A clean way to structure everything an agent needs (tools, memory, prior messages) into one payload.  
-- **Day 6 — Planning and reasoning models:** Why plain LLMs aren’t enough for complex decisions, and how newer models are built for multi-step tasks.  
-- **Day 7 — Memory:** Short-term vs. long-term memory, what to store, how to retrieve, and why it matters for continuity.  
-- **Day 8 — Multi-agent systems:** Orchestration, peer-to-peer collaboration, and the messiness of coordination.  
-- **Day 9 — Real-world systems:** How Perplexity, NotebookLM, and DeepResearch likely use these patterns in different ways.
+- **Part 1 — What agents are:** Not just chatbots that generate text, but systems that can decide and act.  
+- **Part 2 — Types of agents:** From tightly controlled workflow agents to fully autonomous ones, depending on how much decision-making you hand over.  
+- **Part 3–4 — Tools and RAG:** The bread and butter of agent action and knowledge grounding.  
+- **Part 5 — MCP:** A clean way to structure everything an agent needs (tools, memory, prior messages) into one payload.  
+- **Part 6 — Planning and reasoning models:** Why plain LLMs aren’t enough for complex decisions, and how newer models are built for multi-step tasks.  
+- **Part 7 — Memory:** Short-term vs. long-term memory, what to store, how to retrieve, and why it matters for continuity.  
+- **Part 8 — Multi-agent systems:** Orchestration, peer-to-peer collaboration, and the messiness of coordination.  
+- **Part 9 — Real-world systems:** How Perplexity, NotebookLM, and DeepResearch likely use these patterns in different ways.
 
 We’ve covered the **moving parts** that show up in real-world systems.  
 But all of it falls apart if you’re not thinking about two things: **observability** and **evaluation**.
@@ -126,3 +126,4 @@ If you take away one thing from this series — let it be this:
 Check out the readme for more lectures and advanced topics. If this was helpful, feel free to forward it to someone looking to learn in this space. And if you’d like to go deeper, our full 6-week course covers system design, applied agentic concepts, and real evaluation workflows, the kind that support production-grade applications. The course is built for everyone, whether you’re a Product Manager, Architect, Director, C-suite leader, or someone seriously exploring agentic AI.
 
 Our next cohort starts soon. Our next cohort starts soon. Early bird pricing is live: use the code "GITHUB" to get $300 off (Valid only for August 2025) to [register here](https://maven.com/aishwarya-kiriti/genai-system-design)!!
+
