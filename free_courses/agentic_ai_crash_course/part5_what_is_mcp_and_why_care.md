@@ -104,12 +104,13 @@ If something better comes along before MCP becomes “the HTTP of agents,” the
 
 ## Further Reading & Resources
 
-- We did a **full deep-dive article** on MCP, including clients, servers, and real-world use cases (written by Kiriti Badam).  
-- We also ran a **free live session** yesterday — you can catch the recording here.
+- We did a **[full deep-dive article](https://thenuancedperspective.substack.com/p/mcp-overhyped-misunderstood-and-actually)** on MCP, including clients, servers, and real-world use cases (written by Kiriti Badam, OpenAI).  
+- We also ran a **free live session** — you can catch the [recording](https://maven.com/p/82345a) here.
 
 ---
 
 In the next part, we’ll learn about the **planning** component of agentic systems and why it matters.
 
 PS: We also teach a widely loved course on how to actually build AI systems in this fast-changing environment, using a problem-first approach. It’s designed for PMs, leaders, engineers, decision-makers etc. who are working within real-world constraints. Alumni come from Google, Meta, Apple, Netflix, AWS, Spotify, Snapchat, Deloitte, and more. Our next cohort starts soon. Our next cohort starts soon. Early bird pricing is live: use the code "GITHUB" to get $300 off (Valid only for August 2025) to [register here](https://maven.com/aishwarya-kiriti/genai-system-design)!!
+
 
