@@ -12,6 +12,8 @@ Explore the following resources:
 4. [Generative AI Genius 2024 (created by Aishwarya Naresh Reganti) course material](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/generative_ai_genius/README.md)
 5. [List of all GenAI-related free courses (over 90 listed)](https://github.com/aishwaryanr/awesome-generative-ai-guide?tab=readme-ov-file#book-list-of-free-genai-courses)
 6. [List of code repositories/notebooks for developing generative AI applications](https://github.com/aishwaryanr/awesome-generative-ai-guide?tab=readme-ov-file#notebook-code-notebooks)
+7. [Forbes](https://www.forbes.com/sites/rachelwells/2024/12/02/7-free-generative-ai-courses-for-2025/?utm_source=chatgpt.com)
+8. [TechTarget](https://www.techtarget.com/searchenterpriseai/tip/Top-generative-AI-courses-and-training-resources?utm_source=chatgpt.com)
 
 We'll be updating this repository regularly, so keep an eye out for the latest additions!
 
