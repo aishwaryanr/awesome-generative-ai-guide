@@ -78,6 +78,18 @@ By supporting a vast ecosystem of applications, Zapier makes it easy to set up t
 - [Zapier Guides](https://zapier.com/learn/)  
 - [YouTube: Let's Get Started With Zapier! | Learn Zapier in 14 Days](https://www.youtube.com/watch?v=JZI-5qHX9jI)
 
+## n8n
+
+**n8n** is a workflow automation platform that uniquely combines AI capabilities with business process automation, giving technical teams the flexibility of connecting apps, APIs, and AI models through easy-to-build workflows.
+[Visit n8n](https://n8n.io/)
+
+n8n comes with many ready-made integrations and also lets you add your own code. You can use it to connect data pipelines, work with AI models, or run tasks automatically when events happen. Its drag-and-drop interface makes it easy to start, while still giving developers the option to add custom logic.
+
+**Getting Started with n8n:**  
+- [n8n Guides](https://docs.n8n.io/)
+- [YouTube: n8n Quick Start Tutorial](https://youtu.be/4cQWJViybAQ?si=Pr4k-HEE24W3R-bg)
+- [YouTube: n8n Beginner Course](https://www.youtube.com/watch?v=4BVTkqbn_tY)
+
 ---
 
 # AI Observability and Monitoring  
