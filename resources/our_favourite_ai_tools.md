@@ -38,9 +38,21 @@ The framework streamlines every stage of the LLM application lifecycle—from pr
 Developers can also access extensive guides, tutorials, and community support through LangChain's GitHub repository, making it a versatile resource for creating intelligent systems.  
 [Visit LangChain on GitHub](https://github.com/langchain-ai/langchain?utm_source=chatgpt.com)
 
-**Getting Started with LangChain:**  
-- [Official Getting Started Guide](https://python.langchain.com/docs/introduction/?utm_source=chatgpt.com)  
+**Getting Started with LangChain:**
+- [Official Getting Started Guide](https://python.langchain.com/docs/introduction/?utm_source=chatgpt.com)
 <!-- - [YouTube: LangChain Explained in 13 Minutes | QuickStart Tutorial for Beginners](https://www.youtube.com/watch?v=aywZrzNaKjs) -->
+
+---
+
+## Neurolink
+
+**Neurolink** is an enterprise-grade LLM integration framework for building production-ready AI applications with built-in hallucination prevention, RAG, and MCP support. Perfect for businesses looking to implement reliable LLM solutions.
+[Explore Neurolink](https://github.com/juspay/neurolink)
+
+The framework provides enterprise-level features for production AI deployments, including advanced hallucination detection and prevention mechanisms, retrieval-augmented generation capabilities, and Model Context Protocol support for building robust AI agents.
+
+Neurolink streamlines the development of production-grade LLM applications with comprehensive tools for ensuring reliability, accuracy, and scalability in enterprise environments.
+[Visit Neurolink on GitHub](https://github.com/juspay/neurolink)
 
 ---
 
