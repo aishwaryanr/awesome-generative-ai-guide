@@ -1138,12 +1138,1915 @@ if __name__ == "__main__":
 
 ---
 
-(Continue avec sections 6-11...)
+## 6. BLIP-2 et Flamingo : Architectures Alternatives
 
-Je vais m'arrêter ici pour l'instant car le fichier est déjà très long. Voulez-vous que je :
+### 6.1 BLIP-2 : Le Q-Former Genius
 
-1. **Continue ce chapitre 22** avec les sections restantes (BLIP-2, Audio/Vidéo, Projet pratique, Quiz) ?
-2. **Enrichisse un chapitre existant** avec des éléments ludiques (par exemple, ajouter dialogues/anecdotes au Chapitre 13 LoRA) ?
-3. **Créer un autre nouveau chapitre** prioritaire (par exemple, Chapitre 2: Histoire des LLMs avec timeline narrative) ?
+**BLIP-2** (Salesforce, 2023) a introduit une architecture révolutionnaire : le **Q-Former**.
 
-Le document **AUDIT_LIVRE_COMPLET.md** contient la liste exhaustive de TOUT ce qui manque. C'est votre roadmap complète!
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💬 **DIALOGUE : Comprendre le Q-Former**
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+**Alice** : "Bob, LLaVA envoie 256 tokens visuels au LLM. C'est pas un peu... beaucoup ?"
+
+**Bob** : "Excellente observation ! Imagine que tu regardes une photo. Tu ne mémorises pas CHAQUE pixel, n'est-ce pas ?"
+
+**Alice** : "Non, j'extrais les infos importantes : 'chat orange', 'canapé bleu', 'fenêtre lumineuse'..."
+
+**Bob** : "Exactement ! C'est ce que fait le Q-Former. Au lieu de garder 256 patches, il pose des 'questions intelligentes' à l'image et garde seulement les réponses. Résultat : 32 tokens au lieu de 256."
+
+**Alice** : "Attends... des 'questions' à une image ? C'est pas un peu abstrait ?"
+
+**Bob** : "Pense à ça comme un interrogatoire de détective :
+- Question 1 : 'Y a-t-il un objet principal ?' → Oui, un chat
+- Question 2 : 'Quelle est sa couleur ?' → Orange
+- Question 3 : 'Où est-il situé ?' → Sur un canapé
+- ...32 questions au total
+
+Chaque 'question' (query) extrait UNE information importante via attention. 32 queries = 32 infos essentielles = 32 tokens compressés !"
+
+**Alice** : "C'est brillant ! Donc plus efficace que LLaVA qui garde tout ?"
+
+**Bob** : "Pour les longs contextes, oui. Mais LLaVA est plus simple et fonctionne déjà super bien. Trade-off complexité vs performance."
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+### 6.2 Architecture BLIP-2
+
+```python
+"""
+BLIP-2 Architecture
+===================
+
+Innovation : Q-Former = Learnable Queries + Cross-Attention
+Résultat : Compression intelligente 256 → 32 tokens
+"""
+
+import torch
+import torch.nn as nn
+
+class QFormer(nn.Module):
+    """
+    Q-Former : Query Transformer pour compression vision
+
+    Intuition :
+    - 32 queries apprenables (comme des 'questions')
+    - Cross-attention : Queries 'interrogent' l'image
+    - Self-attention : Queries se raffinent entre elles
+    - Output : 32 tokens riches en information
+    """
+
+    def __init__(
+        self,
+        num_queries=32,
+        hidden_dim=768,
+        num_attention_heads=12,
+        num_layers=6
+    ):
+        super().__init__()
+
+        # Learnable queries (les "questions" posées à l'image)
+        self.query_tokens = nn.Parameter(torch.randn(num_queries, hidden_dim))
+        # Shape : [32, 768]
+
+        # Transformer Encoder Layers
+        self.layers = nn.ModuleList([
+            QFormerLayer(hidden_dim, num_attention_heads)
+            for _ in range(num_layers)
+        ])
+
+        # Layer norm final
+        self.ln = nn.LayerNorm(hidden_dim)
+
+    def forward(self, vision_features):
+        """
+        Args:
+            vision_features: [batch, 256, 1024] - CLIP output
+
+        Returns:
+            compressed: [batch, 32, 768] - Features compressées
+        """
+        batch_size = vision_features.shape[0]
+
+        # Répéter queries pour chaque image du batch
+        queries = self.query_tokens.unsqueeze(0).repeat(batch_size, 1, 1)
+        # Shape : [batch, 32, 768]
+
+        # Passer à travers les layers
+        for layer in self.layers:
+            queries = layer(
+                queries=queries,
+                vision_features=vision_features
+            )
+
+        # Normalisation finale
+        queries = self.ln(queries)
+
+        return queries
+
+
+class QFormerLayer(nn.Module):
+    """Une couche du Q-Former avec cross + self attention"""
+
+    def __init__(self, hidden_dim, num_heads):
+        super().__init__()
+
+        # Cross-Attention : Queries → Vision
+        self.cross_attention = nn.MultiheadAttention(
+            embed_dim=hidden_dim,
+            num_heads=num_heads,
+            batch_first=True
+        )
+        self.cross_attn_ln = nn.LayerNorm(hidden_dim)
+
+        # Self-Attention : Queries → Queries
+        self.self_attention = nn.MultiheadAttention(
+            embed_dim=hidden_dim,
+            num_heads=num_heads,
+            batch_first=True
+        )
+        self.self_attn_ln = nn.LayerNorm(hidden_dim)
+
+        # FFN
+        self.ffn = nn.Sequential(
+            nn.Linear(hidden_dim, hidden_dim * 4),
+            nn.GELU(),
+            nn.Linear(hidden_dim * 4, hidden_dim)
+        )
+        self.ffn_ln = nn.LayerNorm(hidden_dim)
+
+    def forward(self, queries, vision_features):
+        """
+        Args:
+            queries: [batch, 32, 768]
+            vision_features: [batch, 256, 1024]
+        """
+
+        # 1. Cross-Attention : Queries "regardent" l'image
+        attended, _ = self.cross_attention(
+            query=queries,
+            key=vision_features,
+            value=vision_features
+        )
+        queries = self.cross_attn_ln(queries + attended)  # Residual
+
+        # 2. Self-Attention : Queries se parlent entre elles
+        self_attended, _ = self.self_attention(
+            query=queries,
+            key=queries,
+            value=queries
+        )
+        queries = self.self_attn_ln(queries + self_attended)  # Residual
+
+        # 3. FFN
+        ffn_output = self.ffn(queries)
+        queries = self.ffn_ln(queries + ffn_output)  # Residual
+
+        return queries
+
+
+class BLIP2Model(nn.Module):
+    """Modèle BLIP-2 complet"""
+
+    def __init__(self):
+        super().__init__()
+
+        # Vision Encoder (FROZEN ❄️)
+        from transformers import CLIPVisionModel
+        self.vision_encoder = CLIPVisionModel.from_pretrained(
+            "openai/clip-vit-large-patch14"
+        )
+        self.vision_encoder.requires_grad_(False)
+
+        # Q-Former (TRAINABLE 🔥)
+        self.qformer = QFormer(
+            num_queries=32,
+            hidden_dim=768,
+            num_attention_heads=12,
+            num_layers=6
+        )
+
+        # Projection vers LLM (TRAINABLE 🔥)
+        self.projection = nn.Linear(768, 4096)  # 768 → Llama dim
+
+        # LLM (FROZEN ❄️)
+        from transformers import AutoModelForCausalLM
+        self.llm = AutoModelForCausalLM.from_pretrained(
+            "meta-llama/Llama-2-7b-hf"
+        )
+        self.llm.requires_grad_(False)
+
+    def forward(self, images, input_ids):
+        batch_size = images.shape[0]
+
+        # 1. Vision encoding
+        with torch.no_grad():
+            vision_outputs = self.vision_encoder(images)
+            vision_features = vision_outputs.last_hidden_state
+            # [batch, 256, 1024]
+
+        # 2. Q-Former compression (THE MAGIC ✨)
+        compressed_features = self.qformer(vision_features)
+        # [batch, 32, 768] - De 256 → 32 tokens !
+
+        # 3. Projection vers LLM space
+        llm_features = self.projection(compressed_features)
+        # [batch, 32, 4096]
+
+        # 4. Concat avec texte et forward LLM
+        # (Similaire à LLaVA mais avec seulement 32 tokens visuels)
+        outputs = self.llm(
+            inputs_embeds=llm_features,
+            # ... reste similaire à LLaVA
+        )
+
+        return outputs
+
+
+# ═══════════════════════════════════════════════════════════
+# 💡 POURQUOI Q-FORMER EST GÉNIAL
+# ═══════════════════════════════════════════════════════════
+#
+# AVANTAGES :
+# 1. Compression 8× (256 → 32 tokens)
+# 2. Contexte plus long disponible pour texte
+# 3. Inference plus rapide (moins de tokens à traiter)
+# 4. Flexible : Change facilement le nombre de queries
+#
+# INCONVÉNIENTS :
+# 1. Plus complexe à entraîner
+# 2. Plus de paramètres (Q-Former = 188M params)
+# 3. Risque de perte d'info si trop peu de queries
+#
+# USE CASES :
+# - Long documents avec images
+# - Multi-image conversations
+# - Applications où contexte limité critique
+#
+# ═══════════════════════════════════════════════════════════
+```
+
+### 6.3 Flamingo : Few-Shot Learning Master
+
+**Flamingo** (DeepMind, 2022) a été le premier "vrai" LLM multimodal avec capacités **few-shot**.
+
+**Innovation** : Perceiver Resampler + Gated Cross-Attention
+
+```
+┌──────────────────────────────────────────────────────────┐
+│              FLAMINGO ARCHITECTURE                        │
+├──────────────────────────────────────────────────────────┤
+│                                                           │
+│  Vision Encoder (Normalizer-Free ResNet)                 │
+│         ↓                                                 │
+│  Perceiver Resampler (Compression)                       │
+│         ↓                                                 │
+│  LLM avec Gated Cross-Attention Layers                   │
+│         ↓                                                 │
+│  Text Generation                                          │
+│                                                           │
+│  INNOVATION : Gated Cross-Attention                      │
+│  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━   │
+│                                                           │
+│  LLM layers alternent :                                  │
+│  1. Self-Attention (text-only)                           │
+│  2. Gated Cross-Attention (text ↔ vision)               │
+│  3. FFN                                                   │
+│                                                           │
+│  Le "gating" permet au modèle de choisir :              │
+│  - Utiliser vision (gate=1)                              │
+│  - Ignorer vision (gate=0)                               │
+│                                                           │
+│  Résultat : Flexible et adaptable !                      │
+│                                                           │
+└──────────────────────────────────────────────────────────┘
+```
+
+**Capacité Few-Shot Impressionnante** :
+
+```
+Input (Few-shot examples) :
+  [Image1: Red car] → "This is a red car"
+  [Image2: Blue truck] → "This is a blue truck"
+  [Image3: Green motorcycle] → ???
+
+Flamingo Output : "This is a green motorcycle"
+
+Learned pattern from just 2 examples! 🤯
+```
+
+⚠️ **Limitation** : Flamingo est **fermé** (DeepMind n'a pas publié les poids)
+
+---
+
+## 7. Au-delà de la Vision : Audio et Vidéo
+
+### 7.1 Audio-Language Models
+
+**Whisper** (OpenAI, 2022) + LLM = Chatbot vocal
+
+```python
+"""
+AUDIO-LANGUAGE PIPELINE
+=======================
+
+Pipeline : Audio → Transcription → LLM → Response
+"""
+
+from transformers import WhisperProcessor, WhisperForConditionalGeneration
+import torch
+
+class AudioLLMChatbot:
+    """Chatbot qui comprend l'audio"""
+
+    def __init__(self):
+        # Audio → Text (Whisper)
+        self.whisper_processor = WhisperProcessor.from_pretrained(
+            "openai/whisper-large-v3"
+        )
+        self.whisper_model = WhisperForConditionalGeneration.from_pretrained(
+            "openai/whisper-large-v3"
+        )
+
+        # Text → Response (LLM)
+        from transformers import AutoModelForCausalLM, AutoTokenizer
+        self.llm = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-2-7b-chat-hf")
+        self.tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-7b-chat-hf")
+
+    def process_audio(self, audio_path):
+        """
+        Traiter audio et générer réponse
+
+        Args:
+            audio_path: Chemin vers fichier audio (.wav, .mp3)
+
+        Returns:
+            response: Réponse textuelle du LLM
+        """
+        import librosa
+
+        # 1. Charger audio
+        audio, sr = librosa.load(audio_path, sr=16000)
+
+        # 2. Transcription avec Whisper
+        inputs = self.whisper_processor(
+            audio,
+            sampling_rate=16000,
+            return_tensors="pt"
+        )
+
+        with torch.no_grad():
+            generated_ids = self.whisper_model.generate(inputs.input_features)
+
+        transcription = self.whisper_processor.batch_decode(
+            generated_ids,
+            skip_special_tokens=True
+        )[0]
+
+        print(f"🎤 Transcription: {transcription}")
+
+        # 3. Réponse LLM
+        prompt = f"USER: {transcription}\nASSISTANT:"
+        inputs = self.tokenizer(prompt, return_tensors="pt")
+
+        with torch.no_grad():
+            outputs = self.llm.generate(
+                **inputs,
+                max_new_tokens=200,
+                temperature=0.7
+            )
+
+        response = self.tokenizer.decode(outputs[0], skip_special_tokens=True)
+        response = response.split("ASSISTANT:")[-1].strip()
+
+        print(f"🤖 Response: {response}")
+
+        return response
+
+
+# Exemple d'utilisation
+if __name__ == "__main__":
+    bot = AudioLLMChatbot()
+
+    # User enregistre : "What's the weather like today?"
+    response = bot.process_audio("user_question.wav")
+
+    # Bot répond en texte (peut être converti en audio avec TTS)
+```
+
+**AudioLM** (Google, 2023) : Génération audio directe (pas de texte intermédiaire)
+
+### 7.2 Video Understanding
+
+**Vidéo = Séquence d'images + Audio**
+
+**Challenge** : Une vidéo de 1 minute = 1800 frames (30 fps) !
+
+**Solutions** :
+
+**1. Frame Sampling** : Prendre 1 frame toutes les N secondes
+```python
+# Extraire 8 frames d'une vidéo de 30 secondes
+frames = extract_frames(video, num_frames=8)  # 1 frame tous les 4 sec
+
+# Traiter comme multi-image
+for frame in frames:
+    features = vision_encoder(frame)
+    # Concat toutes les features
+```
+
+**2. Video-Specific Encoders** : ViViT, VideoMAE
+- Utilisent attention spatio-temporelle
+- Capturent le mouvement entre frames
+
+**3. Gemini 1.5 Pro Approach** : Long-context
+```
+Gemini 1.5 Pro peut analyser 1 HEURE de vidéo !
+
+Comment ?
+- Compression spatiale (comme Q-Former)
+- Compression temporelle (sampling intelligent)
+- Long context window (1M tokens)
+
+Résultat : Peut répondre "À quelle minute le personnage
+            principal apparaît-il pour la première fois ?"
+```
+
+**Exemple Code** :
+
+```python
+"""
+VIDEO UNDERSTANDING avec LLaVA-Video (conceptuel)
+"""
+
+class VideoLLM:
+    """Analyser des vidéos avec un LLM"""
+
+    def __init__(self):
+        self.vision_encoder = load_clip()
+        self.llm = load_llama()
+
+    def analyze_video(self, video_path, question):
+        """
+        Analyser vidéo et répondre à question
+
+        Args:
+            video_path: Chemin vers vidéo
+            question: Question sur la vidéo
+        """
+
+        # 1. Extraire frames (intelligent sampling)
+        frames = self.extract_key_frames(video_path, num_frames=16)
+        # Prend frames aux moments clés (changements de scène, etc.)
+
+        # 2. Encoder chaque frame
+        frame_features = []
+        for frame in frames:
+            features = self.vision_encoder(frame)
+            frame_features.append(features)
+
+        # 3. Concat temporellement
+        video_features = torch.cat(frame_features, dim=1)
+        # Shape : [1, 16*256, 1024] = [1, 4096, 1024]
+
+        # 4. Projection et LLM
+        projected = self.projection(video_features)
+
+        # 5. Question + Réponse
+        prompt = f"Video context: <VIDEO_FEATURES>\nQuestion: {question}\nAnswer:"
+        response = self.llm.generate(prompt, video_features=projected)
+
+        return response
+
+    def extract_key_frames(self, video_path, num_frames=16):
+        """
+        Extraction intelligente de frames clés
+
+        Méthodes :
+        1. Uniform sampling : 1 frame tous les N secondes
+        2. Change detection : Frames où scène change
+        3. Importance sampling : Frames avec le plus d'action
+        """
+        import cv2
+
+        cap = cv2.VideoCapture(video_path)
+        total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
+
+        # Uniform sampling pour simplification
+        frame_indices = np.linspace(0, total_frames-1, num_frames, dtype=int)
+
+        frames = []
+        for idx in frame_indices:
+            cap.set(cv2.CAP_PROP_POS_FRAMES, idx)
+            ret, frame = cap.read()
+            if ret:
+                frames.append(frame)
+
+        cap.release()
+        return frames
+
+
+# Use case : Analyse de film
+vlm = VideoLLM()
+
+response = vlm.analyze_video(
+    "movie.mp4",
+    "Summarize the main plot points of this movie."
+)
+
+print(response)
+# "The movie follows a hero's journey where the protagonist
+#  discovers hidden powers, faces betrayal from a trusted ally,
+#  and ultimately saves their world in a climactic battle..."
+```
+
+**Applications Vidéo Réelles** :
+- 📹 **Surveillance** : "Détecte si quelqu'un vole dans cette vidéo"
+- 🎬 **Editing** : "Trouve tous les plans où le personnage sourit"
+- 🏀 **Sports Analysis** : "Combien de shoots à 3 points dans ce match ?"
+- 🎓 **Education** : "Résume ce cours de 1 heure en 3 bullet points"
+
+---
+
+## 8. Training Paradigms
+
+### 8.1 Les Trois Approches
+
+```
+┌──────────────────────────────────────────────────────────┐
+│         TRAINING STRATEGIES MULTIMODAL                    │
+├──────────────────────────────────────────────────────────┤
+│                                                           │
+│  1. Freeze Vision + LLM, Train Projector Only            │
+│     ✅ Rapide, cheap ($500)                              │
+│     ✅ Stable (pas de catastrophic forgetting)           │
+│     ❌ Performance limitée                               │
+│     👉 LLaVA, MiniGPT-4                                  │
+│                                                           │
+│  2. Freeze Vision, Fine-tune LLM + Projector             │
+│     ✅ Meilleure performance                             │
+│     ✅ Adaptable au domaine                              │
+│     ❌ Plus cher (~$5k-10k)                              │
+│     ❌ Risque overfitting                                │
+│     👉 LLaVA-1.5, Qwen-VL                                │
+│                                                           │
+│  3. Joint Training (Vision + LLM + Projector)            │
+│     ✅ Performance SOTA                                   │
+│     ✅ Alignement optimal                                │
+│     ❌ Très cher ($100k+)                                │
+│     ❌ Instable, difficile                               │
+│     👉 GPT-4V, Gemini, Claude 3                          │
+│                                                           │
+└──────────────────────────────────────────────────────────┘
+```
+
+### 8.2 Recipe Complète : Entraîner Votre Modèle Multimodal
+
+**Étape par Étape** :
+
+```python
+"""
+TRAINING RECIPE : Créer Votre LLaVA
+====================================
+
+Dataset : 595K image-caption (stage 1) + 158K instruction (stage 2)
+Hardware : 8× A100 40GB
+Temps : ~14 heures total
+Coût : ~$500 sur cloud
+"""
+
+import torch
+from transformers import Trainer, TrainingArguments
+from datasets import load_dataset
+
+# ════════════════════════════════════════════════════════════
+# STAGE 1 : Pre-training (Feature Alignment)
+# ════════════════════════════════════════════════════════════
+
+def stage1_pretraining():
+    """
+    Objectif : Aligner vision features avec LLM space
+    Dataset : LAION-CC-SBU (595K image-caption pairs)
+    Frozen : CLIP + Llama
+    Trainable : Projector ONLY
+    """
+
+    # 1. Charger modèle
+    model = LLaVAModel(
+        vision_tower="openai/clip-vit-large-patch14",
+        language_model="meta-llama/Llama-2-7b-hf"
+    )
+
+    # Freeze vision + LLM
+    model.vision_tower.requires_grad_(False)
+    model.language_model.requires_grad_(False)
+    # Projector reste trainable
+
+    # 2. Dataset
+    dataset = load_dataset("liuhaotian/LLaVA-Pretrain")
+    # Format : {"image": PIL.Image, "caption": "A cat sitting..."}
+
+    # 3. Training args
+    training_args = TrainingArguments(
+        output_dir="./llava-stage1",
+        num_train_epochs=1,
+        per_device_train_batch_size=16,  # × 8 GPUs = 128 total
+        gradient_accumulation_steps=1,
+        learning_rate=2e-3,
+        warmup_steps=1000,
+        lr_scheduler_type="cosine",
+        save_steps=5000,
+        logging_steps=100,
+        bf16=True,                       # Mixed precision
+        dataloader_num_workers=4,
+        remove_unused_columns=False
+    )
+
+    # 4. Trainer
+    trainer = Trainer(
+        model=model,
+        args=training_args,
+        train_dataset=dataset,
+        data_collator=llava_collate_fn  # Custom collator
+    )
+
+    # 5. Train !
+    trainer.train()
+
+    # 6. Save projector weights
+    torch.save(
+        model.mm_projector.state_dict(),
+        "projector_weights.pth"
+    )
+
+    print("✅ Stage 1 terminé !")
+    print("Projector aligné : vision features → LLM space")
+
+
+# ════════════════════════════════════════════════════════════
+# STAGE 2 : Instruction Tuning
+# ════════════════════════════════════════════════════════════
+
+def stage2_instruction_tuning():
+    """
+    Objectif : Apprendre à suivre instructions
+    Dataset : LLaVA-Instruct (158K instruction pairs)
+    Frozen : CLIP
+    Trainable : Projector + Llama (avec LoRA)
+    """
+
+    # 1. Charger modèle avec projector pré-entraîné
+    model = LLaVAModel(
+        vision_tower="openai/clip-vit-large-patch14",
+        language_model="meta-llama/Llama-2-7b-hf"
+    )
+    model.mm_projector.load_state_dict(
+        torch.load("projector_weights.pth")
+    )
+
+    # Freeze vision
+    model.vision_tower.requires_grad_(False)
+
+    # Unfreeze LLM avec LoRA
+    from peft import LoraConfig, get_peft_model
+
+    lora_config = LoraConfig(
+        r=8,
+        lora_alpha=16,
+        target_modules=["q_proj", "v_proj"],
+        lora_dropout=0.05,
+        bias="none",
+        task_type="CAUSAL_LM"
+    )
+
+    model.language_model = get_peft_model(
+        model.language_model,
+        lora_config
+    )
+
+    # 2. Dataset
+    dataset = load_dataset("liuhaotian/LLaVA-Instruct-150K")
+    # Format : {
+    #   "image": PIL.Image,
+    #   "conversations": [
+    #     {"from": "human", "value": "What's in this image?"},
+    #     {"from": "gpt", "value": "The image shows..."}
+    #   ]
+    # }
+
+    # 3. Training args
+    training_args = TrainingArguments(
+        output_dir="./llava-stage2",
+        num_train_epochs=3,
+        per_device_train_batch_size=4,   # × 8 GPUs = 32 total
+        gradient_accumulation_steps=4,   # Effective batch = 128
+        learning_rate=2e-5,              # Plus petit que stage 1
+        warmup_steps=100,
+        lr_scheduler_type="cosine",
+        save_steps=1000,
+        logging_steps=50,
+        bf16=True,
+        dataloader_num_workers=4,
+        remove_unused_columns=False
+    )
+
+    # 4. Trainer
+    trainer = Trainer(
+        model=model,
+        args=training_args,
+        train_dataset=dataset,
+        data_collator=llava_instruction_collate_fn
+    )
+
+    # 5. Train !
+    trainer.train()
+
+    # 6. Save final model
+    model.save_pretrained("./llava-final")
+
+    print("✅ Stage 2 terminé !")
+    print("Modèle prêt pour instruction following !")
+
+
+# ════════════════════════════════════════════════════════════
+# HELPER FUNCTIONS
+# ════════════════════════════════════════════════════════════
+
+def llava_collate_fn(batch):
+    """Collate function pour stage 1 (caption)"""
+    images = [item['image'] for item in batch]
+    captions = [item['caption'] for item in batch]
+
+    # Process images
+    from PIL import Image
+    import torchvision.transforms as transforms
+
+    transform = transforms.Compose([
+        transforms.Resize((224, 224)),
+        transforms.ToTensor(),
+        transforms.Normalize(
+            mean=[0.48145466, 0.4578275, 0.40821073],
+            std=[0.26862954, 0.26130258, 0.27577711]
+        )
+    ])
+
+    images_tensor = torch.stack([transform(img) for img in images])
+
+    # Tokenize captions
+    # Format : "<image>\n{caption}"
+    # ...
+
+    return {
+        'images': images_tensor,
+        'input_ids': input_ids,
+        'attention_mask': attention_mask,
+        'labels': labels
+    }
+
+
+def llava_instruction_collate_fn(batch):
+    """Collate function pour stage 2 (instruction)"""
+    # Similar mais avec conversations multi-turn
+    # ...
+    pass
+
+
+# ════════════════════════════════════════════════════════════
+# MAIN : Exécuter le training
+# ════════════════════════════════════════════════════════════
+
+if __name__ == "__main__":
+    print("🚀 Démarrage training LLaVA !")
+    print()
+
+    # Stage 1 : ~4 hours
+    print("=" * 60)
+    print("STAGE 1 : Pre-training")
+    print("=" * 60)
+    stage1_pretraining()
+
+    # Stage 2 : ~10 hours
+    print()
+    print("=" * 60)
+    print("STAGE 2 : Instruction Tuning")
+    print("=" * 60)
+    stage2_instruction_tuning()
+
+    print()
+    print("🎉 Training complet terminé !")
+    print("Total time : ~14 hours")
+    print("Total cost : ~$500")
+    print()
+    print("Votre modèle multimodal est prêt ! 🦙👁️")
+```
+
+---
+
+## 9. Projet Pratique : Créer Votre Chatbot Vision
+
+### 9.1 Objectif du Projet
+
+Créer un **chatbot multimodal complet** avec :
+- ✅ Interface web (Gradio)
+- ✅ Support images (upload ou URL)
+- ✅ Conversation multi-turn
+- ✅ Historique
+- ✅ Déploiement
+
+**Temps estimé** : 2-3 heures
+**Niveau** : Intermédiaire
+
+### 9.2 Architecture
+
+```
+┌──────────────────────────────────────────────────────────┐
+│           VISION CHATBOT ARCHITECTURE                     │
+├──────────────────────────────────────────────────────────┤
+│                                                           │
+│  Frontend (Gradio)                                        │
+│      ↓                                                    │
+│  API Layer (FastAPI)                                     │
+│      ↓                                                    │
+│  LLaVA Model (Inference)                                 │
+│      ↓                                                    │
+│  Response                                                 │
+│                                                           │
+│  Features :                                              │
+│  - Image upload                                          │
+│  - Multi-turn conversation                               │
+│  - History tracking                                      │
+│  - Temperature control                                   │
+│  - Max tokens slider                                     │
+│                                                           │
+└──────────────────────────────────────────────────────────┘
+```
+
+### 9.3 Code Complet
+
+**Partie 1 : Backend (FastAPI)**
+
+```python
+"""
+vision_chatbot/backend.py
+=========================
+
+Backend FastAPI pour chatbot vision
+"""
+
+from fastapi import FastAPI, File, UploadFile, Form
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel
+from typing import List, Optional
+import torch
+from PIL import Image
+import io
+import base64
+
+# Importer LLaVA
+from llava.model.builder import load_pretrained_model
+from llava.mm_utils import process_images, tokenizer_image_token
+from llava.constants import IMAGE_TOKEN_INDEX
+
+app = FastAPI(title="Vision Chatbot API")
+
+# CORS
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"]
+)
+
+# ════════════════════════════════════════════════════════════
+# MODELS
+# ════════════════════════════════════════════════════════════
+
+class Message(BaseModel):
+    role: str  # "user" or "assistant"
+    content: str
+    image_data: Optional[str] = None  # Base64 encoded
+
+class ChatRequest(BaseModel):
+    messages: List[Message]
+    temperature: float = 0.7
+    max_tokens: int = 512
+
+class ChatResponse(BaseModel):
+    response: str
+    finish_reason: str = "stop"
+
+# ════════════════════════════════════════════════════════════
+# LOAD MODEL
+# ════════════════════════════════════════════════════════════
+
+print("Loading LLaVA model...")
+tokenizer, model, image_processor, context_len = load_pretrained_model(
+    model_path="liuhaotian/llava-v1.5-7b",
+    model_base=None,
+    model_name="llava-v1.5-7b",
+    load_8bit=True  # Quantization pour économiser VRAM
+)
+print("Model loaded! ✅")
+
+# ════════════════════════════════════════════════════════════
+# ENDPOINTS
+# ════════════════════════════════════════════════════════════
+
+@app.post("/chat", response_model=ChatResponse)
+async def chat(request: ChatRequest):
+    """
+    Chat endpoint avec support images
+
+    Request format :
+    {
+        "messages": [
+            {"role": "user", "content": "What's this?", "image_data": "base64..."},
+            {"role": "assistant", "content": "It's a cat."},
+            {"role": "user", "content": "What color?"}
+        ],
+        "temperature": 0.7,
+        "max_tokens": 512
+    }
+    """
+
+    # Construire le prompt
+    prompt_parts = []
+    images = []
+
+    for msg in request.messages:
+        if msg.role == "user":
+            if msg.image_data:
+                # Décoder image
+                image_bytes = base64.b64decode(msg.image_data)
+                image = Image.open(io.BytesIO(image_bytes)).convert('RGB')
+                images.append(image)
+                prompt_parts.append(f"USER: <image>\n{msg.content}")
+            else:
+                prompt_parts.append(f"USER: {msg.content}")
+        else:
+            prompt_parts.append(f"ASSISTANT: {msg.content}")
+
+    prompt_parts.append("ASSISTANT:")
+    prompt = "\n".join(prompt_parts)
+
+    # Process images
+    if images:
+        image_tensors = process_images(images, image_processor, model.config)
+        image_tensors = image_tensors.to(model.device, dtype=torch.float16)
+    else:
+        image_tensors = None
+
+    # Tokenize
+    input_ids = tokenizer_image_token(
+        prompt,
+        tokenizer,
+        IMAGE_TOKEN_INDEX,
+        return_tensors='pt'
+    ).unsqueeze(0).to(model.device)
+
+    # Generate
+    with torch.inference_mode():
+        output_ids = model.generate(
+            input_ids,
+            images=image_tensors,
+            do_sample=request.temperature > 0,
+            temperature=request.temperature,
+            max_new_tokens=request.max_tokens,
+            use_cache=True
+        )
+
+    # Decode
+    response = tokenizer.decode(
+        output_ids[0, input_ids.shape[1]:],
+        skip_special_tokens=True
+    ).strip()
+
+    return ChatResponse(response=response)
+
+
+@app.post("/upload-image")
+async def upload_image(file: UploadFile = File(...)):
+    """Upload image et retourner base64"""
+    contents = await file.read()
+    base64_image = base64.b64encode(contents).decode('utf-8')
+    return {"image_data": base64_image}
+
+
+@app.get("/health")
+async def health():
+    """Health check"""
+    return {"status": "healthy", "model": "llava-v1.5-7b"}
+
+
+# ════════════════════════════════════════════════════════════
+# RUN
+# ════════════════════════════════════════════════════════════
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
+```
+
+**Partie 2 : Frontend (Gradio)**
+
+```python
+"""
+vision_chatbot/frontend.py
+==========================
+
+Interface Gradio pour chatbot vision
+"""
+
+import gradio as gr
+import requests
+import base64
+from PIL import Image
+import io
+
+API_URL = "http://localhost:8000"
+
+# ════════════════════════════════════════════════════════════
+# STATE MANAGEMENT
+# ════════════════════════════════════════════════════════════
+
+class ChatState:
+    def __init__(self):
+        self.messages = []
+        self.current_image = None
+
+    def add_user_message(self, text, image=None):
+        msg = {"role": "user", "content": text}
+        if image:
+            # Convertir PIL Image en base64
+            buffered = io.BytesIO()
+            image.save(buffered, format="PNG")
+            img_str = base64.b64encode(buffered.getvalue()).decode()
+            msg["image_data"] = img_str
+            self.current_image = image
+        self.messages.append(msg)
+
+    def add_assistant_message(self, text):
+        self.messages.append({"role": "assistant", "content": text})
+
+    def clear(self):
+        self.messages = []
+        self.current_image = None
+
+# Global state
+chat_state = ChatState()
+
+# ════════════════════════════════════════════════════════════
+# FUNCTIONS
+# ════════════════════════════════════════════════════════════
+
+def chat_fn(user_message, image, temperature, max_tokens, history):
+    """
+    Fonction principale de chat
+
+    Args:
+        user_message: Message de l'utilisateur
+        image: Image uploadée (PIL Image ou None)
+        temperature: Température de sampling
+        max_tokens: Nombre max de tokens
+        history: Historique de conversation (pour Gradio)
+
+    Returns:
+        ("", history_updated) - Vider input et update history
+    """
+
+    # Ajouter message utilisateur
+    chat_state.add_user_message(user_message, image)
+
+    # Construire affichage pour historique
+    if image:
+        display_msg = f"🖼️ [Image] {user_message}"
+    else:
+        display_msg = user_message
+
+    history.append([display_msg, None])  # User message, no response yet
+
+    # Appeler API
+    try:
+        response = requests.post(
+            f"{API_URL}/chat",
+            json={
+                "messages": chat_state.messages,
+                "temperature": temperature,
+                "max_tokens": max_tokens
+            },
+            timeout=60
+        )
+
+        if response.status_code == 200:
+            assistant_response = response.json()["response"]
+            chat_state.add_assistant_message(assistant_response)
+            history[-1][1] = assistant_response
+        else:
+            history[-1][1] = f"❌ Error: {response.status_code}"
+
+    except Exception as e:
+        history[-1][1] = f"❌ Error: {str(e)}"
+
+    return "", history
+
+
+def clear_fn():
+    """Clear conversation"""
+    chat_state.clear()
+    return None, []
+
+
+def retry_fn(history, temperature, max_tokens):
+    """Retry dernière réponse"""
+    if len(chat_state.messages) >= 2:
+        # Remove dernière réponse
+        chat_state.messages.pop()
+        history.pop()
+
+        # Re-générer
+        response = requests.post(
+            f"{API_URL}/chat",
+            json={
+                "messages": chat_state.messages,
+                "temperature": temperature,
+                "max_tokens": max_tokens
+            }
+        )
+
+        assistant_response = response.json()["response"]
+        chat_state.add_assistant_message(assistant_response)
+        history.append([history[-1][0], assistant_response])
+
+    return history
+
+
+# ════════════════════════════════════════════════════════════
+# UI
+# ════════════════════════════════════════════════════════════
+
+with gr.Blocks(title="Vision Chatbot", theme=gr.themes.Soft()) as demo:
+
+    gr.Markdown("""
+    # 🦙👁️ Vision Chatbot
+
+    Chatbot multimodal powered by LLaVA.
+    Upload une image et pose des questions !
+    """)
+
+    with gr.Row():
+        with gr.Column(scale=2):
+            # Chatbox
+            chatbot = gr.Chatbot(
+                label="Conversation",
+                height=500,
+                bubble_full_width=False
+            )
+
+            # Input
+            with gr.Row():
+                user_input = gr.Textbox(
+                    label="Message",
+                    placeholder="Pose une question sur l'image...",
+                    scale=4
+                )
+                submit_btn = gr.Button("📤 Send", scale=1, variant="primary")
+
+            # Buttons
+            with gr.Row():
+                retry_btn = gr.Button("🔄 Retry")
+                clear_btn = gr.Button("🗑️ Clear")
+
+        with gr.Column(scale=1):
+            # Image upload
+            image_input = gr.Image(
+                label="Upload Image",
+                type="pil",
+                height=300
+            )
+
+            gr.Markdown("### ⚙️ Paramètres")
+
+            temperature = gr.Slider(
+                minimum=0.0,
+                maximum=1.0,
+                value=0.7,
+                step=0.1,
+                label="Temperature",
+                info="Créativité (0=factuel, 1=créatif)"
+            )
+
+            max_tokens = gr.Slider(
+                minimum=50,
+                maximum=1024,
+                value=512,
+                step=50,
+                label="Max Tokens",
+                info="Longueur max de la réponse"
+            )
+
+            gr.Markdown("""
+            ### 💡 Tips
+            - Upload une image en premier
+            - Pose des questions descriptives
+            - Utilise temperature=0 pour réponses factuelles
+            - Utilise temperature=0.7-1.0 pour créativité
+
+            ### 📝 Exemples
+            - "What's in this image?"
+            - "Describe the scene in detail"
+            - "What color is the car?"
+            - "How many people are there?"
+            - "What emotion does this convey?"
+            """)
+
+    # Events
+    submit_btn.click(
+        fn=chat_fn,
+        inputs=[user_input, image_input, temperature, max_tokens, chatbot],
+        outputs=[user_input, chatbot]
+    )
+
+    user_input.submit(
+        fn=chat_fn,
+        inputs=[user_input, image_input, temperature, max_tokens, chatbot],
+        outputs=[user_input, chatbot]
+    )
+
+    retry_btn.click(
+        fn=retry_fn,
+        inputs=[chatbot, temperature, max_tokens],
+        outputs=[chatbot]
+    )
+
+    clear_btn.click(
+        fn=clear_fn,
+        outputs=[image_input, chatbot]
+    )
+
+# Launch
+if __name__ == "__main__":
+    demo.launch(
+        server_name="0.0.0.0",
+        server_port=7860,
+        share=False
+    )
+```
+
+**Partie 3 : Docker Deployment**
+
+```dockerfile
+# Dockerfile
+FROM nvidia/cuda:11.8.0-cudnn8-runtime-ubuntu22.04
+
+# Install Python
+RUN apt-get update && apt-get install -y \
+    python3.10 \
+    python3-pip \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Set working directory
+WORKDIR /app
+
+# Copy requirements
+COPY requirements.txt .
+
+# Install Python dependencies
+RUN pip3 install --no-cache-dir -r requirements.txt
+
+# Copy application
+COPY . .
+
+# Expose ports
+EXPOSE 8000 7860
+
+# Run both backend and frontend
+CMD ["bash", "start.sh"]
+```
+
+```bash
+# start.sh
+#!/bin/bash
+
+# Start backend
+python3 backend.py &
+
+# Wait for backend
+sleep 10
+
+# Start frontend
+python3 frontend.py
+```
+
+```txt
+# requirements.txt
+fastapi==0.104.1
+uvicorn==0.24.0
+gradio==4.10.0
+torch==2.1.0
+torchvision==0.16.0
+transformers==4.36.0
+accelerate==0.25.0
+bitsandbytes==0.41.3
+llava @ git+https://github.com/haotian-liu/LLaVA.git
+pillow==10.1.0
+requests==2.31.0
+```
+
+### 9.4 Utilisation
+
+**1. Lancer le backend** :
+```bash
+python backend.py
+# Backend running on http://localhost:8000
+```
+
+**2. Lancer le frontend** :
+```bash
+python frontend.py
+# Gradio running on http://localhost:7860
+```
+
+**3. Utiliser** :
+- Ouvrir http://localhost:7860
+- Upload une image
+- Poser des questions
+- Conversation multi-turn !
+
+**4. Déployer avec Docker** :
+```bash
+docker build -t vision-chatbot .
+docker run -p 8000:8000 -p 7860:7860 --gpus all vision-chatbot
+```
+
+---
+
+## 10. Best Practices et Troubleshooting
+
+### 10.1 Best Practices
+
+**✅ DO** :
+
+1. **Prétraiter les images** :
+```python
+# Resize pour consistency
+image = image.resize((224, 224))
+
+# Normaliser avec stats CLIP
+normalize = transforms.Normalize(
+    mean=[0.48145466, 0.4578275, 0.40821073],
+    std=[0.26862954, 0.26130258, 0.27577711]
+)
+```
+
+2. **Utiliser batch processing** :
+```python
+# Traiter plusieurs images en batch
+images = [image1, image2, image3]
+features = vision_encoder(torch.stack(images))
+# Plus rapide que boucle !
+```
+
+3. **Cache les embeddings** :
+```python
+# Pour images fixes, cache les features
+@lru_cache(maxsize=100)
+def get_image_features(image_path):
+    image = load_image(image_path)
+    return vision_encoder(image)
+```
+
+4. **Monitorer la mémoire** :
+```python
+# Clear GPU cache régulièrement
+if batch_idx % 100 == 0:
+    torch.cuda.empty_cache()
+```
+
+**❌ DON'T** :
+
+1. ❌ Oublier de normaliser les images
+2. ❌ Utiliser des résolutions inconsistantes
+3. ❌ Charger tout le dataset en RAM
+4. ❌ Oublier de freeze les modèles pré-entraînés
+5. ❌ Ignorer les warnings GPU memory
+
+### 10.2 Troubleshooting Commun
+
+**Problème 1** : Out of Memory (OOM)
+
+```
+RuntimeError: CUDA out of memory. Tried to allocate 2.00 GiB
+```
+
+**Solutions** :
+```python
+# Solution 1 : Quantization
+model = load_model(load_8bit=True)  # INT8
+
+# Solution 2 : Gradient checkpointing
+model.gradient_checkpointing_enable()
+
+# Solution 3 : Réduire batch size
+batch_size = 4  # Au lieu de 16
+
+# Solution 4 : Réduire résolution
+image_size = 224  # Au lieu de 336
+
+# Solution 5 : Clear cache
+torch.cuda.empty_cache()
+```
+
+**Problème 2** : Génération lente
+
+**Solutions** :
+```python
+# Solution 1 : Quantization
+load_4bit=True  # 3-4× plus rapide
+
+# Solution 2 : Compiler le modèle (PyTorch 2.0+)
+model = torch.compile(model)
+
+# Solution 3 : Réduire max_tokens
+max_new_tokens=256  # Au lieu de 512
+
+# Solution 4 : Utiliser cache KV
+use_cache=True
+```
+
+**Problème 3** : Mauvaise qualité de réponses
+
+**Solutions** :
+```python
+# Solution 1 : Ajuster temperature
+temperature=0.2  # Plus factuel
+
+# Solution 2 : Better prompting
+prompt = """<image>
+Analyze this image in detail. Include:
+1. Main objects
+2. Colors and composition
+3. Context and setting
+Describe:"""
+
+# Solution 3 : Fine-tune sur votre domaine
+# Train sur dataset spécifique
+
+# Solution 4 : Utiliser un modèle plus grand
+model = "llava-v1.6-34b"  # Au lieu de 7b
+```
+
+**Problème 4** : Images mal comprises
+
+**Causes + Solutions** :
+```python
+# Cause 1 : Image corrompue
+try:
+    image = Image.open(path)
+    image.verify()  # Check integrity
+except:
+    print("Image corrompue!")
+
+# Cause 2 : Mauvais format
+image = image.convert('RGB')  # Force RGB
+
+# Cause 3 : Résolution trop basse
+if image.size[0] < 224 or image.size[1] < 224:
+    print("Warning: Image trop petite!")
+
+# Cause 4 : Image trop complexe
+# Crop ou focus sur partie importante
+```
+
+### 10.3 Monitoring en Production
+
+```python
+"""
+MONITORING SETUP pour chatbot vision en production
+"""
+
+from prometheus_client import Counter, Histogram, Gauge
+import time
+
+# Metrics
+REQUEST_COUNT = Counter('chat_requests_total', 'Total chat requests')
+REQUEST_LATENCY = Histogram('chat_latency_seconds', 'Request latency')
+ACTIVE_USERS = Gauge('active_users', 'Number of active users')
+GPU_MEMORY = Gauge('gpu_memory_used_bytes', 'GPU memory used')
+
+@app.post("/chat")
+async def chat(request: ChatRequest):
+    REQUEST_COUNT.inc()
+
+    start_time = time.time()
+
+    try:
+        # Process...
+        response = process_chat(request)
+
+        # Metrics
+        REQUEST_LATENCY.observe(time.time() - start_time)
+        GPU_MEMORY.set(torch.cuda.memory_allocated())
+
+        return response
+
+    except Exception as e:
+        # Log error
+        logger.error(f"Chat error: {e}")
+        raise
+
+
+# Dashboard Grafana :
+# - Latency p50, p95, p99
+# - Throughput (requests/sec)
+# - GPU utilization
+# - Error rate
+```
+
+---
+
+## 11. Quiz et Exercices
+
+### 11.1 Quiz de Compréhension
+
+═══════════════════════════════════════════════════════════
+🎯 QUIZ : Testez Vos Connaissances Multimodal !
+═══════════════════════════════════════════════════════════
+
+**Question 1** [Facile] : Quel est le rôle du vision encoder dans un modèle multimodal ?
+
+a) Générer du texte depuis une image
+b) Convertir pixels en embeddings sémantiques  ✅
+c) Traduire texte en image
+d) Compresser l'image
+
+**Réponse** : b) Le vision encoder (comme CLIP) transforme les pixels bruts en vecteurs qui capturent le sens sémantique de l'image.
+
+---
+
+**Question 2** [Moyen] : Pourquoi LLaVA envoie-t-il 256 tokens visuels au LLM ?
+
+a) C'est le nombre de pixels
+b) C'est le nombre de patches (14×14 + CLS)  ✅
+c) C'est arbitraire
+d) Pour ralentir le modèle
+
+**Réponse** : b) CLIP découpe l'image en patches 14×14 = 196, plus un token CLS = 197 (arrondi à 256).
+
+---
+
+**Question 3** [Moyen] : Quelle est l'innovation principale de BLIP-2 ?
+
+a) Utiliser CLIP
+b) Le Q-Former qui compresse intelligemment  ✅
+c) Multi-modal attention
+d) Training plus rapide
+
+**Réponse** : b) Le Q-Former utilise des learnable queries pour compresser 256 tokens → 32 tokens tout en gardant l'information importante.
+
+---
+
+**Question 4** [Avancé] : Comment LLaVA génère-t-il son dataset d'instruction ?
+
+a) Annotation humaine
+b) Scraping d'Internet
+c) Utilise GPT-4 pour générer Q&A depuis captions  ✅
+d) Synthèse automatique
+
+**Réponse** : c) LLaVA utilise GPT-4 (text-only) pour générer des questions-réponses sophistiquées depuis les captions existantes. Génie !
+
+---
+
+**Question 5** [Avancé] : Pourquoi freeze-t-on CLIP et LLM pendant training ?
+
+a) Pour économiser VRAM
+b) Pour éviter catastrophic forgetting  ✅
+c) Parce que c'est plus rapide
+d) Par paresse
+
+**Réponse** : b) Si on fine-tune CLIP/LLM, ils risquent d'oublier ce qu'ils ont appris. Mieux vaut entraîner seulement le "pont" (projector).
+
+---
+
+**Question 6** [Expert] : Calculez la mémoire nécessaire pour LLaVA-7B en FP16.
+
+Indices :
+- Llama-2-7B : 7B params
+- CLIP : 427M params
+- Projector : 100M params
+- FP16 : 2 bytes/param
+
+**Réponse** :
+```
+Total params = 7B + 0.427B + 0.1B = 7.527B
+Memory = 7.527B × 2 bytes = 15.054 GB
++ Activations (~2GB) = ~17 GB total
+
+Avec 8-bit quantization : ~8.5 GB
+Avec 4-bit quantization : ~5 GB
+```
+
+═══════════════════════════════════════════════════════════
+
+### 11.2 Exercices Pratiques
+
+**Exercice 1** [Débutant] : Compter les objets
+
+```python
+"""
+EXERCICE : Créer un compteur d'objets automatique
+
+Input : Image avec plusieurs objets
+Output : "Il y a X chats, Y chiens, Z voitures"
+
+Difficulté : ⭐⚪⚪⚪⚪
+Temps : 30 minutes
+"""
+
+def count_objects(image_path):
+    """
+    TODO : Implémenter
+
+    Hint : Utiliser LLaVA avec prompt spécifique
+    """
+    pass
+
+# Test
+image = "street_scene.jpg"
+result = count_objects(image)
+# Expected : "2 cars, 3 people, 1 dog"
+```
+
+**Solution** :
+```python
+def count_objects(image_path):
+    bot = LLaVAChatbot()
+
+    prompt = """List all objects in this image with their counts.
+    Format: "X object1, Y object2, Z object3"
+    Be specific and accurate."""
+
+    response = bot.chat(image_path, prompt, temperature=0.1)
+    return response
+```
+
+---
+
+**Exercice 2** [Intermédiaire] : Comparaison d'images
+
+```python
+"""
+EXERCICE : Comparer deux images
+
+Input : Deux images
+Output : Similarités et différences
+
+Difficulté : ⭐⭐⭐⚪⚪
+Temps : 1 heure
+"""
+
+def compare_images(image1_path, image2_path):
+    """
+    TODO : Implémenter
+
+    Hints :
+    1. Encoder les deux images séparément
+    2. Utiliser LLM pour comparer
+    3. Ou calculer similarité cosine des features
+    """
+    pass
+
+# Test
+img1 = "cat1.jpg"
+img2 = "cat2.jpg"
+diff = compare_images(img1, img2)
+# Expected : "Both show cats. Image 1 has orange cat,
+#             Image 2 has black cat..."
+```
+
+**Solution** :
+```python
+def compare_images(image1_path, image2_path):
+    bot = LLaVAChatbot()
+
+    # Décrire image 1
+    desc1 = bot.chat(image1_path, "Describe this image in detail.")
+
+    # Décrire image 2
+    desc2 = bot.chat(image2_path, "Describe this image in detail.")
+
+    # Comparer
+    comparison_prompt = f"""
+    Compare these two descriptions:
+
+    Image 1: {desc1}
+    Image 2: {desc2}
+
+    List:
+    - Similarities
+    - Differences
+    - Which is better for [specific use case]?
+    """
+
+    # Note : Idéalement, multi-image input si supporté
+    comparison = bot.chat(None, comparison_prompt)
+
+    return comparison
+```
+
+---
+
+**Exercice 3** [Avancé] : Video Summarization
+
+```python
+"""
+EXERCICE : Résumer une vidéo
+
+Input : Vidéo MP4
+Output : Résumé textuel des événements
+
+Difficulté : ⭐⭐⭐⭐⚪
+Temps : 2-3 heures
+"""
+
+def summarize_video(video_path):
+    """
+    TODO : Implémenter
+
+    Steps :
+    1. Extraire frames clés (1 par seconde)
+    2. Analyser chaque frame avec LLaVA
+    3. Agréger les descriptions
+    4. Générer résumé cohérent
+    """
+    pass
+
+# Test
+video = "cooking_tutorial.mp4"
+summary = summarize_video(video)
+# Expected : "The video shows a cooking tutorial where...
+#             First, ingredients are prepared...
+#             Then, the mixture is cooked...
+#             Finally, the dish is plated..."
+```
+
+**Solution** :
+```python
+import cv2
+
+def summarize_video(video_path, frames_per_second=1):
+    bot = LLaVAChatbot()
+
+    # 1. Extraire frames
+    frames = extract_frames_from_video(video_path, fps=frames_per_second)
+
+    # 2. Analyser chaque frame
+    descriptions = []
+    for i, frame in enumerate(frames):
+        # Save frame temporairement
+        frame_path = f"temp_frame_{i}.jpg"
+        cv2.imwrite(frame_path, frame)
+
+        # Analyser
+        desc = bot.chat(
+            frame_path,
+            f"Describe what's happening at timestamp {i} seconds."
+        )
+        descriptions.append(f"[{i}s] {desc}")
+
+    # 3. Agréger et résumer
+    all_descriptions = "\n".join(descriptions)
+
+    summary_prompt = f"""
+    Based on these frame descriptions from a video:
+
+    {all_descriptions}
+
+    Write a coherent summary of the entire video in 2-3 paragraphs.
+    Focus on the main storyline and key events.
+    """
+
+    summary = bot.chat(None, summary_prompt)
+
+    return summary
+
+
+def extract_frames_from_video(video_path, fps=1):
+    """Extract frames at specified FPS"""
+    cap = cv2.VideoCapture(video_path)
+    video_fps = cap.get(cv2.CAP_PROP_FPS)
+    frame_interval = int(video_fps / fps)
+
+    frames = []
+    frame_count = 0
+
+    while True:
+        ret, frame = cap.read()
+        if not ret:
+            break
+
+        if frame_count % frame_interval == 0:
+            frames.append(frame)
+
+        frame_count += 1
+
+    cap.release()
+    return frames
+```
+
+---
+
+**Exercice 4** [Expert] : Fine-tune pour Domaine Spécifique
+
+```python
+"""
+EXERCICE FINAL : Fine-tune LLaVA pour domaine médical
+
+Objectif : Adapter LLaVA pour analyser radiographies
+
+Dataset : 1000 X-rays avec annotations médicales
+Steps :
+1. Préparer dataset (images + reports)
+2. Fine-tune avec LoRA
+3. Évaluer sur test set
+
+Difficulté : ⭐⭐⭐⭐⭐
+Temps : 1-2 jours
+Coût : ~$50-100 GPU
+"""
+
+# Starter code fourni dans les ressources du chapitre
+# Voir : medical_llava_finetune.py
+```
+
+═══════════════════════════════════════════════════════════
+
+---
+
+## 🎉 CONCLUSION DU CHAPITRE
+
+Félicitations ! Vous maîtrisez maintenant les modèles multimodaux ! 🦙👁️
+
+**Ce que vous avez appris** :
+- ✅ Architecture complète (Vision → Projection → LLM)
+- ✅ GPT-4V et ses capacités impressionnantes
+- ✅ LLaVA : Open-source hero ($500 training!)
+- ✅ BLIP-2 et Q-Former compression
+- ✅ Audio et vidéo understanding
+- ✅ Training pipeline complet
+- ✅ Projet pratique : Chatbot vision déployable
+- ✅ Best practices et troubleshooting
+
+**Points clés à retenir** :
+1. **Multimodal = Vision Encoder + Projection + LLM** (simple!)
+2. **CLIP** est le standard pour vision encoding
+3. **LLaVA** démontre qu'open-source peut rivaliser
+4. **Q-Former** (BLIP-2) = compression intelligente
+5. **Training** = Freeze encoders, train projector only
+6. **Vidéo** = Séquence d'images avec sampling intelligent
+
+**L'avenir du multimodal** :
+- 🚀 Modèles natifs (Gemini 1.5 approach)
+- 🎥 Vidéos longues (>1h context)
+- 🎨 Génération image+texte jointe
+- 🌍 Multimodal pour toutes les langues
+- 🤖 Agents autonomes avec vision
+
+**Prochaines étapes** :
+- Pratiquer avec les exercices
+- Déployer votre chatbot vision
+- Fine-tune pour votre domaine
+- Contribuer à la communauté open-source!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💬 **DERNIER MOT de Bob**
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+**Bob** : "Alice, tu te souviens quand tu m'as demandé comment un LLM pouvait 'voir' ?"
+
+**Alice** : "Oui ! Et maintenant je peux créer mon propre modèle vision pour $500. C'est dingue !"
+
+**Bob** : "Le plus fou ? On n'a fait qu'effleurer la surface. Dans 2 ans, chaque app aura de la vision AI. Chaque robot, chaque voiture, chaque phone. La multimodalité n'est pas l'avenir—c'est le présent."
+
+**Alice** : "Je vais commencer par ce chatbot médical. Imagine l'impact : aider les médecins à détecter les maladies plus tôt..."
+
+**Bob** : "Voilà l'esprit ! La tech n'est qu'un outil. Ce qui compte, c'est ce que TU vas en faire. Go build something amazing! 🚀"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+---
+
+**Ressources Additionnelles** :
+- 📖 Papers : GPT-4V, LLaVA, BLIP-2, Flamingo
+- 💻 Code : github.com/haotian-liu/LLaVA
+- 🎥 Demos : https://llava.hliu.cc
+- 💬 Community : HuggingFace Discord, r/LocalLLaMA
+- 📚 Datasets : LAION, COCO, Visual Genome
+
+**Prochain chapitre** : Chapitre 23 - Deployment & Production 🚀
+
+---
+
+*Fin du Chapitre 22 : Multimodal LLMs*
