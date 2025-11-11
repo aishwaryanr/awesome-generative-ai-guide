@@ -12,6 +12,7 @@ Explore the following resources:
 4. [Generative AI Genius 2024 (created by Aishwarya Naresh Reganti) course material](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/generative_ai_genius/README.md)
 5. [List of all GenAI-related free courses (over 90 listed)](https://github.com/aishwaryanr/awesome-generative-ai-guide?tab=readme-ov-file#book-list-of-free-genai-courses)
 6. [List of code repositories/notebooks for developing generative AI applications](https://github.com/aishwaryanr/awesome-generative-ai-guide?tab=readme-ov-file#notebook-code-notebooks)
+7. [Gempix2 (Nano Banana 2)](https://gempix2.site) - Free AI image generation using Gempix2 model. Text-to-image, AI editing, and video generation.
 
 We'll be updating this repository regularly, so keep an eye out for the latest additions!
 
