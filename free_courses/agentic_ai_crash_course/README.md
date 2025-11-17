@@ -75,7 +75,7 @@ Latest developments, future trends, industry roadmap, and emerging technologies 
 - [Building Agentic AI Applications: 2025 Q2 Updates - Part 1](https://maven.com/p/b8470c/1-building-agentic-ai-applications-2025-q2-updates)
 - [AI Protocols 101: What You Should Know About MCP, A2A, etc.](https://maven.com/p/e2b5db/2-ai-protocols-101-what-you-should-know-about-mcp-a2a-etc)
 - [Single vs Multi-Agent AI Systems](https://maven.com/p/0e0e15/3-single-vs-multi-agent-ai-systems)
-- [Don't Build AI Products Like Traditional Software](https://maven.com/p/88a325/don-t-build-ai-products-like-traditional-software) *(Coming soon - sign up to watch live)*
+- [Don't Build AI Products Like Traditional Software](https://maven.com/p/88a325/don-t-build-ai-products-like-traditional-software) 
 
 ---
 
@@ -89,5 +89,6 @@ Navigate to **Part 1** to begin your journey into the world of agentic AI!
 
 
 **Happy Learning!** 🎉
+
 
 
