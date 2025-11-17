@@ -174,5 +174,5 @@ And yes, I’ve said this painfully many times, but I’ll say it again:
 
 In the next part, we’ll talk about **multi-agent systems** — what they are, how they coordinate, and whether you actually need more than one agent at all.
 
-PS: We also teach a widely loved course on how to actually build AI systems in this fast-changing environment, using a problem-first approach. It’s designed for PMs, leaders, engineers, decision-makers etc. who are working within real-world constraints. Alumni come from Google, Meta, Apple, Netflix, AWS, Spotify, Snapchat, Deloitte, and more. Our next cohort starts soon. Our next cohort starts soon. Early bird pricing is live: use the code "GITHUB" to get $300 off (Valid only for August 2025) to [register here](https://maven.com/aishwarya-kiriti/genai-system-design)!!
+
 
