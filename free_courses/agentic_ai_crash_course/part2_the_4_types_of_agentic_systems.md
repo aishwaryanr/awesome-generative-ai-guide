@@ -157,5 +157,5 @@ Let the problem shape the agentic design, not the other way around.
 
 In the next part, we’ll dive deeper into the **role of tools** in agentic systems. They’re the reason AI has become far more usable — and we’ll break down exactly how and why in our deep dive.
 
-PS: We also teach a widely loved course on how to actually build AI systems in this fast-changing environment, using a problem-first approach. It’s designed for PMs, leaders, engineers, decision-makers etc. who are working within real-world constraints. Alumni come from Google, Meta, Apple, Netflix, AWS, Spotify, Snapchat, Deloitte, and more. Our next cohort starts soon. Our next cohort starts soon. Early bird pricing is live: use the code "GITHUB" to get $300 off (Valid only for August 2025) to [register here](https://maven.com/aishwarya-kiriti/genai-system-design)!!
+
 
