@@ -173,6 +173,6 @@ In our 6-week course, we focus on helping you understand **when and where** each
 
 In the next part, we’ll dive into one of the most talked-about concepts lately: **Model Context Protocol (MCP)**.  
 
-To get the most out of it, I’d recommend revisiting **Part 3 on tools**, since MCP builds directly on that concept!
+To get the most out of it, we’d recommend revisiting **Part 3 on tools**, since MCP builds directly on that concept!
 
-PS: We also teach a widely loved course on how to actually build AI systems in this fast-changing environment, using a problem-first approach. It’s designed for PMs, leaders, engineers, decision-makers etc. who are working within real-world constraints. Alumni come from Google, Meta, Apple, Netflix, AWS, Spotify, Snapchat, Deloitte, and more. Our next cohort starts soon. Our next cohort starts soon. Early bird pricing is live: use the code "GITHUB" to get $300 off (Valid only for August 2025) to [register here](https://maven.com/aishwarya-kiriti/genai-system-design)!!
+
