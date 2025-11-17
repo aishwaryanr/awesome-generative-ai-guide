@@ -20,7 +20,7 @@ Truth: This is a short intro course, the heading clearly says "crash course". We
 **Claim: This course will change your life and guarantee jobs**<br/>
 Truth: This course gives you a solid way to enter the topic, build confidence, and feel good about the space. It is not a magic ticket and we never promise outcomes like that.
 
-We put a lot of care into keeping it simple, useful, and a genuinely good starter. We love that it is getting attention, but we want people to join for the right reasons, not for promises we never made.
+We put a lot of care into keeping it simple, useful, and a genuinely good starter. We love that it is getting attention, but we want people to engage with it for the right reasons, not for promises we never made.
 
 ---
 ## 📚 Course Parts
@@ -89,6 +89,7 @@ Navigate to **Part 1** to begin your journey into the world of agentic AI!
 
 
 **Happy Learning!** 🎉
+
 
 
 
