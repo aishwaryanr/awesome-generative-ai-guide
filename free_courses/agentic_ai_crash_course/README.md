@@ -8,6 +8,20 @@
 
 ---
 
+## ❗❗Please read before engaging with the course since many influencers have shared incorrect details
+
+
+**Claim: This course was taught at MIT and Oxford**
+Actual: The instructors have taught professional AI programs at MIT and Oxford, but this specific course was never offered there.
+
+**Claim: This course costs USD 2500 and is now free**
+Actual: This is a short intro course, the heading clearly says "crash course". We would never price this at 2500, it has always been free.
+
+**Claim: This course will change your life and guarantee jobs**
+Actual: This course gives you a solid way to enter the topic, build confidence, and feel good about the space. It is not a magic ticket and we never promise outcomes like that.
+
+We put a lot of care into keeping it simple, useful, and a genuinely good starter. We love that it is getting attention, but we want people to join for the right reasons, not for promises we never made.
+
 ## 📚 Course Parts
 
 ### [Part 1: What Are AI Agents Anyway?](./part1_what_are_ai_agents_anyway.md)
@@ -71,5 +85,6 @@ Navigate to **Part 1** to begin your journey into the world of agentic AI!
 [🎯 Start with Part 1: What Are AI Agents Anyway?](./part1_what_are_ai_agents_anyway.md)
 
 ---
+
 
 **Happy Learning!** 🎉
