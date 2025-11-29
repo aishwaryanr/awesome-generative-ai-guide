@@ -256,6 +256,7 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 
 1. [Avoiding AI Harm](https://www.coursera.org/learn/avoiding-ai-harm) by Coursera
 2. [Developing AI Policy](https://www.coursera.org/learn/developing-ai-policy) by Coursera
+3. [System Designer - GenAI Systems](https://systemdesigner.net/genai) - Free interactive learning platform with 32 lessons on building GenAI applications. Covers RAG systems, vector databases, LLM deployment, prompt engineering, and agentic AI. Includes AI tutor, whiteboards, quizzes, and projects.
 
 ---
 
