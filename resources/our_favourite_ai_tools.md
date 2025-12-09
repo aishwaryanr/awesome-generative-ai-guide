@@ -113,11 +113,19 @@ The platform also offers real-time monitoring and alerting, which ensures that A
 With Opik, you can log, view, and evaluate your LLM (Large Language Model) traces during both development and production. The platform, combined with LLM-as-a-Judge evaluators, helps you identify and resolve issues in your LLM applications efficiently.
 
 
-**Getting Started with Opik:**  
+**Getting Started with Opik:**
 - [Opik Documentation](https://www.comet.ml/docs/opik/quickstart)
 - [YouTube: Introducing Opik: Open-Source LLM Evaluation from Comet](https://www.youtube.com/watch?v=B4oboG62lyA)
 
+### promptfoo
 
+**promptfoo** is an open-source framework for testing and evaluating LLM applications. It helps developers compare prompts and models, test RAG architectures, and catch regressions and security vulnerabilities with CI/CD integration. Used by over 250K developers and featured in OpenAI Build Hours and Anthropic's prompt evaluation courses.
+
+The platform supports adaptive red teaming for LLM agents with multi-turn attack techniques (PAIR, tree-of-attacks, crescendo) that probe tool use, RAG, and agentic workflows. It provides comprehensive tracing capabilities and integrates with all major LLM providers.
+
+**Getting Started with promptfoo:**
+- [promptfoo Documentation](https://www.promptfoo.dev/docs/intro/)
+- [promptfoo on GitHub](https://github.com/promptfoo/promptfoo)
 
 ---
 
