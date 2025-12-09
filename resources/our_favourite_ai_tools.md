@@ -27,6 +27,23 @@ In recent developments, Anthropic is finalizing a $3.5 billion funding round, wh
 # AI Application Frameworks  
 *Platforms that enable building AI-powered applications or workflows.*
 
+## MirrorDNA
+
+**MirrorDNA** is an open-source protocol that creates persistent AI identity across all models—ChatGPT, Claude, Gemini, and more. Instead of starting from zero in every conversation, MirrorDNA lets you define your identity once and have any AI remember you forever.  
+[Explore MirrorDNA](https://github.com/MirrorDNA-Reflection-Protocol/active-mirror-identity)
+
+The protocol is built on Three Laws: (1) TRUTH - every AI claim is Fact, Estimate, or Unknown; (2) VAULT - your files are canonical truth; (3) MESH - all AI models coordinate as one system. This creates consistent, reliable AI behavior across platforms.  
+[Try the Generator](https://id.activemirror.ai)
+
+MirrorDNA was created by Paul Desai in Goa, India, with an accompanying academic paper on Zenodo documenting the methodology.  
+[Read the Paper](https://doi.org/10.5281/zenodo.17787619)
+
+**Getting Started with MirrorDNA:**  
+- [Generate Your MESH BOOT](https://id.activemirror.ai)  
+- [Full Protocol on GitHub](https://github.com/MirrorDNA-Reflection-Protocol/active-mirror-identity)
+
+---
+
 ## LangChain
 
 **LangChain** is an open-source framework designed to facilitate the development of applications powered by large language models (LLMs). It provides developers with tools and abstractions necessary for building context-aware, reasoning applications that effectively leverage company data and APIs.  
