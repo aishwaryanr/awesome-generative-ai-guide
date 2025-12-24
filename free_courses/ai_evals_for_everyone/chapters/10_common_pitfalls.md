@@ -179,7 +179,7 @@ Remember: the vocabulary matters less than the underlying concepts. Focus on bui
 
 ---
 
-**Continue your AI evaluation journey:** This 101 course provides the foundation, but enterprise AI development involves complex team dynamics, advanced technical patterns, and strategic decision-making. Ready for the next level? Join our **[Enterprise AI Cohort on Maven](https://maven.com/aishwarya-kiriti/genai-system-design)** where you'll work with industry experts and peers to build production-ready AI systems that scale. Plus, explore our growing collection of **[free AI courses](https://github.com/aishwaryanr/awesome-generative-ai-guide/tree/main/free_courses)** covering everything from agent frameworks to production deployment strategies.
+**Want to go deeper?** While this course covers evaluation fundamentals, building production-ready AI systems requires understanding enterprise patterns, agentic designs, and advanced implementation strategies. For comprehensive guidance on enterprise AI development, check out our **[#1 rated Enterprise AI Cohort on Maven](https://maven.com/aishwarya-kiriti/genai-system-design)** taken by product and engineering leaders and practitioners at Meta, Amazon, Google, Apple and more!
 
 *📝 Note: Use code **GITHUB15** for 15% off the Enterprise AI Cohort (valid until January 15th, 2025)*
 

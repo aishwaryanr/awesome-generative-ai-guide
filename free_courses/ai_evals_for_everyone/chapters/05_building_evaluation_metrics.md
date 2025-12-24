@@ -216,7 +216,7 @@ You need to test your LLM judge against human evaluations:
 
 We leave you here since this is a 101 course, but building reliable LLM judges can be a course on its own. Remember to dig deeper on learning them well.
 
-**Ready for production-scale evaluation?** While this 101 course covers the fundamentals, implementing robust evaluation systems for enterprise AI requires deeper expertise in LLM judge calibration, advanced monitoring strategies, and team collaboration patterns. Our **[Enterprise AI Cohort on Maven](https://maven.com/aishwarya-kiriti/genai-system-design)** provides hands-on guidance for building evaluation systems that scale with your business needs.
+**Want to go deeper?** While this course covers evaluation fundamentals, building production-ready AI systems requires understanding enterprise patterns, agentic designs, and advanced implementation strategies. For comprehensive guidance on enterprise AI development, check out our **[#1 rated Enterprise AI Cohort on Maven](https://maven.com/aishwarya-kiriti/genai-system-design)** taken by product and engineering leaders and practitioners at Meta, Amazon, Google, Apple and more!
 
 *📝 Note: Use code **GITHUB15** for 15% off the Enterprise AI Cohort (valid until January 15th, 2025)*
 
