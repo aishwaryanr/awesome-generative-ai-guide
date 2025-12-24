@@ -74,7 +74,3 @@ Check out our **[#1 Rated Enterprise AI Cohort on Maven](https://maven.com/aishw
 ## 📄 License
 
 This course is released under the MIT License. Feel free to use, share, and adapt the content with attribution.
-
----
-
-*Building reliable AI systems starts with reliable evaluation. Let's make AI evaluation accessible to everyone!*
