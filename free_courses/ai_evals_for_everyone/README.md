@@ -61,7 +61,7 @@ Or jump straight to the **[Certification Assessment](https://ai-evals-course.ver
 ## 🔗 Additional Resources
 
 ### 📅 Attend Our Live Session
-**Join us on January 5th** for our live session on the **State of Applied AI Report**! Get insights into the latest trends, challenges, and opportunities in production AI systems.
+**[Join our upcoming free session on State of Applied AI in 2025](https://maven.com/p/ad857c/state-of-applied-ai-in-2025-report)** on January 5th! Get insights into the latest trends, challenges, and opportunities in production AI systems.
 
 ### 🎯 Enterprise AI Cohort
 Check out our **[#1 Rated Enterprise AI Cohort on Maven](https://maven.com/aishwarya-naresh-reganti/enterprise-ai)**! A comprehensive program for teams building AI at scale.
