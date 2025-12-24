@@ -26,14 +26,14 @@ Start from zero and learn step-by-step how to build AI evaluation systems. This 
 
 1. **[WTH are AI Evals?](./chapters/01_wth_are_ai_evals.md)** - Understanding why AI evaluation is different and unavoidable
 2. **[Model Evaluations vs Product Evaluations](./chapters/02_model_vs_product_evaluations.md)** - Learning the crucial distinction that trips up most teams
-3. **[Evaluation Building Blocks](./chapters/03_evaluation_building_blocks.md)** - Core components for systematic evaluation
+3. **[The Evaluation Framework](./chapters/03_evaluation_building_blocks.md)** - Core components for systematic evaluation
 4. **[Building Reference Datasets](./chapters/04_building_reference_datasets.md)** - Creating golden datasets that actually work
-5. **[How to Build Evaluation Metrics](./chapters/05_building_evaluation_metrics.md)** - Practical approaches from code to human judgment
+5. **[Implementing Evaluation Metrics](./chapters/05_building_evaluation_metrics.md)** - Practical approaches from code to human judgment
 6. **[Production Challenge](./chapters/06_production_challenge.md)** - Why production breaks all your assumptions
 7. **[Production Monitoring Strategies](./chapters/07_production_monitoring_strategies.md)** - What actually works in the real world
-8. **[Evaluation Process](./chapters/08_evaluation_process.md)** - Building confidence incrementally
-9. **[Case Studies](./chapters/09_case_studies.md)** - Real examples from AI products at scale
-10. **[Common Pitfalls](./chapters/10_common_pitfalls.md)** - Expensive mistakes to avoid
+8. **[The Complete Evaluation Process](./chapters/08_evaluation_process.md)** - Building confidence incrementally
+9. **[Common Misconceptions About AI Evaluation](./chapters/09_case_studies.md)** - Real examples from AI products at scale
+10. **[Glossary of Terms](./chapters/10_common_pitfalls.md)** - Expensive mistakes to avoid
 
 ## 📄 Download Complete Course
 
@@ -64,11 +64,6 @@ Start from zero and learn step-by-step how to build AI evaluation systems. This 
 - **Get Certified** - Earn your AI Evals certification
 - **Self-Paced** - Learn at your own speed
 
-## 📝 Start Learning
-
-Ready to clear up the confusion around AI evaluation? Start with [Chapter 1: WTH are AI Evals?](./chapters/01_wth_are_ai_evals.md)
-
-Or jump straight to the **[Certification Assessment](https://ai-evals-course.vercel.app/quiz-google.html)**!
 
 ## 🔗 Additional Resources
 
