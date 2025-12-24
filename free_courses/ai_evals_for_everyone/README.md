@@ -1,6 +1,6 @@
 # AI Evals for Everyone - Free Course 🎯
 
-![AI Evals for Everyone](https://raw.githubusercontent.com/aishwaryanr/ai-evals-course-website/main/images/header_image.jpg)
+![AI Evals for Everyone](./images/header_image.jpg)
 
 Welcome to **AI Evals for Everyone**, a comprehensive free course on evaluation and monitoring for AI systems. This course distills production experience from deploying AI at scale into practical, actionable knowledge.
 
@@ -26,6 +26,10 @@ Learn systematic approaches to AI evaluation that actually work in production. T
 8. **[Evaluation Process](./chapters/08_evaluation_process.md)** - Building confidence incrementally
 9. **[Case Studies](./chapters/09_case_studies.md)** - Real examples from AI products at scale
 10. **[Common Pitfalls](./chapters/10_common_pitfalls.md)** - Expensive mistakes to avoid
+
+## 📖 Complete Course PDF
+
+**[Download the complete course as a single PDF](./AI_Evals_Complete_Course.md)** - All 10 chapters in one convenient document for offline reading.
 
 ## 🚀 Who Should Take This Course?
 
