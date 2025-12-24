@@ -70,6 +70,8 @@ Start from zero and learn step-by-step how to build AI evaluation systems. This 
 ### 🎯 Enterprise AI Cohort
 Check out our **[#1 Rated Enterprise AI Cohort on Maven](https://maven.com/aishwarya-naresh-reganti/enterprise-ai)**! A comprehensive program for those looking to build timeless enterprise AI systems.
 
+*📝 Note: Use code **GITHUB15** for 15% off the Enterprise AI Cohort (valid until January 15th, 2025)*
+
 ### 📱 Stay Connected
 - **Follow [Aishwarya on LinkedIn](https://www.linkedin.com/in/aishwarya-naresh-reganti/)** for AI evaluation insights and updates
 - **Follow [Kiriti on LinkedIn](https://www.linkedin.com/in/kiritibadam/)** for production AI learnings
