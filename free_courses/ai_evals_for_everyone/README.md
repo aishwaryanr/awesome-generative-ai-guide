@@ -35,9 +35,6 @@ Start from zero and learn step-by-step how to build AI evaluation systems. This 
 9. **[Common Misconceptions About AI Evaluation](./chapters/09_case_studies.md)** - Real examples from AI products at scale
 10. **[Glossary of Terms](./chapters/10_common_pitfalls.md)** - Expensive mistakes to avoid
 
-## 📄 Download Complete Course
-
-**[Print to PDF Version](./AI_Evals_Complete_Course_Print.html)** - All 10 chapters in one document. Open in browser and press Cmd+P (Mac) or Ctrl+P (Windows), then "Save as PDF".
 
 ## 🚀 Who Should Take This Course?
 
