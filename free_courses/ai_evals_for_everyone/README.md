@@ -6,7 +6,15 @@ Welcome to **AI Evals for Everyone**, a beginner-friendly 101 course that clears
 
 ## 🎓 Get Certified!
 
-**[Take the Assessment](https://ai-evals-course.vercel.app/quiz-google.html)** and earn your AI Evals certification! Test your knowledge across all 10 chapters and receive a personalized certificate upon completion.
+**Follow these simple steps to earn your AI Evals certification:**
+
+1. **📚 Read all 10 chapters** - Complete the course content at your own pace
+2. **📝 Take the final assessment** - Test your knowledge with our [certification quiz](https://ai-evals-course.vercel.app/quiz-google.html)
+3. **🏆 Get your certificate** - Receive a personalized certificate upon completion
+
+![Sample Certificate](./images/sample_certificate.png)
+
+**[Start Your Certification Journey →](https://ai-evals-course.vercel.app/quiz-google.html)**
 
 ## 📚 Course Overview
 
@@ -27,11 +35,9 @@ Start from zero and learn step-by-step how to build AI evaluation systems. This 
 9. **[Case Studies](./chapters/09_case_studies.md)** - Real examples from AI products at scale
 10. **[Common Pitfalls](./chapters/10_common_pitfalls.md)** - Expensive mistakes to avoid
 
-## 📖 Complete Course Document
+## 📄 Download Complete Course
 
-**[View the complete course as a single document](./AI_Evals_Complete_Course.md)** - All 10 chapters merged for easy reading.
-
-**[Print to PDF Version](./AI_Evals_Complete_Course_Print.html)** - Optimized HTML version. Open in browser and press Cmd+P (Mac) or Ctrl+P (Windows), then "Save as PDF".
+**[Print to PDF Version](./AI_Evals_Complete_Course_Print.html)** - All 10 chapters in one document. Open in browser and press Cmd+P (Mac) or Ctrl+P (Windows), then "Save as PDF".
 
 ## 🚀 Who Should Take This Course?
 
