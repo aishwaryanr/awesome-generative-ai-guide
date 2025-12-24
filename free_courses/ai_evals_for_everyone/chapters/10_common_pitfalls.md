@@ -181,3 +181,5 @@ Remember: the vocabulary matters less than the underlying concepts. Focus on bui
 
 **Continue your AI evaluation journey:** This 101 course provides the foundation, but enterprise AI development involves complex team dynamics, advanced technical patterns, and strategic decision-making. Ready for the next level? Join our **[Enterprise AI Cohort on Maven](https://maven.com/aishwarya-naresh-reganti/enterprise-ai)** where you'll work with industry experts and peers to build production-ready AI systems that scale. Plus, explore our growing collection of **[free AI courses](https://github.com/aishwaryanr/awesome-generative-ai-guide/tree/main/free_courses)** covering everything from agent frameworks to production deployment strategies.
 
+*📝 Note: Use code **GITHUB15** for 15% off the Enterprise AI Cohort (valid until January 15th, 2025)*
+

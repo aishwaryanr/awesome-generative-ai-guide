@@ -218,6 +218,8 @@ We leave you here since this is a 101 course, but building reliable LLM judges c
 
 **Ready for production-scale evaluation?** While this 101 course covers the fundamentals, implementing robust evaluation systems for enterprise AI requires deeper expertise in LLM judge calibration, advanced monitoring strategies, and team collaboration patterns. Our **[Enterprise AI Cohort on Maven](https://maven.com/aishwarya-naresh-reganti/enterprise-ai)** provides hands-on guidance for building evaluation systems that scale with your business needs.
 
+*📝 Note: Use code **GITHUB15** for 15% off the Enterprise AI Cohort (valid until January 15th, 2025)*
+
 
 
 
