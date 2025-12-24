@@ -285,7 +285,7 @@ Think of it as building evaluation for the patterns you can anticipate, then usi
 
 ![Production Monitoring Quote](../images/production_monitoring_quote.png)
 
-**Scaling to enterprise production?** While this course provides foundational monitoring strategies, enterprise AI systems require sophisticated approaches to distributed evaluation, team coordination, and advanced analytics. Our **[Enterprise AI Cohort on Maven](https://maven.com/aishwarya-kiriti/genai-system-design)** covers production monitoring patterns used by top AI teams, plus live collaboration on real enterprise challenges.
+**Want to go deeper?** While this course covers evaluation fundamentals, building production-ready AI systems requires understanding enterprise patterns, agentic designs, and advanced implementation strategies. For comprehensive guidance on enterprise AI development, check out our **[#1 rated Enterprise AI Cohort on Maven](https://maven.com/aishwarya-kiriti/genai-system-design)** taken by product and engineering leaders and practitioners at Meta, Amazon, Google, Apple and more!
 
 *📝 Note: Use code **GITHUB15** for 15% off the Enterprise AI Cohort (valid until January 15th, 2025)*
 
