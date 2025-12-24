@@ -1,0 +1,2745 @@
+<h1 id="ai-evals-for-everyone---complete-course">AI Evals for Everyone -
+Complete Course</h1>
+<p><strong>Created by Aishwarya Naresh Reganti &amp; Kiriti
+Badam</strong></p>
+<figure>
+<img src="./images/header_image.jpg" alt="AI Evals for Everyone" />
+<figcaption aria-hidden="true">AI Evals for Everyone</figcaption>
+</figure>
+<hr />
+<h2 id="table-of-contents">Table of Contents</h2>
+<ol type="1">
+<li><a href="#wth-are-ai-evals">WTH are AI Evals?</a></li>
+<li><a href="#model-evaluations-vs-product-evaluations">Model
+Evaluations vs Product Evaluations</a></li>
+<li><a href="#evaluation-building-blocks">Evaluation Building
+Blocks</a></li>
+<li><a href="#building-reference-datasets">Building Reference
+Datasets</a></li>
+<li><a href="#how-to-build-evaluation-metrics">How to Build Evaluation
+Metrics</a></li>
+<li><a href="#production-challenge">Production Challenge</a></li>
+<li><a href="#production-monitoring-strategies">Production Monitoring
+Strategies</a></li>
+<li><a href="#evaluation-process">Evaluation Process</a></li>
+<li><a href="#case-studies">Case Studies</a></li>
+<li><a href="#common-pitfalls">Common Pitfalls</a></li>
+</ol>
+<hr />
+<hr />
+<h1 id="chapter-1-wth-are-ai-evals">Chapter 1: WTH are AI Evals?</h1>
+<figure>
+<img src="../images/evaluation_questions_overview.png"
+alt="Evaluation Questions Overview" />
+<figcaption aria-hidden="true">Evaluation Questions
+Overview</figcaption>
+</figure>
+<h2 id="what-are-evals-and-why-do-they-suddenly-matter">What Are Evals
+and Why Do They Suddenly Matter?</h2>
+<p>If you have been following recent AI updates, especially in the
+product space, you have probably heard the term <em>evals</em> come up
+repeatedly. It shows up in conversations, blog posts, product reviews,
+and conference talks. Everyone seems to use it casually, yet everyone
+also seems to mean something different by it.</p>
+<p>The usefulness of evals is debated heavily, often without clarity on
+what people are actually referring to or where they are coming from.
+This lack of precision has led to a growing number of misconceptions as
+teams build AI solutions in the real world.</p>
+<figure>
+<img src="../images/chaos_to_structure.png" alt="Chaos to Structure" />
+<figcaption aria-hidden="true">Chaos to Structure</figcaption>
+</figure>
+<p>We put together this guide as a practical starting point. Think of it
+as a 101. The goal is to explain <em>why</em> evaluation is needed,
+<em>what</em> it actually refers to in practice, and <em>where</em>
+people commonly misunderstand it when building AI products.</p>
+<p>Our hope is that by the end of this course, you are able to separate
+noise from signal, understand how practitioners on the ground think
+about evaluation, and start building evaluations using a first
+principles approach.</p>
+<h2 id="the-shift-that-makes-evals-unavoidable">The Shift That Makes
+Evals Unavoidable</h2>
+<figure>
+<img src="../images/deterministic_software.png"
+alt="Deterministic Software" />
+<figcaption aria-hidden="true">Deterministic Software</figcaption>
+</figure>
+<p>Before getting into evaluation itself, we need to build intuition for
+a much larger shift. AI systems and AI products are fundamentally
+<em>non-deterministic</em>. We will use this term often throughout this
+chapter and the rest of the course, because it is the single biggest
+reason evals exist in the first place.</p>
+<p>Most of us have spent our careers working with traditional software
+products. In those systems, the number of actions a user can perform is
+usually limited. Users click buttons, fill out forms, upload a photo,
+submit a request, or complete a predefined flow. In most cases, both the
+input and the expected output are known ahead of time. If a user uploads
+a photo, the system should store it. If they submit a form, the backend
+should validate and process it. The code is written to explicitly
+enforce these expectations.</p>
+<p>To make sure the product behaves as intended, teams rely on unit
+tests and integration tests. The core assumption is simple. Given an
+input x, the system should reliably produce output y. If you can verify
+this offline, you can be reasonably confident the product will behave
+the same way in production.</p>
+<p>The standard software lifecycle follows a familiar pattern. You build
+version one of the product, add tests to ensure it works, test it with
+different users, fix bugs, and then continue building on top of that
+foundation.</p>
+<p>The expectation is that if you have tested x to y thoroughly before
+shipping, production issues will be relatively rare and manageable. When
+problems do occur, they are often clear outliers that can be debugged
+and fixed.</p>
+<h2 id="how-ai-products-break-classical-assumptions">How AI Products
+Break Classical Assumptions</h2>
+<figure>
+<img src="../images/nondeterministic_ai.png"
+alt="Non-deterministic AI" />
+<figcaption aria-hidden="true">Non-deterministic AI</figcaption>
+</figure>
+<p>AI products break these assumptions in two fundamental ways.</p>
+<p><strong>First, the input space becomes effectively
+unbounded.</strong> Most AI products accept text, voice, images, or
+video as input. Users are no longer selecting from predefined flows or
+filling structured forms. They are expressing intent in natural
+language, often ambiguously, incompletely, or in ways the product team
+never anticipated. You no longer control how users frame their requests.
+You only control how the system attempts to respond.</p>
+<p><strong>Second, the output is no longer guaranteed.</strong> The same
+input, or even small changes in phrasing, can yield different responses
+across runs. This is a property of the models powering these products.
+They are highly sensitive to context and phrasing, and they produce
+probabilistic outputs rather than fixed answers.</p>
+<p>Traditional unit and integration tests answer a narrow question.
+<em>Did the system do exactly what we expected?</em> In AI products,
+there are two unknowns that make this question insufficient.</p>
+<p>First, you do not fully know how end users will interact with your
+system.</p>
+<p>Second, you do not have direct visibility into how the model arrives
+at its answers.</p>
+<p>Large language models are black boxes. There is no simple pass or
+fail signal.</p>
+<h2 id="so-how-do-teams-build-with-confidence">So How Do Teams Build
+with Confidence?</h2>
+<p>In practice, teams start by estimating how users might interact with
+the system. For example, if you are building an agent to help answer
+customer queries for a large retail company like Amazon or Walmart, you
+can look at historical customer support data to understand commonly
+asked questions. You can then test how your system responds to those
+questions before launch.</p>
+<p>A simple way to think about this is a table like the following:</p>
+<table>
+<colgroup>
+<col style="width: 23%" />
+<col style="width: 40%" />
+<col style="width: 36%" />
+</colgroup>
+<thead>
+<tr>
+<th>User Question</th>
+<th>Expected Correct Answer</th>
+<th>Agent Generated Answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>I can’t seem to refund my shoes, it’s been 45 days</td>
+<td>Explain return policy and escalate</td>
+<td>[System Response]</td>
+</tr>
+<tr>
+<td>I requested a refund a week ago and haven’t gotten it</td>
+<td>Check status and provide update</td>
+<td>[System Response]</td>
+</tr>
+</tbody>
+</table>
+<p>This is often where people first encounter the idea of evaluation. It
+is also where confusion usually starts.</p>
+<h2 id="why-the-word-evals-causes-confusion">Why the Word “Evals” Causes
+Confusion</h2>
+<figure>
+<img src="../images/evals_confusion_diagram.png"
+alt="Evals Confusion Diagram" />
+<figcaption aria-hidden="true">Evals Confusion Diagram</figcaption>
+</figure>
+<p>A major source of confusion is that the term <em>evals</em> is used
+loosely to refer to very different things. In this course, we will use
+the word <em>evaluation</em> intentionally, because <em>evals</em> has
+become a catch-all term that hides important distinctions.</p>
+<p>Broadly, there are two kinds of evaluations.</p>
+<h3 id="model-evaluations">Model Evaluations</h3>
+<p><strong>Model evaluations</strong> are primarily conducted by
+frontier labs and research teams. Their goal is to answer a specific
+question. <em>How capable is this model in general compared to
+others?</em></p>
+<p>These evaluations rely on standardized benchmarks that test
+reasoning, factual recall, coding ability, or performance on academic
+style tasks. They are usually run on fixed datasets with predefined
+expected answers, and the model’s outputs are scored across multiple
+dimensions using evaluation metrics.</p>
+<p>Model evaluations are valuable. They help researchers measure
+progress, help infrastructure teams choose base models, and help vendors
+communicate improvements.</p>
+<p>However, they are intentionally broad and domain agnostic. They are
+not designed to tell you whether a model will work well inside a
+specific product, workflow, or business context.</p>
+<h3 id="ai-product-evaluations">AI Product Evaluations</h3>
+<p><strong>AI product evaluations</strong> are what practitioners should
+care about most when building real products. Product evaluations focus
+on whether a system behaves acceptably in a specific domain, for a
+specific workflow, and for real users.</p>
+<p>Real world data is far more nuanced than benchmark datasets. Domain
+rules, edge cases, risk tolerance, and downstream consequences matter
+deeply. A model that performs well in general may still fail in ways
+that are unacceptable for your product.</p>
+<p>Even if frontier labs have done extensive model evaluations, product
+teams still need their own evaluation process. Model evaluations tell
+you what a model can do in general. Product evaluations tell you whether
+it should be used in your system.</p>
+<p>In the rest of this course, we focus on AI product evaluations and
+product evaluation metrics, not model evaluations. This is the level at
+which product teams actually make decisions and manage risk.</p>
+<h2 id="clearing-up-the-terminology">Clearing Up the Terminology</h2>
+<p>Before moving on, let us clearly define the terms we will use
+throughout this course. These words are often used interchangeably in
+conversations, which is one of the main reasons people get confused
+about evaluation.</p>
+<p><strong>Evaluation</strong> refers to the overall process of
+assessing how an AI system behaves. It is not a single test, score, or
+dashboard. Evaluation is the act of checking whether a system’s outputs
+meet certain expectations under specific conditions. This can happen
+before launch, after launch, or continuously in production.</p>
+<p><strong>A benchmark or evaluation harness</strong> is the setup used
+to run evaluations in a repeatable way. This usually includes a dataset
+of example inputs, any required context, and a defined execution
+process. Benchmarks exist to ensure consistency across different
+evaluation runs and make results comparable.</p>
+<p><strong>Evaluation metrics</strong> are the dimensions along which
+system behavior is judged. A metric answers the question, <em>what does
+good mean in this context?</em> Common examples include correctness,
+relevance, completeness, safety, tone, or helpfulness. Metrics can be
+objective or subjective, but they are always context dependent.</p>
+<p>The same metric can mean very different things in different domains.
+Take <em>helpfulness</em> as an example. In a real estate product,
+helpfulness might mean summarizing listings clearly, surfacing relevant
+comparables, or asking clarifying questions when user intent is vague.
+Over explaining or speculating would be harmful, even if the response
+sounds articulate.</p>
+<p>In an insurance or healthcare workflow, helpfulness might mean
+knowing when <em>not</em> to answer. Escalating uncertainty, flagging
+missing information, or deferring to a human can be more helpful than
+attempting to provide a complete answer.</p>
+<p>Because of this, evaluation metrics must almost always be guided by
+explicit <em>rubrics</em>. A rubric defines what good looks like and
+what failure looks like in a given context. Without rubrics, metrics
+like helpfulness, correctness, or safety become vague labels that
+different people interpret differently.</p>
+<p><strong>Model evaluations</strong> assess general model capability
+independent of any specific product.</p>
+<p><strong>AI product evaluations</strong> assess whether a model
+behaves acceptably inside a real product.</p>
+<p>Throughout this course, when we talk about evaluation, we are
+referring to AI product evaluations unless stated otherwise. Our goal is
+not to measure how intelligent a model is in the abstract, but to
+understand whether a system is behaving well enough for the product we
+are trying to build.</p>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<p>As you can see, <em>evals</em> is an overloaded term that means
+different things to different stakeholders. When someone says PMs should
+do evals, they often mean defining rubrics and evaluation metrics and
+expectations for product behavior. When someone says a model’s evals
+look good, they usually mean benchmark scores on popular datasets. When
+data labeling companies talk about writing evals, they typically mean
+creating training datasets and annotation guidelines.</p>
+<p>Understanding these distinctions is crucial for building effective
+evaluation systems that actually help you ship better AI products.</p>
+<p>At this point, you should have a clearer mental map. In the next
+chapter, we will look at the different ways evaluations are implemented
+in practice, and the tradeoffs each approach introduces.</p>
+<hr />
+<h1 id="chapter-2-model-vs-product-evaluations">Chapter 2: Model vs
+Product Evaluations</h1>
+<figure>
+<img src="../images/model_vs_product_evaluation.png"
+alt="Model vs Product Evaluation" />
+<figcaption aria-hidden="true">Model vs Product Evaluation</figcaption>
+</figure>
+<h2 id="from-model-creation-to-product-implementation">From Model
+Creation to Product Implementation</h2>
+<p>In the previous chapter, we established that AI evaluation is
+unavoidable. Now we need to understand how evaluation works across the
+AI ecosystem.</p>
+<p>When AI companies build models, they evaluate them to understand
+their general capabilities. But these same models get used in thousands
+of different applications, from customer support chatbots to legal
+document analysis to medical diagnosis tools. Each application has its
+own requirements, constraints, and success criteria.</p>
+<p>This creates a natural progression: models are evaluated for their
+general abilities, then they need additional evaluation when you use
+them for specific purposes. The first tells you what a model can do in
+theory. The second tells you whether it actually works for your
+particular use case.</p>
+<p>Model creators have their own perspective on evaluation worth
+understanding first.</p>
+<h2 id="model-evaluations-measuring-general-capability">Model
+Evaluations: Measuring General Capability</h2>
+<figure>
+<img src="../images/evaluation_benchmark_process.png"
+alt="Evaluation Benchmark Process" />
+<figcaption aria-hidden="true">Evaluation Benchmark Process</figcaption>
+</figure>
+<p>When AI companies develop models, they need to understand and
+communicate what their models can do. <strong>Model evaluations</strong>
+serve this purpose, measuring general capability across broad domains.
+Their goal is straightforward: <em>How capable is this model compared to
+others?</em></p>
+<p>You see these evaluations in research papers, vendor marketing
+materials, and leaderboards.</p>
+<p>These evaluations use standardized benchmarks that test different
+aspects of model capability:</p>
+<ul>
+<li><strong>MMLU (Massive Multitask Language Understanding)</strong>:
+Tests knowledge across 57 academic subjects from elementary math to
+professional law</li>
+<li><strong>HumanEval</strong>: Measures coding ability by testing
+whether models can write Python functions that pass unit tests<br />
+</li>
+<li><strong>GSM8K</strong>: Tests grade-school level mathematical
+reasoning</li>
+<li><strong>GPQA</strong>: Tests graduate-level reasoning in physics,
+chemistry, and biology</li>
+</ul>
+<p>Model evaluations serve as a competitive landscape for AI providers.
+When companies release new models, they publish benchmark scores to
+demonstrate improvements and establish market positioning. A model that
+scores 85% on MMLU versus 78% on the previous version signals meaningful
+progress to potential customers and the research community.</p>
+<p>The industry benefits from this standardization in several ways.
+Teams can track scientific progress over time, organizations can compare
+and choose between different models, and everyone gets objective
+measures that cut through marketing claims.</p>
+<p>The benchmarks are carefully designed to be objective, repeatable,
+and comparable across different models. Model evaluations can test both
+general capabilities and domain-specific knowledge, but they’re designed
+to assess what models can do in standardized conditions, not how they’ll
+perform in your specific business context with your particular
+constraints and requirements.</p>
+<h2 id="why-model-evaluations-dont-predict-product-success">Why Model
+Evaluations Don’t Predict Product Success</h2>
+<figure>
+<img src="../images/benchmark_vs_product_split.png"
+alt="Benchmark vs Product Split" />
+<figcaption aria-hidden="true">Benchmark vs Product Split</figcaption>
+</figure>
+<p>Here’s a concrete example. Suppose you’re building an AI system to
+help insurance agents process claims. You’re choosing between two
+models:</p>
+<ul>
+<li><strong>Model A</strong> scores 92% on MMLU and 85% on
+HumanEval</li>
+<li><strong>Model B</strong> scores 87% on MMLU and 79% on
+HumanEval</li>
+</ul>
+<p>Based on benchmark scores, Model A looks clearly superior. When you
+test them on actual insurance claims with your specific data, workflows,
+and business constraints, Model B might perform significantly
+better.</p>
+<p>Why? Because your insurance use case has specific requirements that
+general benchmarks don’t capture:</p>
+<ul>
+<li><strong>Domain knowledge</strong>: Understanding insurance
+terminology, regulations, and claim types</li>
+<li><strong>Risk tolerance</strong>: The cost of approving a fraudulent
+claim versus denying a legitimate one</li>
+<li><strong>Business constraints</strong>: Processing time requirements,
+escalation policies, compliance needs</li>
+<li><strong>Real-world messiness</strong>: Incomplete forms, ambiguous
+language, edge cases specific to insurance</li>
+</ul>
+<p>Model B might have seen more insurance-related data during training,
+or its architecture might be better suited to the structured reasoning
+required for claims processing. The benchmark scores can’t tell you
+this.</p>
+<h2 id="real-world-context-is-far-more-complicated">Real-World Context
+Is Far More Complicated</h2>
+<p>The data that powers your business lives in industry-specific silos
+that benchmark creators never see. Healthcare data has different
+patterns than financial data. Legal documents follow different
+structures than customer support conversations. Manufacturing quality
+reports contain domain knowledge that doesn’t exist in academic
+datasets.</p>
+<p>This means benchmark performance often fails to predict real-world
+behavior. Consider a customer support AI that scores well on standard
+helpfulness benchmarks. When a frustrated customer types “this is the
+third time I’m contacting you about my broken order and nobody seems to
+care,” the AI needs to:</p>
+<ul>
+<li>Recognize the emotional context and escalation history</li>
+<li>Know when to apologize versus when to escalate immediately<br />
+</li>
+<li>Understand your company’s specific policies and capabilities</li>
+<li>Balance being helpful with managing expectations appropriately</li>
+</ul>
+<p>These nuanced requirements emerge from your specific business
+context, customer base, and operational constraints. They don’t appear
+in general benchmarks, but they’re critical for your product’s
+success.</p>
+<h2
+id="ai-product-evaluations-what-actually-matters-for-your-business">AI
+Product Evaluations: What Actually Matters for Your Business</h2>
+<p><strong>AI product evaluations</strong> focus on a different
+question: <em>Does this system behave acceptably for our specific use
+case, with our users, in our domain?</em></p>
+<p>Product evaluations are context-dependent by design. They test
+whether the AI system: - Handles your specific user inputs appropriately
+- Follows your business rules and constraints - Escalates correctly when
+uncertain - Maintains appropriate tone and style for your brand -
+Manages risk according to your tolerance levels</p>
+<p>The metrics you track in product evaluation often look very different
+from model evaluation metrics. Instead of general correctness, you might
+measure:</p>
+<ul>
+<li><strong>Escalation accuracy</strong>: Does the system correctly
+identify when it should hand off to a human?</li>
+<li><strong>Policy compliance</strong>: Does it follow your company’s
+specific guidelines and constraints?</li>
+<li><strong>Risk management</strong>: How often does it make decisions
+you later have to reverse?</li>
+<li><strong>User experience</strong>: Are users able to complete their
+tasks efficiently?</li>
+</ul>
+<h2 id="a-practical-example-legal-document-analysis">A Practical
+Example: Legal Document Analysis</h2>
+<p>Imagine you’re building an AI system to help lawyers review
+contracts. Two different evaluation approaches would look completely
+different:</p>
+<h3 id="model-evaluation-approach">Model Evaluation Approach</h3>
+<ul>
+<li>Test general reading comprehension on legal text</li>
+<li>Measure accuracy on standardized legal reasoning benchmarks</li>
+<li>Compare performance to other models on academic legal datasets</li>
+</ul>
+<h3 id="product-evaluation-approach">Product Evaluation Approach</h3>
+<ul>
+<li>Test on your firm’s actual contract types and templates</li>
+<li>Measure how often it catches the specific risk patterns your lawyers
+care about</li>
+<li>Evaluate whether it flags clauses that your legal team would want to
+review</li>
+<li>Test escalation behavior when it encounters unusual or high-risk
+terms</li>
+<li>Measure time savings for your lawyers while maintaining quality
+standards</li>
+</ul>
+<p>The model evaluation tells you the AI can understand legal language
+in general. The product evaluation tells you whether it can actually
+help your lawyers do their job better.</p>
+<h2 id="focus-on-product-evaluation-for-builders">Focus on Product
+Evaluation for Builders</h2>
+<p>Now that we understand both approaches, it becomes clear that model
+evaluation alone isn’t really useful for builders. While model
+evaluations help with initial model selection, the real work happens at
+the product evaluation level.</p>
+<p><strong>Baseline capability assessment</strong>: If a model performs
+poorly on relevant general benchmarks, it’s unlikely to work well in
+your specific domain. Model evaluations can help you eliminate obviously
+unsuitable options.</p>
+<p><strong>Comparative analysis</strong>: When choosing between models
+with similar architectures, benchmark scores can provide useful signals
+about relative capability, especially when combined with
+product-specific testing.</p>
+<p><strong>Progress tracking</strong>: If you’re fine-tuning or
+customizing a model, general benchmarks can help you verify that you’re
+not degrading core capabilities while adding domain-specific
+knowledge.</p>
+<p>But model evaluations should be just the starting point, not the
+endpoint, of your evaluation process.</p>
+<h2 id="building-your-product-evaluation-strategy">Building Your Product
+Evaluation Strategy</h2>
+<p>Given this distinction, how should you approach evaluation for your
+AI product?</p>
+<p><strong>Start with model evaluations as a filter</strong>. Use
+benchmark scores to eliminate models that lack the basic capabilities
+your application requires. If you need strong reasoning ability, look
+for models that perform well on reasoning benchmarks. If you need
+multilingual support, check language-specific evaluations.</p>
+<p><strong>But invest your time in product evaluations</strong>. This is
+where you’ll discover whether the AI actually works for your use case.
+Design evaluations that test: - Your specific user inputs and edge cases
+- Your business constraints and requirements - Your risk tolerance and
+escalation needs - Your quality standards and success metrics</p>
+<p><strong>Use real data whenever possible</strong>. Synthetic test
+cases are useful for getting started, but nothing beats evaluating on
+actual examples from your domain with real user inputs and expected
+outputs.</p>
+<p><strong>Make it an ongoing process</strong>. Unlike model
+evaluations, which are typically done once during model selection,
+product evaluation should be continuous. User behavior evolves, business
+requirements change, and your AI system needs to adapt.</p>
+<h2 id="the-evaluation-hierarchy">The Evaluation Hierarchy</h2>
+<figure>
+<img src="../images/evaluation_questions_overview.png"
+alt="Evaluation Questions Overview" />
+<figcaption aria-hidden="true">Evaluation Questions
+Overview</figcaption>
+</figure>
+<p>Think of evaluation as a hierarchy:</p>
+<ol type="1">
+<li><strong>Model capability</strong>: Can this model handle the type of
+task I need? (Model evaluation)</li>
+<li><strong>Domain fit</strong>: Does it work well with my specific data
+and requirements? (Basic product evaluation)<br />
+</li>
+<li><strong>Production readiness</strong>: Does it behave safely and
+reliably with real users? (Comprehensive product evaluation)</li>
+<li><strong>Continuous improvement</strong>: How do I maintain and
+improve performance over time? (Ongoing product evaluation)</li>
+</ol>
+<p>Most teams spend too much time on level 1 and not enough on levels
+2-4. The companies that succeed with AI products flip this priority.</p>
+<h2 id="key-takeaways-1">Key Takeaways</h2>
+<p>Model evaluations and product evaluations serve fundamentally
+different purposes. Model evaluations help you understand general
+capability and compare different models. Product evaluations tell you
+whether an AI system will actually work for your business.</p>
+<p>The benchmark illusion (assuming strong model evaluations guarantee
+product success) is one of the most common reasons AI projects fail to
+translate from demos to production.</p>
+<p>Your evaluation strategy should use model evaluations as an initial
+filter but invest most of your effort in product-specific evaluation
+that tests real use cases, real data, and real business
+requirements.</p>
+<p>In the next chapter, we’ll dive into a systematic framework for
+thinking about AI system behavior that will help you design product
+evaluations that actually predict real-world performance.</p>
+<hr />
+<h1 id="chapter-3-the-evaluation-framework">Chapter 3: The Evaluation
+Framework</h1>
+<h2 id="setting-up-evaluation-for-your-ai-product">Setting Up Evaluation
+for Your AI Product</h2>
+<p>In the previous chapters, we covered why evaluation matters and the
+difference between model and product evaluation. Now you understand you
+need to evaluate your AI products.</p>
+<p>If you want to evaluate a new product you’re building, where do you
+start?</p>
+<p>We’ll cover the basic concepts that help you approach evaluation
+strategically. This will set you up to build datasets and evaluation
+systems that actually help you improve your product.</p>
+<h2 id="what-youre-actually-evaluating">What You’re Actually
+Evaluating</h2>
+<figure>
+<img src="../images/input_expected_actual_framework.png"
+alt="Input Expected Actual Framework" />
+<figcaption aria-hidden="true">Input Expected Actual
+Framework</figcaption>
+</figure>
+<p>When you evaluate any AI system, you’re looking at three things -
+<strong>Input</strong> (what goes into the system),
+<strong>Expected</strong> (what should happen), and
+<strong>Actual</strong> (what actually happens).</p>
+<p>Sounds simple, but each piece is more complex than it appears.</p>
+<h3 id="input-everything-that-affects-your-system">Input: Everything
+That Affects Your System</h3>
+<p>“Input” isn’t just the user’s question. It includes everything that
+influences how your system behaves - the user’s actual question or
+request, previous conversation history and context, data your system
+retrieves (documents, database entries, API calls), and system
+configuration (prompts, parameters, business rules).</p>
+<p>This matters because many evaluation problems happen when teams only
+test the obvious user inputs but ignore how context and configuration
+changes affect behavior.</p>
+<h3 id="expected-what-good-looks-like">Expected: What Good Looks
+Like</h3>
+<p>Defining what should happen is often the hardest part. What should
+your system actually do?</p>
+<p>Expected behavior depends on your specific requirements: - Accuracy
+of information - Completeness of the response - Appropriate tone and
+style - Safety and compliance - Following your business rules</p>
+<p>Take a healthcare AI. When someone asks “Is this medication safe for
+children?”, good behavior isn’t just giving accurate information. It
+includes: - Noting that medical advice should come from doctors -
+Suggesting they talk to their pediatrician - Providing general
+information without specific medical recommendations - Escalating if the
+situation seems urgent</p>
+<p>Defining expected behavior requires input from both technical teams
+and people who understand the domain and business context.</p>
+<h3 id="actual-what-your-system-really-does">Actual: What Your System
+Really Does</h3>
+<p>This is what your system produces: the response, the actions, the
+decisions.</p>
+<p>But “actual” includes more than just the final output: - The content
+and quality of responses - Which tools or data sources were used -
+Reasoning and decision-making process - Performance metrics like
+response time</p>
+<p>Understanding what actually happens often requires logging different
+parts of your system.</p>
+<h2 id="why-generic-metrics-dont-work">Why Generic Metrics Don’t
+Work</h2>
+<p>Once you understand these three pieces, you can see why simple
+metrics like “helpfulness” or “correctness” don’t work for real AI
+products.</p>
+<p>The same metric means completely different things depending on your
+context and requirements.</p>
+<h3 id="context-changes-everything">Context Changes Everything</h3>
+<figure>
+<img src="../images/rubric_definition_quality.png"
+alt="Rubric Definition Quality" />
+<figcaption aria-hidden="true">Rubric Definition Quality</figcaption>
+</figure>
+<p>Take “helpfulness.” What’s helpful depends entirely on the
+situation:</p>
+<p><strong>Customer service</strong>: Helpful means solving problems
+quickly and escalating when needed. Explaining too much when someone
+just wants a refund isn’t helpful.</p>
+<p><strong>Education</strong>: Helpful means guiding students to
+understanding, not just giving answers. A direct solution without
+explanation isn’t helpful even if it’s correct.</p>
+<p><strong>Medical information</strong>: Helpful means providing
+accurate general information while being clear about limitations. Being
+too specific about medical advice would be harmful.</p>
+<p>This is why you can’t just copy evaluation metrics from other
+applications. You need to define what quality means for your specific
+situation.</p>
+<h3 id="multiple-dimensions-matter">Multiple Dimensions Matter</h3>
+<p>Real systems need evaluation across several specific areas. Here’s
+why:</p>
+<p>Say a customer asks “Can I return my shoes after 45 days?” and your
+system responds:</p>
+<p><em>“Unfortunately, our return policy only allows returns within 30
+days of purchase. However, since you’re clearly frustrated about this
+situation and have been a loyal customer, I understand your
+disappointment. While I cannot process the return myself, I recommend
+contacting our customer care team who may be able to offer alternative
+solutions or exceptions based on your purchase history and the specific
+circumstances of your case.”</em></p>
+<p>You need to evaluate this across several areas: - <strong>Policy
+accuracy</strong>: Does it correctly state the 30-day policy? -
+<strong>Escalation</strong>: Does it properly refer to the right team? -
+<strong>Tone</strong>: Is it professional and empathetic without
+over-apologizing? - <strong>Business risk</strong>: Does it avoid making
+unauthorized promises?</p>
+<p>A single “correctness” score would miss important problems. The
+response could be accurate about the policy but fail to escalate
+properly, or escalate correctly but use the wrong tone.</p>
+<p>The key is finding the minimum set of areas that give you the most
+signal about what matters for your specific product.</p>
+<p>These areas are what we call <strong>evaluation metrics</strong>.
+Some people call these “evals,” but we prefer to be more precise. We use
+“evaluation” for the overall process and “evaluation metrics” for the
+specific measures you use to judge quality.</p>
+<h2 id="making-subjective-assessment-consistent">Making Subjective
+Assessment Consistent</h2>
+<p>Many important quality areas require subjective judgment. Different
+people might evaluate the same response differently when looking at
+tone, appropriateness, or escalation decisions.</p>
+<p>Rubrics solve this by providing explicit criteria for judgment.</p>
+<h3 id="building-simple-rubrics">Building Simple Rubrics</h3>
+<p>A good rubric defines: - What counts as acceptable versus not
+acceptable performance - Specific things to look for - Examples of
+responses in each category - How to handle edge cases</p>
+<p>For example, a rubric for “appropriate escalation” might specify:</p>
+<p><strong>Acceptable</strong>: Correctly identifies situations that
+need human intervention (policy exceptions, billing disputes, complex
+technical issues) and provides appropriate context when escalating</p>
+<p><strong>Not Acceptable</strong>: Fails to escalate when human
+intervention is needed, escalates unnecessarily for routine questions,
+or escalates without sufficient context</p>
+<p>Rubrics make subjective evaluation more consistent and help different
+team members align on quality standards.</p>
+<h2 id="why-evaluation-requires-team-collaboration">Why Evaluation
+Requires Team Collaboration</h2>
+<p>Effective AI evaluation isn’t just a technical problem. It requires
+collaboration between different roles:</p>
+<p><strong>Subject matter experts</strong> understand what good behavior
+looks like in the domain. They know the edge cases, risks, and nuances
+that technical metrics might miss.</p>
+<p><strong>Product teams</strong> understand user needs and business
+priorities. They know what trade-offs matter and how evaluation connects
+to user experience.</p>
+<p><strong>Engineers</strong> understand system capabilities and
+constraints. They know what’s measurable, what’s technically feasible,
+and how to implement evaluation systems.</p>
+<p>This collaboration matters because evaluation decisions affect every
+aspect of your AI product. The metrics you choose influence what
+behaviors you optimize for and how you measure success.</p>
+<h2 id="building-team-alignment">Building Team Alignment</h2>
+<p>One of the most valuable outcomes of systematic evaluation is getting
+everyone aligned on quality. When engineering, product, and domain
+expert teams can look at the same examples and agree on good versus poor
+performance, you can move much faster.</p>
+<p>This process often reveals hidden assumptions and disagreements. The
+product team might prioritize user satisfaction while the legal team
+prioritizes risk management. Working through evaluation examples helps
+surface and resolve these tensions before they affect the product.</p>
+<h2 id="how-do-you-identify-the-right-dimensions">How Do You Identify
+the Right Dimensions?</h2>
+<p>So far we’ve talked about why you need specific evaluation metrics
+and why collaboration matters. But how do you actually figure out which
+dimensions to focus on?</p>
+<p>The process usually starts with understanding your specific failure
+modes. What could go wrong with your AI system that would be
+unacceptable for your users or business? What behaviors would make you
+pull the system offline immediately?</p>
+<p>Different stakeholders will have different answers: - <strong>Domain
+experts</strong> worry about accuracy, compliance, and safety risks
+specific to their field - <strong>Product teams</strong> focus on user
+experience, completion rates, and satisfaction - <strong>Business
+stakeholders</strong> care about liability, brand risk, and operational
+costs</p>
+<p>The key is starting with these concerns and translating them into
+observable, measurable behaviors. Instead of “the system should be
+safe,” you might define “the system should escalate medical questions to
+qualified professionals” or “the system should not provide financial
+advice without appropriate disclaimers.”</p>
+<p>You also need to consider your specific user context. A chatbot for
+customer service has different quality requirements than one for
+technical support or educational tutoring. The same AI technology needs
+completely different evaluation approaches depending on who’s using it
+and for what purpose.</p>
+<h2 id="the-pre-deployment-validation-process">The Pre-Deployment
+Validation Process</h2>
+<p>The approach we’re describing helps you validate your AI system
+before you put it in front of real users. This pre-deployment validation
+is essential because it’s much easier to catch and fix issues in
+controlled testing than after users start depending on your system.</p>
+<p>Think of this as building confidence in your system’s behavior before
+the stakes get high. When you’re working with reference datasets and
+controlled examples, you can iterate quickly, test edge cases
+thoroughly, and refine your approach without worrying about user impact.
+You can have domain experts review outputs carefully, engineers can
+debug issues systematically, and product teams can ensure the behavior
+aligns with user needs.</p>
+<p>This validation process involves several key activities:</p>
+<p><strong>Building comprehensive test scenarios</strong>: You’ll create
+examples that represent the full range of situations your system needs
+to handle, from common user requests to edge cases that could cause
+problems.</p>
+<p><strong>Establishing clear quality criteria</strong>: You’ll work
+with stakeholders to define exactly what good behavior looks like in
+your specific context, creating rubrics that everyone can agree on.</p>
+<p><strong>Testing system behavior systematically</strong>: You’ll run
+your AI system against your test scenarios and evaluate whether it meets
+your quality standards across different dimensions.</p>
+<p><strong>Iterating based on findings</strong>: When you discover
+issues, you’ll fix them and re-test to ensure the problems are resolved
+without creating new ones.</p>
+<p>Once you deploy and real users start interacting with your AI, you’ll
+need to adapt these same concepts for ongoing monitoring. Real-world
+conditions introduce new challenges like unpredictable user behavior,
+scale issues, and evolving requirements that require different
+approaches while building on the same evaluation foundation.</p>
+<h2 id="where-this-leads">Where This Leads</h2>
+<p>Understanding what goes into your system, what should happen, and
+what actually happens helps you see why AI evaluation is more complex
+than traditional software testing. The challenge isn’t just technical -
+it’s about getting alignment across different perspectives on
+quality.</p>
+<p>Generic metrics like “helpfulness” mean different things in different
+contexts. Effective evaluation requires specific metrics that reflect
+your domain, users, and business requirements.</p>
+<p>AI evaluation is inherently collaborative. Subject matter experts,
+product teams, and engineers each bring essential perspectives to
+defining what good performance looks like.</p>
+<p>But this raises an important question: how do you actually come up
+with all these metrics? How do you know which ones matter most for your
+specific situation? How do you balance different team perspectives to
+create evaluation criteria everyone can agree on?</p>
+<p>In the next chapter, we’ll talk about building a reference dataset so
+you can understand how to apply this framework and improve your system
+once you’ve built a version of your product. We’ll cover how you could
+set this up in a more systematic way.</p>
+<hr />
+<h1 id="chapter-4-building-reference-datasets">Chapter 4: Building
+Reference Datasets</h1>
+<figure>
+<img src="../images/reference_dataset_steps.png"
+alt="Reference Dataset Steps" />
+<figcaption aria-hidden="true">Reference Dataset Steps</figcaption>
+</figure>
+<h2 id="getting-started-with-systematic-evaluation">Getting Started with
+Systematic Evaluation</h2>
+<p>In the previous chapter, we covered why you need specific evaluation
+metrics and how different stakeholders bring different perspectives to
+defining quality. Now let’s talk about how to set this up
+systematically.</p>
+<p>You’ve built a version of your AI product and you want to evaluate it
+properly before putting it in front of real users. Where do you
+start?</p>
+<p>The most practical approach is building a reference dataset. Think of
+this as a small, carefully chosen set of examples that represent the
+scenarios you care most about. It’s not meant to be comprehensive - it’s
+meant to be useful for validating your system’s behavior in a controlled
+environment before deployment.</p>
+<p><strong>A note on system complexity</strong>: In this guide, we’ll
+focus on single-step AI interactions (where the user asks something and
+the system responds). Many complex AI systems involve multiple steps
+like calling tools, multi-turn conversations, or reasoning chains, but
+the core ideas we’ll cover can be translated to those more complex
+scenarios as well.</p>
+<h2 id="what-is-a-reference-dataset">What Is a Reference Dataset?</h2>
+<p>A reference dataset is your first concrete representation of how the
+system should behave when deployed. It’s a collection of realistic
+inputs paired with what you expect the system to do in those
+situations.</p>
+<p>The key word here is “realistic.” These aren’t made-up test cases.
+They’re examples that reflect how real users will actually interact with
+your system, including the messy, ambiguous, and edge-case scenarios
+that always happen in production.</p>
+<p>Each example in your dataset typically includes: -
+<strong>Input</strong>: A realistic user request or scenario -
+<strong>Expected output</strong>: What the system should do (written in
+plain language) - <strong>Context</strong>: Any additional information
+the system needs</p>
+<p>The expected output doesn’t have to be a perfect response. It can be
+a description of the right behavior, like “escalate to human agent” or
+“ask for clarification about the user’s budget range.”</p>
+<h2 id="why-start-small-and-specific">Why Start Small and Specific</h2>
+<figure>
+<img src="../images/lab_vs_production_50_examples.png"
+alt="Lab vs Production 50 Examples" />
+<figcaption aria-hidden="true">Lab vs Production 50
+Examples</figcaption>
+</figure>
+<p>Teams often make the mistake of trying to build comprehensive test
+coverage from day one. This doesn’t work well for AI systems.</p>
+<p>Instead, start with a small set of examples that represent scenarios
+you absolutely cannot get wrong. These are usually: - High-risk
+situations where failure would be unacceptable - Common user workflows
+that need to work smoothly - Edge cases that reveal important system
+limitations - Examples that expose different evaluation dimensions you
+care about</p>
+<p>For a customer support AI, this might include: - A billing dispute
+that requires human escalation - A simple return request that should be
+handled automatically - An angry customer message that needs careful
+tone handling - A request that’s outside your company’s service
+scope</p>
+<p>Starting small lets you focus on quality over quantity. It’s better
+to have 20 well-chosen examples with clear expected behaviors than 200
+generic test cases.</p>
+<h2 id="step-1-generate-your-initial-examples">Step 1: Generate Your
+Initial Examples</h2>
+<p>The best source for examples is usually existing data from your
+domain. If you have historical customer support tickets, user queries,
+or domain-specific scenarios, start there.</p>
+<p>If you don’t have existing data, this is where collaboration becomes
+essential:</p>
+<p><strong>Subject matter experts</strong> should contribute the
+majority of initial examples. They know the edge cases, the high-risk
+scenarios, and the subtle requirements that technical teams might miss.
+Don’t rely on engineers to generate domain-specific examples because
+they’ll miss important nuances.</p>
+<p><strong>Product teams</strong> can contribute examples based on user
+research, feature requirements, and common user journeys they’ve
+observed.</p>
+<p><strong>Engineers</strong> can help identify technical edge cases and
+system boundary conditions.</p>
+<p>We recommend avoiding AI-generated synthetic examples at this stage.
+AI can help with formatting or expanding on human-written examples, but
+it tends to create shallow scenarios that miss real-world
+complexity.</p>
+<h3 id="example-customer-support-dataset">Example: Customer Support
+Dataset</h3>
+<p>Here’s what an initial reference dataset might look like for a
+customer support system:</p>
+<table>
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 73%" />
+</colgroup>
+<thead>
+<tr>
+<th>Input</th>
+<th>Expected Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“I want to return my shoes but I lost the receipt”</td>
+<td>Ask for order number or email, explain receipt alternatives, process
+if sufficient info available</td>
+</tr>
+<tr>
+<td>“Your service is terrible and I’m switching to a competitor”</td>
+<td>Acknowledge frustration, apologize professionally, escalate to
+retention team</td>
+</tr>
+<tr>
+<td>“How do I track my order?”</td>
+<td>Ask for order number, provide tracking information, explain delivery
+timeline</td>
+</tr>
+<tr>
+<td>“I was charged twice for the same order”</td>
+<td>Apologize, escalate immediately to billing team with all available
+details</td>
+</tr>
+</tbody>
+</table>
+<p>Notice these examples cover different scenarios (returns, complaints,
+tracking, billing) and different required behaviors (self-service,
+escalation, information gathering).</p>
+<h2 id="step-2-run-your-system-on-the-examples">Step 2: Run Your System
+on the Examples</h2>
+<p>Once you have your initial set of examples, run your AI system on
+these inputs. Keep the system simple at this stage. Don’t add complexity
+before you understand baseline behavior.</p>
+<p>This step often reveals immediate problems with your system design,
+prompts, or configuration. That’s valuable information.</p>
+<p>Document both what the system outputs and any intermediate steps
+(which tools it used, what data it retrieved, how confident it was).
+This helps you understand not just what went wrong, but why.</p>
+<h2 id="step-3-evaluate-alignment-with-domain-experts">Step 3: Evaluate
+Alignment with Domain Experts</h2>
+<p>Now you have three columns: input, expected behavior, and actual
+system output. The next step is getting domain experts to evaluate the
+alignment.</p>
+<p>Keep this process simple. Ask domain experts to review each example
+and answer: “Was this response satisfactory? If not, why not?”</p>
+<p>Avoid asking for numerical scores at this stage. Scores are harder to
+interpret and don’t give you actionable feedback. Simple yes/no
+judgments with explanations are more useful.</p>
+<p><strong>Make it easy for domain experts to participate</strong>.
+Don’t ask them to learn complex rubrics or scoring systems. Frame
+questions in their language and focus on their expertise.</p>
+<h3 id="example-evaluation-session">Example Evaluation Session</h3>
+<p>Continuing with our customer support example:</p>
+<table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 25%" />
+<col style="width: 16%" />
+<col style="width: 23%" />
+<col style="width: 23%" />
+</colgroup>
+<thead>
+<tr>
+<th>Input</th>
+<th>System Output</th>
+<th>Expected</th>
+<th>Satisfactory</th>
+<th>If not, why?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“Lost receipt for shoe return”</td>
+<td>“I can help you process a return. Please provide your order
+confirmation email.”</td>
+<td>Ask for order number or email, explain alternatives</td>
+<td>Yes</td>
+<td>Handled appropriately</td>
+</tr>
+<tr>
+<td>“Service is terrible, switching”</td>
+<td>“I understand you’re frustrated. Let me see how I can help resolve
+your issue.”</td>
+<td>Acknowledge, apologize, escalate to retention</td>
+<td>No</td>
+<td>Didn’t escalate to retention team</td>
+</tr>
+</tbody>
+</table>
+<p>This gives you specific, actionable feedback about where your system
+is failing.</p>
+<h2 id="step-4-identify-error-patterns">Step 4: Identify Error
+Patterns</h2>
+<p>Now bring the engineering perspective back in. Look at the
+annotations from domain experts and identify patterns in the
+failures.</p>
+<p>Many issues that look different on the surface come from the same
+root cause. The goal is clustering errors into a small number of
+underlying problems that you can actually fix.</p>
+<p>Add two more columns to your analysis: - <strong>Error
+category</strong>: What type of failure is this? - <strong>Potential
+cause</strong>: Why might this be happening?</p>
+<p>Common error patterns include: - <strong>Missing context</strong>:
+System doesn’t have access to information it needs - <strong>Prompt
+issues</strong>: Instructions aren’t clear or specific enough -
+<strong>Business rule failures</strong>: System doesn’t follow
+domain-specific policies - <strong>Escalation problems</strong>: Doesn’t
+recognize when human intervention is needed</p>
+<h3 id="example-error-analysis">Example Error Analysis</h3>
+<table>
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 21%" />
+<col style="width: 20%" />
+<col style="width: 23%" />
+<col style="width: 24%" />
+</colgroup>
+<thead>
+<tr>
+<th>Input</th>
+<th>System Output</th>
+<th>Satisfactory</th>
+<th>Error Category</th>
+<th>Potential Cause</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>“Service terrible, switching”</td>
+<td>Generic help offer</td>
+<td>No</td>
+<td>Missing escalation</td>
+<td>No escalation logic for retention cases</td>
+</tr>
+<tr>
+<td>“Charged twice”</td>
+<td>“Let me help with that”</td>
+<td>No</td>
+<td>Missing urgency</td>
+<td>Billing issues not flagged as high-priority</td>
+</tr>
+</tbody>
+</table>
+<p>This helps you prioritize fixes and understand whether issues are
+implementation problems or deeper design issues.</p>
+<h2 id="step-5-decide-which-metrics-you-need">Step 5: Decide Which
+Metrics You Need</h2>
+<p>Here’s a key insight: if an issue can be fixed once and is unlikely
+to return, fix it and move on. If an issue represents a behavior that
+can reappear in different forms, you need an ongoing metric to track
+it.</p>
+<p>For example: - A missing instruction in a prompt is usually a
+one-time fix - Appropriate escalation behavior is an ongoing concern
+that needs monitoring</p>
+<p>Create metrics for recurring risks, not one-off bugs.</p>
+<p><strong>Be ruthless about what you measure</strong>. You want the
+minimum number of metrics that give you the maximum amount of signal. If
+there are issues in your use case that you’re not really worried about
+(small things that don’t significantly impact your users or business),
+don’t add a metric for them.</p>
+<p>Only create metrics for behaviors you actually care about and can
+take action on. If you wouldn’t change your system based on a metric,
+don’t track it.</p>
+<p>Based on your error analysis, identify 2-4 key behaviors that need
+ongoing measurement. These become your evaluation metrics. More than
+that becomes difficult to manage and act upon effectively.</p>
+<p>For our customer support example, you might end up with: -
+<strong>Escalation accuracy</strong>: Does the system correctly identify
+when human intervention is needed? - <strong>Information
+gathering</strong>: Does it ask for the right information to resolve
+requests? - <strong>Tone appropriateness</strong>: Does it match the
+professional, helpful brand voice?</p>
+<p><strong>Focus on what matters, not implementation</strong>. At this
+stage, don’t worry about how you’ll measure these behaviors. Just
+identify which behaviors are most important for your use case. We’ll
+cover implementation approaches in the next chapter.</p>
+<p>For now, examples of metrics you might track include: - Response time
+stays under acceptable limits - Required legal disclaimers appear in
+financial advice responses - Billing-related queries get properly
+flagged for escalation - System outputs maintain valid structure for
+downstream processing - Appropriate tone and empathy in customer
+interactions - Accurate assessment of query complexity for escalation
+decisions - Relevant information gathering without being repetitive</p>
+<p>What matters most is identifying which failure modes are critical for
+your specific system and user needs.</p>
+<h2 id="step-6-iterate-and-expand">Step 6: Iterate and Expand</h2>
+<p>Your reference dataset isn’t static. As you fix issues and learn more
+about system behavior, add new examples that represent: - Edge cases
+discovered in production - New failure modes that emerge - Additional
+scenarios your system needs to handle</p>
+<p>The dataset grows into a record of hard-won understanding about what
+good behavior looks like in your domain.</p>
+<h2 id="common-pitfalls-to-avoid">Common Pitfalls to Avoid</h2>
+<p><strong>Don’t make it too big too fast</strong>: Start with 10-20
+high-quality examples rather than 100 mediocre ones.</p>
+<p><strong>Don’t rely entirely on synthetic data</strong>: AI-generated
+examples often miss real-world complexity and edge cases.</p>
+<p><strong>Don’t skip domain expert involvement</strong>: Technical
+teams alone cannot define what good behavior looks like in specialized
+domains.</p>
+<p><strong>Don’t create metrics for every issue</strong>: Focus on
+recurring risks that need ongoing monitoring.</p>
+<p><strong>Don’t make rubrics too complex</strong>: Simple
+“acceptable/not acceptable” categories work better than elaborate
+scoring systems.</p>
+<h2 id="what-you-end-up-with">What You End Up With</h2>
+<p>After following this process, you’ll have: - A reference dataset that
+represents scenarios you care about - Clear definitions of what good
+behavior looks like - Specific metrics that track the most important
+behavioral dimensions - Rubrics that make subjective evaluation
+consistent - A process for expanding and refining your evaluation over
+time</p>
+<p>This becomes the foundation for ongoing evaluation and improvement.
+Every time you make changes to your system, you can run it against your
+reference dataset to check for regressions. Every time you discover new
+edge cases in production, you can add them to improve your evaluation
+coverage.</p>
+<p>The goal isn’t perfect evaluation - it’s systematic improvement. Your
+reference dataset helps you move from vague concerns about system
+behavior to concrete, measurable criteria you can act on.</p>
+<p>In this chapter, we’ve identified what metrics are important to track
+based on your specific failure modes and business requirements. In the
+next chapter, we’ll talk about how to implement these metrics, from
+simple code-based checks to more sophisticated evaluation
+approaches.</p>
+<hr />
+<h1 id="chapter-5-implementing-evaluation-metrics">Chapter 5:
+Implementing Evaluation Metrics</h1>
+<figure>
+<img src="../images/metrics_to_automated_system.png"
+alt="Metrics to Automated System" />
+<figcaption aria-hidden="true">Metrics to Automated System</figcaption>
+</figure>
+<h2 id="from-what-to-how">From What to How</h2>
+<p>In the previous chapter, we walked through building reference
+datasets and identifying which metrics matter for your system. You now
+have a clear list of behaviors you want to track, such as escalation
+accuracy, response time, or tone appropriateness.</p>
+<p>Now comes the practical question: how do you actually measure these
+behaviors?</p>
+<p>This chapter covers the different approaches you can use to implement
+your metrics. We’ll explore when each approach works well, their
+trade-offs, and how to choose the right mix for your specific
+situation.</p>
+<h2 id="three-ways-to-measure-ai-behavior">Three Ways to Measure AI
+Behavior</h2>
+<figure>
+<img src="../images/three_evaluation_approaches.png"
+alt="Three Evaluation Approaches" />
+<figcaption aria-hidden="true">Three Evaluation Approaches</figcaption>
+</figure>
+<p>There are three main approaches to implementing evaluation
+metrics:</p>
+<p><strong>Human evaluation</strong>: Having people assess AI system
+behavior based on their expertise and judgment <strong>Code-based
+metrics</strong>: Deterministic checks written in code that look for
+specific patterns or properties <strong>LLM judges</strong>: Using one
+model to evaluate another model’s behavior</p>
+<p>Each approach has strengths and weaknesses. Most effective evaluation
+systems use a combination of multiple approaches.</p>
+<h2 id="human-evaluation-the-gold-standard">Human Evaluation: The Gold
+Standard</h2>
+<p>Human evaluation is exactly what we did when building the reference
+dataset in the previous chapter. You show examples to domain experts,
+product managers, or other stakeholders and ask them to judge whether
+the AI system’s behavior was acceptable.</p>
+<p>This approach has major advantages: - <strong>Nuanced
+judgment</strong>: Humans can assess complex, subjective qualities like
+appropriateness, empathy, and contextual correctness - <strong>Domain
+expertise</strong>: Subject matter experts understand subtleties that
+automated systems miss - <strong>Flexibility</strong>: Humans can adapt
+their evaluation criteria on the fly when they encounter edge cases -
+<strong>Ground truth</strong>: Human judgment often serves as the
+standard that other metrics try to approximate</p>
+<h3 id="why-human-evaluation-doesnt-scale">Why Human Evaluation Doesn’t
+Scale</h3>
+<p>The problem with human evaluation is obvious: it’s slow and
+expensive. If you had to have a human evaluate every single conversation
+your AI system has in production, you’d need an army of evaluators
+working around the clock.</p>
+<p>Imagine a customer support AI that handles 10,000 interactions per
+day. Having domain experts review each one would be impractical and
+cost-prohibitive. Even sampling 1% would require evaluating 100
+interactions daily.</p>
+<p>This is why we need the other automated approaches. They’re attempts
+to capture human-like judgment at scale. The goal is finding automated
+methods that correlate well with human evaluation while being fast and
+cost-effective enough to run in production.</p>
+<h3 id="when-to-use-human-evaluation">When to Use Human Evaluation</h3>
+<p>Human evaluation still has important roles: - <strong>Calibrating
+automated metrics</strong>: Use human judgment to test whether your LLM
+judges or other metrics align with expert assessment - <strong>Edge case
+analysis</strong>: When automated metrics flag something as problematic,
+humans can investigate whether it’s a real issue - <strong>Periodic
+sampling</strong>: Regularly evaluate a small sample of interactions to
+ensure your automated systems are working correctly -
+<strong>High-stakes decisions</strong>: For critical interactions or
+when the cost of errors is very high</p>
+<h2 id="code-based-metrics-when-rules-work">Code-Based Metrics: When
+Rules Work</h2>
+<p>Code-based metrics are deterministic checks you can implement with
+regular programming. They’re fast, reliable, and easy to understand.</p>
+<p>These work well when you can define success clearly and
+objectively:</p>
+<p><strong>Structure validation</strong>: Check if the response contains
+required fields, follows JSON format, or includes mandatory
+disclaimers</p>
+<p><strong>Performance metrics</strong>: Measure response time, token
+count, or API call frequency</p>
+<p><strong>Content detection</strong>: Verify specific phrases appear
+(like “please consult your doctor” in medical responses) or don’t appear
+(like specific banned words)</p>
+<p><strong>Classification flags</strong>: Check if the system correctly
+tagged a query as “billing,” “technical support,” or “escalation
+needed”</p>
+<h3 id="example-structured-output-validation">Example: Structured Output
+Validation</h3>
+<p>Say you’re building an AI system that helps sales teams qualify
+leads. The system needs to extract key information from customer
+conversations and output it in a structured format for the CRM
+system.</p>
+<p>Your AI system should output JSON like this:</p>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode json"><code class="sourceCode json"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">{</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;customer_name&quot;</span><span class="fu">:</span> <span class="st">&quot;John Smith&quot;</span><span class="fu">,</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;company&quot;</span><span class="fu">:</span> <span class="st">&quot;TechCorp&quot;</span><span class="fu">,</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;budget_range&quot;</span><span class="fu">:</span> <span class="st">&quot;50000-100000&quot;</span><span class="fu">,</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;timeline&quot;</span><span class="fu">:</span> <span class="st">&quot;Q2 2024&quot;</span><span class="fu">,</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;decision_maker&quot;</span><span class="fu">:</span> <span class="kw">true</span><span class="fu">,</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="dt">&quot;contact_email&quot;</span><span class="fu">:</span> <span class="st">&quot;john@techcorp.com&quot;</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">}</span></span></code></pre></div>
+<p>A code-based metric can easily verify: - Is the output valid JSON? -
+Are all required fields present (customer_name, company, budget_range)?
+- Is the budget_range in the expected format? - Is the decision_maker
+field a boolean? - Is the contact_email field a valid email format?</p>
+<p>This kind of check is perfect for code-based metrics because the
+requirements are objective and well-defined.</p>
+<h3 id="when-code-based-metrics-fall-short">When Code-Based Metrics Fall
+Short</h3>
+<p>Code-based metrics struggle with subjective qualities like tone,
+appropriateness, or nuanced decision-making. You can’t easily write code
+to detect whether a customer service response shows appropriate empathy
+or whether an escalation decision was justified.</p>
+<p>They also miss nuanced meaning and context. A response might pass all
+the structural checks but still be unhelpful, inappropriate, or
+incorrect in ways that matter to users.</p>
+<h2 id="llm-judges-automating-human-like-evaluation">LLM Judges:
+Automating Human-Like Evaluation</h2>
+<p>LLM judges use one model to evaluate another model’s behavior. The
+idea is to replace the manual human evaluation process we used when
+building reference datasets with an automated system that can make
+similar judgments at scale.</p>
+<p>Instead of having domain experts review every response, you give an
+LLM the same criteria and ask it to assess whether the behavior was
+appropriate. This lets you evaluate thousands of interactions with the
+same standards a human expert would apply.</p>
+<p>This approach works for subjective or complex evaluations:</p>
+<p><strong>Tone assessment</strong>: Is the response professional and
+empathetic? <strong>Escalation decisions</strong>: Should this query
+have been escalated to a human? <strong>Reasoning quality</strong>: Does
+the explanation make logical sense? <strong>Safety evaluation</strong>:
+Does the response avoid harmful content?</p>
+<h3 id="example-customer-service-tone">Example: Customer Service
+Tone</h3>
+<p>For evaluating whether a customer service response shows appropriate
+empathy, an LLM judge can assess nuanced qualities like tone,
+professionalism, and contextual appropriateness that would be difficult
+to capture with code-based metrics.</p>
+<p>Whether you’re using LLM judges or human evaluators, you need clear
+criteria for what constitutes good and poor performance. This is where
+rubrics become essential.</p>
+<p>A good rubric defines: - <strong>Acceptable performance</strong>:
+Specific characteristics of good behavior - <strong>Not acceptable
+performance</strong>: Clear failure criteria -
+<strong>Examples</strong>: Concrete instances of each category -
+<strong>Edge case guidance</strong>: How to handle ambiguous
+situations</p>
+<h3 id="example-from-error-pattern-to-llm-judge-rubric">Example: From
+Error Pattern to LLM Judge Rubric</h3>
+<p>Here’s how you’d build an LLM judge based on the customer support
+example from Chapter 4.</p>
+<p><strong>The Problem</strong>: In your reference dataset evaluation,
+you found that when customers expressed frustration and mentioned
+switching providers (like “Service is terrible, switching”), your system
+gave generic help offers instead of escalating to the retention
+team.</p>
+<p><strong>The Pattern</strong>: Analysis revealed this was part of a
+broader “escalation accuracy” issue. The system wasn’t recognizing when
+situations required specialized human intervention.</p>
+<p><strong>The Metric</strong>: You decided to track “escalation
+accuracy” as an ongoing metric since this behavior could reappear in
+many different forms.</p>
+<p><strong>The LLM Judge Rubric</strong>:</p>
+<p><strong>Acceptable</strong>: - Correctly identifies customer
+retention situations (mentions switching, canceling, competitor
+comparisons, dissatisfaction with service) - Escalates billing disputes
+over significant amounts ($100+) - Recognizes technical issues beyond
+basic troubleshooting scope - Provides relevant context when escalating
+(customer sentiment, issue details, urgency level)</p>
+<p><strong>Not Acceptable</strong>: - Misses clear retention signals and
+attempts generic problem-solving - Fails to escalate high-value billing
+disputes - Tries to handle complex technical issues that require
+specialized expertise - Escalates routine questions that could be
+resolved automatically - Escalates without sufficient context for the
+human agent</p>
+<p><strong>Examples</strong>: - <strong>Acceptable</strong>: “Your
+service is terrible and I’m switching to CompetitorX” → Escalates to
+retention team noting customer dissatisfaction and competitor mention -
+<strong>Not Acceptable</strong>: “I want to cancel my subscription to
+save money” → Provides generic retention offer instead of escalating to
+retention specialists - <strong>Acceptable</strong>: “I was charged $500
+for services I never ordered” → Escalates to billing team with charge
+amount and dispute details - <strong>Not Acceptable</strong>: “How do I
+reset my password?” → Escalates to technical support instead of
+providing standard reset instructions</p>
+<p>This rubric now gives you a measurable way to track the escalation
+behavior that was failing in your reference dataset, turning the
+discovered error pattern into an ongoing monitoring capability.</p>
+<p><strong>LLM Judge Prompt Example</strong>:</p>
+<p>Here’s how you might structure a prompt for an LLM judge using this
+rubric:</p>
+<pre><code>You are evaluating customer service responses for escalation accuracy. Your job is to determine if the AI system correctly identified when human intervention was needed.
+
+EVALUATION CRITERIA:
+
+Acceptable Performance:
+- Correctly identifies customer retention situations (mentions switching, canceling, competitors)
+- Escalates billing disputes over $100
+- Recognizes complex technical issues beyond basic troubleshooting
+- Provides relevant context when escalating (sentiment, details, urgency)
+
+Not Acceptable Performance:
+- Misses clear retention signals and tries generic problem-solving
+- Fails to escalate high-value billing disputes
+- Attempts to handle complex technical issues requiring specialized expertise
+- Escalates routine questions that could be resolved automatically
+- Escalates without sufficient context for human agents
+
+EXAMPLES:
+- Customer: &quot;Your service is terrible and I&#39;m switching to CompetitorX&quot;
+  Acceptable Response: Escalates to retention team noting dissatisfaction and competitor mention
+  Not Acceptable: Offers generic troubleshooting help
+
+- Customer: &quot;I was charged $500 for services I never ordered&quot;
+  Acceptable Response: Escalates to billing team with charge details
+  Not Acceptable: Asks customer to verify their account information
+
+TASK:
+Review the customer input and AI response below. Determine if the escalation decision was:
+- Acceptable
+- Not Acceptable
+
+Provide a brief explanation for your judgment.
+
+Customer Input: [INPUT]
+AI Response: [RESPONSE]
+
+Your Evaluation:</code></pre>
+<p>This prompt gives the LLM judge the same detailed criteria that human
+evaluators would use, allowing it to make consistent assessments at
+scale.</p>
+<h2 id="a-note-on-llm-judge-calibration">A Note on LLM Judge
+Calibration</h2>
+<p>While we’ve shown you how to build an LLM judge with clear criteria
+and rubrics, remember that in practice, calibrating an LLM judge is a
+much longer and more data-driven process than what we’ve demonstrated
+here. LLM judges are powerful but challenging to implement well. They
+can be inconsistent, biased, or misaligned with human judgment. They’re
+also more expensive and slower than other approaches.</p>
+<p>Effective LLM judge calibration requires extensive testing against
+human judgment across hundreds of examples, not just a few. You need to
+systematically identify where the LLM judge disagrees with human
+evaluators, understand why those disagreements happen, and iteratively
+refine your prompts and criteria until alignment is acceptable for your
+specific use case.</p>
+<p><strong>Calibration is Essential</strong></p>
+<p>The biggest challenge with LLM judges is ensuring they actually align
+with human judgment. Just because you write detailed criteria doesn’t
+mean the LLM will interpret them the same way a human expert would. In
+fact, if not calibrated properly they can add more problems to your
+system because they add another layer of non-determinism.</p>
+<p>You need to test your LLM judge against human evaluations: - Have
+humans evaluate a sample of examples using your rubric - Run your LLM
+judge on the same examples - Compare the results to see where they agree
+and disagree - Refine your prompt and criteria based on the differences
+- Repeat until alignment is acceptable</p>
+<p>We leave you here since this is a 101 course, but building reliable
+LLM judges can be a course on its own. Remember to dig deeper on
+learning them well.</p>
+<h2 id="what-you-end-up-with-1">What You End Up With</h2>
+<p>After implementing your metrics, you’ll have a measurement system
+that can: - Automatically track the behaviors you care about most - Run
+consistently across different examples - Provide actionable feedback for
+system improvement - Scale with your evaluation needs</p>
+<p>This system becomes the foundation for continuous improvement. You
+can run it on new examples, track performance over time, and identify
+areas where your AI system needs work. However, you probably have
+questions on how to deploy these metrics in a production setup. Should
+you be running them on all your production inputs and outputs or just
+samples? Are these metrics enough or should you keep reinventing? We’ll
+talk about all this in the next chapter.</p>
+<figure>
+<img src="../images/evaluation_methods_comparison.png"
+alt="Evaluation Methods Comparison" />
+<figcaption aria-hidden="true">Evaluation Methods
+Comparison</figcaption>
+</figure>
+<p>In the next chapter, we’ll explore how to use these metrics in an
+improvement loop that helps your system get better over time.</p>
+<hr />
+<h1 id="chapter-6-production-deployment-and-real-user-behavior">Chapter
+6: Production Deployment and Real User Behavior</h1>
+<figure>
+<img src="../images/production_scale_10000_interactions.png"
+alt="Production Scale 10000 Interactions" />
+<figcaption aria-hidden="true">Production Scale 10000
+Interactions</figcaption>
+</figure>
+<h2 id="from-lab-to-real-world">From Lab to Real World</h2>
+<p>So far in this course, we’ve covered the essential building blocks of
+AI evaluation. We started by understanding why evaluation matters for AI
+systems and distinguished between model evaluations and product
+evaluations. We explored the conceptual foundation of input, expected,
+and actual behavior. We walked through building reference datasets to
+systematically identify what matters for your specific use case. And we
+covered three approaches to implementing evaluation metrics: human
+evaluation, code-based metrics, and LLM judges.</p>
+<p>At this point, you have a solid evaluation framework. You’ve built
+reference datasets that represent important scenarios for your system.
+You’ve identified the key metrics that track behaviors you actually care
+about. You’ve implemented ways to measure those behaviors, whether
+through human judgment, deterministic code checks, or calibrated LLM
+judges.</p>
+<p>But here’s where things get interesting and more complex.</p>
+<p>Everything we’ve discussed so far happens in controlled conditions.
+You’re testing with carefully chosen examples, evaluating against clear
+expected behaviors, and working with stakeholders who understand your
+system’s goals. You’re essentially working in a lab environment where
+you control the inputs and can predict most of the scenarios.</p>
+<p>Production is different. When real users start interacting with your
+AI system, several things happen that change the evaluation game
+entirely.</p>
+<h2 id="the-reality-of-real-users">The Reality of Real Users</h2>
+<figure>
+<img src="../images/production_challenges_real_world.png"
+alt="Production Challenges Real World" />
+<figcaption aria-hidden="true">Production Challenges Real
+World</figcaption>
+</figure>
+<p>Real users don’t behave like your reference datasets. They don’t ask
+questions the way you expect, they don’t provide complete information,
+and they often try to use your system for purposes you never
+intended.</p>
+<p><strong>Users bring unexpected context</strong>: Your customer
+service AI might be designed for product questions, but users will ask
+about competitor products, share personal stories, or try to use it for
+technical support issues outside your scope.</p>
+<p><strong>Users test edge cases you missed</strong>: No matter how
+thorough your reference dataset, real users will find scenarios you
+didn’t anticipate. They’ll phrase requests in ways that confuse your
+system, combine multiple intents in a single message, or operate under
+assumptions that don’t match your business model.</p>
+<p><strong>User evolution</strong>: As users get comfortable with your
+system, their behavior evolves. They develop new ways to phrase
+requests, discover shortcuts, and use your system in increasingly
+sophisticated ways. Think about how people use ChatGPT today compared to
+when it first launched - the questions become more complex, the use
+cases expand, and the expectations change. This natural evolution means
+the distribution of inputs your system receives will shift over
+time.</p>
+<p><strong>Volume changes everything</strong>: When you test with 50
+carefully chosen examples, you can review each interaction manually.
+When your system handles 10,000 interactions per day, you need
+fundamentally different approaches to understanding what’s
+happening.</p>
+<h2 id="the-scale-challenge">The Scale Challenge</h2>
+<p>In controlled testing, you can review every example and understand
+every failure. In production, this becomes impossible.</p>
+<p>Consider a customer support AI that handles 5,000 conversations
+daily. Even if 95% of interactions go perfectly, you still have 250
+potentially problematic conversations every day. Manual review of each
+one would require dedicated staff just for evaluation.</p>
+<p>The challenge isn’t just volume - it’s also about detection. In your
+reference dataset, you know which examples should pass or fail your
+evaluation metrics. In production, you don’t know ahead of time which
+conversations will be problematic.</p>
+<p>This shifts the evaluation question from “How did we do on this
+specific set of examples?” to “How are we doing overall, and where
+should we focus our attention?”</p>
+<h2 id="from-evaluation-to-monitoring">From Evaluation to
+Monitoring</h2>
+<figure>
+<img src="../images/validation_vs_monitoring_toggle.png"
+alt="Validation vs Monitoring Toggle" />
+<figcaption aria-hidden="true">Validation vs Monitoring
+Toggle</figcaption>
+</figure>
+<p>Moving to production fundamentally changes your relationship with
+evaluation. During development, evaluation was about validation (testing
+whether your system works as intended). In production, evaluation
+becomes monitoring (continuously checking whether your system continues
+to work well as conditions change).</p>
+<p>This affects how you think about measurement, response, and
+improvement:</p>
+<p><strong>Evaluation builds confidence before deployment</strong>: You
+test thoroughly to gain confidence that your system is ready for
+users.</p>
+<p><strong>Monitoring maintains quality during deployment</strong>: You
+track performance to catch problems early and guide improvements.</p>
+<figure>
+<img src="../images/continuous_improvement_flywheel.png"
+alt="Continuous Improvement Flywheel" />
+<figcaption aria-hidden="true">Continuous Improvement
+Flywheel</figcaption>
+</figure>
+<p><strong>The flywheel of improvement</strong>: Good production
+monitoring feeds back into your evaluation process. Issues discovered in
+production become new test cases in your reference datasets. Patterns
+identified in monitoring inform better pre-deployment validation. The
+two work together in a continuous improvement cycle.</p>
+<p>This creates a natural progression: strong evaluation gives you
+confidence to deploy, effective monitoring helps you improve, and
+improved systems perform better in evaluation.</p>
+<h2 id="four-core-challenges-in-production">Four Core Challenges in
+Production</h2>
+<figure>
+<img src="../images/four_core_production_challenges.png"
+alt="Four Core Production Challenges" />
+<figcaption aria-hidden="true">Four Core Production
+Challenges</figcaption>
+</figure>
+<p>When you move from controlled evaluation to production monitoring,
+four key challenges emerge that require careful planning:</p>
+<h3 id="log-filtering">1. Log Filtering</h3>
+<p>With thousands of events happening daily, you can’t manually review
+everything. You need systematic approaches to identify which logs
+deserve attention. This means developing filtering and sampling
+strategies that help you focus on the data most likely to reveal
+problems or insights.</p>
+<h3 id="metric-selection">2. Metric Selection</h3>
+<p>Remember that evaluation metrics aren’t free. LLM judges cost money
+to run, human evaluation requires time and expertise, and even
+code-based metrics might not always be as trivial or cheap as running
+unit tests in traditional software setups. At scale, these costs add up
+quickly. You need to be strategic about which metrics provide the most
+valuable insights relative to their cost.</p>
+<h3 id="online-vs.-offline-evaluation">3. Online vs. Offline
+Evaluation</h3>
+<p>This is where we introduce an important distinction that will shape
+your production monitoring strategy:</p>
+<p><strong>Online evaluation</strong> happens in real-time as users
+interact with your system. These metrics run immediately and can trigger
+alerts or interventions. For example, you might have an online safety
+filter that flags inappropriate content before it reaches users.</p>
+<p><strong>Offline evaluation</strong> happens after the fact, often in
+batch processes. These metrics analyze interactions that already
+occurred to identify trends, assess quality over time, or conduct
+detailed investigations. For example, you might run expensive LLM judges
+overnight to assess the previous day’s customer service
+interactions.</p>
+<p>The choice between online and offline evaluation affects cost,
+complexity, and responsiveness. Online evaluation gives you immediate
+feedback but needs to be fast and lightweight. Offline evaluation can be
+more thorough and sophisticated but only helps you improve future
+interactions.</p>
+<h3 id="emerging-issue-discovery">4. Emerging Issue Discovery</h3>
+<p>Despite doing all of this systematically, it’s possible that we have
+not anticipated some issues at all. What do we do about that?</p>
+<p>Even the most thorough offline evaluation process can’t predict every
+problem that will emerge in production. Users will find new ways to
+confuse your system, edge cases you never considered will surface, and
+changing business requirements will create new failure modes.</p>
+<p>This means you need strategies for discovering issues that your
+existing evaluation framework doesn’t catch. How do you identify
+problems you weren’t looking for? How do you evolve your evaluation
+approach as new patterns emerge?</p>
+<p>These four challenges form the foundation of production monitoring
+strategy. Getting them right determines whether your monitoring system
+provides actionable insights or becomes an expensive distraction.</p>
+<h2 id="what-comes-next">What Comes Next</h2>
+<p>The transition from controlled evaluation to production monitoring
+requires addressing these four core challenges systematically. The goal
+isn’t to replicate your reference dataset evaluation at production scale
+(that would be impractical and expensive). Instead, you need smart
+strategies for each challenge.</p>
+<p>In the next chapter, we’ll cover practical approaches to: -
+<strong>Log filtering</strong>: Strategies for identifying which data
+needs attention without drowning in information - <strong>Metric
+selection</strong>: Frameworks for choosing the right mix of evaluation
+approaches based on value and cost - <strong>Online vs offline
+evaluation</strong>: Designing systems that balance immediate
+responsiveness with thorough analysis - <strong>Emerging issue
+discovery</strong>: Methods for identifying problems that your existing
+evaluation framework doesn’t catch</p>
+<p>These approaches will help you build a monitoring system that
+provides actionable insights while remaining sustainable and
+cost-effective as your AI system scales.</p>
+<hr />
+<h1 id="chapter-7-production-monitoring-strategies">Chapter 7:
+Production Monitoring Strategies</h1>
+<figure>
+<img src="../images/chapter-7-main.png" alt="Chapter 7 Main" />
+<figcaption aria-hidden="true">Chapter 7 Main</figcaption>
+</figure>
+<h2 id="from-challenges-to-solutions">From Challenges to Solutions</h2>
+<p>In the previous chapter, we identified four core challenges that
+emerge when you move from controlled evaluation to production
+monitoring:</p>
+<ol type="1">
+<li><strong>Log filtering</strong>: How to identify which data deserves
+attention</li>
+<li><strong>Metric selection</strong>: How to choose the right
+evaluation approaches<br />
+</li>
+<li><strong>Online vs offline evaluation</strong>: How to balance
+real-time needs with thorough analysis</li>
+<li><strong>Emerging issue discovery</strong>: How to find problems you
+weren’t looking for</li>
+</ol>
+<p>Now we’ll address each challenge with practical strategies you can
+implement. The goal is building a sustainable monitoring system that
+provides actionable insights without overwhelming your team or
+budget.</p>
+<h2 id="log-filtering-finding-signal-in-the-noise">Log Filtering:
+Finding Signal in the Noise</h2>
+<figure>
+<img src="../images/log_filtering_visualization.png"
+alt="Log Filtering Visualization" />
+<figcaption aria-hidden="true">Log Filtering Visualization</figcaption>
+</figure>
+<p>When your AI system handles thousands of events daily, you need
+systematic approaches to identify what requires attention. Random
+sampling might miss critical issues, while trying to review everything
+is impossible.</p>
+<h3 id="priority-based-filtering">Priority-Based Filtering</h3>
+<p>Start by defining what matters most for your specific business
+context. Not all events are equally important, and what deserves
+attention varies significantly based on your use case and risk
+tolerance.</p>
+<p>For example, you might consider categorizing events like this:</p>
+<p><strong>Potential high-priority signals</strong> could include safety
+violations, system errors, or high-value interactions - but you need to
+define what “high-value” means for your business.</p>
+<p><strong>Potential medium-priority signals</strong> might be routine
+interactions that show unusual patterns - though you’ll need to
+determine what constitutes “unusual” in your domain.</p>
+<p><strong>Potential low-priority signals</strong> could be simple,
+standard interactions - but again, “simple” and “standard” depend
+entirely on your system’s purpose and user base.</p>
+<h3 id="signal-based-sampling">Signal-Based Sampling</h3>
+<p>Beyond basic priority filtering, you can look for implicit and
+explicit signals that users give you about interaction quality. You need
+to identify which signals matter most for your specific system and
+users.</p>
+<p>Some examples of signals you might consider:</p>
+<p><strong>Conversation patterns</strong> like unusual length (much
+shorter or longer than typical), repetition (users rephrasing
+questions), explicit escalation requests, or confusion indicators. But
+what counts as “unusual” length depends entirely on your domain - a
+financial advisory conversation naturally runs longer than a weather
+query.</p>
+<p><strong>User behavior patterns</strong> such as extensive editing of
+generated content, retry behavior, frustration indicators, or
+abandonment patterns. For a content generation system, whether users
+copy-paste or heavily modify outputs tells you something about quality -
+but you need to decide what level of modification indicates a problem
+versus normal customization.</p>
+<p><strong>Content quality indicators</strong> including response
+completeness, format consistency, or context matching. The thresholds
+that matter depend on your system’s purpose and user expectations.</p>
+<p>The critical decision is determining which of these signals are most
+indicative of problems in your specific context.</p>
+<h3 id="example-customer-support-filtering-considerations">Example:
+Customer Support Filtering Considerations</h3>
+<p>A customer support AI team might consider various approaches, but the
+specific choices depend on their business priorities and risk
+tolerance:</p>
+<p>They might choose to always examine interactions with explicit
+escalation requests or safety concerns, but the definition of “safety
+concern” varies by industry. They could focus on conversations
+mentioning competitors or billing disputes, but whether a $50 or $500
+dispute deserves attention depends on their business model.</p>
+<p>They might sample more heavily from unusually long conversations, but
+“unusual” for a simple password reset differs from “unusual” for a
+complex technical issue. They could prioritize first-time users or
+interactions that show signs of confusion, but the thresholds that
+matter depend on their user base and system design.</p>
+<h3 id="signal-considerations-for-different-ai-systems">Signal
+Considerations for Different AI Systems</h3>
+<p><strong>Content Generation AI</strong> teams might care about
+extensive user editing of outputs, but they need to decide whether 50%
+editing indicates a problem or normal creative refinement.</p>
+<p><strong>Financial Advisory AI</strong> teams might monitor for
+repeated clarification requests, but they must determine whether two
+follow-ups indicate confusion or appropriate due diligence.</p>
+<p><strong>E-commerce Recommendation AI</strong> teams might track
+ignored recommendations, but they need to consider whether this
+indicates poor recommendations or users with specific preferences.</p>
+<p>In each case, the team must define their own thresholds and
+priorities based on their specific context, users, and business
+goals.</p>
+<h3 id="dynamic-filtering-based-on-production-signals">Dynamic Filtering
+Based on Production Signals</h3>
+<p>Your filtering strategy should adapt based on observable changes in
+your production environment, but you need to decide which signals matter
+most for your business.</p>
+<p><strong>Consider increasing sampling when you observe</strong>
+production changes like error rate spikes, new product launches that
+might confuse users, increases in human support tickets, shifts in user
+behavior patterns, seasonal events that change user needs, or marketing
+campaigns that influence how users phrase requests.</p>
+<p><strong>Consider decreasing sampling when you see</strong> stable
+performance metrics, mature interaction patterns, or stable behavior in
+specific system components - though you must balance this against
+resource constraints and the risk of missing emerging issues.</p>
+<p><strong>Examples of production signals you might track</strong>
+include support ticket volume and categories, user session abandonment
+rates, conversation length trends, system performance metrics, business
+metrics like conversion rates, and external events like product launches
+or competitor actions.</p>
+<p>The key decisions are which signals to monitor, what changes are
+significant enough to trigger sampling adjustments, and how quickly to
+respond to different types of changes. These choices depend entirely on
+your business context, user base, and risk tolerance.</p>
+<h2 id="metric-selection-choosing-your-evaluation-mix">Metric Selection:
+Choosing Your Evaluation Mix</h2>
+<figure>
+<img src="../images/evaluation_quality_vs_cost_balance.png"
+alt="Evaluation Quality vs Cost Balance" />
+<figcaption aria-hidden="true">Evaluation Quality vs Cost
+Balance</figcaption>
+</figure>
+<p>Not all metrics are equally valuable, and running everything is
+expensive. You need frameworks for choosing the right mix of evaluation
+approaches.</p>
+<h3 id="the-metric-value-framework">The Metric Value Framework</h3>
+<figure>
+<img src="../images/metric_value_dimensions.png"
+alt="Metric Value Dimensions" />
+<figcaption aria-hidden="true">Metric Value Dimensions</figcaption>
+</figure>
+<p>Evaluate each potential metric across three dimensions:</p>
+<p><strong>Impact</strong>: How much does this metric help you improve
+your system? - High impact: Metrics that reveal actionable problems -
+Medium impact: Metrics that provide useful trends - Low impact: Metrics
+that are interesting but don’t drive decisions</p>
+<p><strong>Reliability</strong>: How consistent and accurate is this
+metric? - High reliability: Human expert evaluation, well-validated code
+checks - Medium reliability: Calibrated LLM judges, statistical measures
+- Low reliability: Uncalibrated automated assessments, proxy metrics</p>
+<p><strong>Cost</strong>: What does it cost to run this metric at scale?
+- Low cost: Simple code-based checks, existing system metrics - Medium
+cost: Fast LLM judge calls, periodic human spot-checks - High cost:
+Detailed human evaluation, expensive model calls, complex analysis</p>
+<h3 id="prioritization-matrix">Prioritization Matrix</h3>
+<figure>
+<img src="../images/metric_prioritization_matrix.png"
+alt="Metric Prioritization Matrix" />
+<figcaption aria-hidden="true">Metric Prioritization Matrix</figcaption>
+</figure>
+<p>Plot your potential metrics on a simple matrix:</p>
+<p><strong>High Impact + Low Cost = Must Have</strong> - Simple safety
+filters - Basic structure validation - Performance metrics (response
+time, success rate) - Clear policy violation detection</p>
+<p><strong>High Impact + High Cost = Strategic Investment</strong><br />
+- Calibrated LLM judges for subjective quality - Expert human evaluation
+for critical interactions - Detailed escalation accuracy assessment</p>
+<p><strong>Low Impact + Low Cost = Nice to Have</strong> - Basic
+statistical trends - Simple response length tracking - Automated
+sentiment detection</p>
+<p><strong>Low Impact + High Cost = Avoid</strong> - Elaborate scoring
+systems that don’t drive decisions - Expensive metrics that duplicate
+existing insights - Over-detailed measurement of stable system
+behaviors</p>
+<h2
+id="online-vs-offline-evaluation-guardrails-vs-improvement-flywheel">Online
+vs Offline Evaluation: Guardrails vs Improvement Flywheel</h2>
+<figure>
+<img src="../images/guardrails_vs_flywheel_question.png"
+alt="Guardrails vs Flywheel Question" />
+<figcaption aria-hidden="true">Guardrails vs Flywheel
+Question</figcaption>
+</figure>
+<p>The choice between real-time and batch evaluation comes down to a
+fundamental question: What behaviors, if they go wrong, would be huge
+for your business?</p>
+<h3 id="online-evaluation-business-critical-guardrails">Online
+Evaluation: Business-Critical Guardrails</h3>
+<figure>
+<img src="../images/online_guardrails.png" alt="Online Guardrails" />
+<figcaption aria-hidden="true">Online Guardrails</figcaption>
+</figure>
+<p>Online evaluation serves as guardrails - metrics that must run in
+real-time because the behaviors they monitor are so critical that
+failure would significantly impact your business.</p>
+<p>These are metrics where you need immediate intervention, not just
+later analysis. When these guardrails trigger, your system should take
+immediate action like handing off to a human agent, blocking harmful
+content, or escalating to specialists.</p>
+<p><strong>Think of guardrails for behaviors like</strong>: - Safety
+violations that could harm users or your business - Compliance failures
+that could create legal liability - High-value customer situations that
+require immediate attention - System failures that impact user
+experience - Critical business rule violations</p>
+<p><strong>Guardrail characteristics</strong>: - Must be fast and
+reliable (failures cascade quickly) - Should trigger immediate actions
+(handoffs, blocks, escalations) - Focus on preventing catastrophic
+outcomes, not optimization - Need to work even when other systems are
+stressed</p>
+<p><strong>Examples of potential guardrail metrics</strong>: - Safety
+filters blocking harmful content before it reaches users - Compliance
+checks ensuring required disclaimers in financial advice - Uncertainty
+detection triggering immediate human handoff - High-value customer
+detection routing to premium support - System error detection triggering
+failover procedures</p>
+<h3 id="offline-evaluation-improvement-flywheel">Offline Evaluation:
+Improvement Flywheel</h3>
+<figure>
+<img src="../images/offline_improvement_flywheel.png"
+alt="Offline Improvement Flywheel" />
+<figcaption aria-hidden="true">Offline Improvement Flywheel</figcaption>
+</figure>
+<p>Offline evaluation powers your improvement flywheel - analyzing data
+after the fact to understand trends, assess quality, and guide system
+improvements.</p>
+<p>These metrics help you get better over time rather than preventing
+immediate disasters. They’re often more sophisticated, expensive, or
+time-consuming than guardrails, but they provide the insights needed to
+evolve your system.</p>
+<p><strong>Offline evaluation focuses on</strong>: - Understanding
+quality trends over time - Identifying patterns that inform system
+improvements - Conducting detailed analysis of complex behaviors -
+Assessing the effectiveness of your guardrails and other systems -
+Discovering opportunities for optimization</p>
+<p><strong>Examples of potential offline metrics</strong>: - LLM judge
+assessment of conversation quality trends - Human expert review of
+escalated cases to improve escalation logic - Analysis of user
+satisfaction patterns to guide product development - Evaluation of edge
+cases to expand training data - Assessment of guardrail effectiveness
+and calibration</p>
+<h3 id="making-the-guardrail-decision">Making the Guardrail
+Decision</h3>
+<p>The key decision is identifying which behaviors are guardrail-worthy
+- meaning failure would have immediate, significant business impact.</p>
+<p>For a healthcare AI, incorrect medication information might be a
+guardrail issue requiring immediate intervention. For an e-commerce
+chatbot, product recommendation accuracy might be important for
+improvement but not guardrail-critical.</p>
+<p>For a financial advisory AI, compliance violations are clearly
+guardrail territory, while response tone optimization belongs in the
+improvement flywheel.</p>
+<p>The cost and complexity of guardrails mean you should be selective
+about what requires real-time intervention versus what can wait for
+batch analysis and gradual improvement.</p>
+<figure>
+<img src="../images/online_vs_offline_timing.png"
+alt="Online vs Offline Timing" />
+<figcaption aria-hidden="true">Online vs Offline Timing</figcaption>
+</figure>
+<h2
+id="emerging-issue-discovery-when-your-signals-dont-match-your-metrics">Emerging
+Issue Discovery: When Your Signals Don’t Match Your Metrics</h2>
+<figure>
+<img src="../images/signal_metric_divergence.png"
+alt="Signal Metric Divergence" />
+<figcaption aria-hidden="true">Signal Metric Divergence</figcaption>
+</figure>
+<p>Remember the log filtering approach we discussed earlier - you’re
+already sampling based on implicit and explicit user signals like
+conversation length anomalies, retry behavior, editing patterns, and
+frustration indicators. But what happens when these signals are telling
+you something your current metrics aren’t capturing?</p>
+<p>This is where emerging issue discovery becomes critical. You might
+find that your existing evaluation metrics show everything is working
+well, but the user behavior signals you’re sampling suggest
+otherwise.</p>
+<h3 id="when-signals-and-metrics-diverge">When Signals and Metrics
+Diverge</h3>
+<p>Consider this scenario: You’re monitoring a content generation AI,
+and you’ve been sampling interactions where users heavily edit the
+generated outputs (one of your implicit signals). Your current metrics -
+like content relevance and grammar correctness - show these interactions
+are scoring well. But the signal persists: users keep making extensive
+edits.</p>
+<p>This divergence suggests there might be a quality dimension you’re
+not measuring. Perhaps users are editing for tone, brand voice, or
+subtle contextual appropriateness that your current metrics don’t
+capture. The user behavior signal is revealing a hidden issue that your
+evaluation framework missed.</p>
+<h3 id="systematic-investigation-of-signal-metric-gaps">Systematic
+Investigation of Signal-Metric Gaps</h3>
+<p>When you notice this pattern - where your sampling signals flag
+interactions but your metrics show no actionable improvements - it’s
+time for manual investigation, which means you’ll need to look at these
+traces manually, just like we did initially when building reference
+datasets:</p>
+<p><strong>Analyze the filtered logs differently</strong>: Instead of
+applying your existing metrics, look at the interactions your signals
+flagged with fresh eyes. What patterns do you see that your metrics
+might be missing?</p>
+<p><strong>Qualitative review</strong>: Have domain experts or users
+review the flagged interactions without knowing the metric scores. What
+do they notice that your metrics don’t capture?</p>
+<p><strong>Signal correlation analysis</strong>: Look at which
+combinations of signals tend to appear together. Multiple signals
+pointing to the same interactions might indicate a systematic issue.</p>
+<h3 id="example-e-commerce-recommendation-discovery">Example: E-commerce
+Recommendation Discovery</h3>
+<p>An e-commerce AI notices high rates of users ignoring recommendations
+(a signal they’re sampling). But their existing metrics show the
+recommendations are relevant and properly formatted. Investigation
+reveals users are ignoring recommendations during certain seasonal
+periods or for specific product categories - suggesting the system lacks
+awareness of temporal context or category-specific preferences that
+existing relevance metrics don’t measure.</p>
+<h3 id="building-new-metrics-from-signal-patterns">Building New Metrics
+from Signal Patterns</h3>
+<p>When signal-metric divergence reveals hidden issues, you need to
+develop new evaluation approaches:</p>
+<p><strong>Pattern documentation</strong>: Systematically document what
+the expert review reveals about the flagged interactions.</p>
+<p><strong>New metric development</strong>: Create evaluation approaches
+that can capture the quality dimensions you discovered.</p>
+<p><strong>Validation against signals</strong>: Test whether your new
+metrics correlate with the user behavior signals that originally flagged
+the issue.</p>
+<p><strong>Integration into your framework</strong>: Add the new metrics
+to your offline evaluation for trend monitoring, and consider whether
+any need to become online guardrails.</p>
+<h3 id="the-discovery-loop">The Discovery Loop</h3>
+<figure>
+<img src="../images/discovery_loop_cycle.png"
+alt="Discovery Loop Cycle" />
+<figcaption aria-hidden="true">Discovery Loop Cycle</figcaption>
+</figure>
+<p>This creates a continuous discovery loop:</p>
+<ol type="1">
+<li><strong>User signals</strong> indicate potential issues through
+behavior patterns</li>
+<li><strong>Log filtering</strong> samples these concerning
+interactions<br />
+</li>
+<li><strong>Metric analysis</strong> may show existing metrics aren’t
+capturing the problem</li>
+<li><strong>Investigation</strong> reveals hidden quality dimensions or
+failure modes</li>
+<li><strong>New metrics</strong> are developed to monitor these newly
+discovered issues</li>
+<li><strong>Updated sampling</strong> incorporates lessons learned to
+catch similar issues earlier</li>
+</ol>
+<p>This loop ensures your evaluation framework evolves as you discover
+new ways your system can fail or as user expectations change over
+time.</p>
+<p>The key insight is that user behavior signals often reveal problems
+before your metrics do - they’re an early warning system that helps you
+discover evaluation gaps before they become major issues.</p>
+<h2 id="building-your-production-monitoring-strategy">Building Your
+Production Monitoring Strategy</h2>
+<p>Combining these four strategies creates a comprehensive production
+monitoring approach:</p>
+<h3 id="start-simple-and-evolve">Start Simple and Evolve</h3>
+<p>Begin with basic filtering, essential metrics, simple online checks,
+and manual discovery processes. Add complexity as you understand your
+system’s behavior patterns and your team’s capacity.</p>
+<h3 id="balance-cost-and-value">Balance Cost and Value</h3>
+<p>Continuously evaluate whether your monitoring provides enough insight
+to justify its cost. Expensive evaluation that doesn’t drive
+improvements should be reconsidered.</p>
+<h3 id="plan-for-scale">Plan for Scale</h3>
+<p>Design your monitoring to grow with your system. Approaches that work
+for thousands of daily interactions need to adapt when you reach
+hundreds of thousands.</p>
+<h3 id="close-the-feedback-loop">Close the Feedback Loop</h3>
+<p>The goal of monitoring is improvement. Ensure that insights from your
+monitoring system feed back into better evaluation, system refinements,
+and updated business processes.</p>
+<h2 id="the-complete-evaluation-journey-from-concepts-to-production">The
+Complete Evaluation Journey: From Concepts to Production</h2>
+<p>We’ve now covered the full spectrum of AI evaluation - from
+understanding why evaluation matters (Chapter 1) to building systematic
+evaluation frameworks (Chapters 2-3), creating reference datasets and
+implementing metrics (Chapters 4-5), and finally deploying robust
+production monitoring (Chapters 6-7).</p>
+<p>The key insight is that evaluation is never complete: you start by
+building evaluation for anticipated behaviors and failure modes, but
+real users will always find new ways to interact with your system that
+you haven’t seen before. This is why production monitoring becomes a
+continuous cycle of discovering new patterns through user signals,
+manually investigating when your current metrics don’t capture emerging
+issues, developing new evaluation approaches, and feeding these insights
+back into your evaluation framework.</p>
+<p>Think of it as building evaluation for the patterns you can
+anticipate, then using monitoring to discover and evaluate the patterns
+you couldn’t predict.</p>
+<figure>
+<img src="../images/production_monitoring_quote.png"
+alt="Production Monitoring Quote" />
+<figcaption aria-hidden="true">Production Monitoring Quote</figcaption>
+</figure>
+<p>In the next chapter, we’ll explore how to use these monitoring
+insights to create continuous improvement cycles that help your AI
+system get better over time.</p>
+<hr />
+<h1 id="chapter-8-the-complete-evaluation-process">Chapter 8: The
+Complete Evaluation Process</h1>
+<figure>
+<img src="../images/evaluation_process_seven_steps.png"
+alt="Evaluation Process Seven Steps" />
+<figcaption aria-hidden="true">Evaluation Process Seven
+Steps</figcaption>
+</figure>
+<h2 id="from-concept-to-production-your-step-by-step-guide">From Concept
+to Production: Your Step-by-Step Guide</h2>
+<p>In the previous seven chapters, we’ve covered the complete landscape
+of AI evaluation - from understanding why it matters to deploying
+production monitoring systems. Now let’s consolidate everything into a
+clear, step-by-step process you can follow to build robust evaluation
+for your AI system.</p>
+<p>This chapter serves as your practical roadmap, connecting all the
+concepts we’ve discussed into actionable steps you can implement.</p>
+<h2 id="the-two-phase-approach">The Two-Phase Approach</h2>
+<figure>
+<img src="../images/two_phase_evaluation_process.png"
+alt="Two Phase Evaluation Process" />
+<figcaption aria-hidden="true">Two Phase Evaluation Process</figcaption>
+</figure>
+<p>AI evaluation follows two distinct phases:</p>
+<p><strong>Phase 1: Pre-Deployment Validation</strong> (Chapters 1-5) -
+Build confidence that your system works as intended before users
+interact with it - Create systematic evaluation frameworks and metrics -
+Test thoroughly in controlled conditions</p>
+<p><strong>Phase 2: Production Monitoring</strong> (Chapters 6-7)<br />
+- Monitor system performance with real users at scale - Discover new
+issues and evolving user behaviors - Continuously improve your system
+and evaluation approach</p>
+<p>Here’s how to work through each phase.</p>
+<hr />
+<h2 id="phase-1-pre-deployment-validation">Phase 1: Pre-Deployment
+Validation</h2>
+<h3 id="step-1-understand-your-evaluation-context">Step 1: Understand
+Your Evaluation Context</h3>
+<p><em>Based on Chapters 1-3</em></p>
+<p><strong>What you’re doing</strong>: Establish the foundation for your
+evaluation approach by understanding what makes AI evaluation unique and
+what you need to measure.</p>
+<p><strong>Key decisions</strong>: Recognize that your AI system is
+non-deterministic, focus on product evaluation (how your system behaves
+in your specific use case) rather than model evaluation, and identify
+the three components you’re evaluating - Input, Expected, and
+Actual.</p>
+<p><strong>What to do</strong>: Start by mapping out your specific use
+case and domain requirements. Identify stakeholders who need to be
+involved - domain experts, product teams, and engineers. Remember that
+generic metrics like “helpfulness” mean different things in different
+contexts, so prepare for collaborative evaluation design across
+different team perspectives.</p>
+<p><strong>Output</strong>: Clear understanding that you’re building
+evaluation for your specific context, not just testing general AI
+capabilities.</p>
+<h3 id="step-2-build-your-reference-dataset">Step 2: Build Your
+Reference Dataset</h3>
+<p><em>Based on Chapter 4</em></p>
+<p><strong>What you’re doing</strong>: Create a systematic collection of
+examples that represent the scenarios you care about most, with clear
+expectations for how your system should behave.</p>
+<p><strong>Key decisions</strong>: - Start small and specific (10-20
+high-quality examples) rather than trying to be comprehensive - Focus on
+scenarios you absolutely cannot get wrong - Include realistic inputs
+that represent actual user behavior</p>
+<p><strong>Action items</strong>: 1. <strong>Generate initial
+examples</strong>: Work with domain experts to create realistic
+scenarios based on historical data or domain knowledge 2. <strong>Run
+your system</strong>: Test your AI system on these examples and document
+both outputs and any intermediate steps 3. <strong>Evaluate with
+experts</strong>: Have domain experts review each example and answer
+“Was this response satisfactory? If not, why not?” 4. <strong>Identify
+error patterns</strong>: Analyze failures to cluster them into
+underlying problems you can actually fix 5. <strong>Decide on ongoing
+metrics</strong>: Determine which behaviors need continuous monitoring
+(recurring risks) versus one-time fixes</p>
+<p><strong>Output</strong>: A reference dataset with examples, system
+outputs, expert evaluations, and identified metrics for ongoing
+measurement.</p>
+<h3 id="step-3-implement-your-evaluation-metrics">Step 3: Implement Your
+Evaluation Metrics</h3>
+<p><em>Based on Chapter 5</em></p>
+<figure>
+<img src="../images/bug_vs_recurring_risk.png"
+alt="Bug vs Recurring Risk" />
+<figcaption aria-hidden="true">Bug vs Recurring Risk</figcaption>
+</figure>
+<p><strong>What you’re doing</strong>: Build the actual measurement
+systems that can assess your identified metrics using three possible
+approaches.</p>
+<p><strong>Key decisions</strong>: - Choose the right mix of human
+evaluation, code-based metrics, and LLM judges - Start simple and add
+complexity only when needed - Remember that LLM judges require careful
+calibration against human judgment</p>
+<p><strong>Action items</strong>: 1. <strong>For objective, measurable
+properties</strong>: Implement code-based metrics (structure validation,
+performance checks, required content) 2. <strong>For subjective
+qualities</strong>: Consider LLM judges with detailed rubrics and
+examples 3. <strong>For critical quality assessment</strong>: Plan for
+human evaluation, at least for calibration and spot-checking 4.
+<strong>Build rubrics</strong>: Create clear criteria defining
+acceptable vs. not acceptable performance with specific examples 5.
+<strong>Test your metrics</strong>: Validate that your evaluation
+approaches actually catch the issues you care about 6. <strong>Calibrate
+LLM judges</strong>: If using them, extensively test against human
+judgment and iteratively refine</p>
+<p><strong>Output</strong>: Implemented evaluation metrics that can
+reliably assess the behaviors you identified in Step 2.</p>
+<hr />
+<h2 id="phase-2-production-monitoring">Phase 2: Production
+Monitoring</h2>
+<h3 id="step-4-deploy-smart-log-filtering">Step 4: Deploy Smart Log
+Filtering</h3>
+<p><em>Based on Chapter 7 - Log Filtering</em></p>
+<p><strong>What you’re doing</strong>: Create systematic approaches to
+identify which production data deserves attention, since you can’t
+manually review everything at scale.</p>
+<p><strong>Key decisions</strong>: - Define what matters most for your
+business context (high/medium/low priority events) - Choose which
+implicit and explicit user signals to monitor - Set up dynamic filtering
+that adapts to production changes</p>
+<p><strong>Action items</strong>: 1. <strong>Establish priority
+categories</strong>: Define which events always need attention vs. which
+can be sampled 2. <strong>Identify user signals</strong>: Look for
+patterns like unusual conversation length, retry behavior, editing
+patterns, frustration indicators 3. <strong>Set up signal-based
+sampling</strong>: Sample more heavily from interactions showing
+concerning signals 4. <strong>Monitor production changes</strong>:
+Increase sampling during new product launches, error rate spikes, or
+business requirement changes 5. <strong>Adapt over time</strong>: Adjust
+your filtering strategy based on what you learn</p>
+<p><strong>Output</strong>: A filtering system that efficiently
+identifies the most important production data to examine.</p>
+<h3 id="step-5-select-and-deploy-your-production-metrics">Step 5: Select
+and Deploy Your Production Metrics</h3>
+<p><em>Based on Chapter 7 - Metric Selection</em></p>
+<p><strong>What you’re doing</strong>: Choose which evaluation metrics
+to run in production based on their impact, reliability, and cost.</p>
+<p><strong>Key decisions</strong>: - Prioritize high-impact metrics that
+drive actionable improvements - Balance metric value against
+computational and financial costs - Focus resources on metrics that
+actually help you make better decisions</p>
+<p><strong>Action items</strong>: 1. <strong>Evaluate each
+metric</strong>: Assess impact (how much it helps improve your system),
+reliability (how consistent it is), and cost (computational/financial
+expense) 2. <strong>Prioritize systematically</strong>: Focus on
+high-impact, low-cost metrics first; carefully consider high-impact,
+high-cost metrics; avoid low-impact approaches regardless of cost 3.
+<strong>Start essential</strong>: Implement must-have metrics that
+provide basic system health and safety monitoring 4. <strong>Add
+strategically</strong>: Gradually incorporate more sophisticated metrics
+based on demonstrated value</p>
+<p><strong>Output</strong>: A cost-effective mix of evaluation metrics
+running in production.</p>
+<h3 id="step-6-implement-guardrails-and-improvement-loops">Step 6:
+Implement Guardrails and Improvement Loops</h3>
+<p><em>Based on Chapter 7 - Online vs Offline Evaluation</em></p>
+<p><strong>What you’re doing</strong>: Distinguish between metrics that
+need immediate intervention (guardrails) versus those that guide
+longer-term improvement.</p>
+<p><strong>Key decisions</strong>: - Identify which behaviors, if they
+go wrong, would be huge for your business (guardrails) - Design offline
+evaluation for trend analysis and system improvement - Balance real-time
+intervention needs with batch analysis efficiency</p>
+<p><strong>Action items</strong>: 1. <strong>Design guardrails</strong>:
+Implement fast, reliable online metrics for business-critical behaviors
+that trigger immediate actions (handoffs, escalations, blocks) 2.
+<strong>Set up improvement loops</strong>: Create offline evaluation
+processes that analyze trends, assess quality over time, and guide
+system improvements 3. <strong>Define trigger actions</strong>:
+Establish clear procedures for what happens when guardrails activate 4.
+<strong>Plan feedback cycles</strong>: Ensure offline analysis insights
+feed back into system improvements and evaluation refinements</p>
+<p><strong>Output</strong>: A two-tier system with real-time guardrails
+for critical issues and batch analysis for continuous improvement.</p>
+<h3 id="step-7-build-emerging-issue-discovery">Step 7: Build Emerging
+Issue Discovery</h3>
+<p><em>Based on Chapter 7 - Emerging Issue Discovery</em></p>
+<p><strong>What you’re doing</strong>: Create processes to discover
+problems your existing evaluation framework doesn’t capture, using the
+same manual investigation techniques from reference dataset
+building.</p>
+<p><strong>Key decisions</strong>: - Recognize that user signals often
+reveal problems before metrics do - Plan for manual investigation when
+signals and metrics diverge - Build systematic processes to evolve your
+evaluation framework over time</p>
+<p><strong>Action items</strong>: 1. <strong>Monitor signal-metric
+divergence</strong>: Watch for cases where user behavior signals flag
+issues but your metrics show no problems 2. <strong>Conduct manual
+investigation</strong>: When divergence occurs, manually review the
+flagged interactions just like you did when building reference datasets
+3. <strong>Identify hidden issues</strong>: Look for quality dimensions
+or failure modes your current metrics don’t capture 4. <strong>Develop
+new metrics</strong>: Create evaluation approaches for newly discovered
+issues 5. <strong>Update your framework</strong>: Add new metrics to
+your evaluation system and refine your filtering approach 6.
+<strong>Close the discovery loop</strong>: Ensure insights from
+investigation feed back into better evaluation and system
+improvements</p>
+<p><strong>Output</strong>: A continuously evolving evaluation framework
+that adapts as you discover new issues and user behaviors.</p>
+<hr />
+<h2 id="the-complete-process-flow">The Complete Process Flow</h2>
+<figure>
+<img src="../images/evaluation_lifecycle.png"
+alt="Evaluation Lifecycle" />
+<figcaption aria-hidden="true">Evaluation Lifecycle</figcaption>
+</figure>
+<p>Here’s how all these steps connect:</p>
+<ol type="1">
+<li><strong>Foundation</strong> → Understand your specific evaluation
+needs and context</li>
+<li><strong>Reference Dataset</strong> → Build systematic examples with
+clear quality expectations<br />
+</li>
+<li><strong>Metrics Implementation</strong> → Create reliable
+measurement systems for your quality criteria</li>
+<li><strong>Production Filtering</strong> → Efficiently identify
+important production data to examine</li>
+<li><strong>Metric Deployment</strong> → Run cost-effective evaluation
+at scale</li>
+<li><strong>Guardrails + Improvement</strong> → Handle critical issues
+immediately while building long-term improvement</li>
+<li><strong>Discovery Loop</strong> → Continuously evolve your
+evaluation as you learn new failure modes</li>
+</ol>
+<h2 id="key-principles-throughout">Key Principles Throughout</h2>
+<p><strong>Start Simple</strong>: Begin with basic approaches and add
+complexity only when justified by clear value.</p>
+<p><strong>Focus on Context</strong>: Generic evaluation approaches
+don’t work - everything must be tailored to your specific use case,
+users, and business requirements.</p>
+<p><strong>Collaborate Across Teams</strong>: Effective evaluation
+requires input from domain experts, product teams, and engineers working
+together.</p>
+<p><strong>Embrace Evolution</strong>: Your evaluation framework should
+continuously improve as you discover new ways your system can fail or as
+user expectations change.</p>
+<p><strong>Connect Evaluation to Improvement</strong>: The goal is
+better AI systems, not perfect measurement. Focus on evaluation that
+drives actionable improvements.</p>
+<h2 id="what-you-end-up-with-2">What You End Up With</h2>
+<p>Following this complete process gives you:</p>
+<ul>
+<li><strong>Confidence before deployment</strong>: Systematic validation
+that your system works as intended</li>
+<li><strong>Effective production monitoring</strong>: Smart filtering
+and evaluation that scales with your system</li>
+<li><strong>Proactive issue detection</strong>: Early warning systems
+that catch problems before they become major issues<br />
+</li>
+<li><strong>Continuous improvement</strong>: Feedback loops that help
+your system get better over time</li>
+<li><strong>Sustainable evaluation</strong>: Cost-effective approaches
+that provide value without overwhelming your team</li>
+</ul>
+<h2 id="the-ongoing-journey">The Ongoing Journey</h2>
+<p>Remember that evaluation is never complete. You start by building
+evaluation for patterns you can anticipate, then use production
+monitoring to discover and evaluate patterns you couldn’t predict. User
+behavior evolves, business requirements change, and new failure modes
+emerge.</p>
+<p>The framework we’ve built gives you the tools to adapt your
+evaluation approach as your understanding deepens and your system grows.
+The key is maintaining the discipline of systematic evaluation while
+staying flexible enough to learn and evolve.</p>
+<p>This complete process transforms evaluation from an afterthought into
+a core capability that helps you build more reliable, useful, and
+trustworthy AI systems.</p>
+<hr />
+<h1 id="chapter-9-common-misconceptions-about-ai-evaluation">Chapter 9:
+Common Misconceptions About AI Evaluation</h1>
+<figure>
+<img src="../images/misconceptions_evaluation_foundations.png"
+alt="Evaluation Foundations" />
+<figcaption aria-hidden="true">Evaluation Foundations</figcaption>
+</figure>
+<h2 id="clearing-up-the-confusion">Clearing Up the Confusion</h2>
+<p>Now that you’ve worked through this complete evaluation course,
+you’re equipped to recognize common misconceptions that trip up many
+teams building AI systems. This chapter addresses the most frequent
+misunderstandings we encounter, explaining why they’re problematic and
+pointing you to the right approaches.</p>
+<p>Each misconception below includes a reference to the chapters where
+we covered the correct approach in detail.</p>
+<hr />
+<h2 id="foundation-misconceptions">Foundation Misconceptions</h2>
+<figure>
+<img src="../images/benchmark_vs_product_split.png"
+alt="Benchmark vs Product Split" />
+<figcaption aria-hidden="true">Benchmark vs Product Split</figcaption>
+</figure>
+<h3 id="model-evaluations-benchmarks-predict-my-product-success">1.
+“Model evaluations (benchmarks) predict my product success”</h3>
+<p><strong>Why this is wrong</strong>: Model evaluations test general
+capabilities on standardized tasks, but your product operates in a
+specific domain with unique requirements, constraints, and user
+behaviors. A model that scores 92% on general benchmarks might perform
+poorly for your insurance claims processing system if it hasn’t seen
+domain-specific patterns.</p>
+<p><strong>The reality</strong>: Product evaluation in your specific
+context is what matters. You need to test how the model behaves with
+your data, your users, your business rules, and your risk tolerance.</p>
+<p><strong>Where we covered this</strong>: Chapter 2 explains the
+crucial distinction between model and product evaluations, showing why
+benchmark performance often fails to predict real-world success in your
+specific use case.</p>
+<h3 id="engineers-can-design-evaluation-metrics-alone">2. “Engineers can
+design evaluation metrics alone”</h3>
+<p><strong>Why this is wrong</strong>: Engineers understand technical
+implementation but may miss domain-specific quality requirements,
+business risks, and subtle user expectations. What looks technically
+correct might be completely inappropriate for the domain.</p>
+<p><strong>The reality</strong>: Effective evaluation requires
+collaboration between domain experts (who understand quality), product
+teams (who understand user needs), and engineers (who understand
+technical constraints). Each brings essential perspectives.</p>
+<p><strong>Where we covered this</strong>: Chapter 3 emphasizes that
+evaluation is inherently collaborative and explains how different
+stakeholders contribute to defining quality standards and building
+rubrics.</p>
+<h3 id="evaluation-is-a-one-time-setup-before-launch">3. “Evaluation is
+a one-time setup before launch”</h3>
+<p><strong>Why this is wrong</strong>: This treats evaluation like
+traditional software testing, where you can validate everything upfront
+and expect it to stay valid. AI systems are non-deterministic, user
+behavior evolves, and business requirements change.</p>
+<p><strong>The reality</strong>: Evaluation is a continuous process that
+evolves with your system. You start with pre-deployment validation, then
+monitor in production, discover new issues, and continuously refine your
+evaluation approach.</p>
+<p><strong>Where we covered this</strong>: Chapter 1 explains why AI
+systems require ongoing evaluation, and Chapter 6 details how production
+monitoring differs from pre-deployment testing.</p>
+<figure>
+<img src="../images/misconceptions_validation_monitoring_comparison.png"
+alt="Validation vs Monitoring Comparison" />
+<figcaption aria-hidden="true">Validation vs Monitoring
+Comparison</figcaption>
+</figure>
+<hr />
+<h2 id="pre-deployment-misconceptions">Pre-Deployment
+Misconceptions</h2>
+<figure>
+<img src="../images/misconceptions_lab_controlled_environment.png"
+alt="Lab Controlled Environment" />
+<figcaption aria-hidden="true">Lab Controlled Environment</figcaption>
+</figure>
+<h3 id="i-need-comprehensive-evaluation-coverage-from-day-one">4. “I
+need comprehensive evaluation coverage from day one”</h3>
+<p><strong>Why this is wrong</strong>: Trying to build comprehensive
+evaluation upfront leads to analysis paralysis and often misses the most
+important issues. You can’t predict every failure mode, and attempting
+comprehensive coverage dilutes effort from high-impact scenarios.</p>
+<p><strong>The reality</strong>: Start small with 10-20 high-quality
+examples representing scenarios you absolutely cannot get wrong. Focus
+on quality over quantity and expand as you learn more about your
+system’s behavior patterns.</p>
+<p><strong>Where we covered this</strong>: Chapter 4 walks through
+building reference datasets, emphasizing starting small and specific
+rather than trying to be comprehensive from the beginning.</p>
+<h3 id="code-based-metrics-arent-sophisticated-enough-for-ai-systems">5.
+“Code-based metrics aren’t sophisticated enough for AI systems”</h3>
+<p><strong>Why this is wrong</strong>: This assumes you need complex
+evaluation for complex systems. In practice, simple code-based checks
+often provide the most reliable signal for many important behaviors like
+structure validation, compliance requirements, and performance
+monitoring.</p>
+<p><strong>The reality</strong>: Simple code checks are fast, reliable,
+and easy to understand. Use them for objective, measurable properties
+before adding complexity with LLM judges or human evaluation.</p>
+<p><strong>Where we covered this</strong>: Chapter 5 details the three
+evaluation approaches, showing when code-based metrics are most
+effective and why they should often be your first choice.</p>
+<h3 id="llm-judges-are-the-best-way-to-evaluate-ai-systems">6. “LLM
+judges are the best way to evaluate AI systems”</h3>
+<p><strong>Why this is wrong</strong>: LLM judges seem appealing because
+they can assess subjective qualities at scale, but they’re expensive,
+slow, and can be inconsistent or misaligned with human judgment.
+Uncalibrated LLM judges often create more problems than they solve.</p>
+<p><strong>The reality</strong>: LLM judges are powerful tools when
+properly calibrated, but they require extensive validation against human
+judgment. Start with simpler approaches and add LLM judges only when
+justified by clear value.</p>
+<p><strong>Where we covered this</strong>: Chapter 5 explains the
+challenges with LLM judges and emphasizes that calibration is essential
+for reliable results.</p>
+<h3 id="if-i-write-detailed-criteria-llm-judges-will-work-correctly">7.
+“If I write detailed criteria, LLM judges will work correctly”</h3>
+<p><strong>Why this is wrong</strong>: Detailed criteria help, but don’t
+guarantee that an LLM will interpret them the same way human experts
+would. LLMs can be overly strict, overly lenient, or miss subtle
+contextual cues that humans notice.</p>
+<p><strong>The reality</strong>: LLM judge calibration requires
+extensive testing against human evaluations across hundreds of examples,
+statistical analysis of agreement rates, and iterative prompt
+refinement. This process often takes weeks or months.</p>
+<p><strong>Where we covered this</strong>: Chapter 5 includes detailed
+guidance on LLM judge calibration and why detailed criteria alone are
+insufficient for reliable evaluation.</p>
+<hr />
+<h2 id="production-misconceptions">Production Misconceptions</h2>
+<figure>
+<img src="../images/misconceptions_production_scale_issues.png"
+alt="Production Scale Issues" />
+<figcaption aria-hidden="true">Production Scale Issues</figcaption>
+</figure>
+<h3 id="i-need-to-evaluate-every-production-interaction">8. “I need to
+evaluate every production interaction”</h3>
+<p><strong>Why this is wrong</strong>: At scale, evaluating every
+interaction is impossible and unnecessary. It would require enormous
+computational resources and human effort while providing diminishing
+returns from analyzing routine, successful interactions.</p>
+<p><strong>The reality</strong>: Smart sampling based on user signals is
+more effective. Focus evaluation on interactions showing concerning
+patterns like unusual length, retry behavior, or frustration
+indicators.</p>
+<p><strong>Where we covered this</strong>: Chapter 7’s log filtering
+section explains how to identify which production data deserves
+attention through priority-based filtering and signal-based
+sampling.</p>
+<h3 id="i-need-a-sophisticated-dashboard-with-dozens-of-metrics">9. “I
+need a sophisticated dashboard with dozens of metrics”</h3>
+<p><strong>Why this is wrong</strong>: More metrics don’t automatically
+mean better insights. Too many metrics create noise, make it hard to
+focus on what matters, and often lead to analysis paralysis rather than
+actionable improvements.</p>
+<p><strong>The reality</strong>: Focus on a minimum set of actionable
+metrics that drive real improvements. It’s better to have 3-5 metrics
+that consistently guide decisions than 20 metrics that no one acts
+on.</p>
+<p><strong>Where we covered this</strong>: Chapter 7’s metric selection
+section provides frameworks for choosing metrics based on impact,
+reliability, and cost rather than trying to measure everything.</p>
+<figure>
+<img src="../images/misconceptions_production_challenges_framework.png"
+alt="Production Challenges Framework" />
+<figcaption aria-hidden="true">Production Challenges
+Framework</figcaption>
+</figure>
+<h3 id="online-evaluation-is-always-better-than-offline">10. “Online
+evaluation is always better than offline”</h3>
+<p><strong>Why this is wrong</strong>: Online evaluation seems superior
+because it provides immediate feedback, but it must be fast and simple
+to avoid adding latency. Complex analysis that requires expensive
+computation or sophisticated reasoning belongs in offline
+evaluation.</p>
+<p><strong>The reality</strong>: Use online evaluation for
+business-critical guardrails that need immediate intervention. Use
+offline evaluation for detailed analysis, trend identification, and
+system improvement insights.</p>
+<p><strong>Where we covered this</strong>: Chapter 7 distinguishes
+between online guardrails (preventing immediate problems) and offline
+improvement loops (driving long-term system enhancement).</p>
+<figure>
+<img src="../images/misconceptions_online_offline_evaluation.png"
+alt="Online vs Offline Evaluation" />
+<figcaption aria-hidden="true">Online vs Offline Evaluation</figcaption>
+</figure>
+<h3 id="evals-vs-ab-testing---i-need-to-pick-one-approach">11. “Evals vs
+A/B testing - I need to pick one approach”</h3>
+<p><strong>Why this is wrong</strong>: This creates a false dichotomy
+between two complementary approaches. Each serves different purposes and
+they work better together than in isolation.</p>
+<p><strong>The reality</strong>: Use evaluation metrics to monitor known
+patterns and behaviors you understand. Use A/B testing to discover new
+patterns through explicit user signals (ratings, conversions) and
+implicit signals (behavior changes, engagement).</p>
+<p><strong>Where we covered this</strong>: Chapter 7’s emerging issue
+discovery section explains how user signals can reveal problems your
+evaluation metrics don’t capture, leading to new evaluation
+approaches.</p>
+<figure>
+<img src="../images/misconceptions_evaluation_vs_ab_testing.png"
+alt="Evaluation vs A/B Testing" />
+<figcaption aria-hidden="true">Evaluation vs A/B Testing</figcaption>
+</figure>
+<h3 id="evaluation-metrics-are-fixed-once-implemented">12. “Evaluation
+metrics are fixed once implemented”</h3>
+<p><strong>Why this is wrong</strong>: This assumes your system, users,
+and business requirements remain static. In reality, user behavior
+evolves, business priorities change, and you discover new failure modes
+that require different evaluation approaches.</p>
+<p><strong>The reality</strong>: Metrics retire and update over time as
+you learn. A metric that was critical during early deployment might
+become less useful as your system matures. Meanwhile, new user behaviors
+might require entirely new metrics.</p>
+<p><strong>Where we covered this</strong>: Chapter 7’s emerging issue
+discovery explains the continuous loop of discovering new patterns,
+developing new metrics, and retiring outdated approaches.</p>
+<p><strong>Examples of metric evolution</strong>: -
+<strong>Retiring</strong>: A “response format validation” metric becomes
+less important as your system matures and format errors become rare -
+<strong>Adding</strong>: A “seasonal context awareness” metric becomes
+important after discovering users ask different questions during
+holidays - <strong>Updating</strong>: An “escalation accuracy” metric
+needs refinement after business policy changes affect when human
+handoffs are appropriate</p>
+<figure>
+<img src="../images/misconceptions_metrics_evolution_timeline.png"
+alt="Metrics Evolution Timeline" />
+<figcaption aria-hidden="true">Metrics Evolution Timeline</figcaption>
+</figure>
+<hr />
+<h2 id="why-these-misconceptions-persist">Why These Misconceptions
+Persist</h2>
+<p>Understanding why these misconceptions are common helps you avoid
+them:</p>
+<p><strong>AI evaluation is relatively new</strong>: Unlike traditional
+software testing, systematic AI evaluation is still emerging, leading to
+borrowed assumptions from other domains.</p>
+<p><strong>Complexity creates uncertainty</strong>: AI systems are
+complex, making simple approaches seem inadequate even when they’re
+often the most effective.</p>
+<p><strong>Tool marketing influences thinking</strong>: Vendors promote
+sophisticated solutions that may be overkill for many practical
+needs.</p>
+<p><strong>Success stories lack context</strong>: Case studies often
+don’t include the failures and iterations that led to successful
+evaluation approaches.</p>
+<h2 id="the-right-mindset">The Right Mindset</h2>
+<p>Instead of falling into these misconceptions, approach AI evaluation
+with these principles:</p>
+<p><strong>Start simple and evolve</strong>: Begin with basic approaches
+that provide clear value, then add complexity only when justified.</p>
+<p><strong>Focus on your context</strong>: Generic solutions rarely work
+- everything must be tailored to your specific use case, users, and
+business requirements.</p>
+<p><strong>Embrace collaboration</strong>: Combine technical, domain,
+and business perspectives rather than trying to solve evaluation in
+isolation.</p>
+<p><strong>Expect continuous evolution</strong>: Build evaluation
+systems that can adapt as you learn more about your system and
+users.</p>
+<p><strong>Prioritize actionable insights</strong>: Measure things that
+drive real improvements rather than pursuing measurement for its own
+sake.</p>
+<h2 id="moving-forward">Moving Forward</h2>
+<p>Now that you understand these common misconceptions and have worked
+through the complete evaluation methodology, you’re equipped to build
+effective evaluation systems that avoid these pitfalls.</p>
+<p>Remember: the goal isn’t perfect measurement - it’s building better
+AI systems through systematic, thoughtful evaluation that evolves with
+your understanding and needs.</p>
+<hr />
+<h1 id="chapter-10-glossary-of-terms">Chapter 10: Glossary of Terms</h1>
+<figure>
+<img src="../images/glossary_evaluation_conflicting_advice_maze.png"
+alt="Evaluation Conflicting Advice Maze" />
+<figcaption aria-hidden="true">Evaluation Conflicting Advice
+Maze</figcaption>
+</figure>
+<h2 id="making-sense-of-the-evaluation-vocabulary">Making Sense of the
+Evaluation Vocabulary</h2>
+<p>Throughout this course, we’ve used specific terms to describe
+different aspects of AI evaluation. This glossary clarifies what we mean
+by each term, helping you navigate the sometimes confusing world of
+evaluation terminology.</p>
+<figure>
+<img src="../images/glossary_evaluation_three_phases.png"
+alt="Evaluation Three Phases" />
+<figcaption aria-hidden="true">Evaluation Three Phases</figcaption>
+</figure>
+<hr />
+<h3 id="evals">Evals</h3>
+<p>The catch-all term that everyone uses for everything
+evaluation-related, which is exactly why it causes so much confusion.
+Someone might say “we need better evals” and mean anything from
+benchmark scores to production monitoring dashboards. We intentionally
+avoid this term in favor of more precise language.</p>
+<h3 id="evaluation">Evaluation</h3>
+<p>The overall process of assessing how an AI system behaves. This
+includes everything from designing metrics to running tests to analyzing
+results. Evaluation answers the question: “Is this system behaving the
+way we want it to?”</p>
+<h3 id="evaluation-metrics">Evaluation Metrics</h3>
+<p>The specific dimensions along which system behavior is judged. These
+answer “what does good mean in this context?” Examples include
+escalation accuracy, response time, or compliance adherence. Always
+context-dependent and require clear rubrics.</p>
+<h3 id="expected-behavior">Expected Behavior</h3>
+<p>What your system should do in a given situation. Part of the
+Input-Expected-Actual framework. Often requires collaboration between
+domain experts and product teams to define clearly.</p>
+<h3 id="explicit-signals">Explicit Signals</h3>
+<p>Direct indicators users give about their experience, such as ratings,
+explicit escalation requests (“let me talk to a human”), or direct
+complaints. Easier to interpret than implicit signals but less
+common.</p>
+<h3 id="actual-behavior">Actual Behavior</h3>
+<p>What your system actually does when given specific inputs. This
+includes not just the final output, but intermediate steps and any
+actions taken.</p>
+<h3 id="benchmark">Benchmark</h3>
+<p>A standardized test used to measure model capabilities across
+different systems. Examples include MMLU, HumanEval, or GSM8K. Useful
+for comparing models but don’t predict performance in your specific use
+case.</p>
+<h3 id="code-based-metrics">Code-Based Metrics</h3>
+<p>Deterministic checks written in programming code that look for
+specific patterns or properties. Fast, reliable, and perfect for
+objective measurements like structure validation, required content
+presence, or performance monitoring.</p>
+<figure>
+<img src="../images/glossary_evaluation_methods_spectrum.png"
+alt="Evaluation Methods Spectrum" />
+<figcaption aria-hidden="true">Evaluation Methods Spectrum</figcaption>
+</figure>
+<h3 id="guardrails">Guardrails</h3>
+<p>Real-time evaluation metrics that monitor business-critical behaviors
+and trigger immediate interventions when problems occur. These are
+online metrics for situations where failure would have immediate,
+significant business impact. Examples include safety filters or
+compliance checks.</p>
+<h3 id="implicit-signals">Implicit Signals</h3>
+<p>Indirect indicators of user satisfaction or system problems, revealed
+through user behavior rather than explicit feedback. Examples include
+conversation length anomalies, retry behavior, extensive editing of
+generated content, or abandonment patterns.</p>
+<h3 id="improvement-flywheel">Improvement Flywheel</h3>
+<p>The offline evaluation process that powers long-term system
+enhancement through trend analysis, quality assessment, and systematic
+investigation of issues discovered in production.</p>
+<h3 id="input">Input</h3>
+<p>Everything that influences how your AI system behaves, including the
+user’s request, conversation history, retrieved data, and system
+configuration. Part of the Input-Expected-Actual evaluation
+framework.</p>
+<h3 id="llm-judge">LLM Judge</h3>
+<p>Using one language model to evaluate another model’s behavior.
+Powerful for assessing subjective qualities like tone or
+appropriateness, but requires extensive calibration against human
+judgment to be reliable.</p>
+<h3 id="log-filtering-1">Log Filtering</h3>
+<p>Systematic approaches to identify which production data deserves
+evaluation attention. Uses priority-based filtering and signal-based
+sampling since you can’t review everything at scale.</p>
+<h3 id="model-evaluation">Model Evaluation</h3>
+<p>Assessment of general AI model capabilities, typically using
+standardized benchmarks. Helps with model selection but doesn’t predict
+performance in your specific product context.</p>
+<h3 id="metric-selection-1">Metric Selection</h3>
+<p>The process of choosing which evaluation approaches to implement
+based on their impact, reliability, and cost. Requires balancing value
+against computational and financial expenses.</p>
+<h3 id="non-deterministic">Non-Deterministic</h3>
+<p>A key characteristic of AI systems where the same input can produce
+different outputs across runs. This breaks traditional software testing
+assumptions and makes evaluation more complex but essential.</p>
+<h3 id="offline-evaluation">Offline Evaluation</h3>
+<p>Evaluation that happens after interactions occur, often in batch
+processes. Used for trend analysis, detailed quality assessment, and
+system improvement insights. Allows for sophisticated, expensive
+analysis that would be impractical in real-time.</p>
+<h3 id="online-evaluation">Online Evaluation</h3>
+<p>Real-time evaluation that runs as interactions happen and can trigger
+immediate responses. Must be fast and lightweight. Used for guardrails
+and situations requiring immediate intervention.</p>
+<figure>
+<img src="../images/glossary_online_vs_offline_evaluation.png"
+alt="Online vs Offline Evaluation" />
+<figcaption aria-hidden="true">Online vs Offline Evaluation</figcaption>
+</figure>
+<h3 id="product-evaluation">Product Evaluation</h3>
+<p>Assessment of how an AI system behaves in your specific use case,
+with your users, data, and business context. This is what actually
+matters for building successful AI products, as opposed to general model
+capabilities.</p>
+<figure>
+<img src="../images/glossary_model_vs_product_evaluation.png"
+alt="Model vs Product Evaluation" />
+<figcaption aria-hidden="true">Model vs Product Evaluation</figcaption>
+</figure>
+<h3 id="production-monitoring">Production Monitoring</h3>
+<p>Continuous evaluation of AI system performance with real users at
+scale. Includes log filtering, metric deployment, guardrails, and
+emerging issue discovery.</p>
+<h3 id="reference-dataset">Reference Dataset</h3>
+<p>A carefully chosen collection of realistic examples that represent
+scenarios you care most about. Includes inputs, expected behaviors, and
+serves as the foundation for systematic evaluation. Start small (10-20
+examples) and expand based on learning.</p>
+<figure>
+<img src="../images/glossary_reference_dataset_components.png"
+alt="Reference Dataset Components" />
+<figcaption aria-hidden="true">Reference Dataset Components</figcaption>
+</figure>
+<h3 id="rubric">Rubric</h3>
+<p>Explicit criteria that define what constitutes acceptable versus
+unacceptable performance. Essential for making subjective evaluation
+consistent. Should include specific examples and edge case guidance.</p>
+<h3 id="signal-based-sampling-1">Signal-Based Sampling</h3>
+<p>Sampling production data based on implicit and explicit user signals
+rather than random selection. More effective for catching problems than
+uniform sampling across all interactions.</p>
+<h3 id="signal-metric-divergence">Signal-Metric Divergence</h3>
+<p>When user behavior signals indicate problems but your current
+evaluation metrics show no issues. This pattern suggests hidden quality
+dimensions that your existing evaluation framework doesn’t capture.</p>
+<h3 id="user-evolution">User Evolution</h3>
+<p>The natural progression of how users interact with AI systems over
+time. As users become comfortable, they develop new interaction
+patterns, push boundaries, and use systems in increasingly sophisticated
+ways. This changes the distribution of inputs your system receives.</p>
+<hr />
+<h2 id="framework-concepts">Framework Concepts</h2>
+<h3 id="input-expected-actual-framework">Input-Expected-Actual
+Framework</h3>
+<p>The conceptual foundation for thinking about AI system behavior: -
+<strong>Input</strong>: Everything that goes into your system -
+<strong>Expected</strong>: What should happen given your requirements -
+<strong>Actual</strong>: What your system really does</p>
+<p>This framework helps structure evaluation by making explicit what
+you’re comparing.</p>
+<h3 id="guardrails-vs.-improvement-flywheel">Guardrails vs. Improvement
+Flywheel</h3>
+<p>The two-tier approach to production evaluation: -
+<strong>Guardrails</strong>: Online metrics for immediate intervention
+on business-critical issues - <strong>Improvement Flywheel</strong>:
+Offline analysis for long-term system enhancement</p>
+<h3 id="discovery-loop">Discovery Loop</h3>
+<p>The continuous cycle of emerging issue discovery: 1. User signals
+indicate potential problems 2. Log filtering samples concerning
+interactions 3. Existing metrics may not capture the issues 4. Manual
+investigation reveals hidden problems 5. New metrics are developed 6.
+Updated framework catches similar issues earlier</p>
+<hr />
+<h2 id="process-terms">Process Terms</h2>
+<h3 id="pre-deployment-validation">Pre-Deployment Validation</h3>
+<p>The systematic evaluation work done before real users interact with
+your system. Includes building reference datasets, implementing metrics,
+and testing in controlled conditions to build confidence.</p>
+<h3 id="calibration">Calibration</h3>
+<p>The process of ensuring LLM judges align with human judgment through
+extensive testing, comparison analysis, and iterative refinement. Often
+takes weeks or months and is essential for reliable automated
+evaluation.</p>
+<h3 id="emerging-issue-discovery-1">Emerging Issue Discovery</h3>
+<p>Systematic approaches to find problems your existing evaluation
+framework doesn’t capture. Uses signal-metric divergence analysis and
+manual investigation to evolve evaluation as new failure modes
+emerge.</p>
+<hr />
+<h2 id="common-anti-patterns-what-not-to-do">Common Anti-Patterns (What
+NOT to Do)</h2>
+<h3 id="evaluation-drift">Evaluation Drift</h3>
+<p>When your evaluation metrics become disconnected from actual user
+needs or business goals. Happens when you measure things because they’re
+easy to measure rather than because they matter.</p>
+<h3 id="metric-overload">Metric Overload</h3>
+<p>Having too many evaluation metrics, making it impossible to focus on
+what actually drives improvements. More metrics don’t automatically mean
+better insights.</p>
+<h3 id="calibration-neglect">Calibration Neglect</h3>
+<p>Deploying LLM judges without proper validation against human
+judgment, leading to evaluation that’s worse than having no evaluation
+at all.</p>
+<h3 id="coverage-obsession">Coverage Obsession</h3>
+<p>Trying to evaluate everything comprehensively rather than focusing on
+high-impact scenarios. Leads to analysis paralysis and diluted
+effort.</p>
+<hr />
+<h2 id="key-principles">Key Principles</h2>
+<p>Throughout this course, we’ve emphasized these core principles:</p>
+<p><strong>Context is King</strong>: Everything must be tailored to your
+specific use case, users, and business requirements. Generic approaches
+rarely work.</p>
+<p><strong>Start Simple, Evolve</strong>: Begin with basic approaches
+and add complexity only when justified by clear value.</p>
+<p><strong>Collaboration is Essential</strong>: Combine technical,
+domain, and business perspectives rather than trying to solve evaluation
+in isolation.</p>
+<p><strong>Continuous Learning</strong>: Evaluation systems must adapt
+as you discover new failure modes and as user behavior evolves.</p>
+<p><strong>Action Over Measurement</strong>: The goal is better AI
+systems, not perfect measurement. Focus on evaluation that drives real
+improvements.</p>
+<hr />
+<h2 id="using-this-glossary">Using This Glossary</h2>
+<p>This glossary reflects the specific way we use these terms in this
+course. You might encounter different definitions elsewhere - the AI
+evaluation field is still developing standard terminology. When working
+with others, it’s always worth clarifying what specific terms mean in
+your context.</p>
+<p>Remember: the vocabulary matters less than the underlying concepts.
+Focus on building systematic, thoughtful evaluation that helps you
+create better AI systems for your users.</p>

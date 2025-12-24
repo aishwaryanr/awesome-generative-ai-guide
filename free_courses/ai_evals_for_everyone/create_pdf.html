@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Evals for Everyone - Complete Course PDF</title>
+    <style>
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 1in;
+            line-height: 1.6;
+            color: #333;
+            background: white;
+        }
+        
+        h1 { 
+            color: #d97706; 
+            border-bottom: 3px solid #d97706; 
+            padding-bottom: 0.5em; 
+            page-break-after: avoid;
+            font-size: 2.5em;
+        }
+        
+        h2 { 
+            color: #1f2937; 
+            border-bottom: 1px solid #e5e7eb; 
+            padding-bottom: 0.3em; 
+            margin-top: 2em;
+            page-break-after: avoid;
+            font-size: 1.8em;
+        }
+        
+        h3 { 
+            color: #374151; 
+            margin-top: 1.5em;
+            page-break-after: avoid;
+            font-size: 1.3em;
+        }
+        
+        img { 
+            max-width: 100%; 
+            height: auto; 
+            display: block; 
+            margin: 1em auto;
+            border: 1px solid #e5e7eb;
+            border-radius: 8px;
+        }
+        
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin: 1em 0; 
+        }
+        
+        th, td { 
+            border: 1px solid #e5e7eb; 
+            padding: 8px 12px; 
+            text-align: left; 
+        }
+        
+        th { 
+            background: #f9fafb; 
+            font-weight: 600; 
+        }
+        
+        code { 
+            background: #f3f4f6; 
+            padding: 2px 4px; 
+            border-radius: 3px; 
+            font-family: 'Consolas', monospace; 
+            font-size: 0.9em; 
+        }
+        
+        pre { 
+            background: #f3f4f6; 
+            padding: 1em; 
+            border-radius: 8px; 
+            overflow-x: auto; 
+            page-break-inside: avoid;
+        }
+        
+        blockquote { 
+            border-left: 4px solid #d97706; 
+            margin: 1em 0; 
+            padding-left: 1em; 
+            font-style: italic; 
+            color: #6b7280; 
+        }
+        
+        .page-break { 
+            page-break-before: always; 
+        }
+        
+        @media print {
+            body { margin: 0; padding: 0.5in; font-size: 12pt; }
+            h1 { font-size: 20pt; }
+            h2 { font-size: 16pt; }
+            h3 { font-size: 14pt; }
+            .no-print { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="no-print" style="background: #fef3c7; padding: 1em; border-radius: 8px; margin-bottom: 2em; border: 1px solid #d97706;">
+        <h3 style="margin-top: 0; color: #d97706;">📄 Ready to Print!</h3>
+        <p><strong>To create a PDF:</strong></p>
+        <ol>
+            <li>Press <kbd>Ctrl+P</kbd> (or <kbd>Cmd+P</kbd> on Mac)</li>
+            <li>Select "Save as PDF" or "Print to PDF"</li>
+            <li>Choose appropriate settings (A4 or Letter size)</li>
+            <li>Click Save!</li>
+        </ol>
+        <p><em>This notice will not appear in the printed version.</em></p>
+    </div>
+
+    <!-- Load the markdown content -->
+    <div id="content">
+        <p>Loading course content...</p>
+    </div>
+
+    <script>
+        // Fetch and display the markdown content
+        fetch('AI_Evals_Complete_Course.md')
+            .then(response => response.text())
+            .then(markdown => {
+                // Simple markdown to HTML conversion for basic formatting
+                let html = markdown
+                    .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+                    .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+                    .replace(/^### (.*$)/gim, '<h3>$1</h3>')
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                    .replace(/`(.*?)`/g, '<code>$1</code>')
+                    .replace(/!\[(.*?)\]\((.*?)\)/g, '<img alt="$1" src="$2" />')
+                    .replace(/\[(.*?)\]\((.*?)\)/g, '<a href="$2">$1</a>')
+                    .replace(/^\- (.*$)/gim, '<li>$1</li>')
+                    .replace(/\n\n/g, '</p><p>')
+                    .replace(/^(.*)$/gm, '<p>$1</p>');
+                
+                // Add page breaks between chapters
+                html = html.replace(/<h1>/g, '<div class="page-break"></div><h1>');
+                
+                document.getElementById('content').innerHTML = html;
+            })
+            .catch(error => {
+                document.getElementById('content').innerHTML = 
+                    '<p style="color: red;">Error loading content. Please make sure the AI_Evals_Complete_Course.md file is in the same directory.</p>';
+            });
+    </script>
+</body>
+</html>

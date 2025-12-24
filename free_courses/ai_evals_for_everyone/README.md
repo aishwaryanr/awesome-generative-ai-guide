@@ -29,7 +29,9 @@ Start from zero and learn step-by-step how to build AI evaluation systems. This 
 
 ## 📖 Complete Course Document
 
-**[View the complete course as a single document](./AI_Evals_Complete_Course.md)** - All 10 chapters merged for easy reading and printing. You can convert this to PDF using any markdown-to-PDF tool.
+**[View the complete course as a single document](./AI_Evals_Complete_Course.md)** - All 10 chapters merged for easy reading.
+
+**[Print to PDF Version](./AI_Evals_Complete_Course_Print.html)** - Optimized HTML version. Open in browser and press Cmd+P (Mac) or Ctrl+P (Windows), then "Save as PDF".
 
 ## 🚀 Who Should Take This Course?
 
