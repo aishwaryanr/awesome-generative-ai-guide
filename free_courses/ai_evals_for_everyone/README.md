@@ -64,7 +64,7 @@ Or jump straight to the **[Certification Assessment](https://ai-evals-course.ver
 **[Join our upcoming free session on State of Applied AI in 2025](https://maven.com/p/ad857c/state-of-applied-ai-in-2025-report)** on January 5th! Get insights into the latest trends, challenges, and opportunities in production AI systems.
 
 ### 🎯 Enterprise AI Cohort
-Check out our **[#1 Rated Enterprise AI Cohort on Maven](https://maven.com/aishwarya-naresh-reganti/enterprise-ai)**! A comprehensive program for teams building AI at scale.
+Check out our **[#1 Rated Enterprise AI Cohort on Maven](https://maven.com/aishwarya-naresh-reganti/enterprise-ai)**! A comprehensive program for those looking to build timeless enterprise AI systems.
 
 ### 📱 Stay Connected
 - **Follow [Aishwarya on LinkedIn](https://www.linkedin.com/in/aishwarya-naresh-reganti/)** for AI evaluation insights and updates
