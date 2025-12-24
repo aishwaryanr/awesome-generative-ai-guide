@@ -2,7 +2,7 @@
 
 ![AI Evals for Everyone](./images/header_image.jpg)
 
-Welcome to **AI Evals for Everyone**, a comprehensive free course on evaluation and monitoring for AI systems. This course distills production experience from deploying AI at scale into practical, actionable knowledge.
+Welcome to **AI Evals for Everyone**, a beginner-friendly 101 course that clears up all the confusion around AI evaluation. No matter your background, this course will equip you with practical knowledge to build evaluations that actually work.
 
 ## 🎓 Get Certified!
 
@@ -10,7 +10,7 @@ Welcome to **AI Evals for Everyone**, a comprehensive free course on evaluation 
 
 ## 📚 Course Overview
 
-Learn systematic approaches to AI evaluation that actually work in production. This course covers everything from fundamental concepts to advanced monitoring strategies, with real-world examples and practical frameworks.
+Start from zero and learn step-by-step how to build AI evaluation systems. This 101 course cuts through the hype and confusion to give you clear, practical guidance you can implement immediately.
 
 **Created by:** [Aishwarya Naresh Reganti](https://www.linkedin.com/in/aishwarya-naresh-reganti/) & [Kiriti Badam](https://www.linkedin.com/in/kiritibadam/)
 
@@ -41,24 +41,24 @@ Learn systematic approaches to AI evaluation that actually work in production. T
 
 ## 💡 What You'll Learn
 
-- Why AI evaluation is fundamentally different from traditional software testing
-- The critical distinction between model and product evaluation
-- How to build reference datasets that capture real-world complexity
-- Practical approaches to evaluation metrics (code-based, human, and LLM judges)
-- Production monitoring strategies that scale
-- Common pitfalls and how to avoid them
+- Why AI systems need evaluation (it's simpler than you think!)
+- The difference between testing models vs testing your actual product
+- How to build your first evaluation dataset in just a few hours
+- Three straightforward approaches to measuring AI quality
+- How to monitor your AI system once it's live
+- Common mistakes everyone makes (and how to avoid them)
 
 ## 🏆 Course Features
 
-- **Free & Open Source** - No paywalls, accessible to everyone
-- **Production-Focused** - Based on real deployment experience
-- **Practical Examples** - Learn from actual case studies
+- **Beginner-Friendly** - No prior evaluation experience needed
+- **Practical & Hands-On** - Build real evaluation systems as you learn
+- **Clear Examples** - Every concept explained with concrete examples
 - **Get Certified** - Earn your AI Evals certification
 - **Self-Paced** - Learn at your own speed
 
 ## 📝 Start Learning
 
-Ready to master AI evaluation? Start with [Chapter 1: WTH are AI Evals?](./chapters/01_wth_are_ai_evals.md)
+Ready to clear up the confusion around AI evaluation? Start with [Chapter 1: WTH are AI Evals?](./chapters/01_wth_are_ai_evals.md)
 
 Or jump straight to the **[Certification Assessment](https://ai-evals-course.vercel.app/quiz-google.html)**!
 
