@@ -68,7 +68,7 @@ Start from zero and learn step-by-step how to build AI evaluation systems. This 
 **[Join our upcoming free session on State of Applied AI in 2025](https://maven.com/p/ad857c/state-of-applied-ai-in-2025-report)** on January 5th! Get insights into the latest trends, challenges, and opportunities in production AI systems.
 
 ### 🎯 Enterprise AI Cohort
-Check out our **[#1 Rated Enterprise AI Cohort on Maven](https://maven.com/aishwarya-naresh-reganti/enterprise-ai)**! A comprehensive program for those looking to build timeless enterprise AI systems.
+Check out our **[#1 Rated Enterprise AI Cohort on Maven](https://maven.com/aishwarya-kiriti/genai-system-design)**! A comprehensive program for those looking to build timeless enterprise AI systems.
 
 *📝 Note: Use code **GITHUB15** for 15% off the Enterprise AI Cohort (valid until January 15th, 2025)*
 
