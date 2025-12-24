@@ -285,5 +285,7 @@ Think of it as building evaluation for the patterns you can anticipate, then usi
 
 ![Production Monitoring Quote](../images/production_monitoring_quote.png)
 
+**Scaling to enterprise production?** While this course provides foundational monitoring strategies, enterprise AI systems require sophisticated approaches to distributed evaluation, team coordination, and advanced analytics. Our **[Enterprise AI Cohort on Maven](https://maven.com/aishwarya-naresh-reganti/enterprise-ai)** covers production monitoring patterns used by top AI teams, plus live collaboration on real enterprise challenges.
+
 In the next chapter, we'll explore how to use these monitoring insights to create continuous improvement cycles that help your AI system get better over time.
 

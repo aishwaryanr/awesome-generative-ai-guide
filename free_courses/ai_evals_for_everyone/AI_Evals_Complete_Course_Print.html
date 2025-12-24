@@ -89,6 +89,34 @@
     code span.va { color: #19177c; } /* Variable */
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+    
+    /* Table styles for better visibility */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin: 20px 0;
+      border: 1px solid #ddd;
+    }
+    
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+      vertical-align: top;
+    }
+    
+    th {
+      background-color: #f5f5f5;
+      font-weight: bold;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+    
+    tr:hover {
+      background-color: #f0f0f0;
+    }
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown-light.min.css" />
 </head>
@@ -107,24 +135,23 @@ Badam</strong></p>
 <li><a href="#wth-are-ai-evals">WTH are AI Evals?</a></li>
 <li><a href="#model-evaluations-vs-product-evaluations">Model
 Evaluations vs Product Evaluations</a></li>
-<li><a href="#evaluation-building-blocks">Evaluation Building
-Blocks</a></li>
+<li><a href="#evaluation-building-blocks">The Evaluation Framework</a></li>
 <li><a href="#building-reference-datasets">Building Reference
 Datasets</a></li>
-<li><a href="#how-to-build-evaluation-metrics">How to Build Evaluation
+<li><a href="#how-to-build-evaluation-metrics">Implementing Evaluation
 Metrics</a></li>
 <li><a href="#production-challenge">Production Challenge</a></li>
 <li><a href="#production-monitoring-strategies">Production Monitoring
 Strategies</a></li>
-<li><a href="#evaluation-process">Evaluation Process</a></li>
-<li><a href="#case-studies">Case Studies</a></li>
-<li><a href="#common-pitfalls">Common Pitfalls</a></li>
+<li><a href="#evaluation-process">The Complete Evaluation Process</a></li>
+<li><a href="#case-studies">Common Misconceptions About AI Evaluation</a></li>
+<li><a href="#common-pitfalls">Glossary of Terms</a></li>
 </ol>
 <hr />
 <hr />
 <h1 id="chapter-1-wth-are-ai-evals">Chapter 1: WTH are AI Evals?</h1>
 <figure>
-<img src="../images/evaluation_questions_overview.png"
+<img src="./images/evaluation_questions_overview.png"
 alt="Evaluation Questions Overview" />
 <figcaption aria-hidden="true">Evaluation Questions
 Overview</figcaption>
@@ -141,7 +168,7 @@ what people are actually referring to or where they are coming from.
 This lack of precision has led to a growing number of misconceptions as
 teams build AI solutions in the real world.</p>
 <figure>
-<img src="../images/chaos_to_structure.png" alt="Chaos to Structure" />
+<img src="./images/chaos_to_structure.png" alt="Chaos to Structure" />
 <figcaption aria-hidden="true">Chaos to Structure</figcaption>
 </figure>
 <p>We put together this guide as a practical starting point. Think of it
@@ -155,7 +182,7 @@ principles approach.</p>
 <h2 id="the-shift-that-makes-evals-unavoidable">The Shift That Makes
 Evals Unavoidable</h2>
 <figure>
-<img src="../images/deterministic_software.png"
+<img src="./images/deterministic_software.png"
 alt="Deterministic Software" />
 <figcaption aria-hidden="true">Deterministic Software</figcaption>
 </figure>
@@ -188,7 +215,7 @@ and fixed.</p>
 <h2 id="how-ai-products-break-classical-assumptions">How AI Products
 Break Classical Assumptions</h2>
 <figure>
-<img src="../images/nondeterministic_ai.png"
+<img src="./images/nondeterministic_ai.png"
 alt="Non-deterministic AI" />
 <figcaption aria-hidden="true">Non-deterministic AI</figcaption>
 </figure>
@@ -254,7 +281,7 @@ is also where confusion usually starts.</p>
 <h2 id="why-the-word-evals-causes-confusion">Why the Word “Evals” Causes
 Confusion</h2>
 <figure>
-<img src="../images/evals_confusion_diagram.png"
+<img src="./images/evals_confusion_diagram.png"
 alt="Evals Confusion Diagram" />
 <figcaption aria-hidden="true">Evals Confusion Diagram</figcaption>
 </figure>
@@ -356,7 +383,7 @@ in practice, and the tradeoffs each approach introduces.</p>
 <h1 id="chapter-2-model-vs-product-evaluations">Chapter 2: Model vs
 Product Evaluations</h1>
 <figure>
-<img src="../images/model_vs_product_evaluation.png"
+<img src="./images/model_vs_product_evaluation.png"
 alt="Model vs Product Evaluation" />
 <figcaption aria-hidden="true">Model vs Product Evaluation</figcaption>
 </figure>
@@ -380,7 +407,7 @@ understanding first.</p>
 <h2 id="model-evaluations-measuring-general-capability">Model
 Evaluations: Measuring General Capability</h2>
 <figure>
-<img src="../images/evaluation_benchmark_process.png"
+<img src="./images/evaluation_benchmark_process.png"
 alt="Evaluation Benchmark Process" />
 <figcaption aria-hidden="true">Evaluation Benchmark Process</figcaption>
 </figure>
@@ -423,7 +450,7 @@ constraints and requirements.</p>
 <h2 id="why-model-evaluations-dont-predict-product-success">Why Model
 Evaluations Don’t Predict Product Success</h2>
 <figure>
-<img src="../images/benchmark_vs_product_split.png"
+<img src="./images/benchmark_vs_product_split.png"
 alt="Benchmark vs Product Split" />
 <figcaption aria-hidden="true">Benchmark vs Product Split</figcaption>
 </figure>
@@ -574,7 +601,7 @@ product evaluation should be continuous. User behavior evolves, business
 requirements change, and your AI system needs to adapt.</p>
 <h2 id="the-evaluation-hierarchy">The Evaluation Hierarchy</h2>
 <figure>
-<img src="../images/evaluation_questions_overview.png"
+<img src="./images/evaluation_questions_overview.png"
 alt="Evaluation Questions Overview" />
 <figcaption aria-hidden="true">Evaluation Questions
 Overview</figcaption>
@@ -624,7 +651,7 @@ systems that actually help you improve your product.</p>
 <h2 id="what-youre-actually-evaluating">What You’re Actually
 Evaluating</h2>
 <figure>
-<img src="../images/input_expected_actual_framework.png"
+<img src="./images/input_expected_actual_framework.png"
 alt="Input Expected Actual Framework" />
 <figcaption aria-hidden="true">Input Expected Actual
 Framework</figcaption>
@@ -678,7 +705,7 @@ products.</p>
 context and requirements.</p>
 <h3 id="context-changes-everything">Context Changes Everything</h3>
 <figure>
-<img src="../images/rubric_definition_quality.png"
+<img src="./images/rubric_definition_quality.png"
 alt="Rubric Definition Quality" />
 <figcaption aria-hidden="true">Rubric Definition Quality</figcaption>
 </figure>
@@ -848,7 +875,7 @@ set this up in a more systematic way.</p>
 <h1 id="chapter-4-building-reference-datasets">Chapter 4: Building
 Reference Datasets</h1>
 <figure>
-<img src="../images/reference_dataset_steps.png"
+<img src="./images/reference_dataset_steps.png"
 alt="Reference Dataset Steps" />
 <figcaption aria-hidden="true">Reference Dataset Steps</figcaption>
 </figure>
@@ -891,7 +918,7 @@ a description of the right behavior, like “escalate to human agent” or
 “ask for clarification about the user’s budget range.”</p>
 <h2 id="why-start-small-and-specific">Why Start Small and Specific</h2>
 <figure>
-<img src="../images/lab_vs_production_50_examples.png"
+<img src="./images/lab_vs_production_50_examples.png"
 alt="Lab vs Production 50 Examples" />
 <figcaption aria-hidden="true">Lab vs Production 50
 Examples</figcaption>
@@ -1175,7 +1202,7 @@ approaches.</p>
 <h1 id="chapter-5-implementing-evaluation-metrics">Chapter 5:
 Implementing Evaluation Metrics</h1>
 <figure>
-<img src="../images/metrics_to_automated_system.png"
+<img src="./images/metrics_to_automated_system.png"
 alt="Metrics to Automated System" />
 <figcaption aria-hidden="true">Metrics to Automated System</figcaption>
 </figure>
@@ -1193,7 +1220,7 @@ situation.</p>
 <h2 id="three-ways-to-measure-ai-behavior">Three Ways to Measure AI
 Behavior</h2>
 <figure>
-<img src="../images/three_evaluation_approaches.png"
+<img src="./images/three_evaluation_approaches.png"
 alt="Three Evaluation Approaches" />
 <figcaption aria-hidden="true">Three Evaluation Approaches</figcaption>
 </figure>
@@ -1448,7 +1475,7 @@ you be running them on all your production inputs and outputs or just
 samples? Are these metrics enough or should you keep reinventing? We’ll
 talk about all this in the next chapter.</p>
 <figure>
-<img src="../images/evaluation_methods_comparison.png"
+<img src="./images/evaluation_methods_comparison.png"
 alt="Evaluation Methods Comparison" />
 <figcaption aria-hidden="true">Evaluation Methods
 Comparison</figcaption>
@@ -1459,7 +1486,7 @@ improvement loop that helps your system get better over time.</p>
 <h1 id="chapter-6-production-deployment-and-real-user-behavior">Chapter
 6: Production Deployment and Real User Behavior</h1>
 <figure>
-<img src="../images/production_scale_10000_interactions.png"
+<img src="./images/production_scale_10000_interactions.png"
 alt="Production Scale 10000 Interactions" />
 <figcaption aria-hidden="true">Production Scale 10000
 Interactions</figcaption>
@@ -1490,7 +1517,7 @@ AI system, several things happen that change the evaluation game
 entirely.</p>
 <h2 id="the-reality-of-real-users">The Reality of Real Users</h2>
 <figure>
-<img src="../images/production_challenges_real_world.png"
+<img src="./images/production_challenges_real_world.png"
 alt="Production Challenges Real World" />
 <figcaption aria-hidden="true">Production Challenges Real
 World</figcaption>
@@ -1538,7 +1565,7 @@ should we focus our attention?”</p>
 <h2 id="from-evaluation-to-monitoring">From Evaluation to
 Monitoring</h2>
 <figure>
-<img src="../images/validation_vs_monitoring_toggle.png"
+<img src="./images/validation_vs_monitoring_toggle.png"
 alt="Validation vs Monitoring Toggle" />
 <figcaption aria-hidden="true">Validation vs Monitoring
 Toggle</figcaption>
@@ -1556,7 +1583,7 @@ users.</p>
 <p><strong>Monitoring maintains quality during deployment</strong>: You
 track performance to catch problems early and guide improvements.</p>
 <figure>
-<img src="../images/continuous_improvement_flywheel.png"
+<img src="./images/continuous_improvement_flywheel.png"
 alt="Continuous Improvement Flywheel" />
 <figcaption aria-hidden="true">Continuous Improvement
 Flywheel</figcaption>
@@ -1572,7 +1599,7 @@ improved systems perform better in evaluation.</p>
 <h2 id="four-core-challenges-in-production">Four Core Challenges in
 Production</h2>
 <figure>
-<img src="../images/four_core_production_challenges.png"
+<img src="./images/four_core_production_challenges.png"
 alt="Four Core Production Challenges" />
 <figcaption aria-hidden="true">Four Core Production
 Challenges</figcaption>
@@ -1647,7 +1674,7 @@ cost-effective as your AI system scales.</p>
 <h1 id="chapter-7-production-monitoring-strategies">Chapter 7:
 Production Monitoring Strategies</h1>
 <figure>
-<img src="../images/chapter-7-main.png" alt="Chapter 7 Main" />
+<img src="./images/chapter-7-main.png" alt="Chapter 7 Main" />
 <figcaption aria-hidden="true">Chapter 7 Main</figcaption>
 </figure>
 <h2 id="from-challenges-to-solutions">From Challenges to Solutions</h2>
@@ -1672,7 +1699,7 @@ budget.</p>
 <h2 id="log-filtering-finding-signal-in-the-noise">Log Filtering:
 Finding Signal in the Noise</h2>
 <figure>
-<img src="../images/log_filtering_visualization.png"
+<img src="./images/log_filtering_visualization.png"
 alt="Log Filtering Visualization" />
 <figcaption aria-hidden="true">Log Filtering Visualization</figcaption>
 </figure>
@@ -1773,7 +1800,7 @@ your business context, user base, and risk tolerance.</p>
 <h2 id="metric-selection-choosing-your-evaluation-mix">Metric Selection:
 Choosing Your Evaluation Mix</h2>
 <figure>
-<img src="../images/evaluation_quality_vs_cost_balance.png"
+<img src="./images/evaluation_quality_vs_cost_balance.png"
 alt="Evaluation Quality vs Cost Balance" />
 <figcaption aria-hidden="true">Evaluation Quality vs Cost
 Balance</figcaption>
@@ -1783,7 +1810,7 @@ expensive. You need frameworks for choosing the right mix of evaluation
 approaches.</p>
 <h3 id="the-metric-value-framework">The Metric Value Framework</h3>
 <figure>
-<img src="../images/metric_value_dimensions.png"
+<img src="./images/metric_value_dimensions.png"
 alt="Metric Value Dimensions" />
 <figcaption aria-hidden="true">Metric Value Dimensions</figcaption>
 </figure>
@@ -1802,7 +1829,7 @@ cost: Fast LLM judge calls, periodic human spot-checks - High cost:
 Detailed human evaluation, expensive model calls, complex analysis</p>
 <h3 id="prioritization-matrix">Prioritization Matrix</h3>
 <figure>
-<img src="../images/metric_prioritization_matrix.png"
+<img src="./images/metric_prioritization_matrix.png"
 alt="Metric Prioritization Matrix" />
 <figcaption aria-hidden="true">Metric Prioritization Matrix</figcaption>
 </figure>
@@ -1824,7 +1851,7 @@ behaviors</p>
 id="online-vs-offline-evaluation-guardrails-vs-improvement-flywheel">Online
 vs Offline Evaluation: Guardrails vs Improvement Flywheel</h2>
 <figure>
-<img src="../images/guardrails_vs_flywheel_question.png"
+<img src="./images/guardrails_vs_flywheel_question.png"
 alt="Guardrails vs Flywheel Question" />
 <figcaption aria-hidden="true">Guardrails vs Flywheel
 Question</figcaption>
@@ -1835,7 +1862,7 @@ for your business?</p>
 <h3 id="online-evaluation-business-critical-guardrails">Online
 Evaluation: Business-Critical Guardrails</h3>
 <figure>
-<img src="../images/online_guardrails.png" alt="Online Guardrails" />
+<img src="./images/online_guardrails.png" alt="Online Guardrails" />
 <figcaption aria-hidden="true">Online Guardrails</figcaption>
 </figure>
 <p>Online evaluation serves as guardrails - metrics that must run in
@@ -1864,7 +1891,7 @@ failover procedures</p>
 <h3 id="offline-evaluation-improvement-flywheel">Offline Evaluation:
 Improvement Flywheel</h3>
 <figure>
-<img src="../images/offline_improvement_flywheel.png"
+<img src="./images/offline_improvement_flywheel.png"
 alt="Offline Improvement Flywheel" />
 <figcaption aria-hidden="true">Offline Improvement Flywheel</figcaption>
 </figure>
@@ -1901,7 +1928,7 @@ improvement flywheel.</p>
 about what requires real-time intervention versus what can wait for
 batch analysis and gradual improvement.</p>
 <figure>
-<img src="../images/online_vs_offline_timing.png"
+<img src="./images/online_vs_offline_timing.png"
 alt="Online vs Offline Timing" />
 <figcaption aria-hidden="true">Online vs Offline Timing</figcaption>
 </figure>
@@ -1909,7 +1936,7 @@ alt="Online vs Offline Timing" />
 id="emerging-issue-discovery-when-your-signals-dont-match-your-metrics">Emerging
 Issue Discovery: When Your Signals Don’t Match Your Metrics</h2>
 <figure>
-<img src="../images/signal_metric_divergence.png"
+<img src="./images/signal_metric_divergence.png"
 alt="Signal Metric Divergence" />
 <figcaption aria-hidden="true">Signal Metric Divergence</figcaption>
 </figure>
@@ -1977,7 +2004,7 @@ to your offline evaluation for trend monitoring, and consider whether
 any need to become online guardrails.</p>
 <h3 id="the-discovery-loop">The Discovery Loop</h3>
 <figure>
-<img src="../images/discovery_loop_cycle.png"
+<img src="./images/discovery_loop_cycle.png"
 alt="Discovery Loop Cycle" />
 <figcaption aria-hidden="true">Discovery Loop Cycle</figcaption>
 </figure>
@@ -2042,7 +2069,7 @@ back into your evaluation framework.</p>
 anticipate, then using monitoring to discover and evaluate the patterns
 you couldn’t predict.</p>
 <figure>
-<img src="../images/production_monitoring_quote.png"
+<img src="./images/production_monitoring_quote.png"
 alt="Production Monitoring Quote" />
 <figcaption aria-hidden="true">Production Monitoring Quote</figcaption>
 </figure>
@@ -2053,7 +2080,7 @@ system get better over time.</p>
 <h1 id="chapter-8-the-complete-evaluation-process">Chapter 8: The
 Complete Evaluation Process</h1>
 <figure>
-<img src="../images/evaluation_process_seven_steps.png"
+<img src="./images/evaluation_process_seven_steps.png"
 alt="Evaluation Process Seven Steps" />
 <figcaption aria-hidden="true">Evaluation Process Seven
 Steps</figcaption>
@@ -2069,7 +2096,7 @@ for your AI system.</p>
 concepts we’ve discussed into actionable steps you can implement.</p>
 <h2 id="the-two-phase-approach">The Two-Phase Approach</h2>
 <figure>
-<img src="../images/two_phase_evaluation_process.png"
+<img src="./images/two_phase_evaluation_process.png"
 alt="Two Phase Evaluation Process" />
 <figcaption aria-hidden="true">Two Phase Evaluation Process</figcaption>
 </figure>
@@ -2134,7 +2161,7 @@ measurement.</p>
 Evaluation Metrics</h3>
 <p><em>Based on Chapter 5</em></p>
 <figure>
-<img src="../images/bug_vs_recurring_risk.png"
+<img src="./images/bug_vs_recurring_risk.png"
 alt="Bug vs Recurring Risk" />
 <figcaption aria-hidden="true">Bug vs Recurring Risk</figcaption>
 </figure>
@@ -2255,7 +2282,7 @@ that adapts as you discover new issues and user behaviors.</p>
 <hr />
 <h2 id="the-complete-process-flow">The Complete Process Flow</h2>
 <figure>
-<img src="../images/evaluation_lifecycle.png"
+<img src="./images/evaluation_lifecycle.png"
 alt="Evaluation Lifecycle" />
 <figcaption aria-hidden="true">Evaluation Lifecycle</figcaption>
 </figure>
@@ -2324,7 +2351,7 @@ trustworthy AI systems.</p>
 <h1 id="chapter-9-common-misconceptions-about-ai-evaluation">Chapter 9:
 Common Misconceptions About AI Evaluation</h1>
 <figure>
-<img src="../images/misconceptions_evaluation_foundations.png"
+<img src="./images/misconceptions_evaluation_foundations.png"
 alt="Evaluation Foundations" />
 <figcaption aria-hidden="true">Evaluation Foundations</figcaption>
 </figure>
@@ -2339,7 +2366,7 @@ we covered the correct approach in detail.</p>
 <hr />
 <h2 id="foundation-misconceptions">Foundation Misconceptions</h2>
 <figure>
-<img src="../images/benchmark_vs_product_split.png"
+<img src="./images/benchmark_vs_product_split.png"
 alt="Benchmark vs Product Split" />
 <figcaption aria-hidden="true">Benchmark vs Product Split</figcaption>
 </figure>
@@ -2386,7 +2413,7 @@ evaluation approach.</p>
 systems require ongoing evaluation, and Chapter 6 details how production
 monitoring differs from pre-deployment testing.</p>
 <figure>
-<img src="../images/misconceptions_validation_monitoring_comparison.png"
+<img src="./images/misconceptions_validation_monitoring_comparison.png"
 alt="Validation vs Monitoring Comparison" />
 <figcaption aria-hidden="true">Validation vs Monitoring
 Comparison</figcaption>
@@ -2395,7 +2422,7 @@ Comparison</figcaption>
 <h2 id="pre-deployment-misconceptions">Pre-Deployment
 Misconceptions</h2>
 <figure>
-<img src="../images/misconceptions_lab_controlled_environment.png"
+<img src="./images/misconceptions_lab_controlled_environment.png"
 alt="Lab Controlled Environment" />
 <figcaption aria-hidden="true">Lab Controlled Environment</figcaption>
 </figure>
@@ -2454,7 +2481,7 @@ insufficient for reliable evaluation.</p>
 <hr />
 <h2 id="production-misconceptions">Production Misconceptions</h2>
 <figure>
-<img src="../images/misconceptions_production_scale_issues.png"
+<img src="./images/misconceptions_production_scale_issues.png"
 alt="Production Scale Issues" />
 <figcaption aria-hidden="true">Production Scale Issues</figcaption>
 </figure>
@@ -2486,7 +2513,7 @@ on.</p>
 section provides frameworks for choosing metrics based on impact,
 reliability, and cost rather than trying to measure everything.</p>
 <figure>
-<img src="../images/misconceptions_production_challenges_framework.png"
+<img src="./images/misconceptions_production_challenges_framework.png"
 alt="Production Challenges Framework" />
 <figcaption aria-hidden="true">Production Challenges
 Framework</figcaption>
@@ -2506,7 +2533,7 @@ system improvement insights.</p>
 between online guardrails (preventing immediate problems) and offline
 improvement loops (driving long-term system enhancement).</p>
 <figure>
-<img src="../images/misconceptions_online_offline_evaluation.png"
+<img src="./images/misconceptions_online_offline_evaluation.png"
 alt="Online vs Offline Evaluation" />
 <figcaption aria-hidden="true">Online vs Offline Evaluation</figcaption>
 </figure>
@@ -2524,7 +2551,7 @@ discovery section explains how user signals can reveal problems your
 evaluation metrics don’t capture, leading to new evaluation
 approaches.</p>
 <figure>
-<img src="../images/misconceptions_evaluation_vs_ab_testing.png"
+<img src="./images/misconceptions_evaluation_vs_ab_testing.png"
 alt="Evaluation vs A/B Testing" />
 <figcaption aria-hidden="true">Evaluation vs A/B Testing</figcaption>
 </figure>
@@ -2550,7 +2577,7 @@ holidays - <strong>Updating</strong>: An “escalation accuracy” metric
 needs refinement after business policy changes affect when human
 handoffs are appropriate</p>
 <figure>
-<img src="../images/misconceptions_metrics_evolution_timeline.png"
+<img src="./images/misconceptions_metrics_evolution_timeline.png"
 alt="Metrics Evolution Timeline" />
 <figcaption aria-hidden="true">Metrics Evolution Timeline</figcaption>
 </figure>
@@ -2598,7 +2625,7 @@ your understanding and needs.</p>
 <hr />
 <h1 id="chapter-10-glossary-of-terms">Chapter 10: Glossary of Terms</h1>
 <figure>
-<img src="../images/glossary_evaluation_conflicting_advice_maze.png"
+<img src="./images/glossary_evaluation_conflicting_advice_maze.png"
 alt="Evaluation Conflicting Advice Maze" />
 <figcaption aria-hidden="true">Evaluation Conflicting Advice
 Maze</figcaption>
@@ -2610,7 +2637,7 @@ different aspects of AI evaluation. This glossary clarifies what we mean
 by each term, helping you navigate the sometimes confusing world of
 evaluation terminology.</p>
 <figure>
-<img src="../images/glossary_evaluation_three_phases.png"
+<img src="./images/glossary_evaluation_three_phases.png"
 alt="Evaluation Three Phases" />
 <figcaption aria-hidden="true">Evaluation Three Phases</figcaption>
 </figure>
@@ -2655,7 +2682,7 @@ specific patterns or properties. Fast, reliable, and perfect for
 objective measurements like structure validation, required content
 presence, or performance monitoring.</p>
 <figure>
-<img src="../images/glossary_evaluation_methods_spectrum.png"
+<img src="./images/glossary_evaluation_methods_spectrum.png"
 alt="Evaluation Methods Spectrum" />
 <figcaption aria-hidden="true">Evaluation Methods Spectrum</figcaption>
 </figure>
@@ -2710,7 +2737,7 @@ analysis that would be impractical in real-time.</p>
 immediate responses. Must be fast and lightweight. Used for guardrails
 and situations requiring immediate intervention.</p>
 <figure>
-<img src="../images/glossary_online_vs_offline_evaluation.png"
+<img src="./images/glossary_online_vs_offline_evaluation.png"
 alt="Online vs Offline Evaluation" />
 <figcaption aria-hidden="true">Online vs Offline Evaluation</figcaption>
 </figure>
@@ -2720,7 +2747,7 @@ with your users, data, and business context. This is what actually
 matters for building successful AI products, as opposed to general model
 capabilities.</p>
 <figure>
-<img src="../images/glossary_model_vs_product_evaluation.png"
+<img src="./images/glossary_model_vs_product_evaluation.png"
 alt="Model vs Product Evaluation" />
 <figcaption aria-hidden="true">Model vs Product Evaluation</figcaption>
 </figure>
@@ -2734,7 +2761,7 @@ scenarios you care most about. Includes inputs, expected behaviors, and
 serves as the foundation for systematic evaluation. Start small (10-20
 examples) and expand based on learning.</p>
 <figure>
-<img src="../images/glossary_reference_dataset_components.png"
+<img src="./images/glossary_reference_dataset_components.png"
 alt="Reference Dataset Components" />
 <figcaption aria-hidden="true">Reference Dataset Components</figcaption>
 </figure>
