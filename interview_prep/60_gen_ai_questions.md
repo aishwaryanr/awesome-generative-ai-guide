@@ -350,7 +350,7 @@ Owner: Aishwarya Nr
 ---
 
 8. What pre-training mechanisms are used for LLMs, explain a few
-- Answer**:**
+- Answer:
     
     Large Language Models utilize several pre-training mechanisms to learn from vast amounts of text data before being fine-tuned on specific tasks. Key mechanisms include:
     
