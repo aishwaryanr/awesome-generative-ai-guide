@@ -250,8 +250,8 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 12. [Large Language Model Agents MOOC, Fall 2024](https://llmagents-learning.org/f24) by Dawn Song & Xinyun Chen – A comprehensive course covering foundational and advanced topics on LLM agents.
 13. [CS294/194-196 Large Language Model Agents](https://rdi.berkeley.edu/llm-agents/f24) by UC Berkeley
 
-
-
+##### Agent Frameworks
+- [ADK-Rust](https://github.com/zavora-ai/adk-rust) - Production-ready AI agent development kit for Rust with model-agnostic design (Gemini, OpenAI, Anthropic), multiple agent types (LLM, Graph, Workflow), MCP support, and built-in telemetry.
 
 
 #### Miscellaneous
