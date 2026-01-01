@@ -67,10 +67,15 @@ Start from zero and learn step-by-step how to build AI evaluation systems. This 
 ### 📅 Attend Our Live Session
 **[Join our upcoming free session on State of Applied AI in 2025](https://maven.com/p/ad857c/state-of-applied-ai-in-2025-report)** on January 5th! Get insights into the latest trends, challenges, and opportunities in production AI systems.
 
-### 🎯 Enterprise AI Cohort
-Check out our **[#1 Rated Enterprise AI Cohort on Maven](https://maven.com/aishwarya-kiriti/genai-system-design)**! A comprehensive program for those looking to build timeless enterprise AI systems.
+### 🎯 Our Maven Courses
 
-*📝 Note: Use code **GITHUB15** for a limited 15% off the Enterprise AI Cohort (valid until January 15th, 2025)*
+**Choose the course that fits your learning journey:**
+
+- **[#1 Rated Enterprise AI Course](https://maven.com/aishwarya-kiriti/genai-system-design)** - New to AI? Start here! A comprehensive program for building timeless enterprise AI systems from scratch.
+
+- **[Advanced Evals Course](https://maven.com/aishwarya-kiriti/evals-problem-first)** - Already building AI? Take our newly launched course focused on systematically improving your AI products through advanced evaluation techniques.
+
+*📝 Note: Use code **GITHUB15** for a limited 15% off on Maven courses (valid until January 15th, 2025)*
 
 ### 📱 Stay Connected
 - **Follow [Aishwarya on LinkedIn](https://www.linkedin.com/in/aishwarya-naresh-reganti/)** for AI evaluation insights and updates

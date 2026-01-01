@@ -176,9 +176,11 @@ AI evaluation is inherently collaborative. Subject matter experts, product teams
 
 But this raises an important question: how do you actually come up with all these metrics? How do you know which ones matter most for your specific situation? How do you balance different team perspectives to create evaluation criteria everyone can agree on?
 
-**Want to go deeper?** While this course covers evaluation fundamentals, building production-ready AI systems requires understanding enterprise patterns, agentic designs, and advanced implementation strategies. For comprehensive guidance on enterprise AI development, check out our **[#1 rated Enterprise AI Cohort on Maven](https://maven.com/aishwarya-kiriti/genai-system-design)** taken by product and engineering leaders and practitioners at Meta, Amazon, Google, Apple and more!
+**Want to go deeper?** Choose the course that fits your journey:
+- **New to AI?** Check out our **[#1 rated Enterprise AI Course on Maven](https://maven.com/aishwarya-kiriti/genai-system-design)** for comprehensive guidance on building production-ready AI systems from scratch.
+- **Already building AI?** Take our newly launched **[Advanced Evals course](https://maven.com/aishwarya-kiriti/evals-problem-first)** for systematically improving your AI products through advanced evaluation techniques.
 
-*📝 Note: Use code **GITHUB15** for 15% off the Enterprise AI Cohort (valid until January 15th, 2025)*
+*📝 Note: Use code **GITHUB15** for 15% off on Maven courses (valid until January 15th, 2025)*
 
 In the next chapter, we'll talk about building a reference dataset so you can understand how to apply this framework and improve your system once you've built a version of your product. We'll cover how you could set this up in a more systematic way.
 
