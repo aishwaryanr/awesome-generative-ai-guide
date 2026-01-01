@@ -20,7 +20,7 @@ Welcome to **AI Evals for Everyone**, a beginner-friendly 101 course that clears
 
 Start from zero and learn step-by-step how to build AI evaluation systems. This 101 course cuts through the hype and confusion to give you clear, practical guidance you can implement immediately.
 
-**Created by:** [Aishwarya Naresh Reganti](https://www.linkedin.com/in/aishwarya-naresh-reganti/) & [Kiriti Badam](https://www.linkedin.com/in/kiritibadam/)
+**Created by:** [Aishwarya Naresh Reganti](https://www.linkedin.com/in/areganti/) & [Kiriti Badam](https://www.linkedin.com/in/sai-kiriti-badam/)
 
 ## 📖 Course Chapters
 
