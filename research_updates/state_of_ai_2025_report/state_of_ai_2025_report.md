@@ -758,15 +758,15 @@ This report synthesized insights from numerous sources, including the State of A
 
 ## References
 
-[^iconiq]: ICONIQ Venture & Growth, "2025 State of AI Report," 2025
-[^stateofai]: Air Street Capital, "State of AI Report 2025," 2025
-[^kanwat]: Utkarsh Kanwat, "Betting Against Agents," 2025
-[^security]: AI Security and Guardrails Research, 2025
-[^a2a]: 2025 Research on A2A Protocol
-[^cleanlab]: Cleanlab, "AI Agents in Production 2025: Enterprise Trends and Best Practices," 2025
-[^vectara]: Vectara Hallucination Leaderboard / All About AI, "AI Hallucination Rates Across Models," 2025
-[^voronoi]: Voronoi App, "Leading AI Models Show Persistent Hallucinations Despite Accuracy Gains," 2025
-[^ragflow]: RAGFlow, "From RAG to Context: A 2025 Year-End Review," December 2025
-[^mit]: MIT / Fortune, "95% of Generative AI Pilots at Companies Are Failing," August 2025
-[^breunig]: Drew Breunig, "Enterprise Agents Have a Reliability Problem," December 2025
-[^maxim]: Maxim AI, "Agent Tracing for Debugging Multi-Agent AI Systems," 2025
+[^iconiq]: ICONIQ Venture & Growth, ["2025 State of AI Report"](https://iconiqcapital.com/growth/insights/2025-state-of-ai-report), 2025
+[^stateofai]: Air Street Capital, ["State of AI Report 2025"](https://www.stateof.ai/), 2025
+[^kanwat]: Utkarsh Kanwat, ["Betting Against Agents"](https://blog.langchain.dev/betting-against-agents/), 2025
+[^security]: ["AI Security and Guardrails Research"](https://www.llmguardrails.com/), 2025
+[^a2a]: Google, ["A2A Protocol"](https://developers.google.com/agent-to-agent), 2025
+[^cleanlab]: Cleanlab, ["AI Agents in Production 2025: Enterprise Trends and Best Practices"](https://cleanlab.ai/blog/ai-agents-report-2025/), 2025
+[^vectara]: Vectara, ["Hallucination Leaderboard"](https://huggingface.co/spaces/vectara/Hallucination-evaluation-leaderboard), 2025
+[^voronoi]: Voronoi App, ["Leading AI Models Show Persistent Hallucinations Despite Accuracy Gains"](https://www.voronoiapp.com/technology/Leading-AI-Models-Show-Persistent-Hallucinations-Despite-Accuracy-Gains-3572), 2025
+[^ragflow]: RAGFlow, ["From RAG to Context: A 2025 Year-End Review"](https://ragflow.io/blog/rag-year-end-review-2025), December 2025
+[^mit]: MIT / Fortune, ["95% of Generative AI Pilots at Companies Are Failing"](https://fortune.com/2025/08/20/generative-ai-pilots-failing-mit-report/), August 2025
+[^breunig]: Drew Breunig, ["Enterprise Agents Have a Reliability Problem"](https://www.dbreunig.com/2025/12/18/enterprise-agents-reliability.html), December 2025
+[^maxim]: Maxim AI, ["Agent Tracing for Debugging Multi-Agent AI Systems"](https://www.getmaxim.ai/blog/agent-tracing), 2025
