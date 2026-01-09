@@ -44,7 +44,7 @@ The standardization work mattered here too. Agent Skills gave us a common way to
 
 **Output: Trust as Engineering**
 
-Security frameworks can now intervene in under 5 minutes with less than 2% false positives[^security]. That's real progress. But here's the math that keeps me up at night: 95% accuracy per step means 36% success over a 20-step workflow[^kanwat]. That's not a tuning problem—it's an architecture problem.
+Security frameworks can now intervene in under 5 minutes with less than 2% false positives. That's real progress. But here's the math that keeps me up at night: 95% accuracy per step means 36% success over a 20-step workflow[^kanwat]. That's not a tuning problem—it's an architecture problem.
 
 ### What the Numbers Actually Say
 
@@ -239,7 +239,7 @@ Teams report 60-70% of development time goes to integration and error handling. 
 
 #### Standards That Matter
 
-Agent Skills specification standardized tool descriptions. A2A protocol (50+ vendors by April[^a2a]) enabled agent collaboration. Both succeeded by being minimal—solving the immediate problem without overreaching.
+Agent Skills specification standardized tool descriptions. A2A protocol (50+ vendors by April) enabled agent collaboration. Both succeeded by being minimal—solving the immediate problem without overreaching.
 
 Context graphs solved the debugging problem. They capture not just what an agent did but why—every decision point, evaluated option, rejected path. When something breaks, you can trace the reasoning instead of guessing.
 
@@ -347,7 +347,7 @@ The output layer in 2025 became the battlefield where AI's promises met enterpri
 The security landscape of 2025 bore little resemblance to the simple content filters of earlier years. Modern runtime security operated more like an immune system than a wall—constantly adapting, learning from threats, and intervening with precision rather than brute force.
 
 The numbers that mattered:
-- **Detection latency**: 5 minutes from output generation to intervention[^security]
+- **Detection latency**: 5 minutes from output generation to intervention
 - **False positive rate**: <2% for critical violations
 - **Coverage**: 95% of known attack vectors
 - **Adaptation speed**: 24-48 hours for new threat patterns
@@ -560,24 +560,24 @@ The progress in 2025 brought clarity about what AI can do—and equal clarity ab
 
 Hallucination rates have dropped, but let's be specific about what that means.
 
-Top models now hit sub-1% hallucination rates on simple factual queries[^vectara]. Gemini 2.0 Flash leads at 0.7%. Four models have crossed this threshold—real progress.
+Top models now hit sub-1% hallucination rates on simple factual queries. Gemini 2.0 Flash leads at 0.7%. Four models have crossed this threshold—real progress.
 
 But that's the easy case. For complex reasoning, the numbers look different:
 - Thinking models (Claude Sonnet 4, GPT-5, Deepseek-R1): 10%+
 - Legal information: 6.4% even with top models
-- General knowledge: 0.8%[^vectara]
+- General knowledge: 0.8%
 
 The gap matters. If you're building a legal research tool, expect six times more hallucinations than a general Q&A bot using the same model.
 
 Why this persists:
 - Models learn statistical patterns, not actual understanding
 - Training data has gaps and errors
-- Mathematical research confirms: complete elimination is impossible with current architectures[^voronoi]
+- Mathematical research confirms: complete elimination is impossible with current architectures
 
 What works in practice:
 - RAG reduces hallucinations but doesn't eliminate them
 - Multi-model validation catches some errors
-- Human oversight remains necessary—and less than 1 in 3 teams are satisfied with their current observability tools[^cleanlab]
+- Human oversight remains necessary—and less than 1 in 3 teams are satisfied with their current observability tools
 
 Design your systems assuming hallucinations will happen. The question isn't "how do we prevent them?" but "how do we catch them before they cause damage?"
 
@@ -586,7 +586,7 @@ Design your systems assuming hallucinations will happen. The question isn't "how
 ![RAG Hype Cycle](./images/rag_hype_cycle.png)
 *Figure 5: RAG hype peaked in early-mid 2023. Long-context alternatives are emerging. Source: RAGFlow/LightOn, 2025*
 
-RAGFlow's researchers describe RAG as in "a phase of stagnation"[^ragflow]. Academic papers keep appearing. Breakthroughs don't.
+RAGFlow's researchers describe RAG as in "a phase of stagnation." Academic papers keep appearing. Breakthroughs don't.
 
 The core problems:
 
@@ -595,7 +595,7 @@ The core problems:
 ![Long Context RAG Architecture](./images/long_context_rag.png)
 *Figure 6: Hybrid tree-graph retrieval attempts to bridge the semantic gap. Source: RAGFlow, 2025*
 
-**Storage costs for multimodal**: A single page image requires ~512KB in tensor storage. A million-page corpus hits terabytes. That's before you consider retrieval latency[^ragflow].
+**Storage costs for multimodal**: A single page image requires ~512KB in tensor storage. A million-page corpus hits terabytes. That's before you consider retrieval latency.
 
 **Similarity isn't relevance**: Query "customer churn Q4" and you'll get documents about customer satisfaction, Q4 financials, and historical churn data—all semantically related, none actually answering your question.
 
@@ -606,17 +606,17 @@ Newer approaches (TreeRAG, GraphRAG, tensor quantization) show promise but add c
 ![Multi-Agent System Architecture](./images/multi_agent_system.png)
 *Figure 7: Multi-agent debugging is fundamentally different from traditional software. Source: Maxim AI, 2025*
 
-MIT research found 95% of generative AI pilots fail to reach production[^mit]. That's not hyperbole—it's data.
+MIT research found 95% of generative AI pilots fail to reach production. That's not hyperbole—it's data.
 
 Why so many fail:
 
 **The reliability math doesn't work**: 5% error rate is fine for chatbots. It's catastrophic for agents that update databases or place orders. And 95% reliability per step means 36% success over 20 steps. Production systems need 99.9%+.
 
-**The platform keeps moving**: 70% of regulated enterprises rebuild their AI stack every 3 months[^cleanlab]. You can't stabilize what keeps changing underneath you.
+**The platform keeps moving**: 70% of regulated enterprises rebuild their AI stack every 3 months. You can't stabilize what keeps changing underneath you.
 
 How teams adapted:
-- 68% of production agents run fewer than 10 steps before human intervention[^breunig]
-- 92.5% of agents deliver output to humans, not other systems[^breunig]
+- 68% of production agents run fewer than 10 steps before human intervention
+- 92.5% of agents deliver output to humans, not other systems
 - Autonomy got deliberately constrained
 
 Tool calling improved—error rates dropped from ~40% to ~10%. But the gap between 90% reliability and 99.9% reliability is still the difference between demo and deployment.
@@ -627,7 +627,7 @@ Traditional debugging: set a breakpoint, examine state, step through code.
 
 Agent debugging: hope your logs are comprehensive enough to guess what happened.
 
-The challenges are different[^maxim]:
+The challenges are different:
 - **Non-deterministic execution**: Same input, different paths
 - **Long conversations**: Bugs emerge 50+ exchanges in
 - **Emergent behaviors**: Fixing one agent breaks another
@@ -758,15 +758,11 @@ This report synthesized insights from numerous sources, including the State of A
 
 ## References
 
-[^iconiq]: ICONIQ Venture & Growth, ["2025 State of AI Report"](https://iconiqcapital.com/growth/insights/2025-state-of-ai-report), 2025
-[^stateofai]: Air Street Capital, ["State of AI Report 2025"](https://www.stateof.ai/), 2025
-[^kanwat]: Utkarsh Kanwat, ["Betting Against Agents"](https://blog.langchain.dev/betting-against-agents/), 2025
-[^security]: ["AI Security and Guardrails Research"](https://www.llmguardrails.com/), 2025
-[^a2a]: Google, ["A2A Protocol"](https://developers.google.com/agent-to-agent), 2025
-[^cleanlab]: Cleanlab, ["AI Agents in Production 2025: Enterprise Trends and Best Practices"](https://cleanlab.ai/blog/ai-agents-report-2025/), 2025
-[^vectara]: Vectara, ["Hallucination Leaderboard"](https://huggingface.co/spaces/vectara/Hallucination-evaluation-leaderboard), 2025
-[^voronoi]: Voronoi App, ["Leading AI Models Show Persistent Hallucinations Despite Accuracy Gains"](https://www.voronoiapp.com/technology/Leading-AI-Models-Show-Persistent-Hallucinations-Despite-Accuracy-Gains-3572), 2025
-[^ragflow]: RAGFlow, ["From RAG to Context: A 2025 Year-End Review"](https://ragflow.io/blog/rag-year-end-review-2025), December 2025
-[^mit]: MIT / Fortune, ["95% of Generative AI Pilots at Companies Are Failing"](https://fortune.com/2025/08/20/generative-ai-pilots-failing-mit-report/), August 2025
-[^breunig]: Drew Breunig, ["Enterprise Agents Have a Reliability Problem"](https://www.dbreunig.com/2025/12/18/enterprise-agents-reliability.html), December 2025
-[^maxim]: Maxim AI, ["Agent Tracing for Debugging Multi-Agent AI Systems"](https://www.getmaxim.ai/blog/agent-tracing), 2025
+[^iconiq]: ICONIQ Venture & Growth, ["2025 State of AI Report"](https://www.iconiqcapital.com/growth/reports/2025-state-of-ai), 2025
+[^stateofai]: Air Street Capital, ["State of AI Report 2025"](https://nathanbenaich.substack.com/p/the-state-of-ai-report-2025), 2025
+[^kanwat]: Utkarsh Kanwat, ["Betting Against Agents"](https://utkarshkanwat.com/writing/betting-against-agents), 2025
+[^mckinsey]: McKinsey, ["The State of AI"](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai), 2025
+[^willison]: Simon Willison, ["The Year in LLMs"](https://simonwillison.net/2025/Dec/31/the-year-in-llms/), December 2025
+[^contextgraphs]: Foundation Capital, ["Context Graphs: AI's Trillion Dollar Opportunity"](https://foundationcapital.com/context-graphs-ais-trillion-dollar-opportunity/), 2025
+[^agentskills]: Anthropic, ["Agent Skills Overview"](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview), 2025
+[^anthropic]: Anthropic, ["Effective Harnesses for Long-Running Agents"](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents), 2025
