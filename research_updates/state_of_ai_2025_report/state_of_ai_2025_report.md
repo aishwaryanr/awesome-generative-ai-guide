@@ -784,10 +784,6 @@ The state of applied AI in 2025? It works, mostly. It's expensive, sometimes. It
 
 ---
 
-## About the Authors
-
-*[Author bios would go here]*
-
 ## Acknowledgments
 
 This report synthesized insights from numerous sources, including the State of AI Report 2025, ICONIQ Venture & Growth's research, Simon Willison's year-end review, and the work of many researchers and practitioners advancing the field. Special thanks to the teams building the standards and infrastructure that make applied AI possible.
