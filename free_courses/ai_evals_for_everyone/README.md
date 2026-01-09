@@ -78,8 +78,8 @@ Start from zero and learn step-by-step how to build AI evaluation systems. This 
 *📝 Note: Use code **GITHUB15** for a limited 15% off on Maven courses (valid until January 15th, 2025)*
 
 ### 📱 Stay Connected
-- **Follow [Aishwarya on LinkedIn](https://www.linkedin.com/in/aishwarya-naresh-reganti/)** for AI evaluation insights and updates
-- **Follow [Kiriti on LinkedIn](https://www.linkedin.com/in/kiritibadam/)** for production AI learnings
+- **Follow [Aishwarya on LinkedIn](https://www.linkedin.com/in/areganti/)** for AI evaluation insights and updates
+- **Follow [Kiriti on LinkedIn](https://www.linkedin.com/in/sai-kiriti-badam/)** for production AI learnings
 - Get the latest resources, tips, and industry updates directly in your feed!
 
 ## 📄 License
