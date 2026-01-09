@@ -18,7 +18,7 @@ Key findings:
 
 If you've been building with AI this year, you've probably noticed something: the wins didn't come from better models. They came from better plumbing.
 
-47% of AI-native companies reached critical market scale in 2025[^1]. Not because GPT-5 dropped or some research lab cracked AGI—but because we finally figured out how to connect the pieces we already had. Standards emerged. Integration got easier. The unsexy work of making things talk to each other started paying off.
+47% of AI-native companies reached critical market scale in 2025[^iconiq]. Not because GPT-5 dropped or some research lab cracked AGI—but because we finally figured out how to connect the pieces we already had. Standards emerged. Integration got easier. The unsexy work of making things talk to each other started paying off.
 
 ### The Four Layers That Matter
 
@@ -34,27 +34,27 @@ MCP (Model Context Protocol) is the reason. Donated to the Linux Foundation in D
 
 DeepSeek's R1 in January was the technical story of the year. Not for benchmark scores—for the training approach. RLVR (Reinforcement Learning with Verifiable Rewards) lets models learn reasoning from outcomes alone. You tell the model if the answer was right or wrong. It figures out the reasoning steps itself.
 
-The geographic shift matters too. Qwen now powers 40% of new fine-tunes on Hugging Face[^2], passing Meta's Llama. Chinese models run on cheaper hardware, support more languages, and come with permissive licenses. If you're defaulting to closed APIs without evaluating open alternatives, you're probably overpaying.
+The geographic shift matters too. Qwen now powers 40% of new fine-tunes on Hugging Face[^stateofai], passing Meta's Llama. Chinese models run on cheaper hardware, support more languages, and come with permissive licenses. If you're defaulting to closed APIs without evaluating open alternatives, you're probably overpaying.
 
 **Applications: Agents Find Their Lane**
 
-80% of companies invested in agentic workflows this year[^3]. Most of those investments went to three use cases: coding assistance (77% adoption), content generation (65%), and documentation search (57%)[^4]. These aren't flashy applications. They're the ones with clear success metrics and measurable productivity gains—15-30% improvements that actually show up in the numbers[^5].
+80% of companies invested in agentic workflows this year[^iconiq]. Most of those investments went to three use cases: coding assistance (77% adoption), content generation (65%), and documentation search (57%)[^iconiq]. These aren't flashy applications. They're the ones with clear success metrics and measurable productivity gains—15-30% improvements that actually show up in the numbers[^iconiq].
 
 The standardization work mattered here too. Agent Skills gave us a common way to describe tool capabilities. A2A protocol (50+ partners at launch) let agents from different vendors coordinate. Context graphs made agent decisions debuggable. Without this infrastructure, agents were demo-ware. With it, they're production tools.
 
 **Output: Trust as Engineering**
 
-Security frameworks can now intervene in under 5 minutes with less than 2% false positives[^6]. That's real progress. But here's the math that keeps me up at night: 95% accuracy per step means 36% success over a 20-step workflow[^7]. That's not a tuning problem—it's an architecture problem.
+Security frameworks can now intervene in under 5 minutes with less than 2% false positives[^security]. That's real progress. But here's the math that keeps me up at night: 95% accuracy per step means 36% success over a 20-step workflow[^kanwat]. That's not a tuning problem—it's an architecture problem.
 
 ### What the Numbers Actually Say
 
 Some uncomfortable realities from 2025:
 
-70% of employees have AI tool access. Only 50% use them regularly[^8]. Access isn't adoption. Adoption requires workflow redesign.
+70% of employees have AI tool access. Only 50% use them regularly[^iconiq]. Access isn't adoption. Adoption requires workflow redesign.
 
-Hiring an AI engineer takes 70 days on average[^9]. 54% of companies say they're falling behind on AI talent[^10]. High-growth companies are putting 37% of engineering resources into AI[^11]. That talent has to come from somewhere.
+Hiring an AI engineer takes 70 days on average[^iconiq]. 54% of companies say they're falling behind on AI talent[^iconiq]. High-growth companies are putting 37% of engineering resources into AI[^iconiq]. That talent has to come from somewhere.
 
-100-turn agent conversations cost $50-100 in compute[^12]. Average enterprise AI contracts hit $530,000[^13]. These aren't pilot budgets anymore.
+100-turn agent conversations cost $50-100 in compute[^kanwat]. Average enterprise AI contracts hit $530,000[^stateofai]. These aren't pilot budgets anymore.
 
 ### The Actual Takeaway
 
@@ -66,20 +66,6 @@ The following sections dig into each layer—what's working, what's still broken
 > - Integration and standardization drove production success more than model improvements.
 > - Multi-step workflows fail fast: plan for compound error rates in your architecture.
 > - Giving employees AI access isn't enough—adoption requires workflow redesign.
-
-[^1]: ICONIQ Venture & Growth 2025 State of AI Report
-[^2]: State of AI Report 2025
-[^3]: ICONIQ Venture & Growth 2025 State of AI Report
-[^4]: ICONIQ Venture & Growth 2025 State of AI Report
-[^5]: ICONIQ Venture & Growth 2025 State of AI Report
-[^6]: AI Security and Guardrails Research 2025
-[^7]: Utkarsh Kanwat, "Betting Against Agents"
-[^8]: ICONIQ Venture & Growth 2025 State of AI Report
-[^9]: ICONIQ Venture & Growth 2025 State of AI Report
-[^10]: ICONIQ Venture & Growth 2025 State of AI Report
-[^11]: ICONIQ Venture & Growth 2025 State of AI Report
-[^12]: Utkarsh Kanwat, "Betting Against Agents"
-[^13]: State of AI Report 2025
 
 ---
 
@@ -139,7 +125,7 @@ The idea is simple. Give the model problems with verifiable answers—math proof
 What this means for you:
 - RLVR models excel at tasks with clear success criteria (code, math, structured analysis)
 - They struggle with subjective tasks (marketing copy, creative writing)
-- They hallucinate 40-60% less in their trained domains[^14]
+- They hallucinate 40-60% less in their trained domains
 - They degrade gracefully—expressing uncertainty instead of fabricating confident answers
 - They're slower (3-5x inference time) but more reliable
 
@@ -147,7 +133,7 @@ If your use case has verifiable success metrics, RLVR-trained models are worth t
 
 #### The China Factor
 
-Qwen hit 40% of new fine-tunes on Hugging Face by Q4[^2]. That's not nationalism—it's practical engineering.
+Qwen hit 40% of new fine-tunes on Hugging Face by Q4[^stateofai]. That's not nationalism—it's practical engineering.
 
 Chinese teams optimized for deployment, not benchmarks:
 - Models run on consumer GPUs (RTX 4090)
@@ -160,9 +146,9 @@ If you're outside the US/Europe and can't afford H100 clusters, these models mig
 
 #### Why Everyone's Running Multiple Models
 
-The economics forced specialization. General-purpose 70B models cost $0.50-1.00 per 1,000 tokens[^15]. A customer service interaction at 10,000 tokens means $5-10 in compute. That doesn't scale.
+The economics forced specialization. General-purpose 70B models cost $0.50-1.00 per 1,000 tokens. A customer service interaction at 10,000 tokens means $5-10 in compute. That doesn't scale.
 
-A fine-tuned 7B model can match general model performance on specific tasks while costing 90% less. ICONIQ found companies deploying an average of 2.8 specialized models per product[^3]:
+A fine-tuned 7B model can match general model performance on specific tasks while costing 90% less. ICONIQ found companies deploying an average of 2.8 specialized models per product[^iconiq]:
 - One for query understanding
 - One for core task execution
 - One for response generation
@@ -192,7 +178,7 @@ Teams that did this well reduced costs 70-80%. Teams that didn't burned budget f
 The practical breakthrough wasn't capability—it was self-awareness. Models in 2025 can assess their own confidence, identify knowledge gaps, and explain reasoning steps.
 
 This matters for production:
-- Support tickets dropped 30-40% when models expressed appropriate uncertainty[^17]
+- Support tickets dropped 30-40% when models expressed appropriate uncertainty
 - Debugging time cut in half with reasoning traces
 - User trust increased when models admitted limitations
 
@@ -231,7 +217,7 @@ The agents that worked shared four characteristics:
 - **Verification at every step**: Not just "did the API call succeed?" but "did it move us toward the goal?"
 - **Explicit failure handling**: Assume every step can fail. Have fallbacks ready.
 
-The adoption numbers reflect this pragmatism. Coding assistance hit 77%[^4] because success is measurable—code compiles or it doesn't. Content generation reached 65% where templates provided structure. Documentation search got to 57% but required extensive preprocessing work.
+The adoption numbers reflect this pragmatism. Coding assistance hit 77%[^iconiq] because success is measurable—code compiles or it doesn't. Content generation reached 65% where templates provided structure. Documentation search got to 57% but required extensive preprocessing work.
 
 #### Tool Calling: Where the Time Goes
 
@@ -249,11 +235,11 @@ What works:
 - **Version your tools**: When behavior changes, create a new version
 - **Include examples**: 10-20 per function, covering edge cases
 
-Teams report 60-70% of development time goes to integration and error handling[^18]. Plan for it.
+Teams report 60-70% of development time goes to integration and error handling. Plan for it.
 
 #### Standards That Matter
 
-Agent Skills specification standardized tool descriptions. A2A protocol (50+ vendors by April[^6]) enabled agent collaboration. Both succeeded by being minimal—solving the immediate problem without overreaching.
+Agent Skills specification standardized tool descriptions. A2A protocol (50+ vendors by April[^a2a]) enabled agent collaboration. Both succeeded by being minimal—solving the immediate problem without overreaching.
 
 Context graphs solved the debugging problem. They capture not just what an agent did but why—every decision point, evaluated option, rejected path. When something breaks, you can trace the reasoning instead of guessing.
 
@@ -298,7 +284,7 @@ Successful implementations made fallbacks transparent to users while maintaining
 
 #### The Real Productivity Numbers
 
-The 15-30% productivity gains[^5] hid significant variations. Coding assistants showed:
+The 15-30% productivity gains[^iconiq] hid significant variations. Coding assistants showed:
 - 40-50% speedup on boilerplate generation
 - 20-30% on test writing
 - 10-15% on complex logic implementation
@@ -361,7 +347,7 @@ The output layer in 2025 became the battlefield where AI's promises met enterpri
 The security landscape of 2025 bore little resemblance to the simple content filters of earlier years. Modern runtime security operated more like an immune system than a wall—constantly adapting, learning from threats, and intervening with precision rather than brute force.
 
 The numbers that mattered:
-- **Detection latency**: 5 minutes from output generation to intervention[^7]
+- **Detection latency**: 5 minutes from output generation to intervention[^security]
 - **False positive rate**: <2% for critical violations
 - **Coverage**: 95% of known attack vectors
 - **Adaptation speed**: 24-48 hours for new threat patterns
@@ -392,7 +378,7 @@ But these metrics hid tremendous complexity. A typical security stack included:
 - 24-hour SLA for critical reviews
 - Feedback loop to improve automation
 
-Implementing this stack required specialized expertise. Security engineers who understood both traditional application security and AI-specific risks commanded premium salaries. The average enterprise spent $2-5M annually on AI security infrastructure and personnel[^20].
+Implementing this stack required specialized expertise. Security engineers who understood both traditional application security and AI-specific risks commanded premium salaries. The average enterprise spent $2-5M annually on AI security infrastructure and personnel.
 
 The evolution of attack vectors drove constant adaptation:
 - **Prompt injection**: From simple attempts to sophisticated multi-turn manipulations
@@ -447,7 +433,7 @@ The tooling ecosystem struggled to keep pace. Traditional A/B testing frameworks
 
 #### The Reliability Math Nobody Wants to Discuss
 
-The compound probability problem became 2025's most sobering reality check. Every practitioner memorized the brutal math: 0.95^20 = 0.358. A 95% reliable system over 20 steps yields 36% end-to-end success[^8]. This wasn't a implementation detail—it was a fundamental constraint shaping every architectural decision.
+The compound probability problem became 2025's most sobering reality check. Every practitioner memorized the brutal math: 0.95^20 = 0.358. A 95% reliable system over 20 steps yields 36% end-to-end success[^kanwat]. This wasn't a implementation detail—it was a fundamental constraint shaping every architectural decision.
 
 Real-world implications were stark:
 - **Customer service workflows** averaging 15 steps: 46% success rate
@@ -480,7 +466,7 @@ Traditional software engineering assumed 99.99%+ reliability per component. AI's
 - Outlier detection and handling
 - 5x cost for 3x reliability
 
-The economics forced hard choices. At $50-100 per 100-turn conversation[^9], adding reliability through redundancy quickly became prohibitive. Organizations learned to:
+The economics forced hard choices. At $50-100 per 100-turn conversation[^kanwat], adding reliability through redundancy quickly became prohibitive. Organizations learned to:
 - Reserve high-reliability architectures for high-value use cases
 - Accept lower reliability for exploratory/creative tasks
 - Design user experiences acknowledging potential failures
@@ -491,7 +477,7 @@ The economics forced hard choices. At $50-100 per 100-turn conversation[^9], add
 ![Engineering Allocation](./images/engineering_allocation.png)
 *Figure 4: High-growth companies allocate up to 37% of engineering resources to AI initiatives. Source: ICONIQ Venture & Growth, 2025*
 
-The 37% engineering allocation at high-growth companies[^10] tells only part of the story. The nature of that engineering work differed fundamentally from traditional software development:
+The 37% engineering allocation at high-growth companies[^iconiq] tells only part of the story. The nature of that engineering work differed fundamentally from traditional software development:
 
 **50% Infrastructure and tooling**:
 - Observability stacks for non-deterministic systems
@@ -538,7 +524,7 @@ Key engineering practices that emerged:
 - Batch processing for non-real-time needs
 - Continuous cost optimization
 
-The talent required for this work was scarce and expensive. An AI infrastructure engineer with production experience commanded $400-600k total compensation[^21]. But the alternative—systems that leaked money, failed unpredictably, or exposed companies to risk—cost far more.
+The talent required for this work was scarce and expensive. An AI infrastructure engineer with production experience commanded $400-600k total compensation. But the alternative—systems that leaked money, failed unpredictably, or exposed companies to risk—cost far more.
 
 #### The Trust Equation
 
@@ -564,16 +550,6 @@ As we entered 2026, the question was no longer "Can we trust AI?" but "How much 
 > - Hiring AI engineers takes months. Start recruiting now or train internally.
 > - Match your reliability investment to your use case risk. Not every application needs five-nines.
 
-[^2]: State of AI Report 2025
-[^3]: ICONIQ Venture & Growth 2025 State of AI Report
-[^4]: ICONIQ Venture & Growth 2025 State of AI Report
-[^5]: ICONIQ Venture & Growth 2025 State of AI Report
-[^6]: 2025 Research on A2A Protocol
-[^7]: AI Security and Guardrails Research 2025
-[^8]: Utkarsh Kanwat, "Betting Against Agents"
-[^9]: Utkarsh Kanwat, "Betting Against Agents"
-[^10]: ICONIQ Venture & Growth 2025 State of AI Report
-
 ---
 
 ## Section 3: What's Still Broken
@@ -584,24 +560,24 @@ The progress in 2025 brought clarity about what AI can do—and equal clarity ab
 
 Hallucination rates have dropped, but let's be specific about what that means.
 
-Top models now hit sub-1% hallucination rates on simple factual queries[^h2]. Gemini 2.0 Flash leads at 0.7%. Four models have crossed this threshold—real progress.
+Top models now hit sub-1% hallucination rates on simple factual queries[^vectara]. Gemini 2.0 Flash leads at 0.7%. Four models have crossed this threshold—real progress.
 
 But that's the easy case. For complex reasoning, the numbers look different:
 - Thinking models (Claude Sonnet 4, GPT-5, Deepseek-R1): 10%+
 - Legal information: 6.4% even with top models
-- General knowledge: 0.8%[^h2]
+- General knowledge: 0.8%[^vectara]
 
 The gap matters. If you're building a legal research tool, expect six times more hallucinations than a general Q&A bot using the same model.
 
 Why this persists:
 - Models learn statistical patterns, not actual understanding
 - Training data has gaps and errors
-- Mathematical research confirms: complete elimination is impossible with current architectures[^h3]
+- Mathematical research confirms: complete elimination is impossible with current architectures[^voronoi]
 
 What works in practice:
 - RAG reduces hallucinations but doesn't eliminate them
 - Multi-model validation catches some errors
-- Human oversight remains necessary—and less than 1 in 3 teams are satisfied with their current observability tools[^h1]
+- Human oversight remains necessary—and less than 1 in 3 teams are satisfied with their current observability tools[^cleanlab]
 
 Design your systems assuming hallucinations will happen. The question isn't "how do we prevent them?" but "how do we catch them before they cause damage?"
 
@@ -610,7 +586,7 @@ Design your systems assuming hallucinations will happen. The question isn't "how
 ![RAG Hype Cycle](./images/rag_hype_cycle.png)
 *Figure 5: RAG hype peaked in early-mid 2023. Long-context alternatives are emerging. Source: RAGFlow/LightOn, 2025*
 
-RAGFlow's researchers describe RAG as in "a phase of stagnation"[^r1]. Academic papers keep appearing. Breakthroughs don't.
+RAGFlow's researchers describe RAG as in "a phase of stagnation"[^ragflow]. Academic papers keep appearing. Breakthroughs don't.
 
 The core problems:
 
@@ -619,7 +595,7 @@ The core problems:
 ![Long Context RAG Architecture](./images/long_context_rag.png)
 *Figure 6: Hybrid tree-graph retrieval attempts to bridge the semantic gap. Source: RAGFlow, 2025*
 
-**Storage costs for multimodal**: A single page image requires ~512KB in tensor storage. A million-page corpus hits terabytes. That's before you consider retrieval latency[^r1].
+**Storage costs for multimodal**: A single page image requires ~512KB in tensor storage. A million-page corpus hits terabytes. That's before you consider retrieval latency[^ragflow].
 
 **Similarity isn't relevance**: Query "customer churn Q4" and you'll get documents about customer satisfaction, Q4 financials, and historical churn data—all semantically related, none actually answering your question.
 
@@ -630,17 +606,17 @@ Newer approaches (TreeRAG, GraphRAG, tensor quantization) show promise but add c
 ![Multi-Agent System Architecture](./images/multi_agent_system.png)
 *Figure 7: Multi-agent debugging is fundamentally different from traditional software. Source: Maxim AI, 2025*
 
-MIT research found 95% of generative AI pilots fail to reach production[^a1]. That's not hyperbole—it's data.
+MIT research found 95% of generative AI pilots fail to reach production[^mit]. That's not hyperbole—it's data.
 
 Why so many fail:
 
 **The reliability math doesn't work**: 5% error rate is fine for chatbots. It's catastrophic for agents that update databases or place orders. And 95% reliability per step means 36% success over 20 steps. Production systems need 99.9%+.
 
-**The platform keeps moving**: 70% of regulated enterprises rebuild their AI stack every 3 months[^h1]. You can't stabilize what keeps changing underneath you.
+**The platform keeps moving**: 70% of regulated enterprises rebuild their AI stack every 3 months[^cleanlab]. You can't stabilize what keeps changing underneath you.
 
 How teams adapted:
-- 68% of production agents run fewer than 10 steps before human intervention[^a2]
-- 92.5% of agents deliver output to humans, not other systems[^a2]
+- 68% of production agents run fewer than 10 steps before human intervention[^breunig]
+- 92.5% of agents deliver output to humans, not other systems[^breunig]
 - Autonomy got deliberately constrained
 
 Tool calling improved—error rates dropped from ~40% to ~10%. But the gap between 90% reliability and 99.9% reliability is still the difference between demo and deployment.
@@ -651,7 +627,7 @@ Traditional debugging: set a breakpoint, examine state, step through code.
 
 Agent debugging: hope your logs are comprehensive enough to guess what happened.
 
-The challenges are different[^d1]:
+The challenges are different[^maxim]:
 - **Non-deterministic execution**: Same input, different paths
 - **Long conversations**: Bugs emerge 50+ exchanges in
 - **Emergent behaviors**: Fixing one agent breaks another
@@ -679,14 +655,6 @@ The honest assessment from practitioners: AI is transformative for specific, wel
 > - Production agents need human oversight. Design for it rather than fighting it.
 > - RAG works for basic retrieval but struggles with nuance. Evaluate whether long-context models fit your use case better.
 > - Invest in observability early—debugging agents without tracing is guesswork.
-
-[^h1]: Cleanlab, "AI Agents in Production 2025: Enterprise Trends and Best Practices," 2025
-[^h2]: Vectara Hallucination Leaderboard / All About AI, "AI Hallucination Rates Across Models," 2025
-[^h3]: Voronoi App, "Leading AI Models Show Persistent Hallucinations Despite Accuracy Gains," 2025
-[^r1]: RAGFlow, "From RAG to Context: A 2025 Year-End Review," December 2025
-[^a1]: MIT / Fortune, "95% of Generative AI Pilots at Companies Are Failing," August 2025
-[^a2]: Drew Breunig, "Enterprise Agents Have a Reliability Problem," December 2025
-[^d1]: Maxim AI, "Agent Tracing for Debugging Multi-Agent AI Systems," 2025
 
 ---
 
@@ -764,10 +732,6 @@ The story of 2025 was integration beating isolation, standards trumping silos, a
 > - Build evaluation, cost tracking, and safety into your stack now. Enterprises will require it.
 > - Measure business outcomes, not AI capabilities.
 
-[^11]: Utkarsh Kanwat, "Betting Against Agents"
-[^12]: ICONIQ Venture & Growth 2025 State of AI Report
-[^13]: Utkarsh Kanwat, "Betting Against Agents"
-
 ---
 
 ## Conclusion
@@ -789,3 +753,20 @@ The state of applied AI in 2025? It works, mostly. It's expensive, sometimes. It
 ## Acknowledgments
 
 This report synthesized insights from numerous sources, including the State of AI Report 2025, ICONIQ Venture & Growth's research, Simon Willison's year-end review, and the work of many researchers and practitioners advancing the field. Special thanks to the teams building the standards and infrastructure that make applied AI possible.
+
+---
+
+## References
+
+[^iconiq]: ICONIQ Venture & Growth, "2025 State of AI Report," 2025
+[^stateofai]: Air Street Capital, "State of AI Report 2025," 2025
+[^kanwat]: Utkarsh Kanwat, "Betting Against Agents," 2025
+[^security]: AI Security and Guardrails Research, 2025
+[^a2a]: 2025 Research on A2A Protocol
+[^cleanlab]: Cleanlab, "AI Agents in Production 2025: Enterprise Trends and Best Practices," 2025
+[^vectara]: Vectara Hallucination Leaderboard / All About AI, "AI Hallucination Rates Across Models," 2025
+[^voronoi]: Voronoi App, "Leading AI Models Show Persistent Hallucinations Despite Accuracy Gains," 2025
+[^ragflow]: RAGFlow, "From RAG to Context: A 2025 Year-End Review," December 2025
+[^mit]: MIT / Fortune, "95% of Generative AI Pilots at Companies Are Failing," August 2025
+[^breunig]: Drew Breunig, "Enterprise Agents Have a Reliability Problem," December 2025
+[^maxim]: Maxim AI, "Agent Tracing for Debugging Multi-Agent AI Systems," 2025
