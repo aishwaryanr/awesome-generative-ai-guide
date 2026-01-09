@@ -1,5 +1,7 @@
 # State of Applied AI in 2025: A Comprehensive Report
 
+![The Applied AI Stack](images/applied_ai_stack.svg)
+
 ## Executive Summary
 
 In 2025, 47% of AI-native companies reached critical market scale, marking a fundamental shift from experimentation to production deployment. This report examines how each layer of the AI stack—from inputs to outputs—evolved to enable this transformation. Based on analysis of industry reports, technical breakthroughs, and real-world implementations, we present a comprehensive view of where applied AI stands today and what challenges remain.
