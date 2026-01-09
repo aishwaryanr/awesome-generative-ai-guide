@@ -18,7 +18,7 @@ Key findings:
 
 If you've been building with AI this year, you've probably noticed something: the wins didn't come from better models. They came from better plumbing.
 
-47% of AI-native companies reached critical market scale in 2025[^iconiq]. Not because GPT-5 dropped or some research lab cracked AGI—but because we finally figured out how to connect the pieces we already had. Standards emerged. Integration got easier. The unsexy work of making things talk to each other started paying off.
+47% of AI-native companies reached critical market scale in 2025 ([ICONIQ](https://www.iconiqcapital.com/growth/reports/2025-state-of-ai)). Not because GPT-5 dropped or some research lab cracked AGI—but because we finally figured out how to connect the pieces we already had. Standards emerged. Integration got easier. The unsexy work of making things talk to each other started paying off.
 
 ### The Four Layers That Matter
 
@@ -34,27 +34,27 @@ MCP (Model Context Protocol) is the reason. Donated to the Linux Foundation in D
 
 DeepSeek's R1 in January was the technical story of the year. Not for benchmark scores—for the training approach. RLVR (Reinforcement Learning with Verifiable Rewards) lets models learn reasoning from outcomes alone. You tell the model if the answer was right or wrong. It figures out the reasoning steps itself.
 
-The geographic shift matters too. Qwen now powers 40% of new fine-tunes on Hugging Face[^stateofai], passing Meta's Llama. Chinese models run on cheaper hardware, support more languages, and come with permissive licenses. If you're defaulting to closed APIs without evaluating open alternatives, you're probably overpaying.
+The geographic shift matters too. Qwen now powers 40% of new fine-tunes on Hugging Face ([State of AI Report](https://nathanbenaich.substack.com/p/the-state-of-ai-report-2025)), passing Meta's Llama. Chinese models run on cheaper hardware, support more languages, and come with permissive licenses. If you're defaulting to closed APIs without evaluating open alternatives, you're probably overpaying.
 
 **Applications: Agents Find Their Lane**
 
-80% of companies invested in agentic workflows this year[^iconiq]. Most of those investments went to three use cases: coding assistance (77% adoption), content generation (65%), and documentation search (57%)[^iconiq]. These aren't flashy applications. They're the ones with clear success metrics and measurable productivity gains—15-30% improvements that actually show up in the numbers[^iconiq].
+80% of companies invested in agentic workflows this year ([ICONIQ](https://www.iconiqcapital.com/growth/reports/2025-state-of-ai)). Most of those investments went to three use cases: coding assistance (77% adoption), content generation (65%), and documentation search (57%) ([ICONIQ](https://www.iconiqcapital.com/growth/reports/2025-state-of-ai)). These aren't flashy applications. They're the ones with clear success metrics and measurable productivity gains—15-30% improvements that actually show up in the numbers ([ICONIQ](https://www.iconiqcapital.com/growth/reports/2025-state-of-ai)).
 
 The standardization work mattered here too. Agent Skills gave us a common way to describe tool capabilities. A2A protocol (50+ partners at launch) let agents from different vendors coordinate. Context graphs made agent decisions debuggable. Without this infrastructure, agents were demo-ware. With it, they're production tools.
 
 **Output: Trust as Engineering**
 
-Security frameworks can now intervene in under 5 minutes with less than 2% false positives. That's real progress. But here's the math that keeps me up at night: 95% accuracy per step means 36% success over a 20-step workflow[^kanwat]. That's not a tuning problem—it's an architecture problem.
+Security frameworks can now intervene in under 5 minutes with less than 2% false positives. That's real progress. But here's the math that keeps me up at night: 95% accuracy per step means 36% success over a 20-step workflow ([Kanwat](https://utkarshkanwat.com/writing/betting-against-agents)). That's not a tuning problem—it's an architecture problem.
 
 ### What the Numbers Actually Say
 
 Some uncomfortable realities from 2025:
 
-70% of employees have AI tool access. Only 50% use them regularly[^iconiq]. Access isn't adoption. Adoption requires workflow redesign.
+70% of employees have AI tool access. Only 50% use them regularly ([ICONIQ](https://www.iconiqcapital.com/growth/reports/2025-state-of-ai)). Access isn't adoption. Adoption requires workflow redesign.
 
-Hiring an AI engineer takes 70 days on average[^iconiq]. 54% of companies say they're falling behind on AI talent[^iconiq]. High-growth companies are putting 37% of engineering resources into AI[^iconiq]. That talent has to come from somewhere.
+Hiring an AI engineer takes 70 days on average ([ICONIQ](https://www.iconiqcapital.com/growth/reports/2025-state-of-ai)). 54% of companies say they're falling behind on AI talent ([ICONIQ](https://www.iconiqcapital.com/growth/reports/2025-state-of-ai)). High-growth companies are putting 37% of engineering resources into AI ([ICONIQ](https://www.iconiqcapital.com/growth/reports/2025-state-of-ai)). That talent has to come from somewhere.
 
-100-turn agent conversations cost $50-100 in compute[^kanwat]. Average enterprise AI contracts hit $530,000[^stateofai]. These aren't pilot budgets anymore.
+100-turn agent conversations cost $50-100 in compute ([Kanwat](https://utkarshkanwat.com/writing/betting-against-agents)). Average enterprise AI contracts hit $530,000 ([State of AI Report](https://nathanbenaich.substack.com/p/the-state-of-ai-report-2025)). These aren't pilot budgets anymore.
 
 ### The Actual Takeaway
 
@@ -133,7 +133,7 @@ If your use case has verifiable success metrics, RLVR-trained models are worth t
 
 #### The China Factor
 
-Qwen hit 40% of new fine-tunes on Hugging Face by Q4[^stateofai]. That's not nationalism—it's practical engineering.
+Qwen hit 40% of new fine-tunes on Hugging Face by Q4 ([State of AI Report](https://nathanbenaich.substack.com/p/the-state-of-ai-report-2025)). That's not nationalism—it's practical engineering.
 
 Chinese teams optimized for deployment, not benchmarks:
 - Models run on consumer GPUs (RTX 4090)
@@ -148,7 +148,7 @@ If you're outside the US/Europe and can't afford H100 clusters, these models mig
 
 The economics forced specialization. General-purpose 70B models cost $0.50-1.00 per 1,000 tokens. A customer service interaction at 10,000 tokens means $5-10 in compute. That doesn't scale.
 
-A fine-tuned 7B model can match general model performance on specific tasks while costing 90% less. ICONIQ found companies deploying an average of 2.8 specialized models per product[^iconiq]:
+A fine-tuned 7B model can match general model performance on specific tasks while costing 90% less. ICONIQ found companies deploying an average of 2.8 specialized models per product ([ICONIQ](https://www.iconiqcapital.com/growth/reports/2025-state-of-ai)):
 - One for query understanding
 - One for core task execution
 - One for response generation
@@ -217,7 +217,7 @@ The agents that worked shared four characteristics:
 - **Verification at every step**: Not just "did the API call succeed?" but "did it move us toward the goal?"
 - **Explicit failure handling**: Assume every step can fail. Have fallbacks ready.
 
-The adoption numbers reflect this pragmatism. Coding assistance hit 77%[^iconiq] because success is measurable—code compiles or it doesn't. Content generation reached 65% where templates provided structure. Documentation search got to 57% but required extensive preprocessing work.
+The adoption numbers reflect this pragmatism. Coding assistance hit 77% ([ICONIQ](https://www.iconiqcapital.com/growth/reports/2025-state-of-ai)) because success is measurable—code compiles or it doesn't. Content generation reached 65% where templates provided structure. Documentation search got to 57% but required extensive preprocessing work.
 
 #### Tool Calling: Where the Time Goes
 
@@ -284,7 +284,7 @@ Successful implementations made fallbacks transparent to users while maintaining
 
 #### The Real Productivity Numbers
 
-The 15-30% productivity gains[^iconiq] hid significant variations. Coding assistants showed:
+The 15-30% productivity gains ([ICONIQ](https://www.iconiqcapital.com/growth/reports/2025-state-of-ai)) hid significant variations. Coding assistants showed:
 - 40-50% speedup on boilerplate generation
 - 20-30% on test writing
 - 10-15% on complex logic implementation
@@ -433,7 +433,7 @@ The tooling ecosystem struggled to keep pace. Traditional A/B testing frameworks
 
 #### The Reliability Math Nobody Wants to Discuss
 
-The compound probability problem became 2025's most sobering reality check. Every practitioner memorized the brutal math: 0.95^20 = 0.358. A 95% reliable system over 20 steps yields 36% end-to-end success[^kanwat]. This wasn't a implementation detail—it was a fundamental constraint shaping every architectural decision.
+The compound probability problem became 2025's most sobering reality check. Every practitioner memorized the brutal math: 0.95^20 = 0.358. A 95% reliable system over 20 steps yields 36% end-to-end success ([Kanwat](https://utkarshkanwat.com/writing/betting-against-agents)). This wasn't a implementation detail—it was a fundamental constraint shaping every architectural decision.
 
 Real-world implications were stark:
 - **Customer service workflows** averaging 15 steps: 46% success rate
@@ -466,7 +466,7 @@ Traditional software engineering assumed 99.99%+ reliability per component. AI's
 - Outlier detection and handling
 - 5x cost for 3x reliability
 
-The economics forced hard choices. At $50-100 per 100-turn conversation[^kanwat], adding reliability through redundancy quickly became prohibitive. Organizations learned to:
+The economics forced hard choices. At $50-100 per 100-turn conversation ([Kanwat](https://utkarshkanwat.com/writing/betting-against-agents)), adding reliability through redundancy quickly became prohibitive. Organizations learned to:
 - Reserve high-reliability architectures for high-value use cases
 - Accept lower reliability for exploratory/creative tasks
 - Design user experiences acknowledging potential failures
@@ -477,7 +477,7 @@ The economics forced hard choices. At $50-100 per 100-turn conversation[^kanwat]
 ![Engineering Allocation](./images/engineering_allocation.png)
 *Figure 4: High-growth companies allocate up to 37% of engineering resources to AI initiatives. Source: ICONIQ Venture & Growth, 2025*
 
-The 37% engineering allocation at high-growth companies[^iconiq] tells only part of the story. The nature of that engineering work differed fundamentally from traditional software development:
+The 37% engineering allocation at high-growth companies ([ICONIQ](https://www.iconiqcapital.com/growth/reports/2025-state-of-ai)) tells only part of the story. The nature of that engineering work differed fundamentally from traditional software development:
 
 **50% Infrastructure and tooling**:
 - Observability stacks for non-deterministic systems
@@ -758,11 +758,11 @@ This report synthesized insights from numerous sources, including the State of A
 
 ## References
 
-[^iconiq]: ICONIQ Venture & Growth, ["2025 State of AI Report"](https://www.iconiqcapital.com/growth/reports/2025-state-of-ai), 2025
-[^stateofai]: Air Street Capital, ["State of AI Report 2025"](https://nathanbenaich.substack.com/p/the-state-of-ai-report-2025), 2025
-[^kanwat]: Utkarsh Kanwat, ["Betting Against Agents"](https://utkarshkanwat.com/writing/betting-against-agents), 2025
-[^mckinsey]: McKinsey, ["The State of AI"](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai), 2025
-[^willison]: Simon Willison, ["The Year in LLMs"](https://simonwillison.net/2025/Dec/31/the-year-in-llms/), December 2025
-[^contextgraphs]: Foundation Capital, ["Context Graphs: AI's Trillion Dollar Opportunity"](https://foundationcapital.com/context-graphs-ais-trillion-dollar-opportunity/), 2025
-[^agentskills]: Anthropic, ["Agent Skills Overview"](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview), 2025
-[^anthropic]: Anthropic, ["Effective Harnesses for Long-Running Agents"](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents), 2025
+- ICONIQ Venture & Growth, ["2025 State of AI Report"](https://www.iconiqcapital.com/growth/reports/2025-state-of-ai), 2025
+- Air Street Capital, ["State of AI Report 2025"](https://nathanbenaich.substack.com/p/the-state-of-ai-report-2025), 2025
+- Utkarsh Kanwat, ["Betting Against Agents"](https://utkarshkanwat.com/writing/betting-against-agents), 2025
+- McKinsey, ["The State of AI"](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai), 2025
+- Simon Willison, ["The Year in LLMs"](https://simonwillison.net/2025/Dec/31/the-year-in-llms/), December 2025
+- Foundation Capital, ["Context Graphs: AI's Trillion Dollar Opportunity"](https://foundationcapital.com/context-graphs-ais-trillion-dollar-opportunity/), 2025
+- Anthropic, ["Agent Skills Overview"](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview), 2025
+- Anthropic, ["Effective Harnesses for Long-Running Agents"](https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents), 2025
