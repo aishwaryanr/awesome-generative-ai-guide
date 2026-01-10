@@ -39,64 +39,69 @@
             </ul>
         </div>
 
-        <!-- SLIDE: The Shift -->
-        <div class="slide slide-statement">
-            <h2>People wanted delegation, not answers.</h2>
-            <p class="small">Book the meeting. Pull the numbers. Draft the doc. Update the ticket. Reconcile the spreadsheet. The success metric moved from "a good response" to "a completed outcome."</p>
-        </div>
-
         <!-- ============================================ -->
         <!-- RAG IN 2025 -->
         <!-- ============================================ -->
+
+        <!-- SLIDE: Flashback -->
+        <div class="slide slide-content">
+            <span class="topic-tag orange">RAG</span>
+            <h2>Flashback: What RAG Is</h2>
+            <div class="body">
+                <div class="text">
+                    <p><strong>RAG = Retrieve → Augment → Generate</strong></p>
+                    <ul>
+                        <li><strong>Retrieve:</strong> pull the most relevant chunks from your knowledge base</li>
+                        <li><strong>Augment:</strong> inject those chunks into the model’s context</li>
+                        <li><strong>Generate:</strong> answer using retrieved evidence (ideally with citations)</li>
+                    </ul>
+                    <p style="margin-top: 1rem;"><strong>Naive RAG</strong> meant one-shot retrieval and hope. It breaks on synthesis, drift, and noisy chunks.</p>
+                </div>
+                <div class="visual" style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="images/pdf_rag_layout_parser_pipeline.png" alt="Naive RAG pipeline" style="max-height: 52vh;">
+                    <p style="font-size: 0.7rem; color: #888; margin-top: 0.5rem;">Source: <a href="https://cloud.google.com/blog/products/ai-machine-learning/build-retrieval-augmented-generation-rag-using-vertex-ai-search-and-gecko" target="_blank" style="color: #aaa;">Google Cloud</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Long Context Hype -->
+        <div class="slide slide-statement">
+            <span class="topic-tag orange">RAG</span>
+            <h2>Then context windows increased—and people assumed RAG was over.</h2>
+            <p class="small">If you can fit a whole corpus into context, why retrieve at all? That was the belief. Reality was messier: cost, freshness, permissions, and noise didn’t disappear.</p>
+        </div>
 
         <!-- SLIDE: RAG Didn't Die -->
         <div class="slide slide-statement">
             <span class="topic-tag orange">RAG</span>
             <h2>RAG didn't die. Naive RAG did.</h2>
-            <p class="small">The shift was from "add embeddings and pray" to "engineer retrieval like a real subsystem." What showed up in practice: hybrid retrieval, serious chunking strategies, metadata filtering, and access control.</p>
+            <p class="small">Long context is a bigger desk. RAG is still choosing the right papers to put on it—and doing so under real-world constraints.</p>
         </div>
 
-        <!-- SLIDE: What Changed in RAG -->
-        <div class="slide slide-cards">
+        <!-- SLIDE: Why RAG Stayed -->
+        <div class="slide slide-content">
             <span class="topic-tag orange">RAG</span>
-            <h2>How RAG Matured in 2025</h2>
-            <div class="cards-grid stacked">
-                <div class="card" style="border-left: 4px solid var(--blue);">
-                    <h3>Hybrid Retrieval Became Normal</h3>
-                    <p>Sparse retrieval (BM25) for exact matches. Dense embeddings for semantic matches. Reranking to pick the final context. Better retrieval wasn't just better embeddings—it was better input to retrieval.</p>
+            <h2>Why Retrieval Stayed Relevant</h2>
+            <div class="body">
+                <div class="text">
+                    <ul>
+                        <li class="blue"><strong>Cost control.</strong> Huge context windows are expensive. Retrieval lets you pay only for what you need.</li>
+                        <li class="green"><strong>Freshness.</strong> If data changes daily, you don't want to keep repacking massive context. Fetch what's current.</li>
+                        <li class="purple"><strong>Access control.</strong> "Put it all in the prompt" breaks down when different users have different permissions.</li>
+                        <li class="orange"><strong>Auditability.</strong> Retrieval makes it easier to show what sources were used and why.</li>
+                        <li class="orange"><strong>Long‑context reality:</strong> Databricks finds performance often peaks, then degrades as context grows—effective context is shorter than the max window.</li>
+                    </ul>
                 </div>
-                <div class="card" style="border-left: 4px solid var(--orange);">
-                    <h3>RAG Became a Workflow, Not a Single Call</h3>
-                    <p>The system rewrites the query, does multi-step retrieval, picks sources, verifies results, then answers. One-pass retrieval fails silently. The workflow approach makes failure visible and recoverable.</p>
-                </div>
-                <div class="card" style="border-left: 4px solid var(--purple);">
-                    <h3>Graph-Based Retrieval Got Attention</h3>
-                    <p>Traditional RAG is good at "find me the paragraph." It struggles at "summarize the themes" or "how do these concepts relate." GraphRAG builds structure over your data for corpus-level questions.</p>
+                <div class="visual" style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="images/databricks_long_context_performance.png" alt="Long context performance curve" style="max-height: 52vh;">
+                    <p style="font-size: 0.7rem; color: #888; margin-top: 0.5rem;">Source: <a href="https://www.databricks.com/blog/long-context-rag-research-brief" target="_blank" style="color: #aaa;">Databricks Research Brief</a></p>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE: Long Context + RAG -->
-        <div class="slide slide-statement">
-            <span class="topic-tag orange">RAG</span>
-            <h2>Long context is a bigger desk. RAG is choosing the right papers to put on it.</h2>
-            <p class="small">Long context reduces complexity for small, stable datasets. But enterprise needs—cost control, freshness, access control, auditability—kept retrieval relevant. Most teams landed on hybrid: use long context as a reasoning workspace, but still retrieve curated slices into it.</p>
-        </div>
-
-        <!-- SLIDE: Why RAG Stayed -->
-        <div class="slide slide-list">
-            <span class="topic-tag orange">RAG</span>
-            <h2>Why Retrieval Stayed Relevant</h2>
-            <ul>
-                <li class="blue"><strong>Cost control.</strong> Passing huge context is expensive and often wasteful. Retrieval lets you pay only for what you need.</li>
-                <li class="green"><strong>Freshness.</strong> If data changes daily, you don't want to keep repacking massive context. Fetch what's current.</li>
-                <li class="purple"><strong>Access control.</strong> "Put it all in the prompt" breaks down when different users have different permissions.</li>
-                <li class="orange"><strong>Auditability.</strong> Retrieval makes it easier to show what sources were used and why.</li>
-            </ul>
-        </div>
-
         <!-- SLIDE 43e: RAG Theme 1 -->
         <div class="slide slide-content">
+            <span class="topic-tag orange">RAG</span>
             <h2>RAG Grew Up: Structure Beats Chunks</h2>
             <div class="body">
                 <div class="text">
@@ -138,6 +143,7 @@
 
         <!-- SLIDE 43f: RAG Theme 2 -->
         <div class="slide slide-content">
+            <span class="topic-tag orange">RAG</span>
             <h2>Retrieval Became Agentic</h2>
             <div class="body">
                 <div class="text">
@@ -170,6 +176,7 @@
 
         <!-- SLIDE 43g: RAG Theme 3 -->
         <div class="slide slide-content">
+            <span class="topic-tag orange">RAG</span>
             <h2>Multimodal/PDF RAG: Parsing Became the Work</h2>
             <div class="body">
                 <div class="text">
@@ -204,14 +211,19 @@
                     </div>
                 </div>
                 <div class="visual" style="display: flex; flex-direction: column; align-items: center;">
-                    <img src="images/pdf_rag_layout_parser_pipeline.png" alt="Layout parser and chunking pipeline" style="max-height: 52vh;">
-                    <p style="font-size: 0.7rem; color: #888; margin-top: 0.5rem;">Source: <a href="https://cloud.google.com/blog/products/ai-machine-learning/build-retrieval-augmented-generation-rag-using-vertex-ai-search-and-gecko" target="_blank" style="color: #aaa;">Google Cloud</a></p>
+                    <div class="card" style="max-width: 520px; text-align: left; border-left: 4px solid var(--purple);">
+                        <h3>Parsing Stack</h3>
+                        <p><strong>Layout:</strong> sections, tables, headings, footnotes</p>
+                        <p><strong>Images:</strong> OCR + captioning + diagram text</p>
+                        <p><strong>Chunking:</strong> structure-aware splits for clean retrieval</p>
+                    </div>
                 </div>
             </div>
         </div>
 
         <!-- SLIDE 43h: RAG Theme 4 -->
         <div class="slide slide-content">
+            <span class="topic-tag orange">RAG</span>
             <h2>RAG Moved Into Platforms</h2>
             <div class="body">
                 <div class="text">
@@ -252,6 +264,7 @@
 
         <!-- SLIDE 43i: RAG Theme 5 -->
         <div class="slide slide-content">
+            <span class="topic-tag orange">RAG</span>
             <h2>Hybrid + Reranking Is the Baseline</h2>
             <div class="body">
                 <div class="text">
@@ -304,6 +317,56 @@
         <!-- AGENT TYPES -->
         <!-- ============================================ -->
 
+        <!-- SLIDE: Agents Became a Product Category -->
+        <div class="slide slide-cards">
+            <span class="topic-tag orange">Agents</span>
+            <h2>2025 Was the Year of Agents</h2>
+            <div class="cards-grid four">
+                <div class="card" style="border-left: 4px solid var(--blue);">
+                    <h3>Research Agents</h3>
+                    <p>Multi‑step analysis that produces auditable reports and citations.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--green);">
+                    <h3>Computer‑Use Agents</h3>
+                    <p>Browser + UI automation when APIs don’t exist.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--purple);">
+                    <h3>Coding Agents</h3>
+                    <p>IDE, terminal, and PR surfaces for real engineering work.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--orange);">
+                    <h3>Workflow Agents</h3>
+                    <p>Ops/support/app‑building workflows with reviewable outputs.</p>
+                </div>
+            </div>
+            <p class="subtext">The signal: agents shipped across categories, not just in one standout demo.</p>
+        </div>
+
+        <!-- SLIDE: T-Shape Year -->
+        <div class="slide slide-two-col">
+            <span class="topic-tag orange">Agents</span>
+            <h2>2025’s T‑Shape: Wide Wins + A Few Deep Wins</h2>
+            <div class="cols">
+                <div class="col">
+                    <h3 class="green">Wide (Shallow) Wins</h3>
+                    <ul>
+                        <li>Bounded workflows with review gates</li>
+                        <li>Customer support, IT/service desk, internal ops</li>
+                        <li>Value came from speed + coverage, not autonomy</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3 class="blue">Deep (Vertical) Wins</h3>
+                    <ul>
+                        <li>Auditable deliverables (citations, PRs, logs)</li>
+                        <li>Deep Research‑style work where “good enough” still helps</li>
+                        <li>Fewer domains, much higher ROI when it hits</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="subtext">Reality check: many projects stalled when ROI and reliability weren’t clear.</p>
+        </div>
+
         <!-- SLIDE: Agent Types Intro -->
         <div class="slide slide-statement">
             <span class="topic-tag orange">Agents</span>
@@ -318,31 +381,34 @@
             <div class="body">
                 <div class="text">
                     <p>Deep agents handle tasks that take minutes to hours, with many steps, context management, and delegation.</p>
-                    <p style="margin-top: 1rem;"><strong>What they do:</strong></p>
+                    <p style="margin-top: 1rem;"><strong>Methodology: Plan → Delegate → Verify</strong></p>
                     <ul>
-                        <li>Hold state and artifacts, not just chat history</li>
-                        <li>Decompose goals into sub-tasks</li>
-                        <li>Recover from failure, retry safely, continue</li>
-                        <li>Use memory and filesystems to avoid context collapse</li>
+                        <li><strong>Plan:</strong> break goals into verifiable subtasks</li>
+                        <li><strong>Delegate:</strong> route work to subagents or tools</li>
+                        <li><strong>Verify:</strong> check outputs before shipping</li>
+                        <li><strong>State:</strong> persist artifacts, not just chat history</li>
                     </ul>
-                    <p style="margin-top: 1rem;"><strong>Example:</strong> OpenAI shipped "deep research" as an agentic capability—multi-step research that browses and synthesizes, returning a report with citations.</p>
+                    <p style="margin-top: 1rem;"><strong>Deep research products:</strong></p>
+                    <ul>
+                        <li>OpenAI Deep Research</li>
+                        <li>Anthropic Research system (sub‑agents)</li>
+                        <li>ChatGPT agent mode (research + action in one flow)</li>
+                    </ul>
                 </div>
-                <div class="visual" style="flex-direction: column; gap: 16px; justify-content: center;">
-                    <div class="card" style="background: rgba(249, 115, 22, 0.1); border-color: rgba(249, 115, 22, 0.3); text-align: center;">
-                        <p style="font-weight: 700; color: var(--orange); font-size: 1.1rem;">A shallow agent answers.</p>
-                        <p style="font-weight: 700; color: var(--orange); font-size: 1.1rem; margin-top: 0.5rem;">A deep agent produces.</p>
-                    </div>
+                <div class="visual" style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="images/anthropic_research_subagents.png" alt="Anthropic research system with sub-agents" style="max-height: 52vh;">
+                    <p style="font-size: 0.7rem; color: #888; margin-top: 0.5rem;">Source: <a href="https://www.anthropic.com/research/multi-agent-research-system" target="_blank" style="color: #aaa;">Anthropic Research</a></p>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE: Ambient Agents -->
+        <!-- SLIDE: Ambient & Background Agents -->
         <div class="slide slide-content">
             <span class="topic-tag orange">Agents</span>
-            <h2>Ambient Agents: Always-On Automation</h2>
+            <h2>Ambient & Background Agents: Always-On Automation</h2>
             <div class="body">
                 <div class="text">
-                    <p>Ambient agents run in the background and act on events rather than waiting for prompts.</p>
+                    <p>Deep agents proved long‑horizon work. But most production volume shifted to ambient/background agents that act on events.</p>
                     <p style="margin-top: 1rem;"><strong>They respond to:</strong></p>
                     <ul>
                         <li>Event streams, logs, monitoring alerts</li>
@@ -355,6 +421,8 @@
                         <li>Policies: what it can do automatically vs. what needs approval</li>
                         <li>Memory of ongoing state: what's already handled</li>
                     </ul>
+                    <p style="margin-top: 1rem;"><strong>Background mode:</strong> async delegation that returns reviewable artifacts (PRs, reports, tickets).</p>
+                    <p style="margin-top: 1rem;"><strong>Why they work:</strong> bounded actions + review gates keep autonomy safe.</p>
                 </div>
                 <div class="visual" style="flex-direction: column; gap: 16px; justify-content: center;">
                     <div class="card" style="background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3); text-align: center;">
@@ -365,51 +433,23 @@
             </div>
         </div>
 
-        <!-- SLIDE: Coding Agents -->
-        <div class="slide slide-statement">
-            <span class="topic-tag orange">Agents</span>
-            <h2>Coding agents became the first place many teams experienced real agents.</h2>
-            <p class="small">Why? Software work has the perfect control surface: repos, tests, CI, and pull requests. Every step is visible. Humans steer via PR review. Governance is built in.</p>
-        </div>
-
-        <!-- SLIDE: Coding Agent Types -->
-        <div class="slide slide-cards">
-            <span class="topic-tag orange">Agents</span>
-            <h2>Three Surfaces for Coding Agents</h2>
-            <div class="cards-grid stacked">
-                <div class="card" style="border-left: 4px solid var(--blue);">
-                    <h3>IDE Agents</h3>
-                    <p>Multi-step work inside your editor. Finds relevant files, proposes edits across multiple files, runs terminal commands and tests, watches errors, fixes and retries in a loop. Cursor and Copilot agent mode run multiple agents in parallel.</p>
-                </div>
-                <div class="card" style="border-left: 4px solid var(--green);">
-                    <h3>Repo & PR Agents</h3>
-                    <p>Work through issues and pull requests in a GitHub Actions environment. Produce PRs, logs, and reviewable commits. This is where autonomy becomes governable—every step visible in commits, humans steer via PR review.</p>
-                </div>
-                <div class="card" style="border-left: 4px solid var(--purple);">
-                    <h3>Terminal Agents</h3>
-                    <p>Agentic coding from the command line. Understands your codebase, helps with routine tasks and git workflows through natural language. Works with existing bash environment and can act as both MCP server and client.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- SLIDE: Browser Agents -->
+        <!-- SLIDE: Computer Use -->
         <div class="slide slide-content">
             <span class="topic-tag orange">Agents</span>
-            <h2>Browser Agents: UI Control</h2>
+            <h2>Computer Use: UI Control When No API Exists</h2>
             <div class="body">
                 <div class="text">
                     <p>Agents that operate the real surface area people use: browsers and SaaS UIs.</p>
-                    <p style="margin-top: 1rem;"><strong>OpenAI Operator</strong> (January 2025)</p>
+                    <p style="margin-top: 1rem;"><strong>OpenAI Operator → ChatGPT agent mode</strong></p>
                     <ul>
-                        <li>Uses screenshots to "see" and virtual mouse/keyboard to interact</li>
+                        <li>Uses screenshots to “see” and virtual mouse/keyboard to act</li>
                         <li>Books reservations, fills forms, places orders</li>
-                        <li>Later integrated into ChatGPT as "agent mode"</li>
+                        <li>Bridges research and action in one workflow</li>
                     </ul>
-                    <p style="margin-top: 1rem;"><strong>Google Project Mariner</strong></p>
+                    <p style="margin-top: 1rem;"><strong>Anthropic Computer Use</strong></p>
                     <ul>
-                        <li>Chrome extension with sidebar interface</li>
-                        <li>Runs up to 10 parallel task streams</li>
-                        <li>"Teach & Repeat" learns demonstrated workflows</li>
+                        <li>Developer‑facing tool for UI automation</li>
+                        <li>Useful when no reliable API exists</li>
                     </ul>
                 </div>
                 <div class="visual" style="flex-direction: column; gap: 16px; justify-content: center;">
@@ -419,6 +459,13 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- SLIDE: Spec Clarification -->
+        <div class="slide slide-statement">
+            <span class="topic-tag orange">Agents</span>
+            <h2>The best agents ask questions before they act.</h2>
+            <p class="small">A quiet 2025 shift: spec‑clarification became a built‑in step. Lovable shipped a “questions tool” because most agent mistakes start with missing requirements.</p>
         </div>
 
         <!-- SLIDE: Multi-Agent -->
@@ -432,6 +479,7 @@
                         <li><strong>Parallel research:</strong> Multiple agents gather evidence simultaneously, then consolidate</li>
                         <li><strong>Role separation:</strong> Planner, executor, reviewer as distinct agents</li>
                         <li><strong>Tool specialization:</strong> Different agents with different permissions or domains</li>
+                        <li><strong>Parallel attempts:</strong> Multiple solutions, choose the best</li>
                     </ul>
                 </div>
                 <div class="col">
@@ -446,32 +494,296 @@
             </div>
         </div>
 
-        <!-- ============================================ -->
-        <!-- SKILLS -->
-        <!-- ============================================ -->
 
-        <!-- SLIDE: Skills Intro -->
-        <div class="slide slide-two-col">
-            <span class="topic-tag orange">Skills</span>
-            <h2>Skills: Packaged Expertise for Agents</h2>
-            <div class="cols">
-                <div class="col">
-                    <h3 class="orange">Agents execute.</h3>
-                    <p>They reason, call tools, handle multi-step workflows. But agents are general-purpose—they don't inherently know your domain.</p>
+        <!-- SLIDE: Coding Agents -->
+        <div class="slide slide-statement">
+            <span class="topic-tag orange">Agents</span>
+            <h2>Coding agents became the first place many teams experienced real agents.</h2>
+            <p class="small">Why? Software work has the perfect control surface: repos, tests, CI, and pull requests. Every step is visible. Humans steer via PR review. Claude Code, Cursor, and Copilot made this real.</p>
+        </div>
+
+        <!-- SLIDE: Coding Agent Types -->
+        <div class="slide slide-cards">
+            <span class="topic-tag orange">Agents</span>
+            <h2>Three Surfaces for Coding Agents</h2>
+            <div class="cards-grid stacked">
+                <div class="card" style="border-left: 4px solid var(--blue);">
+                    <h3>IDE Agents</h3>
+                    <p>Multi-step work inside your editor. Finds files, edits across modules, runs tests, fixes and retries. Cursor’s agent-first IDE pushed this surface forward.</p>
                 </div>
-                <div class="col">
-                    <h3 class="blue">Skills equip.</h3>
-                    <p>Folders of instructions, scripts, and resources that agents load on demand. BigQuery queries. NDA review procedures. PDF extraction. Domain expertise, packaged and portable.</p>
+                <div class="card" style="border-left: 4px solid var(--green);">
+                    <h3>Repo & PR Agents</h3>
+                    <p>Work through issues and pull requests in CI. Produce PRs, logs, and reviewable commits. GitHub Copilot coding agent made this a mainstream workflow.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--purple);">
+                    <h3>Terminal Agents</h3>
+                    <p>Agentic coding from the command line. Delegates substantial engineering tasks from the terminal—Claude Code made this feel native.</p>
                 </div>
             </div>
         </div>
 
-        <!-- SLIDE: Skills Visual -->
-        <div class="slide slide-visual">
+        <!-- SLIDE: Coding Agents Timeline -->
+        <div class="slide slide-content">
+            <span class="topic-tag orange">Agents</span>
+            <h2>Coding Agents: From Snippets to Full Tasks</h2>
+            <div class="body" style="flex-direction: column; gap: 18px;">
+                <div class="text" style="width: 100%; display: flex; justify-content: space-between; gap: 24px; align-items: flex-start;">
+                    <ul style="flex: 1; margin: 0;">
+                        <li><strong>Then:</strong> tab completion and small snippet help</li>
+                        <li><strong>Now:</strong> multi-file edits, tests, and CI-aware workflows</li>
+                        <li><strong>Shift:</strong> from “assist in-editor” to “deliver reviewable work”</li>
+                        <li><strong>Surface:</strong> PRs + agent workspaces became the control plane</li>
+                    </ul>
+                    <p class="subtext" style="max-width: 280px; margin: 0;">2025 was the year coding agents moved from suggestions to execution.</p>
+                </div>
+                <div class="visual" style="width: 100%; display: flex; flex-direction: column; align-items: center;">
+                    <div style="display: flex; gap: 18px; align-items: center; justify-content: center; width: 100%;">
+                        <img src="images/coding_agents_timeline_2025_v3_part1.png" alt="Coding agents evolution timeline (part 1)" style="height: 72vh; width: 49%; object-fit: contain;">
+                        <img src="images/coding_agents_timeline_2025_v3_part2.png" alt="Coding agents evolution timeline (part 2)" style="height: 72vh; width: 49%; object-fit: contain;">
+                    </div>
+                    <p style="font-size: 0.7rem; color: #888; margin-top: 0.5rem;">Source: internal 2025 timeline</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Coding Agents Timeline 1 -->
+        <div class="slide slide-content">
+            <span class="topic-tag orange">Agents</span>
+            <h2>The Foundation: Tools Become Standard (Late 2024 → Early 2025)</h2>
+            <div class="body">
+                <div class="text">
+                    <p><strong>Key beats</strong></p>
+                    <ul>
+                        <li>MCP made tool connectivity a standard (\"USB‑C for tools\")</li>
+                        <li>Agent = model + tool protocol + runtime permissions</li>
+                        <li>Integrations shifted from bespoke plugins to reusable wiring</li>
+                        <li><strong>Product signal:</strong> MCP servers + registries became a real ecosystem</li>
+                    </ul>
+                    <p class="subtext">Once tools became standard, the rest of the stack could scale.</p>
+                </div>
+                <div class="visual" style="display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 520px;">
+                    <div style="width: 100%;">
+                        <div style="height: 6px; background: linear-gradient(90deg, var(--blue), var(--green)); border-radius: 999px;"></div>
+                        <div style="display: flex; justify-content: space-between; margin-top: 8px; font-size: 0.8rem; color: var(--text-muted);">
+                            <span>Nov 2024</span>
+                            <span>Feb 2025</span>
+                        </div>
+                    </div>
+                    <div class="cards-grid two" style="margin-top: 14px;">
+                        <div class="card" style="border-left: 4px solid var(--blue);">
+                            <h3>Tool Hub</h3>
+                            <p>GitHub • Jira • DB • Slack</p>
+                        </div>
+                        <div class="card" style="border-left: 4px solid var(--green);">
+                            <h3>Client Surfaces</h3>
+                            <p>IDE • Terminal • Web</p>
+                        </div>
+                    </div>
+                    <p style="font-size: 0.7rem; color: #888; margin-top: 0.5rem;">Standard tool wiring</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Coding Agents Timeline 2 -->
+        <div class="slide slide-content">
+            <span class="topic-tag orange">Agents</span>
+            <h2>From Chat to Execution Loops (Feb → Jun 2025)</h2>
+            <div class="body">
+                <div class="text">
+                    <p><strong>Key beats</strong></p>
+                    <ul>
+                        <li><strong>Claude Code:</strong> terminal‑native agent workflow (edit, run tests, commit)</li>
+                        <li><strong>Codex CLI + cloud tasks:</strong> delegated work with logs + patches</li>
+                        <li>Dev loop shifts to: plan → edit → run → verify → commit</li>
+                    </ul>
+                    <p class="subtext">You stop copying snippets; you start handing off tasks.</p>
+                </div>
+                <div class="visual" style="display: flex; gap: 16px; align-items: center; justify-content: center; width: 100%;">
+                    <div class="card" style="flex: 1; border-left: 4px solid var(--blue); font-family: 'SF Mono', Monaco, monospace; font-size: 0.85rem;">
+                        <p>$ run tests</p>
+                        <p>✓ 48 passed</p>
+                        <p>$ edit module</p>
+                        <p>✓ patch ready</p>
+                        <p>$ git status</p>
+                    </div>
+                    <div class="card" style="flex: 1; border-left: 4px solid var(--orange); text-align: center;">
+                        <p style="font-weight: 700; color: var(--orange);">Plan</p>
+                        <p style="font-size: 0.9rem;">↓</p>
+                        <p style="font-weight: 700; color: var(--orange);">Implement</p>
+                        <p style="font-size: 0.9rem;">↓</p>
+                        <p style="font-weight: 700; color: var(--orange);">Test</p>
+                        <p style="font-size: 0.9rem;">↓</p>
+                        <p style="font-weight: 700; color: var(--orange);">Review</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Coding Agents Timeline 3 -->
+        <div class="slide slide-content">
+            <span class="topic-tag orange">Agents</span>
+            <h2>Control + Quality at Speed (Jul → Sep 2025)</h2>
+            <div class="body">
+                <div class="text">
+                    <p><strong>Key beats</strong></p>
+                    <ul>
+                        <li><strong>Cursor:</strong> To‑dos + queues made long tasks steerable</li>
+                        <li><strong>Bugbot / agent review:</strong> scaled PR quality checks</li>
+                        <li><strong>Session resume:</strong> longer context + memory reduced “agent forgot”</li>
+                    </ul>
+                </div>
+                <div class="visual" style="align-items: flex-start;">
+                    <div class="cards-grid" style="width: 100%; gap: 18px; align-items: start;">
+                        <div class="card" style="border-left: 4px solid var(--blue); background: linear-gradient(180deg, rgba(59,130,246,0.12), rgba(10,10,10,0.2)); padding: 20px;">
+                            <h3 style="color: var(--blue); margin-bottom: 10px;">Steerability</h3>
+                            <div style="display: flex; flex-direction: column; gap: 8px; font-size: 0.9rem;">
+                                <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 12px; height: 12px; border: 1px solid var(--blue); border-radius: 3px;"></span><span>Queue next task</span></div>
+                                <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 12px; height: 12px; border: 1px solid var(--blue); border-radius: 3px;"></span><span>Review intermediate plan</span></div>
+                                <div style="display: flex; align-items: center; gap: 8px;"><span style="width: 12px; height: 12px; border: 1px solid var(--blue); border-radius: 3px;"></span><span>Resume with memory</span></div>
+                            </div>
+                            <div style="margin-top: 12px; padding: 10px; border-radius: 10px; background: #0b1220; border: 1px solid rgba(59,130,246,0.35); font-family: 'SF Mono', Monaco, monospace; font-size: 0.75rem;">
+                                <div style="color: #60a5fa;">TODO: refactor auth flow</div>
+                                <div style="color: #94a3b8;">TODO: add retry tests</div>
+                            </div>
+                        </div>
+                        <div class="card" style="border-left: 4px solid var(--green); background: linear-gradient(180deg, rgba(16,185,129,0.12), rgba(10,10,10,0.2)); padding: 20px;">
+                            <h3 style="color: var(--green); margin-bottom: 10px;">PR Guardrails</h3>
+                            <div style="font-family: 'SF Mono', Monaco, monospace; font-size: 0.75rem; background: #0b1220; border: 1px solid rgba(16,185,129,0.35); border-radius: 10px; padding: 10px;">
+                                <div style="color: #9ca3af;">+ if (!isValid) return err</div>
+                                <div style="color: #9ca3af;">+ await saveRecord()</div>
+                                <div style="margin-top: 8px; color: #34d399;">// agent review: missing retry path</div>
+                                <div style="color: #34d399;">// add unit coverage for edge case</div>
+                            </div>
+                            <div style="margin-top: 10px; display: flex; gap: 8px; flex-wrap: wrap;">
+                                <span style="padding: 4px 8px; border-radius: 999px; background: rgba(16,185,129,0.2); color: #34d399; font-size: 0.7rem;">logic</span>
+                                <span style="padding: 4px 8px; border-radius: 999px; background: rgba(16,185,129,0.2); color: #34d399; font-size: 0.7rem;">security</span>
+                                <span style="padding: 4px 8px; border-radius: 999px; background: rgba(16,185,129,0.2); color: #34d399; font-size: 0.7rem;">tests</span>
+                            </div>
+                        </div>
+                        <div class="card" style="border-left: 4px solid var(--purple); background: linear-gradient(180deg, rgba(139,92,246,0.12), rgba(10,10,10,0.2)); padding: 20px;">
+                            <h3 style="color: var(--purple); margin-bottom: 10px;">Session Resume</h3>
+                            <div style="display: flex; flex-direction: column; gap: 8px;">
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--purple);"></span>
+                                    <span style="font-size: 0.85rem;">Checkpoint: auth refactor</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--purple); opacity: 0.6;"></span>
+                                    <span style="font-size: 0.85rem;">Context pack compressed</span>
+                                </div>
+                                <div style="display: flex; align-items: center; gap: 8px;">
+                                    <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--purple); opacity: 0.4;"></span>
+                                    <span style="font-size: 0.85rem;">Resume work in new session</span>
+                                </div>
+                            </div>
+                            <div style="margin-top: 12px; padding: 10px; border-radius: 10px; border: 1px solid rgba(139,92,246,0.35); background: #0b1220;">
+                                <p style="font-size: 0.75rem; color: #c4b5fd; margin: 0;">Context snapshot · 12 files · 3 decisions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Coding Agents Timeline 4 -->
+        <div class="slide slide-content">
+            <span class="topic-tag orange">Agents</span>
+            <h2>Scale & Reuse (Oct → Dec 2025)</h2>
+            <div class="body">
+                <div class="text">
+                    <p><strong>Key beats</strong></p>
+                    <ul>
+                        <li>Workflow‑native agents fit real team processes</li>
+                        <li>Parallel agents work in isolated worktrees</li>
+                        <li>Skills/plugins package reusable competence</li>
+                    </ul>
+                    <p class="subtext">Organizations can standardize behavior instead of re‑prompting.</p>
+                </div>
+                <div class="visual" style="display: flex; flex-direction: column; gap: 12px; align-items: center;">
+                    <div class="card" style="width: 100%; max-width: 520px; border-left: 4px solid var(--blue);">
+                        <p><strong>Issue → @agent → sandbox run → PR → CI → review → merge</strong></p>
+                    </div>
+                    <div class="cards-grid three" style="max-width: 520px;">
+                        <div class="card"><h3>Release PR</h3><p>Skills pack</p></div>
+                        <div class="card"><h3>Migration</h3><p>Skills pack</p></div>
+                        <div class="card"><h3>Test Fixer</h3><p>Skills pack</p></div>
+                    </div>
+                    <div class="card" style="max-width: 520px; text-align: center; border-left: 4px solid var(--purple);">
+                        <p>Parallel agents fan‑out → isolated worktrees</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Coding Agent Methodologies -->
+        <div class="slide slide-content">
+            <span class="topic-tag orange">Agents</span>
+            <h2>Methodologies for Building with Coding Agents</h2>
+            <div class="body">
+                <div class="text">
+                    <div class="cards-grid stacked">
+                        <div class="card" style="border-left: 4px solid var(--blue);">
+                            <h3>Spec‑Driven Development</h3>
+                            <p>Write the spec first, then plan tasks, then implement. Keeps agent work aligned to intent.</p>
+                            <p class="subtext">Common flow: specify → plan → tasks → implement.</p>
+                        </div>
+                        <div class="card" style="border-left: 4px solid var(--green);">
+                            <h3>Research → Plan → Implement</h3>
+                            <p>Separate exploration from execution, then lock a plan before code changes.</p>
+                            <p class="subtext">Human leverage points: review research + plan before commit.</p>
+                        </div>
+                        <div class="card" style="border-left: 4px solid var(--purple);">
+                            <h3>Verification‑First Loops</h3>
+                            <p>Run/verify cycles keep agents honest—reproduce, patch, re‑run tests, report.</p>
+                            <p class="subtext">Plan → edit → run → verify.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="visual" style="display: flex; flex-direction: column; gap: 12px; align-items: center;">
+                    <img src="images/humanlayer_human_leverage_review_points.png" alt="Human leverage review points for coding agents" style="width: 100%; max-width: 520px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08);">
+                    <img src="images/humanlayer_human_leverage_compaction.png" alt="Human leverage for compressing context and checkpoints" style="width: 100%; max-width: 520px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08);">
+                    <p style="font-size: 0.7rem; color: #888; margin-top: 0.2rem;">Source: <a href="https://github.com/humanlayer/advanced-context-engineering-for-coding-agents/blob/main/ace-fca.md#on-human-leverage" target="_blank" style="color: #aaa;">Humanlayer ACE</a></p>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- SLIDE: Enterprise Failure Modes -->
+        <div class="slide slide-list">
+            <span class="topic-tag orange">Agents</span>
+            <h2>Why Enterprise Agents Still Fail</h2>
+            <ul>
+                <li class="red"><strong>ROI + cost.</strong> Compute, integration, and oversight erase the business case.</li>
+                <li class="orange"><strong>Reliability.</strong> Long-horizon drift, tool misuse, and hard-to-debug failures.</li>
+                <li class="blue"><strong>Autonomy boundaries.</strong> Most teams require approval gates for write actions.</li>
+                <li class="purple"><strong>Security.</strong> Prompt injection, data leakage, and tool abuse expand the attack surface.</li>
+                <li class="green"><strong>Brittleness.</strong> UI changes and unstable workflows break agents in production.</li>
+            </ul>
+        </div>
+        <!-- ============================================ -->
+        <!-- SKILLS -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Skills Compact -->
+        <div class="slide slide-content">
             <span class="topic-tag orange">Skills</span>
-            <h2>How Skills Fit Into Agent Architecture</h2>
-            <img src="../../images/skills_architecture.webp" alt="Agent + Skills + Virtual Machine">
-            <p class="caption">Agent configuration includes equipped skills and MCP servers. Skills live as directories in the agent's file system—loaded when relevant. Source: Anthropic</p>
+            <h2>Skills: Packaged Expertise for Agents</h2>
+            <div class="body">
+                <div class="text">
+                    <div style="margin-bottom: 1.5rem;">
+                        <h3 class="orange">Agents execute.</h3>
+                        <p>They reason, call tools, handle multi-step workflows. But agents are general-purpose—they don't inherently know your domain.</p>
+                    </div>
+                    <div>
+                        <h3 class="blue">Skills equip.</h3>
+                        <p>Folders of instructions, scripts, and resources that agents load on demand. BigQuery queries. NDA review procedures. PDF extraction. Domain expertise, packaged and portable.</p>
+                    </div>
+                </div>
+                <div class="visual" style="flex-direction: column;">
+                    <img src="images/skills_architecture.webp" alt="Agent + Skills + Virtual Machine" style="max-height: 420px; width: 100%; object-fit: contain;">
+                    <p class="caption">Agent configuration includes equipped skills and MCP servers. Skills live as directories in the agent's file system—loaded when relevant. Source: Anthropic</p>
+                </div>
+            </div>
         </div>
 
         <!-- ============================================ -->
@@ -481,8 +793,8 @@
         <!-- SLIDE: Agentic Frameworks -->
         <div class="slide slide-statement">
             <span class="topic-tag orange">Frameworks</span>
-            <h2>Frameworks moved from "loops" to explicit workflows.</h2>
-            <p class="small">Early agent setups: plan, call tool, read output, repeat. In 2025, frameworks moved toward explicit graphs with named steps, clear transitions, and predictable control flow. Debugging a loop is painful. Debugging a workflow is tractable.</p>
+            <h2>Frameworks stopped being libraries. They became runtimes.</h2>
+            <p class="small">Agents in 2025 aren’t just prompts and tools—they run inside systems built for state, control, and recovery.</p>
         </div>
 
         <!-- SLIDE: What Changed in Frameworks -->
@@ -491,20 +803,24 @@
             <h2>What Changed in Agentic Frameworks</h2>
             <div class="cards-grid two">
                 <div class="card" style="border-left: 4px solid var(--blue);">
-                    <h3>State Became First-Class</h3>
-                    <p>Checkpointing progress so you can resume after failures. Persisting intermediate artifacts. Supporting "pause and wait" for humans or slow systems. Real tasks span hours or days.</p>
+                    <h3>Explicit Workflows</h3>
+                    <p>Event-driven graphs with named steps and typed state replaced ad-hoc loops. The flow is visible and debuggable.</p>
                 </div>
                 <div class="card" style="border-left: 4px solid var(--green);">
-                    <h3>Human-in-Loop: Designed In</h3>
-                    <p>Approval gates, escalation paths, and fallbacks became built-in concepts. Better support for partial automation. Enterprises don't want full autonomy—they want safe delegation.</p>
+                    <h3>Durable State + Human Gates</h3>
+                    <p>Checkpoint, pause, and resume became native. Humans can approve, redirect, or recover long-running tasks.</p>
                 </div>
                 <div class="card" style="border-left: 4px solid var(--purple);">
-                    <h3>Tooling Got Structured</h3>
-                    <p>Clear contracts for tools: inputs, outputs, errors. Better handling of failures and partial results. Moves toward portable tool ecosystems so apps don't rewrite integrations.</p>
+                    <h3>Scalable Tool Use</h3>
+                    <p>Tool search + programmatic calling made orchestration explicit, cheaper, and more reliable than prompt-only routing.</p>
                 </div>
                 <div class="card" style="border-left: 4px solid var(--orange);">
                     <h3>Multi-Agent: Supported, Not Default</h3>
-                    <p>Better coordination primitives, message passing, role boundaries. More emphasis on controlling non-determinism. Multi-agent as an advanced pattern, not the starting point.</p>
+                    <p>Coordination primitives matured, but teams learned to use multi-agent as an advanced pattern, not the default.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--red);">
+                    <h3>Tracing + Evals by Default</h3>
+                    <p>Observability and quality scoring moved into the runtime so agents can be monitored and graded.</p>
                 </div>
             </div>
         </div>
@@ -571,12 +887,13 @@
 
         <!-- SLIDE: Application Takeaways -->
         <div class="slide slide-list">
+            <span class="topic-tag orange">Takeaways</span>
             <h2 class="orange">Application Layer: Key Takeaways</h2>
             <ul>
-                <li class="orange"><strong>RAG survived because enterprises need grounding, freshness, and control.</strong> What changed: RAG became an engineered system, not a trick.</li>
-                <li class="orange"><strong>Agent types diversified.</strong> Deep for long-horizon work, ambient for always-on automation, browser for UI control, coding as the breakthrough success.</li>
-                <li class="orange"><strong>Skills and frameworks matured.</strong> Reusable capabilities, explicit workflows, state management, and human-in-loop by design.</li>
-                <li class="orange"><strong>Standards moved to open governance.</strong> MCP and A2A under Linux Foundation. The protocol wars are consolidating.</li>
+                <li class="purple"><strong>RAG became engineered infrastructure.</strong> Naive RAG died; structure, reranking, multimodal parsing, and platformized retrieval became the baseline.</li>
+                <li class="blue"><strong>Agents diversified and proved value.</strong> Deep research, ambient/background automation, computer-use, and coding agents became distinct surfaces with real workflows.</li>
+                <li class="green"><strong>Frameworks turned into runtimes.</strong> Explicit workflows, durable state, scalable tool use, and tracing/evals made agents operable—not just possible.</li>
+                <li class="orange"><strong>Skills packaged expertise.</strong> Reusable domain procedures + tool wiring became portable assets rather than one-off prompt glue.</li>
+                <li class="red"><strong>Standards moved to open governance.</strong> MCP and A2A under Linux Foundation—protocols consolidated into neutral infrastructure.</li>
             </ul>
         </div>
-
