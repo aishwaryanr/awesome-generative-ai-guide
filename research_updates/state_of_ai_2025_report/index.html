@@ -7,181 +7,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --bg: #0a0a0a;
-            --text: #fafafa;
-            --text-muted: #a1a1aa;
-            --text-dim: #71717a;
-            --blue: #3b82f6;
-            --green: #10b981;
-            --orange: #f97316;
-            --purple: #8b5cf6;
-            --red: #ef4444;
-            --border: #27272a;
-            --card: #141414;
-        }
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.5;
-            overflow: hidden;
-        }
-        .presentation { width: 100vw; height: 100vh; position: relative; }
-        .slide {
-            display: none;
-            width: 100%;
-            height: 100%;
-            padding: 50px 70px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            overflow-y: auto;
-        }
-        .slide.active { display: flex; opacity: 1; }
-        
-        .slide-title { flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        .slide-title h1 { font-size: 4rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 1rem; line-height: 1.1; }
-        .slide-title .subtitle { font-size: 1.5rem; color: var(--text-muted); font-weight: 400; }
-        
-        .slide-statement { flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 60px 100px; }
-        .slide-statement h2 { font-size: 3.25rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.25; max-width: 1000px; }
-        .slide-statement .small { font-size: 1.2rem; color: var(--text-muted); margin-top: 1.5rem; max-width: 750px; line-height: 1.7; }
-        
-        .slide-stat { flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        .slide-stat .num { font-size: 11rem; font-weight: 800; line-height: 1; letter-spacing: -0.05em; }
-        .slide-stat .num.gradient { background: linear-gradient(135deg, var(--blue), var(--purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .slide-stat .num.blue { color: var(--blue); }
-        .slide-stat .num.green { color: var(--green); }
-        .slide-stat .num.orange { color: var(--orange); }
-        .slide-stat .num.red { color: var(--red); }
-        .slide-stat .num.purple { color: var(--purple); }
-        .slide-stat .label { font-size: 1.75rem; color: var(--text-muted); margin-top: 1rem; font-weight: 500; max-width: 600px; }
-        .slide-stat .context { font-size: 1.1rem; color: var(--text-dim); margin-top: 1.5rem; max-width: 600px; line-height: 1.6; }
-        
-        .slide-section { flex-direction: column; justify-content: center; align-items: center; text-align: center; }
-        .slide-section .label { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 1rem; font-weight: 600; }
-        .slide-section h2 { font-size: 3rem; font-weight: 700; letter-spacing: -0.02em; }
-        .slide-section .sub { font-size: 1.1rem; color: var(--text-muted); margin-top: 0.5rem; }
-        .slide-section .framework-container { margin-top: 1.5rem; width: 100%; }
-        .slide-section .framework-svg { max-width: 100%; width: 1000px; }
-        
-        .slide-vs { flex-direction: row; justify-content: center; align-items: center; gap: 50px; }
-        .vs-box { flex: 1; max-width: 380px; padding: 35px; border-radius: 16px; text-align: center; }
-        .vs-box.old { background: rgba(239, 68, 68, 0.1); border: 2px solid rgba(239, 68, 68, 0.3); }
-        .vs-box.new { background: rgba(16, 185, 129, 0.1); border: 2px solid rgba(16, 185, 129, 0.3); }
-        .vs-box .tag { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem; font-weight: 600; }
-        .vs-box.old .tag { color: var(--red); }
-        .vs-box.new .tag { color: var(--green); }
-        .vs-box h3 { font-size: 1.5rem; font-weight: 600; margin-bottom: 0.75rem; }
-        .vs-box p { color: var(--text-muted); font-size: 1rem; }
-        .vs-arrow { font-size: 2.5rem; color: var(--text-dim); }
-        
-        .slide-content { flex-direction: column; }
-        .slide-content h2 { font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; letter-spacing: -0.02em; }
-        .slide-content .body { flex: 1; display: flex; gap: 40px; }
-        .slide-content .text { flex: 1; font-size: 1.1rem; line-height: 1.75; }
-        .slide-content .text p { margin-bottom: 1rem; }
-        .slide-content .text ul { list-style: none; margin: 1rem 0; }
-        .slide-content .text li { padding-left: 1.5rem; position: relative; margin-bottom: 0.6rem; }
-        .slide-content .text li::before { content: "→"; position: absolute; left: 0; color: var(--blue); }
-        .slide-content .visual { flex: 1; display: flex; justify-content: center; align-items: center; }
-        .slide-content .visual img { max-width: 100%; max-height: 480px; border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
-        
-        .slide-visual { flex-direction: column; justify-content: center; align-items: center; }
-        .slide-visual h2 { font-size: 1.6rem; font-weight: 600; margin-bottom: 1.5rem; text-align: center; }
-        .slide-visual img { max-width: 85%; max-height: 65vh; border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
-        .slide-visual .caption { font-size: 0.9rem; color: var(--text-dim); margin-top: 1.25rem; text-align: center; max-width: 700px; }
-        
-        .slide-quote { flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 60px 100px; }
-        .slide-quote blockquote { font-size: 2.25rem; font-weight: 500; line-height: 1.4; max-width: 1100px; font-style: italic; }
-        .slide-quote .attr { font-size: 1rem; color: var(--text-muted); margin-top: 2rem; }
-        
-        .slide-list { flex-direction: column; }
-        .slide-list h2 { font-size: 2rem; font-weight: 700; margin-bottom: 1.5rem; }
-        .slide-list ul { list-style: none; font-size: 1.35rem; line-height: 2; }
-        .slide-list li { padding-left: 1.75rem; position: relative; margin-bottom: 0.4rem; }
-        .slide-list li::before { content: ""; position: absolute; left: 0; top: 0.65em; width: 8px; height: 8px; border-radius: 50%; background: var(--blue); }
-        .slide-list li.green::before { background: var(--green); }
-        .slide-list li.orange::before { background: var(--orange); }
-        .slide-list li.red::before { background: var(--red); }
-        .slide-list li.purple::before { background: var(--purple); }
-        .slide-list .subtext { font-size: 1rem; color: var(--text-muted); margin-top: 1.5rem; max-width: 800px; }
-        
-        .slide-two-col { flex-direction: column; }
-        .slide-two-col h2 { font-size: 1.85rem; font-weight: 700; margin-bottom: 1.5rem; }
-        .slide-two-col .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; flex: 1; }
-        .slide-two-col .col h3 { font-size: 1.15rem; font-weight: 600; margin-bottom: 0.75rem; }
-        .slide-two-col .col p, .slide-two-col .col li { font-size: 1.05rem; color: var(--text-muted); line-height: 1.65; }
-        .slide-two-col .col ul { list-style: none; }
-        .slide-two-col .col li { margin-bottom: 0.6rem; padding-left: 1.5rem; position: relative; }
-        .slide-two-col .col li::before { content: "→"; position: absolute; left: 0; color: var(--blue); }
-        
-        .slide-cards { flex-direction: column; }
-        .slide-cards h2 { font-size: 1.85rem; font-weight: 700; margin-bottom: 1.5rem; }
-        .cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-        .cards-grid.two { grid-template-columns: repeat(2, 1fr); }
-        .cards-grid.four { grid-template-columns: repeat(4, 1fr); }
-        .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
-        .card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.6rem; }
-        .card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.55; }
-        .card .num { font-size: 2.25rem; font-weight: 700; margin-bottom: 0.4rem; }
-        
-        .progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, var(--blue), var(--purple)); transition: width 0.3s; z-index: 1000; }
-        .nav { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; align-items: center; background: rgba(20,20,20,0.95); padding: 10px 16px; border-radius: 50px; border: 1px solid var(--border); z-index: 1000; backdrop-filter: blur(10px); }
-        .nav button { background: none; border: none; color: var(--text); cursor: pointer; padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; font-family: inherit; transition: background 0.2s; }
-        .nav button:hover { background: var(--border); }
-        .nav .counter { color: var(--text-muted); font-size: 0.8rem; padding: 0 10px; min-width: 70px; text-align: center; }
-        
-        .blue { color: var(--blue); }
-        .green { color: var(--green); }
-        .orange { color: var(--orange); }
-        .purple { color: var(--purple); }
-        .red { color: var(--red); }
-        .muted { color: var(--text-muted); }
-        .dim { color: var(--text-dim); }
-        
-        .framework-container { margin-top: 2rem; display: flex; justify-content: center; }
-        .framework-svg { max-width: 1100px; width: 100%; }
-        .framework-layer { transition: all 0.3s ease; }
-        .framework-layer.dimmed { opacity: 0.25; }
-        .highlight-ring { fill: none; stroke: #ef4444; stroke-width: 4; stroke-dasharray: 8 4; opacity: 0; transition: opacity 0.3s ease; }
-        .highlight-ring.active { opacity: 1; animation: dash 1s linear infinite; }
-        @keyframes dash { to { stroke-dashoffset: -24; } }
-        
-        .border-blue { border-left: 4px solid var(--blue); padding-left: 20px; }
-        .border-green { border-left: 4px solid var(--green); padding-left: 20px; }
-        .border-orange { border-left: 4px solid var(--orange); padding-left: 20px; }
-        .border-red { border-left: 4px solid var(--red); padding-left: 20px; }
-        .border-purple { border-left: 4px solid var(--purple); padding-left: 20px; }
-        
-        .equation { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 35px; text-align: center; margin: 1.5rem 0; }
-        .equation .formula { font-size: 2.25rem; font-weight: 700; font-family: 'SF Mono', Monaco, monospace; }
-        .equation .explain { font-size: 1rem; color: var(--text-muted); margin-top: 1rem; }
-        
-        .takeaway { background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(59, 130, 246, 0.15)); border: 1px solid rgba(139, 92, 246, 0.3); border-radius: 12px; padding: 24px; margin-top: auto; }
-        .takeaway h3 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--purple); margin-bottom: 0.75rem; }
-        .takeaway p { font-size: 1.1rem; font-weight: 500; line-height: 1.6; }
-        
-        .stats-row { display: flex; gap: 16px; margin: 1.25rem 0; }
-        .stat-box { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 18px 22px; flex: 1; text-align: center; }
-        .stat-box .num { font-size: 2rem; font-weight: 700; }
-        .stat-box .label { font-size: 0.8rem; color: var(--text-muted); margin-top: 4px; }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="progress-bar" id="progress"></div>
-    
+
     <div class="presentation" id="presentation">
-        
-        <!-- ============================================ -->
-        <!-- OPENING (Slides 1-8) -->
-        <!-- ============================================ -->
-        
+
         <!-- SLIDE 1: Title -->
         <div class="slide active slide-title">
             <h1>State of Applied AI<br><span class="muted" style="font-size: 0.7em;">in 2025</span></h1>
@@ -247,7 +79,7 @@
                     <rect x="30" y="50" width="170" height="50" rx="6" fill="#3b82f6"/><text x="115" y="80" text-anchor="middle" fill="white" font-size="11" font-weight="500">Multimodal Inputs</text>
                     <rect x="210" y="50" width="180" height="50" rx="6" fill="#3b82f6"/><text x="300" y="80" text-anchor="middle" fill="white" font-size="11" font-weight="500">Context Engineering</text>
                     <rect x="400" y="50" width="170" height="50" rx="6" fill="#3b82f6"/><text x="485" y="80" text-anchor="middle" fill="white" font-size="11" font-weight="500">Meta Prompting</text>
-                    <rect x="580" y="50" width="180" height="50" rx="6" fill="#3b82f6"/><text x="670" y="80" text-anchor="middle" fill="white" font-size="10" font-weight="500">Auto Prompt Opt</text>
+                    <rect x="580" y="50" width="180" height="50" rx="6" fill="#3b82f6"/><text x="670" y="80" text-anchor="middle" fill="white" font-size="10" font-weight="500">Auto Prompt Optimization</text>
                 </g>
                 <g class="framework-layer">
                     <rect x="20" y="120" width="750" height="95" rx="8" fill="#10b981" opacity="0.15" stroke="#10b981" stroke-width="2"/>
@@ -294,7 +126,7 @@
         <div class="slide slide-list">
             <h2>What We'll Cover</h2>
             <ul>
-                <li class="blue"><strong>Input Layer</strong> : From prompts to context engineering, MCP, and multimodal</li>
+                <li class="blue"><strong>Input Layer</strong> : From prompts to context engineering, meta-prompting, and multimodal</li>
                 <li class="green"><strong>Model Layer</strong> : Foundation models, long context, RLVR, fine-tuning, and hybrid reasoning</li>
                 <li class="orange"><strong>Application Layer</strong> : Agents that actually ship, tool calling, and patterns that work</li>
                 <li class="purple"><strong>Output Layer</strong> : Trust as engineering, reliability math, and security frameworks</li>
@@ -303,11 +135,13 @@
             </ul>
         </div>
         
+
+
         <!-- ============================================ -->
-        <!-- SECTION 1: INPUT LAYER (Slides 11-22) -->
+        <!-- SECTION 1: INPUT LAYER -->
         <!-- ============================================ -->
-        
-        <!-- SLIDE 11: Section Break -->
+
+        <!-- SLIDE: Section Break -->
         <div class="slide slide-section">
             <p class="label blue">Section 1</p>
             <h2>Input Layer</h2>
@@ -320,7 +154,7 @@
                         <rect x="30" y="50" width="170" height="50" rx="6" fill="#3b82f6"/><text x="115" y="80" text-anchor="middle" fill="white" font-size="11" font-weight="500">Multimodal Inputs</text>
                         <rect x="210" y="50" width="180" height="50" rx="6" fill="#3b82f6"/><text x="300" y="80" text-anchor="middle" fill="white" font-size="11" font-weight="500">Context Engineering</text>
                         <rect x="400" y="50" width="170" height="50" rx="6" fill="#3b82f6"/><text x="485" y="80" text-anchor="middle" fill="white" font-size="11" font-weight="500">Meta Prompting</text>
-                        <rect x="580" y="50" width="180" height="50" rx="6" fill="#3b82f6"/><text x="670" y="80" text-anchor="middle" fill="white" font-size="10" font-weight="500">Auto Prompt Opt</text>
+                        <rect x="580" y="50" width="180" height="50" rx="6" fill="#3b82f6"/><text x="670" y="80" text-anchor="middle" fill="white" font-size="10" font-weight="500">Auto Prompt Optimization</text>
                     </g>
                     <rect class="highlight-ring active" x="15" y="10" width="760" height="105" rx="12"/>
                     <g class="framework-layer dimmed"><rect x="20" y="120" width="750" height="95" rx="8" fill="#10b981" opacity="0.15" stroke="#10b981" stroke-width="2"/><text x="30" y="143" fill="#10b981" font-weight="700" font-size="14">DATA AND MODEL LAYER</text></g>
@@ -330,67 +164,298 @@
                 </svg>
             </div>
         </div>
-        
-        <!-- SLIDE 11b: Section 1 Overview -->
+
+        <!-- SLIDE: Section Overview -->
         <div class="slide slide-list">
             <h2>What Changed in the Input Layer</h2>
             <ul>
-                <li class="blue"><strong>Prompt engineering → Context engineering.</strong> The focus shifted from crafting clever prompts to structuring the right information.</li>
-                <li class="blue"><strong>MCP standardized integration.</strong> Custom connectors gave way to a universal protocol for AI-to-tool communication.</li>
+                <li class="blue"><strong>Prompt engineering evolved.</strong> From brittle skill-based craft to automated optimization.</li>
+                <li class="blue"><strong>Meta-prompting emerged.</strong> Models now generate and refine prompts automatically.</li>
+                <li class="blue"><strong>Automatic prompt optimization.</strong> Tools that iterate and improve prompts without human intervention.</li>
+                <li class="blue"><strong>Context engineering matters more.</strong> What you put in the prompt matters more than how you phrase it.</li>
                 <li class="blue"><strong>Multimodal became table stakes.</strong> Images, audio, and video as inputs moved from experimental to expected.</li>
-                <li class="blue"><strong>Tool descriptions matter.</strong> How you describe tools to models determines whether they use them correctly.</li>
             </ul>
         </div>
-        
-        <!-- SLIDE 12: Prompt Engineering Bubble -->
+
+        <!-- ============================================ -->
+        <!-- PART 1: PROMPTING IN 2024 -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Prompting in 2024 -->
         <div class="slide slide-statement">
-            <h2>Remember when everyone was selling prompt templates?</h2>
-            <p class="small">Companies hired dedicated prompt engineers at $150-300K. Marketplaces sold "proven" templates for hundreds of dollars. Every AI implementation started with weeks of prompt tuning.</p>
+            <span class="topic-tag blue">Prompting 2024</span>
+            <h2>In 2024, prompting was a <span class="orange">craft</span>.</h2>
+            <p class="small">Models were sensitive. Small changes in wording produced wildly different outputs. Prompt engineering was a skill that took months to master.</p>
         </div>
-        
-        <!-- SLIDE 13: The Transition -->
-        <div class="slide slide-content">
-            <h2>From Prompt Engineering to Context Engineering</h2>
-            <div class="body">
-                <div class="text">
-                    <ul>
-                        <li class="blue"><strong>2024:</strong> Smart tricks to phrase prompts better. Brittle, model-specific, hard to maintain.</li>
-                        <li class="blue"><strong>2025:</strong> Models improved enough that careful phrasing mattered less.</li>
-                        <li class="blue"><strong>Meta-prompting emerged:</strong> Ask the model to generate your prompts.</li>
-                        <li class="blue"><strong>Automatic prompt optimization:</strong> Tools that improve prompts without human iteration.</li>
-                        <li class="blue"><strong>The shift:</strong> Less about clever wording, more about what information the model needs.</li>
-                    </ul>
-                    <p class="subtext">Humans no longer needed to master prompt tricks: the focus moved to structuring the right context.</p>
+
+        <!-- SLIDE: 2024 Prompting Characteristics -->
+        <div class="slide slide-cards">
+            <span class="topic-tag blue">Prompting 2024</span>
+            <h2>Prompting in 2024: A Fragile Art</h2>
+            <div class="cards-grid stacked">
+                <div class="card" style="border-left: 4px solid var(--orange);">
+                    <h3>Brittle & Model-Specific</h3>
+                    <p>Prompts that worked on GPT-4 failed on Claude. Minor updates broke production systems. Every model needed different phrasing.</p>
                 </div>
-                <div class="visual" style="display: flex; flex-direction: column; align-items: center;">
-                    <img src="https://substackcdn.com/image/fetch/w_1456,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Feb844018-f295-4063-93ea-6aa8cf72e322_1024x1024.png" alt="Context Engineering">
-                    <p style="font-size: 0.7rem; color: #888; margin-top: 0.5rem;">Source: <a href="https://addyo.substack.com/p/context-engineering-bringing-engineering" target="_blank" style="color: #aaa;">Addy Osmani's Substack</a></p>
+                <div class="card" style="border-left: 4px solid var(--blue);">
+                    <h3>Skill-Based Techniques</h3>
+                    <p>Chain-of-Thought, Tree-of-Thought, ReAct patterns. Researchers published papers on prompting techniques. It was a specialized skill.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--purple);">
+                    <h3>Manual Iteration</h3>
+                    <p>Teams spent weeks A/B testing prompts. Small word changes = big output differences. Prompt engineering was expensive and slow.</p>
                 </div>
             </div>
         </div>
-        
-        <!-- SLIDE 14: The Shift -->
+
+        <!-- SLIDE: Famous Techniques -->
+        <div class="slide slide-visual">
+            <span class="topic-tag blue">Prompting 2024</span>
+            <h2>Some Research Papers That Defined 2024</h2>
+            <img src="images/Prompting_Techniques_2024.png" alt="Prompting Techniques: CoT, ToT, ReAct, Self-Consistency">
+            <p class="caption">These techniques worked, but required expertise to implement correctly. Most teams struggled to replicate paper results.</p>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- PART 2: THE 2025 SHIFT -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: 2025 Shift Statement -->
+        <div class="slide slide-statement">
+            <span class="topic-tag blue">2025 Shift</span>
+            <h2>Then models got <span class="green">smarter</span>.</h2>
+            <p class="small">2025 models are less brittle. They understand intent better. Careful phrasing matters less. And we found ways to automate the optimization.</p>
+        </div>
+
+        <!-- SLIDE: What Changed -->
         <div class="slide slide-vs">
+            <span class="topic-tag blue">2025 Shift</span>
             <div class="vs-box old">
-                <span class="tag">2024 Thinking</span>
+                <span class="tag">2024 Approach</span>
                 <h3>"How do I phrase this?"</h3>
-                <p>Crafting the perfect prompt, hoping the model understands</p>
+                <p>Manually crafting prompts, testing variations, hoping it works across models</p>
             </div>
             <span class="vs-arrow">→</span>
             <div class="vs-box new">
-                <span class="tag">2025 Thinking</span>
-                <h3>"What does the model need to know?"</h3>
-                <p>Structured information delivery, optimizing context</p>
+                <span class="tag">2025 Approach</span>
+                <h3>"Let the model write it"</h3>
+                <p>Meta-prompting and automated optimization. Models generate better prompts than humans.</p>
             </div>
         </div>
-        
-        <!-- SLIDE 15: Context Engineering Definition -->
+
+        <!-- ============================================ -->
+        <!-- PART 3: META-PROMPTING -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Meta-Prompting Intro -->
+        <div class="slide slide-statement">
+            <span class="topic-tag blue">Meta-Prompting</span>
+            <h2>What is <span class="blue">Meta-Prompting</span>?</h2>
+            <p class="small">A meta-prompt instructs the model to create a good prompt based on your task description. Instead of writing prompts yourself, you describe what you want and the model generates an optimized prompt.</p>
+        </div>
+
+        <!-- SLIDE: Meta-Prompting How It Works -->
         <div class="slide slide-content">
+            <span class="topic-tag blue">Meta-Prompting</span>
+            <h2>Meta-Prompting: How It Works</h2>
+            <div class="body">
+                <div class="text">
+                    <p><strong>The idea is simple:</strong> Use a prompt to generate prompts.</p>
+                    <p>OpenAI's Playground uses meta-prompts behind the "Generate" button. You describe your task, and it creates a complete, optimized prompt.</p>
+                    <p class="muted" style="font-size: 0.9rem; margin-top: 1rem;">The meta-prompt includes best practices:</p>
+                    <ul>
+                        <li>Understand the task objectives and constraints</li>
+                        <li>Encourage reasoning before conclusions</li>
+                        <li>Include high-quality examples with placeholders</li>
+                        <li>Specify output format explicitly</li>
+                        <li>Add edge cases and important notes</li>
+                    </ul>
+                </div>
+                <div class="visual" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <div class="equation" style="width: 100%;">
+                        <div class="formula" style="font-size: 1.5rem;">Task Description → Meta-Prompt → Optimized Prompt</div>
+                        <p class="explain">Models generate better prompts than most humans can write manually</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Meta-Prompting Example -->
+        <div class="slide slide-two-col">
+            <span class="topic-tag blue">Meta-Prompting</span>
+            <h2>Meta-Prompting: Before & After</h2>
+            <div class="cols">
+                <div class="col">
+                    <h3 class="red">What You Write</h3>
+                    <div style="background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-top: 12px;">
+                        <p style="font-family: monospace; font-size: 0.9rem; color: var(--text-muted);">"I need a prompt for sentiment analysis of customer reviews"</p>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 12px;">Just describe your task in plain language. No prompt engineering expertise required.</p>
+                </div>
+                <div class="col">
+                    <h3 class="green">What the Model Generates</h3>
+                    <div style="background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-top: 12px; font-size: 0.8rem;">
+                        <p style="font-family: monospace; color: var(--text-muted); line-height: 1.5;">Analyze customer review sentiment.<br><br># Steps<br>1. Read the review carefully<br>2. Identify emotional indicators<br>3. Consider context and nuance<br>4. Classify as positive/negative/neutral<br><br># Output Format<br>JSON with sentiment and confidence score<br><br># Examples<br>[Detailed examples with edge cases...]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: OpenAI Meta-Prompt Structure -->
+        <div class="slide slide-list">
+            <span class="topic-tag blue">Meta-Prompting</span>
+            <h2>What OpenAI's Meta-Prompt Does</h2>
+            <ul>
+                <li class="blue"><strong>Understands the task:</strong> Grasps objectives, requirements, constraints, and expected output.</li>
+                <li class="green"><strong>Enforces reasoning order:</strong> Reasoning steps before conclusions. Never start examples with answers.</li>
+                <li class="orange"><strong>Includes examples:</strong> High-quality examples with placeholders for complex elements.</li>
+                <li class="purple"><strong>Specifies output format:</strong> Explicit length, syntax (JSON, markdown, etc.), structure.</li>
+                <li class="blue"><strong>Preserves user content:</strong> Keeps any details, guidelines, or examples you provide.</li>
+            </ul>
+            <p class="subtext">Source: OpenAI Prompt Generation Guide — the meta-prompt behind their Playground's Generate button.</p>
+        </div>
+
+        <!-- SLIDE: Why Meta-Prompting Matters -->
+        <div class="slide slide-cards">
+            <span class="topic-tag blue">Meta-Prompting</span>
+            <h2>Why Meta Prompting is Super Valuable</h2>
+            <div class="cards-grid stacked">
+                <div class="card" style="border-left: 4px solid var(--green);">
+                    <h3>Faster Iteration</h3>
+                    <p>Generate 10 prompt variations in seconds. Test all of them. Pick the winner. What took days now takes minutes.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--blue);">
+                    <h3>Best Practices Built-In</h3>
+                    <p>Meta-prompts encode years of prompt engineering research. You get chain-of-thought, examples, and structure automatically.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--purple);">
+                    <h3>Democratized Expertise</h3>
+                    <p>You don't need to be a prompt engineer. Describe what you want in plain English. The model handles the craft.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- PART 4: AUTOMATIC PROMPT OPTIMIZATION -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Auto Prompt Optimization Intro -->
+        <div class="slide slide-statement">
+            <span class="topic-tag blue">Auto Optimization</span>
+            <h2>Beyond meta-prompting: <span class="purple">Automatic Optimization</span></h2>
+            <p class="small">Meta-prompting generates prompts. But what if you could automatically iterate and improve them based on actual performance? That's automatic prompt optimization.</p>
+        </div>
+
+        <!-- SLIDE: What is DSPy -->
+        <div class="slide slide-statement">
+            <span class="topic-tag blue">Auto Optimization</span>
+            <h2>DSPy: <span class="purple">Automated A/B Testing</span> for Prompts</h2>
+            <p class="small">Instead of manually tweaking prompts and hoping they work, DSPy automatically tries different variations, measures which ones perform best, and keeps the winners. It's like having a tireless intern who tests thousands of prompt variations for you.</p>
+        </div>
+
+        <!-- SLIDE: The Problem DSPy Solves -->
+        <div class="slide slide-vs">
+            <span class="topic-tag blue">Auto Optimization</span>
+            <div class="vs-box old">
+                <span class="tag">Manual Prompting</span>
+                <h3>Guess and Check</h3>
+                <p>Write a prompt. Test it. Doesn't work well? Tweak it. Test again. Repeat for hours. Still breaks on edge cases.</p>
+            </div>
+            <span class="vs-arrow">→</span>
+            <div class="vs-box new">
+                <span class="tag">DSPy</span>
+                <h3>Automatic Optimization</h3>
+                <p>Give examples of what "good" looks like. DSPy tries hundreds of prompt variations automatically and finds what works best.</p>
+            </div>
+        </div>
+
+        <!-- SLIDE: How DSPy Optimization Works -->
+        <div class="slide slide-visual">
+            <span class="topic-tag blue">Auto Optimization</span>
+            <h2>How DSPy Finds the Best Prompt</h2>
+            <img src="images/dspy_process.png" alt="DSPy Optimization Process">
+            <p class="caption">You provide task + data. DSPy generates prompt variations. The loop scores, selects best, and repeats until optimized.</p>
+        </div>
+
+        <!-- SLIDE: DSPy Example -->
+        <div class="slide slide-two-col">
+            <span class="topic-tag blue">Auto Optimization</span>
+            <h2>DSPy in Action</h2>
+            <div class="cols">
+                <div class="col">
+                    <h3 class="blue">What You Write</h3>
+                    <div style="background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-top: 12px;">
+                        <p style="font-family: monospace; font-size: 0.8rem; color: var(--text-muted); line-height: 1.6;">
+                            <span style="color: var(--blue);"># Define: question in, answer out</span><br>
+                            qa = dspy.ChainOfThought("question -> answer")<br><br>
+                            <span style="color: var(--blue);"># Give 10-20 examples</span><br>
+                            examples = [...]<br><br>
+                            <span style="color: var(--blue);"># Let DSPy optimize</span><br>
+                            optimized = dspy.compile(qa, examples)
+                        </p>
+                    </div>
+                </div>
+                <div class="col">
+                    <h3 class="green">What DSPy Figures Out</h3>
+                    <div style="background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-top: 12px;">
+                        <p style="font-family: monospace; font-size: 0.8rem; color: var(--text-muted); line-height: 1.6;">
+                            "Given the question, reason step-by-step. First identify the key concepts. Then consider relevant facts. Finally, synthesize into a clear answer. Format: <br><br>
+                            Reasoning: [your reasoning]<br>
+                            Answer: [concise answer]"
+                        </p>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 12px;">DSPy discovered this works better than simpler prompts.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Why DSPy Matters -->
+        <div class="slide slide-cards">
+            <span class="topic-tag blue">Auto Optimization</span>
+            <h2>Why This Matters</h2>
+            <div class="cards-grid stacked">
+                <div class="card" style="border-left: 4px solid var(--blue);">
+                    <h3>No More Prompt Guessing</h3>
+                    <p>Stop spending hours tweaking wording. Give examples of what "good" looks like, and let the machine find the best way to ask for it.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--green);">
+                    <h3>Gets Better Over Time</h3>
+                    <p>Collected more examples? Re-run optimization. Found edge cases? Add them and re-compile. Your prompts improve as your data grows.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--purple);">
+                    <h3>Works Across Models</h3>
+                    <p>Switching from GPT-4 to Claude? Re-optimize with the same examples. DSPy finds what works best for each model automatically.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- PART 5: CONTEXT ENGINEERING -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Context Engineering Intro -->
+        <div class="slide slide-statement">
+            <span class="topic-tag blue">Context Engineering</span>
+            <h2>Prompting skills matter. But <span class="blue">context</span> matters more.</h2>
+            <p class="small">For agentic systems, the clever phrasing is less important than what information you provide. This is context engineering.</p>
+        </div>
+
+        <!-- SLIDE: Context Engineering Visual -->
+        <div class="slide slide-visual">
+            <span class="topic-tag blue">Context Engineering</span>
+            <h2>Context Engineering: What Goes Into the Prompt</h2>
+            <img src="images/context_engineering.png" alt="Context Engineering Diagram">
+            <p class="caption">Source: <a href="https://x.com/toaboricua/status/1903478376592859633" target="_blank" style="color: #aaa;">@toaboricua on X</a></p>
+        </div>
+
+        <!-- SLIDE: Context Engineering Definition -->
+        <div class="slide slide-content">
+            <span class="topic-tag blue">Context Engineering</span>
             <h2>Context Engineering: The New Discipline</h2>
             <div class="body">
                 <div class="text">
                     <p><strong>"The art and science of filling the context window with just the right information at each step."</strong></p>
-                    <p>Not about clever phrasing: it's about what information the model needs and when it needs it.</p>
+                    <p>Not about clever phrasing — it's about what information the model needs and when it needs it.</p>
                     <p class="muted" style="font-size: 0.85rem; margin-top: 1rem;">Three types of context matter:</p>
                     <ul>
                         <li><strong>Instructions:</strong> Prompts, memories, examples</li>
@@ -404,9 +469,10 @@
                 </div>
             </div>
         </div>
-        
-        <!-- SLIDE 15b: Context Engineering Strategies -->
+
+        <!-- SLIDE: Context Engineering Strategies -->
         <div class="slide slide-content">
+            <span class="topic-tag blue">Context Engineering</span>
             <h2>Four Strategies for Managing Context</h2>
             <div class="body">
                 <div class="text">
@@ -424,301 +490,99 @@
                 </div>
             </div>
         </div>
-        
-        <!-- SLIDE 16: What Are Tools? -->
-        <div class="slide slide-content">
-            <h2>As Systems Become Agentic, They Need Tools</h2>
-            <div class="body">
-                <div class="text">
-                    <p>AI systems need to interact with the world beyond text generation. This requires tools.</p>
-                    <p><strong>Tools</strong> are functions that AI systems can invoke: APIs, database queries, file operations, external services.</p>
-                    <ul>
-                        <li>The model doesn't execute tools directly</li>
-                        <li>It generates structured JSON describing which tool to call and with what parameters</li>
-                        <li>Your system executes the actual function and returns results</li>
-                    </ul>
-                    <p style="margin-top: 1rem;">The challenge: Every AI provider had its own tool calling format. Every integration was custom. This fragmentation slowed adoption and increased complexity.</p>
-                </div>
-                <div class="visual" style="display: flex; flex-direction: column; align-items: center;">
-                    <img src="https://images.ctfassets.net/23aumh6u8s0i/4LrNhImjPcdPVpmCIrhlG9/4efed8dfb26630e6cf48b4a478a1f550/genai-tool-calling-intro.png" alt="Tool Calling Introduction" style="max-height: 30vh;">
-                    <p style="font-size: 0.7rem; color: #888; margin-top: 0.5rem;">Source: <a href="https://auth0.com/blog/genai-tool-calling-intro/" target="_blank" style="color: #aaa;">Auth0</a></p>
-                </div>
-            </div>
+
+        <!-- ============================================ -->
+        <!-- PART 6: MULTIMODAL INPUTS -->
+        <!-- (Placeholder for McKinsey content) -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Multimodal Statement -->
+        <div class="slide slide-statement">
+            <span class="topic-tag blue">Multimodal</span>
+            <h2>Text-only AI systems are <span class="red">legacy</span>.</h2>
+            <p class="small">In 2024, processing images alongside text was a differentiator. In 2025, it's table stakes. Systems that only handle text are increasingly inadequate for real-world use cases.</p>
         </div>
-        
-        <!-- SLIDE 16b: Tool Descriptions Matter -->
-        <div class="slide slide-content">
-            <h2>Tool Descriptions Matter More Than You Think</h2>
-            <div class="body">
-                <div class="text">
-                    <p>Models rely entirely on the descriptions you provide. Poor descriptions lead to:</p>
-                    <ul>
-                        <li>Invented parameters that don't exist</li>
-                        <li>Type confusion (strings vs integers)</li>
-                        <li>Semantic misunderstanding ("delete" vs "archive")</li>
-                        <li>Wrong tool selection when names are similar</li>
-                    </ul>
-                    <p><strong>What works:</strong></p>
-                    <ul>
-                        <li>Clear, specific function and parameter descriptions</li>
-                        <li>Use enums instead of describing allowed values in text</li>
-                        <li>Start with 3-5 essential tools, add gradually</li>
-                        <li>Single-purpose tools outperform multi-purpose ones</li>
-                    </ul>
-                </div>
-                <div class="visual" style="display: flex; flex-direction: column; align-items: center;">
-                    <img src="https://www.promptingguide.ai/assets/fc/function-calling.png" alt="Function Calling Flow">
-                    <p style="font-size: 0.7rem; color: #888; margin-top: 0.5rem;">Source: <a href="https://www.promptingguide.ai/applications/function_calling" target="_blank" style="color: #aaa;">Prompting Guide</a></p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- SLIDE 16c: Tool Calling Challenges -->
+
+        <!-- SLIDE: Multimodal Use Cases -->
         <div class="slide slide-cards">
-            <h2>Common Tool Calling Failures</h2>
-            <div class="cards-grid">
-                <div class="card" style="border-top: 3px solid var(--red);">
-                    <h3>Token Explosion</h3>
-                    <p>Tool definitions consume context space. Loading all tools upfront can eat 100K+ tokens before any work begins. Use dynamic tool discovery instead.</p>
+            <span class="topic-tag blue">Multimodal</span>
+            <h2>What Multimodal Inputs Enable</h2>
+            <div class="cards-grid stacked">
+                <div class="card" style="border-left: 4px solid var(--blue);">
+                    <h3>Customer Service</h3>
+                    <p>User sends a screenshot of an error message with their complaint. The model sees both, understands the context, and provides a relevant solution. No more "please describe what you see."</p>
                 </div>
-                <div class="card" style="border-top: 3px solid var(--orange);">
-                    <h3>Selection Confusion</h3>
-                    <p>Similar tool names cause wrong selections. "update_user" vs "modify_user" vs "edit_user" confuses models. Distinct, purposeful naming matters.</p>
+                <div class="card" style="border-left: 4px solid var(--green);">
+                    <h3>Code & Development</h3>
+                    <p>Share a photo of a whiteboard diagram and ask "implement this architecture." Upload a UI mockup and get working code. The model understands visual intent, not just text descriptions.</p>
                 </div>
-                <div class="card" style="border-top: 3px solid var(--purple);">
-                    <h3>Infinite Loops</h3>
-                    <p>Models can get stuck retrying failed calls or cycling between tools. Implement call limits and circuit breakers for production systems.</p>
+                <div class="card" style="border-left: 4px solid var(--purple);">
+                    <h3>Document Processing</h3>
+                    <p>Feed invoices, receipts, contracts — the model reads text, understands layout, interprets signatures and stamps. No need to extract text first; it sees the whole document.</p>
                 </div>
             </div>
-            <p class="subtext" style="margin-top: 1.5rem;">Pattern: Move from static, inference-heavy tool calling to dynamic, code-driven orchestration.</p>
         </div>
-        
-        <!-- SLIDE 16d: Tool Description Checklist -->
-        <div class="slide slide-list">
-            <h2>Tool Description Checklist</h2>
-            <ul>
-                <li class="blue"><strong>Function signature:</strong> Clear name, parameters with types, return values documented</li>
-                <li class="blue"><strong>Usage examples:</strong> Include examples showing common use cases and edge cases</li>
-                <li class="blue"><strong>Error handling:</strong> Explicit error codes, retry semantics, failure modes documented</li>
-                <li class="blue"><strong>Semantic clarity:</strong> Distinguish similar operations (delete vs archive, update vs replace)</li>
-                <li class="blue"><strong>Parameter constraints:</strong> Min/max values, allowed enums, format requirements</li>
-                <li class="blue"><strong>Keep it small:</strong> Fewer than 20 tools at a time; use tool search for larger sets</li>
-            </ul>
-        </div>
-        
-        <!-- SLIDE 16e: Tools Need Standardization -->
-        <div class="slide slide-statement">
-            <h2>But tools alone weren't enough.</h2>
-            <p class="small">Every AI needed custom integrations to every tool. OpenAI had one format. Anthropic another. Google yet another. Building tools meant building them N times for N providers. The industry needed standardization.</p>
-        </div>
-        
-        <!-- SLIDE 17: MCP Problem -->
-        <div class="slide slide-statement">
-            <h2>Every AI integration used to be a custom engineering project.</h2>
-            <p class="small">Want to connect your AI to Slack? Build a connector. GitHub? Another connector. Your database? Yet another. Each integration was weeks of work, fragile, and broke whenever either side updated.</p>
-        </div>
-        
-        <!-- SLIDE 17b: M×N Problem Visual -->
-        <div class="slide slide-visual">
-            <h2>The M×N Integration Problem</h2>
-            <div class="visual-container">
-                <img src="images/www_shakudo_io_img43.png" alt="M×N Problem" style="max-height: 60vh;">
-            </div>
-            <p class="caption">Every AI application needed custom connectors to every data source. 10 apps × 10 sources = 100 integrations to build and maintain.</p>
-        </div>
-        
-        <!-- SLIDE 17c: M+N Solution Visual -->
-        <div class="slide slide-visual">
-            <h2>MCP: The M+N Solution</h2>
-            <div class="visual-container">
-                <img src="images/www_shakudo_io_img45.png" alt="M+N Solution with MCP" style="max-height: 55vh;">
-            </div>
-            <p class="caption">With MCP as a standard protocol, you build M + N connectors instead of M × N. Same 10 apps + 10 sources = 20 integrations.</p>
-        </div>
-        
-        <!-- SLIDE 17d: MCP Timeline -->
-        <div class="slide slide-list">
-            <h2>MCP: How It Gained Traction</h2>
-            <ul>
-                <li class="blue"><strong>November 2024:</strong> Anthropic launches MCP as an open standard. Downloads: ~100K.</li>
-                <li class="blue"><strong>March 2025:</strong> OpenAI officially adopts MCP. The industry takes notice.</li>
-                <li class="blue"><strong>April 2025:</strong> Google DeepMind announces MCP support. Downloads hit 8 million.</li>
-                <li class="blue"><strong>Throughout 2025:</strong> Thousands of MCP servers built. Enterprise adoption accelerates.</li>
-            </ul>
-            <p class="subtext">What started as an Anthropic project became the industry standard in under a year.</p>
-        </div>
-        
-        <!-- SLIDE 17e: A2A and Protocol Wars -->
+
+        <!-- SLIDE: Why Now -->
         <div class="slide slide-content">
-            <h2>The Protocol Wars of 2025</h2>
+            <span class="topic-tag blue">Multimodal</span>
+            <h2>Why Multimodal Works Now</h2>
             <div class="body">
                 <div class="text">
-                    <p><strong>April 2025:</strong> Google launches Agent-to-Agent (A2A) protocol with 50+ partners including Salesforce, SAP, and MongoDB.</p>
-                    <p>The industry worried: another standards war?</p>
+                    <p><strong>2024 models could see images. 2025 models understand them.</strong></p>
+                    <p>The latest models (GPT-5.2, Claude Opus 4.5, Gemini 3) have native multimodal understanding — images, audio, and video are first-class inputs, not bolted-on features.</p>
                     <ul>
-                        <li class="orange"><strong>MCP:</strong> Agent ↔ Tools. How AI connects to data sources and external systems.</li>
-                        <li class="orange"><strong>A2A:</strong> Agent ↔ Agent. How autonomous agents communicate with each other.</li>
+                        <li><strong>Better accuracy:</strong> Models reason about visual and text context together, reducing hallucinations</li>
+                        <li><strong>Lower latency:</strong> No separate OCR or vision pipeline needed — one model handles everything</li>
+                        <li><strong>Richer context:</strong> A picture is worth a thousand tokens of description you don't have to write</li>
                     </ul>
-                    <p style="margin-top: 1rem;">Although designed to be complementary, either protocol could expand to absorb the other's functionality. The boundaries weren't as clear as the marketing suggested.</p>
                 </div>
-                <div class="visual" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                <div class="visual" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
                     <div class="equation" style="width: 100%;">
-                        <div class="formula" style="font-size: 1.5rem;">MCP + A2A = Complete Agent Infrastructure</div>
-                        <p class="explain">Tools + Coordination: both protocols solving different problems</p>
+                        <div class="formula" style="font-size: 1.3rem;">Image + Text → Understanding</div>
+                        <p class="explain">Not image-to-text + text-to-understanding anymore</p>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <!-- SLIDE 17f: Resolution -->
-        <div class="slide slide-statement">
-            <h2>December 2025: The Wars End</h2>
-            <p class="small">Anthropic donates MCP to the Linux Foundation's new Agentic AI Foundation. Founding members: Anthropic, OpenAI, Google, Microsoft, AWS. The standard is now truly vendor-neutral, and the industry has a shared foundation to build on.</p>
-        </div>
-        
-        <!-- SLIDE 17g: MCP Today -->
-        <div class="slide slide-content">
-            <h2>Where MCP Stands Today</h2>
-            <div class="body">
-                <div class="text">
-                    <p><strong>Model Context Protocol</strong> is now the standard way to connect AI systems to data sources.</p>
-                    <p>What MCP provides:</p>
-                    <ul>
-                        <li>Standardized interface for AI clients to access any data source</li>
-                        <li>Built-in security and permission models</li>
-                        <li>Thousands of pre-built connectors in the ecosystem</li>
-                        <li>Version compatibility guarantees</li>
-                        <li>Works across model providers (OpenAI, Anthropic, Google, open source)</li>
-                    </ul>
-                    <p style="margin-top: 1rem;"><strong>If you're still building bespoke connectors, stop.</strong> The engineering time you'll save is significant.</p>
-                </div>
-                <div class="visual">
-                    <img src="images/mcp_architecture.png" alt="MCP Architecture">
-                </div>
-            </div>
-        </div>
-        
-        <!-- SLIDE 17h: MCP Practical Implications -->
-        <div class="slide slide-list">
-            <h2>What MCP Means for You</h2>
-            <ul>
-                <li class="green"><strong>Stop building custom connectors.</strong> Thousands of MCP servers exist. Check the registry before writing integration code.</li>
-                <li class="green"><strong>Your integrations become portable.</strong> Switch model providers without rewriting connection logic.</li>
-                <li class="green"><strong>It's vendor-neutral now.</strong> Linux Foundation governance means no single company controls the spec.</li>
-                <li class="green"><strong>The ecosystem is production-ready.</strong> 50+ enterprise vendors have native support. This isn't experimental.</li>
-            </ul>
-            <p class="subtext">If you're still building bespoke data connectors in 2025, you're wasting engineering time.</p>
-        </div>
-        
-        <!-- SLIDE 17j: MCP Timeline Summary -->
-        <div class="slide slide-visual">
-            <h2>The MCP Story: From Launch to Linux Foundation</h2>
-            <svg viewBox="0 0 1000 400" xmlns="http://www.w3.org/2000/svg" style="max-width: 950px; max-height: 55vh;">
-                <line x1="80" y1="200" x2="920" y2="200" stroke="#3b82f6" stroke-width="4" stroke-linecap="round"/>
-                <circle cx="120" cy="200" r="12" fill="#3b82f6"/>
-                <text x="120" y="160" text-anchor="middle" fill="#fafafa" font-size="14" font-weight="600">Nov 2024</text>
-                <text x="120" y="250" text-anchor="middle" fill="#a1a1aa" font-size="12">Anthropic launches MCP</text>
-                <text x="120" y="270" text-anchor="middle" fill="#71717a" font-size="11">~100K downloads</text>
-                <circle cx="320" cy="200" r="12" fill="#10b981"/>
-                <text x="320" y="160" text-anchor="middle" fill="#fafafa" font-size="14" font-weight="600">Mar 2025</text>
-                <text x="320" y="250" text-anchor="middle" fill="#a1a1aa" font-size="12">OpenAI adopts MCP</text>
-                <text x="320" y="270" text-anchor="middle" fill="#71717a" font-size="11">Industry takes notice</text>
-                <circle cx="520" cy="200" r="12" fill="#f97316"/>
-                <text x="520" y="160" text-anchor="middle" fill="#fafafa" font-size="14" font-weight="600">Apr 2025</text>
-                <text x="520" y="250" text-anchor="middle" fill="#a1a1aa" font-size="12">Google adopts MCP</text>
-                <text x="520" y="270" text-anchor="middle" fill="#71717a" font-size="11">A2A protocol launches</text>
-                <text x="520" y="290" text-anchor="middle" fill="#71717a" font-size="11">8M+ downloads</text>
-                <circle cx="720" cy="200" r="12" fill="#8b5cf6"/>
-                <text x="720" y="160" text-anchor="middle" fill="#fafafa" font-size="14" font-weight="600">2025</text>
-                <text x="720" y="250" text-anchor="middle" fill="#a1a1aa" font-size="12">Thousands of MCP servers</text>
-                <text x="720" y="270" text-anchor="middle" fill="#71717a" font-size="11">Enterprise adoption</text>
-                <circle cx="880" cy="200" r="16" fill="#ef4444" stroke="#fafafa" stroke-width="2"/>
-                <text x="880" y="160" text-anchor="middle" fill="#fafafa" font-size="14" font-weight="600">Dec 2025</text>
-                <text x="880" y="250" text-anchor="middle" fill="#a1a1aa" font-size="12">Linux Foundation</text>
-                <text x="880" y="270" text-anchor="middle" fill="#71717a" font-size="11">Agentic AI Foundation</text>
-                <text x="880" y="290" text-anchor="middle" fill="#71717a" font-size="11">Vendor-neutral standard</text>
-            </svg>
-            <p class="caption">From Anthropic project to industry standard in just over a year</p>
-        </div>
-        
-        
-        <!-- SLIDE 19: Multimodal Statement -->
-        <div class="slide slide-statement">
-            <h2>Text-only AI systems are <span class="red">legacy</span>.</h2>
-            <p class="small">In 2024, processing images alongside text was a differentiator. In 2025, it's table stakes. Systems that only handle text are increasingly inadequate for real-world use cases.</p>
-        </div>
-        
-        <!-- SLIDE 20: Multimodal Use Cases -->
-        <div class="slide slide-cards">
-            <h2>Multimodal: Real Use Cases</h2>
-            <div class="cards-grid">
-                <div class="card" style="border-top: 3px solid var(--blue);">
-                    <h3>Customer Service</h3>
-                    <p>Process screenshots with complaint tickets. Analyze product photos for damage claims. Read receipts for returns. Text-only support can't handle these.</p>
-                </div>
-                <div class="card" style="border-top: 3px solid var(--green);">
-                    <h3>Code & Development</h3>
-                    <p>Code review tools read architecture diagrams. Understand UI mockups. Parse whiteboard photos from meetings. Development assistance that can't see is limited.</p>
-                </div>
-                <div class="card" style="border-top: 3px solid var(--purple);">
-                    <h3>Enterprise Workflows</h3>
-                    <p>Medical systems analyze labs, imaging, and notes together. Legal tools process contracts with signatures. Finance parses statements and charts simultaneously.</p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- SLIDE 20b: The Time Investment Reality -->
-        <div class="slide slide-list">
-            <h2>Where Your Time Actually Goes</h2>
-            <ul>
-                <li class="blue"><strong>20% on model selection and prompts.</strong> The part everyone focuses on in tutorials.</li>
-                <li class="orange"><strong>30% on integration and deployment.</strong> API wrappers, error handling, gradual rollout.</li>
-                <li class="purple"><strong>50% on infrastructure and tooling.</strong> Observability, cost tracking, prompt versioning.</li>
-            </ul>
-            <p class="subtext">High-growth companies allocate 37% of engineering to AI. Most of that isn't the "AI part":it's the infrastructure around it.</p>
-        </div>
-        
-        <!-- SLIDE 20c: AI Budget Categories -->
-        <div class="slide slide-visual">
-            <h2>Where AI Budgets Actually Go</h2>
-            <div class="visual-container">
-                <img src="images/www_iconiqcapital_com_img17.png" alt="AI Budget Allocation" style="max-height: 55vh;">
-            </div>
-            <p class="caption">Pre-launch: 57% goes to AI talent. Scaling: 36% goes to model inference. Budget allocation shifts dramatically as AI products mature.</p>
-        </div>
-        
-        <!-- SLIDE 21: Input Layer Takeaways -->
+
+        <!-- ============================================ -->
+        <!-- INPUT LAYER TAKEAWAYS -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Input Layer Takeaways -->
         <div class="slide slide-list">
             <h2 class="blue">Input Layer: Key Takeaways</h2>
             <ul>
-                <li class="green"><strong>Stop optimizing prompts. Start optimizing context.</strong> Context engineering beats prompt engineering for reliability and maintainability.</li>
-                <li class="green"><strong>Adopt MCP before building another custom connector.</strong> The ecosystem is mature enough for production use. The custom integration tax is over.</li>
-                <li class="green"><strong>Invest in tool descriptions.</strong> 60-70% of agent failures trace back to poor tool definitions. Include examples and edge cases.</li>
+                <li class="green"><strong>Let models write your prompts.</strong> Meta-prompting generates better prompts than manual crafting. Use it.</li>
+                <li class="green"><strong>Automate prompt optimization.</strong> Tools like DSPy iterate faster than humans. Stop manual A/B testing.</li>
+                <li class="green"><strong>Focus on context, not phrasing.</strong> What you put in the prompt matters more than how you say it.</li>
                 <li class="green"><strong>Plan for multimodal now.</strong> If your AI system only handles text, you're building technical debt.</li>
             </ul>
         </div>
-        
+
+
+
         <!-- ============================================ -->
-        <!-- SECTION 2: MODEL LAYER (Slides 22-35) -->
+        <!-- SECTION 2: MODEL LAYER -->
         <!-- ============================================ -->
-        
-        <!-- SLIDE 22: Section Break -->
+
+        <!-- SLIDE: Section Break -->
         <div class="slide slide-section">
             <p class="label green">Section 2</p>
             <h2>Model & Data Layer</h2>
-            <p class="sub">The models got better. The hard part is choosing and running them.</p>
+            <p class="sub">From "bigger is better" to "think before you speak"</p>
             <div class="framework-container">
                 <svg class="framework-svg" viewBox="0 0 950 480" xmlns="http://www.w3.org/2000/svg" style="max-width: 1100px;">
                     <g class="framework-layer dimmed"><rect x="20" y="15" width="750" height="95" rx="8" fill="#3b82f6" opacity="0.15" stroke="#3b82f6" stroke-width="2"/><text x="30" y="38" fill="#3b82f6" font-weight="700" font-size="14">INPUT LAYER</text></g>
                     <g class="framework-layer">
                         <rect x="20" y="120" width="750" height="95" rx="8" fill="#10b981" opacity="0.15" stroke="#10b981" stroke-width="2"/>
                         <text x="30" y="143" fill="#10b981" font-weight="700" font-size="14">DATA AND MODEL LAYER</text>
-                        <rect x="30" y="155" width="115" height="50" rx="6" fill="#10b981"/><text x="87" y="185" text-anchor="middle" fill="white" font-size="10" font-weight="500">Foundation Models</text>
-                        <rect x="155" y="155" width="110" height="50" rx="6" fill="#10b981"/><text x="210" y="185" text-anchor="middle" fill="white" font-size="10" font-weight="500">Long Context</text>
-                        <rect x="275" y="155" width="90" height="50" rx="6" fill="#10b981"/><text x="320" y="185" text-anchor="middle" fill="white" font-size="10" font-weight="500">RL + RLVR</text>
-                        <rect x="375" y="155" width="110" height="50" rx="6" fill="#10b981"/><text x="430" y="185" text-anchor="middle" fill="white" font-size="10" font-weight="500">Fine-Tuning</text>
-                        <rect x="495" y="155" width="130" height="50" rx="6" fill="#10b981"/><text x="560" y="185" text-anchor="middle" fill="white" font-size="10" font-weight="500">Hybrid Reasoning</text>
-                        <rect x="635" y="155" width="125" height="50" rx="6" fill="#10b981"/><text x="697" y="185" text-anchor="middle" fill="white" font-size="10" font-weight="500">Quantization</text>
+                        <rect x="30" y="155" width="140" height="50" rx="6" fill="#10b981"/><text x="100" y="185" text-anchor="middle" fill="white" font-size="10" font-weight="500">System 2 Reasoning</text>
+                        <rect x="180" y="155" width="100" height="50" rx="6" fill="#10b981"/><text x="230" y="185" text-anchor="middle" fill="white" font-size="10" font-weight="500">RLVR</text>
+                        <rect x="290" y="155" width="120" height="50" rx="6" fill="#10b981"/><text x="350" y="185" text-anchor="middle" fill="white" font-size="10" font-weight="500">Long Context</text>
+                        <rect x="420" y="155" width="120" height="50" rx="6" fill="#10b981"/><text x="480" y="185" text-anchor="middle" fill="white" font-size="10" font-weight="500">Quantization</text>
+                        <rect x="550" y="155" width="210" height="50" rx="6" fill="#10b981"/><text x="655" y="185" text-anchor="middle" fill="white" font-size="10" font-weight="500">Fine-Tuning & Distillation</text>
                     </g>
                     <rect class="highlight-ring active" x="15" y="115" width="760" height="105" rx="12"/>
                     <g class="framework-layer dimmed"><rect x="20" y="225" width="750" height="95" rx="8" fill="#f97316" opacity="0.15" stroke="#f97316" stroke-width="2"/><text x="30" y="248" fill="#f97316" font-weight="700" font-size="14">APPLICATION LAYER</text></g>
@@ -727,297 +591,305 @@
                 </svg>
             </div>
         </div>
-        
-        <!-- SLIDE 22b: Section 2 Overview -->
+
+        <!-- SLIDE: Section Overview -->
         <div class="slide slide-list">
             <h2>What Changed in the Model Layer</h2>
             <ul>
-                <li class="green"><strong>RLVR changed the game.</strong> DeepSeek R1 showed you can train reasoning without human labels:just verifiable rewards.</li>
-                <li class="green"><strong>Open source closed the gap.</strong> Qwen, Llama, and Mistral models became genuinely competitive with proprietary options.</li>
-                <li class="green"><strong>Multi-model became normal.</strong> Teams now average 2.8 models per product:routing by task, cost, and latency.</li>
-                <li class="green"><strong>Vertical fine-tuning proved its value.</strong> Domain-specific models in healthcare, legal, and finance delivered real ROI.</li>
+                <li class="green"><strong>Models learned to think.</strong> System 2 reasoning emerged: models that allocate compute dynamically based on problem difficulty.</li>
+                <li class="green"><strong>RLVR changed training.</strong> Reinforcement Learning with Verifiable Rewards proved you can train reasoning without human labels.</li>
+                <li class="green"><strong>Context windows hit 1M tokens.</strong> But effective use of long context requires more than just bigger windows.</li>
+                <li class="green"><strong>Efficiency became a priority.</strong> Quantization and distillation made frontier capabilities accessible on consumer hardware.</li>
             </ul>
         </div>
-        
-        <!-- SLIDE 23: RLVR Intro -->
+
+        <!-- ============================================ -->
+        <!-- SYSTEM 1 → SYSTEM 2 REASONING -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: System 2 Intro -->
         <div class="slide slide-statement">
-            <h2>DeepSeek R1 was the technical story of 2025.</h2>
-            <p class="small">Not because of benchmarks:R1 actually underperformed some existing models on standard tests. What mattered was the training approach: Reinforcement Learning with Verifiable Rewards.</p>
+            <span class="topic-tag green">System 2 Reasoning</span>
+            <h2>The biggest shift in 2025: models that <span class="green">think before they speak</span>.</h2>
+            <p class="small">Instead of generating tokens as fast as possible, these models allocate more compute to harder problems. The result: dramatically better reasoning on complex tasks.</p>
         </div>
-        
-        <!-- SLIDE 23b: RLVR Visual Diagram -->
-        <div class="slide slide-content">
-            <h2>How RLVR Works</h2>
-            <div class="body" style="justify-content: center;">
-                <div style="display: flex; flex-direction: column; align-items: center; gap: 2rem; max-width: 950px;">
-                    <div style="display: flex; align-items: center; gap: 1rem; width: 100%;">
-                        <div style="flex: 1; padding: 1.5rem; background: rgba(59, 130, 246, 0.15); border: 2px solid var(--blue); border-radius: 12px; text-align: center;">
-                            <p style="font-weight: 700; color: var(--blue); margin-bottom: 0.5rem; font-size: 1.1rem;">1. Problem</p>
-                            <p style="font-size: 1rem;">Math proof, code task, logic puzzle</p>
-                        </div>
-                        <span style="font-size: 2.5rem; color: var(--muted);">→</span>
-                        <div style="flex: 1; padding: 1.5rem; background: rgba(249, 115, 22, 0.15); border: 2px solid var(--orange); border-radius: 12px; text-align: center;">
-                            <p style="font-weight: 700; color: var(--orange); margin-bottom: 0.5rem; font-size: 1.1rem;">2. Model Attempts</p>
-                            <p style="font-size: 1rem;">No hints, no demonstrations</p>
-                        </div>
-                        <span style="font-size: 2.5rem; color: var(--muted);">→</span>
-                        <div style="flex: 1; padding: 1.5rem; background: rgba(139, 92, 246, 0.15); border: 2px solid var(--purple); border-radius: 12px; text-align: center;">
-                            <p style="font-weight: 700; color: var(--purple); margin-bottom: 0.5rem; font-size: 1.1rem;">3. Verify</p>
-                            <p style="font-size: 1rem;">Did the code compile? Proof valid?</p>
-                        </div>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 0.5rem;">
-                        <span style="font-size: 2rem; color: var(--muted);">↓</span>
-                        <span style="color: var(--muted); font-size: 1.1rem;">Binary reward: right or wrong</span>
-                        <span style="font-size: 2rem; color: var(--muted);">↓</span>
-                    </div>
-                    <div style="display: flex; gap: 2rem; width: 100%;">
-                        <div style="flex: 1; padding: 1.5rem; background: rgba(16, 185, 129, 0.15); border: 2px solid var(--green); border-radius: 12px; text-align: center;">
-                            <p style="font-weight: 700; color: var(--green); margin-bottom: 0.5rem; font-size: 1.2rem;">✓ Correct</p>
-                            <p style="font-size: 1rem;">Reinforce this reasoning path</p>
-                        </div>
-                        <div style="flex: 1; padding: 1.5rem; background: rgba(239, 68, 68, 0.15); border: 2px solid var(--red); border-radius: 12px; text-align: center;">
-                            <p style="font-weight: 700; color: var(--red); margin-bottom: 0.5rem; font-size: 1.2rem;">✗ Wrong</p>
-                            <p style="font-size: 1rem;">Discourage this approach</p>
-                        </div>
-                    </div>
-                    <p style="color: var(--muted); font-size: 1.05rem; text-align: center; margin-top: 1rem;">Through thousands of iterations, the model develops its own reasoning strategies:no human-written chain-of-thought required.</p>
+
+        <!-- SLIDE: System 1 vs System 2 -->
+        <div class="slide slide-vs">
+            <span class="topic-tag green">System 2 Reasoning</span>
+            <div class="vs-box old">
+                <span class="tag">System 1</span>
+                <h3>Fast, Intuitive</h3>
+                <p>Immediate responses. Pattern matching. Great for simple queries, but prone to confident errors on hard problems.</p>
+            </div>
+            <span class="vs-arrow">→</span>
+            <div class="vs-box new">
+                <span class="tag">System 2</span>
+                <h3>Slow, Deliberate</h3>
+                <p>Models allocate thinking time proportional to difficulty. More reliable on complex reasoning, but 3-5x slower.</p>
+            </div>
+        </div>
+
+        <!-- SLIDE: Why System 2 Matters -->
+        <div class="slide slide-cards">
+            <span class="topic-tag green">System 2 Reasoning</span>
+            <h2>Why System 2 Reasoning Matters</h2>
+            <div class="cards-grid stacked">
+                <div class="card" style="border-left: 4px solid var(--green);">
+                    <h3>Dynamic Compute Allocation</h3>
+                    <p>Simple questions get quick answers. Complex problems trigger extended reasoning chains. The model decides how hard to think based on the task.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--blue);">
+                    <h3>Visible Thinking Process</h3>
+                    <p>You can see the model's reasoning in its "thinking" tokens. This makes debugging easier and helps identify where reasoning goes wrong.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--purple);">
+                    <h3>Trade Speed for Accuracy</h3>
+                    <p>For tasks where correctness matters more than latency—code generation, complex analysis, multi-step reasoning—the tradeoff is worth it.</p>
                 </div>
             </div>
         </div>
-        
-        <!-- SLIDE 23c: RLVR vs RLHF -->
-        <div class="slide slide-two-col">
-            <h2>RLVR vs RLHF: What Changed</h2>
-            <div class="cols">
-                <div class="col">
-                    <h3 class="purple">RLHF (Old Way)</h3>
-                    <ul>
-                        <li><strong>Feedback:</strong> Human annotators rank outputs</li>
-                        <li><strong>Reward:</strong> "Did a human like this?"</li>
-                        <li><strong>Scaling:</strong> Limited by human labeling speed</li>
-                        <li><strong>Cost:</strong> $$ per data point</li>
-                        <li><strong>Result:</strong> Models that sound good</li>
-                    </ul>
-                    <p class="subtext" style="margin-top: 1rem;">Good for: Helpfulness, tone, avoiding harm</p>
-                </div>
-                <div class="col">
-                    <h3 class="green">RLVR (New Way)</h3>
-                    <ul>
-                        <li><strong>Feedback:</strong> Automated verification</li>
-                        <li><strong>Reward:</strong> "Is this provably correct?"</li>
-                        <li><strong>Scaling:</strong> Limited only by compute</li>
-                        <li><strong>Cost:</strong> Cents per data point</li>
-                        <li><strong>Result:</strong> Models that are correct</li>
-                    </ul>
-                    <p class="subtext" style="margin-top: 1rem;">Good for: Code, math, logic, verifiable tasks</p>
-                </div>
+
+        <!-- SLIDE: Test-Time Compute -->
+        <div class="slide slide-content" style="justify-content: center;">
+            <span class="topic-tag green">System 2 Reasoning</span>
+            <div class="equation" style="max-width: 850px; margin: 0 auto;">
+                <p class="formula">Test-Time Compute = <span class="green">Thinking Time</span> × <span class="blue">Tokens</span></p>
+                <p class="explain">The new scaling law: you can improve outputs by letting models think longer</p>
+            </div>
+            <div style="text-align: center; margin-top: 1.5rem; color: var(--text-muted); font-size: 1.05rem; max-width: 750px; margin-left: auto; margin-right: auto;">
+                <p>2024's scaling law was about training compute. 2025's insight: <strong>inference compute matters too</strong>.</p>
+                <p style="margin-top: 0.5rem;">Models can solve harder problems by spending more compute at inference time, not just at training time.</p>
             </div>
         </div>
-        
-        <!-- SLIDE 24: RLVR Explained -->
+
+        <!-- ============================================ -->
+        <!-- RLVR -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: RLHF Context -->
+        <div class="slide slide-statement">
+            <span class="topic-tag green">RLVR</span>
+            <h2>2024 was the year of RLHF.</h2>
+            <p class="small">Reinforcement Learning from Human Feedback. Humans rank model outputs. The model learns what humans prefer. This gave us helpful, harmless assistants—but it doesn't scale, and "sounds good" isn't the same as "is correct."</p>
+        </div>
+
+        <!-- SLIDE: RLVR Intro -->
+        <div class="slide slide-statement">
+            <span class="topic-tag green">RLVR</span>
+            <h2>2025 introduced RLVR: rewards you can verify automatically.</h2>
+            <p class="small">Reinforcement Learning with Verifiable Rewards. Give the model problems with checkable answers—math proofs, code that compiles, logic puzzles. Tell it only right or wrong. No human labelers needed. Scales with compute, not headcount.</p>
+        </div>
+
+        <!-- SLIDE: RLHF vs RLVR Visual -->
+        <div class="slide slide-visual">
+            <span class="topic-tag green">RLVR</span>
+            <h2>RLHF vs RLVR: The Key Difference</h2>
+            <img src="images/rlhf_rlvr.png" alt="RLHF vs RLVR Comparison">
+            <p class="caption">RLHF asks "which sounds better?" RLVR asks "is this correct?" One requires humans. One requires only a verifier.</p>
+        </div>
+
+        <!-- SLIDE: RLVR Insight -->
+        <div class="slide slide-statement">
+            <span class="topic-tag green">RLVR</span>
+            <h2>RLVR compresses search into intuition.</h2>
+            <p class="small">What looks like "reasoning" is actually learned search patterns. The model isn't thinking step-by-step—it's pattern matching on solution strategies it learned during training.</p>
+        </div>
+
+        <!-- SLIDE: Self-Correction -->
         <div class="slide slide-content">
-            <h2>RLVR: Models That Learn to Reason</h2>
+            <span class="topic-tag green">RLVR</span>
+            <h2>The Self-Correction Breakthrough</h2>
             <div class="body">
                 <div class="text">
-                    <p><strong>Reinforcement Learning with Verifiable Rewards</strong></p>
-                    <p>The idea is elegantly simple:</p>
+                    <p>RLVR-trained models learned something unexpected: <strong>how to catch and correct their own mistakes</strong>.</p>
                     <ul>
-                        <li>Give the model problems with verifiable answers:math proofs, code that compiles, logic puzzles</li>
-                        <li>Tell it only whether the answer was right or wrong</li>
-                        <li>No step-by-step guidance, no chain-of-thought demonstrations</li>
-                        <li>Through thousands of iterations, the model develops its own reasoning strategies</li>
+                        <li>Models detect when reasoning is going wrong</li>
+                        <li>They backtrack and try different approaches</li>
+                        <li>This emerged naturally from the training process</li>
                     </ul>
-                    <p><strong>The results:</strong></p>
+                    <p style="margin-top: 1rem;"><strong>The results:</strong></p>
                     <ul>
                         <li>40-60% fewer hallucinations in trained domains</li>
-                        <li>Models degrade gracefully:expressing uncertainty instead of fabricating</li>
-                        <li>3-5x slower inference, but far more reliable</li>
+                        <li>Models express uncertainty instead of fabricating</li>
+                        <li>Graceful degradation on hard problems</li>
                     </ul>
                 </div>
                 <div class="visual" style="flex-direction: column; gap: 16px;">
                     <div class="card" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); text-align: center; width: 100%;">
                         <p style="font-size: 0.85rem; color: var(--green); margin-bottom: 0.5rem;">RLVR excels at</p>
-                        <p style="font-size: 1.05rem;">Code • Math • Logic • Structured Data • Verifiable Tasks</p>
+                        <p style="font-size: 1.05rem;">Code • Math • Logic • Structured Tasks</p>
                     </div>
                     <div class="card" style="background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.3); text-align: center; width: 100%;">
                         <p style="font-size: 0.85rem; color: var(--red); margin-bottom: 0.5rem;">RLVR struggles with</p>
-                        <p style="font-size: 1.05rem;">Creative Writing • Marketing Copy • Subjective Tasks</p>
+                        <p style="font-size: 1.05rem;">Creative Writing • Subjective Tasks</p>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <!-- SLIDE 25: China Factor -->
+
+        <!-- ============================================ -->
+        <!-- LONG CONTEXT -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Long Context Intro -->
+        <div class="slide slide-stat">
+            <span class="topic-tag green">Long Context</span>
+            <p class="num green">1M</p>
+            <p class="label">tokens in a single context window</p>
+            <p class="context">That's ~700 pages. Entire codebases. Full research papers with all citations. But there's a catch.</p>
+        </div>
+
+        <!-- SLIDE: Context Windows -->
+        <div class="slide slide-cards">
+            <span class="topic-tag green">Long Context</span>
+            <h2>Context Windows Exploded in 2025</h2>
+            <div class="cards-grid">
+                <div class="card" style="text-align: center;">
+                    <p class="num green">1M</p>
+                    <p style="font-weight: 600;">Gemini 3 Pro</p>
+                    <p style="font-size: 0.85rem; color: var(--muted);">~700 pages input</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <p class="num blue">400K</p>
+                    <p style="font-weight: 600;">GPT-5.2</p>
+                    <p style="font-size: 0.85rem; color: var(--muted);">~128K output cap</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <p class="num purple">200K</p>
+                    <p style="font-weight: 600;">Claude Opus 4.5</p>
+                    <p style="font-size: 0.85rem; color: var(--muted);">Up to 1M enterprise</p>
+                </div>
+            </div>
+            <p class="subtext muted" style="text-align: center; margin-top: 1.5rem;">Entire codebases in context. Multi-document analysis without chunking. Complex reasoning across long dependencies.</p>
+        </div>
+
+        <!-- SLIDE: Effective vs Claimed -->
         <div class="slide slide-statement">
-            <h2>The open-source leader changed:and most teams didn't notice.</h2>
-            <p class="small">Qwen passed Llama on HuggingFace fine-tunes. The reasons are practical: runs on consumer hardware, built-in quantization, 50+ languages native. If you're evaluating open-source, evaluate both.</p>
+            <span class="topic-tag green">Long Context</span>
+            <h2>Claimed context ≠ effective context.</h2>
+            <p class="small">Models can accept 1M tokens. That doesn't mean they use them well. Information in the middle gets lost. Retrieval quality degrades with distance. Test your specific use case.</p>
         </div>
-        
-        <!-- SLIDE 26: Why Qwen Won -->
+
+        <!-- SLIDE: Long Context Challenges -->
         <div class="slide slide-list">
-            <h2>Why Chinese Models Won Open Source</h2>
+            <span class="topic-tag green">Long Context</span>
+            <h2>The Long Context Reality Check</h2>
             <ul>
-                <li class="green"><strong>Consumer hardware:</strong> Runs on RTX 4090, not just H100 clusters</li>
-                <li class="green"><strong>Built-in quantization:</strong> Edge deployment without extra work</li>
-                <li class="green"><strong>50+ languages:</strong> Native multilingual support, not just English fine-tuning</li>
-                <li class="green"><strong>Permissive licenses:</strong> Commercial use without legal complexity</li>
-                <li class="green"><strong>MoE architectures:</strong> Only 20-30% of parameters activate per inference</li>
+                <li class="orange"><strong>"Lost in the middle" problem persists.</strong> Models remember beginnings and ends better than middles. Structure your context accordingly.</li>
+                <li class="blue"><strong>Costs scale linearly.</strong> 10x more context = 10x higher cost. Strategic context management still matters.</li>
+                <li class="purple"><strong>Latency increases.</strong> Longer context means slower first-token response. Plan for user experience.</li>
+                <li class="green"><strong>Quality varies by model.</strong> Some models handle 1M well. Others degrade at 100K. Benchmark your specific tasks.</li>
             </ul>
-            <p class="subtext">If you're outside the US/Europe and can't afford H100 clusters, these models might be your best option. If you're anywhere and paying too much for closed APIs, they're worth evaluating.</p>
         </div>
-        
-        <!-- SLIDE 27: Multi-Model Reality -->
+
+        <!-- ============================================ -->
+        <!-- EFFICIENCY & QUANTIZATION -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Efficiency Intro -->
         <div class="slide slide-statement">
-            <h2>Production systems don't use one model. They use several.</h2>
-            <p class="small">Different models for classification, execution, and generation. The economics forced specialization:a fine-tuned 7B can match a 70B on narrow tasks at 90% lower cost.</p>
+            <span class="topic-tag green">Efficiency</span>
+            <h2>2025's hidden story: frontier capabilities on consumer hardware.</h2>
+            <p class="small">Quantization, distillation, and mixture-of-experts made models 10x more accessible.</p>
         </div>
-        
-        <!-- SLIDE 28: Why Multi-Model -->
-        <div class="slide slide-content">
-            <h2>Why Everyone's Running Multiple Models</h2>
-            <div class="body">
-                <div class="text">
-                    <p><strong>The economics forced specialization.</strong></p>
-                    <p>General 70B models cost $0.50-1.00 per 1K tokens. A customer service interaction at 10K tokens = $5-10 in compute. That doesn't scale.</p>
-                    <p>A fine-tuned 7B model can match performance on specific tasks at <span class="green">90% lower cost</span>.</p>
-                    <p><strong>Typical production stack:</strong></p>
-                    <ul>
-                        <li>Query understanding model (classify intent)</li>
-                        <li>Core task execution model (do the work)</li>
-                        <li>Response generation model (format output)</li>
-                        <li>Error handling model (detect and recover)</li>
-                    </ul>
-                    <p>More complexity, but better reliability and lower costs. When one model fails, others compensate.</p>
-                </div>
-                <div class="visual">
-                    <img src="images/www_iconiqcapital_com_img5.png" alt="Top Model Providers">
-                </div>
-            </div>
+
+        <!-- SLIDE: Quantization -->
+        <div class="slide slide-visual">
+            <span class="topic-tag green">Efficiency</span>
+            <h2>Quantization: Smaller Without Losing Quality</h2>
+            <img src="images/quantization.png" alt="Quantization comparison showing 32-bit, 8-bit, and 4-bit models">
+            <p class="caption">Reduce precision from 32-bit to 4-bit. Same model, 8x smaller, runs on consumer hardware. Quality loss is minimal for most production tasks.</p>
         </div>
-        
-        <!-- SLIDE 29: Cost Optimization -->
+
+        <!-- ============================================ -->
+        <!-- FINE-TUNING & DISTILLATION -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Fine-tuning Intro -->
+        <div class="slide slide-statement">
+            <span class="topic-tag green">Fine-Tuning</span>
+            <h2>Fine-tuning: training a model on your specific data.</h2>
+            <p class="small">Take a general-purpose model. Train it further on domain-specific examples. The result: a model that speaks your industry's language, follows your formats, and understands your context—often matching larger models at a fraction of the cost.</p>
+        </div>
+
+        <!-- SLIDE: Fine-tuning in Practice -->
         <div class="slide slide-list">
-            <h2>Cost Optimization: What Actually Worked</h2>
+            <span class="topic-tag green">Fine-Tuning</span>
+            <h2>Where Fine-Tuning Made the Difference in 2025</h2>
             <ul>
-                <li class="blue"><strong>Semantic caching is underused.</strong> Most queries repeat. Cache embeddings, not just exact matches. Teams report 60-80% hit rates.</li>
-                <li class="green"><strong>Quantization works better than expected.</strong> 4-bit models often match full precision on production tasks. Test before assuming you need the big model.</li>
-                <li class="orange"><strong>Fine-tuned small beats general-purpose large.</strong> A 7B trained on your data often outperforms a 70B on your specific task:at a fraction of the cost.</li>
-                <li class="purple"><strong>Prompt efficiency compounds.</strong> Shorter, cleaner prompts save money on every call. Audit your prompts quarterly.</li>
+                <li class="green"><strong>Healthcare:</strong> Harvard researchers fine-tuned smaller LLMs to scan medical records for social determinants of health—outperforming larger general models with less bias.</li>
+                <li class="blue"><strong>Finance:</strong> Banks fine-tuned models on earnings reports and risk assessments using internal terminology that general models couldn't understand.</li>
+                <li class="purple"><strong>Legal:</strong> LegiLM, fine-tuned for data privacy regulations, interprets compliance requirements that general models miss.</li>
+                <li class="orange"><strong>Chemistry:</strong> LlaSMol, a Mistral-based model fine-tuned for molecular science, substantially outperformed non-fine-tuned models on chemistry tasks.</li>
             </ul>
         </div>
-        
-        <!-- SLIDE 30: Infrastructure Nobody Talks About -->
-        <div class="slide slide-list">
-            <h2>The Infrastructure Nobody Mentions</h2>
-            <ul>
-                <li><strong>GPU pooling systems</strong> to share expensive hardware across teams</li>
-                <li><strong>Model registries</strong> tracking versions, performance, and lineage</li>
-                <li><strong>Inference servers</strong> optimized for throughput (vLLM, TensorRT-LLM)</li>
-                <li><strong>Caching layers</strong> achieving 60-80% redundancy reduction</li>
-                <li><strong>Quality monitoring</strong> for response quality, not just uptime</li>
-                <li><strong>Cost attribution</strong> by user, department, and use case</li>
-            </ul>
-            <p class="subtext">Vendors sell you models. They don't mention what it takes to run them reliably at scale.</p>
+
+        <!-- SLIDE: Fine-tuning Guidance -->
+        <div class="slide slide-statement">
+            <span class="topic-tag green">Fine-Tuning</span>
+            <h2>But always start with prompting. Fine-tune only when you have to.</h2>
+            <p class="small">Prompting is faster to iterate, requires no training data, and works for most use cases. Fine-tune when you're running the same task at massive scale, need consistent output formats, or require domain knowledge the base model lacks.</p>
         </div>
-        
-        <!-- SLIDE 31: Model Selection Cheat Sheet -->
-        <div class="slide slide-two-col">
-            <h2>Model Selection Cheat Sheet</h2>
-            <div class="cols">
-                <div class="col">
-                    <h3 class="green">Use RLVR Models When:</h3>
-                    <ul>
-                        <li>Tasks have verifiable success criteria</li>
-                        <li>Reliability matters more than speed</li>
-                        <li>Code generation, math, or structured analysis</li>
-                        <li>Hallucination risk is high and consequences matter</li>
-                        <li>You can afford 3-5x inference time</li>
-                    </ul>
+
+        <!-- SLIDE: Distillation Trend -->
+        <div class="slide slide-statement">
+            <span class="topic-tag green">Distillation</span>
+            <h2>Distillation became the default deployment strategy.</h2>
+            <p class="small">Use a large model to generate training data. Train a smaller model on that data. Deploy the small model at 10x lower cost. This pattern—70B teacher to 7B student—drove most production cost optimizations in 2025.</p>
+        </div>
+
+        <!-- SLIDE: Domain Experts -->
+        <div class="slide slide-cards">
+            <span class="topic-tag green">Distillation</span>
+            <h2>Where Domain-Specific Models Shine</h2>
+            <div class="cards-grid two">
+                <div class="card" style="border-left: 4px solid var(--green);">
+                    <h3>Healthcare</h3>
+                    <p>Medical coding from clinical notes. Drug interaction checking. Radiology report generation. Anywhere regulatory precision matters.</p>
                 </div>
-                <div class="col">
-                    <h3 class="blue">Use Open Source (Qwen/Llama) When:</h3>
-                    <ul>
-                        <li>Running on consumer or limited hardware</li>
-                        <li>Need multilingual support beyond English</li>
-                        <li>Cost-sensitive at scale (10K+ requests/day)</li>
-                        <li>Customization or fine-tuning required</li>
-                        <li>Data privacy requires on-premise deployment</li>
-                    </ul>
+                <div class="card" style="border-left: 4px solid var(--blue);">
+                    <h3>Legal</h3>
+                    <p>Contract clause extraction. Case law research. Compliance document review. Tasks requiring jurisdiction-specific knowledge.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--purple);">
+                    <h3>Finance</h3>
+                    <p>Earnings call summarization. Risk factor analysis. Regulatory filing generation. Domain jargon and format requirements.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--orange);">
+                    <h3>Code</h3>
+                    <p>Repository-specific assistants. Internal API documentation. Company coding standards enforcement. Codebase-aware refactoring.</p>
                 </div>
             </div>
+            <p class="subtext muted" style="text-align: center; margin-top: 1rem;">The pattern: General models for exploration, specialized models for production.</p>
         </div>
-        
-        <!-- SLIDE 31b: Engineering Team Focus -->
-        <div class="slide slide-visual">
-            <h2>Engineering Teams Are Pivoting to AI</h2>
-            <div class="visual-container">
-                <img src="images/www_iconiqcapital_com_img13.png" alt="Engineering Team % on AI" style="max-height: 55vh;">
-            </div>
-            <p class="caption">High-growth companies: 28% → 37% of engineering teams focused on AI (2025 → 2026). Average companies: 18% → 28%.</p>
-        </div>
-        
-        <!-- SLIDE 31c: AI Leadership -->
-        <div class="slide slide-visual">
-            <h2>Dedicated AI Leadership by Company Size</h2>
-            <div class="visual-container">
-                <img src="images/www_iconiqcapital_com_img12.png" alt="AI Leadership" style="max-height: 55vh;">
-            </div>
-            <p class="caption">61% of $1B+ companies have dedicated AI leadership (Chief AI Officer, Head of ML). Smaller companies rely more on external providers.</p>
-        </div>
-        
-        <!-- SLIDE 31d: Long Context Revolution -->
-        <div class="slide slide-content">
-            <h2>Long Context: The Quiet Revolution</h2>
-            <div class="body">
-                <div class="text">
-                    <p>Context windows exploded in 2025:</p>
-                    <ul>
-                        <li><strong>Gemini 1.5:</strong> 1M tokens (700 pages)</li>
-                        <li><strong>Claude 3.5:</strong> 200K tokens (150 pages)</li>
-                        <li><strong>GPT-4 Turbo:</strong> 128K tokens (100 pages)</li>
-                    </ul>
-                    <p style="margin-top: 1rem;"><strong>What this unlocks:</strong></p>
-                    <ul>
-                        <li>Entire codebases in a single context</li>
-                        <li>Multi-document analysis without chunking</li>
-                        <li>Complex reasoning across long dependencies</li>
-                    </ul>
-                    <p style="margin-top: 1rem;"><strong>The catch:</strong> Longer contexts = higher costs. Strategic context management is still critical.</p>
-                </div>
-                <div class="visual" style="flex-direction: column; gap: 12px;">
-                    <div class="card" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); text-align: center; width: 100%;">
-                        <span style="font-size: 2.5rem; font-weight: 700; color: var(--green);">1M</span>
-                        <p style="margin-top: 0.25rem; color: var(--muted);">tokens max context (Gemini)</p>
-                    </div>
-                    <div class="card" style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.3); text-align: center; width: 100%;">
-                        <span style="font-size: 2.5rem; font-weight: 700; color: var(--blue);">700</span>
-                        <p style="margin-top: 0.25rem; color: var(--muted);">pages equivalent</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- SLIDE 32: Model Takeaways -->
+
+        <!-- ============================================ -->
+        <!-- TAKEAWAYS -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Model Takeaways -->
         <div class="slide slide-list">
             <h2 class="green">Model Layer: Key Takeaways</h2>
             <ul>
-                <li class="green"><strong>RLVR models trade speed for reliability.</strong> Use them for verifiable tasks where accuracy matters more than latency.</li>
-                <li class="green"><strong>Evaluate open-source before defaulting to closed APIs.</strong> Qwen and Llama are production-ready for many use cases.</li>
-                <li class="green"><strong>Deploy multiple specialized models, not one general-purpose model.</strong> 2.8 models per product is the new normal.</li>
-                <li class="green"><strong>Budget more for infrastructure than model work.</strong> Production AI is 80% engineering, 20% data science.</li>
+                <li class="green"><strong>System 2 reasoning trades speed for accuracy.</strong> Use thinking models for complex tasks where correctness matters more than latency.</li>
+                <li class="green"><strong>RLVR enables self-correction.</strong> Models trained with verifiable rewards catch their own mistakes on structured tasks.</li>
+                <li class="green"><strong>Long context ≠ infinite context.</strong> Test effective context length for your use case. The middle gets lost.</li>
+                <li class="green"><strong>Small + specialized beats large + general.</strong> Fine-tuned 7B often outperforms 70B at 10% the cost.</li>
             </ul>
         </div>
-        
+
+
+
         <!-- ============================================ -->
-        <!-- SECTION 3: APPLICATION LAYER (Slides 33-48) -->
+        <!-- SECTION 3: APPLICATION LAYER -->
         <!-- ============================================ -->
-        
-        <!-- SLIDE 33: Section Break -->
+
+        <!-- SLIDE: Section Break -->
         <div class="slide slide-section">
             <p class="label orange">Section 3</p>
             <h2>Application Layer</h2>
-            <p class="sub">Building Agents That Ship</p>
+            <p class="sub">From "Which model?" to "Can it do real work?"</p>
             <div class="framework-container">
                 <svg class="framework-svg" viewBox="0 0 950 480" xmlns="http://www.w3.org/2000/svg" style="max-width: 1100px;">
                     <g class="framework-layer dimmed"><rect x="20" y="15" width="750" height="95" rx="8" fill="#3b82f6" opacity="0.15" stroke="#3b82f6" stroke-width="2"/><text x="30" y="38" fill="#3b82f6" font-weight="700" font-size="14">INPUT LAYER</text></g>
@@ -1025,11 +897,12 @@
                     <g class="framework-layer">
                         <rect x="20" y="225" width="750" height="95" rx="8" fill="#f97316" opacity="0.15" stroke="#f97316" stroke-width="2"/>
                         <text x="30" y="248" fill="#f97316" font-weight="700" font-size="14">APPLICATION LAYER</text>
-                        <rect x="30" y="260" width="140" height="50" rx="6" fill="#f97316"/><text x="100" y="290" text-anchor="middle" fill="white" font-size="11" font-weight="500">RAG</text>
-                        <rect x="180" y="260" width="140" height="50" rx="6" fill="#f97316"/><text x="250" y="290" text-anchor="middle" fill="white" font-size="11" font-weight="500">Agents</text>
-                        <rect x="330" y="260" width="140" height="50" rx="6" fill="#f97316"/><text x="400" y="290" text-anchor="middle" fill="white" font-size="11" font-weight="500">Tool Calling</text>
-                        <rect x="480" y="260" width="140" height="50" rx="6" fill="#f97316"/><text x="550" y="290" text-anchor="middle" fill="white" font-size="11" font-weight="500">Skills</text>
-                        <rect x="630" y="260" width="130" height="50" rx="6" fill="#f97316"/><text x="695" y="290" text-anchor="middle" fill="white" font-size="10" font-weight="500">Agentic Frameworks</text>
+                        <rect x="30" y="260" width="100" height="50" rx="6" fill="#f97316"/><text x="80" y="290" text-anchor="middle" fill="white" font-size="10" font-weight="500">RAG</text>
+                        <rect x="140" y="260" width="100" height="50" rx="6" fill="#f97316"/><text x="190" y="290" text-anchor="middle" fill="white" font-size="10" font-weight="500">Agents</text>
+                        <rect x="250" y="260" width="100" height="50" rx="6" fill="#f97316"/><text x="300" y="290" text-anchor="middle" fill="white" font-size="10" font-weight="500">Tool Calling</text>
+                        <rect x="360" y="260" width="100" height="50" rx="6" fill="#f97316"/><text x="410" y="290" text-anchor="middle" fill="white" font-size="10" font-weight="500">Skills</text>
+                        <rect x="470" y="260" width="140" height="50" rx="6" fill="#f97316"/><text x="540" y="290" text-anchor="middle" fill="white" font-size="10" font-weight="500">Agentic Frameworks</text>
+                        <rect x="620" y="260" width="140" height="50" rx="6" fill="#f97316"/><text x="690" y="290" text-anchor="middle" fill="white" font-size="10" font-weight="500">Standards (MCP/A2A)</text>
                     </g>
                     <rect class="highlight-ring active" x="15" y="220" width="760" height="105" rx="12"/>
                     <g class="framework-layer dimmed"><rect x="20" y="330" width="750" height="95" rx="8" fill="#8b5cf6" opacity="0.15" stroke="#8b5cf6" stroke-width="2"/><text x="30" y="353" fill="#8b5cf6" font-weight="700" font-size="14">OUTPUT LAYER</text></g>
@@ -1037,184 +910,283 @@
                 </svg>
             </div>
         </div>
-        
-        <!-- SLIDE 33b: Section 3 Overview -->
+
+        <!-- SLIDE: Section Overview -->
         <div class="slide slide-list">
             <h2>What Changed in the Application Layer</h2>
             <ul>
-                <li class="orange"><strong>Agents found their lane.</strong> Coding assistants shipped. General autonomous agents mostly didn't. The 95% per-step reliability math is real.</li>
-                <li class="orange"><strong>Tool calling matured.</strong> Structured function calling replaced hacky prompt-based tool use.</li>
-                <li class="orange"><strong>RAG hit a ceiling.</strong> Retrieval augmentation helped, but didn't solve the fundamental context problem teams expected it to.</li>
-                <li class="orange"><strong>Frameworks consolidated.</strong> LangChain, LlamaIndex, and a few others emerged as standards. The rest faded.</li>
+                <li class="orange"><strong>Delegation replaced answers.</strong> Book the meeting, pull the numbers, draft the doc. The success metric moved from good responses to completed outcomes.</li>
+                <li class="orange"><strong>RAG matured into a real subsystem.</strong> Naive "add embeddings and pray" died. Hybrid retrieval, reranking, and agentic workflows became the norm.</li>
+                <li class="orange"><strong>Agent types diversified.</strong> Deep agents for long-horizon work. Ambient agents for always-on automation. Browser agents for UI control.</li>
+                <li class="orange"><strong>Standards emerged from protocol wars.</strong> MCP and A2A moved to open governance. Fragmentation started consolidating.</li>
             </ul>
         </div>
-        
-        <!-- SLIDE 34: Agent Investment -->
+
+        <!-- SLIDE: The Shift -->
         <div class="slide slide-statement">
-            <h2>Everyone invested in agents. Few shipped them.</h2>
-            <p class="small">The pattern: big investment, successful pilots, stalled production. The gap between "works in demo" and "works reliably" turned out to be where most projects died.</p>
+            <h2>People wanted delegation, not answers.</h2>
+            <p class="small">Book the meeting. Pull the numbers. Draft the doc. Update the ticket. Reconcile the spreadsheet. The success metric moved from "a good response" to "a completed outcome."</p>
         </div>
-        
-        <!-- SLIDE 35: Where Agents Work -->
-        <div class="slide slide-visual">
-            <h2>Agents Found Their Lane</h2>
-            <img src="images/adoption_by_usecase.png" alt="Adoption by Use Case">
-            <p class="caption">The winners: coding (77%), content (65%), docs (57%) : use cases with clear success metrics and measurable productivity gains of 15-30%</p>
-        </div>
-        
-        <!-- SLIDE 36: What Agent Means -->
-        <div class="slide slide-content">
-            <h2>What "Agent" Actually Means Now</h2>
-            <div class="body">
-                <div class="text">
-                    <p>After years of confusion, 2025 settled on a working definition:</p>
-                    <div style="font-size: 1.3rem; font-weight: 600; margin: 1.25rem 0; padding: 1.25rem; background: var(--card); border-radius: 12px; border-left: 4px solid var(--orange);">
-                        An agent is an AI system that uses tools in a loop to achieve goals.
-                    </div>
-                    <p>Simple. But it took hundreds of failed "autonomous AI" projects to get there.</p>
-                    <p><strong>The agents that worked shared four characteristics:</strong></p>
-                    <ul>
-                        <li><strong>Specific goals:</strong> "Resolve password reset tickets in under 3 interactions" worked. "Improve customer satisfaction" didn't.</li>
-                        <li><strong>Constrained tools:</strong> Unlimited tool access created chaos. Curated toolsets delivered value.</li>
-                        <li><strong>Verification at every step:</strong> Not just "did the API call succeed?" but "did it move us toward the goal?"</li>
-                        <li><strong>Explicit failure handling:</strong> Assume every step can fail. Have fallbacks ready.</li>
-                    </ul>
-                </div>
-                <div class="visual">
-                    <img src="images/multi_agent_system.png" alt="Multi-Agent System">
-                </div>
-            </div>
-        </div>
-        
-        <!-- SLIDE 37: Tool Calling Reality -->
+
+        <!-- ============================================ -->
+        <!-- RAG IN 2025 -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: RAG Didn't Die -->
         <div class="slide slide-statement">
-            <h2>The agent logic is 20% of the work. The plumbing is 80%.</h2>
-            <p class="small">Error handling, retry logic, state management, edge cases. If your timeline is based on "how long to build the agent," multiply by five for integration reality.</p>
+            <span class="topic-tag orange">RAG</span>
+            <h2>RAG didn't die. Naive RAG did.</h2>
+            <p class="small">The shift was from "add embeddings and pray" to "engineer retrieval like a real subsystem." What showed up in practice: hybrid retrieval, serious chunking strategies, metadata filtering, and access control.</p>
         </div>
-        
-        <!-- SLIDE 38: Tool Calling Problems -->
+
+        <!-- SLIDE: What Changed in RAG -->
         <div class="slide slide-cards">
-            <h2>Where Tool Calling Breaks</h2>
-            <div class="cards-grid four">
-                <div class="card" style="border-top: 3px solid var(--red);">
-                    <h3>Invented Parameters</h3>
-                    <p>Models confidently invent API parameters that don't exist, causing silent failures</p>
-                </div>
-                <div class="card" style="border-top: 3px solid var(--red);">
-                    <h3>Type Confusion</h3>
-                    <p>Strings where integers expected, objects where arrays needed, nulls everywhere</p>
-                </div>
-                <div class="card" style="border-top: 3px solid var(--red);">
-                    <h3>Semantic Mismatch</h3>
-                    <p>"delete" meaning "hide from view" vs "permanently destroy data forever"</p>
-                </div>
-                <div class="card" style="border-top: 3px solid var(--red);">
-                    <h3>Error Blindness</h3>
-                    <p>Ignoring error responses and continuing anyway, cascading failures through the workflow</p>
-                </div>
-            </div>
-            <p class="subtext muted" style="margin-top: 1rem;">Tool calling improved in 2025:error rates dropped from ~40% to ~10%. But 10% is still 1 in 10 calls failing.</p>
-        </div>
-        
-        <!-- SLIDE 39: Tool Calling That Works -->
-        <div class="slide slide-list">
-            <h2>Tool Calling That Works</h2>
-            <ul>
-                <li class="green"><strong>Wrap your APIs:</strong> Validate inputs, provide clear error messages, log everything for debugging</li>
-                <li class="green"><strong>Start read-only:</strong> Add write capabilities only after proving reliability in production</li>
-                <li class="green"><strong>Version your tools:</strong> When behavior changes, create a new version:don't break existing agents</li>
-                <li class="green"><strong>Include examples:</strong> 10-20 per function, covering normal cases and edge cases</li>
-                <li class="green"><strong>Test adversarially:</strong> What happens when the model misuses the tool? Handle it gracefully.</li>
-            </ul>
-        </div>
-        
-        <!-- SLIDE 40: Productivity Reality -->
-        <div class="slide slide-list">
-            <h2>Where AI Actually Helps (And Where It Doesn't)</h2>
-            <ul>
-                <li class="green"><strong>First drafts and boilerplate.</strong> AI is excellent at the blank page problem. Getting something down fast is where it shines.</li>
-                <li class="green"><strong>Variations and repetitive tasks.</strong> "Give me 10 versions of this" is AI's sweet spot.</li>
-                <li class="orange"><strong>Complex logic and polish.</strong> Moderate help. Still requires significant human effort to get right.</li>
-                <li class="red"><strong>Strategy and architecture.</strong> Minimal value. These require context and judgment AI doesn't have.</li>
-            </ul>
-            <p class="subtext">The pattern: AI excels at well-defined tasks with clear patterns. It struggles with creative and strategic work.</p>
-        </div>
-        
-        <!-- SLIDE 41: The Pattern -->
-        <div class="slide slide-statement">
-            <h2>AI excels at well-defined tasks with clear patterns.</h2>
-            <p class="small">It struggles with creative and strategic work. The lesson: restructure workflows to leverage AI's strengths rather than fighting its weaknesses.</p>
-        </div>
-        
-        <!-- SLIDE 42: Patterns That Ship - Part 1 -->
-        <div class="slide slide-cards">
-            <h2>Patterns That Ship</h2>
-            <div class="cards-grid two">
+            <span class="topic-tag orange">RAG</span>
+            <h2>How RAG Matured in 2025</h2>
+            <div class="cards-grid stacked">
                 <div class="card" style="border-left: 4px solid var(--blue);">
-                    <h3>Task Decomposition</h3>
-                    <p>Break complex goals into atomic, verifiable steps. "Process invoice" becomes: extract data → validate against PO → route for approval → update systems. Each step can fail independently without corrupting the entire process.</p>
-                </div>
-                <div class="card" style="border-left: 4px solid var(--green);">
-                    <h3>Human-in-the-Loop</h3>
-                    <p>Require human approval for high-stakes decisions: financial transactions over thresholds, data deletions, external communications, policy exceptions. Batch similar decisions for efficiency.</p>
+                    <h3>Hybrid Retrieval Became Normal</h3>
+                    <p>Sparse retrieval (BM25) for exact matches. Dense embeddings for semantic matches. Reranking to pick the final context. Better retrieval wasn't just better embeddings—it was better input to retrieval.</p>
                 </div>
                 <div class="card" style="border-left: 4px solid var(--orange);">
-                    <h3>Progressive Autonomy</h3>
-                    <p>Week 1-2: Human reviews every action. Week 3-4: Review samples and exceptions. Week 5-8: Review only flagged edge cases. Week 9+: Fully autonomous with periodic audits. Gradually increase trust based on demonstrated reliability.</p>
+                    <h3>RAG Became a Workflow, Not a Single Call</h3>
+                    <p>The system rewrites the query, does multi-step retrieval, picks sources, verifies results, then answers. One-pass retrieval fails silently. The workflow approach makes failure visible and recoverable.</p>
                 </div>
                 <div class="card" style="border-left: 4px solid var(--purple);">
-                    <h3>Fallback Chains</h3>
-                    <p>Primary agent → specialized model → human escalation → safe default action → log for review. Multiple levels of fallback for critical operations. Make fallbacks transparent to users.</p>
+                    <h3>Graph-Based Retrieval Got Attention</h3>
+                    <p>Traditional RAG is good at "find me the paragraph." It struggles at "summarize the themes" or "how do these concepts relate." GraphRAG builds structure over your data for corpus-level questions.</p>
                 </div>
             </div>
         </div>
-        
-        <!-- SLIDE 43: Standards That Matter -->
-        <div class="slide slide-content">
-            <h2>Standards That Actually Matter</h2>
-            <div class="body">
-                <div class="text">
-                    <p><strong>Agent Skills specification</strong> standardized tool descriptions. Now any agent can understand any tool that follows the spec.</p>
-                    <p><strong>A2A protocol</strong> (50+ vendors by April) enabled agent collaboration. Agents from different vendors can now coordinate on complex tasks.</p>
-                    <p><strong>Context graphs</strong> solved the debugging problem. They capture not just what an agent did but why:every decision point, evaluated option, rejected path.</p>
-                    <p>All three succeeded by being minimal:solving the immediate problem without overreaching. They're not perfect, but they're good enough to build on.</p>
-                </div>
-                <div class="visual">
-                    <img src="images/www_iconiqcapital_com_img4.png" alt="What Companies Are Building">
-                </div>
-            </div>
+
+        <!-- SLIDE: Long Context + RAG -->
+        <div class="slide slide-statement">
+            <span class="topic-tag orange">RAG</span>
+            <h2>Long context is a bigger desk. RAG is choosing the right papers to put on it.</h2>
+            <p class="small">Long context reduces complexity for small, stable datasets. But enterprise needs—cost control, freshness, access control, auditability—kept retrieval relevant. Most teams landed on hybrid: use long context as a reasoning workspace, but still retrieve curated slices into it.</p>
         </div>
-        
-        <!-- SLIDE 43b: AI Tools Access and Usage -->
-        <div class="slide slide-visual">
-            <h2>AI Tools: Access vs. Actual Usage</h2>
-            <div class="visual-container">
-                <img src="images/www_iconiqcapital_com_img20.png" alt="AI Tools Access and Usage" style="max-height: 55vh;">
-            </div>
-            <p class="caption">70% have access, but only 57% use them regularly. Smaller companies show higher adoption rates:less bureaucracy, faster iteration.</p>
-        </div>
-        
-        <!-- SLIDE 43c: Top Use Cases -->
-        <div class="slide slide-visual">
-            <h2>Top AI Use Cases in Enterprise</h2>
-            <div class="visual-container">
-                <img src="images/www_iconiqcapital_com_img21.png" alt="Top Use Cases" style="max-height: 55vh;">
-            </div>
-            <p class="caption">Coding (77%), Content (65%), Docs (57%) dominate:all have clear success metrics and measurable outputs.</p>
-        </div>
-        
-        <!-- SLIDE 43d: Why These Won -->
+
+        <!-- SLIDE: Why RAG Stayed -->
         <div class="slide slide-list">
-            <h2>Why These Use Cases Won</h2>
+            <span class="topic-tag orange">RAG</span>
+            <h2>Why Retrieval Stayed Relevant</h2>
             <ul>
-                <li class="orange"><strong>Clear success criteria:</strong> Code compiles, tests pass, content meets guidelines:verification is built-in</li>
-                <li class="orange"><strong>Reversible actions:</strong> Mistakes in drafts don't cascade through business systems</li>
-                <li class="orange"><strong>Human-in-loop natural:</strong> Review workflows already exist:AI fits into established processes</li>
-                <li class="orange"><strong>Measurable productivity:</strong> Time-to-completion, output volume, error rates are trackable</li>
-                <li class="orange"><strong>Low coordination cost:</strong> Individual contributor workflows, not multi-team orchestration</li>
+                <li class="blue"><strong>Cost control.</strong> Passing huge context is expensive and often wasteful. Retrieval lets you pay only for what you need.</li>
+                <li class="green"><strong>Freshness.</strong> If data changes daily, you don't want to keep repacking massive context. Fetch what's current.</li>
+                <li class="purple"><strong>Access control.</strong> "Put it all in the prompt" breaks down when different users have different permissions.</li>
+                <li class="orange"><strong>Auditability.</strong> Retrieval makes it easier to show what sources were used and why.</li>
             </ul>
         </div>
-        
+
+        <!-- ============================================ -->
+        <!-- AGENT TYPES -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Agent Types Intro -->
+        <div class="slide slide-statement">
+            <span class="topic-tag orange">Agents</span>
+            <h2>2025 was the year agent work split into distinct categories.</h2>
+            <p class="small">"Agent" stopped meaning "LLM that can call a tool" and started meaning "a system that can complete work across many steps, over time, with integration, and with guardrails."</p>
+        </div>
+
+        <!-- SLIDE: Deep Agents -->
+        <div class="slide slide-content">
+            <span class="topic-tag orange">Agents</span>
+            <h2>Deep Agents: Long-Horizon Work</h2>
+            <div class="body">
+                <div class="text">
+                    <p>Deep agents handle tasks that take minutes to hours, with many steps, context management, and delegation.</p>
+                    <p style="margin-top: 1rem;"><strong>What they do:</strong></p>
+                    <ul>
+                        <li>Hold state and artifacts, not just chat history</li>
+                        <li>Decompose goals into sub-tasks</li>
+                        <li>Recover from failure, retry safely, continue</li>
+                        <li>Use memory and filesystems to avoid context collapse</li>
+                    </ul>
+                    <p style="margin-top: 1rem;"><strong>Example:</strong> OpenAI shipped "deep research" as an agentic capability—multi-step research that browses and synthesizes, returning a report with citations.</p>
+                </div>
+                <div class="visual" style="flex-direction: column; gap: 16px; justify-content: center;">
+                    <div class="card" style="background: rgba(249, 115, 22, 0.1); border-color: rgba(249, 115, 22, 0.3); text-align: center;">
+                        <p style="font-weight: 700; color: var(--orange); font-size: 1.1rem;">A shallow agent answers.</p>
+                        <p style="font-weight: 700; color: var(--orange); font-size: 1.1rem; margin-top: 0.5rem;">A deep agent produces.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Ambient Agents -->
+        <div class="slide slide-content">
+            <span class="topic-tag orange">Agents</span>
+            <h2>Ambient Agents: Always-On Automation</h2>
+            <div class="body">
+                <div class="text">
+                    <p>Ambient agents run in the background and act on events rather than waiting for prompts.</p>
+                    <p style="margin-top: 1rem;"><strong>They respond to:</strong></p>
+                    <ul>
+                        <li>Event streams, logs, monitoring alerts</li>
+                        <li>Tickets breaching SLA, churn signals spiking</li>
+                        <li>Build failures, incident starts, contract renewals</li>
+                    </ul>
+                    <p style="margin-top: 1rem;"><strong>Core ingredients:</strong></p>
+                    <ul>
+                        <li>Triggers: event streams, schedules, webhooks</li>
+                        <li>Policies: what it can do automatically vs. what needs approval</li>
+                        <li>Memory of ongoing state: what's already handled</li>
+                    </ul>
+                </div>
+                <div class="visual" style="flex-direction: column; gap: 16px; justify-content: center;">
+                    <div class="card" style="background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3); text-align: center;">
+                        <p style="font-size: 0.9rem; color: var(--purple); margin-bottom: 0.5rem;">Where they win</p>
+                        <p style="font-size: 1rem;">IT ops triage • Security alert routing • SLA management • Compliance checks</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Coding Agents -->
+        <div class="slide slide-statement">
+            <span class="topic-tag orange">Agents</span>
+            <h2>Coding agents became the first place many teams experienced real agents.</h2>
+            <p class="small">Why? Software work has the perfect control surface: repos, tests, CI, and pull requests. Every step is visible. Humans steer via PR review. Governance is built in.</p>
+        </div>
+
+        <!-- SLIDE: Coding Agent Types -->
+        <div class="slide slide-cards">
+            <span class="topic-tag orange">Agents</span>
+            <h2>Three Surfaces for Coding Agents</h2>
+            <div class="cards-grid stacked">
+                <div class="card" style="border-left: 4px solid var(--blue);">
+                    <h3>IDE Agents</h3>
+                    <p>Multi-step work inside your editor. Finds relevant files, proposes edits across multiple files, runs terminal commands and tests, watches errors, fixes and retries in a loop. Cursor and Copilot agent mode run multiple agents in parallel.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--green);">
+                    <h3>Repo & PR Agents</h3>
+                    <p>Work through issues and pull requests in a GitHub Actions environment. Produce PRs, logs, and reviewable commits. This is where autonomy becomes governable—every step visible in commits, humans steer via PR review.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--purple);">
+                    <h3>Terminal Agents</h3>
+                    <p>Agentic coding from the command line. Understands your codebase, helps with routine tasks and git workflows through natural language. Works with existing bash environment and can act as both MCP server and client.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Browser Agents -->
+        <div class="slide slide-content">
+            <span class="topic-tag orange">Agents</span>
+            <h2>Browser Agents: UI Control</h2>
+            <div class="body">
+                <div class="text">
+                    <p>Agents that operate the real surface area people use: browsers and SaaS UIs.</p>
+                    <p style="margin-top: 1rem;"><strong>OpenAI Operator</strong> (January 2025)</p>
+                    <ul>
+                        <li>Uses screenshots to "see" and virtual mouse/keyboard to interact</li>
+                        <li>Books reservations, fills forms, places orders</li>
+                        <li>Later integrated into ChatGPT as "agent mode"</li>
+                    </ul>
+                    <p style="margin-top: 1rem;"><strong>Google Project Mariner</strong></p>
+                    <ul>
+                        <li>Chrome extension with sidebar interface</li>
+                        <li>Runs up to 10 parallel task streams</li>
+                        <li>"Teach & Repeat" learns demonstrated workflows</li>
+                    </ul>
+                </div>
+                <div class="visual" style="flex-direction: column; gap: 16px; justify-content: center;">
+                    <div class="card" style="background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.3); text-align: center;">
+                        <p style="font-size: 0.9rem; color: var(--red); margin-bottom: 0.5rem;">The risk</p>
+                        <p style="font-size: 1rem;">UI brittleness, broad access requirements, irreversible actions. Require approvals for anything permanent.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Multi-Agent -->
+        <div class="slide slide-two-col">
+            <span class="topic-tag orange">Agents</span>
+            <h2>Multi-Agent: When It Helps, When It Hurts</h2>
+            <div class="cols">
+                <div class="col">
+                    <h3 class="green">When It Helps</h3>
+                    <ul>
+                        <li><strong>Parallel research:</strong> Multiple agents gather evidence simultaneously, then consolidate</li>
+                        <li><strong>Role separation:</strong> Planner, executor, reviewer as distinct agents</li>
+                        <li><strong>Tool specialization:</strong> Different agents with different permissions or domains</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3 class="red">When It Hurts</h3>
+                    <ul>
+                        <li><strong>Non-determinism:</strong> Outcomes vary more with multiple agents</li>
+                        <li><strong>Coordination overhead:</strong> Agents disagree or duplicate work</li>
+                        <li><strong>Error amplification:</strong> One agent's wrong assumption spreads</li>
+                        <li><strong>Cost:</strong> You pay for parallel runs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SKILLS -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Skills Intro -->
+        <div class="slide slide-two-col">
+            <span class="topic-tag orange">Skills</span>
+            <h2>Skills: Packaged Expertise for Agents</h2>
+            <div class="cols">
+                <div class="col">
+                    <h3 class="orange">Agents execute.</h3>
+                    <p>They reason, call tools, handle multi-step workflows. But agents are general-purpose—they don't inherently know your domain.</p>
+                </div>
+                <div class="col">
+                    <h3 class="blue">Skills equip.</h3>
+                    <p>Folders of instructions, scripts, and resources that agents load on demand. BigQuery queries. NDA review procedures. PDF extraction. Domain expertise, packaged and portable.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Skills Visual -->
+        <div class="slide slide-visual">
+            <span class="topic-tag orange">Skills</span>
+            <h2>How Skills Fit Into Agent Architecture</h2>
+            <img src="images/skills_architecture.webp" alt="Agent + Skills + Virtual Machine">
+            <p class="caption">Agent configuration includes equipped skills and MCP servers. Skills live as directories in the agent's file system—loaded when relevant. Source: Anthropic</p>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- AGENTIC FRAMEWORKS -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Agentic Frameworks -->
+        <div class="slide slide-statement">
+            <span class="topic-tag orange">Frameworks</span>
+            <h2>Frameworks moved from "loops" to explicit workflows.</h2>
+            <p class="small">Early agent setups: plan, call tool, read output, repeat. In 2025, frameworks moved toward explicit graphs with named steps, clear transitions, and predictable control flow. Debugging a loop is painful. Debugging a workflow is tractable.</p>
+        </div>
+
+        <!-- SLIDE: What Changed in Frameworks -->
+        <div class="slide slide-cards">
+            <span class="topic-tag orange">Frameworks</span>
+            <h2>What Changed in Agentic Frameworks</h2>
+            <div class="cards-grid two">
+                <div class="card" style="border-left: 4px solid var(--blue);">
+                    <h3>State Became First-Class</h3>
+                    <p>Checkpointing progress so you can resume after failures. Persisting intermediate artifacts. Supporting "pause and wait" for humans or slow systems. Real tasks span hours or days.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--green);">
+                    <h3>Human-in-Loop: Designed In</h3>
+                    <p>Approval gates, escalation paths, and fallbacks became built-in concepts. Better support for partial automation. Enterprises don't want full autonomy—they want safe delegation.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--purple);">
+                    <h3>Tooling Got Structured</h3>
+                    <p>Clear contracts for tools: inputs, outputs, errors. Better handling of failures and partial results. Moves toward portable tool ecosystems so apps don't rewrite integrations.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--orange);">
+                    <h3>Multi-Agent: Supported, Not Default</h3>
+                    <p>Better coordination primitives, message passing, role boundaries. More emphasis on controlling non-determinism. Multi-agent as an advanced pattern, not the starting point.</p>
+                </div>
+            </div>
+        </div>
+
         <!-- SLIDE 43e: RAG Theme 1 -->
         <div class="slide slide-content">
             <h2>RAG Grew Up: Structure Beats Chunks</h2>
@@ -1419,27 +1391,89 @@
                 </div>
             </div>
         </div>
-        
-        <!-- SLIDE 44: Application Takeaways -->
+
+        <!-- ============================================ -->
+        <!-- STANDARDS -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Why Standards Matter -->
+        <div class="slide slide-statement">
+            <span class="topic-tag orange">Standards</span>
+            <h2>2025 was the year everyone realized fragmentation would kill adoption.</h2>
+            <p class="small">Two different interoperability problems emerged. How do AI apps talk to tools and data sources? How do agents coordinate with other agents? The industry started racing toward standard rails.</p>
+        </div>
+
+        <!-- SLIDE: MCP and A2A -->
+        <div class="slide slide-two-col">
+            <span class="topic-tag orange">Standards</span>
+            <h2>Two Standards, Two Problems</h2>
+            <div class="cols">
+                <div class="col">
+                    <h3 class="blue">MCP: Tool Connectivity</h3>
+                    <p>A universal connector contract so AI apps can talk to tools and data sources consistently.</p>
+                    <ul>
+                        <li>Standardized tool descriptions</li>
+                        <li>Any agent can understand any MCP-compatible tool</li>
+                        <li>Reduces integration cost over time</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3 class="purple">A2A: Agent-to-Agent</h3>
+                    <p>A protocol for agents coordinating with other agents across systems.</p>
+                    <ul>
+                        <li>Different layer than MCP</li>
+                        <li>Enables multi-vendor agent collaboration</li>
+                        <li>Critical for complex enterprise workflows</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Protocol Wars Timeline -->
+        <div class="slide slide-list">
+            <span class="topic-tag orange">Standards</span>
+            <h2>The Protocol Wars: From Fragmentation to Open Governance</h2>
+            <ul>
+                <li class="blue"><strong>April 2025:</strong> Google announces Agent2Agent (A2A) protocol. The agent-to-agent communication problem gets a proposed standard.</li>
+                <li class="green"><strong>June 2025:</strong> Linux Foundation launches Agent2Agent protocol project. Microsoft publicly backs the open protocol.</li>
+                <li class="purple"><strong>December 2025:</strong> Anthropic donates MCP to Linux Foundation's "Agentic AI Foundation." Positioned explicitly around neutrality and open governance.</li>
+                <li class="orange"><strong>The pattern:</strong> Corporate-controlled APIs lose to open standards. Governance determines whether a standard becomes real infrastructure.</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE: Why This Matters -->
+        <div class="slide slide-statement">
+            <span class="topic-tag orange">Standards</span>
+            <h2>Standards reduce vendor lock-in. Standards reduce integration cost. Open governance wins.</h2>
+            <p class="small">The move to Linux Foundation wasn't just about technology. It was about trust. Enterprises adopt standards they can rely on outlasting any single vendor's strategy.</p>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- TAKEAWAYS -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Application Takeaways -->
         <div class="slide slide-list">
             <h2 class="orange">Application Layer: Key Takeaways</h2>
             <ul>
-                <li class="green"><strong>Start with coding, content, or docs.</strong> Clear success metrics, proven ROI, 15-30% productivity gains.</li>
-                <li class="green"><strong>Expect 60-70% of time on integration and error handling.</strong> Not the agent logic:the plumbing.</li>
-                <li class="green"><strong>Keep scope narrow, add human checkpoints.</strong> Autonomous systems that fail silently are worse than no automation.</li>
-                <li class="green"><strong>Reliability and debuggability beat sophistication.</strong> The agents that shipped weren't the smartest:they were the most predictable.</li>
+                <li class="orange"><strong>RAG survived because enterprises need grounding, freshness, and control.</strong> What changed: RAG became an engineered system, not a trick.</li>
+                <li class="orange"><strong>Agent types diversified.</strong> Deep for long-horizon work, ambient for always-on automation, browser for UI control, coding as the breakthrough success.</li>
+                <li class="orange"><strong>Skills and frameworks matured.</strong> Reusable capabilities, explicit workflows, state management, and human-in-loop by design.</li>
+                <li class="orange"><strong>Standards moved to open governance.</strong> MCP and A2A under Linux Foundation. The protocol wars are consolidating.</li>
             </ul>
         </div>
-        
+
+
+
         <!-- ============================================ -->
-        <!-- SECTION 4: OUTPUT LAYER (Slides 45-56) -->
+        <!-- SECTION 4: OUTPUT LAYER - Evals & Monitoring -->
         <!-- ============================================ -->
-        
-        <!-- SLIDE 45: Section Break -->
+
+        <!-- SLIDE: Section Break -->
         <div class="slide slide-section">
             <p class="label purple">Section 4</p>
             <h2>Output Layer</h2>
-            <p class="sub">Trust as Engineering</p>
+            <p class="sub">Evals & Production Monitoring</p>
             <div class="framework-container">
                 <svg class="framework-svg" viewBox="0 0 950 480" xmlns="http://www.w3.org/2000/svg" style="max-width: 1100px;">
                     <g class="framework-layer dimmed"><rect x="20" y="15" width="750" height="95" rx="8" fill="#3b82f6" opacity="0.15" stroke="#3b82f6" stroke-width="2"/><text x="30" y="38" fill="#3b82f6" font-weight="700" font-size="14">INPUT LAYER</text></g>
@@ -1456,191 +1490,201 @@
                 </svg>
             </div>
         </div>
-        
-        <!-- SLIDE 45b: Section 4 Overview -->
+
+        <!-- SLIDE: Section Overview -->
         <div class="slide slide-list">
-            <h2>What Changed in the Output Layer</h2>
+            <h2>What's in the Output Layer</h2>
             <ul>
-                <li class="purple"><strong>Evals became engineering, not afterthought.</strong> Teams that shipped fast had evals running before features, not after. LLM-as-judge scaled evaluation beyond human capacity.</li>
-                <li class="purple"><strong>Production monitoring got sophisticated.</strong> Real-time guardrails, runtime interventions, and continuous feedback loops replaced static filters.</li>
-                <li class="purple"><strong>The reliability math got real.</strong> 95% per step = 36% over 20 steps. This shapes every production architecture.</li>
-                <li class="purple"><strong>Trust became quantifiable.</strong> Success metrics evolved from accuracy to include consistency, safety, and user confidence.</li>
+                <li class="purple"><strong>Evals became the bottleneck.</strong> Teams that shipped fast had evals running before features, not after.</li>
+                <li class="purple"><strong>Model evals vs product evals.</strong> Benchmarks tell you about the model. Production metrics tell you about your system.</li>
+                <li class="purple"><strong>Agent evaluation got structured.</strong> Four buckets emerged for evaluating agentic systems systematically.</li>
+                <li class="purple"><strong>Monitoring closed the loop.</strong> Real-time signals feeding back into development. The flywheel that compounds quality.</li>
             </ul>
         </div>
-        
-        <!-- SLIDE 46: The Math -->
+
+        <!-- SLIDE: Evals as Bottleneck -->
         <div class="slide slide-statement">
-            <h2>The math that keeps practitioners up at night.</h2>
-            <p class="small">This isn't a tuning problem. It's a fundamental architectural constraint that shapes every production decision.</p>
+            <span class="topic-tag purple">Evals</span>
+            <h2>Evals became the bottleneck for shipping AI.</h2>
+            <p class="small">Not model quality. Not prompt engineering. Not infrastructure. The teams that shipped fast had one thing in common: they could evaluate their systems quickly and confidently. Everyone else was flying blind.</p>
         </div>
-        
-        <!-- SLIDE 47: The Equation -->
-        <div class="slide slide-content" style="justify-content: center;">
-            <div class="equation" style="max-width: 750px; margin: 0 auto;">
-                <p class="formula"><span class="blue">95%</span> per step = <span class="red">36%</span> over 20 steps</p>
-                <p class="explain">0.95^20 = 0.358</p>
+
+        <!-- SLIDE: Evals vs Monitoring -->
+        <div class="slide slide-vs">
+            <span class="topic-tag purple">Evals</span>
+            <div class="vs-box" style="background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3);">
+                <span class="tag" style="color: var(--purple);">Evals</span>
+                <h3>Offline Quality Assurance</h3>
+                <p>Run before deployment. Test against known datasets. Catch regressions before users see them. Answer: "Is this change safe to ship?"</p>
             </div>
-            <div style="text-align: center; margin-top: 1.5rem; color: var(--text-muted); font-size: 1.05rem; max-width: 700px; margin-left: auto; margin-right: auto;">
-                <p>Traditional software engineering assumes 99.99%+ reliability per component.</p>
-                <p style="margin-top: 0.5rem;">AI's 95% feels like building on quicksand. You can't engineer your way to compound reliability with current approaches.</p>
+            <span class="vs-arrow">→</span>
+            <div class="vs-box" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3);">
+                <span class="tag" style="color: var(--green);">Monitoring</span>
+                <h3>Online Quality Assurance</h3>
+                <p>Run in production. Track real user interactions. Catch issues evals missed. Answer: "Is this working for actual users?"</p>
             </div>
         </div>
-        
-        <!-- SLIDE 48: Real Implications -->
-        <div class="slide slide-list">
-            <h2>What This Means for Your Architecture</h2>
-            <ul>
-                <li class="red"><strong>Long chains break.</strong> A 20-step workflow at 95% per-step accuracy fails 64% of the time. Design for fewer sequential dependencies.</li>
-                <li class="orange"><strong>Parallelization helps.</strong> Instead of A→B→C, run A, B, C together and combine results. Trade compute for reliability.</li>
-                <li class="blue"><strong>Checkpoints are essential.</strong> Save state after each successful step. Detect failures fast. Don't cascade errors through the system.</li>
-                <li class="green"><strong>Human fallbacks aren't optional.</strong> After N automated retries, escalate. Build this into the architecture from day one.</li>
-            </ul>
+
+        <!-- SLIDE: Model vs Product Evals -->
+        <div class="slide slide-two-col">
+            <span class="topic-tag purple">Evals</span>
+            <h2>Model Evals vs Product Evals</h2>
+            <div class="cols">
+                <div class="col">
+                    <h3 class="blue">Model Evals</h3>
+                    <p>How good is the underlying model?</p>
+                    <ul>
+                        <li>Benchmark scores (MMLU, HumanEval)</li>
+                        <li>Capability testing on standard tasks</li>
+                        <li>Comparison across model versions</li>
+                        <li>Useful for model selection</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3 class="green">Product Evals</h3>
+                    <p>Does the system solve user problems?</p>
+                    <ul>
+                        <li>Task completion rates</li>
+                        <li>Domain-specific accuracy</li>
+                        <li>End-to-end workflow success</li>
+                        <li>What actually matters for shipping</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        
-        <!-- SLIDE 49: How Teams Adapt -->
+
+        <!-- SLIDE: Eval Mental Model -->
+        <div class="slide slide-statement">
+            <span class="topic-tag purple">Evals</span>
+            <h2>The eval mental model: What are you actually testing?</h2>
+            <p class="small">Every eval answers one of three questions. (1) Can it do the task at all? Capability. (2) Does it still do the task after changes? Regression. (3) Does it do the task the way we want? Alignment. Know which question you're asking.</p>
+        </div>
+
+        <!-- SLIDE: Agent Evaluation Buckets -->
         <div class="slide slide-cards">
-            <h2>How Teams Adapted</h2>
+            <span class="topic-tag purple">Evals</span>
+            <h2>Four Buckets for Agent Evaluation</h2>
             <div class="cards-grid two">
-                <div class="card">
-                    <h3>Parallel Processing</h3>
-                    <p>Instead of A→B→C→D, execute A, B, C, D simultaneously and combine results with voting or synthesis. Trade 3x compute cost for 2x reliability improvement.</p>
+                <div class="card" style="border-left: 4px solid var(--blue);">
+                    <h3>1. Task Completion</h3>
+                    <p>Did the agent achieve the goal? Binary success/failure on well-defined objectives. The baseline metric.</p>
                 </div>
-                <div class="card">
-                    <h3>Checkpoint & Retry</h3>
-                    <p>Save state after each successful step. Detect failures quickly:don't cascade. Retry with different approaches. Human fallback after N attempts.</p>
+                <div class="card" style="border-left: 4px solid var(--green);">
+                    <h3>2. Trajectory Quality</h3>
+                    <p>How did it get there? Efficient tool use, sensible step ordering, recovery from errors. The path matters.</p>
                 </div>
-                <div class="card">
-                    <h3>Verification Loops</h3>
-                    <p>Don't assume success:verify it. Build verification into every step. Use different models for verification than execution. Accept 2x latency for 10x reliability.</p>
+                <div class="card" style="border-left: 4px solid var(--orange);">
+                    <h3>3. Safety & Boundaries</h3>
+                    <p>Did it stay in bounds? No unauthorized actions, proper escalation, respecting guardrails. Trust requires limits.</p>
                 </div>
-                <div class="card">
-                    <h3>Ensemble Methods</h3>
-                    <p>Multiple models voting on outputs. Confidence-weighted aggregation. Outlier detection and handling. Trade 5x cost for 3x reliability improvement.</p>
-                </div>
-            </div>
-        </div>
-        
-        <!-- SLIDE 50: Trust Equation -->
-        <div class="slide slide-content" style="justify-content: center;">
-            <div class="equation" style="max-width: 1100px; margin: 0 auto;">
-                <p class="formula" style="font-size: 2rem;">Trust = (Reliability × Transparency × Control) / Risk</p>
-            </div>
-            <div class="cards-grid four" style="margin-top: 2rem; max-width: 1100px; margin-left: auto; margin-right: auto;">
-                <div class="card" style="text-align: center;">
-                    <p class="blue" style="font-weight: 600;">Reliability</p>
-                    <p style="font-size: 0.85rem;">Consistent performance within defined parameters</p>
-                </div>
-                <div class="card" style="text-align: center;">
-                    <p class="green" style="font-weight: 600;">Transparency</p>
-                    <p style="font-size: 0.85rem;">Understanding how and why decisions are made</p>
-                </div>
-                <div class="card" style="text-align: center;">
-                    <p class="orange" style="font-weight: 600;">Control</p>
-                    <p style="font-size: 0.85rem;">Ability to intervene, modify, and rollback</p>
-                </div>
-                <div class="card" style="text-align: center;">
-                    <p class="red" style="font-weight: 600;">Risk</p>
-                    <p style="font-size: 0.85rem;">Potential negative impact of failures</p>
-                </div>
-            </div>
-            <p class="subtext muted" style="text-align: center; margin-top: 1.5rem;">Organizations that mastered all four variables succeeded. Those that focused on only one or two built impressive demos that never reached production.</p>
-        </div>
-        
-        <!-- SLIDE 51: Engineering Allocation -->
-        <div class="slide slide-content">
-            <h2>Where the Engineering Time Actually Goes</h2>
-            <div class="body">
-                <div class="text">
-                    <p>High-growth companies allocate <strong class="purple">37% of engineering</strong> to AI. But the nature of that work differs from traditional software:</p>
-                    <p><strong style="color: var(--blue);">50% Infrastructure and tooling</strong></p>
-                    <ul>
-                        <li>Observability stacks for non-deterministic systems</li>
-                        <li>Cost tracking and optimization platforms</li>
-                        <li>Prompt management and versioning</li>
-                    </ul>
-                    <p><strong style="color: var(--green);">30% Integration and deployment</strong></p>
-                    <ul>
-                        <li>API wrappers and error handling</li>
-                        <li>Gradual rollout pipelines</li>
-                        <li>Incident response procedures</li>
-                    </ul>
-                    <p><strong style="color: var(--orange);">20% Core AI development</strong></p>
-                    <ul>
-                        <li>Model selection and fine-tuning</li>
-                        <li>Agent architecture design</li>
-                    </ul>
-                </div>
-                <div class="visual">
-                    <img src="images/engineering_allocation.png" alt="Engineering Allocation">
+                <div class="card" style="border-left: 4px solid var(--purple);">
+                    <h3>4. Resource Efficiency</h3>
+                    <p>What did it cost? Tokens consumed, API calls made, time elapsed. Efficiency at scale.</p>
                 </div>
             </div>
         </div>
-        
-        <!-- SLIDE 52: Security Stack -->
+
+        <!-- SLIDE: Grader Stack -->
+        <div class="slide slide-cards">
+            <span class="topic-tag purple">Evals</span>
+            <h2>The Grader Stack: Who Evaluates?</h2>
+            <div class="cards-grid stacked">
+                <div class="card" style="border-left: 4px solid var(--blue);">
+                    <h3>Deterministic Checks</h3>
+                    <p>Code that compiles. JSON that parses. Regex that matches. Fast, cheap, reliable. Use these first.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--purple);">
+                    <h3>LLM-as-Judge</h3>
+                    <p>Use a model to evaluate model outputs. Scales beyond human capacity. Requires calibration against human judgments. The 2025 breakthrough.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--green);">
+                    <h3>Human Review</h3>
+                    <p>Gold standard for subjective quality. Essential for calibration. Expensive, doesn't scale. Reserve for edge cases and spot checks.</p>
+                </div>
+            </div>
+            <p class="subtext muted" style="text-align: center; margin-top: 1rem;">The pattern: Deterministic for what you can, LLM-as-judge for scale, human review for calibration and edge cases.</p>
+        </div>
+
+        <!-- SLIDE: Capability vs Regression -->
+        <div class="slide slide-vs">
+            <span class="topic-tag purple">Evals</span>
+            <div class="vs-box" style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.3);">
+                <span class="tag" style="color: var(--blue);">Capability Evals</span>
+                <h3>"Can it do new things?"</h3>
+                <p>Testing new features. Expanding to new domains. Pushing boundaries. Run when adding capabilities.</p>
+            </div>
+            <span class="vs-arrow">↔</span>
+            <div class="vs-box" style="background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.3);">
+                <span class="tag" style="color: var(--red);">Regression Evals</span>
+                <h3>"Does it still work?"</h3>
+                <p>Catching breakage. Model updates, prompt changes, dependency shifts. Run on every change. Non-negotiable.</p>
+            </div>
+        </div>
+
+        <!-- SLIDE: Production Monitoring -->
         <div class="slide slide-list">
-            <h2>Runtime Security: Beyond Simple Guardrails</h2>
+            <span class="topic-tag purple">Monitoring</span>
+            <h2>Production Monitoring: What to Watch</h2>
             <ul>
-                <li><strong>Layer 1 - Real-time filtering:</strong> Token-level analysis during generation, &lt;100ms latency, 99.9% precision</li>
-                <li><strong>Layer 2 - Post-processing:</strong> Semantic understanding of complete outputs, 1-5 second processing, 95% recall</li>
-                <li><strong>Layer 3 - Behavioral monitoring:</strong> Pattern analysis across interactions, hourly aggregation, 90% attack detection</li>
-                <li><strong>Layer 4 - Human review:</strong> Edge cases flagged for manual inspection, 24-hour SLA, feedback loop</li>
+                <li class="blue"><strong>Latency distributions.</strong> P50, P95, P99. Not just averages. Tail latency kills user experience.</li>
+                <li class="green"><strong>Error rates by type.</strong> API failures, timeout, refusals, hallucination flags. Each requires different response.</li>
+                <li class="orange"><strong>User signals.</strong> Regeneration requests, thumbs down, conversation abandonment. Implicit quality feedback.</li>
+                <li class="purple"><strong>Cost per interaction.</strong> Token consumption, API calls, compute. Anomalies indicate problems or abuse.</li>
+                <li class="red"><strong>Safety triggers.</strong> Guardrail activations, escalation rates, policy violations. Your early warning system.</li>
             </ul>
-            <p class="subtext">Security frameworks now intervene in under 5 minutes with less than 2% false positives. Average enterprise spends $2-5M annually on AI security infrastructure.</p>
         </div>
-        
-        <!-- SLIDE 52b: Evals Matured -->
+
+        <!-- SLIDE: The Flywheel -->
         <div class="slide slide-content">
-            <h2>Evals Finally Matured</h2>
+            <span class="topic-tag purple">Monitoring</span>
+            <h2>The Eval Flywheel</h2>
             <div class="body">
                 <div class="text">
-                    <p>2025 brought serious evaluation frameworks:</p>
+                    <p>The teams that improve fastest run a continuous loop:</p>
                     <ul>
-                        <li><strong>Domain-specific benchmarks:</strong> Legal, medical, finance:not just general knowledge</li>
-                        <li><strong>LLM-as-judge:</strong> Using models to evaluate model outputs at scale</li>
-                        <li><strong>A/B testing infrastructure:</strong> Proper statistical significance for AI comparisons</li>
-                        <li><strong>Regression detection:</strong> Catching when model updates break production</li>
+                        <li><strong>Ship:</strong> Deploy with monitoring and guardrails</li>
+                        <li><strong>Observe:</strong> Collect production signals and failures</li>
+                        <li><strong>Curate:</strong> Turn failures into eval cases</li>
+                        <li><strong>Eval:</strong> Run expanded suite before next deploy</li>
+                        <li><strong>Improve:</strong> Fix failures, ship again</li>
                     </ul>
-                    <p style="margin-top: 1rem;"><strong>The shift:</strong> From "did it give a reasonable answer?" to "does it meet our specific accuracy bar for this use case?"</p>
+                    <p style="margin-top: 1rem;">Each cycle makes your eval suite more robust. Production failures become regression tests. The system learns from its mistakes.</p>
                 </div>
-                <div class="visual" style="flex-direction: column; gap: 12px;">
-                    <div class="card" style="background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3); text-align: center; width: 100%;">
-                        <span style="font-size: 1.5rem; font-weight: 700; color: var(--purple);">Continuous Eval</span>
-                        <p style="margin-top: 0.5rem; color: var(--muted);">Not just at deployment:monitor ongoing quality</p>
+                <div class="visual" style="flex-direction: column; gap: 16px; justify-content: center;">
+                    <div class="card" style="background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3); text-align: center;">
+                        <p style="font-weight: 700; color: var(--purple); font-size: 1.1rem;">Production failures → Eval cases</p>
+                        <p style="font-weight: 700; color: var(--purple); font-size: 1.1rem; margin-top: 0.5rem;">Eval cases → Prevented failures</p>
                     </div>
                 </div>
             </div>
         </div>
-        
-        <!-- SLIDE 52c: Guardrails Evolution -->
-        <div class="slide slide-cards">
-            <h2>Guardrails: From Blocklists to Behavior</h2>
-            <div class="cards-grid">
-                <div class="card" style="border-top: 3px solid var(--red);">
-                    <h3>2024: Keyword Blocking</h3>
-                    <p>Simple pattern matching. Easy to bypass. High false positive rates. Reactive, not proactive.</p>
-                </div>
-                <div class="card" style="border-top: 3px solid var(--orange);">
-                    <h3>2025: Semantic Understanding</h3>
-                    <p>Intent classification. Context-aware filtering. Behavioral analysis across conversations.</p>
-                </div>
-                <div class="card" style="border-top: 3px solid var(--green);">
-                    <h3>2026: Predictive Safety</h3>
-                    <p>Anticipate risky trajectories. Intervene before harm. Learn from near-misses.</p>
-                </div>
-            </div>
+
+        <!-- SLIDE: What to Look For -->
+        <div class="slide slide-list">
+            <span class="topic-tag purple">Building AI Products</span>
+            <h2>If You're Building AI Products, Know This</h2>
+            <ul>
+                <li class="purple"><strong>Evals before features.</strong> You can't iterate fast without fast feedback. Build the eval harness first.</li>
+                <li class="blue"><strong>LLM-as-judge scales.</strong> Human review doesn't. Calibrate your LLM graders against human judgment, then trust them.</li>
+                <li class="green"><strong>Regression tests are sacred.</strong> Every production failure becomes a test case. The suite only grows.</li>
+                <li class="orange"><strong>Monitor implicit signals.</strong> Users don't file bug reports. They regenerate, abandon, or leave. Watch behavior.</li>
+                <li class="red"><strong>Close the loop.</strong> Production → evals → improvements → production. The flywheel compounds.</li>
+            </ul>
         </div>
-        
-        <!-- SLIDE 53: Output Takeaways -->
+
+        <!-- SLIDE: Output Takeaways -->
         <div class="slide slide-list">
             <h2 class="purple">Output Layer: Key Takeaways</h2>
             <ul>
-                <li class="green"><strong>AI reliability doesn't compound like traditional software.</strong> Design architectures that minimize sequential dependencies.</li>
-                <li class="green"><strong>Build trust through engineering:</strong> monitoring, evaluation, and rollback capabilities. Not hope.</li>
-                <li class="green"><strong>Match reliability investment to use case risk.</strong> Not every application needs five-nines availability.</li>
-                <li class="green"><strong>Budget for security.</strong> $2-5M annually is the enterprise norm. It's not optional.</li>
+                <li class="purple"><strong>Evals are the shipping bottleneck.</strong> Fast eval cycles = fast iteration. Invest here first.</li>
+                <li class="purple"><strong>Model evals ≠ product evals.</strong> Benchmarks don't tell you if users succeed. Test what matters.</li>
+                <li class="purple"><strong>LLM-as-judge changed evaluation.</strong> Scale beyond human capacity. Calibrate carefully.</li>
+                <li class="purple"><strong>The flywheel wins.</strong> Production failures → eval cases → prevented failures. Compound quality over time.</li>
             </ul>
         </div>
-        
+
+
+
         <!-- ============================================ -->
         <!-- SECTION 5: WHAT'S BROKEN (Slides 54-65) -->
         <!-- ============================================ -->
@@ -1692,6 +1736,7 @@
         
         <!-- SLIDE 56: Hallucinations Reality -->
         <div class="slide slide-list">
+            <span class="topic-tag red">Hallucinations</span>
             <h2>Hallucinations: What Practitioners Need to Know</h2>
             <ul>
                 <li class="green"><strong>Simple facts are mostly reliable now.</strong> General knowledge queries rarely hallucinate. This is a solved problem for basic use cases.</li>
@@ -1703,31 +1748,34 @@
         
         <!-- SLIDE 57: Why Hallucinations Persist -->
         <div class="slide slide-statement">
+            <span class="topic-tag red">Hallucinations</span>
             <h2>Mathematical research confirms: complete elimination is impossible with current architectures.</h2>
             <p class="small">Models learn statistical patterns, not actual understanding. Training data has gaps and errors. Design systems assuming hallucinations will happen:the question isn't "how do we prevent them?" but "how do we catch them before they cause damage?"</p>
         </div>
         
         <!-- SLIDE 58: RAG Stagnation -->
         <div class="slide slide-quote">
+            <span class="topic-tag red">RAG</span>
             <blockquote>"RAG is in a phase of stagnation."</blockquote>
             <p class="attr">: RAGFlow researchers, 2025. Academic papers keep appearing. Breakthroughs don't.</p>
         </div>
         
         <!-- SLIDE 59: RAG Problems -->
         <div class="slide slide-cards">
+            <span class="topic-tag red">RAG</span>
             <h2>Why RAG Hit the Wall</h2>
-            <div class="cards-grid">
-                <div class="card" style="border-top: 3px solid var(--red);">
+            <div class="cards-grid stacked">
+                <div class="card" style="border-left: 4px solid var(--red);">
                     <h3>Chunk Size Tradeoffs</h3>
-                    <p>Small chunks = precise matching but fragmented context. Large chunks = context preserved but reduced precision. No right answer:just tradeoffs based on your use case.</p>
+                    <p>Small chunks = precise matching but fragmented context. Large chunks = context preserved but reduced precision. No right answer — just tradeoffs based on your use case.</p>
                 </div>
-                <div class="card" style="border-top: 3px solid var(--red);">
+                <div class="card" style="border-left: 4px solid var(--red);">
                     <h3>Storage Explosion</h3>
                     <p>A single page image requires ~512KB in tensor storage. A million-page corpus hits terabytes. That's before you consider retrieval latency at scale.</p>
                 </div>
-                <div class="card" style="border-top: 3px solid var(--red);">
+                <div class="card" style="border-left: 4px solid var(--red);">
                     <h3>Similarity ≠ Relevance</h3>
-                    <p>Query "customer churn Q4" and you'll get docs about satisfaction, Q4 financials, historical churn:all semantically related, none answering your question.</p>
+                    <p>Query "customer churn Q4" and you'll get docs about satisfaction, Q4 financials, historical churn — all semantically related, none answering your question.</p>
                 </div>
             </div>
             <p class="subtext muted" style="margin-top: 1rem;">For many use cases, long-context models may be simpler than sophisticated RAG pipelines. Evaluate before defaulting to RAG because it's familiar.</p>
@@ -1735,6 +1783,7 @@
         
         <!-- SLIDE 60: RAG Hype Cycle -->
         <div class="slide slide-visual">
+            <span class="topic-tag red">RAG</span>
             <h2>RAG Interest Over Time</h2>
             <img src="images/rag_hype_cycle.png" alt="RAG Hype Cycle">
             <p class="caption">Hype peaked in early-mid 2023. Long-context alternatives are emerging as viable options for many use cases.</p>
@@ -1742,12 +1791,14 @@
         
         <!-- SLIDE 61: Production Gap -->
         <div class="slide slide-statement">
+            <span class="topic-tag red">Production Gap</span>
             <h2>Most pilots never ship. Here's why.</h2>
             <p class="small">The reliability math doesn't work. The platform keeps changing. The cost surprises. What worked in sandbox breaks with real data at real scale with real users.</p>
         </div>
         
         <!-- SLIDE 62: Why Pilots Fail -->
         <div class="slide slide-list">
+            <span class="topic-tag red">Production Gap</span>
             <h2>Why So Many Pilots Fail</h2>
             <ul>
                 <li class="red"><strong>The reliability math doesn't work:</strong> 5% error rate is fine for chatbots, catastrophic for agents that update databases</li>
@@ -1760,6 +1811,7 @@
         
         <!-- SLIDE 63: Debugging -->
         <div class="slide slide-vs">
+            <span class="topic-tag red">Debugging</span>
             <div class="vs-box" style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.3);">
                 <span class="tag" style="color: var(--blue);">Traditional Debugging</span>
                 <h3>Set breakpoint. Examine state. Step through code.</h3>
@@ -1775,6 +1827,7 @@
         
         <!-- SLIDE 64: Multi-Agent Debugging -->
         <div class="slide slide-visual">
+            <span class="topic-tag red">Debugging</span>
             <h2>Multi-Agent Debugging is Fundamentally Different</h2>
             <img src="images/challenges/www_getmaxim_ai_5.png" alt="Agent Debugging">
             <p class="caption">Agent tracing platforms are emerging, but the field is primitive compared to traditional software development. Budget debugging time you can't easily do.</p>
@@ -1782,6 +1835,7 @@
         
         <!-- SLIDE 64b: Observability Emerging -->
         <div class="slide slide-visual">
+            <span class="topic-tag red">Debugging</span>
             <h2>Agent Observability: A New Category</h2>
             <div class="visual-container">
                 <img src="images/challenges/www_getmaxim_ai_6.png" alt="AI Agent Observability Platforms" style="max-height: 50vh;">
@@ -1791,6 +1845,7 @@
         
         <!-- SLIDE 64c: Long Context RAG -->
         <div class="slide slide-visual">
+            <span class="topic-tag red">RAG</span>
             <h2>Long Context RAG: Hybrid Approach</h2>
             <div class="visual-container">
                 <img src="images/challenges/ragflow_io_5.png" alt="Long Context RAG" style="max-height: 55vh;">
@@ -1800,17 +1855,18 @@
         
         <!-- SLIDE 64d: The Debugging Gap -->
         <div class="slide slide-cards">
+            <span class="topic-tag red">Debugging</span>
             <h2>The Debugging Gap</h2>
-            <div class="cards-grid">
-                <div class="card" style="border-top: 3px solid var(--red);">
+            <div class="cards-grid stacked">
+                <div class="card" style="border-left: 4px solid var(--red);">
                     <h3>No Breakpoints</h3>
                     <p>Traditional debugging lets you pause, inspect, and step through. Agent execution is a black box until failure.</p>
                 </div>
-                <div class="card" style="border-top: 3px solid var(--red);">
+                <div class="card" style="border-left: 4px solid var(--red);">
                     <h3>Non-Determinism</h3>
                     <p>Same input, different output. Reproducing bugs requires capturing exact model state, temperature, and random seeds.</p>
                 </div>
-                <div class="card" style="border-top: 3px solid var(--red);">
+                <div class="card" style="border-left: 4px solid var(--red);">
                     <h3>Delayed Failures</h3>
                     <p>Errors cascade. A subtle mistake at step 5 explodes at step 50. Root cause analysis requires full trace history.</p>
                 </div>
@@ -1829,6 +1885,8 @@
             </ul>
         </div>
         
+
+
         <!-- ============================================ -->
         <!-- SECTION 6: ROAD AHEAD (Slides 66-77) -->
         <!-- ============================================ -->
@@ -1853,17 +1911,20 @@
         
         <!-- SLIDE 67: 2026 Prediction -->
         <div class="slide slide-statement">
+            <span class="topic-tag purple">2026 Outlook</span>
             <h2>By the end of 2026, AI won't be AGI or sentient machines.</h2>
         </div>
         
         <!-- SLIDE 68: Boring Infrastructure -->
         <div class="slide slide-statement">
+            <span class="topic-tag purple">2026 Outlook</span>
             <h2>It will be <span class="blue">boring infrastructure</span> that works.</h2>
             <p class="small">Like databases in the 1990s. Like cloud computing in the 2010s. The technology will transition from competitive advantage to table stakes.</p>
         </div>
         
         <!-- SLIDE 69: What's Coming -->
         <div class="slide slide-cards">
+            <span class="topic-tag purple">2026 Outlook</span>
             <h2>What's Coming in 2026</h2>
             <div class="cards-grid two">
                 <div class="card" style="border-left: 4px solid var(--green);">
@@ -1887,6 +1948,7 @@
         
         <!-- SLIDE 70: Investment Realignment -->
         <div class="slide slide-list">
+            <span class="topic-tag purple">Investment</span>
             <h2>Investment Landscape Shifts</h2>
             <ul>
                 <li><strong>Pure model plays become commoditized.</strong> The moat isn't the model anymore.</li>
@@ -1899,6 +1961,7 @@
         
         <!-- SLIDE 71: Success Metrics Shift -->
         <div class="slide slide-vs">
+            <span class="topic-tag purple">Success Metrics</span>
             <div class="vs-box old">
                 <span class="tag">Old Success Metric</span>
                 <h3>"Look what AI can do"</h3>
@@ -1914,12 +1977,14 @@
         
         <!-- SLIDE 72: Who Wins -->
         <div class="slide slide-statement">
+            <span class="topic-tag purple">Success Metrics</span>
             <h2>The companies that win won't have the best models.</h2>
             <p class="small">They'll integrate AI best into their operations. They'll build the most reliable systems. They'll create the most value for users. They'll turn 2025's breakthroughs into 2026's business as usual.</p>
         </div>
         
         <!-- SLIDE 72b: AI-Native Architecture -->
         <div class="slide slide-content">
+            <span class="topic-tag purple">AI Architecture</span>
             <h2>AI-Native vs AI-Augmented</h2>
             <div class="body">
                 <div class="text">
@@ -1935,6 +2000,7 @@
         
         <!-- SLIDE 72c: Unanswered Questions -->
         <div class="slide slide-list">
+            <span class="topic-tag purple">Open Questions</span>
             <h2>The Questions 2025 Left Unanswered</h2>
             <ul>
                 <li><strong>Scaling laws:</strong> Are we hitting diminishing returns, or is this a temporary plateau?</li>
@@ -1947,17 +2013,18 @@
         
         <!-- SLIDE 72d: The Talent Shift -->
         <div class="slide slide-cards">
+            <span class="topic-tag purple">Talent</span>
             <h2>The Talent Landscape Shifts</h2>
-            <div class="cards-grid">
-                <div class="card" style="border-top: 3px solid var(--blue);">
+            <div class="cards-grid stacked">
+                <div class="card" style="border-left: 4px solid var(--blue);">
                     <h3>2024: ML Engineers Dominated</h3>
                     <p>Training models, optimizing architectures, pushing benchmarks. The competitive advantage was model expertise.</p>
                 </div>
-                <div class="card" style="border-top: 3px solid var(--green);">
+                <div class="card" style="border-left: 4px solid var(--green);">
                     <h3>2025: Systems Engineers Rise</h3>
                     <p>Integration, reliability, observability. Making AI work in production became the hard problem.</p>
                 </div>
-                <div class="card" style="border-top: 3px solid var(--purple);">
+                <div class="card" style="border-left: 4px solid var(--purple);">
                     <h3>2026: Domain Experts Lead</h3>
                     <p>Understanding what problems to solve matters more than how to solve them. AI becomes a tool, not a specialty.</p>
                 </div>
@@ -1975,6 +2042,8 @@
             </ul>
         </div>
         
+
+
         <!-- ============================================ -->
         <!-- CLOSING (Slides 73-80) -->
         <!-- ============================================ -->
@@ -2033,37 +2102,16 @@
             <p class="subtitle" style="margin-top: 2rem;">Questions?</p>
             <p class="muted" style="margin-top: 3rem; font-size: 0.9rem;">Based on ICONIQ Growth GenAI Survey, State of AI Report 2025, MIT/Fortune research, Cleanlab production surveys, RAGFlow analysis</p>
         </div>
-        
+
+
     </div>
-    
+
     <nav class="nav">
         <button onclick="prevSlide()">← Prev</button>
         <span class="counter"><span id="current">1</span> / <span id="total">80</span></span>
         <button onclick="nextSlide()">Next →</button>
     </nav>
-    
-    <script>
-        const slides = document.querySelectorAll('.slide');
-        let current = 0;
-        
-        function showSlide(n) {
-            slides[current].classList.remove('active');
-            current = (n + slides.length) % slides.length;
-            slides[current].classList.add('active');
-            document.getElementById('current').textContent = current + 1;
-            document.getElementById('total').textContent = slides.length;
-            document.getElementById('progress').style.width = ((current + 1) / slides.length * 100) + '%';
-        }
-        
-        function nextSlide() { showSlide(current + 1); }
-        function prevSlide() { showSlide(current - 1); }
-        
-        document.addEventListener('keydown', e => {
-            if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); nextSlide(); }
-            if (e.key === 'ArrowLeft') { e.preventDefault(); prevSlide(); }
-        });
-        
-        showSlide(0);
-    </script>
+
+    <script src="script.js"></script>
 </body>
 </html>
