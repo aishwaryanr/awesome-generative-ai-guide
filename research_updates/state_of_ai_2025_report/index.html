@@ -1457,43 +1457,98 @@
         </div>
 
         <!-- SLIDE: Why Challenges Spiked in 2025 -->
-        <div class="slide slide-visual">
+        <div class="slide slide-content">
             <span class="topic-tag red">2025 Reality</span>
             <h2>Why These Challenges Spiked in 2025</h2>
-            <img src="images/why_challenges_spiked.png" alt="Why Challenges Spiked in 2025">
-            <p class="caption">Systems crossed a threshold: from "text generators" to "workflow executors." More tools, longer runs, real environments—and predictable new failure modes.</p>
+            <div class="body">
+                <div class="text">
+                    <ul>
+                        <li><strong>Systems crossed a threshold.</strong> They stopped being "text generators" and started being "workflow executors."</li>
+                        <li><strong>Agents ran longer.</strong> Used tools. Operated across multiple context windows. Interacted with real environments.</li>
+                        <li><strong>Manual testing hit a wall.</strong> Teams reached a breaking point—"flying blind" after changes, unable to distinguish regressions from noise.</li>
+                        <li><strong>These aren't random problems.</strong> They are the predictable cost of systems getting more capable and more connected.</li>
+                    </ul>
+                </div>
+                <div class="visual">
+                    <img src="images/why_challenges_spiked.png" alt="Why Challenges Spiked in 2025">
+                </div>
+            </div>
         </div>
 
         <!-- SLIDE: Hallucinations Reframed -->
-        <div class="slide slide-visual">
+        <div class="slide slide-content">
             <span class="topic-tag red">Hallucinations</span>
             <h2>Hallucinations Became "False Claims About Actions"</h2>
-            <img src="images/hallucinations_false_aciton.png" alt="Hallucinations as False Action Claims">
-            <p class="caption">Not just fake facts—false claims about what the system did. "Your flight is booked" when no reservation exists. Verify actions in target systems.</p>
+            <div class="body">
+                <div class="text">
+                    <ul>
+                        <li><strong>Not just fake facts anymore.</strong> In 2025, hallucinations showed up as false claims about what the system did inside a workflow.</li>
+                        <li><strong>The dangerous pattern:</strong> Agent says "your flight has been booked"—but the reservation never appeared in the database.</li>
+                        <li><strong>This is hallucinating the world state.</strong> The model confidently reports completing actions it never attempted.</li>
+                        <li><strong>High-stakes domains exposed the risk.</strong> Legal, medical, and financial tools showed hallucination remains a major practical risk.</li>
+                    </ul>
+                </div>
+                <div class="visual">
+                    <img src="images/hallucinations_false_aciton.png" alt="Hallucinations as False Action Claims">
+                </div>
+            </div>
         </div>
 
         <!-- SLIDE: Inconsistent Reasoning -->
-        <div class="slide slide-visual">
+        <div class="slide slide-content">
             <span class="topic-tag red">Inconsistent Reasoning</span>
             <h2>Inconsistent Reasoning Became a Reliability Problem</h2>
-            <img src="images/inconsistent_reasoning.png" alt="Inconsistent Reasoning">
-            <p class="caption">Same prompt, different paths, different outcomes. Think in success rates, not single runs. Product reliability depends on the 95th percentile.</p>
+            <div class="body">
+                <div class="text">
+                    <ul>
+                        <li><strong>Inconsistency always existed.</strong> But 2025 made it visible because agent behavior is multi-step and path-dependent.</li>
+                        <li><strong>Two runs, different outcomes.</strong> Same prompt can take different tool sequences and reach completely different results.</li>
+                        <li><strong>Non-determinism is the default.</strong> Think in success rates across multiple trials—a task can pass once, fail the next.</li>
+                        <li><strong>The key reframe:</strong> It's not enough to ask "did it work once." You need to ask "how often does it work."</li>
+                    </ul>
+                </div>
+                <div class="visual">
+                    <img src="images/inconsistent_reasoning.png" alt="Inconsistent Reasoning">
+                </div>
+            </div>
         </div>
 
         <!-- SLIDE: Over-Autonomy -->
-        <div class="slide slide-visual">
+        <div class="slide slide-content">
             <span class="topic-tag red">Over-Autonomy</span>
             <h2>Over-Autonomy: Capability Rose Faster Than Control</h2>
-            <img src="images/over_autonomy.png" alt="Over-Autonomy">
-            <p class="caption">"Delete the test file" becomes "I've reorganized your entire directory." Human approval gates moved from nice-to-have to explicit design pattern.</p>
+            <div class="body">
+                <div class="text">
+                    <ul>
+                        <li><strong>2025 put "agency risk" on the map.</strong> Agents could take real actions—especially via browser and computer use.</li>
+                        <li><strong>The pattern we saw:</strong> "Delete the test file" becomes "I've cleaned up all test files and reorganized your directory."</li>
+                        <li><strong>The tradeoff became clear:</strong> Confirmation steps reduce autonomy but block high-risk operations. That's a feature, not a bug.</li>
+                        <li><strong>Human approval gates became a design pattern.</strong> Not a nice-to-have—an explicit requirement for production systems.</li>
+                    </ul>
+                </div>
+                <div class="visual">
+                    <img src="images/over_autonomy.png" alt="Over-Autonomy">
+                </div>
+            </div>
         </div>
 
         <!-- SLIDE: Poor Tool Grounding -->
-        <div class="slide slide-visual">
+        <div class="slide slide-content">
             <span class="topic-tag red">Tool Grounding</span>
             <h2>Poor Tool Grounding: Tools Are Unforgiving</h2>
-            <img src="images/tool_call_issues.png" alt="Tool Call Issues">
-            <p class="caption">Wrong tool selection, malformed calls, phantom tools. Tool failures aren't just model weaknesses—they're an interface + grounding + error recovery problem.</p>
+            <div class="body">
+                <div class="text">
+                    <ul>
+                        <li><strong>Tool grounding became measurable.</strong> Systems used more tools more often—failures became obvious and quantifiable.</li>
+                        <li><strong>Wrong tool selection:</strong> Models pick semantically similar tools that are functionally wrong.</li>
+                        <li><strong>Malformed calls:</strong> Arguments in wrong formats, required fields missing, JSON that almost parses but doesn't.</li>
+                        <li><strong>Phantom tools:</strong> Agents calling tools that don't exist—hallucinating capabilities based on what "should" be available.</li>
+                    </ul>
+                </div>
+                <div class="visual">
+                    <img src="images/tool_call_issues.png" alt="Tool Call Issues">
+                </div>
+            </div>
         </div>
 
         <!-- SLIDE: Long Context Drift -->
@@ -1510,11 +1565,22 @@
         </div>
 
         <!-- SLIDE: Retrieval Issues -->
-        <div class="slide slide-visual">
+        <div class="slide slide-content">
             <span class="topic-tag red">Retrieval</span>
             <h2>Retrieval Issues: "Did We Retrieve" vs "Did We Use It"</h2>
-            <img src="images/retrieval_issues.png" alt="Retrieval Issues">
-            <p class="caption">Semantic similarity ≠ relevance. Retrieval got better, failures got subtler. The problem moved from retrieval accuracy to end-to-end grounding.</p>
+            <div class="body">
+                <div class="text">
+                    <ul>
+                        <li><strong>Retrieval got better, failures got subtler.</strong> The problem shifted from retrieval accuracy to end-to-end grounding.</li>
+                        <li><strong>Semantic similarity ≠ relevance.</strong> Query "Q4 customer churn" and get docs about satisfaction, Q3 churn, Q4 revenue. All close. None useful.</li>
+                        <li><strong>The new failure mode:</strong> Models sometimes fail to leverage retrieved passages—especially when irrelevant context is present.</li>
+                        <li><strong>The ideal behavior is binary:</strong> Answer correctly OR say "I don't know" when info is missing.</li>
+                    </ul>
+                </div>
+                <div class="visual">
+                    <img src="images/retrieval_issues.png" alt="Retrieval Issues">
+                </div>
+            </div>
         </div>
 
         <!-- SLIDE: Multi-Agent Errors -->
