@@ -1,0 +1,582 @@
+        <!-- ============================================ -->
+        <!-- SECTION 3: APPLICATION LAYER -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Section Break -->
+        <div class="slide slide-section">
+            <p class="label orange">Section 3</p>
+            <h2>Application Layer</h2>
+            <p class="sub">From "Which model?" to "Can it do real work?"</p>
+            <div class="framework-container">
+                <svg class="framework-svg" viewBox="0 0 950 480" xmlns="http://www.w3.org/2000/svg" style="max-width: 1100px;">
+                    <g class="framework-layer dimmed"><rect x="20" y="15" width="750" height="95" rx="8" fill="#3b82f6" opacity="0.15" stroke="#3b82f6" stroke-width="2"/><text x="30" y="38" fill="#3b82f6" font-weight="700" font-size="14">INPUT LAYER</text></g>
+                    <g class="framework-layer dimmed"><rect x="20" y="120" width="750" height="95" rx="8" fill="#10b981" opacity="0.15" stroke="#10b981" stroke-width="2"/><text x="30" y="143" fill="#10b981" font-weight="700" font-size="14">DATA AND MODEL LAYER</text></g>
+                    <g class="framework-layer">
+                        <rect x="20" y="225" width="750" height="95" rx="8" fill="#f97316" opacity="0.15" stroke="#f97316" stroke-width="2"/>
+                        <text x="30" y="248" fill="#f97316" font-weight="700" font-size="14">APPLICATION LAYER</text>
+                        <rect x="30" y="260" width="100" height="50" rx="6" fill="#f97316"/><text x="80" y="290" text-anchor="middle" fill="white" font-size="10" font-weight="500">RAG</text>
+                        <rect x="140" y="260" width="100" height="50" rx="6" fill="#f97316"/><text x="190" y="290" text-anchor="middle" fill="white" font-size="10" font-weight="500">Agents</text>
+                        <rect x="250" y="260" width="100" height="50" rx="6" fill="#f97316"/><text x="300" y="290" text-anchor="middle" fill="white" font-size="10" font-weight="500">Tool Calling</text>
+                        <rect x="360" y="260" width="100" height="50" rx="6" fill="#f97316"/><text x="410" y="290" text-anchor="middle" fill="white" font-size="10" font-weight="500">Skills</text>
+                        <rect x="470" y="260" width="140" height="50" rx="6" fill="#f97316"/><text x="540" y="290" text-anchor="middle" fill="white" font-size="10" font-weight="500">Agentic Frameworks</text>
+                        <rect x="620" y="260" width="140" height="50" rx="6" fill="#f97316"/><text x="690" y="290" text-anchor="middle" fill="white" font-size="10" font-weight="500">Standards (MCP/A2A)</text>
+                    </g>
+                    <rect class="highlight-ring active" x="15" y="220" width="760" height="105" rx="12"/>
+                    <g class="framework-layer dimmed"><rect x="20" y="330" width="750" height="95" rx="8" fill="#8b5cf6" opacity="0.15" stroke="#8b5cf6" stroke-width="2"/><text x="30" y="353" fill="#8b5cf6" font-weight="700" font-size="14">OUTPUT LAYER</text></g>
+                    <g class="framework-layer dimmed"><rect x="790" y="15" width="145" height="410" rx="8" fill="#ef4444" opacity="0.15" stroke="#ef4444" stroke-width="2"/><text x="862" y="220" text-anchor="middle" fill="#ef4444" font-weight="700" font-size="13">CHALLENGES</text></g>
+                </svg>
+            </div>
+        </div>
+
+        <!-- SLIDE: Section Overview -->
+        <div class="slide slide-list">
+            <h2>What Changed in the Application Layer</h2>
+            <ul>
+                <li class="orange"><strong>Delegation replaced answers.</strong> Book the meeting, pull the numbers, draft the doc. The success metric moved from good responses to completed outcomes.</li>
+                <li class="orange"><strong>RAG matured into a real subsystem.</strong> Naive "add embeddings and pray" died. Hybrid retrieval, reranking, and agentic workflows became the norm.</li>
+                <li class="orange"><strong>Agent types diversified.</strong> Deep agents for long-horizon work. Ambient agents for always-on automation. Browser agents for UI control.</li>
+                <li class="orange"><strong>Standards emerged from protocol wars.</strong> MCP and A2A moved to open governance. Fragmentation started consolidating.</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE: The Shift -->
+        <div class="slide slide-statement">
+            <h2>People wanted delegation, not answers.</h2>
+            <p class="small">Book the meeting. Pull the numbers. Draft the doc. Update the ticket. Reconcile the spreadsheet. The success metric moved from "a good response" to "a completed outcome."</p>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- RAG IN 2025 -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: RAG Didn't Die -->
+        <div class="slide slide-statement">
+            <span class="topic-tag orange">RAG</span>
+            <h2>RAG didn't die. Naive RAG did.</h2>
+            <p class="small">The shift was from "add embeddings and pray" to "engineer retrieval like a real subsystem." What showed up in practice: hybrid retrieval, serious chunking strategies, metadata filtering, and access control.</p>
+        </div>
+
+        <!-- SLIDE: What Changed in RAG -->
+        <div class="slide slide-cards">
+            <span class="topic-tag orange">RAG</span>
+            <h2>How RAG Matured in 2025</h2>
+            <div class="cards-grid stacked">
+                <div class="card" style="border-left: 4px solid var(--blue);">
+                    <h3>Hybrid Retrieval Became Normal</h3>
+                    <p>Sparse retrieval (BM25) for exact matches. Dense embeddings for semantic matches. Reranking to pick the final context. Better retrieval wasn't just better embeddings—it was better input to retrieval.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--orange);">
+                    <h3>RAG Became a Workflow, Not a Single Call</h3>
+                    <p>The system rewrites the query, does multi-step retrieval, picks sources, verifies results, then answers. One-pass retrieval fails silently. The workflow approach makes failure visible and recoverable.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--purple);">
+                    <h3>Graph-Based Retrieval Got Attention</h3>
+                    <p>Traditional RAG is good at "find me the paragraph." It struggles at "summarize the themes" or "how do these concepts relate." GraphRAG builds structure over your data for corpus-level questions.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Long Context + RAG -->
+        <div class="slide slide-statement">
+            <span class="topic-tag orange">RAG</span>
+            <h2>Long context is a bigger desk. RAG is choosing the right papers to put on it.</h2>
+            <p class="small">Long context reduces complexity for small, stable datasets. But enterprise needs—cost control, freshness, access control, auditability—kept retrieval relevant. Most teams landed on hybrid: use long context as a reasoning workspace, but still retrieve curated slices into it.</p>
+        </div>
+
+        <!-- SLIDE: Why RAG Stayed -->
+        <div class="slide slide-list">
+            <span class="topic-tag orange">RAG</span>
+            <h2>Why Retrieval Stayed Relevant</h2>
+            <ul>
+                <li class="blue"><strong>Cost control.</strong> Passing huge context is expensive and often wasteful. Retrieval lets you pay only for what you need.</li>
+                <li class="green"><strong>Freshness.</strong> If data changes daily, you don't want to keep repacking massive context. Fetch what's current.</li>
+                <li class="purple"><strong>Access control.</strong> "Put it all in the prompt" breaks down when different users have different permissions.</li>
+                <li class="orange"><strong>Auditability.</strong> Retrieval makes it easier to show what sources were used and why.</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE 43e: RAG Theme 1 -->
+        <div class="slide slide-content">
+            <h2>RAG Grew Up: Structure Beats Chunks</h2>
+            <div class="body">
+                <div class="text">
+                    <p class="muted" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;">What it is</p>
+                    <div class="stats-row">
+                        <div class="stat-box">
+                            <div class="num">1</div>
+                            <div class="label">Extract entities</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="num">2</div>
+                            <div class="label">Build graph</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="num">3</div>
+                            <div class="label">Summarize layers</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="num">4</div>
+                            <div class="label">Query top-down</div>
+                        </div>
+                    </div>
+                    <div class="border-orange" style="margin-top: 1.25rem;">
+                        <p><strong>Best for:</strong> policies, incident timelines, architecture tradeoffs</p>
+                        <p><strong>Why it works:</strong> captures relationships before retrieval, not after</p>
+                        <p><strong>When chunks win:</strong> narrow fact lookups with high precision</p>
+                    </div>
+                    <div class="takeaway" style="margin-top: 1.25rem; background: linear-gradient(135deg, rgba(249, 115, 22, 0.18), rgba(59, 130, 246, 0.12)); border: 1px solid rgba(249, 115, 22, 0.35);">
+                        <h3 style="color: var(--orange);">2025 trend</h3>
+                        <p>GraphRAG-style pipelines became shippable OSS and moved from research to production for synthesis-heavy questions.</p>
+                    </div>
+                </div>
+                <div class="visual" style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="images/graphrag_pipeline.png" alt="GraphRAG pipeline" style="max-height: 52vh;">
+                    <p style="font-size: 0.7rem; color: #888; margin-top: 0.5rem;">Source: <a href="https://livebook.manning.com/book/essential-graphrag/chapter-7" target="_blank" style="color: #aaa;">Essential GraphRAG (Manning)</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 43f: RAG Theme 2 -->
+        <div class="slide slide-content">
+            <h2>Retrieval Became Agentic</h2>
+            <div class="body">
+                <div class="text">
+                    <p class="muted" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;">What it is</p>
+                    <div class="cards-grid" style="grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 0.5rem;">
+                        <div class="card" style="border-top: 3px solid var(--blue);">
+                            <h3>Plan</h3>
+                            <p>Rewrite into focused sub-queries</p>
+                        </div>
+                        <div class="card" style="border-top: 3px solid var(--orange);">
+                            <h3>Retrieve</h3>
+                            <p>Parallel search across text + vectors</p>
+                        </div>
+                        <div class="card" style="border-top: 3px solid var(--green);">
+                            <h3>Fuse</h3>
+                            <p>Rerank and synthesize grounded context</p>
+                        </div>
+                    </div>
+                    <div class="takeaway" style="margin-top: 1.25rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.16), rgba(16, 185, 129, 0.12)); border: 1px solid rgba(59, 130, 246, 0.35);">
+                        <h3 style="color: var(--blue);">2025 trend</h3>
+                        <p>Agentic retrieval shipped as platform features, with “retrieval reasoning effort” knobs and built-in semantic ranking.</p>
+                    </div>
+                </div>
+                <div class="visual" style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="images/agentic_retrieval_azure.png" alt="Agentic retrieval architecture" style="max-height: 52vh;">
+                    <p style="font-size: 0.7rem; color: #888; margin-top: 0.5rem;">Source: <a href="https://learn.microsoft.com/en-us/azure/search/agentic-retrieval-overview" target="_blank" style="color: #aaa;">Microsoft Azure AI Search</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 43g: RAG Theme 3 -->
+        <div class="slide slide-content">
+            <h2>Multimodal/PDF RAG: Parsing Became the Work</h2>
+            <div class="body">
+                <div class="text">
+                    <p class="muted" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;">What it is</p>
+                    <div class="stats-row">
+                        <div class="stat-box">
+                            <div class="num">1</div>
+                            <div class="label">Parse layout</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="num">2</div>
+                            <div class="label">Handle images</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="num">3</div>
+                            <div class="label">Index by structure</div>
+                        </div>
+                    </div>
+                    <div class="cards-grid two" style="margin-top: 1rem;">
+                        <div class="card" style="border-left: 4px solid var(--blue);">
+                            <h3>Image → Text</h3>
+                            <p>Caption/OCR and index as text for retrieval</p>
+                        </div>
+                        <div class="card" style="border-left: 4px solid var(--purple);">
+                            <h3>Image → Vector</h3>
+                            <p>Embed with multimodal models for direct search</p>
+                        </div>
+                    </div>
+                    <div class="takeaway" style="margin-top: 1.25rem; background: linear-gradient(135deg, rgba(139, 92, 246, 0.16), rgba(59, 130, 246, 0.12)); border: 1px solid rgba(139, 92, 246, 0.35);">
+                        <h3 style="color: var(--purple);">2025 trend</h3>
+                        <p>Hosted file search + parsers became standard. Extraction quality became the dominant bottleneck.</p>
+                    </div>
+                </div>
+                <div class="visual" style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="images/pdf_rag_layout_parser_pipeline.png" alt="Layout parser and chunking pipeline" style="max-height: 52vh;">
+                    <p style="font-size: 0.7rem; color: #888; margin-top: 0.5rem;">Source: <a href="https://cloud.google.com/blog/products/ai-machine-learning/build-retrieval-augmented-generation-rag-using-vertex-ai-search-and-gecko" target="_blank" style="color: #aaa;">Google Cloud</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 43h: RAG Theme 4 -->
+        <div class="slide slide-content">
+            <h2>RAG Moved Into Platforms</h2>
+            <div class="body">
+                <div class="text">
+                    <p class="muted" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;">What it is</p>
+                    <div class="cards-grid" style="grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 0.5rem;">
+                        <div class="card" style="border-top: 3px solid var(--blue);">
+                            <h3>Managed RAG Engines</h3>
+                            <p>Managed vector DB + retrieval strategies (KNN/ANN) with tunable index parameters.</p>
+                        </div>
+                        <div class="card" style="border-top: 3px solid var(--green);">
+                            <h3>Hosted File Search</h3>
+                            <p>Vector stores that auto‑parse/chunk/embed, with query rewrite + keyword/semantic search and reranking.</p>
+                        </div>
+                        <div class="card" style="border-top: 3px solid var(--purple);">
+                            <h3>Warehouse‑Native RAG</h3>
+                            <p>Hybrid retrieval + semantic reranking built into governed data platforms.</p>
+                        </div>
+                    </div>
+                    <div class="border-orange" style="margin-top: 1.25rem;">
+                        <p><strong>Platform primitives now include:</strong> vector storage, retrieval strategy, and retrieval controls</p>
+                        <p><strong>Governance pressure:</strong> keep retrieval near data, reuse platform security and access controls</p>
+                    </div>
+                    <div class="takeaway" style="margin-top: 1.25rem; background: linear-gradient(135deg, rgba(16, 185, 129, 0.16), rgba(59, 130, 246, 0.12)); border: 1px solid rgba(16, 185, 129, 0.35);">
+                        <h3 style="color: var(--green);">2025 trend</h3>
+                        <p>Buy vs build shifted: teams start with managed RAG engines, hosted file search, or warehouse‑native search—and customize only where needed.</p>
+                    </div>
+                </div>
+                <div class="visual" style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="card" style="max-width: 520px; text-align: left; border-left: 4px solid var(--green);">
+                        <h3>Examples</h3>
+                        <p><strong>Vertex AI RAG Engine:</strong> managed vector storage, chunking, and retrieval strategies</p>
+                        <p><strong>OpenAI File Search:</strong> auto parsing/chunking + keyword/semantic search + reranking</p>
+                        <p><strong>Snowflake Cortex Search:</strong> hybrid retrieval with semantic reranking built in</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 43i: RAG Theme 5 -->
+        <div class="slide slide-content">
+            <h2>Hybrid + Reranking Is the Baseline</h2>
+            <div class="body">
+                <div class="text">
+                    <p class="muted" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;">What it is</p>
+                    <div class="stats-row">
+                        <div class="stat-box">
+                            <div class="num">1</div>
+                            <div class="label">BM25 + Vector</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="num">2</div>
+                            <div class="label">RRF Fusion</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="num">3</div>
+                            <div class="label">Semantic Rerank</div>
+                        </div>
+                    </div>
+                    <div class="cards-grid two" style="margin-top: 1rem;">
+                        <div class="card" style="border-left: 4px solid var(--blue);">
+                            <h3>Why hybrid</h3>
+                            <p>Keyword hits + semantic similarity raises recall on real queries</p>
+                        </div>
+                        <div class="card" style="border-left: 4px solid var(--orange);">
+                            <h3>Why rerank</h3>
+                            <p>Second‑stage ranking improves precision on the short list</p>
+                        </div>
+                    </div>
+                    <div class="border-orange" style="margin-top: 1.25rem;">
+                        <p><strong>Knobs that matter:</strong> text recall window (maxTextRecallSize), RRF fusion, and reranker on/off</p>
+                        <p><strong>Where it shows up:</strong> hybrid queries fuse with RRF, then semantic rankers rerank top results</p>
+                    </div>
+                    <div class="takeaway" style="margin-top: 1.25rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.16), rgba(249, 115, 22, 0.12)); border: 1px solid rgba(59, 130, 246, 0.35);">
+                        <h3 style="color: var(--blue);">2025 trend</h3>
+                        <p>Hybrid + rerank shipped as defaults across platforms; retrieval quality became tunable engineering, not guesswork.</p>
+                    </div>
+                </div>
+                <div class="visual" style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="card" style="max-width: 520px; text-align: left; border-left: 4px solid var(--blue);">
+                        <h3>Where it’s baked in</h3>
+                        <p><strong>Azure AI Search:</strong> RRF fusion for hybrid results + semantic reranker on top</p>
+                        <p><strong>Amazon Bedrock KB:</strong> reranker models can be applied during retrieval</p>
+                        <p><strong>Snowflake Cortex Search:</strong> hybrid retrieval + semantic reranking by default</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- AGENT TYPES -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Agent Types Intro -->
+        <div class="slide slide-statement">
+            <span class="topic-tag orange">Agents</span>
+            <h2>2025 was the year agent work split into distinct categories.</h2>
+            <p class="small">"Agent" stopped meaning "LLM that can call a tool" and started meaning "a system that can complete work across many steps, over time, with integration, and with guardrails."</p>
+        </div>
+
+        <!-- SLIDE: Deep Agents -->
+        <div class="slide slide-content">
+            <span class="topic-tag orange">Agents</span>
+            <h2>Deep Agents: Long-Horizon Work</h2>
+            <div class="body">
+                <div class="text">
+                    <p>Deep agents handle tasks that take minutes to hours, with many steps, context management, and delegation.</p>
+                    <p style="margin-top: 1rem;"><strong>What they do:</strong></p>
+                    <ul>
+                        <li>Hold state and artifacts, not just chat history</li>
+                        <li>Decompose goals into sub-tasks</li>
+                        <li>Recover from failure, retry safely, continue</li>
+                        <li>Use memory and filesystems to avoid context collapse</li>
+                    </ul>
+                    <p style="margin-top: 1rem;"><strong>Example:</strong> OpenAI shipped "deep research" as an agentic capability—multi-step research that browses and synthesizes, returning a report with citations.</p>
+                </div>
+                <div class="visual" style="flex-direction: column; gap: 16px; justify-content: center;">
+                    <div class="card" style="background: rgba(249, 115, 22, 0.1); border-color: rgba(249, 115, 22, 0.3); text-align: center;">
+                        <p style="font-weight: 700; color: var(--orange); font-size: 1.1rem;">A shallow agent answers.</p>
+                        <p style="font-weight: 700; color: var(--orange); font-size: 1.1rem; margin-top: 0.5rem;">A deep agent produces.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Ambient Agents -->
+        <div class="slide slide-content">
+            <span class="topic-tag orange">Agents</span>
+            <h2>Ambient Agents: Always-On Automation</h2>
+            <div class="body">
+                <div class="text">
+                    <p>Ambient agents run in the background and act on events rather than waiting for prompts.</p>
+                    <p style="margin-top: 1rem;"><strong>They respond to:</strong></p>
+                    <ul>
+                        <li>Event streams, logs, monitoring alerts</li>
+                        <li>Tickets breaching SLA, churn signals spiking</li>
+                        <li>Build failures, incident starts, contract renewals</li>
+                    </ul>
+                    <p style="margin-top: 1rem;"><strong>Core ingredients:</strong></p>
+                    <ul>
+                        <li>Triggers: event streams, schedules, webhooks</li>
+                        <li>Policies: what it can do automatically vs. what needs approval</li>
+                        <li>Memory of ongoing state: what's already handled</li>
+                    </ul>
+                </div>
+                <div class="visual" style="flex-direction: column; gap: 16px; justify-content: center;">
+                    <div class="card" style="background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3); text-align: center;">
+                        <p style="font-size: 0.9rem; color: var(--purple); margin-bottom: 0.5rem;">Where they win</p>
+                        <p style="font-size: 1rem;">IT ops triage • Security alert routing • SLA management • Compliance checks</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Coding Agents -->
+        <div class="slide slide-statement">
+            <span class="topic-tag orange">Agents</span>
+            <h2>Coding agents became the first place many teams experienced real agents.</h2>
+            <p class="small">Why? Software work has the perfect control surface: repos, tests, CI, and pull requests. Every step is visible. Humans steer via PR review. Governance is built in.</p>
+        </div>
+
+        <!-- SLIDE: Coding Agent Types -->
+        <div class="slide slide-cards">
+            <span class="topic-tag orange">Agents</span>
+            <h2>Three Surfaces for Coding Agents</h2>
+            <div class="cards-grid stacked">
+                <div class="card" style="border-left: 4px solid var(--blue);">
+                    <h3>IDE Agents</h3>
+                    <p>Multi-step work inside your editor. Finds relevant files, proposes edits across multiple files, runs terminal commands and tests, watches errors, fixes and retries in a loop. Cursor and Copilot agent mode run multiple agents in parallel.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--green);">
+                    <h3>Repo & PR Agents</h3>
+                    <p>Work through issues and pull requests in a GitHub Actions environment. Produce PRs, logs, and reviewable commits. This is where autonomy becomes governable—every step visible in commits, humans steer via PR review.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--purple);">
+                    <h3>Terminal Agents</h3>
+                    <p>Agentic coding from the command line. Understands your codebase, helps with routine tasks and git workflows through natural language. Works with existing bash environment and can act as both MCP server and client.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Browser Agents -->
+        <div class="slide slide-content">
+            <span class="topic-tag orange">Agents</span>
+            <h2>Browser Agents: UI Control</h2>
+            <div class="body">
+                <div class="text">
+                    <p>Agents that operate the real surface area people use: browsers and SaaS UIs.</p>
+                    <p style="margin-top: 1rem;"><strong>OpenAI Operator</strong> (January 2025)</p>
+                    <ul>
+                        <li>Uses screenshots to "see" and virtual mouse/keyboard to interact</li>
+                        <li>Books reservations, fills forms, places orders</li>
+                        <li>Later integrated into ChatGPT as "agent mode"</li>
+                    </ul>
+                    <p style="margin-top: 1rem;"><strong>Google Project Mariner</strong></p>
+                    <ul>
+                        <li>Chrome extension with sidebar interface</li>
+                        <li>Runs up to 10 parallel task streams</li>
+                        <li>"Teach & Repeat" learns demonstrated workflows</li>
+                    </ul>
+                </div>
+                <div class="visual" style="flex-direction: column; gap: 16px; justify-content: center;">
+                    <div class="card" style="background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.3); text-align: center;">
+                        <p style="font-size: 0.9rem; color: var(--red); margin-bottom: 0.5rem;">The risk</p>
+                        <p style="font-size: 1rem;">UI brittleness, broad access requirements, irreversible actions. Require approvals for anything permanent.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Multi-Agent -->
+        <div class="slide slide-two-col">
+            <span class="topic-tag orange">Agents</span>
+            <h2>Multi-Agent: When It Helps, When It Hurts</h2>
+            <div class="cols">
+                <div class="col">
+                    <h3 class="green">When It Helps</h3>
+                    <ul>
+                        <li><strong>Parallel research:</strong> Multiple agents gather evidence simultaneously, then consolidate</li>
+                        <li><strong>Role separation:</strong> Planner, executor, reviewer as distinct agents</li>
+                        <li><strong>Tool specialization:</strong> Different agents with different permissions or domains</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3 class="red">When It Hurts</h3>
+                    <ul>
+                        <li><strong>Non-determinism:</strong> Outcomes vary more with multiple agents</li>
+                        <li><strong>Coordination overhead:</strong> Agents disagree or duplicate work</li>
+                        <li><strong>Error amplification:</strong> One agent's wrong assumption spreads</li>
+                        <li><strong>Cost:</strong> You pay for parallel runs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SKILLS -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Skills Intro -->
+        <div class="slide slide-two-col">
+            <span class="topic-tag orange">Skills</span>
+            <h2>Skills: Packaged Expertise for Agents</h2>
+            <div class="cols">
+                <div class="col">
+                    <h3 class="orange">Agents execute.</h3>
+                    <p>They reason, call tools, handle multi-step workflows. But agents are general-purpose—they don't inherently know your domain.</p>
+                </div>
+                <div class="col">
+                    <h3 class="blue">Skills equip.</h3>
+                    <p>Folders of instructions, scripts, and resources that agents load on demand. BigQuery queries. NDA review procedures. PDF extraction. Domain expertise, packaged and portable.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Skills Visual -->
+        <div class="slide slide-visual">
+            <span class="topic-tag orange">Skills</span>
+            <h2>How Skills Fit Into Agent Architecture</h2>
+            <img src="../../images/skills_architecture.webp" alt="Agent + Skills + Virtual Machine">
+            <p class="caption">Agent configuration includes equipped skills and MCP servers. Skills live as directories in the agent's file system—loaded when relevant. Source: Anthropic</p>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- AGENTIC FRAMEWORKS -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Agentic Frameworks -->
+        <div class="slide slide-statement">
+            <span class="topic-tag orange">Frameworks</span>
+            <h2>Frameworks moved from "loops" to explicit workflows.</h2>
+            <p class="small">Early agent setups: plan, call tool, read output, repeat. In 2025, frameworks moved toward explicit graphs with named steps, clear transitions, and predictable control flow. Debugging a loop is painful. Debugging a workflow is tractable.</p>
+        </div>
+
+        <!-- SLIDE: What Changed in Frameworks -->
+        <div class="slide slide-cards">
+            <span class="topic-tag orange">Frameworks</span>
+            <h2>What Changed in Agentic Frameworks</h2>
+            <div class="cards-grid two">
+                <div class="card" style="border-left: 4px solid var(--blue);">
+                    <h3>State Became First-Class</h3>
+                    <p>Checkpointing progress so you can resume after failures. Persisting intermediate artifacts. Supporting "pause and wait" for humans or slow systems. Real tasks span hours or days.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--green);">
+                    <h3>Human-in-Loop: Designed In</h3>
+                    <p>Approval gates, escalation paths, and fallbacks became built-in concepts. Better support for partial automation. Enterprises don't want full autonomy—they want safe delegation.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--purple);">
+                    <h3>Tooling Got Structured</h3>
+                    <p>Clear contracts for tools: inputs, outputs, errors. Better handling of failures and partial results. Moves toward portable tool ecosystems so apps don't rewrite integrations.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--orange);">
+                    <h3>Multi-Agent: Supported, Not Default</h3>
+                    <p>Better coordination primitives, message passing, role boundaries. More emphasis on controlling non-determinism. Multi-agent as an advanced pattern, not the starting point.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- STANDARDS -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Why Standards Matter -->
+        <div class="slide slide-statement">
+            <span class="topic-tag orange">Standards</span>
+            <h2>2025 was the year everyone realized fragmentation would kill adoption.</h2>
+            <p class="small">Two different interoperability problems emerged. How do AI apps talk to tools and data sources? How do agents coordinate with other agents? The industry started racing toward standard rails.</p>
+        </div>
+
+        <!-- SLIDE: MCP and A2A -->
+        <div class="slide slide-two-col">
+            <span class="topic-tag orange">Standards</span>
+            <h2>Two Standards, Two Problems</h2>
+            <div class="cols">
+                <div class="col">
+                    <h3 class="blue">MCP: Tool Connectivity</h3>
+                    <p>A universal connector contract so AI apps can talk to tools and data sources consistently.</p>
+                    <ul>
+                        <li>Standardized tool descriptions</li>
+                        <li>Any agent can understand any MCP-compatible tool</li>
+                        <li>Reduces integration cost over time</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3 class="purple">A2A: Agent-to-Agent</h3>
+                    <p>A protocol for agents coordinating with other agents across systems.</p>
+                    <ul>
+                        <li>Different layer than MCP</li>
+                        <li>Enables multi-vendor agent collaboration</li>
+                        <li>Critical for complex enterprise workflows</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Protocol Wars Timeline -->
+        <div class="slide slide-list">
+            <span class="topic-tag orange">Standards</span>
+            <h2>The Protocol Wars: From Fragmentation to Open Governance</h2>
+            <ul>
+                <li class="blue"><strong>April 2025:</strong> Google announces Agent2Agent (A2A) protocol. The agent-to-agent communication problem gets a proposed standard.</li>
+                <li class="green"><strong>June 2025:</strong> Linux Foundation launches Agent2Agent protocol project. Microsoft publicly backs the open protocol.</li>
+                <li class="purple"><strong>December 2025:</strong> Anthropic donates MCP to Linux Foundation's "Agentic AI Foundation." Positioned explicitly around neutrality and open governance.</li>
+                <li class="orange"><strong>The pattern:</strong> Corporate-controlled APIs lose to open standards. Governance determines whether a standard becomes real infrastructure.</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE: Why This Matters -->
+        <div class="slide slide-statement">
+            <span class="topic-tag orange">Standards</span>
+            <h2>Standards reduce vendor lock-in. Standards reduce integration cost. Open governance wins.</h2>
+            <p class="small">The move to Linux Foundation wasn't just about technology. It was about trust. Enterprises adopt standards they can rely on outlasting any single vendor's strategy.</p>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- TAKEAWAYS -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Application Takeaways -->
+        <div class="slide slide-list">
+            <h2 class="orange">Application Layer: Key Takeaways</h2>
+            <ul>
+                <li class="orange"><strong>RAG survived because enterprises need grounding, freshness, and control.</strong> What changed: RAG became an engineered system, not a trick.</li>
+                <li class="orange"><strong>Agent types diversified.</strong> Deep for long-horizon work, ambient for always-on automation, browser for UI control, coding as the breakthrough success.</li>
+                <li class="orange"><strong>Skills and frameworks matured.</strong> Reusable capabilities, explicit workflows, state management, and human-in-loop by design.</li>
+                <li class="orange"><strong>Standards moved to open governance.</strong> MCP and A2A under Linux Foundation. The protocol wars are consolidating.</li>
+            </ul>
+        </div>
+
