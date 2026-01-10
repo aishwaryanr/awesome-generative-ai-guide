@@ -1,8 +1,8 @@
         <!-- ============================================ -->
-        <!-- SECTION 5: WHAT'S BROKEN (Slides 54-65) -->
+        <!-- SECTION 5: WHAT'S BROKEN -->
         <!-- ============================================ -->
-        
-        <!-- SLIDE 54: Section Break -->
+
+        <!-- SLIDE: Section Break -->
         <div class="slide slide-section">
             <p class="label red">Section 5</p>
             <h2>What's Still Broken</h2>
@@ -29,172 +29,109 @@
                 </svg>
             </div>
         </div>
-        
-        <!-- SLIDE 54b: Section 5 Overview -->
-        <div class="slide slide-list">
-            <h2>The Problems We Haven't Solved</h2>
-            <ul>
-                <li class="red"><strong>Hallucinations remain fundamental.</strong> Math confirms: complete elimination is impossible with current architectures. Design for detection, not prevention.</li>
-                <li class="red"><strong>RAG hit a wall.</strong> Academic papers keep appearing. Breakthroughs don't. The fundamental retrieval problem persists.</li>
-                <li class="red"><strong>Multi-agent coordination is chaos.</strong> Debugging distributed AI systems remains genuinely hard.</li>
-                <li class="red"><strong>Long context doesn't mean infinite context.</strong> Models lose information in the middle. Token limits still matter.</li>
-            </ul>
+
+        <!-- SLIDE: Why Challenges Spiked -->
+        <div class="slide slide-statement">
+            <span class="topic-tag red">2025 Reality</span>
+            <h2>More autonomy meant more failure modes.</h2>
+            <p class="small">2024 was about making AI work. 2025 was about discovering all the ways it breaks. Every capability we added created new categories of failures we hadn't anticipated.</p>
         </div>
-        
-        <!-- SLIDE 55: Honest Assessment -->
-        <div class="slide slide-quote">
-            <blockquote>"AI is transformative for specific, well-constrained use cases where occasional failure is acceptable."</blockquote>
-            <p class="attr">For anything requiring consistent reliability, it remains a powerful tool that requires constant supervision.</p>
-        </div>
-        
-        <!-- SLIDE 56: Hallucinations Reality -->
-        <div class="slide slide-list">
-            <span class="topic-tag red">Hallucinations</span>
-            <h2>Hallucinations: What Practitioners Need to Know</h2>
-            <ul>
-                <li class="green"><strong>Simple facts are mostly reliable now.</strong> General knowledge queries rarely hallucinate. This is a solved problem for basic use cases.</li>
-                <li class="red"><strong>Complex reasoning still hallucinates.</strong> Legal, medical, financial:domain-specific accuracy drops significantly. Don't trust without verification.</li>
-                <li class="orange"><strong>Complete elimination is mathematically impossible.</strong> Current architectures learn patterns, not truth. Design systems that catch hallucinations, not prevent them.</li>
-                <li class="blue"><strong>Verification is your responsibility.</strong> Use retrieval to ground responses. Implement confidence thresholds. Build human review into high-stakes workflows.</li>
-            </ul>
-        </div>
-        
-        <!-- SLIDE 57: Why Hallucinations Persist -->
+
+        <!-- SLIDE: Hallucinations Reframed -->
         <div class="slide slide-statement">
             <span class="topic-tag red">Hallucinations</span>
-            <h2>Mathematical research confirms: complete elimination is impossible with current architectures.</h2>
-            <p class="small">Models learn statistical patterns, not actual understanding. Training data has gaps and errors. Design systems assuming hallucinations will happen:the question isn't "how do we prevent them?" but "how do we catch them before they cause damage?"</p>
+            <h2>Hallucinations aren't just wrong facts. They're false claims about actions taken.</h2>
+            <p class="small">"I've scheduled your meeting" when no calendar was touched. "I've updated the database" when no write occurred. The agent confidently reports completing tasks it never attempted. This is worse than factual errors—it's operational lying.</p>
         </div>
-        
-        <!-- SLIDE 58: RAG Stagnation -->
-        <div class="slide slide-quote">
-            <span class="topic-tag red">RAG</span>
-            <blockquote>"RAG is in a phase of stagnation."</blockquote>
-            <p class="attr">: RAGFlow researchers, 2025. Academic papers keep appearing. Breakthroughs don't.</p>
-        </div>
-        
-        <!-- SLIDE 59: RAG Problems -->
-        <div class="slide slide-cards">
-            <span class="topic-tag red">RAG</span>
-            <h2>Why RAG Hit the Wall</h2>
-            <div class="cards-grid stacked">
-                <div class="card" style="border-left: 4px solid var(--red);">
-                    <h3>Chunk Size Tradeoffs</h3>
-                    <p>Small chunks = precise matching but fragmented context. Large chunks = context preserved but reduced precision. No right answer — just tradeoffs based on your use case.</p>
-                </div>
-                <div class="card" style="border-left: 4px solid var(--red);">
-                    <h3>Storage Explosion</h3>
-                    <p>A single page image requires ~512KB in tensor storage. A million-page corpus hits terabytes. That's before you consider retrieval latency at scale.</p>
-                </div>
-                <div class="card" style="border-left: 4px solid var(--red);">
-                    <h3>Similarity ≠ Relevance</h3>
-                    <p>Query "customer churn Q4" and you'll get docs about satisfaction, Q4 financials, historical churn — all semantically related, none answering your question.</p>
-                </div>
-            </div>
-            <p class="subtext muted" style="margin-top: 1rem;">For many use cases, long-context models may be simpler than sophisticated RAG pipelines. Evaluate before defaulting to RAG because it's familiar.</p>
-        </div>
-        
-        <!-- SLIDE 60: RAG Hype Cycle -->
-        <div class="slide slide-visual">
-            <span class="topic-tag red">RAG</span>
-            <h2>RAG Interest Over Time</h2>
-            <img src="../images/rag_hype_cycle.png" alt="RAG Hype Cycle">
-            <p class="caption">Hype peaked in early-mid 2023. Long-context alternatives are emerging as viable options for many use cases.</p>
-        </div>
-        
-        <!-- SLIDE 61: Production Gap -->
-        <div class="slide slide-statement">
-            <span class="topic-tag red">Production Gap</span>
-            <h2>Most pilots never ship. Here's why.</h2>
-            <p class="small">The reliability math doesn't work. The platform keeps changing. The cost surprises. What worked in sandbox breaks with real data at real scale with real users.</p>
-        </div>
-        
-        <!-- SLIDE 62: Why Pilots Fail -->
-        <div class="slide slide-list">
-            <span class="topic-tag red">Production Gap</span>
-            <h2>Why So Many Pilots Fail</h2>
-            <ul>
-                <li class="red"><strong>The reliability math doesn't work:</strong> 5% error rate is fine for chatbots, catastrophic for agents that update databases</li>
-                <li class="red"><strong>The platform keeps moving:</strong> 70% of regulated enterprises rebuild their AI stack every 3 months</li>
-                <li class="red"><strong>Demo ≠ production:</strong> The gap between 90% reliability and 99.9% reliability is massive</li>
-                <li class="red"><strong>Costs surprise:</strong> $50-100 per 100-turn conversation wasn't in the pilot budget</li>
-            </ul>
-            <p class="subtext">How teams adapted: 68% of production agents run fewer than 10 steps before human intervention. 92.5% deliver output to humans, not other systems. Autonomy got deliberately constrained.</p>
-        </div>
-        
-        <!-- SLIDE 63: Debugging -->
+
+        <!-- SLIDE: Inconsistent Reasoning -->
         <div class="slide slide-vs">
-            <span class="topic-tag red">Debugging</span>
-            <div class="vs-box" style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.3);">
-                <span class="tag" style="color: var(--blue);">Traditional Debugging</span>
-                <h3>Set breakpoint. Examine state. Step through code.</h3>
-                <p>Decades of infrastructure support this workflow.</p>
-            </div>
-            <span class="vs-arrow">→</span>
+            <span class="topic-tag red">Inconsistent Reasoning</span>
             <div class="vs-box" style="background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.3);">
-                <span class="tag" style="color: var(--red);">Agent Debugging</span>
-                <h3>Hope your logs are comprehensive enough to guess what happened.</h3>
-                <p>Non-deterministic execution. Bugs emerge 50+ exchanges in.</p>
+                <span class="tag" style="color: var(--red);">Run 1</span>
+                <h3>"Let me check the API first, then validate the schema."</h3>
+                <p>Methodical, step-by-step approach</p>
+            </div>
+            <span class="vs-arrow">≠</span>
+            <div class="vs-box" style="background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.3);">
+                <span class="tag" style="color: var(--red);">Run 2</span>
+                <h3>"I'll update the database directly."</h3>
+                <p>Same prompt, completely different strategy</p>
             </div>
         </div>
-        
-        <!-- SLIDE 64: Multi-Agent Debugging -->
-        <div class="slide slide-visual">
-            <span class="topic-tag red">Debugging</span>
-            <h2>Multi-Agent Debugging is Fundamentally Different</h2>
-            <img src="../images/challenges/www_getmaxim_ai_5.png" alt="Agent Debugging">
-            <p class="caption">Agent tracing platforms are emerging, but the field is primitive compared to traditional software development. Budget debugging time you can't easily do.</p>
+
+        <!-- SLIDE: Over-Autonomy -->
+        <div class="slide slide-statement">
+            <span class="topic-tag red">Over-Autonomy</span>
+            <h2>Agents started doing more than we asked.</h2>
+            <p class="small">"Delete the test file" becomes "I've cleaned up all the test files and reorganized your directory structure." Helpful intent, catastrophic results. The agent optimizes for what it thinks you want, not what you said.</p>
         </div>
-        
-        <!-- SLIDE 64b: Observability Emerging -->
-        <div class="slide slide-visual">
-            <span class="topic-tag red">Debugging</span>
-            <h2>Agent Observability: A New Category</h2>
-            <div class="visual-container">
-                <img src="../images/challenges/www_getmaxim_ai_6.png" alt="AI Agent Observability Platforms" style="max-height: 50vh;">
-            </div>
-            <p class="caption">Agent observability platforms emerged as essential infrastructure in 2025. Tracing, logging, and monitoring for non-deterministic systems requires specialized tooling.</p>
-        </div>
-        
-        <!-- SLIDE 64c: Long Context RAG -->
-        <div class="slide slide-visual">
-            <span class="topic-tag red">RAG</span>
-            <h2>Long Context RAG: Hybrid Approach</h2>
-            <div class="visual-container">
-                <img src="../images/challenges/ragflow_io_5.png" alt="Long Context RAG" style="max-height: 55vh;">
-            </div>
-            <p class="caption">Hybrid tree-graph retrieval combines entity relationships with semantic chunks. Long context models complement RAG rather than replacing it.</p>
-        </div>
-        
-        <!-- SLIDE 64d: The Debugging Gap -->
+
+        <!-- SLIDE: Poor Tool Grounding -->
         <div class="slide slide-cards">
-            <span class="topic-tag red">Debugging</span>
-            <h2>The Debugging Gap</h2>
+            <span class="topic-tag red">Tool Grounding</span>
+            <h2>Tool Use Failures</h2>
             <div class="cards-grid stacked">
                 <div class="card" style="border-left: 4px solid var(--red);">
-                    <h3>No Breakpoints</h3>
-                    <p>Traditional debugging lets you pause, inspect, and step through. Agent execution is a black box until failure.</p>
+                    <h3>Wrong Tool Selection</h3>
+                    <p>Agent picks the search tool when it needs the database tool. Semantically similar names, completely different functions. The model doesn't understand what tools actually do.</p>
                 </div>
                 <div class="card" style="border-left: 4px solid var(--red);">
-                    <h3>Non-Determinism</h3>
-                    <p>Same input, different output. Reproducing bugs requires capturing exact model state, temperature, and random seeds.</p>
+                    <h3>Malformed Tool Calls</h3>
+                    <p>Arguments in the wrong format. Required fields missing. JSON that almost parses but doesn't. The agent knows it needs to call something but gets the syntax wrong.</p>
                 </div>
                 <div class="card" style="border-left: 4px solid var(--red);">
-                    <h3>Delayed Failures</h3>
-                    <p>Errors cascade. A subtle mistake at step 5 explodes at step 50. Root cause analysis requires full trace history.</p>
+                    <h3>Phantom Tools</h3>
+                    <p>Calling tools that don't exist. The model hallucinates capabilities based on what it thinks should be available. "Let me use the send_email function"—which was never defined.</p>
                 </div>
             </div>
-            <p class="subtext muted" style="margin-top: 1rem;">Invest in observability infrastructure before you need it. Debugging without traces is archaeology.</p>
         </div>
-        
-        <!-- SLIDE 65: Challenges Takeaways -->
+
+        <!-- SLIDE: Long Context Drift -->
+        <div class="slide slide-statement">
+            <span class="topic-tag red">Context Drift</span>
+            <h2>Instructions given at the start get lost by the middle.</h2>
+            <p class="small">"Always respond in JSON format." Twenty exchanges later: a friendly paragraph of prose. The model's attention drifts. Early instructions fade. Long context doesn't mean persistent context.</p>
+        </div>
+
+        <!-- SLIDE: Retrieval Issues -->
+        <div class="slide slide-statement">
+            <span class="topic-tag red">Retrieval</span>
+            <h2>Semantic similarity is not the same as relevance.</h2>
+            <p class="small">Query "Q4 customer churn" and RAG returns documents about customer satisfaction, Q3 churn, and Q4 revenue. All semantically close. None answering your question. The fundamental retrieval problem remains unsolved.</p>
+        </div>
+
+        <!-- SLIDE: Multi-Agent Errors -->
+        <div class="slide slide-cards">
+            <span class="topic-tag red">Multi-Agent</span>
+            <h2>When Agents Talk to Agents</h2>
+            <div class="cards-grid stacked">
+                <div class="card" style="border-left: 4px solid var(--red);">
+                    <h3>Error Cascades</h3>
+                    <p>Agent A makes a small mistake. Agent B builds on it. Agent C amplifies it. By Agent D, the error is unrecognizable but catastrophic. No single point of failure—just compounding wrongness.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--red);">
+                    <h3>Coordination Breakdown</h3>
+                    <p>Agents assume what other agents will do. Assumptions conflict. One agent waits for input that never comes. Another sends output no one reads. Deadlocks and race conditions, but non-deterministic.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Debugging -->
+        <div class="slide slide-statement">
+            <span class="topic-tag red">Debugging</span>
+            <h2>You can't set a breakpoint on reasoning.</h2>
+            <p class="small">Traditional debugging: pause, inspect state, step through. Agent debugging: read logs, guess what happened, try to reproduce a non-deterministic failure. The bug appears at step 47 of 50. Good luck finding the root cause.</p>
+        </div>
+
+        <!-- SLIDE: Challenges Takeaways -->
         <div class="slide slide-list">
             <h2 class="red">Challenges: Key Takeaways</h2>
             <ul>
-                <li class="orange"><strong>Plan for integration and reliability work upfront.</strong> Most pilots fail before production:understand why.</li>
-                <li class="orange"><strong>Design for human oversight, don't fight it.</strong> 92.5% of production agents output to humans, not systems.</li>
-                <li class="orange"><strong>Evaluate long-context models before defaulting to RAG.</strong> Simpler may be better for your use case.</li>
-                <li class="orange"><strong>Invest in observability early.</strong> Debugging agents without tracing is guesswork.</li>
+                <li class="red"><strong>Autonomy creates failure modes.</strong> Every capability is a new way to break. Design for graceful degradation.</li>
+                <li class="red"><strong>Hallucinations are operational, not just factual.</strong> Agents lie about what they've done. Verify actions, not just outputs.</li>
+                <li class="red"><strong>Tool grounding remains fragile.</strong> Wrong tools, malformed calls, phantom capabilities. Test tool use extensively.</li>
+                <li class="red"><strong>Observability is non-negotiable.</strong> You can't debug what you can't trace. Invest in logging before you need it.</li>
             </ul>
         </div>
-        
+
