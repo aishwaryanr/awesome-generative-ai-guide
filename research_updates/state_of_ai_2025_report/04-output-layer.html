@@ -1,0 +1,162 @@
+        <!-- ============================================ -->
+        <!-- SECTION 4: OUTPUT LAYER - Evals & Monitoring -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Section Break -->
+        <div class="slide slide-section">
+            <p class="label purple">Section 4</p>
+            <h2>Output Layer</h2>
+            <p class="sub">Evals & Production Monitoring</p>
+            <div class="framework-container">
+                <svg class="framework-svg" viewBox="0 0 950 480" xmlns="http://www.w3.org/2000/svg" style="max-width: 1100px;">
+                    <g class="framework-layer dimmed"><rect x="20" y="15" width="750" height="95" rx="8" fill="#3b82f6" opacity="0.15" stroke="#3b82f6" stroke-width="2"/><text x="30" y="38" fill="#3b82f6" font-weight="700" font-size="14">INPUT LAYER</text></g>
+                    <g class="framework-layer dimmed"><rect x="20" y="120" width="750" height="95" rx="8" fill="#10b981" opacity="0.15" stroke="#10b981" stroke-width="2"/><text x="30" y="143" fill="#10b981" font-weight="700" font-size="14">DATA AND MODEL LAYER</text></g>
+                    <g class="framework-layer dimmed"><rect x="20" y="225" width="750" height="95" rx="8" fill="#f97316" opacity="0.15" stroke="#f97316" stroke-width="2"/><text x="30" y="248" fill="#f97316" font-weight="700" font-size="14">APPLICATION LAYER</text></g>
+                    <g class="framework-layer">
+                        <rect x="20" y="330" width="750" height="95" rx="8" fill="#8b5cf6" opacity="0.15" stroke="#8b5cf6" stroke-width="2"/>
+                        <text x="30" y="353" fill="#8b5cf6" font-weight="700" font-size="14">OUTPUT LAYER</text>
+                        <rect x="30" y="365" width="360" height="50" rx="6" fill="#8b5cf6"/><text x="210" y="395" text-anchor="middle" fill="white" font-size="11" font-weight="500">Evals</text>
+                        <rect x="400" y="365" width="360" height="50" rx="6" fill="#8b5cf6"/><text x="580" y="395" text-anchor="middle" fill="white" font-size="11" font-weight="500">Production Monitoring</text>
+                    </g>
+                    <rect class="highlight-ring active" x="15" y="325" width="760" height="105" rx="12"/>
+                    <g class="framework-layer dimmed"><rect x="790" y="15" width="145" height="410" rx="8" fill="#ef4444" opacity="0.15" stroke="#ef4444" stroke-width="2"/><text x="862" y="220" text-anchor="middle" fill="#ef4444" font-weight="700" font-size="13">CHALLENGES</text></g>
+                </svg>
+            </div>
+        </div>
+
+        <!-- SLIDE: Section Overview -->
+        <div class="slide slide-list">
+            <h2>What's in the Output Layer</h2>
+            <ul>
+                <li class="purple"><strong>Evals became the bottleneck.</strong> Teams that shipped fast had evals running before features, not after.</li>
+                <li class="purple"><strong>Model evals vs product evals.</strong> Benchmarks tell you about the model. Production metrics tell you about your system.</li>
+                <li class="purple"><strong>Agent evaluation got structured.</strong> Four buckets emerged for evaluating agentic systems systematically.</li>
+                <li class="purple"><strong>Monitoring closed the loop.</strong> Real-time signals feeding back into development. The flywheel that compounds quality.</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE: Quality Verification Bottleneck -->
+        <div class="slide slide-statement">
+            <span class="topic-tag purple">Quality Verification</span>
+            <h2>Quality verification became the bottleneck for shipping AI.</h2>
+        </div>
+
+        <!-- SLIDE: Model vs Product Evals -->
+        <div class="slide slide-visual">
+            <span class="topic-tag purple">Evals</span>
+            <h2>Model Evals vs Product Evals</h2>
+            <img src="../images/model_vs_product_evaluation.png" alt="Model Evals vs Product Evals">
+            <p class="caption">Model evals test the underlying model (benchmarks, capabilities). Product evals test your system (task completion, user success). Both matter—but product evals determine if you ship.</p>
+        </div>
+
+        <!-- SLIDE: Evals vs Monitoring -->
+        <div class="slide slide-vs">
+            <span class="topic-tag purple">Evals</span>
+            <div class="vs-box" style="background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3);">
+                <span class="tag" style="color: var(--purple);">Evals</span>
+                <h3>Offline Quality Assurance</h3>
+                <p>Run before deployment. Test against known datasets. Catch regressions before users see them. Answer: "Is this change safe to ship?"</p>
+            </div>
+            <span class="vs-arrow">→</span>
+            <div class="vs-box" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3);">
+                <span class="tag" style="color: var(--green);">Monitoring</span>
+                <h3>Online Quality Assurance</h3>
+                <p>Run in production. Track real user interactions. Catch issues evals missed. Answer: "Is this working for actual users?"</p>
+            </div>
+        </div>
+
+        <!-- SLIDE: Online vs Offline Timing -->
+        <div class="slide slide-visual">
+            <span class="topic-tag purple">Evals</span>
+            <h2>Evals vs Monitoring: When They Run</h2>
+            <img src="../images/online_vs_offline_timing.png" alt="Online vs Offline Timing">
+            <p class="caption">Evals run offline before deployment. Monitoring runs online in production. Both essential—different timing, different purpose.</p>
+        </div>
+
+        <!-- SLIDE: Eval Mental Model -->
+        <div class="slide slide-statement">
+            <span class="topic-tag purple">Evals</span>
+            <h2>The eval mental model: What are you actually testing?</h2>
+            <p class="small">Every eval answers one of three questions. (1) Can it do the task at all? Capability. (2) Does it still do the task after changes? Regression. (3) Does it do the task the way we want? Alignment. Know which question you're asking.</p>
+        </div>
+
+        <!-- SLIDE: Agent Evaluation Buckets -->
+        <div class="slide slide-cards">
+            <span class="topic-tag purple">Evals</span>
+            <h2>Four Buckets for Agent Evaluation</h2>
+            <div class="cards-grid two">
+                <div class="card" style="border-left: 4px solid var(--blue);">
+                    <h3>1. Task Completion</h3>
+                    <p>Did the agent achieve the goal? Binary success/failure on well-defined objectives. The baseline metric.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--green);">
+                    <h3>2. Trajectory Quality</h3>
+                    <p>How did it get there? Efficient tool use, sensible step ordering, recovery from errors. The path matters.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--orange);">
+                    <h3>3. Safety & Boundaries</h3>
+                    <p>Did it stay in bounds? No unauthorized actions, proper escalation, respecting guardrails. Trust requires limits.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--purple);">
+                    <h3>4. Resource Efficiency</h3>
+                    <p>What did it cost? Tokens consumed, API calls made, time elapsed. Efficiency at scale.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Grader Stack -->
+        <div class="slide slide-visual">
+            <span class="topic-tag purple">Evals</span>
+            <h2>The Grader Stack: Who Evaluates?</h2>
+            <img src="../images/three_evaluation_approaches.png" alt="Three Evaluation Approaches">
+            <p class="caption">Deterministic checks first (fast, cheap). LLM-as-judge for scale (the 2025 breakthrough). Human review for calibration and edge cases.</p>
+        </div>
+
+        <!-- SLIDE: Capability vs Regression -->
+        <div class="slide slide-vs">
+            <span class="topic-tag purple">Evals</span>
+            <div class="vs-box" style="background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.3);">
+                <span class="tag" style="color: var(--blue);">Capability Evals</span>
+                <h3>"Can it do new things?"</h3>
+                <p>Testing new features. Expanding to new domains. Pushing boundaries. Run when adding capabilities.</p>
+            </div>
+            <span class="vs-arrow">↔</span>
+            <div class="vs-box" style="background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.3);">
+                <span class="tag" style="color: var(--red);">Regression Evals</span>
+                <h3>"Does it still work?"</h3>
+                <p>Catching breakage. Model updates, prompt changes, dependency shifts. Run on every change. Non-negotiable.</p>
+            </div>
+        </div>
+
+        <!-- SLIDE: The Flywheel -->
+        <div class="slide slide-visual">
+            <span class="topic-tag purple">Monitoring</span>
+            <h2>The Eval Flywheel: How Quality Compounds</h2>
+            <img src="../images/continuous_improvement_flywheel.png" alt="Continuous Improvement Flywheel">
+            <p class="caption">Ship → Observe → Curate failures into eval cases → Eval before next deploy → Improve → Ship again. Each cycle makes the system more robust.</p>
+        </div>
+
+        <!-- SLIDE: What to Look For -->
+        <div class="slide slide-list">
+            <span class="topic-tag purple">Building AI Products</span>
+            <h2>If You're Building AI Products, Know This</h2>
+            <ul>
+                <li class="purple"><strong>Evals before features.</strong> You can't iterate fast without fast feedback. Build the eval harness first.</li>
+                <li class="blue"><strong>LLM-as-judge scales.</strong> Human review doesn't. Calibrate your LLM graders against human judgment, then trust them.</li>
+                <li class="green"><strong>Regression tests are sacred.</strong> Every production failure becomes a test case. The suite only grows.</li>
+                <li class="orange"><strong>Monitor implicit signals.</strong> Users don't file bug reports. They regenerate, abandon, or leave. Watch behavior.</li>
+                <li class="red"><strong>Close the loop.</strong> Production → evals → improvements → production. The flywheel compounds.</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE: Output Takeaways -->
+        <div class="slide slide-list">
+            <h2 class="purple">Output Layer: Key Takeaways</h2>
+            <ul>
+                <li class="purple"><strong>Evals are the shipping bottleneck.</strong> Fast eval cycles = fast iteration. Invest here first.</li>
+                <li class="purple"><strong>Model evals ≠ product evals.</strong> Benchmarks don't tell you if users succeed. Test what matters.</li>
+                <li class="purple"><strong>LLM-as-judge changed evaluation.</strong> Scale beyond human capacity. Calibrate carefully.</li>
+                <li class="purple"><strong>The flywheel wins.</strong> Production failures → eval cases → prevented failures. Compound quality over time.</li>
+            </ul>
+        </div>
+
