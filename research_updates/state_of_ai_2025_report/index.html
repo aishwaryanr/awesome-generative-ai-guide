@@ -1215,22 +1215,207 @@
             </ul>
         </div>
         
-        <!-- SLIDE 43e: RAG Evolution -->
+        <!-- SLIDE 43e: RAG Theme 1 -->
         <div class="slide slide-content">
-            <h2>RAG: From Hype to Reality</h2>
+            <h2>RAG Grew Up: Structure Beats Chunks</h2>
             <div class="body">
                 <div class="text">
-                    <p>RAG matured significantly in 2025:</p>
-                    <ul>
-                        <li><strong>Hybrid search:</strong> Combining semantic + keyword for better recall</li>
-                        <li><strong>Reranking:</strong> Multi-stage retrieval with cross-encoder reranking</li>
-                        <li><strong>Query expansion:</strong> Automatically expanding queries for better coverage</li>
-                        <li><strong>Citation verification:</strong> Ensuring generated content maps to retrieved sources</li>
-                    </ul>
-                    <p style="margin-top: 1rem;"><strong>The surprise:</strong> Long context windows didn't kill RAG:they made it better. Put more retrieved context in the prompt, let the model synthesize.</p>
+                    <p class="muted" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;">What it is</p>
+                    <div class="stats-row">
+                        <div class="stat-box">
+                            <div class="num">1</div>
+                            <div class="label">Extract entities</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="num">2</div>
+                            <div class="label">Build graph</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="num">3</div>
+                            <div class="label">Summarize layers</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="num">4</div>
+                            <div class="label">Query top-down</div>
+                        </div>
+                    </div>
+                    <div class="border-orange" style="margin-top: 1.25rem;">
+                        <p><strong>Best for:</strong> policies, incident timelines, architecture tradeoffs</p>
+                        <p><strong>Why it works:</strong> captures relationships before retrieval, not after</p>
+                        <p><strong>When chunks win:</strong> narrow fact lookups with high precision</p>
+                    </div>
+                    <div class="takeaway" style="margin-top: 1.25rem; background: linear-gradient(135deg, rgba(249, 115, 22, 0.18), rgba(59, 130, 246, 0.12)); border: 1px solid rgba(249, 115, 22, 0.35);">
+                        <h3 style="color: var(--orange);">2025 trend</h3>
+                        <p>GraphRAG-style pipelines became shippable OSS and moved from research to production for synthesis-heavy questions.</p>
+                    </div>
                 </div>
-                <div class="visual">
-                    <img src="images/long_context_rag.png" alt="Long Context RAG">
+                <div class="visual" style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="images/graphrag_pipeline.png" alt="GraphRAG pipeline" style="max-height: 52vh;">
+                    <p style="font-size: 0.7rem; color: #888; margin-top: 0.5rem;">Source: <a href="https://livebook.manning.com/book/essential-graphrag/chapter-7" target="_blank" style="color: #aaa;">Essential GraphRAG (Manning)</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 43f: RAG Theme 2 -->
+        <div class="slide slide-content">
+            <h2>Retrieval Became Agentic</h2>
+            <div class="body">
+                <div class="text">
+                    <p class="muted" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;">What it is</p>
+                    <div class="cards-grid" style="grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 0.5rem;">
+                        <div class="card" style="border-top: 3px solid var(--blue);">
+                            <h3>Plan</h3>
+                            <p>Rewrite into focused sub-queries</p>
+                        </div>
+                        <div class="card" style="border-top: 3px solid var(--orange);">
+                            <h3>Retrieve</h3>
+                            <p>Parallel search across text + vectors</p>
+                        </div>
+                        <div class="card" style="border-top: 3px solid var(--green);">
+                            <h3>Fuse</h3>
+                            <p>Rerank and synthesize grounded context</p>
+                        </div>
+                    </div>
+                    <div class="takeaway" style="margin-top: 1.25rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.16), rgba(16, 185, 129, 0.12)); border: 1px solid rgba(59, 130, 246, 0.35);">
+                        <h3 style="color: var(--blue);">2025 trend</h3>
+                        <p>Agentic retrieval shipped as platform features, with “retrieval reasoning effort” knobs and built-in semantic ranking.</p>
+                    </div>
+                </div>
+                <div class="visual" style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="images/agentic_retrieval_azure.png" alt="Agentic retrieval architecture" style="max-height: 52vh;">
+                    <p style="font-size: 0.7rem; color: #888; margin-top: 0.5rem;">Source: <a href="https://learn.microsoft.com/en-us/azure/search/agentic-retrieval-overview" target="_blank" style="color: #aaa;">Microsoft Azure AI Search</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 43g: RAG Theme 3 -->
+        <div class="slide slide-content">
+            <h2>Multimodal/PDF RAG: Parsing Became the Work</h2>
+            <div class="body">
+                <div class="text">
+                    <p class="muted" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;">What it is</p>
+                    <div class="stats-row">
+                        <div class="stat-box">
+                            <div class="num">1</div>
+                            <div class="label">Parse layout</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="num">2</div>
+                            <div class="label">Handle images</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="num">3</div>
+                            <div class="label">Index by structure</div>
+                        </div>
+                    </div>
+                    <div class="cards-grid two" style="margin-top: 1rem;">
+                        <div class="card" style="border-left: 4px solid var(--blue);">
+                            <h3>Image → Text</h3>
+                            <p>Caption/OCR and index as text for retrieval</p>
+                        </div>
+                        <div class="card" style="border-left: 4px solid var(--purple);">
+                            <h3>Image → Vector</h3>
+                            <p>Embed with multimodal models for direct search</p>
+                        </div>
+                    </div>
+                    <div class="takeaway" style="margin-top: 1.25rem; background: linear-gradient(135deg, rgba(139, 92, 246, 0.16), rgba(59, 130, 246, 0.12)); border: 1px solid rgba(139, 92, 246, 0.35);">
+                        <h3 style="color: var(--purple);">2025 trend</h3>
+                        <p>Hosted file search + parsers became standard. Extraction quality became the dominant bottleneck.</p>
+                    </div>
+                </div>
+                <div class="visual" style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="images/pdf_rag_layout_parser_pipeline.png" alt="Layout parser and chunking pipeline" style="max-height: 52vh;">
+                    <p style="font-size: 0.7rem; color: #888; margin-top: 0.5rem;">Source: <a href="https://cloud.google.com/blog/products/ai-machine-learning/build-retrieval-augmented-generation-rag-using-vertex-ai-search-and-gecko" target="_blank" style="color: #aaa;">Google Cloud</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 43h: RAG Theme 4 -->
+        <div class="slide slide-content">
+            <h2>RAG Moved Into Platforms</h2>
+            <div class="body">
+                <div class="text">
+                    <p class="muted" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;">What it is</p>
+                    <div class="cards-grid" style="grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 0.5rem;">
+                        <div class="card" style="border-top: 3px solid var(--blue);">
+                            <h3>Managed RAG Engines</h3>
+                            <p>Managed vector DB + retrieval strategies (KNN/ANN) with tunable index parameters.</p>
+                        </div>
+                        <div class="card" style="border-top: 3px solid var(--green);">
+                            <h3>Hosted File Search</h3>
+                            <p>Vector stores that auto‑parse/chunk/embed, with query rewrite + keyword/semantic search and reranking.</p>
+                        </div>
+                        <div class="card" style="border-top: 3px solid var(--purple);">
+                            <h3>Warehouse‑Native RAG</h3>
+                            <p>Hybrid retrieval + semantic reranking built into governed data platforms.</p>
+                        </div>
+                    </div>
+                    <div class="border-orange" style="margin-top: 1.25rem;">
+                        <p><strong>Platform primitives now include:</strong> vector storage, retrieval strategy, and retrieval controls</p>
+                        <p><strong>Governance pressure:</strong> keep retrieval near data, reuse platform security and access controls</p>
+                    </div>
+                    <div class="takeaway" style="margin-top: 1.25rem; background: linear-gradient(135deg, rgba(16, 185, 129, 0.16), rgba(59, 130, 246, 0.12)); border: 1px solid rgba(16, 185, 129, 0.35);">
+                        <h3 style="color: var(--green);">2025 trend</h3>
+                        <p>Buy vs build shifted: teams start with managed RAG engines, hosted file search, or warehouse‑native search—and customize only where needed.</p>
+                    </div>
+                </div>
+                <div class="visual" style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="card" style="max-width: 520px; text-align: left; border-left: 4px solid var(--green);">
+                        <h3>Examples</h3>
+                        <p><strong>Vertex AI RAG Engine:</strong> managed vector storage, chunking, and retrieval strategies</p>
+                        <p><strong>OpenAI File Search:</strong> auto parsing/chunking + keyword/semantic search + reranking</p>
+                        <p><strong>Snowflake Cortex Search:</strong> hybrid retrieval with semantic reranking built in</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE 43i: RAG Theme 5 -->
+        <div class="slide slide-content">
+            <h2>Hybrid + Reranking Is the Baseline</h2>
+            <div class="body">
+                <div class="text">
+                    <p class="muted" style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.12em;">What it is</p>
+                    <div class="stats-row">
+                        <div class="stat-box">
+                            <div class="num">1</div>
+                            <div class="label">BM25 + Vector</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="num">2</div>
+                            <div class="label">RRF Fusion</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="num">3</div>
+                            <div class="label">Semantic Rerank</div>
+                        </div>
+                    </div>
+                    <div class="cards-grid two" style="margin-top: 1rem;">
+                        <div class="card" style="border-left: 4px solid var(--blue);">
+                            <h3>Why hybrid</h3>
+                            <p>Keyword hits + semantic similarity raises recall on real queries</p>
+                        </div>
+                        <div class="card" style="border-left: 4px solid var(--orange);">
+                            <h3>Why rerank</h3>
+                            <p>Second‑stage ranking improves precision on the short list</p>
+                        </div>
+                    </div>
+                    <div class="border-orange" style="margin-top: 1.25rem;">
+                        <p><strong>Knobs that matter:</strong> text recall window (maxTextRecallSize), RRF fusion, and reranker on/off</p>
+                        <p><strong>Where it shows up:</strong> hybrid queries fuse with RRF, then semantic rankers rerank top results</p>
+                    </div>
+                    <div class="takeaway" style="margin-top: 1.25rem; background: linear-gradient(135deg, rgba(59, 130, 246, 0.16), rgba(249, 115, 22, 0.12)); border: 1px solid rgba(59, 130, 246, 0.35);">
+                        <h3 style="color: var(--blue);">2025 trend</h3>
+                        <p>Hybrid + rerank shipped as defaults across platforms; retrieval quality became tunable engineering, not guesswork.</p>
+                    </div>
+                </div>
+                <div class="visual" style="display: flex; flex-direction: column; align-items: center;">
+                    <div class="card" style="max-width: 520px; text-align: left; border-left: 4px solid var(--blue);">
+                        <h3>Where it’s baked in</h3>
+                        <p><strong>Azure AI Search:</strong> RRF fusion for hybrid results + semantic reranker on top</p>
+                        <p><strong>Amazon Bedrock KB:</strong> reranker models can be applied during retrieval</p>
+                        <p><strong>Snowflake Cortex Search:</strong> hybrid retrieval + semantic reranking by default</p>
+                    </div>
                 </div>
             </div>
         </div>
