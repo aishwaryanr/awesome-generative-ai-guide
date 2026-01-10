@@ -212,7 +212,7 @@
         <div class="slide slide-visual">
             <span class="topic-tag blue">Prompting 2024</span>
             <h2>Some Research Papers That Defined 2024</h2>
-            <img src="../images/Prompting_Techniques_2024.png" alt="Prompting Techniques: CoT, ToT, ReAct, Self-Consistency">
+            <img src="images/Prompting_Techniques_2024.png" alt="Prompting Techniques: CoT, ToT, ReAct, Self-Consistency">
             <p class="caption">These techniques worked, but required expertise to implement correctly. Most teams struggled to replicate paper results.</p>
         </div>
 
@@ -373,7 +373,7 @@
         <div class="slide slide-visual">
             <span class="topic-tag blue">Auto Optimization</span>
             <h2>How DSPy Finds the Best Prompt</h2>
-            <img src="../images/dspy_process.png" alt="DSPy Optimization Process">
+            <img src="images/dspy_process.png" alt="DSPy Optimization Process">
             <p class="caption">You provide task + data. DSPy generates prompt variations. The loop scores, selects best, and repeats until optimized.</p>
         </div>
 
@@ -444,7 +444,7 @@
         <div class="slide slide-visual">
             <span class="topic-tag blue">Context Engineering</span>
             <h2>Context Engineering: What Goes Into the Prompt</h2>
-            <img src="../images/context_engineering.png" alt="Context Engineering Diagram">
+            <img src="images/context_engineering.png" alt="Context Engineering Diagram">
             <p class="caption">Source: <a href="https://x.com/toaboricua/status/1903478376592859633" target="_blank" style="color: #aaa;">@toaboricua on X</a></p>
         </div>
 
@@ -685,7 +685,7 @@
         <div class="slide slide-visual">
             <span class="topic-tag green">RLVR</span>
             <h2>RLHF vs RLVR: The Key Difference</h2>
-            <img src="../images/rlhf_rlvr.png" alt="RLHF vs RLVR Comparison">
+            <img src="images/rlhf_rlvr.png" alt="RLHF vs RLVR Comparison">
             <p class="caption">RLHF asks "which sounds better?" RLVR asks "is this correct?" One requires humans. One requires only a verifier.</p>
         </div>
 
@@ -798,7 +798,7 @@
         <div class="slide slide-visual">
             <span class="topic-tag green">Efficiency</span>
             <h2>Quantization: Smaller Without Losing Quality</h2>
-            <img src="../images/quantization.png" alt="Quantization comparison showing 32-bit, 8-bit, and 4-bit models">
+            <img src="images/quantization.png" alt="Quantization comparison showing 32-bit, 8-bit, and 4-bit models">
             <p class="caption">Reduce precision from 32-bit to 4-bit. Same model, 8x smaller, runs on consumer hardware. Quality loss is minimal for most production tasks.</p>
         </div>
 
@@ -1148,7 +1148,7 @@
         <div class="slide slide-visual">
             <span class="topic-tag orange">Skills</span>
             <h2>How Skills Fit Into Agent Architecture</h2>
-            <img src="../../images/skills_architecture.webp" alt="Agent + Skills + Virtual Machine">
+            <img src="images/skills_architecture.webp" alt="Agent + Skills + Virtual Machine">
             <p class="caption">Agent configuration includes equipped skills and MCP servers. Skills live as directories in the agent's file system—loaded when relevant. Source: Anthropic</p>
         </div>
 
@@ -1297,11 +1297,18 @@
             </ul>
         </div>
 
-        <!-- SLIDE: Evals as Bottleneck -->
+        <!-- SLIDE: Quality Verification Bottleneck -->
         <div class="slide slide-statement">
+            <span class="topic-tag purple">Quality Verification</span>
+            <h2>Quality verification became the bottleneck for shipping AI.</h2>
+        </div>
+
+        <!-- SLIDE: Model vs Product Evals -->
+        <div class="slide slide-visual">
             <span class="topic-tag purple">Evals</span>
-            <h2>Evals became the bottleneck for shipping AI.</h2>
-            <p class="small">Not model quality. Not prompt engineering. Not infrastructure. The teams that shipped fast had one thing in common: they could evaluate their systems quickly and confidently. Everyone else was flying blind.</p>
+            <h2>Model Evals vs Product Evals</h2>
+            <img src="images/model_vs_product_evaluation.png" alt="Model Evals vs Product Evals">
+            <p class="caption">Model evals test the underlying model (benchmarks, capabilities). Product evals test your system (task completion, user success). Both matter—but product evals determine if you ship.</p>
         </div>
 
         <!-- SLIDE: Evals vs Monitoring -->
@@ -1320,32 +1327,12 @@
             </div>
         </div>
 
-        <!-- SLIDE: Model vs Product Evals -->
-        <div class="slide slide-two-col">
+        <!-- SLIDE: Online vs Offline Timing -->
+        <div class="slide slide-visual">
             <span class="topic-tag purple">Evals</span>
-            <h2>Model Evals vs Product Evals</h2>
-            <div class="cols">
-                <div class="col">
-                    <h3 class="blue">Model Evals</h3>
-                    <p>How good is the underlying model?</p>
-                    <ul>
-                        <li>Benchmark scores (MMLU, HumanEval)</li>
-                        <li>Capability testing on standard tasks</li>
-                        <li>Comparison across model versions</li>
-                        <li>Useful for model selection</li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <h3 class="green">Product Evals</h3>
-                    <p>Does the system solve user problems?</p>
-                    <ul>
-                        <li>Task completion rates</li>
-                        <li>Domain-specific accuracy</li>
-                        <li>End-to-end workflow success</li>
-                        <li>What actually matters for shipping</li>
-                    </ul>
-                </div>
-            </div>
+            <h2>Evals vs Monitoring: When They Run</h2>
+            <img src="images/online_vs_offline_timing.png" alt="Online vs Offline Timing">
+            <p class="caption">Evals run offline before deployment. Monitoring runs online in production. Both essential—different timing, different purpose.</p>
         </div>
 
         <!-- SLIDE: Eval Mental Model -->
@@ -1380,24 +1367,11 @@
         </div>
 
         <!-- SLIDE: Grader Stack -->
-        <div class="slide slide-cards">
+        <div class="slide slide-visual">
             <span class="topic-tag purple">Evals</span>
             <h2>The Grader Stack: Who Evaluates?</h2>
-            <div class="cards-grid stacked">
-                <div class="card" style="border-left: 4px solid var(--blue);">
-                    <h3>Deterministic Checks</h3>
-                    <p>Code that compiles. JSON that parses. Regex that matches. Fast, cheap, reliable. Use these first.</p>
-                </div>
-                <div class="card" style="border-left: 4px solid var(--purple);">
-                    <h3>LLM-as-Judge</h3>
-                    <p>Use a model to evaluate model outputs. Scales beyond human capacity. Requires calibration against human judgments. The 2025 breakthrough.</p>
-                </div>
-                <div class="card" style="border-left: 4px solid var(--green);">
-                    <h3>Human Review</h3>
-                    <p>Gold standard for subjective quality. Essential for calibration. Expensive, doesn't scale. Reserve for edge cases and spot checks.</p>
-                </div>
-            </div>
-            <p class="subtext muted" style="text-align: center; margin-top: 1rem;">The pattern: Deterministic for what you can, LLM-as-judge for scale, human review for calibration and edge cases.</p>
+            <img src="images/three_evaluation_approaches.png" alt="Three Evaluation Approaches">
+            <p class="caption">Deterministic checks first (fast, cheap). LLM-as-judge for scale (the 2025 breakthrough). Human review for calibration and edge cases.</p>
         </div>
 
         <!-- SLIDE: Capability vs Regression -->
@@ -1416,42 +1390,12 @@
             </div>
         </div>
 
-        <!-- SLIDE: Production Monitoring -->
-        <div class="slide slide-list">
-            <span class="topic-tag purple">Monitoring</span>
-            <h2>Production Monitoring: What to Watch</h2>
-            <ul>
-                <li class="blue"><strong>Latency distributions.</strong> P50, P95, P99. Not just averages. Tail latency kills user experience.</li>
-                <li class="green"><strong>Error rates by type.</strong> API failures, timeout, refusals, hallucination flags. Each requires different response.</li>
-                <li class="orange"><strong>User signals.</strong> Regeneration requests, thumbs down, conversation abandonment. Implicit quality feedback.</li>
-                <li class="purple"><strong>Cost per interaction.</strong> Token consumption, API calls, compute. Anomalies indicate problems or abuse.</li>
-                <li class="red"><strong>Safety triggers.</strong> Guardrail activations, escalation rates, policy violations. Your early warning system.</li>
-            </ul>
-        </div>
-
         <!-- SLIDE: The Flywheel -->
-        <div class="slide slide-content">
+        <div class="slide slide-visual">
             <span class="topic-tag purple">Monitoring</span>
-            <h2>The Eval Flywheel</h2>
-            <div class="body">
-                <div class="text">
-                    <p>The teams that improve fastest run a continuous loop:</p>
-                    <ul>
-                        <li><strong>Ship:</strong> Deploy with monitoring and guardrails</li>
-                        <li><strong>Observe:</strong> Collect production signals and failures</li>
-                        <li><strong>Curate:</strong> Turn failures into eval cases</li>
-                        <li><strong>Eval:</strong> Run expanded suite before next deploy</li>
-                        <li><strong>Improve:</strong> Fix failures, ship again</li>
-                    </ul>
-                    <p style="margin-top: 1rem;">Each cycle makes your eval suite more robust. Production failures become regression tests. The system learns from its mistakes.</p>
-                </div>
-                <div class="visual" style="flex-direction: column; gap: 16px; justify-content: center;">
-                    <div class="card" style="background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3); text-align: center;">
-                        <p style="font-weight: 700; color: var(--purple); font-size: 1.1rem;">Production failures → Eval cases</p>
-                        <p style="font-weight: 700; color: var(--purple); font-size: 1.1rem; margin-top: 0.5rem;">Eval cases → Prevented failures</p>
-                    </div>
-                </div>
-            </div>
+            <h2>The Eval Flywheel: How Quality Compounds</h2>
+            <img src="images/continuous_improvement_flywheel.png" alt="Continuous Improvement Flywheel">
+            <p class="caption">Ship → Observe → Curate failures into eval cases → Eval before next deploy → Improve → Ship again. Each cycle makes the system more robust.</p>
         </div>
 
         <!-- SLIDE: What to Look For -->
@@ -1580,7 +1524,7 @@
         <div class="slide slide-visual">
             <span class="topic-tag red">RAG</span>
             <h2>RAG Interest Over Time</h2>
-            <img src="../images/rag_hype_cycle.png" alt="RAG Hype Cycle">
+            <img src="images/rag_hype_cycle.png" alt="RAG Hype Cycle">
             <p class="caption">Hype peaked in early-mid 2023. Long-context alternatives are emerging as viable options for many use cases.</p>
         </div>
         
@@ -1624,7 +1568,7 @@
         <div class="slide slide-visual">
             <span class="topic-tag red">Debugging</span>
             <h2>Multi-Agent Debugging is Fundamentally Different</h2>
-            <img src="../images/challenges/www_getmaxim_ai_5.png" alt="Agent Debugging">
+            <img src="images/challenges/www_getmaxim_ai_5.png" alt="Agent Debugging">
             <p class="caption">Agent tracing platforms are emerging, but the field is primitive compared to traditional software development. Budget debugging time you can't easily do.</p>
         </div>
         
@@ -1633,7 +1577,7 @@
             <span class="topic-tag red">Debugging</span>
             <h2>Agent Observability: A New Category</h2>
             <div class="visual-container">
-                <img src="../images/challenges/www_getmaxim_ai_6.png" alt="AI Agent Observability Platforms" style="max-height: 50vh;">
+                <img src="images/challenges/www_getmaxim_ai_6.png" alt="AI Agent Observability Platforms" style="max-height: 50vh;">
             </div>
             <p class="caption">Agent observability platforms emerged as essential infrastructure in 2025. Tracing, logging, and monitoring for non-deterministic systems requires specialized tooling.</p>
         </div>
@@ -1643,7 +1587,7 @@
             <span class="topic-tag red">RAG</span>
             <h2>Long Context RAG: Hybrid Approach</h2>
             <div class="visual-container">
-                <img src="../images/challenges/ragflow_io_5.png" alt="Long Context RAG" style="max-height: 55vh;">
+                <img src="images/challenges/ragflow_io_5.png" alt="Long Context RAG" style="max-height: 55vh;">
             </div>
             <p class="caption">Hybrid tree-graph retrieval combines entity relationships with semantic chunks. Long context models complement RAG rather than replacing it.</p>
         </div>
