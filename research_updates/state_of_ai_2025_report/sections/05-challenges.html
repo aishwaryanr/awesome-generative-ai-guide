@@ -31,54 +31,35 @@
         </div>
 
         <!-- SLIDE: Why Challenges Spiked in 2025 -->
-        <div class="slide slide-list">
+        <div class="slide slide-visual">
             <span class="topic-tag red">2025 Reality</span>
             <h2>Why These Challenges Spiked in 2025</h2>
-            <ul>
-                <li class="red"><strong>Systems crossed a threshold.</strong> They stopped being "text generators" and started being "workflow executors."</li>
-                <li class="red"><strong>Agents ran longer.</strong> Used tools. Operated across multiple context windows. Interacted with real environments.</li>
-                <li class="red"><strong>Manual testing hit a wall.</strong> Teams reached a breaking point—"flying blind" after changes, unable to distinguish real regressions from noise.</li>
-                <li class="red"><strong>These aren't random problems.</strong> They are the predictable cost of systems getting more capable and more connected.</li>
-            </ul>
+            <img src="../images/why_challenges_spiked.png" alt="Why Challenges Spiked in 2025">
+            <p class="caption">Systems crossed a threshold: from "text generators" to "workflow executors." More tools, longer runs, real environments—and predictable new failure modes.</p>
         </div>
 
         <!-- SLIDE: Hallucinations Reframed -->
-        <div class="slide slide-list">
+        <div class="slide slide-visual">
             <span class="topic-tag red">Hallucinations</span>
             <h2>Hallucinations Became "False Claims About Actions"</h2>
-            <ul>
-                <li class="red"><strong>Not just fake facts anymore.</strong> In 2025, hallucinations showed up as false claims about what the system did inside a workflow.</li>
-                <li class="red"><strong>The dangerous pattern:</strong> Agent says "your flight has been booked"—but the reservation never appeared in the database.</li>
-                <li class="red"><strong>This is hallucinating the world state.</strong> The model confidently reports completing actions it never attempted.</li>
-                <li class="red"><strong>High-stakes domains exposed the risk.</strong> Legal, medical, and financial tools showed hallucination remains a major practical risk even in specialized systems.</li>
-            </ul>
-            <p class="subtext">Actionable: Verify actions exist in the target system. Don't trust the model's self-report.</p>
+            <img src="../images/hallucinations_false_aciton.png" alt="Hallucinations as False Action Claims">
+            <p class="caption">Not just fake facts—false claims about what the system did. "Your flight is booked" when no reservation exists. Verify actions in target systems.</p>
         </div>
 
         <!-- SLIDE: Inconsistent Reasoning -->
-        <div class="slide slide-list">
+        <div class="slide slide-visual">
             <span class="topic-tag red">Inconsistent Reasoning</span>
             <h2>Inconsistent Reasoning Became a Reliability Problem</h2>
-            <ul>
-                <li class="red"><strong>Inconsistency always existed.</strong> But 2025 made it visible because agent behavior is multi-step and path-dependent.</li>
-                <li class="red"><strong>Two runs, different outcomes.</strong> Same prompt can take different tool sequences and reach completely different results.</li>
-                <li class="red"><strong>Non-determinism is the default.</strong> You need to think in success rates across multiple trials—a task can pass once, fail the next.</li>
-                <li class="red"><strong>The key reframe:</strong> It's not enough to ask "did it work once." You need to ask "how often does it work."</li>
-            </ul>
-            <p class="subtext">Product reliability depends on tail cases, not best cases. Build for the 95th percentile.</p>
+            <img src="../images/inconsistent_reasoning.png" alt="Inconsistent Reasoning">
+            <p class="caption">Same prompt, different paths, different outcomes. Think in success rates, not single runs. Product reliability depends on the 95th percentile.</p>
         </div>
 
         <!-- SLIDE: Over-Autonomy -->
-        <div class="slide slide-list">
+        <div class="slide slide-visual">
             <span class="topic-tag red">Over-Autonomy</span>
             <h2>Over-Autonomy: Capability Rose Faster Than Control</h2>
-            <ul>
-                <li class="red"><strong>2025 put "agency risk" on the map.</strong> Agents could take real actions—especially via browser and computer use.</li>
-                <li class="red"><strong>The pattern we saw:</strong> "Delete the test file" becomes "I've cleaned up all test files and reorganized your directory."</li>
-                <li class="red"><strong>The tradeoff became clear:</strong> Confirmation steps reduce autonomy but block high-risk operations. That's a feature, not a bug.</li>
-                <li class="red"><strong>Human approval gates became a design pattern.</strong> Not a nice-to-have safety idea—an explicit requirement for production systems.</li>
-            </ul>
-            <p class="subtext">Actionable: Build confirmation gates before irreversible actions. Don't trust the agent to know what's sensitive.</p>
+            <img src="../images/over_autonomy.png" alt="Over-Autonomy">
+            <p class="caption">"Delete the test file" becomes "I've reorganized your entire directory." Human approval gates moved from nice-to-have to explicit design pattern.</p>
         </div>
 
         <!-- SLIDE: Poor Tool Grounding -->
