@@ -1464,7 +1464,7 @@
                 <li class="red"><strong>Systems crossed a threshold.</strong> They stopped being "text generators" and started being "workflow executors."</li>
                 <li class="red"><strong>Agents ran longer.</strong> Used tools. Operated across multiple context windows. Interacted with real environments.</li>
                 <li class="red"><strong>Manual testing hit a wall.</strong> Teams reached a breaking point—"flying blind" after changes, unable to distinguish real regressions from noise.</li>
-                <li class="red"><strong>These red boxes aren't random.</strong> They are the predictable cost of systems getting more capable and more connected.</li>
+                <li class="red"><strong>These aren't random problems.</strong> They are the predictable cost of systems getting more capable and more connected.</li>
             </ul>
         </div>
 
@@ -1474,9 +1474,9 @@
             <h2>Hallucinations Became "False Claims About Actions"</h2>
             <ul>
                 <li class="red"><strong>Not just fake facts anymore.</strong> In 2025, hallucinations showed up as false claims about what the system did inside a workflow.</li>
-                <li class="red"><strong>The Anthropic example:</strong> Agent says "your flight has been booked"—but did the reservation actually appear in the database?</li>
-                <li class="red"><strong>This is hallucinating the world state.</strong> Not hallucinating an answer. The model confidently reports actions it never completed.</li>
-                <li class="red"><strong>High-stakes domains exposed the risk.</strong> Stanford's Legal RAG work showed hallucination remains a major practical risk even in tools marketed as "safer."</li>
+                <li class="red"><strong>The dangerous pattern:</strong> Agent says "your flight has been booked"—but the reservation never appeared in the database.</li>
+                <li class="red"><strong>This is hallucinating the world state.</strong> The model confidently reports completing actions it never attempted.</li>
+                <li class="red"><strong>High-stakes domains exposed the risk.</strong> Legal, medical, and financial tools showed hallucination remains a major practical risk even in specialized systems.</li>
             </ul>
             <p class="subtext">Actionable: Verify actions exist in the target system. Don't trust the model's self-report.</p>
         </div>
@@ -1484,12 +1484,12 @@
         <!-- SLIDE: Inconsistent Reasoning -->
         <div class="slide slide-list">
             <span class="topic-tag red">Inconsistent Reasoning</span>
-            <h2>Inconsistent Reasoning Became a Product Reliability Problem</h2>
+            <h2>Inconsistent Reasoning Became a Reliability Problem</h2>
             <ul>
                 <li class="red"><strong>Inconsistency always existed.</strong> But 2025 made it visible because agent behavior is multi-step and path-dependent.</li>
-                <li class="red"><strong>Two runs, different outcomes.</strong> Same prompt can take different tool sequences and reach different results.</li>
-                <li class="red"><strong>Non-determinism is the default.</strong> Anthropic recommends thinking in success rates across multiple trials—a task can pass in one run, fail in the next.</li>
-                <li class="red"><strong>The key 2025 reframe:</strong> It's not enough to ask "did it work once." You need to ask "how often does it work."</li>
+                <li class="red"><strong>Two runs, different outcomes.</strong> Same prompt can take different tool sequences and reach completely different results.</li>
+                <li class="red"><strong>Non-determinism is the default.</strong> You need to think in success rates across multiple trials—a task can pass once, fail the next.</li>
+                <li class="red"><strong>The key reframe:</strong> It's not enough to ask "did it work once." You need to ask "how often does it work."</li>
             </ul>
             <p class="subtext">Product reliability depends on tail cases, not best cases. Build for the 95th percentile.</p>
         </div>
@@ -1500,9 +1500,9 @@
             <h2>Over-Autonomy: Capability Rose Faster Than Control</h2>
             <ul>
                 <li class="red"><strong>2025 put "agency risk" on the map.</strong> Agents could take real actions—especially via browser and computer use.</li>
-                <li class="red"><strong>OpenAI's Operator system card is explicit:</strong> Human oversight at key steps. Explicit confirmation before financial transactions, sending emails, deleting calendar events.</li>
-                <li class="red"><strong>The tradeoff is documented:</strong> Confirmation steps reduce autonomy but block high-risk operations. That's a feature, not a bug.</li>
-                <li class="red"><strong>The 2025 trendline:</strong> "Human approval gates" moved from nice safety idea to explicit design pattern.</li>
+                <li class="red"><strong>The pattern we saw:</strong> "Delete the test file" becomes "I've cleaned up all test files and reorganized your directory."</li>
+                <li class="red"><strong>The tradeoff became clear:</strong> Confirmation steps reduce autonomy but block high-risk operations. That's a feature, not a bug.</li>
+                <li class="red"><strong>Human approval gates became a design pattern.</strong> Not a nice-to-have safety idea—an explicit requirement for production systems.</li>
             </ul>
             <p class="subtext">Actionable: Build confirmation gates before irreversible actions. Don't trust the agent to know what's sensitive.</p>
         </div>
@@ -1512,10 +1512,10 @@
             <span class="topic-tag red">Tool Grounding</span>
             <h2>Poor Tool Grounding: Tools Are Unforgiving</h2>
             <ul>
-                <li class="red"><strong>Tool grounding became measurable.</strong> Systems used more tools more often—failures became obvious.</li>
-                <li class="red"><strong>Wrong tool selection:</strong> EMNLP 2024 benchmark shows models using wrong tools or even non-existent tools during augmented tasks.</li>
-                <li class="red"><strong>Tool exploration failures:</strong> AVATAR paper found ReAct-style agents select tools based on prior knowledge, struggle to explore better choices even with extensive reasoning.</li>
-                <li class="red"><strong>Error loops:</strong> December 2025 research reports agents repeating the same tool misuse even when error messages provide explicit valid usage.</li>
+                <li class="red"><strong>Tool grounding became measurable.</strong> Systems used more tools more often—failures became obvious and quantifiable.</li>
+                <li class="red"><strong>Wrong tool selection:</strong> Models pick semantically similar tools that are functionally wrong. The search tool when they need the database tool.</li>
+                <li class="red"><strong>Malformed calls:</strong> Arguments in wrong formats, required fields missing, JSON that almost parses but doesn't.</li>
+                <li class="red"><strong>Phantom tools:</strong> Agents calling tools that don't exist—hallucinating capabilities based on what "should" be available.</li>
             </ul>
             <p class="subtext">Tool failures aren't just model weaknesses. They're an interface + grounding + error recovery problem.</p>
         </div>
@@ -1526,9 +1526,9 @@
             <h2>Long Context Drift: More Context Increased Noise</h2>
             <ul>
                 <li class="red"><strong>Long context grew fast.</strong> But 2025 proved longer context doesn't guarantee better use of information.</li>
-                <li class="red"><strong>"Lost in the Middle" is real.</strong> Performance degrades when relevant information sits in the middle of long inputs. Best performance: beginning or end.</li>
-                <li class="red"><strong>Anthropic's context engineering:</strong> Frames this as a practical systems issue. Recommends compaction, structured note-taking to reduce context pollution.</li>
-                <li class="red"><strong>The 2025 trendline:</strong> Long context increased capacity, but without structure it increased distraction.</li>
+                <li class="red"><strong>"Lost in the Middle" is real.</strong> Performance degrades when relevant information sits in the middle of long inputs. Best recall: beginning or end.</li>
+                <li class="red"><strong>Context pollution compounds.</strong> Without structure, more context means more distraction. Compaction and structured notes help.</li>
+                <li class="red"><strong>The 2025 lesson:</strong> Long context increased capacity, but without active management it increased noise.</li>
             </ul>
             <p class="subtext">Actionable: Structure your context. Put critical instructions at start and end. Compact aggressively over long horizons.</p>
         </div>
@@ -1536,12 +1536,12 @@
         <!-- SLIDE: Retrieval Issues -->
         <div class="slide slide-list">
             <span class="topic-tag red">Retrieval</span>
-            <h2>Retrieval Issues: From "Did We Retrieve" to "Did We Use It"</h2>
+            <h2>Retrieval Issues: "Did We Retrieve" vs "Did We Use It"</h2>
             <ul>
                 <li class="red"><strong>Retrieval got better, failures got subtler.</strong> The problem shifted from retrieval accuracy to end-to-end grounding.</li>
-                <li class="red"><strong>Anthropic's contextual retrieval:</strong> Quantified improvements using contextual embeddings + BM25 + reranking. Large reductions in failed retrievals.</li>
-                <li class="red"><strong>Google's RAG framing:</strong> Ideal behavior is answer correctly OR say "I don't know" when info is missing. Retrieval quality and sufficient context are central.</li>
-                <li class="red"><strong>The new failure mode:</strong> Models sometimes fail to leverage retrieved passages—especially with irrelevant context present.</li>
+                <li class="red"><strong>Semantic similarity ≠ relevance.</strong> Query "Q4 customer churn" and get docs about satisfaction, Q3 churn, Q4 revenue. All close. None useful.</li>
+                <li class="red"><strong>The new failure mode:</strong> Models sometimes fail to leverage retrieved passages—especially when irrelevant context is present.</li>
+                <li class="red"><strong>The ideal behavior is binary:</strong> Answer correctly OR say "I don't know" when info is missing. Most systems do neither reliably.</li>
             </ul>
             <p class="subtext">The problem moved from retrieval accuracy to end-to-end grounding and utilization.</p>
         </div>
@@ -1549,14 +1549,14 @@
         <!-- SLIDE: Multi-Agent Errors -->
         <div class="slide slide-list">
             <span class="topic-tag red">Multi-Agent</span>
-            <h2>Multi-Agent Errors: Coordination Became the New Failure Surface</h2>
+            <h2>Multi-Agent Errors: Coordination as Failure Surface</h2>
             <ul>
-                <li class="red"><strong>Multi-agent systems scaled in 2025.</strong> But coordination errors emerged as a new class of issues.</li>
-                <li class="red"><strong>Survey work documents open challenges:</strong> Collaboration mechanisms and coordination structures are not solved problems.</li>
-                <li class="red"><strong>More agents = more risk vectors:</strong> Contradiction risk. Duplication risk. Error propagation risk.</li>
-                <li class="red"><strong>The tradeoff:</strong> Parallelism and coverage increase, but so does coordination overhead—unless explicitly engineered.</li>
+                <li class="red"><strong>Multi-agent systems scaled in 2025.</strong> But coordination errors emerged as a new class of failures.</li>
+                <li class="red"><strong>Error cascades:</strong> Agent A makes a small mistake. Agent B builds on it. By Agent D, the error is unrecognizable but catastrophic.</li>
+                <li class="red"><strong>Coordination breakdowns:</strong> Agents assume what others will do. Assumptions conflict. Deadlocks and race conditions emerge.</li>
+                <li class="red"><strong>The tradeoff:</strong> More agents = more parallelism, but also more contradiction risk, duplication risk, and propagation risk.</li>
             </ul>
-            <p class="subtext">Actionable: Design coordination protocols. Don't assume agents will self-organize correctly.</p>
+            <p class="subtext">Actionable: Design coordination protocols explicitly. Don't assume agents will self-organize correctly.</p>
         </div>
 
         <!-- SLIDE: Debugging -->
@@ -1564,12 +1564,12 @@
             <span class="topic-tag red">Debugging</span>
             <h2>Debugging: The Hardest Day-to-Day Challenge</h2>
             <ul>
-                <li class="red"><strong>This is where all the challenges compound.</strong> Debugging became painful because failures come from trajectories, not single outputs.</li>
+                <li class="red"><strong>This is where all challenges compound.</strong> Debugging became painful because failures come from trajectories, not single outputs.</li>
                 <li class="red"><strong>Without evals, debugging is reactive.</strong> Teams wait for complaints, reproduce manually, fix, and hope nothing else regressed.</li>
-                <li class="red"><strong>OpenTelemetry published agent observability conventions:</strong> Standardized metrics, traces, logs so teams can integrate solutions and compare across frameworks.</li>
-                <li class="red"><strong>AgentOps paper frames observability needs:</strong> Developers, testers, SREs all need different views into the same system.</li>
+                <li class="red"><strong>Agent observability is immature.</strong> We need standardized metrics, traces, and logs—most teams are still building custom solutions.</li>
+                <li class="red"><strong>Different roles need different views.</strong> Developers, testers, and ops all need visibility into the same system, but with different lenses.</li>
             </ul>
-            <p class="subtext">If you can't trace what the system did, you don't control it. In 2025, people stopped pretending otherwise.</p>
+            <p class="subtext">If you can't trace what the system did, you don't control it. In 2025, teams stopped pretending otherwise.</p>
         </div>
 
         <!-- SLIDE: Challenges Takeaways -->
