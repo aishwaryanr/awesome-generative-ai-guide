@@ -120,6 +120,39 @@ body {
 .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; }
 .card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.6rem; }
 .card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.55; }
+.card .card-subtitle { font-size: 0.85rem; font-weight: 500; opacity: 0.85; margin-bottom: 1rem; }
+.card ul { margin-top: 0.5rem; padding-left: 1.2rem; }
+.card ul li { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.4rem; line-height: 1.5; }
+
+/* Presenter cards - side by side with larger names */
+.slide-cards.presenters { justify-content: center; }
+.slide-cards.presenters h2 { margin-bottom: 3rem; }
+.slide-cards.presenters .cards { display: flex; gap: 50px; justify-content: center; align-items: stretch; }
+.slide-cards.presenters .card { flex: 0 1 480px; padding: 40px 48px; }
+.slide-cards.presenters .card h3 { font-size: 2rem; margin-bottom: 0.6rem; }
+.slide-cards.presenters .card .card-subtitle { font-size: 1.1rem; margin-bottom: 1.5rem; opacity: 0.9; }
+.slide-cards.presenters .card ul { padding-left: 1.4rem; }
+.slide-cards.presenters .card ul li { font-size: 1rem; margin-bottom: 0.6rem; line-height: 1.5; }
+
+/* Resource slides */
+.slide-resources { display: flex; flex-direction: column; padding: 60px 80px; justify-content: center; }
+.slide-resources h2 { font-size: 2rem; margin-bottom: 2rem; text-align: center; }
+.slide-resources .resources-grid { display: flex; justify-content: center; align-items: flex-end; gap: 40px; flex-wrap: wrap; max-width: 1100px; margin: 0 auto; }
+.slide-resources .resource-item { text-align: center; width: 180px; }
+.slide-resources .resource-item img { width: 100%; height: 140px; object-fit: contain; border-radius: 8px; margin-bottom: 10px; background: rgba(255,255,255,0.03); padding: 8px; }
+.slide-resources .resource-item .qr { height: 100px; background: white; padding: 8px; border-radius: 8px; }
+.slide-resources .resource-item p { font-size: 0.85rem; color: var(--text-muted); margin-top: 8px; }
+.slide-resources .companies { margin-top: 2rem; text-align: center; font-size: 0.9rem; color: var(--text-muted); }
+
+/* Closing slide with QR codes */
+.slide-closing { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 60px; text-align: center; }
+.slide-closing h1 { font-size: 2.5rem; margin-bottom: 2rem; }
+.slide-closing .qr-grid { display: flex; gap: 60px; justify-content: center; margin-bottom: 2rem; }
+.slide-closing .qr-item { text-align: center; }
+.slide-closing .qr-item img { width: 180px; height: 180px; background: white; padding: 12px; border-radius: 12px; }
+.slide-closing .qr-item p { margin-top: 12px; font-size: 1rem; color: var(--text-muted); }
+.slide-closing .discount-note { font-size: 1.2rem; color: var(--text); margin-top: 1.5rem; }
+.slide-closing .discount-note strong { color: var(--green); }
 .cards-grid.stacked .card { padding: 28px 32px; }
 .cards-grid.stacked .card h3 { font-size: 1.2rem; margin-bottom: 0.75rem; }
 .cards-grid.stacked .card p { font-size: 1.05rem; line-height: 1.65; }
