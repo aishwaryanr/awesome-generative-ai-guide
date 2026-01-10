@@ -32,6 +32,15 @@ body {
     transition: opacity 0.3s ease;
     overflow-y: auto;
 }
+.slide::after {
+    content: "© 2025 Aishwarya Naresh Reganti & Kiriti Badam. All rights reserved. Do not copy or distribute without permission.";
+    position: absolute;
+    bottom: 12px;
+    right: 20px;
+    font-size: 9px;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.2px;
+}
 .slide.active { display: flex; opacity: 1; }
 
 .slide-title { flex-direction: column; justify-content: center; align-items: center; text-align: center; }
