@@ -1,0 +1,424 @@
+        <!-- ============================================ -->
+        <!-- SECTION 1: INPUT LAYER -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Section Break -->
+        <div class="slide slide-section">
+            <p class="label blue">Section 1</p>
+            <h2>Input Layer</h2>
+            <p class="sub">From Prompt Craft to Context Engineering</p>
+            <div class="framework-container">
+                <svg class="framework-svg" viewBox="0 0 950 480" xmlns="http://www.w3.org/2000/svg" style="max-width: 1100px;">
+                    <g class="framework-layer">
+                        <rect x="20" y="15" width="750" height="95" rx="8" fill="#3b82f6" opacity="0.15" stroke="#3b82f6" stroke-width="2"/>
+                        <text x="30" y="38" fill="#3b82f6" font-weight="700" font-size="14">INPUT LAYER</text>
+                        <rect x="30" y="50" width="170" height="50" rx="6" fill="#3b82f6"/><text x="115" y="80" text-anchor="middle" fill="white" font-size="11" font-weight="500">Multimodal Inputs</text>
+                        <rect x="210" y="50" width="180" height="50" rx="6" fill="#3b82f6"/><text x="300" y="80" text-anchor="middle" fill="white" font-size="11" font-weight="500">Context Engineering</text>
+                        <rect x="400" y="50" width="170" height="50" rx="6" fill="#3b82f6"/><text x="485" y="80" text-anchor="middle" fill="white" font-size="11" font-weight="500">Meta Prompting</text>
+                        <rect x="580" y="50" width="180" height="50" rx="6" fill="#3b82f6"/><text x="670" y="80" text-anchor="middle" fill="white" font-size="10" font-weight="500">Auto Prompt Optimization</text>
+                    </g>
+                    <rect class="highlight-ring active" x="15" y="10" width="760" height="105" rx="12"/>
+                    <g class="framework-layer dimmed"><rect x="20" y="120" width="750" height="95" rx="8" fill="#10b981" opacity="0.15" stroke="#10b981" stroke-width="2"/><text x="30" y="143" fill="#10b981" font-weight="700" font-size="14">DATA AND MODEL LAYER</text></g>
+                    <g class="framework-layer dimmed"><rect x="20" y="225" width="750" height="95" rx="8" fill="#f97316" opacity="0.15" stroke="#f97316" stroke-width="2"/><text x="30" y="248" fill="#f97316" font-weight="700" font-size="14">APPLICATION LAYER</text></g>
+                    <g class="framework-layer dimmed"><rect x="20" y="330" width="750" height="95" rx="8" fill="#8b5cf6" opacity="0.15" stroke="#8b5cf6" stroke-width="2"/><text x="30" y="353" fill="#8b5cf6" font-weight="700" font-size="14">OUTPUT LAYER</text></g>
+                    <g class="framework-layer dimmed"><rect x="790" y="15" width="145" height="410" rx="8" fill="#ef4444" opacity="0.15" stroke="#ef4444" stroke-width="2"/><text x="862" y="220" text-anchor="middle" fill="#ef4444" font-weight="700" font-size="13">CHALLENGES</text></g>
+                </svg>
+            </div>
+        </div>
+
+        <!-- SLIDE: Section Overview -->
+        <div class="slide slide-list">
+            <h2>What Changed in the Input Layer</h2>
+            <ul>
+                <li class="blue"><strong>Prompt engineering evolved.</strong> From brittle skill-based craft to automated optimization.</li>
+                <li class="blue"><strong>Meta-prompting emerged.</strong> Models now generate and refine prompts automatically.</li>
+                <li class="blue"><strong>Automatic prompt optimization.</strong> Tools that iterate and improve prompts without human intervention.</li>
+                <li class="blue"><strong>Context engineering matters more.</strong> What you put in the prompt matters more than how you phrase it.</li>
+                <li class="blue"><strong>Multimodal became table stakes.</strong> Images, audio, and video as inputs moved from experimental to expected.</li>
+            </ul>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- PART 1: PROMPTING IN 2024 -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Prompting in 2024 -->
+        <div class="slide slide-statement">
+            <span class="topic-tag blue">Prompting 2024</span>
+            <h2>In 2024, prompting was a <span class="orange">craft</span>.</h2>
+            <p class="small">Models were sensitive. Small changes in wording produced wildly different outputs. Prompt engineering was a skill that took months to master.</p>
+        </div>
+
+        <!-- SLIDE: 2024 Prompting Characteristics -->
+        <div class="slide slide-cards">
+            <span class="topic-tag blue">Prompting 2024</span>
+            <h2>Prompting in 2024: A Fragile Art</h2>
+            <div class="cards-grid stacked">
+                <div class="card" style="border-left: 4px solid var(--orange);">
+                    <h3>Brittle & Model-Specific</h3>
+                    <p>Prompts that worked on GPT-4 failed on Claude. Minor updates broke production systems. Every model needed different phrasing.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--blue);">
+                    <h3>Skill-Based Techniques</h3>
+                    <p>Chain-of-Thought, Tree-of-Thought, ReAct patterns. Researchers published papers on prompting techniques. It was a specialized skill.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--purple);">
+                    <h3>Manual Iteration</h3>
+                    <p>Teams spent weeks A/B testing prompts. Small word changes = big output differences. Prompt engineering was expensive and slow.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Famous Techniques -->
+        <div class="slide slide-visual">
+            <span class="topic-tag blue">Prompting 2024</span>
+            <h2>Some Research Papers That Defined 2024</h2>
+            <img src="../images/Prompting_Techniques_2024.png" alt="Prompting Techniques: CoT, ToT, ReAct, Self-Consistency">
+            <p class="caption">These techniques worked, but required expertise to implement correctly. Most teams struggled to replicate paper results.</p>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- PART 2: THE 2025 SHIFT -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: 2025 Shift Statement -->
+        <div class="slide slide-statement">
+            <span class="topic-tag blue">2025 Shift</span>
+            <h2>Then models got <span class="green">smarter</span>.</h2>
+            <p class="small">2025 models are less brittle. They understand intent better. Careful phrasing matters less. And we found ways to automate the optimization.</p>
+        </div>
+
+        <!-- SLIDE: What Changed -->
+        <div class="slide slide-vs">
+            <span class="topic-tag blue">2025 Shift</span>
+            <div class="vs-box old">
+                <span class="tag">2024 Approach</span>
+                <h3>"How do I phrase this?"</h3>
+                <p>Manually crafting prompts, testing variations, hoping it works across models</p>
+            </div>
+            <span class="vs-arrow">→</span>
+            <div class="vs-box new">
+                <span class="tag">2025 Approach</span>
+                <h3>"Let the model write it"</h3>
+                <p>Meta-prompting and automated optimization. Models generate better prompts than humans.</p>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- PART 3: META-PROMPTING -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Meta-Prompting Intro -->
+        <div class="slide slide-statement">
+            <span class="topic-tag blue">Meta-Prompting</span>
+            <h2>What is <span class="blue">Meta-Prompting</span>?</h2>
+            <p class="small">A meta-prompt instructs the model to create a good prompt based on your task description. Instead of writing prompts yourself, you describe what you want and the model generates an optimized prompt.</p>
+        </div>
+
+        <!-- SLIDE: Meta-Prompting How It Works -->
+        <div class="slide slide-content">
+            <span class="topic-tag blue">Meta-Prompting</span>
+            <h2>Meta-Prompting: How It Works</h2>
+            <div class="body">
+                <div class="text">
+                    <p><strong>The idea is simple:</strong> Use a prompt to generate prompts.</p>
+                    <p>OpenAI's Playground uses meta-prompts behind the "Generate" button. You describe your task, and it creates a complete, optimized prompt.</p>
+                    <p class="muted" style="font-size: 0.9rem; margin-top: 1rem;">The meta-prompt includes best practices:</p>
+                    <ul>
+                        <li>Understand the task objectives and constraints</li>
+                        <li>Encourage reasoning before conclusions</li>
+                        <li>Include high-quality examples with placeholders</li>
+                        <li>Specify output format explicitly</li>
+                        <li>Add edge cases and important notes</li>
+                    </ul>
+                </div>
+                <div class="visual" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <div class="equation" style="width: 100%;">
+                        <div class="formula" style="font-size: 1.5rem;">Task Description → Meta-Prompt → Optimized Prompt</div>
+                        <p class="explain">Models generate better prompts than most humans can write manually</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Meta-Prompting Example -->
+        <div class="slide slide-two-col">
+            <span class="topic-tag blue">Meta-Prompting</span>
+            <h2>Meta-Prompting: Before & After</h2>
+            <div class="cols">
+                <div class="col">
+                    <h3 class="red">What You Write</h3>
+                    <div style="background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-top: 12px;">
+                        <p style="font-family: monospace; font-size: 0.9rem; color: var(--text-muted);">"I need a prompt for sentiment analysis of customer reviews"</p>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 12px;">Just describe your task in plain language. No prompt engineering expertise required.</p>
+                </div>
+                <div class="col">
+                    <h3 class="green">What the Model Generates</h3>
+                    <div style="background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-top: 12px; font-size: 0.8rem;">
+                        <p style="font-family: monospace; color: var(--text-muted); line-height: 1.5;">Analyze customer review sentiment.<br><br># Steps<br>1. Read the review carefully<br>2. Identify emotional indicators<br>3. Consider context and nuance<br>4. Classify as positive/negative/neutral<br><br># Output Format<br>JSON with sentiment and confidence score<br><br># Examples<br>[Detailed examples with edge cases...]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: OpenAI Meta-Prompt Structure -->
+        <div class="slide slide-list">
+            <span class="topic-tag blue">Meta-Prompting</span>
+            <h2>What OpenAI's Meta-Prompt Does</h2>
+            <ul>
+                <li class="blue"><strong>Understands the task:</strong> Grasps objectives, requirements, constraints, and expected output.</li>
+                <li class="green"><strong>Enforces reasoning order:</strong> Reasoning steps before conclusions. Never start examples with answers.</li>
+                <li class="orange"><strong>Includes examples:</strong> High-quality examples with placeholders for complex elements.</li>
+                <li class="purple"><strong>Specifies output format:</strong> Explicit length, syntax (JSON, markdown, etc.), structure.</li>
+                <li class="blue"><strong>Preserves user content:</strong> Keeps any details, guidelines, or examples you provide.</li>
+            </ul>
+            <p class="subtext">Source: OpenAI Prompt Generation Guide — the meta-prompt behind their Playground's Generate button.</p>
+        </div>
+
+        <!-- SLIDE: Why Meta-Prompting Matters -->
+        <div class="slide slide-cards">
+            <span class="topic-tag blue">Meta-Prompting</span>
+            <h2>Why Meta Prompting is Super Valuable</h2>
+            <div class="cards-grid stacked">
+                <div class="card" style="border-left: 4px solid var(--green);">
+                    <h3>Faster Iteration</h3>
+                    <p>Generate 10 prompt variations in seconds. Test all of them. Pick the winner. What took days now takes minutes.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--blue);">
+                    <h3>Best Practices Built-In</h3>
+                    <p>Meta-prompts encode years of prompt engineering research. You get chain-of-thought, examples, and structure automatically.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--purple);">
+                    <h3>Democratized Expertise</h3>
+                    <p>You don't need to be a prompt engineer. Describe what you want in plain English. The model handles the craft.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- PART 4: AUTOMATIC PROMPT OPTIMIZATION -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Auto Prompt Optimization Intro -->
+        <div class="slide slide-statement">
+            <span class="topic-tag blue">Auto Optimization</span>
+            <h2>Beyond meta-prompting: <span class="purple">Automatic Optimization</span></h2>
+            <p class="small">Meta-prompting generates prompts. But what if you could automatically iterate and improve them based on actual performance? That's automatic prompt optimization.</p>
+        </div>
+
+        <!-- SLIDE: What is DSPy -->
+        <div class="slide slide-statement">
+            <span class="topic-tag blue">Auto Optimization</span>
+            <h2>DSPy: <span class="purple">Automated A/B Testing</span> for Prompts</h2>
+            <p class="small">Instead of manually tweaking prompts and hoping they work, DSPy automatically tries different variations, measures which ones perform best, and keeps the winners. It's like having a tireless intern who tests thousands of prompt variations for you.</p>
+        </div>
+
+        <!-- SLIDE: The Problem DSPy Solves -->
+        <div class="slide slide-vs">
+            <span class="topic-tag blue">Auto Optimization</span>
+            <div class="vs-box old">
+                <span class="tag">Manual Prompting</span>
+                <h3>Guess and Check</h3>
+                <p>Write a prompt. Test it. Doesn't work well? Tweak it. Test again. Repeat for hours. Still breaks on edge cases.</p>
+            </div>
+            <span class="vs-arrow">→</span>
+            <div class="vs-box new">
+                <span class="tag">DSPy</span>
+                <h3>Automatic Optimization</h3>
+                <p>Give examples of what "good" looks like. DSPy tries hundreds of prompt variations automatically and finds what works best.</p>
+            </div>
+        </div>
+
+        <!-- SLIDE: How DSPy Optimization Works -->
+        <div class="slide slide-visual">
+            <span class="topic-tag blue">Auto Optimization</span>
+            <h2>How DSPy Finds the Best Prompt</h2>
+            <img src="../images/dspy_process.png" alt="DSPy Optimization Process">
+            <p class="caption">You provide task + data. DSPy generates prompt variations. The loop scores, selects best, and repeats until optimized.</p>
+        </div>
+
+        <!-- SLIDE: DSPy Example -->
+        <div class="slide slide-two-col">
+            <span class="topic-tag blue">Auto Optimization</span>
+            <h2>DSPy in Action</h2>
+            <div class="cols">
+                <div class="col">
+                    <h3 class="blue">What You Write</h3>
+                    <div style="background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-top: 12px;">
+                        <p style="font-family: monospace; font-size: 0.8rem; color: var(--text-muted); line-height: 1.6;">
+                            <span style="color: var(--blue);"># Define: question in, answer out</span><br>
+                            qa = dspy.ChainOfThought("question -> answer")<br><br>
+                            <span style="color: var(--blue);"># Give 10-20 examples</span><br>
+                            examples = [...]<br><br>
+                            <span style="color: var(--blue);"># Let DSPy optimize</span><br>
+                            optimized = dspy.compile(qa, examples)
+                        </p>
+                    </div>
+                </div>
+                <div class="col">
+                    <h3 class="green">What DSPy Figures Out</h3>
+                    <div style="background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-top: 12px;">
+                        <p style="font-family: monospace; font-size: 0.8rem; color: var(--text-muted); line-height: 1.6;">
+                            "Given the question, reason step-by-step. First identify the key concepts. Then consider relevant facts. Finally, synthesize into a clear answer. Format: <br><br>
+                            Reasoning: [your reasoning]<br>
+                            Answer: [concise answer]"
+                        </p>
+                    </div>
+                    <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 12px;">DSPy discovered this works better than simpler prompts.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Why DSPy Matters -->
+        <div class="slide slide-cards">
+            <span class="topic-tag blue">Auto Optimization</span>
+            <h2>Why This Matters</h2>
+            <div class="cards-grid stacked">
+                <div class="card" style="border-left: 4px solid var(--blue);">
+                    <h3>No More Prompt Guessing</h3>
+                    <p>Stop spending hours tweaking wording. Give examples of what "good" looks like, and let the machine find the best way to ask for it.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--green);">
+                    <h3>Gets Better Over Time</h3>
+                    <p>Collected more examples? Re-run optimization. Found edge cases? Add them and re-compile. Your prompts improve as your data grows.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--purple);">
+                    <h3>Works Across Models</h3>
+                    <p>Switching from GPT-4 to Claude? Re-optimize with the same examples. DSPy finds what works best for each model automatically.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- PART 5: CONTEXT ENGINEERING -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Context Engineering Intro -->
+        <div class="slide slide-statement">
+            <span class="topic-tag blue">Context Engineering</span>
+            <h2>Prompting skills matter. But <span class="blue">context</span> matters more.</h2>
+            <p class="small">For agentic systems, the clever phrasing is less important than what information you provide. This is context engineering.</p>
+        </div>
+
+        <!-- SLIDE: Context Engineering Visual -->
+        <div class="slide slide-visual">
+            <span class="topic-tag blue">Context Engineering</span>
+            <h2>Context Engineering: What Goes Into the Prompt</h2>
+            <img src="../images/context_engineering.png" alt="Context Engineering Diagram">
+            <p class="caption">Source: <a href="https://x.com/toaboricua/status/1903478376592859633" target="_blank" style="color: #aaa;">@toaboricua on X</a></p>
+        </div>
+
+        <!-- SLIDE: Context Engineering Definition -->
+        <div class="slide slide-content">
+            <span class="topic-tag blue">Context Engineering</span>
+            <h2>Context Engineering: The New Discipline</h2>
+            <div class="body">
+                <div class="text">
+                    <p><strong>"The art and science of filling the context window with just the right information at each step."</strong></p>
+                    <p>Not about clever phrasing — it's about what information the model needs and when it needs it.</p>
+                    <p class="muted" style="font-size: 0.85rem; margin-top: 1rem;">Three types of context matter:</p>
+                    <ul>
+                        <li><strong>Instructions:</strong> Prompts, memories, examples</li>
+                        <li><strong>Knowledge:</strong> Facts, retrieved information</li>
+                        <li><strong>Tools:</strong> Feedback from tool calls and actions</li>
+                    </ul>
+                </div>
+                <div class="visual" style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="https://blog.langchain.com/content/images/size/w1000/2025/07/image-1.png" alt="Context Engineering">
+                    <p style="font-size: 0.7rem; color: #888; margin-top: 0.5rem;">Source: <a href="https://blog.langchain.com/context-engineering-for-agents/" target="_blank" style="color: #aaa;">LangChain Blog</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Context Engineering Strategies -->
+        <div class="slide slide-content">
+            <span class="topic-tag blue">Context Engineering</span>
+            <h2>Four Strategies for Managing Context</h2>
+            <div class="body">
+                <div class="text">
+                    <ul>
+                        <li><strong>Write:</strong> Save information outside the context window. Use scratchpads and memories to persist across sessions.</li>
+                        <li><strong>Select:</strong> Pull only relevant context in. Use embeddings, knowledge graphs, and careful filtering.</li>
+                        <li><strong>Compress:</strong> Reduce tokens through summarization and trimming. Prevent context overload.</li>
+                        <li><strong>Isolate:</strong> Split context across multiple agents or sandboxed environments.</li>
+                    </ul>
+                    <p class="muted" style="font-size: 0.85rem; margin-top: 1rem;">The goal: give agents exactly what they need, nothing more.</p>
+                </div>
+                <div class="visual" style="display: flex; flex-direction: column; align-items: center;">
+                    <img src="https://blog.langchain.com/content/images/size/w1000/2025/07/image.png" alt="Context Engineering Strategies">
+                    <p style="font-size: 0.7rem; color: #888; margin-top: 0.5rem;">Source: <a href="https://blog.langchain.com/context-engineering-for-agents/" target="_blank" style="color: #aaa;">LangChain Blog</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- PART 6: MULTIMODAL INPUTS -->
+        <!-- (Placeholder for McKinsey content) -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Multimodal Statement -->
+        <div class="slide slide-statement">
+            <span class="topic-tag blue">Multimodal</span>
+            <h2>Text-only AI systems are <span class="red">legacy</span>.</h2>
+            <p class="small">In 2024, processing images alongside text was a differentiator. In 2025, it's table stakes. Systems that only handle text are increasingly inadequate for real-world use cases.</p>
+        </div>
+
+        <!-- SLIDE: Multimodal Use Cases -->
+        <div class="slide slide-cards">
+            <span class="topic-tag blue">Multimodal</span>
+            <h2>What Multimodal Inputs Enable</h2>
+            <div class="cards-grid stacked">
+                <div class="card" style="border-left: 4px solid var(--blue);">
+                    <h3>Customer Service</h3>
+                    <p>User sends a screenshot of an error message with their complaint. The model sees both, understands the context, and provides a relevant solution. No more "please describe what you see."</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--green);">
+                    <h3>Code & Development</h3>
+                    <p>Share a photo of a whiteboard diagram and ask "implement this architecture." Upload a UI mockup and get working code. The model understands visual intent, not just text descriptions.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--purple);">
+                    <h3>Document Processing</h3>
+                    <p>Feed invoices, receipts, contracts — the model reads text, understands layout, interprets signatures and stamps. No need to extract text first; it sees the whole document.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Why Now -->
+        <div class="slide slide-content">
+            <span class="topic-tag blue">Multimodal</span>
+            <h2>Why Multimodal Works Now</h2>
+            <div class="body">
+                <div class="text">
+                    <p><strong>2024 models could see images. 2025 models understand them.</strong></p>
+                    <p>The latest models (GPT-5.2, Claude Opus 4.5, Gemini 3) have native multimodal understanding — images, audio, and video are first-class inputs, not bolted-on features.</p>
+                    <ul>
+                        <li><strong>Better accuracy:</strong> Models reason about visual and text context together, reducing hallucinations</li>
+                        <li><strong>Lower latency:</strong> No separate OCR or vision pipeline needed — one model handles everything</li>
+                        <li><strong>Richer context:</strong> A picture is worth a thousand tokens of description you don't have to write</li>
+                    </ul>
+                </div>
+                <div class="visual" style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                    <div class="equation" style="width: 100%;">
+                        <div class="formula" style="font-size: 1.3rem;">Image + Text → Understanding</div>
+                        <p class="explain">Not image-to-text + text-to-understanding anymore</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- INPUT LAYER TAKEAWAYS -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Input Layer Takeaways -->
+        <div class="slide slide-list">
+            <h2 class="blue">Input Layer: Key Takeaways</h2>
+            <ul>
+                <li class="green"><strong>Let models write your prompts.</strong> Meta-prompting generates better prompts than manual crafting. Use it.</li>
+                <li class="green"><strong>Automate prompt optimization.</strong> Tools like DSPy iterate faster than humans. Stop manual A/B testing.</li>
+                <li class="green"><strong>Focus on context, not phrasing.</strong> What you put in the prompt matters more than how you say it.</li>
+                <li class="green"><strong>Plan for multimodal now.</strong> If your AI system only handles text, you're building technical debt.</li>
+            </ul>
+        </div>
+
