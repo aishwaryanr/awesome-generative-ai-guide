@@ -1,0 +1,316 @@
+        <!-- ============================================ -->
+        <!-- SECTION 2: MODEL LAYER -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Section Break -->
+        <div class="slide slide-section">
+            <p class="label green">Section 2</p>
+            <h2>Model & Data Layer</h2>
+            <p class="sub">From "bigger is better" to "think before you speak"</p>
+            <div class="framework-container">
+                <svg class="framework-svg" viewBox="0 0 950 480" xmlns="http://www.w3.org/2000/svg" style="max-width: 1100px;">
+                    <g class="framework-layer dimmed"><rect x="20" y="15" width="750" height="95" rx="8" fill="#3b82f6" opacity="0.15" stroke="#3b82f6" stroke-width="2"/><text x="30" y="38" fill="#3b82f6" font-weight="700" font-size="14">INPUT LAYER</text></g>
+                    <g class="framework-layer">
+                        <rect x="20" y="120" width="750" height="95" rx="8" fill="#10b981" opacity="0.15" stroke="#10b981" stroke-width="2"/>
+                        <text x="30" y="143" fill="#10b981" font-weight="700" font-size="14">DATA AND MODEL LAYER</text>
+                        <rect x="30" y="155" width="140" height="50" rx="6" fill="#10b981"/><text x="100" y="185" text-anchor="middle" fill="white" font-size="10" font-weight="500">System 2 Reasoning</text>
+                        <rect x="180" y="155" width="100" height="50" rx="6" fill="#10b981"/><text x="230" y="185" text-anchor="middle" fill="white" font-size="10" font-weight="500">RLVR</text>
+                        <rect x="290" y="155" width="120" height="50" rx="6" fill="#10b981"/><text x="350" y="185" text-anchor="middle" fill="white" font-size="10" font-weight="500">Long Context</text>
+                        <rect x="420" y="155" width="120" height="50" rx="6" fill="#10b981"/><text x="480" y="185" text-anchor="middle" fill="white" font-size="10" font-weight="500">Quantization</text>
+                        <rect x="550" y="155" width="210" height="50" rx="6" fill="#10b981"/><text x="655" y="185" text-anchor="middle" fill="white" font-size="10" font-weight="500">Fine-Tuning & Distillation</text>
+                    </g>
+                    <rect class="highlight-ring active" x="15" y="115" width="760" height="105" rx="12"/>
+                    <g class="framework-layer dimmed"><rect x="20" y="225" width="750" height="95" rx="8" fill="#f97316" opacity="0.15" stroke="#f97316" stroke-width="2"/><text x="30" y="248" fill="#f97316" font-weight="700" font-size="14">APPLICATION LAYER</text></g>
+                    <g class="framework-layer dimmed"><rect x="20" y="330" width="750" height="95" rx="8" fill="#8b5cf6" opacity="0.15" stroke="#8b5cf6" stroke-width="2"/><text x="30" y="353" fill="#8b5cf6" font-weight="700" font-size="14">OUTPUT LAYER</text></g>
+                    <g class="framework-layer dimmed"><rect x="790" y="15" width="145" height="410" rx="8" fill="#ef4444" opacity="0.15" stroke="#ef4444" stroke-width="2"/><text x="862" y="220" text-anchor="middle" fill="#ef4444" font-weight="700" font-size="13">CHALLENGES</text></g>
+                </svg>
+            </div>
+        </div>
+
+        <!-- SLIDE: Section Overview -->
+        <div class="slide slide-list">
+            <h2>What Changed in the Model Layer</h2>
+            <ul>
+                <li class="green"><strong>Models learned to think.</strong> System 2 reasoning emerged: models that allocate compute dynamically based on problem difficulty.</li>
+                <li class="green"><strong>RLVR changed training.</strong> Reinforcement Learning with Verifiable Rewards proved you can train reasoning without human labels.</li>
+                <li class="green"><strong>Context windows hit 1M tokens.</strong> But effective use of long context requires more than just bigger windows.</li>
+                <li class="green"><strong>Efficiency became a priority.</strong> Quantization and distillation made frontier capabilities accessible on consumer hardware.</li>
+            </ul>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SYSTEM 1 → SYSTEM 2 REASONING -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: System 2 Intro -->
+        <div class="slide slide-statement">
+            <span class="topic-tag green">System 2 Reasoning</span>
+            <h2>The biggest shift in 2025: models that <span class="green">think before they speak</span>.</h2>
+            <p class="small">Instead of generating tokens as fast as possible, these models allocate more compute to harder problems. The result: dramatically better reasoning on complex tasks.</p>
+        </div>
+
+        <!-- SLIDE: System 1 vs System 2 -->
+        <div class="slide slide-vs">
+            <span class="topic-tag green">System 2 Reasoning</span>
+            <div class="vs-box old">
+                <span class="tag">System 1</span>
+                <h3>Fast, Intuitive</h3>
+                <p>Immediate responses. Pattern matching. Great for simple queries, but prone to confident errors on hard problems.</p>
+            </div>
+            <span class="vs-arrow">→</span>
+            <div class="vs-box new">
+                <span class="tag">System 2</span>
+                <h3>Slow, Deliberate</h3>
+                <p>Models allocate thinking time proportional to difficulty. More reliable on complex reasoning, but 3-5x slower.</p>
+            </div>
+        </div>
+
+        <!-- SLIDE: Why System 2 Matters -->
+        <div class="slide slide-cards">
+            <span class="topic-tag green">System 2 Reasoning</span>
+            <h2>Why System 2 Reasoning Matters</h2>
+            <div class="cards-grid stacked">
+                <div class="card" style="border-left: 4px solid var(--green);">
+                    <h3>Dynamic Compute Allocation</h3>
+                    <p>Simple questions get quick answers. Complex problems trigger extended reasoning chains. The model decides how hard to think based on the task.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--blue);">
+                    <h3>Visible Thinking Process</h3>
+                    <p>You can see the model's reasoning in its "thinking" tokens. This makes debugging easier and helps identify where reasoning goes wrong.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--purple);">
+                    <h3>Trade Speed for Accuracy</h3>
+                    <p>For tasks where correctness matters more than latency—code generation, complex analysis, multi-step reasoning—the tradeoff is worth it.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Test-Time Compute -->
+        <div class="slide slide-content" style="justify-content: center;">
+            <span class="topic-tag green">System 2 Reasoning</span>
+            <div class="equation" style="max-width: 850px; margin: 0 auto;">
+                <p class="formula">Test-Time Compute = <span class="green">Thinking Time</span> × <span class="blue">Tokens</span></p>
+                <p class="explain">The new scaling law: you can improve outputs by letting models think longer</p>
+            </div>
+            <div style="text-align: center; margin-top: 1.5rem; color: var(--text-muted); font-size: 1.05rem; max-width: 750px; margin-left: auto; margin-right: auto;">
+                <p>2024's scaling law was about training compute. 2025's insight: <strong>inference compute matters too</strong>.</p>
+                <p style="margin-top: 0.5rem;">Models can solve harder problems by spending more compute at inference time, not just at training time.</p>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- RLVR -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: RLHF Context -->
+        <div class="slide slide-statement">
+            <span class="topic-tag green">RLVR</span>
+            <h2>2024 was the year of RLHF.</h2>
+            <p class="small">Reinforcement Learning from Human Feedback. Humans rank model outputs. The model learns what humans prefer. This gave us helpful, harmless assistants—but it doesn't scale, and "sounds good" isn't the same as "is correct."</p>
+        </div>
+
+        <!-- SLIDE: RLVR Intro -->
+        <div class="slide slide-statement">
+            <span class="topic-tag green">RLVR</span>
+            <h2>2025 introduced RLVR: rewards you can verify automatically.</h2>
+            <p class="small">Reinforcement Learning with Verifiable Rewards. Give the model problems with checkable answers—math proofs, code that compiles, logic puzzles. Tell it only right or wrong. No human labelers needed. Scales with compute, not headcount.</p>
+        </div>
+
+        <!-- SLIDE: RLHF vs RLVR Visual -->
+        <div class="slide slide-visual">
+            <span class="topic-tag green">RLVR</span>
+            <h2>RLHF vs RLVR: The Key Difference</h2>
+            <img src="../images/rlhf_rlvr.png" alt="RLHF vs RLVR Comparison">
+            <p class="caption">RLHF asks "which sounds better?" RLVR asks "is this correct?" One requires humans. One requires only a verifier.</p>
+        </div>
+
+        <!-- SLIDE: RLVR Insight -->
+        <div class="slide slide-statement">
+            <span class="topic-tag green">RLVR</span>
+            <h2>RLVR compresses search into intuition.</h2>
+            <p class="small">What looks like "reasoning" is actually learned search patterns. The model isn't thinking step-by-step—it's pattern matching on solution strategies it learned during training.</p>
+        </div>
+
+        <!-- SLIDE: Self-Correction -->
+        <div class="slide slide-content">
+            <span class="topic-tag green">RLVR</span>
+            <h2>The Self-Correction Breakthrough</h2>
+            <div class="body">
+                <div class="text">
+                    <p>RLVR-trained models learned something unexpected: <strong>how to catch and correct their own mistakes</strong>.</p>
+                    <ul>
+                        <li>Models detect when reasoning is going wrong</li>
+                        <li>They backtrack and try different approaches</li>
+                        <li>This emerged naturally from the training process</li>
+                    </ul>
+                    <p style="margin-top: 1rem;"><strong>The results:</strong></p>
+                    <ul>
+                        <li>40-60% fewer hallucinations in trained domains</li>
+                        <li>Models express uncertainty instead of fabricating</li>
+                        <li>Graceful degradation on hard problems</li>
+                    </ul>
+                </div>
+                <div class="visual" style="flex-direction: column; gap: 16px;">
+                    <div class="card" style="background: rgba(16, 185, 129, 0.1); border-color: rgba(16, 185, 129, 0.3); text-align: center; width: 100%;">
+                        <p style="font-size: 0.85rem; color: var(--green); margin-bottom: 0.5rem;">RLVR excels at</p>
+                        <p style="font-size: 1.05rem;">Code • Math • Logic • Structured Tasks</p>
+                    </div>
+                    <div class="card" style="background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.3); text-align: center; width: 100%;">
+                        <p style="font-size: 0.85rem; color: var(--red); margin-bottom: 0.5rem;">RLVR struggles with</p>
+                        <p style="font-size: 1.05rem;">Creative Writing • Subjective Tasks</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- LONG CONTEXT -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Long Context Intro -->
+        <div class="slide slide-stat">
+            <span class="topic-tag green">Long Context</span>
+            <p class="num green">1M</p>
+            <p class="label">tokens in a single context window</p>
+            <p class="context">That's ~700 pages. Entire codebases. Full research papers with all citations. But there's a catch.</p>
+        </div>
+
+        <!-- SLIDE: Context Windows -->
+        <div class="slide slide-cards">
+            <span class="topic-tag green">Long Context</span>
+            <h2>Context Windows Exploded in 2025</h2>
+            <div class="cards-grid">
+                <div class="card" style="text-align: center;">
+                    <p class="num green">1M</p>
+                    <p style="font-weight: 600;">Gemini 3 Pro</p>
+                    <p style="font-size: 0.85rem; color: var(--muted);">~700 pages input</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <p class="num blue">400K</p>
+                    <p style="font-weight: 600;">GPT-5.2</p>
+                    <p style="font-size: 0.85rem; color: var(--muted);">~128K output cap</p>
+                </div>
+                <div class="card" style="text-align: center;">
+                    <p class="num purple">200K</p>
+                    <p style="font-weight: 600;">Claude Opus 4.5</p>
+                    <p style="font-size: 0.85rem; color: var(--muted);">Up to 1M enterprise</p>
+                </div>
+            </div>
+            <p class="subtext muted" style="text-align: center; margin-top: 1.5rem;">Entire codebases in context. Multi-document analysis without chunking. Complex reasoning across long dependencies.</p>
+        </div>
+
+        <!-- SLIDE: Effective vs Claimed -->
+        <div class="slide slide-statement">
+            <span class="topic-tag green">Long Context</span>
+            <h2>Claimed context ≠ effective context.</h2>
+            <p class="small">Models can accept 1M tokens. That doesn't mean they use them well. Information in the middle gets lost. Retrieval quality degrades with distance. Test your specific use case.</p>
+        </div>
+
+        <!-- SLIDE: Long Context Challenges -->
+        <div class="slide slide-list">
+            <span class="topic-tag green">Long Context</span>
+            <h2>The Long Context Reality Check</h2>
+            <ul>
+                <li class="orange"><strong>"Lost in the middle" problem persists.</strong> Models remember beginnings and ends better than middles. Structure your context accordingly.</li>
+                <li class="blue"><strong>Costs scale linearly.</strong> 10x more context = 10x higher cost. Strategic context management still matters.</li>
+                <li class="purple"><strong>Latency increases.</strong> Longer context means slower first-token response. Plan for user experience.</li>
+                <li class="green"><strong>Quality varies by model.</strong> Some models handle 1M well. Others degrade at 100K. Benchmark your specific tasks.</li>
+            </ul>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- EFFICIENCY & QUANTIZATION -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Efficiency Intro -->
+        <div class="slide slide-statement">
+            <span class="topic-tag green">Efficiency</span>
+            <h2>2025's hidden story: frontier capabilities on consumer hardware.</h2>
+            <p class="small">Quantization, distillation, and mixture-of-experts made models 10x more accessible.</p>
+        </div>
+
+        <!-- SLIDE: Quantization -->
+        <div class="slide slide-visual">
+            <span class="topic-tag green">Efficiency</span>
+            <h2>Quantization: Smaller Without Losing Quality</h2>
+            <img src="../images/quantization.png" alt="Quantization comparison showing 32-bit, 8-bit, and 4-bit models">
+            <p class="caption">Reduce precision from 32-bit to 4-bit. Same model, 8x smaller, runs on consumer hardware. Quality loss is minimal for most production tasks.</p>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- FINE-TUNING & DISTILLATION -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Fine-tuning Intro -->
+        <div class="slide slide-statement">
+            <span class="topic-tag green">Fine-Tuning</span>
+            <h2>Fine-tuning: training a model on your specific data.</h2>
+            <p class="small">Take a general-purpose model. Train it further on domain-specific examples. The result: a model that speaks your industry's language, follows your formats, and understands your context—often matching larger models at a fraction of the cost.</p>
+        </div>
+
+        <!-- SLIDE: Fine-tuning in Practice -->
+        <div class="slide slide-list">
+            <span class="topic-tag green">Fine-Tuning</span>
+            <h2>Where Fine-Tuning Made the Difference in 2025</h2>
+            <ul>
+                <li class="green"><strong>Healthcare:</strong> Harvard researchers fine-tuned smaller LLMs to scan medical records for social determinants of health—outperforming larger general models with less bias.</li>
+                <li class="blue"><strong>Finance:</strong> Banks fine-tuned models on earnings reports and risk assessments using internal terminology that general models couldn't understand.</li>
+                <li class="purple"><strong>Legal:</strong> LegiLM, fine-tuned for data privacy regulations, interprets compliance requirements that general models miss.</li>
+                <li class="orange"><strong>Chemistry:</strong> LlaSMol, a Mistral-based model fine-tuned for molecular science, substantially outperformed non-fine-tuned models on chemistry tasks.</li>
+            </ul>
+        </div>
+
+        <!-- SLIDE: Fine-tuning Guidance -->
+        <div class="slide slide-statement">
+            <span class="topic-tag green">Fine-Tuning</span>
+            <h2>But always start with prompting. Fine-tune only when you have to.</h2>
+            <p class="small">Prompting is faster to iterate, requires no training data, and works for most use cases. Fine-tune when you're running the same task at massive scale, need consistent output formats, or require domain knowledge the base model lacks.</p>
+        </div>
+
+        <!-- SLIDE: Distillation Trend -->
+        <div class="slide slide-statement">
+            <span class="topic-tag green">Distillation</span>
+            <h2>Distillation became the default deployment strategy.</h2>
+            <p class="small">Use a large model to generate training data. Train a smaller model on that data. Deploy the small model at 10x lower cost. This pattern—70B teacher to 7B student—drove most production cost optimizations in 2025.</p>
+        </div>
+
+        <!-- SLIDE: Domain Experts -->
+        <div class="slide slide-cards">
+            <span class="topic-tag green">Distillation</span>
+            <h2>Where Domain-Specific Models Shine</h2>
+            <div class="cards-grid two">
+                <div class="card" style="border-left: 4px solid var(--green);">
+                    <h3>Healthcare</h3>
+                    <p>Medical coding from clinical notes. Drug interaction checking. Radiology report generation. Anywhere regulatory precision matters.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--blue);">
+                    <h3>Legal</h3>
+                    <p>Contract clause extraction. Case law research. Compliance document review. Tasks requiring jurisdiction-specific knowledge.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--purple);">
+                    <h3>Finance</h3>
+                    <p>Earnings call summarization. Risk factor analysis. Regulatory filing generation. Domain jargon and format requirements.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--orange);">
+                    <h3>Code</h3>
+                    <p>Repository-specific assistants. Internal API documentation. Company coding standards enforcement. Codebase-aware refactoring.</p>
+                </div>
+            </div>
+            <p class="subtext muted" style="text-align: center; margin-top: 1rem;">The pattern: General models for exploration, specialized models for production.</p>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- TAKEAWAYS -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Model Takeaways -->
+        <div class="slide slide-list">
+            <h2 class="green">Model Layer: Key Takeaways</h2>
+            <ul>
+                <li class="green"><strong>System 2 reasoning trades speed for accuracy.</strong> Use thinking models for complex tasks where correctness matters more than latency.</li>
+                <li class="green"><strong>RLVR enables self-correction.</strong> Models trained with verifiable rewards catch their own mistakes on structured tasks.</li>
+                <li class="green"><strong>Long context ≠ infinite context.</strong> Test effective context length for your use case. The middle gets lost.</li>
+                <li class="green"><strong>Small + specialized beats large + general.</strong> Fine-tuned 7B often outperforms 70B at 10% the cost.</li>
+            </ul>
+        </div>
+

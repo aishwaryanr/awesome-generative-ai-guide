@@ -212,7 +212,7 @@
         <div class="slide slide-visual">
             <span class="topic-tag blue">Prompting 2024</span>
             <h2>Some Research Papers That Defined 2024</h2>
-            <img src="images/Prompting_Techniques_2024.png" alt="Prompting Techniques: CoT, ToT, ReAct, Self-Consistency">
+            <img src="../images/Prompting_Techniques_2024.png" alt="Prompting Techniques: CoT, ToT, ReAct, Self-Consistency">
             <p class="caption">These techniques worked, but required expertise to implement correctly. Most teams struggled to replicate paper results.</p>
         </div>
 
@@ -373,7 +373,7 @@
         <div class="slide slide-visual">
             <span class="topic-tag blue">Auto Optimization</span>
             <h2>How DSPy Finds the Best Prompt</h2>
-            <img src="images/dspy_process.png" alt="DSPy Optimization Process">
+            <img src="../images/dspy_process.png" alt="DSPy Optimization Process">
             <p class="caption">You provide task + data. DSPy generates prompt variations. The loop scores, selects best, and repeats until optimized.</p>
         </div>
 
@@ -444,7 +444,7 @@
         <div class="slide slide-visual">
             <span class="topic-tag blue">Context Engineering</span>
             <h2>Context Engineering: What Goes Into the Prompt</h2>
-            <img src="images/context_engineering.png" alt="Context Engineering Diagram">
+            <img src="../images/context_engineering.png" alt="Context Engineering Diagram">
             <p class="caption">Source: <a href="https://x.com/toaboricua/status/1903478376592859633" target="_blank" style="color: #aaa;">@toaboricua on X</a></p>
         </div>
 
@@ -685,7 +685,7 @@
         <div class="slide slide-visual">
             <span class="topic-tag green">RLVR</span>
             <h2>RLHF vs RLVR: The Key Difference</h2>
-            <img src="images/rlhf_rlvr.png" alt="RLHF vs RLVR Comparison">
+            <img src="../images/rlhf_rlvr.png" alt="RLHF vs RLVR Comparison">
             <p class="caption">RLHF asks "which sounds better?" RLVR asks "is this correct?" One requires humans. One requires only a verifier.</p>
         </div>
 
@@ -798,7 +798,7 @@
         <div class="slide slide-visual">
             <span class="topic-tag green">Efficiency</span>
             <h2>Quantization: Smaller Without Losing Quality</h2>
-            <img src="images/quantization.png" alt="Quantization comparison showing 32-bit, 8-bit, and 4-bit models">
+            <img src="../images/quantization.png" alt="Quantization comparison showing 32-bit, 8-bit, and 4-bit models">
             <p class="caption">Reduce precision from 32-bit to 4-bit. Same model, 8x smaller, runs on consumer hardware. Quality loss is minimal for most production tasks.</p>
         </div>
 
@@ -976,215 +976,6 @@
                 <li class="purple"><strong>Access control.</strong> "Put it all in the prompt" breaks down when different users have different permissions.</li>
                 <li class="orange"><strong>Auditability.</strong> Retrieval makes it easier to show what sources were used and why.</li>
             </ul>
-        </div>
-
-        <!-- ============================================ -->
-        <!-- AGENT TYPES -->
-        <!-- ============================================ -->
-
-        <!-- SLIDE: Agent Types Intro -->
-        <div class="slide slide-statement">
-            <span class="topic-tag orange">Agents</span>
-            <h2>2025 was the year agent work split into distinct categories.</h2>
-            <p class="small">"Agent" stopped meaning "LLM that can call a tool" and started meaning "a system that can complete work across many steps, over time, with integration, and with guardrails."</p>
-        </div>
-
-        <!-- SLIDE: Deep Agents -->
-        <div class="slide slide-content">
-            <span class="topic-tag orange">Agents</span>
-            <h2>Deep Agents: Long-Horizon Work</h2>
-            <div class="body">
-                <div class="text">
-                    <p>Deep agents handle tasks that take minutes to hours, with many steps, context management, and delegation.</p>
-                    <p style="margin-top: 1rem;"><strong>What they do:</strong></p>
-                    <ul>
-                        <li>Hold state and artifacts, not just chat history</li>
-                        <li>Decompose goals into sub-tasks</li>
-                        <li>Recover from failure, retry safely, continue</li>
-                        <li>Use memory and filesystems to avoid context collapse</li>
-                    </ul>
-                    <p style="margin-top: 1rem;"><strong>Example:</strong> OpenAI shipped "deep research" as an agentic capability—multi-step research that browses and synthesizes, returning a report with citations.</p>
-                </div>
-                <div class="visual" style="flex-direction: column; gap: 16px; justify-content: center;">
-                    <div class="card" style="background: rgba(249, 115, 22, 0.1); border-color: rgba(249, 115, 22, 0.3); text-align: center;">
-                        <p style="font-weight: 700; color: var(--orange); font-size: 1.1rem;">A shallow agent answers.</p>
-                        <p style="font-weight: 700; color: var(--orange); font-size: 1.1rem; margin-top: 0.5rem;">A deep agent produces.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SLIDE: Ambient Agents -->
-        <div class="slide slide-content">
-            <span class="topic-tag orange">Agents</span>
-            <h2>Ambient Agents: Always-On Automation</h2>
-            <div class="body">
-                <div class="text">
-                    <p>Ambient agents run in the background and act on events rather than waiting for prompts.</p>
-                    <p style="margin-top: 1rem;"><strong>They respond to:</strong></p>
-                    <ul>
-                        <li>Event streams, logs, monitoring alerts</li>
-                        <li>Tickets breaching SLA, churn signals spiking</li>
-                        <li>Build failures, incident starts, contract renewals</li>
-                    </ul>
-                    <p style="margin-top: 1rem;"><strong>Core ingredients:</strong></p>
-                    <ul>
-                        <li>Triggers: event streams, schedules, webhooks</li>
-                        <li>Policies: what it can do automatically vs. what needs approval</li>
-                        <li>Memory of ongoing state: what's already handled</li>
-                    </ul>
-                </div>
-                <div class="visual" style="flex-direction: column; gap: 16px; justify-content: center;">
-                    <div class="card" style="background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3); text-align: center;">
-                        <p style="font-size: 0.9rem; color: var(--purple); margin-bottom: 0.5rem;">Where they win</p>
-                        <p style="font-size: 1rem;">IT ops triage • Security alert routing • SLA management • Compliance checks</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SLIDE: Coding Agents -->
-        <div class="slide slide-statement">
-            <span class="topic-tag orange">Agents</span>
-            <h2>Coding agents became the first place many teams experienced real agents.</h2>
-            <p class="small">Why? Software work has the perfect control surface: repos, tests, CI, and pull requests. Every step is visible. Humans steer via PR review. Governance is built in.</p>
-        </div>
-
-        <!-- SLIDE: Coding Agent Types -->
-        <div class="slide slide-cards">
-            <span class="topic-tag orange">Agents</span>
-            <h2>Three Surfaces for Coding Agents</h2>
-            <div class="cards-grid stacked">
-                <div class="card" style="border-left: 4px solid var(--blue);">
-                    <h3>IDE Agents</h3>
-                    <p>Multi-step work inside your editor. Finds relevant files, proposes edits across multiple files, runs terminal commands and tests, watches errors, fixes and retries in a loop. Cursor and Copilot agent mode run multiple agents in parallel.</p>
-                </div>
-                <div class="card" style="border-left: 4px solid var(--green);">
-                    <h3>Repo & PR Agents</h3>
-                    <p>Work through issues and pull requests in a GitHub Actions environment. Produce PRs, logs, and reviewable commits. This is where autonomy becomes governable—every step visible in commits, humans steer via PR review.</p>
-                </div>
-                <div class="card" style="border-left: 4px solid var(--purple);">
-                    <h3>Terminal Agents</h3>
-                    <p>Agentic coding from the command line. Understands your codebase, helps with routine tasks and git workflows through natural language. Works with existing bash environment and can act as both MCP server and client.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- SLIDE: Browser Agents -->
-        <div class="slide slide-content">
-            <span class="topic-tag orange">Agents</span>
-            <h2>Browser Agents: UI Control</h2>
-            <div class="body">
-                <div class="text">
-                    <p>Agents that operate the real surface area people use: browsers and SaaS UIs.</p>
-                    <p style="margin-top: 1rem;"><strong>OpenAI Operator</strong> (January 2025)</p>
-                    <ul>
-                        <li>Uses screenshots to "see" and virtual mouse/keyboard to interact</li>
-                        <li>Books reservations, fills forms, places orders</li>
-                        <li>Later integrated into ChatGPT as "agent mode"</li>
-                    </ul>
-                    <p style="margin-top: 1rem;"><strong>Google Project Mariner</strong></p>
-                    <ul>
-                        <li>Chrome extension with sidebar interface</li>
-                        <li>Runs up to 10 parallel task streams</li>
-                        <li>"Teach & Repeat" learns demonstrated workflows</li>
-                    </ul>
-                </div>
-                <div class="visual" style="flex-direction: column; gap: 16px; justify-content: center;">
-                    <div class="card" style="background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.3); text-align: center;">
-                        <p style="font-size: 0.9rem; color: var(--red); margin-bottom: 0.5rem;">The risk</p>
-                        <p style="font-size: 1rem;">UI brittleness, broad access requirements, irreversible actions. Require approvals for anything permanent.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- SLIDE: Multi-Agent -->
-        <div class="slide slide-two-col">
-            <span class="topic-tag orange">Agents</span>
-            <h2>Multi-Agent: When It Helps, When It Hurts</h2>
-            <div class="cols">
-                <div class="col">
-                    <h3 class="green">When It Helps</h3>
-                    <ul>
-                        <li><strong>Parallel research:</strong> Multiple agents gather evidence simultaneously, then consolidate</li>
-                        <li><strong>Role separation:</strong> Planner, executor, reviewer as distinct agents</li>
-                        <li><strong>Tool specialization:</strong> Different agents with different permissions or domains</li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <h3 class="red">When It Hurts</h3>
-                    <ul>
-                        <li><strong>Non-determinism:</strong> Outcomes vary more with multiple agents</li>
-                        <li><strong>Coordination overhead:</strong> Agents disagree or duplicate work</li>
-                        <li><strong>Error amplification:</strong> One agent's wrong assumption spreads</li>
-                        <li><strong>Cost:</strong> You pay for parallel runs</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <!-- ============================================ -->
-        <!-- SKILLS -->
-        <!-- ============================================ -->
-
-        <!-- SLIDE: Skills Intro -->
-        <div class="slide slide-two-col">
-            <span class="topic-tag orange">Skills</span>
-            <h2>Skills: Packaged Expertise for Agents</h2>
-            <div class="cols">
-                <div class="col">
-                    <h3 class="orange">Agents execute.</h3>
-                    <p>They reason, call tools, handle multi-step workflows. But agents are general-purpose—they don't inherently know your domain.</p>
-                </div>
-                <div class="col">
-                    <h3 class="blue">Skills equip.</h3>
-                    <p>Folders of instructions, scripts, and resources that agents load on demand. BigQuery queries. NDA review procedures. PDF extraction. Domain expertise, packaged and portable.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- SLIDE: Skills Visual -->
-        <div class="slide slide-visual">
-            <span class="topic-tag orange">Skills</span>
-            <h2>How Skills Fit Into Agent Architecture</h2>
-            <img src="images/skills_architecture.webp" alt="Agent + Skills + Virtual Machine">
-            <p class="caption">Agent configuration includes equipped skills and MCP servers. Skills live as directories in the agent's file system—loaded when relevant. Source: Anthropic</p>
-        </div>
-
-        <!-- ============================================ -->
-        <!-- AGENTIC FRAMEWORKS -->
-        <!-- ============================================ -->
-
-        <!-- SLIDE: Agentic Frameworks -->
-        <div class="slide slide-statement">
-            <span class="topic-tag orange">Frameworks</span>
-            <h2>Frameworks moved from "loops" to explicit workflows.</h2>
-            <p class="small">Early agent setups: plan, call tool, read output, repeat. In 2025, frameworks moved toward explicit graphs with named steps, clear transitions, and predictable control flow. Debugging a loop is painful. Debugging a workflow is tractable.</p>
-        </div>
-
-        <!-- SLIDE: What Changed in Frameworks -->
-        <div class="slide slide-cards">
-            <span class="topic-tag orange">Frameworks</span>
-            <h2>What Changed in Agentic Frameworks</h2>
-            <div class="cards-grid two">
-                <div class="card" style="border-left: 4px solid var(--blue);">
-                    <h3>State Became First-Class</h3>
-                    <p>Checkpointing progress so you can resume after failures. Persisting intermediate artifacts. Supporting "pause and wait" for humans or slow systems. Real tasks span hours or days.</p>
-                </div>
-                <div class="card" style="border-left: 4px solid var(--green);">
-                    <h3>Human-in-Loop: Designed In</h3>
-                    <p>Approval gates, escalation paths, and fallbacks became built-in concepts. Better support for partial automation. Enterprises don't want full autonomy—they want safe delegation.</p>
-                </div>
-                <div class="card" style="border-left: 4px solid var(--purple);">
-                    <h3>Tooling Got Structured</h3>
-                    <p>Clear contracts for tools: inputs, outputs, errors. Better handling of failures and partial results. Moves toward portable tool ecosystems so apps don't rewrite integrations.</p>
-                </div>
-                <div class="card" style="border-left: 4px solid var(--orange);">
-                    <h3>Multi-Agent: Supported, Not Default</h3>
-                    <p>Better coordination primitives, message passing, role boundaries. More emphasis on controlling non-determinism. Multi-agent as an advanced pattern, not the starting point.</p>
-                </div>
-            </div>
         </div>
 
         <!-- SLIDE 43e: RAG Theme 1 -->
@@ -1393,6 +1184,215 @@
         </div>
 
         <!-- ============================================ -->
+        <!-- AGENT TYPES -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Agent Types Intro -->
+        <div class="slide slide-statement">
+            <span class="topic-tag orange">Agents</span>
+            <h2>2025 was the year agent work split into distinct categories.</h2>
+            <p class="small">"Agent" stopped meaning "LLM that can call a tool" and started meaning "a system that can complete work across many steps, over time, with integration, and with guardrails."</p>
+        </div>
+
+        <!-- SLIDE: Deep Agents -->
+        <div class="slide slide-content">
+            <span class="topic-tag orange">Agents</span>
+            <h2>Deep Agents: Long-Horizon Work</h2>
+            <div class="body">
+                <div class="text">
+                    <p>Deep agents handle tasks that take minutes to hours, with many steps, context management, and delegation.</p>
+                    <p style="margin-top: 1rem;"><strong>What they do:</strong></p>
+                    <ul>
+                        <li>Hold state and artifacts, not just chat history</li>
+                        <li>Decompose goals into sub-tasks</li>
+                        <li>Recover from failure, retry safely, continue</li>
+                        <li>Use memory and filesystems to avoid context collapse</li>
+                    </ul>
+                    <p style="margin-top: 1rem;"><strong>Example:</strong> OpenAI shipped "deep research" as an agentic capability—multi-step research that browses and synthesizes, returning a report with citations.</p>
+                </div>
+                <div class="visual" style="flex-direction: column; gap: 16px; justify-content: center;">
+                    <div class="card" style="background: rgba(249, 115, 22, 0.1); border-color: rgba(249, 115, 22, 0.3); text-align: center;">
+                        <p style="font-weight: 700; color: var(--orange); font-size: 1.1rem;">A shallow agent answers.</p>
+                        <p style="font-weight: 700; color: var(--orange); font-size: 1.1rem; margin-top: 0.5rem;">A deep agent produces.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Ambient Agents -->
+        <div class="slide slide-content">
+            <span class="topic-tag orange">Agents</span>
+            <h2>Ambient Agents: Always-On Automation</h2>
+            <div class="body">
+                <div class="text">
+                    <p>Ambient agents run in the background and act on events rather than waiting for prompts.</p>
+                    <p style="margin-top: 1rem;"><strong>They respond to:</strong></p>
+                    <ul>
+                        <li>Event streams, logs, monitoring alerts</li>
+                        <li>Tickets breaching SLA, churn signals spiking</li>
+                        <li>Build failures, incident starts, contract renewals</li>
+                    </ul>
+                    <p style="margin-top: 1rem;"><strong>Core ingredients:</strong></p>
+                    <ul>
+                        <li>Triggers: event streams, schedules, webhooks</li>
+                        <li>Policies: what it can do automatically vs. what needs approval</li>
+                        <li>Memory of ongoing state: what's already handled</li>
+                    </ul>
+                </div>
+                <div class="visual" style="flex-direction: column; gap: 16px; justify-content: center;">
+                    <div class="card" style="background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3); text-align: center;">
+                        <p style="font-size: 0.9rem; color: var(--purple); margin-bottom: 0.5rem;">Where they win</p>
+                        <p style="font-size: 1rem;">IT ops triage • Security alert routing • SLA management • Compliance checks</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Coding Agents -->
+        <div class="slide slide-statement">
+            <span class="topic-tag orange">Agents</span>
+            <h2>Coding agents became the first place many teams experienced real agents.</h2>
+            <p class="small">Why? Software work has the perfect control surface: repos, tests, CI, and pull requests. Every step is visible. Humans steer via PR review. Governance is built in.</p>
+        </div>
+
+        <!-- SLIDE: Coding Agent Types -->
+        <div class="slide slide-cards">
+            <span class="topic-tag orange">Agents</span>
+            <h2>Three Surfaces for Coding Agents</h2>
+            <div class="cards-grid stacked">
+                <div class="card" style="border-left: 4px solid var(--blue);">
+                    <h3>IDE Agents</h3>
+                    <p>Multi-step work inside your editor. Finds relevant files, proposes edits across multiple files, runs terminal commands and tests, watches errors, fixes and retries in a loop. Cursor and Copilot agent mode run multiple agents in parallel.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--green);">
+                    <h3>Repo & PR Agents</h3>
+                    <p>Work through issues and pull requests in a GitHub Actions environment. Produce PRs, logs, and reviewable commits. This is where autonomy becomes governable—every step visible in commits, humans steer via PR review.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--purple);">
+                    <h3>Terminal Agents</h3>
+                    <p>Agentic coding from the command line. Understands your codebase, helps with routine tasks and git workflows through natural language. Works with existing bash environment and can act as both MCP server and client.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Browser Agents -->
+        <div class="slide slide-content">
+            <span class="topic-tag orange">Agents</span>
+            <h2>Browser Agents: UI Control</h2>
+            <div class="body">
+                <div class="text">
+                    <p>Agents that operate the real surface area people use: browsers and SaaS UIs.</p>
+                    <p style="margin-top: 1rem;"><strong>OpenAI Operator</strong> (January 2025)</p>
+                    <ul>
+                        <li>Uses screenshots to "see" and virtual mouse/keyboard to interact</li>
+                        <li>Books reservations, fills forms, places orders</li>
+                        <li>Later integrated into ChatGPT as "agent mode"</li>
+                    </ul>
+                    <p style="margin-top: 1rem;"><strong>Google Project Mariner</strong></p>
+                    <ul>
+                        <li>Chrome extension with sidebar interface</li>
+                        <li>Runs up to 10 parallel task streams</li>
+                        <li>"Teach & Repeat" learns demonstrated workflows</li>
+                    </ul>
+                </div>
+                <div class="visual" style="flex-direction: column; gap: 16px; justify-content: center;">
+                    <div class="card" style="background: rgba(239, 68, 68, 0.1); border-color: rgba(239, 68, 68, 0.3); text-align: center;">
+                        <p style="font-size: 0.9rem; color: var(--red); margin-bottom: 0.5rem;">The risk</p>
+                        <p style="font-size: 1rem;">UI brittleness, broad access requirements, irreversible actions. Require approvals for anything permanent.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Multi-Agent -->
+        <div class="slide slide-two-col">
+            <span class="topic-tag orange">Agents</span>
+            <h2>Multi-Agent: When It Helps, When It Hurts</h2>
+            <div class="cols">
+                <div class="col">
+                    <h3 class="green">When It Helps</h3>
+                    <ul>
+                        <li><strong>Parallel research:</strong> Multiple agents gather evidence simultaneously, then consolidate</li>
+                        <li><strong>Role separation:</strong> Planner, executor, reviewer as distinct agents</li>
+                        <li><strong>Tool specialization:</strong> Different agents with different permissions or domains</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3 class="red">When It Hurts</h3>
+                    <ul>
+                        <li><strong>Non-determinism:</strong> Outcomes vary more with multiple agents</li>
+                        <li><strong>Coordination overhead:</strong> Agents disagree or duplicate work</li>
+                        <li><strong>Error amplification:</strong> One agent's wrong assumption spreads</li>
+                        <li><strong>Cost:</strong> You pay for parallel runs</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- SKILLS -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Skills Intro -->
+        <div class="slide slide-two-col">
+            <span class="topic-tag orange">Skills</span>
+            <h2>Skills: Packaged Expertise for Agents</h2>
+            <div class="cols">
+                <div class="col">
+                    <h3 class="orange">Agents execute.</h3>
+                    <p>They reason, call tools, handle multi-step workflows. But agents are general-purpose—they don't inherently know your domain.</p>
+                </div>
+                <div class="col">
+                    <h3 class="blue">Skills equip.</h3>
+                    <p>Folders of instructions, scripts, and resources that agents load on demand. BigQuery queries. NDA review procedures. PDF extraction. Domain expertise, packaged and portable.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SLIDE: Skills Visual -->
+        <div class="slide slide-visual">
+            <span class="topic-tag orange">Skills</span>
+            <h2>How Skills Fit Into Agent Architecture</h2>
+            <img src="../../images/skills_architecture.webp" alt="Agent + Skills + Virtual Machine">
+            <p class="caption">Agent configuration includes equipped skills and MCP servers. Skills live as directories in the agent's file system—loaded when relevant. Source: Anthropic</p>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- AGENTIC FRAMEWORKS -->
+        <!-- ============================================ -->
+
+        <!-- SLIDE: Agentic Frameworks -->
+        <div class="slide slide-statement">
+            <span class="topic-tag orange">Frameworks</span>
+            <h2>Frameworks moved from "loops" to explicit workflows.</h2>
+            <p class="small">Early agent setups: plan, call tool, read output, repeat. In 2025, frameworks moved toward explicit graphs with named steps, clear transitions, and predictable control flow. Debugging a loop is painful. Debugging a workflow is tractable.</p>
+        </div>
+
+        <!-- SLIDE: What Changed in Frameworks -->
+        <div class="slide slide-cards">
+            <span class="topic-tag orange">Frameworks</span>
+            <h2>What Changed in Agentic Frameworks</h2>
+            <div class="cards-grid two">
+                <div class="card" style="border-left: 4px solid var(--blue);">
+                    <h3>State Became First-Class</h3>
+                    <p>Checkpointing progress so you can resume after failures. Persisting intermediate artifacts. Supporting "pause and wait" for humans or slow systems. Real tasks span hours or days.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--green);">
+                    <h3>Human-in-Loop: Designed In</h3>
+                    <p>Approval gates, escalation paths, and fallbacks became built-in concepts. Better support for partial automation. Enterprises don't want full autonomy—they want safe delegation.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--purple);">
+                    <h3>Tooling Got Structured</h3>
+                    <p>Clear contracts for tools: inputs, outputs, errors. Better handling of failures and partial results. Moves toward portable tool ecosystems so apps don't rewrite integrations.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--orange);">
+                    <h3>Multi-Agent: Supported, Not Default</h3>
+                    <p>Better coordination primitives, message passing, role boundaries. More emphasis on controlling non-determinism. Multi-agent as an advanced pattern, not the starting point.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
         <!-- STANDARDS -->
         <!-- ============================================ -->
 
@@ -1502,11 +1502,18 @@
             </ul>
         </div>
 
-        <!-- SLIDE: Evals as Bottleneck -->
+        <!-- SLIDE: Quality Verification Bottleneck -->
         <div class="slide slide-statement">
+            <span class="topic-tag purple">Quality Verification</span>
+            <h2>Quality verification became the bottleneck for shipping AI.</h2>
+        </div>
+
+        <!-- SLIDE: Model vs Product Evals -->
+        <div class="slide slide-visual">
             <span class="topic-tag purple">Evals</span>
-            <h2>Evals became the bottleneck for shipping AI.</h2>
-            <p class="small">Not model quality. Not prompt engineering. Not infrastructure. The teams that shipped fast had one thing in common: they could evaluate their systems quickly and confidently. Everyone else was flying blind.</p>
+            <h2>Model Evals vs Product Evals</h2>
+            <img src="../images/model_vs_product_evaluation.png" alt="Model Evals vs Product Evals">
+            <p class="caption">Model evals test the underlying model (benchmarks, capabilities). Product evals test your system (task completion, user success). Both matter—but product evals determine if you ship.</p>
         </div>
 
         <!-- SLIDE: Evals vs Monitoring -->
@@ -1525,32 +1532,12 @@
             </div>
         </div>
 
-        <!-- SLIDE: Model vs Product Evals -->
-        <div class="slide slide-two-col">
+        <!-- SLIDE: Online vs Offline Timing -->
+        <div class="slide slide-visual">
             <span class="topic-tag purple">Evals</span>
-            <h2>Model Evals vs Product Evals</h2>
-            <div class="cols">
-                <div class="col">
-                    <h3 class="blue">Model Evals</h3>
-                    <p>How good is the underlying model?</p>
-                    <ul>
-                        <li>Benchmark scores (MMLU, HumanEval)</li>
-                        <li>Capability testing on standard tasks</li>
-                        <li>Comparison across model versions</li>
-                        <li>Useful for model selection</li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <h3 class="green">Product Evals</h3>
-                    <p>Does the system solve user problems?</p>
-                    <ul>
-                        <li>Task completion rates</li>
-                        <li>Domain-specific accuracy</li>
-                        <li>End-to-end workflow success</li>
-                        <li>What actually matters for shipping</li>
-                    </ul>
-                </div>
-            </div>
+            <h2>Evals vs Monitoring: When They Run</h2>
+            <img src="../images/online_vs_offline_timing.png" alt="Online vs Offline Timing">
+            <p class="caption">Evals run offline before deployment. Monitoring runs online in production. Both essential—different timing, different purpose.</p>
         </div>
 
         <!-- SLIDE: Eval Mental Model -->
@@ -1585,24 +1572,11 @@
         </div>
 
         <!-- SLIDE: Grader Stack -->
-        <div class="slide slide-cards">
+        <div class="slide slide-visual">
             <span class="topic-tag purple">Evals</span>
             <h2>The Grader Stack: Who Evaluates?</h2>
-            <div class="cards-grid stacked">
-                <div class="card" style="border-left: 4px solid var(--blue);">
-                    <h3>Deterministic Checks</h3>
-                    <p>Code that compiles. JSON that parses. Regex that matches. Fast, cheap, reliable. Use these first.</p>
-                </div>
-                <div class="card" style="border-left: 4px solid var(--purple);">
-                    <h3>LLM-as-Judge</h3>
-                    <p>Use a model to evaluate model outputs. Scales beyond human capacity. Requires calibration against human judgments. The 2025 breakthrough.</p>
-                </div>
-                <div class="card" style="border-left: 4px solid var(--green);">
-                    <h3>Human Review</h3>
-                    <p>Gold standard for subjective quality. Essential for calibration. Expensive, doesn't scale. Reserve for edge cases and spot checks.</p>
-                </div>
-            </div>
-            <p class="subtext muted" style="text-align: center; margin-top: 1rem;">The pattern: Deterministic for what you can, LLM-as-judge for scale, human review for calibration and edge cases.</p>
+            <img src="../images/three_evaluation_approaches.png" alt="Three Evaluation Approaches">
+            <p class="caption">Deterministic checks first (fast, cheap). LLM-as-judge for scale (the 2025 breakthrough). Human review for calibration and edge cases.</p>
         </div>
 
         <!-- SLIDE: Capability vs Regression -->
@@ -1621,42 +1595,12 @@
             </div>
         </div>
 
-        <!-- SLIDE: Production Monitoring -->
-        <div class="slide slide-list">
-            <span class="topic-tag purple">Monitoring</span>
-            <h2>Production Monitoring: What to Watch</h2>
-            <ul>
-                <li class="blue"><strong>Latency distributions.</strong> P50, P95, P99. Not just averages. Tail latency kills user experience.</li>
-                <li class="green"><strong>Error rates by type.</strong> API failures, timeout, refusals, hallucination flags. Each requires different response.</li>
-                <li class="orange"><strong>User signals.</strong> Regeneration requests, thumbs down, conversation abandonment. Implicit quality feedback.</li>
-                <li class="purple"><strong>Cost per interaction.</strong> Token consumption, API calls, compute. Anomalies indicate problems or abuse.</li>
-                <li class="red"><strong>Safety triggers.</strong> Guardrail activations, escalation rates, policy violations. Your early warning system.</li>
-            </ul>
-        </div>
-
         <!-- SLIDE: The Flywheel -->
-        <div class="slide slide-content">
+        <div class="slide slide-visual">
             <span class="topic-tag purple">Monitoring</span>
-            <h2>The Eval Flywheel</h2>
-            <div class="body">
-                <div class="text">
-                    <p>The teams that improve fastest run a continuous loop:</p>
-                    <ul>
-                        <li><strong>Ship:</strong> Deploy with monitoring and guardrails</li>
-                        <li><strong>Observe:</strong> Collect production signals and failures</li>
-                        <li><strong>Curate:</strong> Turn failures into eval cases</li>
-                        <li><strong>Eval:</strong> Run expanded suite before next deploy</li>
-                        <li><strong>Improve:</strong> Fix failures, ship again</li>
-                    </ul>
-                    <p style="margin-top: 1rem;">Each cycle makes your eval suite more robust. Production failures become regression tests. The system learns from its mistakes.</p>
-                </div>
-                <div class="visual" style="flex-direction: column; gap: 16px; justify-content: center;">
-                    <div class="card" style="background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3); text-align: center;">
-                        <p style="font-weight: 700; color: var(--purple); font-size: 1.1rem;">Production failures → Eval cases</p>
-                        <p style="font-weight: 700; color: var(--purple); font-size: 1.1rem; margin-top: 0.5rem;">Eval cases → Prevented failures</p>
-                    </div>
-                </div>
-            </div>
+            <h2>The Eval Flywheel: How Quality Compounds</h2>
+            <img src="../images/continuous_improvement_flywheel.png" alt="Continuous Improvement Flywheel">
+            <p class="caption">Ship → Observe → Curate failures into eval cases → Eval before next deploy → Improve → Ship again. Each cycle makes the system more robust.</p>
         </div>
 
         <!-- SLIDE: What to Look For -->
@@ -1785,7 +1729,7 @@
         <div class="slide slide-visual">
             <span class="topic-tag red">RAG</span>
             <h2>RAG Interest Over Time</h2>
-            <img src="images/rag_hype_cycle.png" alt="RAG Hype Cycle">
+            <img src="../images/rag_hype_cycle.png" alt="RAG Hype Cycle">
             <p class="caption">Hype peaked in early-mid 2023. Long-context alternatives are emerging as viable options for many use cases.</p>
         </div>
         
@@ -1829,7 +1773,7 @@
         <div class="slide slide-visual">
             <span class="topic-tag red">Debugging</span>
             <h2>Multi-Agent Debugging is Fundamentally Different</h2>
-            <img src="images/challenges/www_getmaxim_ai_5.png" alt="Agent Debugging">
+            <img src="../images/challenges/www_getmaxim_ai_5.png" alt="Agent Debugging">
             <p class="caption">Agent tracing platforms are emerging, but the field is primitive compared to traditional software development. Budget debugging time you can't easily do.</p>
         </div>
         
@@ -1838,7 +1782,7 @@
             <span class="topic-tag red">Debugging</span>
             <h2>Agent Observability: A New Category</h2>
             <div class="visual-container">
-                <img src="images/challenges/www_getmaxim_ai_6.png" alt="AI Agent Observability Platforms" style="max-height: 50vh;">
+                <img src="../images/challenges/www_getmaxim_ai_6.png" alt="AI Agent Observability Platforms" style="max-height: 50vh;">
             </div>
             <p class="caption">Agent observability platforms emerged as essential infrastructure in 2025. Tracing, logging, and monitoring for non-deterministic systems requires specialized tooling.</p>
         </div>
@@ -1848,7 +1792,7 @@
             <span class="topic-tag red">RAG</span>
             <h2>Long Context RAG: Hybrid Approach</h2>
             <div class="visual-container">
-                <img src="images/challenges/ragflow_io_5.png" alt="Long Context RAG" style="max-height: 55vh;">
+                <img src="../images/challenges/ragflow_io_5.png" alt="Long Context RAG" style="max-height: 55vh;">
             </div>
             <p class="caption">Hybrid tree-graph retrieval combines entity relationships with semantic chunks. Long context models complement RAG rather than replacing it.</p>
         </div>
