@@ -14,12 +14,10 @@
                     <g class="framework-layer">
                         <rect x="20" y="225" width="750" height="95" rx="8" fill="#f97316" opacity="0.15" stroke="#f97316" stroke-width="2"/>
                         <text x="30" y="248" fill="#f97316" font-weight="700" font-size="14">APPLICATION LAYER</text>
-                        <rect x="30" y="260" width="100" height="50" rx="6" fill="#f97316"/><text x="80" y="290" text-anchor="middle" fill="white" font-size="10" font-weight="500">RAG</text>
-                        <rect x="140" y="260" width="100" height="50" rx="6" fill="#f97316"/><text x="190" y="290" text-anchor="middle" fill="white" font-size="10" font-weight="500">Agents</text>
-                        <rect x="250" y="260" width="100" height="50" rx="6" fill="#f97316"/><text x="300" y="290" text-anchor="middle" fill="white" font-size="10" font-weight="500">Tool Calling</text>
-                        <rect x="360" y="260" width="100" height="50" rx="6" fill="#f97316"/><text x="410" y="290" text-anchor="middle" fill="white" font-size="10" font-weight="500">Skills</text>
-                        <rect x="470" y="260" width="140" height="50" rx="6" fill="#f97316"/><text x="540" y="290" text-anchor="middle" fill="white" font-size="10" font-weight="500">Agentic Frameworks</text>
-                        <rect x="620" y="260" width="140" height="50" rx="6" fill="#f97316"/><text x="690" y="290" text-anchor="middle" fill="white" font-size="10" font-weight="500">Standards (MCP/A2A)</text>
+                        <rect x="30" y="260" width="160" height="50" rx="6" fill="#f97316"/><text x="110" y="290" text-anchor="middle" fill="white" font-size="11" font-weight="500">RAG</text>
+                        <rect x="205" y="260" width="160" height="50" rx="6" fill="#f97316"/><text x="285" y="290" text-anchor="middle" fill="white" font-size="11" font-weight="500">Agents</text>
+                        <rect x="380" y="260" width="160" height="50" rx="6" fill="#f97316"/><text x="460" y="290" text-anchor="middle" fill="white" font-size="9" font-weight="500">Tools / Skills / Standards</text>
+                        <rect x="555" y="260" width="160" height="50" rx="6" fill="#f97316"/><text x="635" y="290" text-anchor="middle" fill="white" font-size="9" font-weight="500">Agentic Frameworks</text>
                     </g>
                     <rect class="highlight-ring active" x="15" y="220" width="760" height="105" rx="12"/>
                     <g class="framework-layer dimmed"><rect x="20" y="330" width="750" height="95" rx="8" fill="#8b5cf6" opacity="0.15" stroke="#8b5cf6" stroke-width="2"/><text x="30" y="353" fill="#8b5cf6" font-weight="700" font-size="14">OUTPUT LAYER</text></g>
@@ -29,14 +27,27 @@
         </div>
 
         <!-- SLIDE: Section Overview -->
-        <div class="slide slide-list">
+        <div class="slide slide-cards">
+            <span class="topic-tag orange">Application</span>
             <h2>What Changed in the Application Layer</h2>
-            <ul>
-                <li class="orange"><strong>Delegation replaced answers.</strong> Book the meeting, pull the numbers, draft the doc. The success metric moved from good responses to completed outcomes.</li>
-                <li class="orange"><strong>RAG matured into a real subsystem.</strong> Naive "add embeddings and pray" died. Hybrid retrieval, reranking, and agentic workflows became the norm.</li>
-                <li class="orange"><strong>Agent types diversified.</strong> Deep agents for long-horizon work. Ambient agents for always-on automation. Browser agents for UI control.</li>
-                <li class="orange"><strong>Standards emerged from protocol wars.</strong> MCP and A2A moved to open governance. Fragmentation started consolidating.</li>
-            </ul>
+            <div class="cards-grid two">
+                <div class="card" style="border-left: 4px solid var(--blue);">
+                    <h3>Delegation Replaced Answers</h3>
+                    <p>Success shifted from “good responses” to “completed outcomes.”</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--green);">
+                    <h3>RAG Became Infrastructure</h3>
+                    <p>Hybrid retrieval, reranking, and structure-aware pipelines replaced naive chunking.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--purple);">
+                    <h3>Agent Types Diverged</h3>
+                    <p>Deep research, ambient automation, computer-use, and coding became distinct surfaces.</p>
+                </div>
+                <div class="card" style="border-left: 4px solid var(--orange);">
+                    <h3>Standards Consolidated</h3>
+                    <p>MCP + A2A shifted into open governance; fragmentation started to recede.</p>
+                </div>
+            </div>
         </div>
 
         <!-- ============================================ -->
