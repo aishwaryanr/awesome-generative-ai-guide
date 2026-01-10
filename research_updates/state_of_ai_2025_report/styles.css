@@ -38,7 +38,7 @@ body {
     bottom: 12px;
     right: 20px;
     font-size: 12px;
-    color: rgba(255,255,255,0.35);
+    color: rgba(180, 80, 80, 0.6);
     letter-spacing: 0.2px;
 }
 .slide.active { display: flex; opacity: 1; }
