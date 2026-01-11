@@ -67,6 +67,15 @@ This report distills the key developments across the entire AI application stack
 
 This report was generated based on a live presentation to 2000+ practitioners.
 
+## Other Resources
+
+| Resource | Description | Link |
+|----------|-------------|------|
+| Free Courses | Taken by 20,000+ learners | [Browse courses](https://github.com/aishwaryanr/awesome-generative-ai-guide/tree/main/free_courses) |
+| Enterprise AI Course | #1 rated course taken by engineering and product leaders at Google, Meta, Anthropic, Microsoft, and 90+ companies | [GenAI System Design](https://maven.com/aishwarya-kiriti/genai-system-design) |
+| Advanced AI Evals Course | Deep dive into evaluation with a problem-first approach | [AI Evals Course](https://maven.com/aishwarya-kiriti/evals-problem-first) |
+| Free Sessions | Upcoming and previous free sessions | [View sessions](https://maven.com/aishwarya-kiriti) |
+
 ---
 
 *Copyright 2026 Aishwarya Naresh Reganti & Kiriti Badam. All rights reserved.*
