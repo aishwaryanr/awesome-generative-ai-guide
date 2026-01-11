@@ -63,7 +63,7 @@ This report distills the key developments across the entire AI application stack
 
 **[Aishwarya Naresh Reganti](https://www.linkedin.com/in/areganti/)** — Founder of [LevelUp Labs](https://levelup-labs.ai), building practitioner-focused AI education. Previously at AWS.
 
-**[Kiriti Badam](https://www.linkedin.com/in/sai-kiriti-badam/)** — Applied AI at OpenAI. Previously at Microsoft and Amazon, working on production AI systems.
+**[Kiriti Badam](https://www.linkedin.com/in/sai-kiriti-badam/)** — Applied AI at OpenAI. Previously at Google, Databricks, and Samsung.
 
 This report was generated based on a live presentation to 2000+ practitioners.
 
