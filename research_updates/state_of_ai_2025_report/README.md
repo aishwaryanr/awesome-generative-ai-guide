@@ -1,5 +1,7 @@
 # State of Applied AI 2025 Report
 
+![Applied AI Stack](./images/stack_image.png)
+
 2025 was a transformative year for applied AI. While the headlines focused on model releases and benchmark scores, the real story happened in the trenches—where practitioners figured out how to build reliable AI systems that actually work in production.
 
 This report distills the key developments across the entire AI application stack, from the inputs that feed these systems to the outputs they produce, and the challenges encountered along the way.
@@ -59,11 +61,11 @@ This report distills the key developments across the entire AI application stack
 
 ## About the Authors
 
-**Aishwarya Naresh Reganti** — Founder of [LevelUp Labs](https://levelup-labs.ai), building practitioner-focused AI education. Previously at AWS AI Labs and Meta AI.
+**[Aishwarya Naresh Reganti](https://www.linkedin.com/in/areganti/)** — Founder of [LevelUp Labs](https://levelup-labs.ai), building practitioner-focused AI education. Previously at AWS.
 
-**Kiriti Badam** — Applied AI at OpenAI. Previously at Microsoft and Amazon, working on production AI systems.
+**[Kiriti Badam](https://www.linkedin.com/in/sai-kiriti-badam/)** — Applied AI at OpenAI. Previously at Microsoft and Amazon, working on production AI systems.
 
-This report was generated based on a live presentation to 2000+ practitioners. The content reflects real-world experience building AI systems, not theoretical benchmarks.
+This report was generated based on a live presentation to 2000+ practitioners.
 
 ---
 
