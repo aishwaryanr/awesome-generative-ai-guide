@@ -42,6 +42,21 @@ Developers can also access extensive guides, tutorials, and community support th
 - [Official Getting Started Guide](https://python.langchain.com/docs/introduction/?utm_source=chatgpt.com)  
 <!-- - [YouTube: LangChain Explained in 13 Minutes | QuickStart Tutorial for Beginners](https://www.youtube.com/watch?v=aywZrzNaKjs) -->
 
+## Standards SDK (Hashgraph Online)
+
+**Standards SDK** is an open-source TypeScript framework by [Hashgraph Online (HOL)](https://hol.org/) that enables developers to build AI agents and applications on the Hedera network. It provides a complete toolkit for decentralized AI development with built-in support for real-time messaging, state management, and tool integrations.  
+[Visit HOL](https://hol.org/)
+
+The SDK leverages Hedera Consensus Service for decentralized pub/sub messaging, enabling AI agents to communicate and coordinate in a trustless environment. It includes a plugin system for extending agent capabilities, built-in MCP (Model Context Protocol) support for AI assistant integrations, and comprehensive TypeScript types for type-safe development.  
+[Explore the Documentation](https://hol.org/docs/libraries/standards-sdk/overview/)
+
+Standards SDK is ideal for building AI agents that require verifiable state, decentralized coordination, or blockchain-based tool access. The framework integrates seamlessly with popular AI libraries while adding Web3 capabilities.  
+[View on GitHub](https://github.com/hashgraph-online/standards-sdk)
+
+**Getting Started with Standards SDK:**  
+- [Official Documentation](https://hol.org/docs/libraries/standards-sdk/overview/)  
+- [NPM Package](https://www.npmjs.com/package/@hashgraphonline/standards-sdk)
+
 ---
 
 # Low-Code/No-Code AI Tools  
