@@ -1,0 +1,3910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Evals for Everyone - Video Course Slides</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0a;
+            color: #171717;
+            overflow: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Slide Container */
+        .slides-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+            padding: 60px 80px;
+            background: #fafafa;
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Chapter marker */
+        .chapter-marker {
+            position: absolute;
+            top: 24px;
+            left: 80px;
+            color: #a3a3a3;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        /* Slide number */
+        .slide-number {
+            position: absolute;
+            bottom: 24px;
+            right: 80px;
+            color: #a3a3a3;
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+
+        /* Title Slide */
+        .slide.title-slide {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: #0a0a0a;
+        }
+
+        .title-slide .chapter-marker {
+            color: #525252;
+        }
+
+        .title-slide .chapter-label {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #d97706;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+        }
+
+        .title-slide h1 {
+            font-size: 5rem;
+            font-weight: 700;
+            color: #fafafa;
+            margin-bottom: 24px;
+            letter-spacing: -0.03em;
+            line-height: 1.1;
+        }
+
+        .title-slide h1 .highlight {
+            color: #d97706;
+        }
+
+        .title-slide .subtitle {
+            font-size: 1.5rem;
+            color: #737373;
+            font-weight: 400;
+            max-width: 700px;
+        }
+
+        .title-slide .slide-number {
+            color: #525252;
+        }
+
+        .title-slide .course-branding {
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+        }
+
+        .title-slide .course-title {
+            font-family: 'Caveat', cursive;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #fafafa;
+            margin-bottom: 6px;
+        }
+
+        .title-slide .course-by {
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: #525252;
+            letter-spacing: 0.05em;
+        }
+
+        /* Content Slide */
+        .slide-header {
+            margin-bottom: 48px;
+        }
+
+        .slide-header h2 {
+            font-size: 3.25rem;
+            font-weight: 600;
+            color: #171717;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+        }
+
+        .slide-content {
+            flex: 1;
+            display: flex;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .slide-content.stacked {
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: stretch;
+            gap: 40px;
+        }
+
+        /* Text content */
+        .text-content {
+            flex: 1;
+        }
+
+        .text-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .text-content li {
+            font-size: 1.5rem;
+            line-height: 1.5;
+            margin-bottom: 32px;
+            padding-left: 0;
+            color: #404040;
+            font-weight: 400;
+        }
+
+        .text-content li::before {
+            display: none;
+        }
+
+        .text-content p {
+            font-size: 1.4rem;
+            line-height: 1.7;
+            color: #404040;
+            margin-bottom: 28px;
+            font-weight: 400;
+        }
+
+        /* Image content */
+        .image-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-content img {
+            max-width: 100%;
+            max-height: 480px;
+            border-radius: 8px;
+        }
+
+        /* Accent text */
+        .accent {
+            color: #171717;
+            font-weight: 600;
+        }
+
+        /* Subtle divider for list items */
+        .text-content li {
+            border-left: 2px solid #e5e5e5;
+            padding-left: 24px;
+            transition: border-color 0.2s;
+        }
+
+        .text-content li:hover {
+            border-color: #d97706;
+        }
+
+        /* Two column layout */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            width: 100%;
+        }
+
+        .col {
+            padding: 40px;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #e5e5e5;
+        }
+
+        .col.dark {
+            background: #171717;
+            border-color: #171717;
+        }
+
+        .col h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #171717;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .col.dark h3 {
+            color: #d97706;
+        }
+
+        .col ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .col li {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin-bottom: 18px;
+            color: #525252;
+            padding-left: 0;
+            border: none;
+        }
+
+        .col li:hover {
+            border: none;
+        }
+
+        .col.dark li {
+            color: #a3a3a3;
+        }
+
+        /* Quote */
+        .quote {
+            font-size: 1.75rem;
+            font-weight: 400;
+            color: #171717;
+            font-style: italic;
+            padding: 32px 0;
+            border-top: 1px solid #e5e5e5;
+            border-bottom: 1px solid #e5e5e5;
+            margin-top: 32px;
+        }
+
+        /* Table */
+        .slide-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 1.1rem;
+        }
+
+        .slide-table th {
+            background: #171717;
+            color: white;
+            padding: 20px 24px;
+            text-align: left;
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .slide-table td {
+            padding: 24px;
+            border-bottom: 1px solid #e5e5e5;
+            color: #404040;
+            font-size: 1.2rem;
+        }
+
+        .slide-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .slide-table .placeholder {
+            color: #a3a3a3;
+            font-style: italic;
+        }
+
+        /* Cards grid */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            width: 100%;
+        }
+
+        .card {
+            padding: 40px 32px;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid #e5e5e5;
+        }
+
+        .card-number {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: #e5e5e5;
+            margin-bottom: 16px;
+            line-height: 1;
+        }
+
+        .card h4 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            color: #171717;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            font-size: 1.15rem;
+            color: #737373;
+            line-height: 1.5;
+        }
+
+        /* Definition boxes */
+        .definitions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            width: 100%;
+        }
+
+        .def-box {
+            padding: 32px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e5e5e5;
+        }
+
+        .def-box.highlight {
+            border-color: #d97706;
+            background: #fffbeb;
+        }
+
+        .def-box h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #a3a3a3;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 12px;
+        }
+
+        .def-box.highlight h4 {
+            color: #d97706;
+        }
+
+        .def-box p {
+            font-size: 1.25rem;
+            color: #404040;
+            line-height: 1.6;
+        }
+
+        /* Callout */
+        .callout {
+            padding: 32px 40px;
+            background: #171717;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+
+        .callout p {
+            font-size: 1.35rem;
+            color: #a3a3a3;
+            text-align: center;
+            margin: 0;
+        }
+
+        .callout strong {
+            color: #fafafa;
+        }
+
+        .callout .label {
+            color: #d97706;
+            font-weight: 600;
+        }
+
+        /* Mini callout */
+        .mini-callout {
+            padding: 24px 32px;
+            background: #f5f5f5;
+            border-radius: 6px;
+            margin-top: 32px;
+            text-align: center;
+        }
+
+        .mini-callout p {
+            font-size: 1.25rem;
+            color: #525252;
+            margin: 0;
+        }
+
+        /* Navigation */
+        .nav-controls {
+            position: fixed;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 100;
+        }
+
+        .nav-btn {
+            background: #171717;
+            color: #fafafa;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .nav-btn:hover {
+            background: #262626;
+        }
+
+        .nav-btn:disabled {
+            background: #e5e5e5;
+            color: #a3a3a3;
+            cursor: not-allowed;
+        }
+
+        /* Copyright */
+        .copyright {
+            position: fixed;
+            bottom: 24px;
+            left: 80px;
+            font-size: 0.7rem;
+            color: #dc2626;
+            font-weight: 500;
+            z-index: 100;
+        }
+
+        /* Chapter nav */
+        .chapter-nav {
+            position: fixed;
+            top: 24px;
+            right: 80px;
+            z-index: 100;
+        }
+
+        .chapter-nav select {
+            background: transparent;
+            color: #737373;
+            border: 1px solid #e5e5e5;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            -webkit-appearance: none;
+            padding-right: 36px;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23737373' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+        }
+
+        .title-slide .chapter-nav select {
+            border-color: #404040;
+            color: #737373;
+        }
+
+        /* Triangle Hub Layout */
+        .triangle-hub {
+            position: relative;
+            width: 800px;
+            height: 480px;
+            margin: 0 auto;
+        }
+
+        .hub-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 160px;
+            height: 160px;
+            background: #d97706;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 3;
+            box-shadow: 0 8px 32px rgba(217, 119, 6, 0.3);
+        }
+
+        .hub-center span {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Triangle connection lines */
+        .triangle-lines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .triangle-lines svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .triangle-lines line {
+            stroke: #e5e5e5;
+            stroke-width: 2;
+        }
+
+        .triangle-lines line.to-center {
+            stroke: #d97706;
+            stroke-width: 2;
+            stroke-dasharray: 6 4;
+        }
+
+        /* Role cards positioned in triangle */
+        .role-card {
+            position: absolute;
+            background: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 20px 24px;
+            width: 230px;
+            text-align: center;
+            z-index: 2;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .role-card:hover {
+            border-color: #d97706;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .role-card.top {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .role-card.bottom-left {
+            bottom: 0;
+            left: 40px;
+        }
+
+        .role-card.bottom-right {
+            bottom: 0;
+            right: 40px;
+        }
+
+        .role-card .role-tag {
+            display: inline-block;
+            background: #171717;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            letter-spacing: 0.05em;
+        }
+
+        .role-card h4 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #171717;
+            margin-bottom: 8px;
+        }
+
+        .role-card p {
+            font-size: 1rem;
+            color: #525252;
+            line-height: 1.4;
+        }
+
+        /* Transition Slide */
+        .slide.transition-slide {
+            background: #171717;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .transition-slide .transition-content {
+            max-width: 800px;
+        }
+
+        .transition-slide .from-label {
+            font-size: 0.9rem;
+            color: #525252;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 14px;
+        }
+
+        .transition-slide .from-chapter {
+            font-size: 1.75rem;
+            color: #737373;
+            font-weight: 500;
+            margin-bottom: 48px;
+        }
+
+        .transition-slide .transition-arrow {
+            color: #d97706;
+            font-size: 2.5rem;
+            margin-bottom: 48px;
+        }
+
+        .transition-slide .to-label {
+            font-size: 0.9rem;
+            color: #d97706;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 14px;
+        }
+
+        .transition-slide .to-chapter {
+            font-size: 2.75rem;
+            color: #fafafa;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .transition-slide .transition-why {
+            font-size: 1.35rem;
+            color: #a3a3a3;
+            line-height: 1.6;
+        }
+
+        .transition-slide .slide-number {
+            color: #525252;
+        }
+
+        /* Progress bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 2px;
+            background: #d97706;
+            transition: width 0.3s ease;
+            z-index: 200;
+        }
+
+        /* Comparison layout */
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            width: 100%;
+        }
+
+        .comparison-side {
+            padding: 40px;
+            border-radius: 12px;
+        }
+
+        .comparison-side.light {
+            background: #f5f5f5;
+        }
+
+        .comparison-side.accent {
+            background: #171717;
+        }
+
+        .comparison-side h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            color: #171717;
+        }
+
+        .comparison-side.accent h3 {
+            color: #fafafa;
+        }
+
+        .comparison-side p {
+            font-size: 1.05rem;
+            color: #525252;
+            line-height: 1.6;
+        }
+
+        .comparison-side.accent p {
+            color: #a3a3a3;
+        }
+
+        /* Terminology Visual */
+        .terminology-visual {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .term-row {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .term-label {
+            width: 180px;
+            flex-shrink: 0;
+        }
+
+        .term-name {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #171717;
+            margin-bottom: 4px;
+        }
+
+        .term-desc {
+            display: block;
+            font-size: 0.95rem;
+            color: #737373;
+        }
+
+        .term-example {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .term-arrow {
+            font-size: 1.5rem;
+            color: #d1d5db;
+            text-align: center;
+            padding: 16px 0;
+            margin-left: 90px;
+        }
+
+        .metric-tag {
+            background: #f5f5f5;
+            border: 1px solid #e5e5e5;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #404040;
+        }
+
+        .rubric-example {
+            flex-direction: column;
+            align-items: flex-start;
+            background: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 24px;
+            gap: 16px;
+        }
+
+        .rubric-header {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #737373;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .rubric-scale {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            width: 100%;
+        }
+
+        .rubric-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 1rem;
+            color: #404040;
+            padding: 8px 0;
+        }
+
+        .rubric-item span {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.875rem;
+            flex-shrink: 0;
+        }
+
+        .rubric-item.good span {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        .rubric-item.okay span {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .rubric-item.bad span {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .rubric-statements {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 32px;
+            width: 100%;
+        }
+
+        .rubric-statement {
+            font-size: 0.95rem;
+            color: #404040;
+            padding: 10px 0;
+            padding-left: 20px;
+            border-left: 2px solid #e5e5e5;
+            line-height: 1.4;
+        }
+
+        .rubric-statement:hover {
+            border-color: #d97706;
+        }
+
+        .benchmark-example {
+            background: #171717;
+            padding: 24px 32px;
+            border-radius: 8px;
+            gap: 16px;
+        }
+
+        .benchmark-component {
+            background: #262626;
+            padding: 12px 20px;
+            border-radius: 6px;
+        }
+
+        .benchmark-component span {
+            color: #fafafa;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .benchmark-plus {
+            color: #525252;
+            font-size: 1.25rem;
+        }
+
+        /* Hierarchy list */
+        .hierarchy-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .hierarchy-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            padding: 24px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid #e5e5e5;
+            transition: border-color 0.2s;
+        }
+
+        .hierarchy-item:hover {
+            border-color: #d97706;
+        }
+
+        .hierarchy-item.accent {
+            background: #171717;
+            border-color: #171717;
+        }
+
+        .hierarchy-num {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f5f5f5;
+            border-radius: 8px;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #a3a3a3;
+            flex-shrink: 0;
+        }
+
+        .hierarchy-item.accent .hierarchy-num {
+            background: #262626;
+            color: #d97706;
+        }
+
+        .hierarchy-item h4 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #171717;
+            margin-bottom: 6px;
+        }
+
+        .hierarchy-item.accent h4 {
+            color: #fafafa;
+        }
+
+        .hierarchy-item p {
+            font-size: 1rem;
+            color: #737373;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .hierarchy-item.accent p {
+            color: #a3a3a3;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progress"></div>
+
+    <div class="chapter-nav">
+        <select id="chapterSelect" onchange="goToChapter(this.value)">
+            <option value="1">Chapter 1</option>
+            <option value="2">Chapter 2</option>
+            <option value="3">Chapter 3</option>
+            <option value="4">Chapter 4</option>
+            <option value="5">Chapter 5</option>
+            <option value="6">Chapter 6</option>
+            <option value="7">Chapter 7</option>
+            <option value="8">Chapter 8</option>
+            <option value="9">Chapter 9</option>
+            <option value="10">Chapter 10</option>
+        </select>
+    </div>
+
+    <div class="slides-container" id="slidesContainer">
+
+        <!-- ======================= -->
+        <!-- CHAPTER 1: WTH ARE AI EVALS? -->
+        <!-- ======================= -->
+
+        <!-- Slide 1.1: Title -->
+        <div class="slide title-slide active" data-chapter="1">
+            <div class="course-branding">
+                <div class="course-title">AI Evals for Everyone</div>
+                <div class="course-by">by LevelUp Academy</div>
+            </div>
+            <div class="chapter-label">Chapter One</div>
+            <h1>WTH are <span class="highlight">AI Evals</span>?</h1>
+            <p class="subtitle">Understanding why AI evaluation is different and unavoidable</p>
+            <div class="slide-number">1 / 11</div>
+        </div>
+
+        <!-- Slide 1.2: The Problem -->
+        <div class="slide" data-chapter="1">
+            <div class="chapter-marker">Chapter 1</div>
+            <div class="slide-header">
+                <h2>Everyone means something different</h2>
+            </div>
+            <div class="slide-content">
+                <div class="text-content">
+                    <ul>
+                        <li><span class="accent">"Evals"</span> shows up everywhere — blog posts, product reviews, conference talks</li>
+                        <li>Everyone uses it casually, yet everyone means something <span class="accent">different</span></li>
+                        <li>This lack of precision has led to growing misconceptions</li>
+                        <li>Our goal: separate noise from signal using <span class="accent">first principles</span></li>
+                    </ul>
+                </div>
+                <div class="image-content">
+                    <img src="images/chaos_to_structure.png" alt="From chaos to structure">
+                </div>
+            </div>
+            <div class="slide-number">2 / 11</div>
+        </div>
+
+        <!-- Slide 1.3: Traditional Software -->
+        <div class="slide" data-chapter="1">
+            <div class="chapter-marker">Chapter 1</div>
+            <div class="slide-header">
+                <h2>Traditional software is deterministic</h2>
+            </div>
+            <div class="slide-content">
+                <div class="text-content">
+                    <ul>
+                        <li>User actions are <span class="accent">limited and predictable</span> — clicks, forms, uploads</li>
+                        <li>Both input and expected output are known ahead of time</li>
+                        <li>Teams rely on <span class="accent">unit tests</span> and <span class="accent">integration tests</span></li>
+                        <li>Core assumption: Given input X, system reliably produces output Y</li>
+                    </ul>
+                    <p class="quote">"If you test X → Y thoroughly before shipping, production issues will be rare and manageable."</p>
+                </div>
+                <div class="image-content">
+                    <img src="images/deterministic_software.png" alt="Deterministic software">
+                </div>
+            </div>
+            <div class="slide-number">3 / 11</div>
+        </div>
+
+        <!-- Slide 1.4: AI is Non-deterministic -->
+        <div class="slide" data-chapter="1">
+            <div class="chapter-marker">Chapter 1</div>
+            <div class="slide-header">
+                <h2>AI products are non-deterministic</h2>
+            </div>
+            <div class="slide-content">
+                <div class="text-content">
+                    <ul>
+                        <li>AI systems are fundamentally <span class="accent">non-deterministic</span></li>
+                        <li>This is the <span class="accent">single biggest reason</span> evals exist</li>
+                        <li>Same input can yield different responses across runs</li>
+                        <li>LLMs are black boxes — no simple pass/fail signal</li>
+                    </ul>
+                </div>
+                <div class="image-content">
+                    <img src="images/nondeterministic_ai.png" alt="Non-deterministic AI">
+                </div>
+            </div>
+            <div class="slide-number">4 / 11</div>
+        </div>
+
+        <!-- Slide 1.5: Two Fundamental Changes -->
+        <div class="slide" data-chapter="1">
+            <div class="chapter-marker">Chapter 1</div>
+            <div class="slide-header">
+                <h2>AI breaks classical assumptions</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="two-col">
+                    <div class="col">
+                        <h3>Unbounded Input Space</h3>
+                        <ul>
+                            <li>Users express intent in natural language</li>
+                            <li>Often ambiguous, incomplete, or unexpected</li>
+                            <li>You no longer control how users frame requests</li>
+                            <li>Text, voice, images, video as input</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h3>Non-Guaranteed Output</h3>
+                        <ul>
+                            <li>Same input can yield different responses</li>
+                            <li>Small phrasing changes affect output</li>
+                            <li>Models are highly sensitive to context</li>
+                            <li>Probabilistic outputs, not fixed answers</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mini-callout">
+                    <p><span class="accent">Two unknowns:</span> How users will interact + How the model arrives at answers</p>
+                </div>
+            </div>
+            <div class="slide-number">5 / 11</div>
+        </div>
+
+        <!-- Slide 1.6: Building with Confidence -->
+        <div class="slide" data-chapter="1">
+            <div class="chapter-marker">Chapter 1</div>
+            <div class="slide-header">
+                <h2>How teams build with confidence</h2>
+            </div>
+            <div class="slide-content stacked">
+                <p>Teams estimate how users might interact, then test responses before launch:</p>
+                <table class="slide-table">
+                    <thead>
+                        <tr>
+                            <th>User Question</th>
+                            <th>Expected Answer</th>
+                            <th>System Response</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>"I can't refund my shoes, it's been 45 days"</td>
+                            <td>Explain return policy and escalate</td>
+                            <td class="placeholder">[Generated response]</td>
+                        </tr>
+                        <tr>
+                            <td>"I requested a refund a week ago"</td>
+                            <td>Check status and provide update</td>
+                            <td class="placeholder">[Generated response]</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="mini-callout">
+                    <p>This is where people first encounter evaluation — and where <span class="accent">confusion starts</span></p>
+                </div>
+            </div>
+            <div class="slide-number">6 / 11</div>
+        </div>
+
+        <!-- Slide 1.7: Why Evals Causes Confusion -->
+        <div class="slide" data-chapter="1">
+            <div class="chapter-marker">Chapter 1</div>
+            <div class="slide-header">
+                <h2>Why "evals" causes confusion</h2>
+            </div>
+            <div class="slide-content">
+                <div class="text-content">
+                    <ul>
+                        <li>The term is a <span class="accent">catch-all</span> that hides important distinctions</li>
+                        <li>We'll use "evaluation" intentionally throughout this course</li>
+                        <li>There are two fundamentally different kinds:</li>
+                    </ul>
+                    <div class="comparison" style="margin-top: 40px;">
+                        <div class="comparison-side light">
+                            <h3>Model Evaluations</h3>
+                            <p>How capable is this model in general compared to others?</p>
+                        </div>
+                        <div class="comparison-side accent">
+                            <h3>Product Evaluations</h3>
+                            <p>Does this system behave acceptably for our specific use case?</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="images/evals_confusion_diagram.png" alt="Evals confusion">
+                </div>
+            </div>
+            <div class="slide-number">7 / 11</div>
+        </div>
+
+        <!-- Slide 1.8: Two Types of Evaluations -->
+        <div class="slide" data-chapter="1">
+            <div class="chapter-marker">Chapter 1</div>
+            <div class="slide-header">
+                <h2>Model vs Product evaluations</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="two-col">
+                    <div class="col">
+                        <h3>Model Evaluations</h3>
+                        <ul>
+                            <li>Conducted by frontier labs & research teams</li>
+                            <li>Uses standardized benchmarks</li>
+                            <li>Tests reasoning, factual recall, coding</li>
+                            <li>Intentionally broad and domain-agnostic</li>
+                            <li>Helps choose base models</li>
+                        </ul>
+                    </div>
+                    <div class="col dark">
+                        <h3>Product Evaluations</h3>
+                        <ul>
+                            <li>What practitioners should care about most</li>
+                            <li>Focuses on specific domain & workflow</li>
+                            <li>Domain rules, edge cases, risk tolerance</li>
+                            <li>Real-world data is far more nuanced</li>
+                            <li>Tells you if model works for YOUR system</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="callout">
+                    <p><span class="label">This course focuses on</span> AI product evaluations — the level at which teams <strong>make decisions and manage risk</strong></p>
+                </div>
+            </div>
+            <div class="slide-number">8 / 11</div>
+        </div>
+
+        <!-- Slide 1.9: Key Terminology Definitions -->
+        <div class="slide" data-chapter="1">
+            <div class="chapter-marker">Chapter 1</div>
+            <div class="slide-header">
+                <h2>Key terminology</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="definitions">
+                    <div class="def-box">
+                        <h4>Evaluation</h4>
+                        <p>The overall process of assessing how an AI system behaves. Not a single test, score, or dashboard — it's the ongoing practice of checking outputs against expectations.</p>
+                    </div>
+                    <div class="def-box">
+                        <h4>Metric</h4>
+                        <p>A specific dimension you measure. Examples: correctness, helpfulness, safety, tone. Each metric answers: "What aspect of quality are we judging?"</p>
+                    </div>
+                    <div class="def-box">
+                        <h4>Rubric</h4>
+                        <p>The criteria that define what "good" looks like for a metric. Without rubrics, metrics like "helpfulness" become vague labels everyone interprets differently.</p>
+                    </div>
+                    <div class="def-box">
+                        <h4>Benchmark</h4>
+                        <p>The complete test setup: a dataset of examples + the metrics you'll measure + the rubrics for scoring. Benchmarks make evaluations repeatable.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">9 / 11</div>
+        </div>
+
+        <!-- Slide 1.10: Visual Example -->
+        <div class="slide" data-chapter="1">
+            <div class="chapter-marker">Chapter 1</div>
+            <div class="slide-header">
+                <h2>How they fit together</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="terminology-visual">
+                    <!-- Metric -->
+                    <div class="term-row">
+                        <div class="term-label">
+                            <span class="term-name">Metric</span>
+                            <span class="term-desc">What you measure</span>
+                        </div>
+                        <div class="term-example">
+                            <div class="metric-tag">Correctness</div>
+                            <div class="metric-tag">Helpfulness</div>
+                            <div class="metric-tag">Safety</div>
+                        </div>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="term-arrow">↓</div>
+
+                    <!-- Rubric -->
+                    <div class="term-row">
+                        <div class="term-label">
+                            <span class="term-name">Rubric</span>
+                            <span class="term-desc">What "good" looks like</span>
+                        </div>
+                        <div class="term-example rubric-example">
+                            <div class="rubric-header">Helpfulness Rubric — Customer Support Agent</div>
+                            <div class="rubric-statements">
+                                <div class="rubric-statement">Directly addresses the customer's specific question</div>
+                                <div class="rubric-statement">Provides clear, actionable next steps</div>
+                                <div class="rubric-statement">Acknowledges the customer's frustration when appropriate</div>
+                                <div class="rubric-statement">Offers alternatives when the primary solution isn't available</div>
+                                <div class="rubric-statement">Uses language the customer can understand (no jargon)</div>
+                                <div class="rubric-statement">Knows when to escalate to a human agent</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Arrow -->
+                    <div class="term-arrow">↓</div>
+
+                    <!-- Benchmark -->
+                    <div class="term-row">
+                        <div class="term-label">
+                            <span class="term-name">Benchmark</span>
+                            <span class="term-desc">The full test setup</span>
+                        </div>
+                        <div class="term-example benchmark-example">
+                            <div class="benchmark-component"><span>50 test cases</span></div>
+                            <div class="benchmark-plus">+</div>
+                            <div class="benchmark-component"><span>3 metrics</span></div>
+                            <div class="benchmark-plus">+</div>
+                            <div class="benchmark-component"><span>Rubrics for each</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">10 / 11</div>
+        </div>
+
+        <!-- Slide 1.11: Key Takeaways -->
+        <div class="slide" data-chapter="1">
+            <div class="chapter-marker">Chapter 1</div>
+            <div class="slide-header">
+                <h2>Key takeaways</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-number">01</div>
+                        <h4>"Evals" is overloaded</h4>
+                        <p>Different stakeholders mean different things — rubrics, benchmarks, or training datasets</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-number">02</div>
+                        <h4>AI is non-deterministic</h4>
+                        <p>Unbounded inputs + non-guaranteed outputs means traditional testing is insufficient</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-number">03</div>
+                        <h4>Focus on product evals</h4>
+                        <p>Model evals tell you what a model can do. Product evals tell you if it should be used.</p>
+                    </div>
+                </div>
+                <div class="callout">
+                    <p><span class="label">Up next →</span> How evaluations are implemented in practice and the tradeoffs each approach introduces</p>
+                </div>
+            </div>
+            <div class="slide-number">11 / 11</div>
+        </div>
+
+        <!-- Transition: Chapter 1 → Chapter 2 -->
+        <div class="slide transition-slide" data-chapter="1">
+            <div class="transition-content">
+                <div class="from-label">You now understand</div>
+                <div class="from-chapter">Why AI evaluation is unavoidable</div>
+                <div class="transition-arrow">↓</div>
+                <div class="to-label">Next up</div>
+                <div class="to-chapter">How are evaluations actually done?</div>
+                <p class="transition-why">Now that we know why evals matter, let's explore the two fundamentally different types of evaluation and why the distinction matters for building products.</p>
+            </div>
+        </div>
+
+        <!-- ======================= -->
+        <!-- CHAPTER 2: MODEL VS PRODUCT EVALUATIONS -->
+        <!-- ======================= -->
+
+        <!-- Slide 2.1: Title -->
+        <div class="slide title-slide" data-chapter="2">
+            <div class="course-branding">
+                <div class="course-title">AI Evals for Everyone</div>
+                <div class="course-by">by LevelUp Academy</div>
+            </div>
+            <div class="chapter-label">Chapter Two</div>
+            <h1>Model vs <span class="highlight">Product</span> Evaluations</h1>
+            <p class="subtitle">Why benchmarks don't predict real-world success</p>
+            <div class="slide-number">1 / 10</div>
+        </div>
+
+        <!-- Slide 2.2: From Model to Product -->
+        <div class="slide" data-chapter="2">
+            <div class="chapter-marker">Chapter 2</div>
+            <div class="slide-header">
+                <h2>From model creation to product implementation</h2>
+            </div>
+            <div class="slide-content">
+                <div class="text-content">
+                    <ul>
+                        <li>AI companies evaluate models for <span class="accent">general capabilities</span></li>
+                        <li>Same models get used in <span class="accent">thousands of different applications</span></li>
+                        <li>Each application has its own requirements, constraints, and success criteria</li>
+                        <li>This creates a natural progression:</li>
+                    </ul>
+                    <div class="two-col" style="margin-top: 32px; gap: 24px;">
+                        <div class="col" style="padding: 24px;">
+                            <h3 style="font-size: 1rem;">Model Evaluation</h3>
+                            <p style="color: #737373; font-size: 1rem; margin: 0;">What a model can do <em>in theory</em></p>
+                        </div>
+                        <div class="col dark" style="padding: 24px;">
+                            <h3 style="font-size: 1rem;">Product Evaluation</h3>
+                            <p style="color: #a3a3a3; font-size: 1rem; margin: 0;">Whether it works for <em>your use case</em></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="images/model_vs_product_evaluation.png" alt="Model vs Product Evaluation">
+                </div>
+            </div>
+            <div class="slide-number">2 / 10</div>
+        </div>
+
+        <!-- Slide 2.3: Model Evaluations -->
+        <div class="slide" data-chapter="2">
+            <div class="chapter-marker">Chapter 2</div>
+            <div class="slide-header">
+                <h2>Model evaluations: measuring general capability</h2>
+            </div>
+            <div class="slide-content">
+                <div class="text-content">
+                    <ul>
+                        <li>Goal: <span class="accent">How capable is this model compared to others?</span></li>
+                        <li>Used in research papers, vendor marketing, and leaderboards</li>
+                        <li>Standardized benchmarks make results comparable</li>
+                        <li>Help teams track progress and choose between models</li>
+                    </ul>
+                    <div class="mini-callout" style="margin-top: 32px;">
+                        <p>Designed to assess what models can do in <span class="accent">standardized conditions</span> — not your specific business context</p>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="images/evaluation_benchmark_process.png" alt="Evaluation Benchmark Process">
+                </div>
+            </div>
+            <div class="slide-number">3 / 10</div>
+        </div>
+
+        <!-- Slide 2.4: Common Benchmarks -->
+        <div class="slide" data-chapter="2">
+            <div class="chapter-marker">Chapter 2</div>
+            <div class="slide-header">
+                <h2>Common model benchmarks</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="definitions">
+                    <div class="def-box">
+                        <h4>MMLU</h4>
+                        <p>Tests knowledge across 57 academic subjects — from elementary math to professional law</p>
+                    </div>
+                    <div class="def-box">
+                        <h4>HumanEval</h4>
+                        <p>Measures coding ability by testing whether models can write Python functions that pass unit tests</p>
+                    </div>
+                    <div class="def-box">
+                        <h4>GSM8K</h4>
+                        <p>Tests grade-school level mathematical reasoning with word problems</p>
+                    </div>
+                    <div class="def-box">
+                        <h4>GPQA</h4>
+                        <p>Tests graduate-level reasoning in physics, chemistry, and biology</p>
+                    </div>
+                </div>
+                <div class="mini-callout">
+                    <p>These benchmarks are <span class="accent">objective and repeatable</span> — but they test general ability, not your specific needs</p>
+                </div>
+            </div>
+            <div class="slide-number">4 / 10</div>
+        </div>
+
+        <!-- Slide 2.5: Why Benchmarks Don't Predict Success -->
+        <div class="slide" data-chapter="2">
+            <div class="chapter-marker">Chapter 2</div>
+            <div class="slide-header">
+                <h2>Why benchmarks don't predict product success</h2>
+            </div>
+            <div class="slide-content">
+                <div class="text-content">
+                    <p style="margin-bottom: 24px;">Building an AI system for insurance claims processing:</p>
+                    <div class="comparison" style="margin-bottom: 24px;">
+                        <div class="comparison-side light" style="padding: 20px;">
+                            <h3 style="font-size: 1.1rem;">Model A</h3>
+                            <p style="font-size: 1rem;">MMLU: 92% · HumanEval: 85%</p>
+                        </div>
+                        <div class="comparison-side light" style="padding: 20px;">
+                            <h3 style="font-size: 1.1rem;">Model B</h3>
+                            <p style="font-size: 1rem;">MMLU: 87% · HumanEval: 79%</p>
+                        </div>
+                    </div>
+                    <p style="margin-bottom: 16px;"><span class="accent">Model A looks superior</span> — but Model B might perform better on actual insurance claims. Why?</p>
+                    <ul style="font-size: 1.1rem;">
+                        <li style="border: none; padding-left: 0; margin-bottom: 8px;">• Domain knowledge specific to insurance</li>
+                        <li style="border: none; padding-left: 0; margin-bottom: 8px;">• Different risk tolerance requirements</li>
+                        <li style="border: none; padding-left: 0; margin-bottom: 8px;">• Real-world messiness benchmarks don't capture</li>
+                    </ul>
+                </div>
+                <div class="image-content">
+                    <img src="images/benchmark_vs_product_split.png" alt="Benchmark vs Product Split">
+                </div>
+            </div>
+            <div class="slide-number">5 / 10</div>
+        </div>
+
+        <!-- Slide 2.6: Real-World Context -->
+        <div class="slide" data-chapter="2">
+            <div class="chapter-marker">Chapter 2</div>
+            <div class="slide-header">
+                <h2>Real-world context is far more complicated</h2>
+            </div>
+            <div class="slide-content stacked">
+                <p>A customer support AI that scores well on helpfulness benchmarks still needs to handle this:</p>
+                <div class="quote" style="font-size: 1.3rem; margin: 24px 0;">
+                    "This is the third time I'm contacting you about my broken order and nobody seems to care."
+                </div>
+                <p style="margin-bottom: 24px;">The AI must simultaneously:</p>
+                <div class="cards-grid" style="grid-template-columns: repeat(4, 1fr); gap: 20px;">
+                    <div class="card" style="padding: 24px;">
+                        <h4 style="font-size: 1rem;">Recognize emotion</h4>
+                        <p style="font-size: 0.9rem;">Understand frustration and escalation history</p>
+                    </div>
+                    <div class="card" style="padding: 24px;">
+                        <h4 style="font-size: 1rem;">Know when to escalate</h4>
+                        <p style="font-size: 0.9rem;">Apologize vs. hand off immediately</p>
+                    </div>
+                    <div class="card" style="padding: 24px;">
+                        <h4 style="font-size: 1rem;">Apply company policy</h4>
+                        <p style="font-size: 0.9rem;">Your specific rules and capabilities</p>
+                    </div>
+                    <div class="card" style="padding: 24px;">
+                        <h4 style="font-size: 1rem;">Manage expectations</h4>
+                        <p style="font-size: 0.9rem;">Be helpful without overpromising</p>
+                    </div>
+                </div>
+                <div class="mini-callout">
+                    <p>These requirements emerge from <span class="accent">your specific business context</span> — not general benchmarks</p>
+                </div>
+            </div>
+            <div class="slide-number">6 / 10</div>
+        </div>
+
+        <!-- Slide 2.7: Product Evaluations -->
+        <div class="slide" data-chapter="2">
+            <div class="chapter-marker">Chapter 2</div>
+            <div class="slide-header">
+                <h2>AI product evaluations: what actually matters</h2>
+            </div>
+            <div class="slide-content stacked">
+                <p style="font-size: 1.3rem; margin-bottom: 32px;">Key question: <span class="accent">Does this system behave acceptably for our specific use case?</span></p>
+                <div class="two-col">
+                    <div class="col">
+                        <h3>What Product Evals Test</h3>
+                        <ul>
+                            <li>Handles your specific user inputs</li>
+                            <li>Follows your business rules</li>
+                            <li>Escalates correctly when uncertain</li>
+                            <li>Maintains appropriate tone for your brand</li>
+                            <li>Manages risk to your tolerance levels</li>
+                        </ul>
+                    </div>
+                    <div class="col dark">
+                        <h3>Product-Specific Metrics</h3>
+                        <ul>
+                            <li>Escalation accuracy</li>
+                            <li>Policy compliance</li>
+                            <li>Risk management (reversals needed)</li>
+                            <li>User task completion rate</li>
+                            <li>Time to resolution</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">7 / 10</div>
+        </div>
+
+        <!-- Slide 2.8: Legal Document Example -->
+        <div class="slide" data-chapter="2">
+            <div class="chapter-marker">Chapter 2</div>
+            <div class="slide-header">
+                <h2>Example: legal document analysis</h2>
+            </div>
+            <div class="slide-content stacked">
+                <p style="margin-bottom: 32px;">Building an AI to help lawyers review contracts — two evaluation approaches:</p>
+                <div class="two-col">
+                    <div class="col">
+                        <h3>Model Evaluation</h3>
+                        <ul>
+                            <li>Test general reading comprehension on legal text</li>
+                            <li>Measure accuracy on standardized legal benchmarks</li>
+                            <li>Compare to other models on academic datasets</li>
+                        </ul>
+                        <div class="mini-callout" style="margin-top: 24px; background: #f5f5f5;">
+                            <p style="font-size: 0.95rem;">Tells you it <em>can understand</em> legal language</p>
+                        </div>
+                    </div>
+                    <div class="col dark">
+                        <h3>Product Evaluation</h3>
+                        <ul>
+                            <li>Test on your firm's actual contract types</li>
+                            <li>Measure if it catches risk patterns your lawyers care about</li>
+                            <li>Evaluate escalation on unusual or high-risk terms</li>
+                            <li>Measure time savings while maintaining quality</li>
+                        </ul>
+                        <div class="callout" style="margin-top: 24px; padding: 16px; background: #262626;">
+                            <p style="font-size: 0.95rem;">Tells you it <em>actually helps</em> your lawyers</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">8 / 10</div>
+        </div>
+
+        <!-- Slide 2.9: Evaluation Hierarchy -->
+        <div class="slide" data-chapter="2">
+            <div class="chapter-marker">Chapter 2</div>
+            <div class="slide-header">
+                <h2>The evaluation hierarchy</h2>
+            </div>
+            <div class="slide-content">
+                <div class="text-content">
+                    <div class="hierarchy-list">
+                        <div class="hierarchy-item">
+                            <span class="hierarchy-num">1</span>
+                            <div>
+                                <h4>Model capability</h4>
+                                <p>Can this model handle the type of task I need?</p>
+                            </div>
+                        </div>
+                        <div class="hierarchy-item">
+                            <span class="hierarchy-num">2</span>
+                            <div>
+                                <h4>Domain fit</h4>
+                                <p>Does it work well with my specific data and requirements?</p>
+                            </div>
+                        </div>
+                        <div class="hierarchy-item">
+                            <span class="hierarchy-num">3</span>
+                            <div>
+                                <h4>Production readiness</h4>
+                                <p>Does it behave safely and reliably with real users?</p>
+                            </div>
+                        </div>
+                        <div class="hierarchy-item accent">
+                            <span class="hierarchy-num">4</span>
+                            <div>
+                                <h4>Continuous improvement</h4>
+                                <p>How do I maintain and improve performance over time?</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="callout" style="margin-top: 32px;">
+                        <p>Most teams spend too much time on level 1. <strong>Successful teams flip this priority.</strong></p>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="images/evaluation_questions_overview.png" alt="Evaluation Hierarchy">
+                </div>
+            </div>
+            <div class="slide-number">9 / 10</div>
+        </div>
+
+        <!-- Slide 2.10: Key Takeaways -->
+        <div class="slide" data-chapter="2">
+            <div class="chapter-marker">Chapter 2</div>
+            <div class="slide-header">
+                <h2>Key takeaways</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-number">01</div>
+                        <h4>Different purposes</h4>
+                        <p>Model evals measure general capability. Product evals tell you if it works for your business.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-number">02</div>
+                        <h4>The benchmark illusion</h4>
+                        <p>Assuming strong model evals guarantee product success is why many AI projects fail.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-number">03</div>
+                        <h4>Where to invest</h4>
+                        <p>Use model evals as a filter. Invest most effort in product-specific evaluation.</p>
+                    </div>
+                </div>
+                <div class="callout">
+                    <p><span class="label">Up next →</span> A systematic framework for thinking about AI system behavior to design product evaluations that predict real-world performance</p>
+                </div>
+            </div>
+            <div class="slide-number">10 / 10</div>
+        </div>
+
+        <!-- Transition: Chapter 2 → Chapter 3 -->
+        <div class="slide transition-slide" data-chapter="2">
+            <div class="transition-content">
+                <div class="from-label">You now understand</div>
+                <div class="from-chapter">Model evals vs Product evals</div>
+                <div class="transition-arrow">↓</div>
+                <div class="to-label">Next up</div>
+                <div class="to-chapter">Building your evaluation framework</div>
+                <p class="transition-why">We know product evaluations are what matter for shipping AI. Now let's build a structured framework for thinking about what to measure and how to define success.</p>
+            </div>
+        </div>
+
+        <!-- ======================= -->
+        <!-- CHAPTER 3: THE EVALUATION FRAMEWORK -->
+        <!-- ======================= -->
+
+        <!-- Slide 3.1: Title -->
+        <div class="slide title-slide" data-chapter="3">
+            <div class="course-branding">
+                <div class="course-title">AI Evals for Everyone</div>
+                <div class="course-by">by LevelUp Academy</div>
+            </div>
+            <div class="chapter-label">Chapter Three</div>
+            <h1>The <span class="highlight">Evaluation</span> Framework</h1>
+            <p class="subtitle">Setting up evaluation for your AI product</p>
+            <div class="slide-number">1 / 9</div>
+        </div>
+
+        <!-- Slide 3.2: What You're Evaluating -->
+        <div class="slide" data-chapter="3">
+            <div class="chapter-marker">Chapter 3</div>
+            <div class="slide-header">
+                <h2>What you're actually evaluating</h2>
+            </div>
+            <div class="slide-content">
+                <div class="text-content">
+                    <p style="margin-bottom: 32px;">When evaluating any AI system, you're looking at three things:</p>
+                    <div class="cards-grid" style="grid-template-columns: repeat(3, 1fr);">
+                        <div class="card" style="border-top: 3px solid #d97706;">
+                            <h4>Input</h4>
+                            <p>Everything that goes into your system</p>
+                        </div>
+                        <div class="card" style="border-top: 3px solid #d97706;">
+                            <h4>Expected</h4>
+                            <p>What should happen</p>
+                        </div>
+                        <div class="card" style="border-top: 3px solid #d97706;">
+                            <h4>Actual</h4>
+                            <p>What actually happens</p>
+                        </div>
+                    </div>
+                    <div class="mini-callout" style="margin-top: 32px;">
+                        <p>Sounds simple, but each piece is <span class="accent">more complex</span> than it appears</p>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="images/input_expected_actual_framework.png" alt="Input Expected Actual Framework">
+                </div>
+            </div>
+            <div class="slide-number">2 / 9</div>
+        </div>
+
+        <!-- Slide 3.3: Input Deep Dive -->
+        <div class="slide" data-chapter="3">
+            <div class="chapter-marker">Chapter 3</div>
+            <div class="slide-header">
+                <h2>Input: everything that affects your system</h2>
+            </div>
+            <div class="slide-content stacked">
+                <p style="margin-bottom: 24px;">"Input" isn't just the user's question. It includes everything that influences behavior:</p>
+                <div class="definitions">
+                    <div class="def-box">
+                        <h4>User Request</h4>
+                        <p>The actual question or request from the user</p>
+                    </div>
+                    <div class="def-box">
+                        <h4>Conversation Context</h4>
+                        <p>Previous history and ongoing context</p>
+                    </div>
+                    <div class="def-box">
+                        <h4>Retrieved Data</h4>
+                        <p>Documents, database entries, API responses</p>
+                    </div>
+                    <div class="def-box">
+                        <h4>System Configuration</h4>
+                        <p>Prompts, parameters, business rules</p>
+                    </div>
+                </div>
+                <div class="callout" style="margin-top: 24px;">
+                    <p>Many evaluation problems happen when teams only test obvious inputs but <strong>ignore context and configuration changes</strong></p>
+                </div>
+            </div>
+            <div class="slide-number">3 / 9</div>
+        </div>
+
+        <!-- Slide 3.4: Expected Behavior -->
+        <div class="slide" data-chapter="3">
+            <div class="chapter-marker">Chapter 3</div>
+            <div class="slide-header">
+                <h2>Expected: what good looks like</h2>
+            </div>
+            <div class="slide-content stacked">
+                <p style="margin-bottom: 24px;">Defining expected behavior is often <span class="accent">the hardest part</span>. It depends on your specific requirements:</p>
+                <div class="two-col">
+                    <div class="col">
+                        <h3>Quality Dimensions</h3>
+                        <ul>
+                            <li>Accuracy of information</li>
+                            <li>Completeness of the response</li>
+                            <li>Appropriate tone and style</li>
+                            <li>Safety and compliance</li>
+                            <li>Following business rules</li>
+                        </ul>
+                    </div>
+                    <div class="col dark">
+                        <h3>Example: Healthcare AI</h3>
+                        <p style="color: #a3a3a3; font-size: 1rem;">When someone asks "Is this medication safe for children?"</p>
+                        <ul>
+                            <li>Note medical advice should come from doctors</li>
+                            <li>Suggest talking to their pediatrician</li>
+                            <li>Provide general info without specific recommendations</li>
+                            <li>Escalate if situation seems urgent</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">4 / 9</div>
+        </div>
+
+        <!-- Slide 3.5: Why Generic Metrics Don't Work -->
+        <div class="slide" data-chapter="3">
+            <div class="chapter-marker">Chapter 3</div>
+            <div class="slide-header">
+                <h2>Why generic metrics don't work</h2>
+            </div>
+            <div class="slide-content">
+                <div class="text-content">
+                    <p style="margin-bottom: 24px;">The same metric means <span class="accent">different things</span> depending on context:</p>
+                    <div class="hierarchy-list" style="gap: 16px;">
+                        <div class="hierarchy-item" style="padding: 20px;">
+                            <div>
+                                <h4 style="margin-bottom: 4px;">Customer Service "Helpfulness"</h4>
+                                <p style="font-size: 0.95rem;">Solving problems quickly and escalating when needed. Over-explaining isn't helpful.</p>
+                            </div>
+                        </div>
+                        <div class="hierarchy-item" style="padding: 20px;">
+                            <div>
+                                <h4 style="margin-bottom: 4px;">Education "Helpfulness"</h4>
+                                <p style="font-size: 0.95rem;">Guiding students to understanding, not just giving answers.</p>
+                            </div>
+                        </div>
+                        <div class="hierarchy-item" style="padding: 20px;">
+                            <div>
+                                <h4 style="margin-bottom: 4px;">Medical "Helpfulness"</h4>
+                                <p style="font-size: 0.95rem;">Providing accurate general info while being clear about limitations.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="images/rubric_definition_quality.png" alt="Rubric Definition Quality">
+                </div>
+            </div>
+            <div class="slide-number">5 / 9</div>
+        </div>
+
+        <!-- Slide 3.6: Multiple Dimensions -->
+        <div class="slide" data-chapter="3">
+            <div class="chapter-marker">Chapter 3</div>
+            <div class="slide-header">
+                <h2>Multiple dimensions matter</h2>
+            </div>
+            <div class="slide-content stacked">
+                <p style="margin-bottom: 16px;">Customer asks "Can I return my shoes after 45 days?" - You need to evaluate across several areas:</p>
+                <div class="cards-grid" style="grid-template-columns: repeat(4, 1fr); gap: 20px;">
+                    <div class="card" style="padding: 24px;">
+                        <h4 style="font-size: 1rem;">Policy Accuracy</h4>
+                        <p style="font-size: 0.9rem;">Does it correctly state the 30-day policy?</p>
+                    </div>
+                    <div class="card" style="padding: 24px;">
+                        <h4 style="font-size: 1rem;">Escalation</h4>
+                        <p style="font-size: 0.9rem;">Does it refer to the right team?</p>
+                    </div>
+                    <div class="card" style="padding: 24px;">
+                        <h4 style="font-size: 1rem;">Tone</h4>
+                        <p style="font-size: 0.9rem;">Professional and empathetic?</p>
+                    </div>
+                    <div class="card" style="padding: 24px;">
+                        <h4 style="font-size: 1rem;">Business Risk</h4>
+                        <p style="font-size: 0.9rem;">Avoids unauthorized promises?</p>
+                    </div>
+                </div>
+                <div class="callout" style="margin-top: 24px;">
+                    <p>A single "correctness" score would miss important problems. Find the <strong>minimum set of dimensions</strong> that give you maximum signal.</p>
+                </div>
+            </div>
+            <div class="slide-number">6 / 9</div>
+        </div>
+
+        <!-- Slide 3.7: Rubrics -->
+        <div class="slide" data-chapter="3">
+            <div class="chapter-marker">Chapter 3</div>
+            <div class="slide-header">
+                <h2>Making subjective assessment consistent</h2>
+            </div>
+            <div class="slide-content stacked">
+                <p style="margin-bottom: 24px;"><span class="accent">Rubrics</span> provide explicit criteria for judgment. A good rubric defines:</p>
+                <div class="two-col">
+                    <div class="col">
+                        <h3>Rubric Components</h3>
+                        <ul>
+                            <li>What counts as acceptable vs not acceptable</li>
+                            <li>Specific things to look for</li>
+                            <li>Examples of responses in each category</li>
+                            <li>How to handle edge cases</li>
+                        </ul>
+                    </div>
+                    <div class="col dark">
+                        <h3>Example: Escalation Rubric</h3>
+                        <p style="color: #22c55e; font-size: 0.9rem; font-weight: 600; margin-bottom: 8px;">✓ Acceptable</p>
+                        <p style="color: #a3a3a3; font-size: 0.95rem; margin-bottom: 16px;">Identifies situations needing human intervention and provides context</p>
+                        <p style="color: #ef4444; font-size: 0.9rem; font-weight: 600; margin-bottom: 8px;">✗ Not Acceptable</p>
+                        <p style="color: #a3a3a3; font-size: 0.95rem;">Fails to escalate when needed, or escalates without sufficient context</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">7 / 9</div>
+        </div>
+
+        <!-- Slide 3.8: Team Collaboration -->
+        <div class="slide" data-chapter="3">
+            <div class="chapter-marker">Chapter 3</div>
+            <div class="slide-header">
+                <h2>Evaluation requires team collaboration</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="triangle-hub">
+                    <!-- SVG lines connecting the triangle -->
+                    <div class="triangle-lines">
+                        <svg viewBox="0 0 800 480">
+                            <!-- Triangle edges (role to role) -->
+                            <line x1="400" y1="100" x2="160" y2="380"></line>
+                            <line x1="400" y1="100" x2="640" y2="380"></line>
+                            <line x1="160" y1="380" x2="640" y2="380"></line>
+                            <!-- Lines to center (dashed orange) -->
+                            <line class="to-center" x1="400" y1="100" x2="400" y2="240"></line>
+                            <line class="to-center" x1="160" y1="380" x2="330" y2="280"></line>
+                            <line class="to-center" x1="640" y1="380" x2="470" y2="280"></line>
+                        </svg>
+                    </div>
+
+                    <!-- Center hub -->
+                    <div class="hub-center">
+                        <span>Evaluation</span>
+                    </div>
+
+                    <!-- Role cards in triangle positions -->
+                    <div class="role-card top">
+                        <span class="role-tag">SME</span>
+                        <h4>Subject Matter Experts</h4>
+                        <p>Know how the process currently works in the real world</p>
+                    </div>
+
+                    <div class="role-card bottom-left">
+                        <span class="role-tag">PM</span>
+                        <h4>Product Teams</h4>
+                        <p>Know how the product should work for users</p>
+                    </div>
+
+                    <div class="role-card bottom-right">
+                        <span class="role-tag">ENG</span>
+                        <h4>Engineers</h4>
+                        <p>Define the building blocks and make it measurable</p>
+                    </div>
+                </div>
+                <div class="mini-callout" style="margin-top: 20px;">
+                    <p>Working through evaluation examples helps surface <span class="accent">hidden assumptions and disagreements</span> before they affect the product</p>
+                </div>
+            </div>
+            <div class="slide-number">8 / 9</div>
+        </div>
+
+        <!-- Slide 3.9: Key Takeaways -->
+        <div class="slide" data-chapter="3">
+            <div class="chapter-marker">Chapter 3</div>
+            <div class="slide-header">
+                <h2>Key takeaways</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-number">01</div>
+                        <h4>Input-Expected-Actual</h4>
+                        <p>Understand all three components. Input is more than just the user's question.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-number">02</div>
+                        <h4>Context is everything</h4>
+                        <p>Generic metrics don't work. Define what quality means for YOUR specific situation.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-number">03</div>
+                        <h4>Collaboration is key</h4>
+                        <p>SMEs, product teams, and engineers each bring essential perspectives.</p>
+                    </div>
+                </div>
+                <div class="callout">
+                    <p><span class="label">Up next →</span> Building a reference dataset to apply this framework and improve your system</p>
+                </div>
+            </div>
+            <div class="slide-number">9 / 9</div>
+        </div>
+
+        <!-- Transition: Chapter 3 → Chapter 4 -->
+        <div class="slide transition-slide" data-chapter="3">
+            <div class="transition-content">
+                <div class="from-label">You now understand</div>
+                <div class="from-chapter">What to measure and how to define success</div>
+                <div class="transition-arrow">↓</div>
+                <div class="to-label">Next up</div>
+                <div class="to-chapter">Building reference datasets</div>
+                <p class="transition-why">We have a framework for thinking about metrics. But how do we discover which metrics actually matter for our system? It starts with building a reference dataset that reveals our real failure modes.</p>
+            </div>
+        </div>
+
+        <!-- ======================= -->
+        <!-- CHAPTER 4: BUILDING REFERENCE DATASETS -->
+        <!-- ======================= -->
+
+        <!-- Slide 4.1: Title -->
+        <div class="slide title-slide" data-chapter="4">
+            <div class="course-branding">
+                <div class="course-title">AI Evals for Everyone</div>
+                <div class="course-by">by LevelUp Academy</div>
+            </div>
+            <div class="chapter-label">Chapter Four</div>
+            <h1>Building <span class="highlight">Reference</span> Datasets</h1>
+            <p class="subtitle">Getting started with systematic evaluation</p>
+            <div class="slide-number">1 / 9</div>
+        </div>
+
+        <!-- Slide 4.2: What Is a Reference Dataset -->
+        <div class="slide" data-chapter="4">
+            <div class="chapter-marker">Chapter 4</div>
+            <div class="slide-header">
+                <h2>What is a reference dataset?</h2>
+            </div>
+            <div class="slide-content">
+                <div class="text-content">
+                    <ul>
+                        <li>Your first concrete representation of how the system <span class="accent">should behave</span></li>
+                        <li>A collection of <span class="accent">realistic inputs</span> paired with expected behaviors</li>
+                        <li>Not meant to be comprehensive - meant to be <span class="accent">useful</span></li>
+                    </ul>
+                    <div class="def-box" style="margin-top: 32px;">
+                        <h4>Each Example Includes</h4>
+                        <p><strong>Input:</strong> A realistic user request<br>
+                        <strong>Expected:</strong> What the system should do (plain language)<br>
+                        <strong>Context:</strong> Any additional information needed</p>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="images/reference_dataset_steps.png" alt="Reference Dataset Steps">
+                </div>
+            </div>
+            <div class="slide-number">2 / 9</div>
+        </div>
+
+        <!-- Slide 4.3: Why Start Small -->
+        <div class="slide" data-chapter="4">
+            <div class="chapter-marker">Chapter 4</div>
+            <div class="slide-header">
+                <h2>Why start small and specific</h2>
+            </div>
+            <div class="slide-content">
+                <div class="text-content">
+                    <p style="margin-bottom: 24px;">Teams often try to build comprehensive coverage from day one. <span class="accent">This doesn't work</span> for AI systems.</p>
+                    <p style="margin-bottom: 24px;">Start with scenarios you <span class="accent">absolutely cannot get wrong</span>:</p>
+                    <ul>
+                        <li>High-risk situations where failure would be unacceptable</li>
+                        <li>Common user workflows that need to work smoothly</li>
+                        <li>Edge cases that reveal important limitations</li>
+                        <li>Examples exposing different evaluation dimensions</li>
+                    </ul>
+                    <div class="mini-callout" style="margin-top: 24px;">
+                        <p>Better to have <span class="accent">20 well-chosen examples</span> than 200 generic test cases</p>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="images/lab_vs_production_50_examples.png" alt="Lab vs Production">
+                </div>
+            </div>
+            <div class="slide-number">3 / 9</div>
+        </div>
+
+        <!-- Slide 4.4: The 6-Step Process -->
+        <div class="slide" data-chapter="4">
+            <div class="chapter-marker">Chapter 4</div>
+            <div class="slide-header">
+                <h2>The 6-step process</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="hierarchy-list">
+                    <div class="hierarchy-item" style="padding: 16px 24px;">
+                        <span class="hierarchy-num">1</span>
+                        <div>
+                            <h4 style="margin-bottom: 2px;">Generate initial examples</h4>
+                            <p style="font-size: 0.9rem;">Work with domain experts using historical data or domain knowledge</p>
+                        </div>
+                    </div>
+                    <div class="hierarchy-item" style="padding: 16px 24px;">
+                        <span class="hierarchy-num">2</span>
+                        <div>
+                            <h4 style="margin-bottom: 2px;">Run your system</h4>
+                            <p style="font-size: 0.9rem;">Test on examples and document outputs and intermediate steps</p>
+                        </div>
+                    </div>
+                    <div class="hierarchy-item" style="padding: 16px 24px;">
+                        <span class="hierarchy-num">3</span>
+                        <div>
+                            <h4 style="margin-bottom: 2px;">Evaluate with domain experts</h4>
+                            <p style="font-size: 0.9rem;">Simple yes/no: "Was this response satisfactory? If not, why?"</p>
+                        </div>
+                    </div>
+                    <div class="hierarchy-item" style="padding: 16px 24px;">
+                        <span class="hierarchy-num">4</span>
+                        <div>
+                            <h4 style="margin-bottom: 2px;">Identify error patterns</h4>
+                            <p style="font-size: 0.9rem;">Cluster failures into underlying problems you can fix</p>
+                        </div>
+                    </div>
+                    <div class="hierarchy-item" style="padding: 16px 24px;">
+                        <span class="hierarchy-num">5</span>
+                        <div>
+                            <h4 style="margin-bottom: 2px;">Decide which metrics you need</h4>
+                            <p style="font-size: 0.9rem;">Create metrics for recurring risks, not one-off bugs</p>
+                        </div>
+                    </div>
+                    <div class="hierarchy-item accent" style="padding: 16px 24px;">
+                        <span class="hierarchy-num">6</span>
+                        <div>
+                            <h4 style="margin-bottom: 2px;">Iterate and expand</h4>
+                            <p style="font-size: 0.9rem;">Add edge cases discovered in production over time</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">4 / 9</div>
+        </div>
+
+        <!-- Slide 4.5: Example Dataset -->
+        <div class="slide" data-chapter="4">
+            <div class="chapter-marker">Chapter 4</div>
+            <div class="slide-header">
+                <h2>Example: customer support dataset</h2>
+            </div>
+            <div class="slide-content stacked">
+                <table class="slide-table">
+                    <thead>
+                        <tr>
+                            <th>Input</th>
+                            <th>Expected Behavior</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>"I want to return my shoes but I lost the receipt"</td>
+                            <td>Ask for order number or email, explain alternatives</td>
+                        </tr>
+                        <tr>
+                            <td>"Your service is terrible and I'm switching"</td>
+                            <td>Acknowledge frustration, apologize, escalate to retention</td>
+                        </tr>
+                        <tr>
+                            <td>"How do I track my order?"</td>
+                            <td>Ask for order number, provide tracking information</td>
+                        </tr>
+                        <tr>
+                            <td>"I was charged twice for the same order"</td>
+                            <td>Apologize, escalate immediately to billing team</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="mini-callout">
+                    <p>Notice: different scenarios (returns, complaints, tracking, billing) and different required behaviors</p>
+                </div>
+            </div>
+            <div class="slide-number">5 / 9</div>
+        </div>
+
+        <!-- Slide 4.6: Error Analysis -->
+        <div class="slide" data-chapter="4">
+            <div class="chapter-marker">Chapter 4</div>
+            <div class="slide-header">
+                <h2>Identifying error patterns</h2>
+            </div>
+            <div class="slide-content stacked">
+                <p style="margin-bottom: 24px;">Add two columns to your analysis to cluster failures:</p>
+                <table class="slide-table">
+                    <thead>
+                        <tr>
+                            <th>Input</th>
+                            <th>Satisfactory?</th>
+                            <th>Error Category</th>
+                            <th>Potential Cause</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>"Service terrible, switching"</td>
+                            <td style="color: #ef4444;">No</td>
+                            <td>Missing escalation</td>
+                            <td>No retention case logic</td>
+                        </tr>
+                        <tr>
+                            <td>"Charged twice"</td>
+                            <td style="color: #ef4444;">No</td>
+                            <td>Missing urgency</td>
+                            <td>Billing not flagged priority</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="two-col" style="margin-top: 24px; gap: 24px;">
+                    <div class="col" style="padding: 20px;">
+                        <h3 style="font-size: 0.9rem;">Common Error Patterns</h3>
+                        <ul style="font-size: 0.95rem;">
+                            <li style="border: none; padding: 4px 0;">Missing context</li>
+                            <li style="border: none; padding: 4px 0;">Prompt issues</li>
+                            <li style="border: none; padding: 4px 0;">Business rule failures</li>
+                            <li style="border: none; padding: 4px 0;">Escalation problems</li>
+                        </ul>
+                    </div>
+                    <div class="col dark" style="padding: 20px;">
+                        <h3 style="font-size: 0.9rem;">Key Insight</h3>
+                        <p style="color: #a3a3a3; font-size: 0.95rem; margin: 0;">Many issues that look different come from the same root cause</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">6 / 9</div>
+        </div>
+
+        <!-- Slide 4.7: Deciding on Metrics -->
+        <div class="slide" data-chapter="4">
+            <div class="chapter-marker">Chapter 4</div>
+            <div class="slide-header">
+                <h2>Deciding which metrics you need</h2>
+            </div>
+            <div class="slide-content">
+                <div class="text-content">
+                    <p style="margin-bottom: 24px; font-size: 1.2rem;"><span class="accent">Key insight:</span> If an issue can be fixed once, fix it and move on. If it can reappear in different forms, you need a metric.</p>
+                    <div class="comparison" style="margin-bottom: 24px;">
+                        <div class="comparison-side light">
+                            <h3>One-Time Fix</h3>
+                            <p>A missing instruction in a prompt</p>
+                        </div>
+                        <div class="comparison-side accent">
+                            <h3>Needs Ongoing Metric</h3>
+                            <p>Appropriate escalation behavior</p>
+                        </div>
+                    </div>
+                    <p style="margin-bottom: 16px;"><span class="accent">Be ruthless:</span> Only create metrics for behaviors you actually care about and can take action on.</p>
+                    <p>Identify <span class="accent">2-4 key behaviors</span> that need ongoing measurement. More than that becomes difficult to manage.</p>
+                </div>
+            </div>
+            <div class="slide-number">7 / 9</div>
+        </div>
+
+        <!-- Slide 4.8: Common Pitfalls -->
+        <div class="slide" data-chapter="4">
+            <div class="chapter-marker">Chapter 4</div>
+            <div class="slide-header">
+                <h2>Common pitfalls to avoid</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="cards-grid" style="grid-template-columns: repeat(2, 1fr); gap: 24px;">
+                    <div class="card" style="border-left: 3px solid #ef4444;">
+                        <h4>Don't make it too big too fast</h4>
+                        <p>Start with 10-20 high-quality examples rather than 100 mediocre ones</p>
+                    </div>
+                    <div class="card" style="border-left: 3px solid #ef4444;">
+                        <h4>Don't rely on synthetic data</h4>
+                        <p>AI-generated examples often miss real-world complexity and edge cases</p>
+                    </div>
+                    <div class="card" style="border-left: 3px solid #ef4444;">
+                        <h4>Don't skip domain experts</h4>
+                        <p>Technical teams alone cannot define good behavior in specialized domains</p>
+                    </div>
+                    <div class="card" style="border-left: 3px solid #ef4444;">
+                        <h4>Don't over-complicate rubrics</h4>
+                        <p>Simple "acceptable/not acceptable" works better than elaborate scoring</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">8 / 9</div>
+        </div>
+
+        <!-- Slide 4.9: Key Takeaways -->
+        <div class="slide" data-chapter="4">
+            <div class="chapter-marker">Chapter 4</div>
+            <div class="slide-header">
+                <h2>Key takeaways</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-number">01</div>
+                        <h4>Start small</h4>
+                        <p>10-20 high-quality examples representing scenarios you cannot get wrong.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-number">02</div>
+                        <h4>Collaborate with experts</h4>
+                        <p>Domain experts should contribute the majority of initial examples.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-number">03</div>
+                        <h4>Metrics for recurring risks</h4>
+                        <p>Create metrics for behaviors that can reappear, not one-off bugs.</p>
+                    </div>
+                </div>
+                <div class="callout">
+                    <p><span class="label">Up next →</span> How to actually implement these metrics using different evaluation approaches</p>
+                </div>
+            </div>
+            <div class="slide-number">9 / 9</div>
+        </div>
+
+        <!-- Transition: Chapter 4 → Chapter 5 -->
+        <div class="slide transition-slide" data-chapter="4">
+            <div class="transition-content">
+                <div class="from-label">You now understand</div>
+                <div class="from-chapter">How to build reference datasets</div>
+                <div class="transition-arrow">↓</div>
+                <div class="to-label">Next up</div>
+                <div class="to-chapter">Implementing evaluation metrics</div>
+                <p class="transition-why">We've identified what matters through our reference dataset. Now let's turn those insights into actual metrics we can measure - from simple code checks to LLM-based judges.</p>
+            </div>
+        </div>
+
+        <!-- ======================= -->
+        <!-- CHAPTER 5: IMPLEMENTING EVALUATION METRICS -->
+        <!-- ======================= -->
+
+        <!-- Slide 5.1: Title -->
+        <div class="slide title-slide" data-chapter="5">
+            <div class="course-branding">
+                <div class="course-title">AI Evals for Everyone</div>
+                <div class="course-by">by LevelUp Academy</div>
+            </div>
+            <div class="chapter-label">Chapter Five</div>
+            <h1>Implementing <span class="highlight">Evaluation</span> Metrics</h1>
+            <p class="subtitle">From what to measure to how to measure it</p>
+            <div class="slide-number">1 / 9</div>
+        </div>
+
+        <!-- Slide 5.2: Three Approaches -->
+        <div class="slide" data-chapter="5">
+            <div class="chapter-marker">Chapter 5</div>
+            <div class="slide-header">
+                <h2>Three ways to measure AI behavior</h2>
+            </div>
+            <div class="slide-content">
+                <div class="text-content">
+                    <div class="cards-grid" style="grid-template-columns: 1fr;">
+                        <div class="card" style="border-left: 3px solid #d97706;">
+                            <h4>Human Evaluation</h4>
+                            <p>People assess behavior based on expertise and judgment</p>
+                        </div>
+                        <div class="card" style="border-left: 3px solid #d97706;">
+                            <h4>Code-Based Metrics</h4>
+                            <p>Deterministic checks for specific patterns or properties</p>
+                        </div>
+                        <div class="card" style="border-left: 3px solid #d97706;">
+                            <h4>LLM Judges</h4>
+                            <p>Using one model to evaluate another model's behavior</p>
+                        </div>
+                    </div>
+                    <div class="mini-callout" style="margin-top: 24px;">
+                        <p>Most effective systems use a <span class="accent">combination</span> of multiple approaches</p>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="images/three_evaluation_approaches.png" alt="Three Evaluation Approaches">
+                </div>
+            </div>
+            <div class="slide-number">2 / 9</div>
+        </div>
+
+        <!-- Slide 5.3: Human Evaluation -->
+        <div class="slide" data-chapter="5">
+            <div class="chapter-marker">Chapter 5</div>
+            <div class="slide-header">
+                <h2>Human evaluation: the gold standard</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="two-col">
+                    <div class="col">
+                        <h3>Major Advantages</h3>
+                        <ul>
+                            <li><strong>Nuanced judgment:</strong> Can assess complex, subjective qualities</li>
+                            <li><strong>Domain expertise:</strong> Understands subtleties automated systems miss</li>
+                            <li><strong>Flexibility:</strong> Can adapt criteria for edge cases</li>
+                            <li><strong>Ground truth:</strong> The standard other metrics try to approximate</li>
+                        </ul>
+                    </div>
+                    <div class="col dark">
+                        <h3>The Problem</h3>
+                        <p style="color: #a3a3a3; font-size: 1.05rem; line-height: 1.6;">It's <span style="color: #d97706;">slow and expensive</span>. A system handling 10,000 interactions/day would need an army of evaluators. Even 1% sampling = 100 daily reviews.</p>
+                    </div>
+                </div>
+                <div class="callout" style="margin-top: 24px;">
+                    <p><strong>Best for:</strong> Calibrating automated metrics · Edge case analysis · Periodic sampling · High-stakes decisions</p>
+                </div>
+            </div>
+            <div class="slide-number">3 / 9</div>
+        </div>
+
+        <!-- Slide 5.4: Code-Based Metrics -->
+        <div class="slide" data-chapter="5">
+            <div class="chapter-marker">Chapter 5</div>
+            <div class="slide-header">
+                <h2>Code-based metrics: when rules work</h2>
+            </div>
+            <div class="slide-content stacked">
+                <p style="margin-bottom: 24px;">Fast, reliable, and easy to understand. Work well when success is <span class="accent">clearly defined</span>:</p>
+                <div class="definitions">
+                    <div class="def-box">
+                        <h4>Structure Validation</h4>
+                        <p>Check for required fields, JSON format, mandatory disclaimers</p>
+                    </div>
+                    <div class="def-box">
+                        <h4>Performance Metrics</h4>
+                        <p>Response time, token count, API call frequency</p>
+                    </div>
+                    <div class="def-box">
+                        <h4>Content Detection</h4>
+                        <p>Verify specific phrases appear or don't appear</p>
+                    </div>
+                    <div class="def-box">
+                        <h4>Classification Flags</h4>
+                        <p>Check if queries are tagged correctly (billing, technical, escalation)</p>
+                    </div>
+                </div>
+                <div class="mini-callout" style="margin-top: 24px;">
+                    <p><span class="accent">Limitation:</span> Struggle with subjective qualities like tone, appropriateness, or nuanced decisions</p>
+                </div>
+            </div>
+            <div class="slide-number">4 / 9</div>
+        </div>
+
+        <!-- Slide 5.5: LLM Judges -->
+        <div class="slide" data-chapter="5">
+            <div class="chapter-marker">Chapter 5</div>
+            <div class="slide-header">
+                <h2>LLM judges: automating human-like evaluation</h2>
+            </div>
+            <div class="slide-content stacked">
+                <p style="margin-bottom: 24px;">Use one model to evaluate another at scale. Works for <span class="accent">subjective or complex</span> evaluations:</p>
+                <div class="cards-grid" style="grid-template-columns: repeat(4, 1fr); gap: 20px;">
+                    <div class="card" style="padding: 24px;">
+                        <h4 style="font-size: 1rem;">Tone Assessment</h4>
+                        <p style="font-size: 0.9rem;">Is the response professional and empathetic?</p>
+                    </div>
+                    <div class="card" style="padding: 24px;">
+                        <h4 style="font-size: 1rem;">Escalation Decisions</h4>
+                        <p style="font-size: 0.9rem;">Should this have been escalated?</p>
+                    </div>
+                    <div class="card" style="padding: 24px;">
+                        <h4 style="font-size: 1rem;">Reasoning Quality</h4>
+                        <p style="font-size: 0.9rem;">Does the explanation make sense?</p>
+                    </div>
+                    <div class="card" style="padding: 24px;">
+                        <h4 style="font-size: 1rem;">Safety Evaluation</h4>
+                        <p style="font-size: 0.9rem;">Does it avoid harmful content?</p>
+                    </div>
+                </div>
+                <div class="callout" style="margin-top: 24px;">
+                    <p>Key requirement: You need <strong>clear rubrics</strong> defining acceptable vs. not acceptable with specific examples</p>
+                </div>
+            </div>
+            <div class="slide-number">5 / 9</div>
+        </div>
+
+        <!-- Slide 5.6: Building LLM Judge Rubrics -->
+        <div class="slide" data-chapter="5">
+            <div class="chapter-marker">Chapter 5</div>
+            <div class="slide-header">
+                <h2>From error pattern to LLM judge rubric</h2>
+            </div>
+            <div class="slide-content stacked">
+                <p style="margin-bottom: 16px;">Example: "Escalation Accuracy" metric from Chapter 4's error analysis</p>
+                <div class="two-col">
+                    <div class="col" style="background: #f0fdf4; border-color: #22c55e;">
+                        <h3 style="color: #166534;">✓ Acceptable</h3>
+                        <ul style="font-size: 0.95rem;">
+                            <li style="border: none; padding: 4px 0; color: #166534;">Identifies retention situations (switching, canceling)</li>
+                            <li style="border: none; padding: 4px 0; color: #166534;">Escalates billing disputes over $100</li>
+                            <li style="border: none; padding: 4px 0; color: #166534;">Recognizes complex technical issues</li>
+                            <li style="border: none; padding: 4px 0; color: #166534;">Provides context when escalating</li>
+                        </ul>
+                    </div>
+                    <div class="col" style="background: #fef2f2; border-color: #ef4444;">
+                        <h3 style="color: #991b1b;">✗ Not Acceptable</h3>
+                        <ul style="font-size: 0.95rem;">
+                            <li style="border: none; padding: 4px 0; color: #991b1b;">Misses clear retention signals</li>
+                            <li style="border: none; padding: 4px 0; color: #991b1b;">Fails to escalate billing disputes</li>
+                            <li style="border: none; padding: 4px 0; color: #991b1b;">Escalates routine questions</li>
+                            <li style="border: none; padding: 4px 0; color: #991b1b;">Escalates without sufficient context</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mini-callout" style="margin-top: 24px;">
+                    <p>Include <span class="accent">specific examples</span> showing acceptable and not acceptable behavior for each scenario</p>
+                </div>
+            </div>
+            <div class="slide-number">6 / 9</div>
+        </div>
+
+        <!-- Slide 5.7: Calibration Warning -->
+        <div class="slide" data-chapter="5">
+            <div class="chapter-marker">Chapter 5</div>
+            <div class="slide-header">
+                <h2>A note on LLM judge calibration</h2>
+            </div>
+            <div class="slide-content">
+                <div class="text-content">
+                    <p style="margin-bottom: 24px; color: #d97706; font-weight: 600; font-size: 1.2rem;">⚠️ Calibration is essential</p>
+                    <ul>
+                        <li>Just because you write detailed criteria doesn't mean the LLM will interpret them like a human expert</li>
+                        <li>LLM judges can be <span class="accent">inconsistent, biased, or misaligned</span></li>
+                        <li>Without calibration, they can add <span class="accent">more problems</span> to your system</li>
+                    </ul>
+                    <div class="def-box highlight" style="margin-top: 24px;">
+                        <h4>Calibration Process</h4>
+                        <p>1. Have humans evaluate a sample using your rubric<br>
+                        2. Run your LLM judge on the same examples<br>
+                        3. Compare and identify disagreements<br>
+                        4. Refine prompt and criteria<br>
+                        5. Repeat until alignment is acceptable</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">7 / 9</div>
+        </div>
+
+        <!-- Slide 5.8: Methods Comparison -->
+        <div class="slide" data-chapter="5">
+            <div class="chapter-marker">Chapter 5</div>
+            <div class="slide-header">
+                <h2>Choosing the right approach</h2>
+            </div>
+            <div class="slide-content">
+                <div class="image-content" style="flex: 1;">
+                    <img src="images/evaluation_methods_comparison.png" alt="Evaluation Methods Comparison" style="max-height: 500px;">
+                </div>
+            </div>
+            <div class="slide-number">8 / 9</div>
+        </div>
+
+        <!-- Slide 5.9: Key Takeaways -->
+        <div class="slide" data-chapter="5">
+            <div class="chapter-marker">Chapter 5</div>
+            <div class="slide-header">
+                <h2>Key takeaways</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-number">01</div>
+                        <h4>Start with code-based</h4>
+                        <p>Use for objective, measurable properties. Fast, reliable, cheap.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-number">02</div>
+                        <h4>Add LLM judges carefully</h4>
+                        <p>Powerful but require extensive calibration against human judgment.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-number">03</div>
+                        <h4>Keep humans in the loop</h4>
+                        <p>Essential for calibration, edge cases, and high-stakes decisions.</p>
+                    </div>
+                </div>
+                <div class="callout">
+                    <p><span class="label">Up next →</span> Moving from lab to production and handling real user behavior at scale</p>
+                </div>
+            </div>
+            <div class="slide-number">9 / 9</div>
+        </div>
+
+        <!-- Transition: Chapter 5 → Chapter 6 -->
+        <div class="slide transition-slide" data-chapter="5">
+            <div class="transition-content">
+                <div class="from-label">You now understand</div>
+                <div class="from-chapter">How to implement evaluation metrics</div>
+                <div class="transition-arrow">↓</div>
+                <div class="to-label">Next up</div>
+                <div class="to-chapter">Production deployment challenges</div>
+                <p class="transition-why">We can evaluate our system in the lab. But what happens when real users arrive? Production brings challenges that lab evaluation can't fully anticipate.</p>
+            </div>
+        </div>
+
+        <!-- ======================= -->
+        <!-- CHAPTER 6: PRODUCTION DEPLOYMENT -->
+        <!-- ======================= -->
+
+        <!-- Slide 6.1: Title -->
+        <div class="slide title-slide" data-chapter="6">
+            <div class="course-branding">
+                <div class="course-title">AI Evals for Everyone</div>
+                <div class="course-by">by LevelUp Academy</div>
+            </div>
+            <div class="chapter-label">Chapter Six</div>
+            <h1>Production <span class="highlight">Deployment</span></h1>
+            <p class="subtitle">From lab to real world with real users</p>
+            <div class="slide-number">1 / 8</div>
+        </div>
+
+        <!-- Slide 6.2: From Lab to Real World -->
+        <div class="slide" data-chapter="6">
+            <div class="chapter-marker">Chapter 6</div>
+            <div class="slide-header">
+                <h2>From lab to real world</h2>
+            </div>
+            <div class="slide-content">
+                <div class="text-content">
+                    <p style="margin-bottom: 24px;">Everything we've discussed so far happens in <span class="accent">controlled conditions</span>:</p>
+                    <ul>
+                        <li>Carefully chosen examples</li>
+                        <li>Clear expected behaviors</li>
+                        <li>Stakeholders who understand goals</li>
+                    </ul>
+                    <div class="callout" style="margin-top: 32px;">
+                        <p><span class="label">Production is different</span> When real users start interacting, <strong>everything changes</strong></p>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="images/production_scale_10000_interactions.png" alt="Production Scale">
+                </div>
+            </div>
+            <div class="slide-number">2 / 8</div>
+        </div>
+
+        <!-- Slide 6.3: Reality of Real Users -->
+        <div class="slide" data-chapter="6">
+            <div class="chapter-marker">Chapter 6</div>
+            <div class="slide-header">
+                <h2>The reality of real users</h2>
+            </div>
+            <div class="slide-content">
+                <div class="text-content">
+                    <p style="margin-bottom: 24px;">Real users don't behave like your reference datasets:</p>
+                    <div class="hierarchy-list" style="gap: 16px;">
+                        <div class="hierarchy-item" style="padding: 16px 24px;">
+                            <div>
+                                <h4 style="margin-bottom: 4px;">Unexpected context</h4>
+                                <p style="font-size: 0.9rem;">Users ask about competitors, share personal stories, try unintended uses</p>
+                            </div>
+                        </div>
+                        <div class="hierarchy-item" style="padding: 16px 24px;">
+                            <div>
+                                <h4 style="margin-bottom: 4px;">Edge cases you missed</h4>
+                                <p style="font-size: 0.9rem;">Phrasing that confuses, combined intents, wrong assumptions</p>
+                            </div>
+                        </div>
+                        <div class="hierarchy-item" style="padding: 16px 24px;">
+                            <div>
+                                <h4 style="margin-bottom: 4px;">User evolution</h4>
+                                <p style="font-size: 0.9rem;">Behavior changes as users get comfortable and questions get more complex</p>
+                            </div>
+                        </div>
+                        <div class="hierarchy-item accent" style="padding: 16px 24px;">
+                            <div>
+                                <h4 style="margin-bottom: 4px;">Volume changes everything</h4>
+                                <p style="font-size: 0.9rem;">50 examples you can review. 10,000/day requires different approaches.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="images/production_challenges_real_world.png" alt="Production Challenges">
+                </div>
+            </div>
+            <div class="slide-number">3 / 8</div>
+        </div>
+
+        <!-- Slide 6.4: Scale Challenge -->
+        <div class="slide" data-chapter="6">
+            <div class="chapter-marker">Chapter 6</div>
+            <div class="slide-header">
+                <h2>The scale challenge</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="comparison">
+                    <div class="comparison-side light">
+                        <h3>Controlled Testing</h3>
+                        <p>You can review every example and understand every failure</p>
+                    </div>
+                    <div class="comparison-side accent">
+                        <h3>Production</h3>
+                        <p>5,000 conversations daily. Even 95% success = 250 problems/day</p>
+                    </div>
+                </div>
+                <div class="callout" style="margin-top: 32px;">
+                    <p>The question shifts from <strong>"How did we do on this set?"</strong> to <strong>"How are we doing overall, and where should we focus?"</strong></p>
+                </div>
+            </div>
+            <div class="slide-number">4 / 8</div>
+        </div>
+
+        <!-- Slide 6.5: Evaluation to Monitoring -->
+        <div class="slide" data-chapter="6">
+            <div class="chapter-marker">Chapter 6</div>
+            <div class="slide-header">
+                <h2>From evaluation to monitoring</h2>
+            </div>
+            <div class="slide-content">
+                <div class="text-content">
+                    <div class="two-col" style="gap: 24px;">
+                        <div class="col" style="padding: 24px;">
+                            <h3 style="font-size: 1rem;">Pre-Deployment: Validation</h3>
+                            <p style="color: #737373; font-size: 1rem;">Testing whether your system works as intended</p>
+                        </div>
+                        <div class="col dark" style="padding: 24px;">
+                            <h3 style="font-size: 1rem;">Production: Monitoring</h3>
+                            <p style="color: #a3a3a3; font-size: 1rem;">Continuously checking as conditions change</p>
+                        </div>
+                    </div>
+                    <div class="def-box highlight" style="margin-top: 32px;">
+                        <h4>The Flywheel Effect</h4>
+                        <p>Strong evaluation → confidence to deploy → effective monitoring → improved systems → better evaluation</p>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="images/validation_vs_monitoring_toggle.png" alt="Validation vs Monitoring">
+                </div>
+            </div>
+            <div class="slide-number">5 / 8</div>
+        </div>
+
+        <!-- Slide 6.6: Four Core Challenges -->
+        <div class="slide" data-chapter="6">
+            <div class="chapter-marker">Chapter 6</div>
+            <div class="slide-header">
+                <h2>Four core challenges in production</h2>
+            </div>
+            <div class="slide-content">
+                <div class="text-content" style="flex: 1;">
+                    <div class="cards-grid" style="grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                        <div class="card" style="padding: 24px;">
+                            <div class="card-number">1</div>
+                            <h4>Log Filtering</h4>
+                            <p style="font-size: 0.95rem;">Which logs deserve attention from thousands daily?</p>
+                        </div>
+                        <div class="card" style="padding: 24px;">
+                            <div class="card-number">2</div>
+                            <h4>Metric Selection</h4>
+                            <p style="font-size: 0.95rem;">Metrics aren't free - LLM judges cost money at scale</p>
+                        </div>
+                        <div class="card" style="padding: 24px;">
+                            <div class="card-number">3</div>
+                            <h4>Online vs Offline</h4>
+                            <p style="font-size: 0.95rem;">Real-time checks vs. batch analysis tradeoffs</p>
+                        </div>
+                        <div class="card" style="padding: 24px;">
+                            <div class="card-number">4</div>
+                            <h4>Emerging Issues</h4>
+                            <p style="font-size: 0.95rem;">Finding problems you weren't looking for</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="images/four_core_production_challenges.png" alt="Four Core Challenges">
+                </div>
+            </div>
+            <div class="slide-number">6 / 8</div>
+        </div>
+
+        <!-- Slide 6.7: Online vs Offline -->
+        <div class="slide" data-chapter="6">
+            <div class="chapter-marker">Chapter 6</div>
+            <div class="slide-header">
+                <h2>Online vs offline evaluation</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="two-col">
+                    <div class="col">
+                        <h3>Online Evaluation</h3>
+                        <ul>
+                            <li>Happens in <strong>real-time</strong> as users interact</li>
+                            <li>Can trigger immediate alerts or interventions</li>
+                            <li>Must be fast and lightweight</li>
+                            <li>Example: safety filter blocking harmful content</li>
+                        </ul>
+                    </div>
+                    <div class="col dark">
+                        <h3>Offline Evaluation</h3>
+                        <ul>
+                            <li>Happens <strong>after the fact</strong> in batch processes</li>
+                            <li>Analyzes trends and detailed quality</li>
+                            <li>Can be more thorough and sophisticated</li>
+                            <li>Example: LLM judges assessing yesterday's conversations</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mini-callout" style="margin-top: 24px;">
+                    <p>Online gives immediate feedback but must be lightweight. Offline is thorough but only improves <span class="accent">future</span> interactions.</p>
+                </div>
+            </div>
+            <div class="slide-number">7 / 8</div>
+        </div>
+
+        <!-- Slide 6.8: Key Takeaways -->
+        <div class="slide" data-chapter="6">
+            <div class="chapter-marker">Chapter 6</div>
+            <div class="slide-header">
+                <h2>Key takeaways</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-number">01</div>
+                        <h4>Production is different</h4>
+                        <p>Real users bring unexpected behaviors that controlled testing can't predict.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-number">02</div>
+                        <h4>Evaluation becomes monitoring</h4>
+                        <p>From "does it work?" to "is it still working as conditions change?"</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-number">03</div>
+                        <h4>Four challenges to solve</h4>
+                        <p>Log filtering, metric selection, online vs offline, emerging issues.</p>
+                    </div>
+                </div>
+                <div class="callout">
+                    <p><span class="label">Up next →</span> Practical strategies for each of these four production challenges</p>
+                </div>
+            </div>
+            <div class="slide-number">8 / 8</div>
+        </div>
+
+        <!-- Transition: Chapter 6 → Chapter 7 -->
+        <div class="slide transition-slide" data-chapter="6">
+            <div class="transition-content">
+                <div class="from-label">You now understand</div>
+                <div class="from-chapter">The challenges of production deployment</div>
+                <div class="transition-arrow">↓</div>
+                <div class="to-label">Next up</div>
+                <div class="to-chapter">Production monitoring strategies</div>
+                <p class="transition-why">We know the challenges. Now let's build practical strategies for log filtering, metric selection, online vs offline evaluation, and discovering emerging issues.</p>
+            </div>
+        </div>
+
+        <!-- ======================= -->
+        <!-- CHAPTER 7: PRODUCTION MONITORING STRATEGIES -->
+        <!-- ======================= -->
+
+        <!-- Slide 7.1: Title -->
+        <div class="slide title-slide" data-chapter="7">
+            <div class="course-branding">
+                <div class="course-title">AI Evals for Everyone</div>
+                <div class="course-by">by LevelUp Academy</div>
+            </div>
+            <div class="chapter-label">Chapter Seven</div>
+            <h1>Production <span class="highlight">Monitoring</span> Strategies</h1>
+            <p class="subtitle">Practical solutions for the four core challenges</p>
+            <div class="slide-number">1 / 10</div>
+        </div>
+
+        <!-- Slide 7.2: Log Filtering -->
+        <div class="slide" data-chapter="7">
+            <div class="chapter-marker">Chapter 7</div>
+            <div class="slide-header">
+                <h2>Log filtering: finding signal in the noise</h2>
+            </div>
+            <div class="slide-content">
+                <div class="text-content">
+                    <p style="margin-bottom: 24px;">With thousands of events daily, you need systematic approaches:</p>
+                    <div class="hierarchy-list" style="gap: 12px;">
+                        <div class="hierarchy-item" style="padding: 16px 20px;">
+                            <div>
+                                <h4 style="margin-bottom: 2px;">Priority-Based Filtering</h4>
+                                <p style="font-size: 0.9rem;">Define what matters most for your business context</p>
+                            </div>
+                        </div>
+                        <div class="hierarchy-item" style="padding: 16px 20px;">
+                            <div>
+                                <h4 style="margin-bottom: 2px;">Signal-Based Sampling</h4>
+                                <p style="font-size: 0.9rem;">Look for implicit/explicit signals about interaction quality</p>
+                            </div>
+                        </div>
+                        <div class="hierarchy-item" style="padding: 16px 20px;">
+                            <div>
+                                <h4 style="margin-bottom: 2px;">Dynamic Filtering</h4>
+                                <p style="font-size: 0.9rem;">Adapt based on production changes and anomalies</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="images/log_filtering_visualization.png" alt="Log Filtering">
+                </div>
+            </div>
+            <div class="slide-number">2 / 10</div>
+        </div>
+
+        <!-- Slide 7.3: User Signals -->
+        <div class="slide" data-chapter="7">
+            <div class="chapter-marker">Chapter 7</div>
+            <div class="slide-header">
+                <h2>Signals that indicate problems</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="two-col">
+                    <div class="col">
+                        <h3>Conversation Patterns</h3>
+                        <ul>
+                            <li>Unusual length (much shorter or longer)</li>
+                            <li>Repetition (users rephrasing questions)</li>
+                            <li>Explicit escalation requests</li>
+                            <li>Confusion indicators</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h3>User Behavior Patterns</h3>
+                        <ul>
+                            <li>Extensive editing of generated content</li>
+                            <li>Retry behavior</li>
+                            <li>Frustration indicators</li>
+                            <li>Abandonment patterns</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="callout" style="margin-top: 24px;">
+                    <p>The critical decision: <strong>which signals are most indicative of problems</strong> in your specific context?</p>
+                </div>
+            </div>
+            <div class="slide-number">3 / 10</div>
+        </div>
+
+        <!-- Slide 7.4: Metric Selection Framework -->
+        <div class="slide" data-chapter="7">
+            <div class="chapter-marker">Chapter 7</div>
+            <div class="slide-header">
+                <h2>Metric selection: the value framework</h2>
+            </div>
+            <div class="slide-content">
+                <div class="text-content">
+                    <p style="margin-bottom: 24px;">Evaluate each metric across three dimensions:</p>
+                    <div class="cards-grid" style="grid-template-columns: 1fr;">
+                        <div class="card" style="padding: 20px;">
+                            <h4>Impact</h4>
+                            <p>How much does this metric help you improve? High = reveals actionable problems</p>
+                        </div>
+                        <div class="card" style="padding: 20px;">
+                            <h4>Reliability</h4>
+                            <p>How consistent and accurate? High = validated code checks, expert evaluation</p>
+                        </div>
+                        <div class="card" style="padding: 20px;">
+                            <h4>Cost</h4>
+                            <p>What does it cost at scale? Low = simple checks. High = LLM judges, human review</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="images/metric_value_dimensions.png" alt="Metric Value Dimensions">
+                </div>
+            </div>
+            <div class="slide-number">4 / 10</div>
+        </div>
+
+        <!-- Slide 7.5: Prioritization Matrix -->
+        <div class="slide" data-chapter="7">
+            <div class="chapter-marker">Chapter 7</div>
+            <div class="slide-header">
+                <h2>Metric prioritization matrix</h2>
+            </div>
+            <div class="slide-content">
+                <div class="text-content">
+                    <div class="definitions" style="gap: 16px;">
+                        <div class="def-box" style="background: #f0fdf4; border-color: #22c55e;">
+                            <h4 style="color: #166534;">High Impact + Low Cost = Must Have</h4>
+                            <p style="color: #166534;">Safety filters, structure validation, performance metrics</p>
+                        </div>
+                        <div class="def-box" style="background: #fef3c7; border-color: #f59e0b;">
+                            <h4 style="color: #92400e;">High Impact + High Cost = Strategic</h4>
+                            <p style="color: #92400e;">Calibrated LLM judges, expert review for critical interactions</p>
+                        </div>
+                        <div class="def-box">
+                            <h4>Low Impact + Low Cost = Nice to Have</h4>
+                            <p>Basic statistical trends, simple sentiment detection</p>
+                        </div>
+                        <div class="def-box" style="background: #fef2f2; border-color: #ef4444;">
+                            <h4 style="color: #991b1b;">Low Impact + High Cost = Avoid</h4>
+                            <p style="color: #991b1b;">Elaborate scoring that doesn't drive decisions</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="images/metric_prioritization_matrix.png" alt="Prioritization Matrix">
+                </div>
+            </div>
+            <div class="slide-number">5 / 10</div>
+        </div>
+
+        <!-- Slide 7.6: Guardrails vs Flywheel -->
+        <div class="slide" data-chapter="7">
+            <div class="chapter-marker">Chapter 7</div>
+            <div class="slide-header">
+                <h2>Guardrails vs improvement flywheel</h2>
+            </div>
+            <div class="slide-content">
+                <div class="text-content">
+                    <p style="margin-bottom: 24px; font-size: 1.2rem;">Key question: <span class="accent">What behaviors, if they go wrong, would be huge for your business?</span></p>
+                    <div class="two-col" style="gap: 24px;">
+                        <div class="col" style="background: #171717; border-color: #171717; padding: 24px;">
+                            <h3 style="color: #d97706; font-size: 1rem;">Online: Guardrails</h3>
+                            <p style="color: #a3a3a3; font-size: 0.95rem;">Real-time metrics for business-critical behaviors. Trigger immediate actions: handoffs, blocks, escalations.</p>
+                        </div>
+                        <div class="col" style="padding: 24px;">
+                            <h3 style="font-size: 1rem;">Offline: Improvement Flywheel</h3>
+                            <p style="color: #737373; font-size: 0.95rem;">Batch analysis for trends, quality assessment, and system improvements over time.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="images/guardrails_vs_flywheel_question.png" alt="Guardrails vs Flywheel">
+                </div>
+            </div>
+            <div class="slide-number">6 / 10</div>
+        </div>
+
+        <!-- Slide 7.7: Guardrail Examples -->
+        <div class="slide" data-chapter="7">
+            <div class="chapter-marker">Chapter 7</div>
+            <div class="slide-header">
+                <h2>Guardrails: when to use them</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="cards-grid" style="grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                    <div class="card" style="padding: 24px; border-top: 3px solid #ef4444;">
+                        <h4 style="font-size: 1rem;">Safety Violations</h4>
+                        <p style="font-size: 0.9rem;">Harmful content blocked before reaching users</p>
+                    </div>
+                    <div class="card" style="padding: 24px; border-top: 3px solid #ef4444;">
+                        <h4 style="font-size: 1rem;">Compliance Failures</h4>
+                        <p style="font-size: 0.9rem;">Required disclaimers in financial/medical advice</p>
+                    </div>
+                    <div class="card" style="padding: 24px; border-top: 3px solid #ef4444;">
+                        <h4 style="font-size: 1rem;">Uncertainty Detection</h4>
+                        <p style="font-size: 0.9rem;">Trigger immediate human handoff</p>
+                    </div>
+                </div>
+                <div class="callout" style="margin-top: 24px;">
+                    <p><strong>Guardrail characteristics:</strong> Must be fast and reliable · Trigger immediate actions · Focus on preventing catastrophic outcomes</p>
+                </div>
+            </div>
+            <div class="slide-number">7 / 10</div>
+        </div>
+
+        <!-- Slide 7.8: Emerging Issue Discovery -->
+        <div class="slide" data-chapter="7">
+            <div class="chapter-marker">Chapter 7</div>
+            <div class="slide-header">
+                <h2>Emerging issue discovery</h2>
+            </div>
+            <div class="slide-content">
+                <div class="text-content">
+                    <p style="margin-bottom: 24px;">When user signals indicate problems but <span class="accent">your metrics show nothing wrong</span>:</p>
+                    <div class="hierarchy-list" style="gap: 12px;">
+                        <div class="hierarchy-item" style="padding: 14px 20px;">
+                            <span class="hierarchy-num" style="width: 32px; height: 32px; font-size: 1rem;">1</span>
+                            <div>
+                                <p style="font-size: 0.95rem; margin: 0;">User signals indicate potential issues</p>
+                            </div>
+                        </div>
+                        <div class="hierarchy-item" style="padding: 14px 20px;">
+                            <span class="hierarchy-num" style="width: 32px; height: 32px; font-size: 1rem;">2</span>
+                            <div>
+                                <p style="font-size: 0.95rem; margin: 0;">Log filtering samples concerning interactions</p>
+                            </div>
+                        </div>
+                        <div class="hierarchy-item" style="padding: 14px 20px;">
+                            <span class="hierarchy-num" style="width: 32px; height: 32px; font-size: 1rem;">3</span>
+                            <div>
+                                <p style="font-size: 0.95rem; margin: 0;">Metrics may not capture the problem</p>
+                            </div>
+                        </div>
+                        <div class="hierarchy-item" style="padding: 14px 20px;">
+                            <span class="hierarchy-num" style="width: 32px; height: 32px; font-size: 1rem;">4</span>
+                            <div>
+                                <p style="font-size: 0.95rem; margin: 0;">Manual investigation reveals hidden issues</p>
+                            </div>
+                        </div>
+                        <div class="hierarchy-item accent" style="padding: 14px 20px;">
+                            <span class="hierarchy-num" style="width: 32px; height: 32px; font-size: 1rem;">5</span>
+                            <div>
+                                <p style="font-size: 0.95rem; margin: 0;">New metrics developed and framework updated</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="images/discovery_loop_cycle.png" alt="Discovery Loop">
+                </div>
+            </div>
+            <div class="slide-number">8 / 10</div>
+        </div>
+
+        <!-- Slide 7.9: Building Your Strategy -->
+        <div class="slide" data-chapter="7">
+            <div class="chapter-marker">Chapter 7</div>
+            <div class="slide-header">
+                <h2>Building your monitoring strategy</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="cards-grid" style="grid-template-columns: repeat(2, 1fr); gap: 24px;">
+                    <div class="card">
+                        <h4>Start Simple and Evolve</h4>
+                        <p>Basic filtering, essential metrics, simple checks. Add complexity as you learn.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Balance Cost and Value</h4>
+                        <p>Expensive evaluation that doesn't drive improvements should be reconsidered.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Plan for Scale</h4>
+                        <p>Approaches that work for thousands must adapt for hundreds of thousands.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Close the Feedback Loop</h4>
+                        <p>Insights must feed back into better evaluation and system refinements.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">9 / 10</div>
+        </div>
+
+        <!-- Slide 7.10: Key Takeaways -->
+        <div class="slide" data-chapter="7">
+            <div class="chapter-marker">Chapter 7</div>
+            <div class="slide-header">
+                <h2>Key takeaways</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-number">01</div>
+                        <h4>Smart filtering</h4>
+                        <p>Use signals and priorities to find what deserves attention.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-number">02</div>
+                        <h4>Guardrails + Flywheel</h4>
+                        <p>Real-time for critical issues. Batch analysis for improvement.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-number">03</div>
+                        <h4>Continuous discovery</h4>
+                        <p>User signals reveal problems before your metrics do.</p>
+                    </div>
+                </div>
+                <div class="callout">
+                    <p><span class="label">Up next →</span> The complete evaluation process from start to finish</p>
+                </div>
+            </div>
+            <div class="slide-number">10 / 10</div>
+        </div>
+
+        <!-- Transition: Chapter 7 → Chapter 8 -->
+        <div class="slide transition-slide" data-chapter="7">
+            <div class="transition-content">
+                <div class="from-label">You now understand</div>
+                <div class="from-chapter">Production monitoring strategies</div>
+                <div class="transition-arrow">↓</div>
+                <div class="to-label">Next up</div>
+                <div class="to-chapter">The complete evaluation process</div>
+                <p class="transition-why">We've covered each piece of the puzzle. Now let's put it all together into a complete end-to-end evaluation process you can follow.</p>
+            </div>
+        </div>
+
+        <!-- ======================= -->
+        <!-- CHAPTER 8: THE COMPLETE EVALUATION PROCESS -->
+        <!-- ======================= -->
+
+        <!-- Slide 8.1: Title -->
+        <div class="slide title-slide" data-chapter="8">
+            <div class="course-branding">
+                <div class="course-title">AI Evals for Everyone</div>
+                <div class="course-by">by LevelUp Academy</div>
+            </div>
+            <div class="chapter-label">Chapter Eight</div>
+            <h1>The Complete <span class="highlight">Evaluation</span> Process</h1>
+            <p class="subtitle">Your step-by-step guide from concept to production</p>
+            <div class="slide-number">1 / 8</div>
+        </div>
+
+        <!-- Slide 8.2: Two-Phase Approach -->
+        <div class="slide" data-chapter="8">
+            <div class="chapter-marker">Chapter 8</div>
+            <div class="slide-header">
+                <h2>The two-phase approach</h2>
+            </div>
+            <div class="slide-content">
+                <div class="text-content">
+                    <div class="two-col" style="gap: 24px;">
+                        <div class="col" style="padding: 32px;">
+                            <h3>Phase 1: Pre-Deployment</h3>
+                            <p style="color: #737373; margin-bottom: 16px;">Build confidence before users interact</p>
+                            <ul style="font-size: 0.95rem;">
+                                <li style="border: none; padding: 4px 0;">Understand evaluation context</li>
+                                <li style="border: none; padding: 4px 0;">Build reference dataset</li>
+                                <li style="border: none; padding: 4px 0;">Implement metrics</li>
+                            </ul>
+                        </div>
+                        <div class="col dark" style="padding: 32px;">
+                            <h3>Phase 2: Production</h3>
+                            <p style="color: #a3a3a3; margin-bottom: 16px;">Monitor at scale with real users</p>
+                            <ul style="font-size: 0.95rem;">
+                                <li style="border: none; padding: 4px 0;">Deploy smart log filtering</li>
+                                <li style="border: none; padding: 4px 0;">Select production metrics</li>
+                                <li style="border: none; padding: 4px 0;">Implement guardrails + flywheel</li>
+                                <li style="border: none; padding: 4px 0;">Build emerging issue discovery</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="images/two_phase_evaluation_process.png" alt="Two Phase Process">
+                </div>
+            </div>
+            <div class="slide-number">2 / 8</div>
+        </div>
+
+        <!-- Slide 8.3: 7-Step Process -->
+        <div class="slide" data-chapter="8">
+            <div class="chapter-marker">Chapter 8</div>
+            <div class="slide-header">
+                <h2>The 7-step evaluation process</h2>
+            </div>
+            <div class="slide-content">
+                <div class="image-content" style="flex: 1;">
+                    <img src="images/evaluation_process_seven_steps.png" alt="Seven Steps" style="max-height: 520px;">
+                </div>
+            </div>
+            <div class="slide-number">3 / 8</div>
+        </div>
+
+        <!-- Slide 8.4: Phase 1 Steps -->
+        <div class="slide" data-chapter="8">
+            <div class="chapter-marker">Chapter 8</div>
+            <div class="slide-header">
+                <h2>Phase 1: Pre-deployment validation</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="cards-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="card">
+                        <div class="card-number">1</div>
+                        <h4>Understand Context</h4>
+                        <p style="font-size: 0.9rem;">Map your use case, identify stakeholders, recognize you're building for YOUR context</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-number">2</div>
+                        <h4>Build Reference Dataset</h4>
+                        <p style="font-size: 0.9rem;">10-20 examples of scenarios you cannot get wrong with clear expectations</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-number">3</div>
+                        <h4>Implement Metrics</h4>
+                        <p style="font-size: 0.9rem;">Code-based for objective properties, LLM judges for subjective (with calibration)</p>
+                    </div>
+                </div>
+                <div class="mini-callout" style="margin-top: 24px;">
+                    <p><span class="accent">Output:</span> Confidence that your system works as intended before real users interact</p>
+                </div>
+            </div>
+            <div class="slide-number">4 / 8</div>
+        </div>
+
+        <!-- Slide 8.5: Phase 2 Steps -->
+        <div class="slide" data-chapter="8">
+            <div class="chapter-marker">Chapter 8</div>
+            <div class="slide-header">
+                <h2>Phase 2: Production monitoring</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="cards-grid" style="grid-template-columns: repeat(4, 1fr); gap: 16px;">
+                    <div class="card" style="padding: 20px;">
+                        <div class="card-number">4</div>
+                        <h4 style="font-size: 1rem;">Log Filtering</h4>
+                        <p style="font-size: 0.85rem;">Priority + signal-based sampling</p>
+                    </div>
+                    <div class="card" style="padding: 20px;">
+                        <div class="card-number">5</div>
+                        <h4 style="font-size: 1rem;">Metric Selection</h4>
+                        <p style="font-size: 0.85rem;">Impact, reliability, cost analysis</p>
+                    </div>
+                    <div class="card" style="padding: 20px;">
+                        <div class="card-number">6</div>
+                        <h4 style="font-size: 1rem;">Guardrails + Flywheel</h4>
+                        <p style="font-size: 0.85rem;">Real-time critical + batch improvement</p>
+                    </div>
+                    <div class="card" style="padding: 20px;">
+                        <div class="card-number">7</div>
+                        <h4 style="font-size: 1rem;">Issue Discovery</h4>
+                        <p style="font-size: 0.85rem;">Evolve framework as you learn</p>
+                    </div>
+                </div>
+                <div class="callout" style="margin-top: 24px;">
+                    <p><span class="accent">Output:</span> Smart filtering + cost-effective metrics + proactive detection + continuous improvement</p>
+                </div>
+            </div>
+            <div class="slide-number">5 / 8</div>
+        </div>
+
+        <!-- Slide 8.6: Key Principles -->
+        <div class="slide" data-chapter="8">
+            <div class="chapter-marker">Chapter 8</div>
+            <div class="slide-header">
+                <h2>Key principles throughout</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="definitions" style="gap: 16px;">
+                    <div class="def-box">
+                        <h4>Start Simple</h4>
+                        <p>Begin with basic approaches that provide clear value. Add complexity only when justified.</p>
+                    </div>
+                    <div class="def-box">
+                        <h4>Focus on Context</h4>
+                        <p>Generic evaluation doesn't work. Everything must be tailored to your use case, users, and business.</p>
+                    </div>
+                    <div class="def-box">
+                        <h4>Embrace Evolution</h4>
+                        <p>Your framework should continuously improve as you discover new failure modes.</p>
+                    </div>
+                    <div class="def-box highlight">
+                        <h4>Connect to Improvement</h4>
+                        <p>The goal is better AI systems, not perfect measurement. Focus on actionable insights.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">6 / 8</div>
+        </div>
+
+        <!-- Slide 8.7: What You End Up With -->
+        <div class="slide" data-chapter="8">
+            <div class="chapter-marker">Chapter 8</div>
+            <div class="slide-header">
+                <h2>What you end up with</h2>
+            </div>
+            <div class="slide-content">
+                <div class="text-content">
+                    <div class="hierarchy-list" style="gap: 12px;">
+                        <div class="hierarchy-item" style="padding: 16px 20px;">
+                            <div>
+                                <h4 style="margin-bottom: 2px;">Confidence before deployment</h4>
+                                <p style="font-size: 0.9rem;">Systematic validation that your system works as intended</p>
+                            </div>
+                        </div>
+                        <div class="hierarchy-item" style="padding: 16px 20px;">
+                            <div>
+                                <h4 style="margin-bottom: 2px;">Effective production monitoring</h4>
+                                <p style="font-size: 0.9rem;">Smart filtering and evaluation that scales with your system</p>
+                            </div>
+                        </div>
+                        <div class="hierarchy-item" style="padding: 16px 20px;">
+                            <div>
+                                <h4 style="margin-bottom: 2px;">Proactive issue detection</h4>
+                                <p style="font-size: 0.9rem;">Early warning systems that catch problems before they grow</p>
+                            </div>
+                        </div>
+                        <div class="hierarchy-item accent" style="padding: 16px 20px;">
+                            <div>
+                                <h4 style="margin-bottom: 2px;">Continuous improvement</h4>
+                                <p style="font-size: 0.9rem;">Feedback loops that help your system get better over time</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="images/evaluation_lifecycle.png" alt="Evaluation Lifecycle">
+                </div>
+            </div>
+            <div class="slide-number">7 / 8</div>
+        </div>
+
+        <!-- Slide 8.8: Key Takeaways -->
+        <div class="slide" data-chapter="8">
+            <div class="chapter-marker">Chapter 8</div>
+            <div class="slide-header">
+                <h2>Key takeaways</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-number">01</div>
+                        <h4>Two-phase approach</h4>
+                        <p>Pre-deployment validation builds confidence. Production monitoring maintains quality.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-number">02</div>
+                        <h4>Seven clear steps</h4>
+                        <p>A roadmap connecting all concepts into actionable implementation.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-number">03</div>
+                        <h4>Never complete</h4>
+                        <p>Build for patterns you anticipate, discover patterns you couldn't predict.</p>
+                    </div>
+                </div>
+                <div class="callout">
+                    <p><span class="label">Up next →</span> Common misconceptions that trip up teams building AI systems</p>
+                </div>
+            </div>
+            <div class="slide-number">8 / 8</div>
+        </div>
+
+        <!-- Transition: Chapter 8 → Chapter 9 -->
+        <div class="slide transition-slide" data-chapter="8">
+            <div class="transition-content">
+                <div class="from-label">You now understand</div>
+                <div class="from-chapter">The complete evaluation process</div>
+                <div class="transition-arrow">↓</div>
+                <div class="to-label">Next up</div>
+                <div class="to-chapter">Common misconceptions</div>
+                <p class="transition-why">You have the complete framework. Before you go build, let's address the most common misconceptions that trip teams up when implementing AI evaluation.</p>
+            </div>
+        </div>
+
+        <!-- ======================= -->
+        <!-- CHAPTER 9: COMMON MISCONCEPTIONS -->
+        <!-- ======================= -->
+
+        <!-- Slide 9.1: Title -->
+        <div class="slide title-slide" data-chapter="9">
+            <div class="course-branding">
+                <div class="course-title">AI Evals for Everyone</div>
+                <div class="course-by">by LevelUp Academy</div>
+            </div>
+            <div class="chapter-label">Chapter Nine</div>
+            <h1>Common <span class="highlight">Misconceptions</span></h1>
+            <p class="subtitle">Clearing up the confusion about AI evaluation</p>
+            <div class="slide-number">1 / 8</div>
+        </div>
+
+        <!-- Slide 9.2: Foundation Misconceptions -->
+        <div class="slide" data-chapter="9">
+            <div class="chapter-marker">Chapter 9</div>
+            <div class="slide-header">
+                <h2>Foundation misconceptions</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="hierarchy-list" style="gap: 16px;">
+                    <div class="hierarchy-item" style="padding: 20px; border-left: 3px solid #ef4444;">
+                        <div>
+                            <h4 style="margin-bottom: 4px; color: #ef4444;">"Benchmarks predict my product success"</h4>
+                            <p style="font-size: 0.95rem;">Model evaluations test general capabilities. Your product has unique requirements, constraints, and users.</p>
+                        </div>
+                    </div>
+                    <div class="hierarchy-item" style="padding: 20px; border-left: 3px solid #ef4444;">
+                        <div>
+                            <h4 style="margin-bottom: 4px; color: #ef4444;">"Engineers can design evaluation alone"</h4>
+                            <p style="font-size: 0.95rem;">Effective evaluation requires collaboration: domain experts, product teams, AND engineers.</p>
+                        </div>
+                    </div>
+                    <div class="hierarchy-item" style="padding: 20px; border-left: 3px solid #ef4444;">
+                        <div>
+                            <h4 style="margin-bottom: 4px; color: #ef4444;">"Evaluation is a one-time setup"</h4>
+                            <p style="font-size: 0.95rem;">AI systems are non-deterministic, user behavior evolves, requirements change. Evaluation is continuous.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">2 / 8</div>
+        </div>
+
+        <!-- Slide 9.3: Pre-Deployment Misconceptions -->
+        <div class="slide" data-chapter="9">
+            <div class="chapter-marker">Chapter 9</div>
+            <div class="slide-header">
+                <h2>Pre-deployment misconceptions</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="two-col">
+                    <div class="col" style="border-left: 3px solid #ef4444;">
+                        <h3 style="color: #ef4444;">"I need comprehensive coverage from day one"</h3>
+                        <p style="color: #737373;">Start small with 10-20 high-quality examples. Focus on quality over quantity.</p>
+                    </div>
+                    <div class="col" style="border-left: 3px solid #ef4444;">
+                        <h3 style="color: #ef4444;">"Code metrics aren't sophisticated enough"</h3>
+                        <p style="color: #737373;">Simple code checks are fast, reliable, cheap. Use them first before adding complexity.</p>
+                    </div>
+                </div>
+                <div class="two-col" style="margin-top: 24px;">
+                    <div class="col" style="border-left: 3px solid #ef4444;">
+                        <h3 style="color: #ef4444;">"LLM judges are the best way"</h3>
+                        <p style="color: #737373;">They're powerful but expensive, slow, and can be inconsistent without calibration.</p>
+                    </div>
+                    <div class="col" style="border-left: 3px solid #ef4444;">
+                        <h3 style="color: #ef4444;">"Detailed criteria = correct LLM judges"</h3>
+                        <p style="color: #737373;">Calibration requires hundreds of examples and weeks of iteration, not just good prompts.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">3 / 8</div>
+        </div>
+
+        <!-- Slide 9.4: Production Misconceptions -->
+        <div class="slide" data-chapter="9">
+            <div class="chapter-marker">Chapter 9</div>
+            <div class="slide-header">
+                <h2>Production misconceptions</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="cards-grid" style="grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                    <div class="card" style="border-top: 3px solid #ef4444;">
+                        <h4>"Evaluate every interaction"</h4>
+                        <p style="font-size: 0.95rem;">Impossible at scale. Smart signal-based sampling is more effective.</p>
+                    </div>
+                    <div class="card" style="border-top: 3px solid #ef4444;">
+                        <h4>"Need dozens of metrics"</h4>
+                        <p style="font-size: 0.95rem;">More metrics = more noise. Better to have 3-5 that drive decisions.</p>
+                    </div>
+                    <div class="card" style="border-top: 3px solid #ef4444;">
+                        <h4>"Online is always better"</h4>
+                        <p style="font-size: 0.95rem;">Online must be fast. Complex analysis belongs in offline batch processing.</p>
+                    </div>
+                    <div class="card" style="border-top: 3px solid #ef4444;">
+                        <h4>"Metrics are fixed once set"</h4>
+                        <p style="font-size: 0.95rem;">Metrics retire and update as you learn. User behavior evolves.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">4 / 8</div>
+        </div>
+
+        <!-- Slide 9.5: Evals vs A/B Testing -->
+        <div class="slide" data-chapter="9">
+            <div class="chapter-marker">Chapter 9</div>
+            <div class="slide-header">
+                <h2>Misconception: evals vs A/B testing</h2>
+            </div>
+            <div class="slide-content">
+                <div class="text-content">
+                    <p style="margin-bottom: 24px; color: #ef4444; font-weight: 600;">"I need to pick one approach"</p>
+                    <p style="margin-bottom: 24px;">This is a <span class="accent">false dichotomy</span>. They serve different purposes and work better together.</p>
+                    <div class="two-col" style="gap: 24px;">
+                        <div class="col" style="padding: 24px;">
+                            <h3 style="font-size: 1rem;">Evaluation Metrics</h3>
+                            <p style="color: #737373; font-size: 0.95rem;">Monitor known patterns and behaviors you understand</p>
+                        </div>
+                        <div class="col dark" style="padding: 24px;">
+                            <h3 style="font-size: 1rem;">A/B Testing</h3>
+                            <p style="color: #a3a3a3; font-size: 0.95rem;">Discover new patterns through explicit and implicit user signals</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="image-content">
+                    <img src="images/misconceptions_evaluation_vs_ab_testing.png" alt="Evals vs A/B Testing">
+                </div>
+            </div>
+            <div class="slide-number">5 / 8</div>
+        </div>
+
+        <!-- Slide 9.6: Why Misconceptions Persist -->
+        <div class="slide" data-chapter="9">
+            <div class="chapter-marker">Chapter 9</div>
+            <div class="slide-header">
+                <h2>Why these misconceptions persist</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="cards-grid" style="grid-template-columns: repeat(2, 1fr); gap: 24px;">
+                    <div class="card">
+                        <h4>AI evaluation is new</h4>
+                        <p>Unlike traditional software testing, systematic AI evaluation is still emerging</p>
+                    </div>
+                    <div class="card">
+                        <h4>Complexity creates uncertainty</h4>
+                        <p>Complex systems make simple approaches seem inadequate (even when they're not)</p>
+                    </div>
+                    <div class="card">
+                        <h4>Tool marketing influences thinking</h4>
+                        <p>Vendors promote sophisticated solutions that may be overkill</p>
+                    </div>
+                    <div class="card">
+                        <h4>Success stories lack context</h4>
+                        <p>Case studies don't include the failures and iterations that led to success</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">6 / 8</div>
+        </div>
+
+        <!-- Slide 9.7: The Right Mindset -->
+        <div class="slide" data-chapter="9">
+            <div class="chapter-marker">Chapter 9</div>
+            <div class="slide-header">
+                <h2>The right mindset</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="definitions" style="gap: 16px;">
+                    <div class="def-box" style="background: #f0fdf4; border-color: #22c55e;">
+                        <h4 style="color: #166534;">Start simple and evolve</h4>
+                        <p style="color: #166534;">Begin with basic approaches that provide clear value</p>
+                    </div>
+                    <div class="def-box" style="background: #f0fdf4; border-color: #22c55e;">
+                        <h4 style="color: #166534;">Focus on YOUR context</h4>
+                        <p style="color: #166534;">Generic solutions rarely work. Tailor to your use case.</p>
+                    </div>
+                    <div class="def-box" style="background: #f0fdf4; border-color: #22c55e;">
+                        <h4 style="color: #166534;">Embrace collaboration</h4>
+                        <p style="color: #166534;">Combine technical, domain, and business perspectives</p>
+                    </div>
+                    <div class="def-box" style="background: #f0fdf4; border-color: #22c55e;">
+                        <h4 style="color: #166534;">Prioritize actionable insights</h4>
+                        <p style="color: #166534;">Measure things that drive real improvements</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">7 / 8</div>
+        </div>
+
+        <!-- Slide 9.8: Key Takeaways -->
+        <div class="slide" data-chapter="9">
+            <div class="chapter-marker">Chapter 9</div>
+            <div class="slide-header">
+                <h2>Key takeaways</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="cards-grid">
+                    <div class="card">
+                        <div class="card-number">01</div>
+                        <h4>Benchmarks ≠ Product success</h4>
+                        <p>Model capabilities don't predict performance in your specific context.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-number">02</div>
+                        <h4>Simple often wins</h4>
+                        <p>Code-based metrics before LLM judges. Small datasets before comprehensive.</p>
+                    </div>
+                    <div class="card">
+                        <div class="card-number">03</div>
+                        <h4>Evolution is expected</h4>
+                        <p>Metrics retire and update. Your framework should continuously improve.</p>
+                    </div>
+                </div>
+                <div class="callout">
+                    <p><span class="label">Up next →</span> Glossary of terms to help you navigate evaluation vocabulary</p>
+                </div>
+            </div>
+            <div class="slide-number">8 / 8</div>
+        </div>
+
+        <!-- Transition: Chapter 9 → Chapter 10 -->
+        <div class="slide transition-slide" data-chapter="9">
+            <div class="transition-content">
+                <div class="from-label">You now understand</div>
+                <div class="from-chapter">What not to do</div>
+                <div class="transition-arrow">↓</div>
+                <div class="to-label">Finally</div>
+                <div class="to-chapter">Reference glossary</div>
+                <p class="transition-why">A quick reference guide to all the key terms and concepts we've covered, so you can speak the same language as your team.</p>
+            </div>
+        </div>
+
+        <!-- ======================= -->
+        <!-- CHAPTER 10: GLOSSARY OF TERMS -->
+        <!-- ======================= -->
+
+        <!-- Slide 10.1: Title -->
+        <div class="slide title-slide" data-chapter="10">
+            <div class="course-branding">
+                <div class="course-title">AI Evals for Everyone</div>
+                <div class="course-by">by LevelUp Academy</div>
+            </div>
+            <div class="chapter-label">Chapter Ten</div>
+            <h1>Glossary of <span class="highlight">Terms</span></h1>
+            <p class="subtitle">Making sense of the evaluation vocabulary</p>
+            <div class="slide-number">1 / 7</div>
+        </div>
+
+        <!-- Slide 10.2: Core Evaluation Terms -->
+        <div class="slide" data-chapter="10">
+            <div class="chapter-marker">Chapter 10</div>
+            <div class="slide-header">
+                <h2>Core evaluation terms</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="definitions" style="gap: 16px;">
+                    <div class="def-box">
+                        <h4>Evaluation</h4>
+                        <p>The overall process of assessing how an AI system behaves. Includes designing metrics, running tests, analyzing results.</p>
+                    </div>
+                    <div class="def-box">
+                        <h4>Evaluation Metrics</h4>
+                        <p>Specific dimensions along which behavior is judged. Examples: escalation accuracy, response time, compliance.</p>
+                    </div>
+                    <div class="def-box">
+                        <h4>Rubric</h4>
+                        <p>Explicit criteria defining acceptable vs. unacceptable performance. Makes subjective evaluation consistent.</p>
+                    </div>
+                    <div class="def-box">
+                        <h4>Benchmark</h4>
+                        <p>Standardized test measuring model capabilities (MMLU, HumanEval). Useful for comparison, not product prediction.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">2 / 7</div>
+        </div>
+
+        <!-- Slide 10.3: Framework Concepts -->
+        <div class="slide" data-chapter="10">
+            <div class="chapter-marker">Chapter 10</div>
+            <div class="slide-header">
+                <h2>Framework concepts</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="two-col">
+                    <div class="col">
+                        <h3>Input-Expected-Actual</h3>
+                        <ul style="font-size: 0.95rem;">
+                            <li style="border: none; padding: 6px 0;"><strong>Input:</strong> Everything going into your system</li>
+                            <li style="border: none; padding: 6px 0;"><strong>Expected:</strong> What should happen given requirements</li>
+                            <li style="border: none; padding: 6px 0;"><strong>Actual:</strong> What your system really does</li>
+                        </ul>
+                    </div>
+                    <div class="col dark">
+                        <h3>Guardrails vs Flywheel</h3>
+                        <ul style="font-size: 0.95rem;">
+                            <li style="border: none; padding: 6px 0;"><strong>Guardrails:</strong> Online metrics for immediate intervention</li>
+                            <li style="border: none; padding: 6px 0;"><strong>Flywheel:</strong> Offline analysis for long-term improvement</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="def-box highlight" style="margin-top: 24px;">
+                    <h4>Reference Dataset</h4>
+                    <p>Carefully chosen collection of realistic examples representing scenarios you care most about. Foundation for systematic evaluation.</p>
+                </div>
+            </div>
+            <div class="slide-number">3 / 7</div>
+        </div>
+
+        <!-- Slide 10.4: Measurement Approaches -->
+        <div class="slide" data-chapter="10">
+            <div class="chapter-marker">Chapter 10</div>
+            <div class="slide-header">
+                <h2>Measurement approaches</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="cards-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="card">
+                        <h4>Human Evaluation</h4>
+                        <p style="font-size: 0.9rem;">People assess behavior based on expertise. Gold standard but doesn't scale.</p>
+                    </div>
+                    <div class="card">
+                        <h4>Code-Based Metrics</h4>
+                        <p style="font-size: 0.9rem;">Deterministic checks for patterns/properties. Fast, reliable, cheap.</p>
+                    </div>
+                    <div class="card">
+                        <h4>LLM Judges</h4>
+                        <p style="font-size: 0.9rem;">One model evaluating another. Powerful for subjective qualities but requires calibration.</p>
+                    </div>
+                </div>
+                <div class="two-col" style="margin-top: 24px; gap: 24px;">
+                    <div class="col" style="padding: 20px;">
+                        <h3 style="font-size: 0.9rem;">Online Evaluation</h3>
+                        <p style="color: #737373; font-size: 0.9rem;">Real-time as interactions happen. Must be fast.</p>
+                    </div>
+                    <div class="col" style="padding: 20px;">
+                        <h3 style="font-size: 0.9rem;">Offline Evaluation</h3>
+                        <p style="color: #737373; font-size: 0.9rem;">Batch analysis after the fact. Can be thorough.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">4 / 7</div>
+        </div>
+
+        <!-- Slide 10.5: Production Terms -->
+        <div class="slide" data-chapter="10">
+            <div class="chapter-marker">Chapter 10</div>
+            <div class="slide-header">
+                <h2>Production terms</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="definitions" style="gap: 16px;">
+                    <div class="def-box">
+                        <h4>Log Filtering</h4>
+                        <p>Systematic approaches to identify which production data deserves attention. Priority-based + signal-based sampling.</p>
+                    </div>
+                    <div class="def-box">
+                        <h4>Implicit Signals</h4>
+                        <p>Indirect indicators from user behavior: conversation length anomalies, retry behavior, editing patterns, abandonment.</p>
+                    </div>
+                    <div class="def-box">
+                        <h4>Signal-Metric Divergence</h4>
+                        <p>When user signals indicate problems but metrics show no issues. Reveals hidden quality dimensions.</p>
+                    </div>
+                    <div class="def-box">
+                        <h4>Discovery Loop</h4>
+                        <p>Continuous cycle: signals → filtering → investigation → new metrics → updated framework.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">5 / 7</div>
+        </div>
+
+        <!-- Slide 10.6: Anti-Patterns -->
+        <div class="slide" data-chapter="10">
+            <div class="chapter-marker">Chapter 10</div>
+            <div class="slide-header">
+                <h2>Common anti-patterns (what NOT to do)</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="cards-grid" style="grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                    <div class="card" style="border-left: 3px solid #ef4444;">
+                        <h4>Evaluation Drift</h4>
+                        <p style="font-size: 0.95rem;">Metrics disconnected from actual user needs. Measuring what's easy, not what matters.</p>
+                    </div>
+                    <div class="card" style="border-left: 3px solid #ef4444;">
+                        <h4>Metric Overload</h4>
+                        <p style="font-size: 0.95rem;">Too many metrics making it impossible to focus on what drives improvements.</p>
+                    </div>
+                    <div class="card" style="border-left: 3px solid #ef4444;">
+                        <h4>Calibration Neglect</h4>
+                        <p style="font-size: 0.95rem;">Deploying LLM judges without validation against human judgment.</p>
+                    </div>
+                    <div class="card" style="border-left: 3px solid #ef4444;">
+                        <h4>Coverage Obsession</h4>
+                        <p style="font-size: 0.95rem;">Trying to evaluate everything comprehensively instead of focusing on high-impact.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-number">6 / 7</div>
+        </div>
+
+        <!-- Slide 10.7: Key Principles -->
+        <div class="slide" data-chapter="10">
+            <div class="chapter-marker">Chapter 10</div>
+            <div class="slide-header">
+                <h2>Key principles to remember</h2>
+            </div>
+            <div class="slide-content stacked">
+                <div class="cards-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    <div class="card" style="background: #171717; border-color: #171717;">
+                        <h4 style="color: #d97706;">Context is King</h4>
+                        <p style="color: #a3a3a3;">Everything must be tailored to your specific use case, users, and business.</p>
+                    </div>
+                    <div class="card" style="background: #171717; border-color: #171717;">
+                        <h4 style="color: #d97706;">Start Simple, Evolve</h4>
+                        <p style="color: #a3a3a3;">Begin with basic approaches. Add complexity only when justified by value.</p>
+                    </div>
+                    <div class="card" style="background: #171717; border-color: #171717;">
+                        <h4 style="color: #d97706;">Action Over Measurement</h4>
+                        <p style="color: #a3a3a3;">The goal is better AI systems, not perfect measurement.</p>
+                    </div>
+                </div>
+                <div class="callout" style="margin-top: 32px;">
+                    <p><span class="label">Remember:</span> The vocabulary matters less than the underlying concepts. Focus on building evaluation that helps you create <strong>better AI systems for your users</strong>.</p>
+                </div>
+            </div>
+            <div class="slide-number">7 / 7</div>
+        </div>
+
+    </div>
+
+    <div class="nav-controls">
+        <button class="nav-btn" id="prevBtn" onclick="prevSlide()">← Previous</button>
+        <button class="nav-btn" id="nextBtn" onclick="nextSlide()">Next →</button>
+    </div>
+
+    <div class="copyright">© 2026 LevelUp Academy. All rights reserved. Do not distribute without permission.</div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.remove('active');
+                if (i === index) {
+                    slide.classList.add('active');
+                }
+            });
+
+            const progress = ((index + 1) / totalSlides) * 100;
+            document.getElementById('progress').style.width = progress + '%';
+
+            document.getElementById('prevBtn').disabled = index === 0;
+            document.getElementById('nextBtn').disabled = index === totalSlides - 1;
+
+            // Update chapter dropdown to reflect current chapter
+            const currentChapter = slides[index].dataset.chapter;
+            document.getElementById('chapterSelect').value = currentChapter;
+        }
+
+        function nextSlide() {
+            if (currentSlide < totalSlides - 1) {
+                currentSlide++;
+                showSlide(currentSlide);
+            }
+        }
+
+        function prevSlide() {
+            if (currentSlide > 0) {
+                currentSlide--;
+                showSlide(currentSlide);
+            }
+        }
+
+        function goToChapter(chapter) {
+            for (let i = 0; i < slides.length; i++) {
+                if (slides[i].dataset.chapter === chapter) {
+                    currentSlide = i;
+                    showSlide(currentSlide);
+                    break;
+                }
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' || e.key === ' ') {
+                e.preventDefault();
+                nextSlide();
+            } else if (e.key === 'ArrowLeft') {
+                prevSlide();
+            }
+        });
+
+        showSlide(0);
+    </script>
+</body>
+</html>
