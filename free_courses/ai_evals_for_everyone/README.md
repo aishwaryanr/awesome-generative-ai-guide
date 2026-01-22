@@ -4,6 +4,16 @@
 
 Welcome to **AI Evals for Everyone**, a beginner-friendly 101 course that clears up all the confusion around AI evaluation. No matter your background, this course will equip you with practical knowledge to build evaluations that actually work.
 
+## 🎬 NEW: Watch on YouTube!
+
+**The complete course is now available as a video series!**
+
+[![Watch on YouTube](https://img.shields.io/badge/YouTube-Watch%20Now-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/playlist?list=PLZoalK-hTD4VPIkRXNdSEwcTCt2QUgEPR)
+
+**Bonus Content**: The YouTube series includes **3 additional hands-on chapters** on **Building Evals with Arize AI** - practical tutorials to implement everything you've learned!
+
+[**Watch the Full Playlist →**](https://www.youtube.com/playlist?list=PLZoalK-hTD4VPIkRXNdSEwcTCt2QUgEPR)
+
 ## 🎓 Get Certified!
 
 **Follow these simple steps to earn your AI Evals certification:**
@@ -63,6 +73,9 @@ Start from zero and learn step-by-step how to build AI evaluation systems. This 
 
 
 ## 🔗 Additional Resources
+
+### 🎬 YouTube Video Series
+**[Watch the Complete Video Course](https://www.youtube.com/playlist?list=PLZoalK-hTD4VPIkRXNdSEwcTCt2QUgEPR)** - All chapters available as videos, plus 3 bonus hands-on chapters on building evals with Arize AI!
 
 ### 📅 Attend Our Live Session
 **[Join our upcoming free session on State of Applied AI in 2025](https://maven.com/p/ad857c/state-of-applied-ai-in-2025-report)** on January 5th! Get insights into the latest trends, challenges, and opportunities in production AI systems.
