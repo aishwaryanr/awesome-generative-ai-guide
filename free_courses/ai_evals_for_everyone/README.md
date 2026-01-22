@@ -18,7 +18,7 @@ Welcome to **AI Evals for Everyone**, a beginner-friendly 101 course that clears
 
 **Follow these simple steps to earn your AI Evals certification:**
 
-1. **📚 Read all 10 chapters** - Complete the course content at your own pace
+1. **📚 Read all 10 chapters or watch the videos on YouTube** - Complete the course content at your own pace
 2. **📝 Take the final assessment** - Test your knowledge with our [certification quiz](https://ai-evals-course-website-2025.vercel.app/quiz-google.html)
 3. **🏆 Get your certificate** - Receive a personalized certificate upon completion
 
