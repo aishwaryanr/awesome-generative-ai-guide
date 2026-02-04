@@ -44,6 +44,25 @@ Developers can also access extensive guides, tutorials, and community support th
 
 ---
 
+## PraisonAI
+
+**PraisonAI** is a production-ready Multi-AI Agents framework with self-reflection capabilities. It offers the fastest agent instantiation (3.77μs benchmarked), supports 100+ LLMs via LiteLLM (OpenAI, Anthropic, Gemini, Ollama, Groq, etc.), and includes MCP Protocol integration for seamless tool use.  
+[Explore PraisonAI](https://github.com/MervinPraison/PraisonAI)
+
+The framework provides agentic workflows with route(), parallel(), loop(), and repeat() patterns, built-in memory (short-term, long-term, entity, episodic), and self-reflection for improved agent responses. It offers both Python and JavaScript SDKs for maximum flexibility.  
+[Read the Documentation](https://docs.praison.ai)
+
+**Getting Started with PraisonAI:**  
+```python
+from praisonaiagents import Agent
+agent = Agent(instructions="You are a helpful assistant")
+agent.start("Write a haiku about AI")
+```
+- [Official Documentation](https://docs.praison.ai)  
+- [GitHub Repository](https://github.com/MervinPraison/PraisonAI)
+
+---
+
 # Low-Code/No-Code AI Tools  
 *Tools that make AI more accessible to non-technical users through simplified interfaces.*
 
