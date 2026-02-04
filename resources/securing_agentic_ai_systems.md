@@ -10,17 +10,16 @@
 
 ## Table of Contents
 
-1. [Understanding Agentic AI Security](section_1_understanding_agentic_ai_security.md)
-2. [Attack Vectors in Agentic Systems](section_2_attack_vectors.md)
-3. [Defense Architecture: The Three-Pillar Approach](section_3_defense_architecture.md)
-4. [Detection, Prevention, and Mitigation Strategies](section_4_detection_prevention_mitigation.md)
-5. [Security Frameworks for Agentic AI](section_5_security_frameworks.md)
-6. [Implementation Guide](section_6_implementation_guide.md)
-7. [Addressing Specific Vulnerabilities](section_7_addressing_specific_vulnerabilities.md)
-8. [What to Watch For in Your Systems](section_8_what_to_watch_for.md)
-9. [Building Security by Design](section_9_building_security_by_design.md)
+1. [Understanding Agentic AI Security](#section-1-understanding-agentic-ai-security)
+2. [Attack Vectors in Agentic Systems](#section-2-attack-vectors-in-agentic-systems)
+3. [Defense Architecture: The Three-Pillar Approach](#section-3-defense-architecture---the-three-pillar-approach)
+4. [Detection, Prevention, and Mitigation Strategies](#section-4-detection-prevention-and-mitigation-strategies)
+5. [Security Frameworks for Agentic AI](#section-5-security-frameworks-for-agentic-ai)
+6. [Implementation Guide](#section-6-implementation-guide)
+7. [Addressing Specific Vulnerabilities](#section-7-addressing-specific-vulnerabilities)
+8. [What to Watch For in Your Systems](#section-8-what-to-watch-for-in-your-systems)
+9. [Building Security by Design](#section-9-building-security-by-design)
 
-[Resources and References](resources.md)
 
 ---
 
@@ -95,7 +94,7 @@ These are important topics, but they warrant separate dedicated coverage. This g
 
 ## Getting Started
 
-Begin with [Section 1: Understanding Agentic AI Security](section_1_understanding_agentic_ai_security.md) to learn what makes agents different and why traditional security approaches fall short.
+Begin with [Section 1: Understanding Agentic AI Security](#section-1-understanding-agentic-ai-security) to learn what makes agents different and why traditional security approaches fall short.
 
 Or jump directly to topics of interest using the table of contents above.
 
@@ -155,6 +154,7 @@ Full implementation guidance for each control appears in subsequent sections.
 
 ---
 
+# Section 1: Understanding Agentic AI Security
 
 ## What Are Agentic AI Systems?
 
@@ -232,10 +232,10 @@ Understanding these distinctions is the foundation for building secure agentic s
 
 ---
 
-**Next**: [Section 2: Attack Vectors in Agentic Systems](section_2_attack_vectors.md)
 
 ---
 
+# Section 2: Attack Vectors in Agentic Systems
 
 Understanding how attackers compromise agentic AI systems is the foundation for building effective defenses. This section breaks down the five primary attack vectors that target agent-specific capabilities: their ability to process prompts, maintain memory, use tools, rely on external dependencies, and pursue goals.
 
@@ -424,11 +424,10 @@ Understanding these vectors is the first step. The next section examines the def
 
 ---
 
-**Previous**: [Section 1: Understanding Agentic AI Security](section_1_understanding_agentic_ai_security.md)
-**Next**: [Section 3: Defense Architecture - The Three-Pillar Approach](section_3_defense_architecture.md)
 
 ---
 
+# Section 3: Defense Architecture - The Three-Pillar Approach
 
 Securing agentic AI systems requires a fundamentally different architecture than traditional AI security. The three-pillar framework—Guardrails, Permissions, and Auditability—provides a comprehensive approach that addresses the unique challenges of autonomous systems that can act, remember, and make decisions across complex workflows.
 
@@ -675,11 +674,10 @@ The three pillars aren't independent security measures you implement separately.
 
 ---
 
-**Previous**: [Section 2: Attack Vectors in Agentic Systems](section_2_attack_vectors.md)
-**Next**: [Section 4: Detection, Prevention, and Mitigation Strategies](section_4_detection_prevention_mitigation.md)
 
 ---
 
+# Section 4: Detection, Prevention, and Mitigation Strategies
 
 Security controls for agentic AI systems fall into three categories based on when they operate and what they aim to accomplish: detection identifies attacks in progress or after they occur, prevention stops attacks before they succeed, and mitigation limits the damage from attacks that bypass other defenses. Effective security requires all three working together.
 
@@ -883,11 +881,10 @@ Together, these approaches create a comprehensive security architecture for agen
 
 ---
 
-**Previous**: [Section 3: Defense Architecture - The Three-Pillar Approach](section_3_defense_architecture.md)
-**Next**: [Section 5: Security Frameworks for Agentic AI](section_5_security_frameworks.md)
 
 ---
 
+# Section 5: Security Frameworks for Agentic AI
 
 Security frameworks provide structured approaches to identifying, assessing, and mitigating risks in agentic AI systems. Three frameworks have emerged as particularly relevant for agent security: the OWASP Top 10 for Agentic Applications 2026, the NIST AI Risk Management Framework, and MITRE ATLAS. Each serves a different purpose in your security program.
 
@@ -1096,11 +1093,10 @@ Think of these frameworks as maps showing the terrain. You still have to navigat
 
 ---
 
-**Previous**: [Section 4: Detection, Prevention, and Mitigation Strategies](section_4_detection_prevention_mitigation.md)
-**Next**: [Section 6: Implementation Guide](section_6_implementation_guide.md)
 
 ---
 
+# Section 6: Implementation Guide
 
 This section provides practical guidance for implementing the security controls described in previous sections. The goal is to translate principles into concrete actions you can take to secure your agentic AI systems.
 
@@ -1432,11 +1428,10 @@ This implementation guidance translates security principles into concrete action
 
 ---
 
-**Previous**: [Section 5: Security Frameworks for Agentic AI](section_5_security_frameworks.md)
-**Next**: [Section 7: Addressing Specific Vulnerabilities](section_7_addressing_specific_vulnerabilities.md)
 
 ---
 
+# Section 7: Addressing Specific Vulnerabilities
 
 This section provides targeted defenses against the major attack vectors identified in Section 2. While the three-pillar framework provides overall architecture, these are specific techniques for defending against prompt injection, memory poisoning, supply chain attacks, tool misuse, and goal hijacking.
 
@@ -1869,11 +1864,10 @@ The goal isn't perfect security (impossible) but raising attack costs high enoug
 
 ---
 
-**Previous**: [Section 6: Implementation Guide](section_6_implementation_guide.md)
-**Next**: [Section 8: What to Watch For in Your Systems](section_8_what_to_watch_for.md)
 
 ---
 
+# Section 8: What to Watch For in Your Systems
 
 Security monitoring for agentic systems requires understanding what normal behavior looks like so you can identify deviations that might indicate compromise. This section describes warning signs, behavioral anomalies, log patterns, and escalation triggers that security teams should monitor.
 
@@ -2195,11 +2189,10 @@ Effective monitoring creates a feedback loop: detection identifies attacks, inve
 
 ---
 
-**Previous**: [Section 7: Addressing Specific Vulnerabilities](section_7_addressing_specific_vulnerabilities.md)
-**Next**: [Section 9: Building Security by Design](section_9_building_security_by_design.md)
 
 ---
 
+# Section 9: Building Security by Design
 
 Security works best when it's built into systems from the beginning rather than added as an afterthought. This final section covers principles for designing secure agentic systems, integrating security into development workflows, and maintaining security as systems evolve.
 
@@ -2514,7 +2507,6 @@ Build security into your agents from the start, maintain it continuously, and st
 
 ---
 
-**Previous**: [Section 8: What to Watch For in Your Systems](section_8_what_to_watch_for.md)
 
 ---
 
