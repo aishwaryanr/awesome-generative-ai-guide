@@ -2,7 +2,6 @@
 
 **Building Guardrails, Permissions, and Auditability for Autonomous AI**
 
-*Last Updated: February 4, 2026*
 
 ![Defense-in-Depth for Agentic AI](img/02_defense_in_depth_layered_architecture.png)
 
