@@ -1,0 +1,31 @@
+test_id,customer_message,expected_department,category
+TC001,I was charged twice for my order,BILLING,duplicate_charge
+TC002,Where is my package? Tracking says delivered but I never got it,ORDER_STATUS,missing_delivery
+TC003,I want to return these shoes wrong size,RETURNS,size_exchange
+TC004,Do you have the iPhone 15 case in red?,PRODUCT_INQUIRY,availability
+TC005,I can't log into my account,TECHNICAL_SUPPORT,login_issue
+TC006,I need to update my shipping address,ACCOUNT_MANAGEMENT,address_update
+TC007,This is the third time I'm calling! Nobody is helping me!,ESCALATION,frustrated_customer
+TC008,My refund still hasn't shown up it's been 2 weeks,BILLING,refund_status
+TC009,The website keeps crashing when I try to checkout,TECHNICAL_SUPPORT,checkout_error
+TC010,When will my order ship? I ordered 3 days ago,ORDER_STATUS,shipping_inquiry
+TC011,I received a damaged item in my order,RETURNS,damaged_item
+TC012,What's the difference between the Pro and Standard model?,PRODUCT_INQUIRY,product_comparison
+TC013,I want to cancel my subscription,ACCOUNT_MANAGEMENT,subscription
+TC014,My credit card was declined but money was taken,BILLING,payment_error
+TC015,The promo code SAVE20 isn't working at checkout,TECHNICAL_SUPPORT,promo_code_error
+TC016,I want to exchange this for a different color,RETURNS,color_exchange
+TC017,Is this laptop compatible with my monitor?,PRODUCT_INQUIRY,compatibility
+TC018,I forgot my password and the reset email isn't coming,TECHNICAL_SUPPORT,password_reset
+TC019,I want to speak to a manager NOW,ESCALATION,manager_request
+TC020,Can I change my payment method for future orders?,ACCOUNT_MANAGEMENT,payment_method
+TC021,Why didn't I get my loyalty points for this purchase?,BILLING,points_missing
+TC022,Your prices are way too high! This is ridiculous!,PRODUCT_INQUIRY,price_complaint
+TC023,I keep getting logged out every 5 minutes,TECHNICAL_SUPPORT,session_timeout
+TC024,I need to update my credit card on file,ACCOUNT_MANAGEMENT,payment_update
+TC025,How long is the return window?,RETURNS,policy_question
+TC026,My account says I owe money but I already paid,BILLING,account_balance
+TC027,The item I received is completely different from what I ordered,RETURNS,wrong_item
+TC028,Can I get a discount if I buy 10 units?,PRODUCT_INQUIRY,bulk_pricing
+TC029,I reset my password but still can't access my account,TECHNICAL_SUPPORT,access_issue
+TC030,Why was I charged a restocking fee?,BILLING,fee_inquiry

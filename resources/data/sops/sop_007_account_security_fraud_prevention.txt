@@ -1,0 +1,366 @@
+SOP-007: Account Security & Fraud Prevention
+Version: 2.0
+Last Updated: 2025-01-25
+Department: Customer Support / IT Security / Fraud Prevention
+---
+
+PURPOSE:
+Protect customer accounts from unauthorized access and fraudulent activity while maintaining a balance between security and customer experience.
+
+SCOPE:
+Covers account security measures, fraud detection, investigation procedures, and remediation. Does not cover payment fraud (see SOP-015) or systematic security breaches (IT Security incident response).
+
+PREREQUISITES:
+- Agent must have security awareness training (completed annually)
+- Access to fraud detection system (elevated permissions required)
+- Cannot bypass security protocols without Security team approval
+- IMPORTANT: When in doubt about security, escalate - never compromise
+
+PROCEDURE:
+
+1. FRAUD DETECTION TRIGGERS
+
+   System automatically flags accounts based on:
+
+   A. BEHAVIORAL ANOMALIES
+      - Login from new country/region (geo-velocity impossible travel)
+      - Multiple failed login attempts from different IPs
+      - Unusual order patterns (high-value orders after dormancy)
+      - Shipping address changes followed immediately by large order
+      - Multiple payment methods attempted in short timeframe
+
+   B. ACCOUNT CHARACTERISTICS
+      - New account (<7 days old) + high-value order (>$500)
+      - Free email domain (gmail, yahoo, hotmail) + business-level order
+      - Mismatched info (billing zip doesn't match IP location by >500 miles)
+      - Phone number recently associated with different account
+      - Email address follows pattern: randomletters123@domain.com
+
+   C. TRANSACTION RED FLAGS
+      - Multiple orders to different addresses in 24 hours
+      - Orders to freight forwarder addresses (common in fraud)
+      - High-value electronics + expedited shipping + new account
+      - Gift card purchases >$500 (high fraud category)
+      - BIN (Bank Identification Number) from high-risk country
+
+   IMPORTANT: Flags are indicators, not proof
+   → ~15% of flagged accounts are legitimate (false positive rate)
+   → Goal: Verify, not assume fraud
+
+2. WHEN CUSTOMER CONTACTS ABOUT SECURITY HOLD
+
+   a. Account flagged by system, customer calling to ask why order is held:
+      - Explain: "Your account was flagged for routine security verification"
+      - Do NOT say: "We think you're a fraudster" or "Your account looks suspicious"
+      - Tone: Apologetic for inconvenience, not accusatory
+
+   b. Verification process:
+      - Primary identity verification (SOP-004 methods apply)
+      - Additional security questions:
+        * Why is shipping address different from billing?
+        * Is this order for yourself or someone else?
+        * Can you verify CVV on payment card? (if applicable)
+        * Have you ordered from us before?
+
+   c. Red flags during verification:
+      - Customer becomes hostile/pressuring when asked routine questions
+      - Cannot explain inconsistencies (e.g., why US billing but ship to Latvia)
+      - Knows order details but fails basic account verification
+      - Multiple people calling about same order (organized fraud ring)
+
+   d. Resolution:
+      - PASS verification: Release hold, expedite order, apologize for delay
+      - FAIL verification: Escalate to Fraud Prevention team (do not release)
+      - UNCERTAIN: Escalate to supervisor + Fraud Prevention
+
+3. ACCOUNT COMPROMISE INVESTIGATION
+
+   Customer reports: "I didn't place this order" or "Someone accessed my account"
+
+   A. IMMEDIATE TRIAGE (first 5 minutes)
+      - Place security hold on account (prevent new orders/changes)
+      - Check recent account activity log:
+        * Login history (IPs, locations, devices, timestamps)
+        * Password change attempts
+        * Email/phone number changes
+        * Payment method additions/changes
+        * Shipping address additions/changes
+        * Orders placed in last 30 days
+
+   B. INTERVIEW CUSTOMER
+      - When did you notice the unauthorized activity?
+      - Do you recognize any of these orders/charges?
+      - Have you shared your password with anyone?
+      - Do you use the same password on other websites?
+      - Have you clicked any suspicious links recently (phishing)?
+      - Do family members have access to your account?
+      - Have you used public WiFi to access your account?
+
+   C. ASSESS COMPROMISE SEVERITY
+      - LOW: Only browsing activity from unknown IP (no orders/changes)
+        → Action: Force password reset, enable 2FA, monitor
+
+      - MEDIUM: Unauthorized order placed but not yet shipped
+        → Action: Cancel order, reset credentials, remove unauthorized payment methods
+
+      - HIGH: Multiple orders shipped, payment methods changed, email changed
+        → Action: Full account lockdown, IT Security investigation, coordinate with payment processor
+
+      - CRITICAL: Evidence of organized fraud ring (multiple accounts, similar patterns)
+        → Action: Immediate escalation to Fraud Prevention + Legal + IT Security
+
+   D. CONTAINMENT ACTIONS
+      Based on severity:
+      1. Cancel pending orders (if not shipped)
+      2. Attempt intercept if already shipped (contact carrier/warehouse)
+      3. Remove unauthorized payment methods
+      4. Remove unauthorized shipping addresses
+      5. Reset password (force customer to create new one via secure link)
+      6. Enable 2FA (mandatory for compromised accounts)
+      7. Log out all active sessions
+      8. Generate new session tokens
+      9. Flag payment methods as potentially compromised
+
+4. REMEDIATION & CUSTOMER SUPPORT
+
+   A. ISSUE REFUNDS
+      - Unauthorized orders (confirmed fraudulent): Full refund
+      - Timeline: Immediate (within 24 hours)
+      - Method: Original payment method (unless compromised, then alternative)
+
+   B. RECOVER PRODUCTS IF POSSIBLE
+      - Shipped but not delivered: Carrier intercept (success rate ~40%)
+      - Delivered to freight forwarder: Contact forwarder (success rate ~20%)
+      - Delivered to fraudster's address: File police report, low recovery chance
+
+   C. RESTORE ACCOUNT ACCESS
+      - Customer creates new strong password (requirements: 12+ chars, mixed case, numbers, symbols)
+      - 2FA setup required (SMS or authenticator app)
+      - Security questions updated
+      - Review authorized devices list
+      - Confirm legitimate payment methods and addresses
+
+   D. PROVIDE INCIDENT REPORT
+      - Template: SEC-INC-001
+      - Include:
+        * Timeline of compromise
+        * Actions taken by fraudster
+        * Financial impact (orders, refunds)
+        * How breach likely occurred (if known)
+        * Steps customer should take
+        * Our security enhancements applied
+
+   E. MONITORING POST-COMPROMISE
+      - Flag account for enhanced monitoring (30 days)
+      - Any new orders require manual review
+      - Payment method additions require extra verification
+      - Shipping address changes flagged
+
+5. FRAUD PREVENTION - LEGITIMATE CUSTOMER EDUCATION
+
+   When customer asks "How do I protect my account?":
+
+   a. MUST DO (required):
+      - Use strong, unique password (not reused from other sites)
+      - Enable two-factor authentication (2FA)
+      - Never share password with anyone
+      - Log out when using shared/public computers
+
+   b. SHOULD DO (recommended):
+      - Use password manager
+      - Check account activity monthly
+      - Enable email notifications for orders and account changes
+      - Be cautious of phishing emails (we never ask for password via email)
+
+   c. WHAT WE DO (our security measures):
+      - Encrypted connections (SSL/TLS)
+      - Payment data tokenized (we don't store full card numbers)
+      - Anomaly detection (flags unusual activity)
+      - Regular security audits
+      - PCI-DSS compliance (payment card industry standards)
+
+6. HANDLING FALSE POSITIVES (Legitimate customers flagged)
+
+   ~15% of fraud flags are false positives (legitimate customers)
+
+   Common scenarios:
+   - Traveling customer orders from hotel WiFi
+   - Gift to friend in another country
+   - Military/government customer with IP routing through different location
+   - VPN user appears to be in different country
+   - Customer legitimately has multiple shipping addresses (gifts, vacation home)
+
+   Resolution:
+   - Apologize for inconvenience
+   - Verify identity thoroughly
+   - Add note to account: "Verified legitimate - frequent traveler" (reduces future flags)
+   - Release order with expedited shipping as apology
+   - Small goodwill gesture (5-10% discount code)
+
+   BALANCE: Security vs Customer Experience
+   → Too strict: Lose legitimate customers
+   → Too lenient: Fraud losses increase
+   → Current metrics: 85% fraud detection rate, 15% false positive rate
+
+7. FRAUD RING DETECTION (Organized Crime)
+
+   Indicators of organized fraud:
+   - Multiple accounts with similar naming patterns
+   - Multiple accounts using same payment method (but different names)
+   - Multiple accounts shipping to same address (different names)
+   - Orders placed within minutes of account creation
+   - Similar browsing patterns across accounts (likely bot-driven)
+   - BIN attacks (testing many cards from same bank)
+
+   DO NOT handle at customer service level:
+   → Immediately escalate to Fraud Prevention team
+   → They coordinate with:
+     * Payment processors
+     * Law enforcement (if losses >$10K)
+     * Other merchants (fraud info sharing networks)
+
+8. SOCIAL ENGINEERING ATTEMPTS
+
+   Fraudster may call pretending to be customer:
+
+   A. ACCOUNT TAKEOVER ATTEMPT
+      - Caller has some info (name, email, maybe order number)
+      - Requests: Password reset, email change, add payment method, ship to new address
+      - RED FLAGS:
+        * Pressures agent to bypass security ("I'm traveling, no access to email")
+        * Gets hostile when asked verification questions
+        * Has order details but fails basic account verification
+        * Calls multiple times with different agents (testing for weak link)
+
+   B. SOCIAL ENGINEERING TACTICS
+      - Urgency: "I need this rush shipped today or I'll cancel!"
+      - Authority: "I'm the CFO, just make the change"
+      - Intimidation: "I'll report you if you don't help me"
+      - Sympathy: "My grandma is sick, this gift is urgent"
+
+   C. AGENT RESPONSE
+      - Remain calm and professional
+      - Follow verification procedures (no exceptions)
+      - If caller becomes hostile: "I understand your frustration, but for your account security, I must verify your identity"
+      - If caller threatens: Escalate to supervisor immediately
+      - If suspicious: Flag account for Fraud Prevention review
+
+   CRITICAL: Never bypass security procedures, even if:
+   - Caller is convincing
+   - Caller claims to be in urgent situation
+   - Caller threatens to close account/leave negative review
+   - Caller claims supervisor already approved (verify with supervisor)
+
+9. INSIDER THREAT (Agent Misconduct)
+
+   Agents must NEVER:
+   - Access customer account without business reason
+   - Share customer information with anyone (internal or external) without authorization
+   - Bypass security measures for friends/family
+   - Accept bribes or gifts in exchange for account access
+   - Use customer payment information for personal benefit
+
+   Violation = Immediate termination + potential criminal charges
+
+   Monitoring:
+   - All account access logged and audited
+   - Random audits of agent actions
+   - Unusual patterns flagged (agent accessing many high-value accounts)
+
+10. DOCUMENTATION
+
+    A. LOG ALL SECURITY INCIDENTS:
+       - Case number (format: SEC-YYYY-XXXXX)
+       - Account affected
+       - Date/time of detection
+       - Fraud indicators observed
+       - Actions taken
+       - Resolution
+       - Follow-up required
+
+    B. FRAUD PREVENTION METRICS (tracked weekly):
+       - Fraud detection rate (Target: >85%)
+       - False positive rate (Target: <20%)
+       - Average resolution time (Target: <4 hours)
+       - Fraud losses per 1000 orders (Target: <$500)
+       - Customer satisfaction after security hold (Target: >70%)
+
+EDGE CASES & EXCEPTIONS:
+
+A) CUSTOMER REFUSES 2FA AFTER COMPROMISE
+   - We strongly recommend 2FA
+   - Cannot force customer to use 2FA (policy decision)
+   - Document refusal: "Customer declined 2FA despite compromise - waives protection"
+   - Account remains flagged for manual review
+
+B) MILITARY/GOVERNMENT CUSTOMERS
+   - Often have unusual IP patterns (military bases, VPN routing)
+   - May have APO/FPO addresses (military post office)
+   - Verify using .mil email address or military ID (if provided)
+   - Add flag: "Military customer - IP variance expected"
+
+C) CORPORATE BUYER WITH MULTIPLE ADDRESSES
+   - Legitimate business ordering to multiple locations
+   - Appears like fraud (many addresses, high volume)
+   - Verify business legitimacy:
+     * Corporate email domain
+     * Business tax ID
+     * LinkedIn company profile
+   - Upgrade to Business Account (B2B portal, different fraud rules)
+
+D) FAMILY SHARING ACCOUNTS
+   - Customer shares account with spouse/children
+   - "Unauthorized" order actually placed by family member
+   - Customer may not know password was shared
+   - Resolution: Explain security risk, recommend separate accounts
+
+E) ACCOUNT RECOVERY FOR DECEASED CUSTOMER
+   - See SOP-004 (requires death certificate + legal authority)
+   - Extra security scrutiny (estate fraud is common)
+   - Escalate to Legal team
+
+SYSTEM LIMITATIONS:
+- Fraud detection AI has 15% false positive rate (working to reduce)
+- IP geolocation accurate within ~50 miles (not precise)
+- VPN/proxy users appear in wrong location (hard to distinguish from fraud)
+- Device fingerprinting can be spoofed by sophisticated fraudsters
+- 2FA via SMS vulnerable to SIM swap attacks (why we also offer authenticator apps)
+- Historical fraud data only goes back 2 years (system migration)
+
+FRAUD TYPES & TRENDS (awareness):
+- Friendly fraud: Customer makes purchase, then disputes charge (claims "unauthorized")
+- Account takeover: Fraudster gains access to legitimate customer account
+- New account fraud: Fraudster creates account with stolen identity
+- Card testing: Fraudster tests stolen cards with small transactions
+- Triangulation fraud: Fraudster uses stolen card to buy from us, ships to victim (complex)
+- Refund fraud: Customer claims non-receipt, demands refund, but item delivered
+
+ESCALATION CRITERIA:
+- Suspected organized fraud ring: Fraud Prevention team immediately
+- Losses >$1,000 on single account: Fraud Prevention + Finance
+- Evidence of data breach: IT Security + Legal immediately
+- Customer threatens lawsuit over security hold: Legal Compliance
+- Media involvement (customer contacting press): PR team + Legal
+- Law enforcement requests information: Legal team (do NOT provide directly)
+
+COLLABORATION WITH OTHER TEAMS:
+- IT Security: Technical investigation, system hardening
+- Fraud Prevention: Pattern analysis, fraud ring tracking
+- Legal: Law enforcement coordination, subpoena compliance
+- Finance: Chargeback management, loss recovery
+- Warehouse: Intercept shipments, verify delivery addresses
+
+NOTES:
+- Fraud is constantly evolving - stay updated on new tactics (monthly training)
+- Trust your instincts - if something feels off, escalate
+- Security vs experience tradeoff: Favor security when unclear
+- False positive (annoying legitimate customer) is better than false negative (fraud loss)
+- Average fraud loss per incident: $300-800
+- Fraud prevention saves ~$50K monthly
+- Customer satisfaction after legitimate security hold: Currently 72% (improving)
+
+RELATED SOPS:
+- SOP-003: Billing Disputes (unauthorized charges)
+- SOP-004: Account Access Issues (password resets, 2FA)
+- SOP-015: Chargeback Management (fraud chargebacks)
+- SOP-020: Data Privacy & GDPR Compliance

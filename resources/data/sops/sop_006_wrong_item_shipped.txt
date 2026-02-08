@@ -1,0 +1,289 @@
+SOP-006: Wrong Item Shipped
+Version: 1.9
+Last Updated: 2025-01-22
+Department: Customer Support / Warehouse Operations
+---
+
+PURPOSE:
+Handle situations where customers received an item different from what they ordered, providing swift resolution while investigating root cause to prevent recurrence.
+
+SCOPE:
+Covers all cases where shipped item does not match order (wrong SKU, wrong color/size variant, completely different product). Does not cover damaged items (SOP-002) or missing items (SOP-009).
+
+PREREQUISITES:
+- Customer must have order confirmation
+- Customer must be able to describe/photograph received item
+- Warehouse picking system must be accessible for investigation
+
+PROCEDURE:
+
+1. VERIFY THE ERROR
+   a. Confirm what customer ordered:
+      - Review original order details
+      - Check item SKU, description, variant (color/size)
+      - Verify order confirmation email matches system
+
+   b. Confirm what customer received:
+      - Request photo of received item (especially product label/barcode)
+      - Request photo of shipping label on box
+      - Request photo of packing slip (if included)
+      - If customer can't provide photos: Detailed description including any visible SKU/model numbers
+
+   c. Check if this is truly "wrong item":
+      - WRONG ITEM: Ordered blue shirt, received red shirt
+      - WRONG ITEM: Ordered phone case, received screen protector
+      - NOT wrong item: Ordered "mystery box", contents vary (customer misunderstood product)
+      - NOT wrong item: Ordered product but doesn't like it (this is standard return, SOP-001)
+
+2. CLASSIFY ERROR TYPE
+
+   For internal tracking and root cause analysis:
+
+   A. VARIANT ERROR (most common ~45% of cases)
+      - Correct product, wrong variant (color/size/model)
+      - Example: Ordered Large, received Medium
+      - Cause: Usually warehouse pick error or mislabeled inventory
+
+   B. SIMILAR PRODUCT ERROR (~30%)
+      - Wrong product but similar category
+      - Example: Ordered iPhone 15 case, received iPhone 14 case
+      - Cause: Look-alike packaging, adjacent warehouse bins
+
+   C. COMPLETELY WRONG ITEM (~20%)
+      - Totally different product category
+      - Example: Ordered book, received kitchen utensil
+      - Cause: Major pick error, barcode scan malfunction, or packing station mix-up
+
+   D. MULTI-ITEM ORDER PARTIAL ERROR (~5%)
+      - Ordered 3 items, 1 is wrong, other 2 correct
+      - Requires special handling (can't return entire order)
+
+3. INVESTIGATE ROOT CAUSE (simultaneous with resolution)
+
+   a. Check warehouse pick history:
+      - View pick ticket for order
+      - Which warehouse location did we pick from?
+      - Who picked the order? (for training, not blame)
+      - What time? (rush period errors more common)
+
+   b. Check inventory accuracy:
+      - Is wrong item in same bin as correct item? (common cause)
+      - Are items visually similar? (look-alike packaging)
+      - Recent inventory relocation? (bins reassigned incorrectly)
+      - Check if barcode in system matches physical barcode
+
+   c. Flag for Quality Control if:
+      - >3 reports of same error in 7 days (systematic issue)
+      - High-value item error (>$200)
+      - Safety-sensitive item (medical, baby products, food)
+
+   IMPORTANT: Customer shouldn't wait for investigation
+   → Resolve immediately, investigate in parallel
+
+4. OFFER RESOLUTION OPTIONS
+
+   a. Primary option - RESHIP CORRECT ITEM + KEEP WRONG ITEM:
+      - Ship correct item immediately (expedited 2-day shipping)
+      - Customer keeps wrong item (no return needed IF value <$50)
+      - Why: Cheaper than return shipping + processing
+      - Goodwill gesture that delights customer
+
+   b. If wrong item value >$50:
+      - Ship correct item (expedited)
+      - Request return of wrong item (we provide prepaid label)
+      - Customer can use wrong item until correct item arrives
+      - Must return wrong item within 21 days
+
+   c. If correct item out of stock:
+      - Option 1: Ship when restocked + discount code (15% off)
+      - Option 2: Full refund immediately
+      - Option 3: Alternative product (similar specs, customer approval required)
+      - Let customer choose - do NOT assume which they prefer
+
+   d. Multi-item order with partial error:
+      - Ship correct version of wrong item
+      - Customer returns wrong item using provided label
+      - Do NOT require return of entire order
+
+5. PROCESS RESHIP
+
+   a. Create reship order:
+      - Mark as "PRIORITY - WRONG ITEM RESHIP" in system
+      - Use expedited shipping (2-day) at no charge
+      - Warehouse alert: "QC CHECK - Verify SKU before packing"
+      - Send tracking info immediately when shipped
+
+   b. If return required:
+      - Generate return label (Template: WI-RETURN-002)
+      - RMA format: WIS-YYYYMMDD-XXXXX
+      - Timeline: Customer has 21 days (more generous than standard 14)
+      - NOT strictly enforced - we caused the error
+
+   c. Process refund if customer chose that option:
+      - Full refund including original shipping
+      - Expedited processing (within 24 hours)
+      - 3-5 business days to payment method
+
+6. SPECIAL HANDLING SCENARIOS
+
+   A. CUSTOMER RECEIVED HIGH-VALUE ITEM BY MISTAKE
+      - Example: Ordered $50 item, received $500 item
+      - We MUST request return (cannot let customer keep)
+      - Provide prepaid return label (signature required)
+      - Send correct item simultaneously (not held pending return)
+      - If customer refuses return: Escalate to Legal Compliance
+
+   B. CUSTOMER RECEIVED SOMEONE ELSE'S ORDER (wrong address label)
+      - PRIVACY CONCERN: Packing slip may show other customer's info
+      - Ask customer to:
+        * NOT open other customer's order (privacy)
+        * Return entire package using provided label
+        * Destroy or black out any visible personal info
+      - Simultaneously ship correct order
+      - Notify other affected customer if their order was misrouted
+      - Escalate to Privacy Officer if sensitive info exposed
+
+   C. WRONG ITEM IS RESTRICTED/REGULATED PRODUCT
+      - Example: Customer ordered non-prescription item, received prescription item
+      - IMMEDIATE escalation to Safety team
+      - Coordinated retrieval (may require special carrier)
+      - Do NOT ask customer to return via standard shipping
+
+   D. CUSTOMER ALREADY USED/OPENED WRONG ITEM
+      - If item value <$50: Let customer keep, send correct item
+      - If item value >$50: Partial refund + send correct item
+        (Cannot accept return of used item in many cases)
+      - Supervisor determines partial refund amount
+
+7. CUSTOMER COMMUNICATION
+   - Respond within 2 hours (this is OUR error, urgency required)
+   - Acknowledge mistake clearly: "I sincerely apologize for this error"
+   - Explain resolution plan with timeline
+   - Proactive updates when correct item ships
+
+   - Templates:
+     * CS-WI-001: Wrong Item Acknowledgment + Apology
+     * CS-WI-003: Correct Item Shipped (with tracking)
+     * CS-WI-005: Resolution Complete + Goodwill Credit
+
+   - Goodwill gestures:
+     * 10-15% discount code for future purchase
+     * Free shipping on next order
+     * Complimentary upgrade to expedited shipping
+     * (Supervisor approval for >$20 value)
+
+8. DOCUMENTATION & ANALYSIS
+
+   a. Log in wrong item tracking system:
+      - Order number
+      - Ordered SKU vs Received SKU
+      - Error classification (variant/similar/completely wrong)
+      - Warehouse location implicated
+      - Resolution provided
+      - Root cause identified (if determined)
+
+   b. Weekly trend analysis:
+      - Are certain SKUs frequently confused?
+      - Are certain warehouse bins problematic?
+      - Are errors concentrated to specific times/shifts?
+      - Share findings with Warehouse Operations Manager
+
+   c. Follow-up survey (7 days after resolution):
+      - "Did correct item arrive?"
+      - "Were you satisfied with how we handled this?"
+      - "Any suggestions for preventing this in future?"
+
+EDGE CASES & EXCEPTIONS:
+
+A) CUSTOMER CLAIMS WRONG ITEM BUT CAN'T PROVE IT
+   - No photos, vague description
+   - Customer may be confused about what they ordered
+   - Options:
+     * Review order confirmation with customer (sometimes they ordered wrong thing)
+     * If customer insists: Believe customer (benefit of doubt)
+     * If pattern of wrong-item claims from same customer (>3): Investigate for fraud
+     * Flag account if suspected fraud (not customer service issue)
+
+B) INTERNATIONAL SHIPMENTS
+   - Return shipping extremely expensive
+   - Customs complications
+   - Usually: Full refund + customer keeps wrong item (regardless of value)
+   - Reship correct item with customs declaration correction
+
+C) WRONG ITEM HIGHER VALUE THAN ORDERED ITEM
+   - Customer might be tempted to keep it
+   - We must request return
+   - Cannot charge difference (we made the error)
+   - If customer refuses return: Legal escalation
+   - Cannot cancel customer account without Legal approval
+
+D) SEASONAL/DISCONTINUED ITEMS
+   - Customer ordered item, we shipped wrong substitute
+   - Sometimes warehouse substitutes out-of-stock items (NOT supposed to without approval)
+   - This is a serious process violation
+   - Escalate to Warehouse Manager immediately
+   - Options: Find correct item, full refund, or approved alternative
+
+E) CUSTOM/PERSONALIZED ITEMS
+   - Wrong name engraved, wrong photo printed, etc.
+   - Cannot resell, must be discarded
+   - Customer always keeps wrong item (no return)
+   - Rush production of correct personalized item
+   - Significant goodwill gesture required (25% refund + correct item)
+
+F) THIRD-PARTY SELLER ITEMS (Marketplace)
+   - Items sold by third-party sellers on our platform
+   - MUST route to third-party seller support (SOP-012)
+   - We do NOT handle directly
+   - Verify seller info: Field "Sold by: [Company Name]"
+   - Exception: If seller unresponsive >48 hours, we step in
+
+SYSTEM LIMITATIONS:
+- Warehouse pick logs retained 60 days only (older investigations limited)
+- Barcode scanner error rate: ~0.1% (low but not zero)
+- Inventory bin accuracy: Target 99.5% (we're at 98.8% currently)
+- Some legacy SKUs not in new system (migration gap, pre-2024)
+- Photo upload limit: 10MB per image (customer may need to compress)
+- Cannot always determine root cause (30% of cases remain "unknown")
+
+WAREHOUSE PROCESS IMPROVEMENTS:
+Based on wrong-item incident data, we've implemented:
+- Look-alike product bins now separated by >10 feet
+- Variant products (colors/sizes) use different bin sections
+- Scan verification: Pick → Scan → Pack → Scan (2-step verification)
+- High-value items (>$200) require supervisor verification
+- Peak season: Double-checking protocol for expedited orders
+
+FRAUD INDICATORS (escalate to Fraud Prevention):
+- Customer claims wrong item but refuses to provide photos (>2 times)
+- Customer wants to keep high-value wrong item + also get correct item
+- Pattern of wrong-item claims (>3 in 6 months)
+- Customer unable to describe wrong item details
+- Wrong item claim on final-sale/clearance items (potential buyer's remorse fraud)
+
+ESCALATION CRITERIA:
+- High-value wrong item (>$500): Supervisor approval for resolution
+- Safety/compliance issue (restricted products): Safety team immediately
+- Privacy exposure (other customer's info visible): Privacy Officer
+- Customer refuses return of high-value wrong item: Legal Compliance
+- Suspected warehouse systematic issue (>5 same errors): Warehouse Ops Manager
+- Customer dissatisfied after resolution: Support Manager
+
+PREVENTION METRICS (tracked monthly):
+- Wrong item rate: Target <0.5% of orders (currently 0.7%)
+- Variant error rate: Target <0.3% (currently 0.4%)
+- Repeat wrong-item errors (same SKUs): Track and address top 10
+
+RELATED SOPS:
+- SOP-001: Standard Returns (if customer wants to return correct item after all this)
+- SOP-002: Damaged Items (sometimes wrong item ALSO damaged)
+- SOP-009: Missing Items from Order
+- SOP-012: Third-Party Seller Support
+- SOP-016: Warehouse Quality Control
+
+NOTES:
+- Wrong item shipments are 100% our fault - be extra apologetic
+- Goodwill gestures almost always warranted
+- Fast resolution more important than investigating cause (do both, but prioritize customer)
+- Peak seasons (Nov-Dec, Prime Day): Wrong item rate increases 30-40% (more volume, rushed picks)
+- Customer satisfaction score for wrong-item cases: Target 85%+ (currently 82%)

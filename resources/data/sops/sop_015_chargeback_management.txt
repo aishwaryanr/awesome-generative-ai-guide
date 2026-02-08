@@ -1,0 +1,394 @@
+SOP-015: Chargeback Management & Dispute Resolution
+Version: 1.6
+Last Updated: 2025-01-19
+Department: Finance / Customer Support / Legal
+---
+
+PURPOSE:
+Manage chargebacks filed by customers through their banks, including investigation, evidence gathering, representment, and resolution to minimize financial losses and maintain merchant account standing.
+
+SCOPE:
+Covers all chargebacks initiated by cardholders through issuing banks. Does not cover refunds requested directly to us (SOP-003) or payment processor disputes that aren't formal chargebacks.
+
+PREREQUISITES:
+- Access to chargeback management system (Finance team elevated permissions)
+- Understanding of chargeback reason codes (training required)
+- Knowledge of card network rules (Visa, Mastercard, Amex, Discover)
+- CRITICAL: Strict deadlines - missing a deadline = automatic loss
+
+PROCEDURE:
+
+1. CHARGEBACK NOTIFICATION RECEIVED
+
+   When chargeback filed, we receive notification from payment processor:
+
+   A. NOTIFICATION CONTAINS:
+      - Chargeback case number
+      - Cardholder name
+      - Transaction amount
+      - Transaction date
+      - Reason code (why customer disputed)
+      - Response deadline (typically 7-14 days, varies by network)
+      - Provisional credit already given to customer by their bank
+
+   B. IMMEDIATE ACTIONS (within 24 hours):
+      - Acknowledge receipt in chargeback system
+      - Note response deadline in calendar (with 48-hour buffer)
+      - Assign to appropriate team member
+      - Pull transaction records from order system
+
+   C. LOCATE CUSTOMER ORDER:
+      - Search by transaction date + amount + customer name
+      - Cross-reference with payment processor transaction ID
+      - Retrieve: Order details, shipping info, tracking, customer communications
+      - NOTE: Some older transactions (>90 days) may have limited data (system migration gap)
+
+2. UNDERSTAND CHARGEBACK REASON CODES
+
+   Most common reason codes:
+
+   A. FRAUD CODES (~35% of chargebacks)
+      - 10.4 (Visa): Fraudulent transaction - card absent environment
+      - 4837 (MC): Fraudulent transaction - no cardholder authorization
+      - Customer claims: "I didn't make this purchase"
+
+      Investigation:
+      - Check if customer ever contacted us about unauthorized charge
+      - Review IP address, device fingerprint, delivery confirmation
+      - Check if shipped to cardholder's registered address
+      - Look for account access patterns around transaction date
+
+   B. AUTHORIZATION CODES (~5%)
+      - 10.1 (Visa): Late presentment (charged card too late after transaction)
+      - 4808 (MC): Authorization-related chargeback
+      - Usually technical/processing errors on our end
+
+   C. PROCESSING ERROR CODES (~10%)
+      - 12.1 (Visa): Late presentment
+      - 4834 (MC): Point-of-interaction error
+      - Duplicate processing, wrong amount charged, etc.
+
+   D. CONSUMER DISPUTE CODES (~50% of chargebacks)
+      - 13.1 (Visa): Merchandise/services not received
+      - 13.3 (Visa): Not as described or defective
+      - 4853 (MC): Goods/services not received or not as described
+      - These are "friendly fraud" - customer should have contacted us first
+
+3. DETERMINE RESPONSE STRATEGY
+
+   Three options:
+
+   A. ACCEPT THE CHARGEBACK
+      When to accept:
+      - We're clearly at fault (wrong item shipped, item never shipped, refund due but not processed)
+      - Transaction is actually fraudulent (customer's claim is legitimate)
+      - Evidence is weak/missing (can't prove we're right)
+      - Cost of fighting exceeds transaction value (chargeback on $25 order, not worth effort)
+
+      Action:
+      - Mark as "Accepted" in system
+      - Issue refund if not already provisioned by bank
+      - Loss is absorbed
+      - NOTE: High acceptance rate damages merchant account standing
+
+   B. ISSUE REFUND (Pre-representment)
+      When to refund:
+      - Customer has valid complaint (should have been handled via SOP-003)
+      - Item was defective/damaged but customer went straight to bank
+      - We can resolve by refunding, avoiding chargeback on record
+
+      Action:
+      - Contact customer (if possible) to offer resolution
+      - Issue refund through processor
+      - Request customer withdraw chargeback with their bank
+      - NOTE: If chargeback already provisioned by bank + we refund = customer has double refund
+        → Must coordinate with bank to ensure only one refund
+
+   C. DISPUTE THE CHARGEBACK (Representment)
+      When to dispute:
+      - We fulfilled order correctly (item shipped and delivered)
+      - Customer received item and is committing friendly fraud
+      - Processing error by payment processor (not our fault)
+      - Customer failed to follow return policy
+
+      Action:
+      - Gather compelling evidence
+      - Submit representment package within deadline
+      - Wait for card issuer decision (30-60 days typically)
+
+4. REPRESENTMENT: GATHERING EVIDENCE
+
+   If disputing chargeback, compile evidence package:
+
+   A. REQUIRED DOCUMENTS (all cases):
+      - Original order confirmation (with date, items, amount)
+      - Customer IP address and location at time of order
+      - AVS (Address Verification System) results
+      - CVV verification results
+      - Shipping confirmation and tracking information
+      - Delivery confirmation (signature if available)
+      - Screenshots of relevant system records
+
+   B. ADDITIONAL EVIDENCE BY REASON CODE:
+
+      For FRAUD claims (customer says unauthorized):
+      - Proof item shipped to cardholder's billing address
+      - Device fingerprinting data
+      - Customer's IP address matches previous legitimate orders
+      - Customer account activity log (logged in, browsed, added to cart)
+      - Correspondence with customer (if any)
+      - Signature on delivery (strong evidence)
+
+      For NOT RECEIVED claims:
+      - Tracking showing "Delivered"
+      - Delivery photo (if available from carrier)
+      - Signature confirmation
+      - Customer communications (if they contacted us, proves they knew about order)
+
+      For NOT AS DESCRIBED claims:
+      - Product description from website (screenshots)
+      - Product photos we displayed
+      - Customer reviews showing product as expected
+      - Return policy clearly stated
+      - Evidence item was not returned (if customer claims defective but didn't return)
+
+   C. CUSTOMER COMMUNICATION HISTORY:
+      - Did customer contact us first? (Best practice dictates they should)
+      - Did we respond appropriately?
+      - Did we offer resolution that customer declined?
+      - Include full email thread or call logs
+
+   D. POLICIES & TERMS:
+      - Return policy customer agreed to
+      - Terms of service
+      - Refund policy
+      - Clear statement customer violated policy by going to bank instead of us
+
+5. SUBMIT REPRESENTMENT PACKAGE
+
+   A. FORMATTING REQUIREMENTS:
+      - Combine all documents into single PDF
+      - Each page labeled clearly (e.g., "Page 3: Delivery Confirmation")
+      - Cover letter summarizing why chargeback should be reversed
+      - Total package typically 8-15 pages
+      - File size limit: 10MB (compress images if needed)
+
+   B. SUBMISSION:
+      - Upload to chargeback management portal
+      - Submit BEFORE deadline (aim for 48 hours before)
+      - Confirm submission receipt
+      - Note submission date/time in tracking system
+
+   C. COVER LETTER TEMPLATE (customize per case):
+      ```
+      RE: Chargeback Case [CASE NUMBER] - [CARDHOLDER NAME]
+
+      To Whom It May Concern:
+
+      We are disputing this chargeback for the following reasons:
+      1. [Primary reason - e.g., "Item was delivered to cardholder's address on [DATE]"]
+      2. [Supporting reason - e.g., "Delivery confirmed by tracking number [TRACKING]"]
+      3. [Policy reason - e.g., "Cardholder did not attempt to resolve with merchant per Visa guidelines"]
+
+      Please see attached evidence:
+      - Exhibit A: Order confirmation
+      - Exhibit B: Delivery confirmation
+      - Exhibit C: [Additional evidence]
+
+      We request this chargeback be reversed and funds returned to merchant account.
+
+      Respectfully,
+      [Company Name] Chargeback Team
+      ```
+
+6. AWAIT DECISION
+
+   A. TIMELINE:
+      - Card issuer reviews: 30-60 days (varies by network)
+      - May request additional information (rare)
+      - Decision: WIN or LOSE (no partial outcomes)
+
+   B. WIN (Chargeback reversed):
+      - Funds returned to our merchant account
+      - Customer's provisional credit reversed by their bank
+      - Case closed
+      - Update internal records
+
+   C. LOSE (Chargeback upheld):
+      - Funds remain with customer
+      - We absorb loss
+      - Chargeback fee charged ($15-25 per chargeback)
+      - Counts against merchant account chargeback ratio
+      - Consider: Pre-arbitration (escalation to card network, high cost)
+
+   D. PRE-ARBITRATION (Optional, rare):
+      - If we lose but believe decision was wrong
+      - Escalates to Visa/Mastercard arbitration
+      - Costs $500-750 in fees
+      - Only do if: Loss >$500, evidence is very strong
+      - Requires VP approval
+
+7. CUSTOMER COMMUNICATION (Tricky)
+
+   A. IF CHARGEBACK RECEIVED:
+      - System should flag customer account: "CHARGEBACK FILED"
+      - If customer contacts us: Explain chargeback process
+      - Cannot issue additional refund (they already have bank's provisional credit)
+      - Inform them: "Your bank has issued you a credit. We are reviewing the case."
+
+   B. DOUBLE REFUND RISK:
+      - Customer files chargeback (bank provisions credit)
+      - Customer also requests refund from us (double-dipping)
+      - Before issuing refund, CHECK for open chargebacks
+      - If chargeback exists: "Your bank has already issued a credit. We cannot refund twice."
+
+   C. IF CUSTOMER WANTS TO WITHDRAW CHARGEBACK:
+      - Customer may realize mistake, wants to withdraw
+      - Direct them to contact their bank immediately
+      - Bank must withdraw chargeback (customer cannot do it directly with us)
+      - Withdrawal success rate: ~30% (many banks won't allow)
+      - If withdrawn early: We avoid chargeback entirely (best outcome)
+
+8. PREVENTION & PATTERN ANALYSIS
+
+   A. TRACK CHARGEBACK METRICS:
+      - Chargeback ratio: Chargebacks per 100 transactions
+      - Industry average: 0.5-1.0%
+      - Our target: <0.6%
+      - Current: 0.8% (needs improvement)
+      - WARNING: >1% ratio may trigger payment processor penalties
+
+   B. ANALYZE PATTERNS:
+      - Which products have high chargeback rates?
+      - Which shipping methods? (slow shipping = more "not received" chargebacks)
+      - Which customer segments? (new accounts, international, high-value)
+      - Which reason codes most common?
+
+   C. PREVENTION STRATEGIES:
+      - Improve product descriptions (reduce "not as described")
+      - Faster shipping (reduce "not received")
+      - Better customer service (resolve before chargeback filed)
+      - Fraud detection (prevent unauthorized transactions)
+      - Clear policies (customers know what to expect)
+
+9. DOCUMENTATION
+
+   A. LOG EVERY CHARGEBACK:
+      - Case number
+      - Customer name and order number
+      - Amount
+      - Reason code
+      - Response strategy (accept, refund, dispute)
+      - Outcome (win/lose)
+      - Financial impact
+
+   B. MONTHLY CHARGEBACK REPORT:
+      - Total chargebacks received
+      - Total amount disputed
+      - Win rate (target: >60%)
+      - Chargeback ratio
+      - Top reason codes
+      - Trends and recommendations
+
+EDGE CASES & EXCEPTIONS:
+
+A) CHARGEBACK ON REFUNDED TRANSACTION
+   - Customer requested refund, we processed it
+   - But customer ALSO filed chargeback (impatient or error)
+   - Evidence: Show refund was processed before chargeback date
+   - Outcome: Usually win (customer got refund, chargeback is duplicate)
+
+B) CUSTOMER FILES MULTIPLE CHARGEBACKS
+   - Same customer disputes multiple transactions
+   - May indicate serial friendly fraud
+   - Flag account: "Multiple chargebacks - potential fraudster"
+   - Consider banning customer (requires Legal approval)
+   - Report to fraud prevention networks
+
+C) CHARGEBACK ON SUBSCRIPTION PAYMENT
+   - Customer disputes recurring subscription charge
+   - Evidence needed: Proof customer agreed to recurring billing
+   - Include: Original subscription terms, renewal notifications sent
+   - Common outcome: We win if we can prove proper notification
+
+D) INTERNATIONAL CHARGEBACKS
+   - Card issued in foreign country
+   - Different rules may apply
+   - Currency conversion may cause amount confusion
+   - Timeline may be longer (up to 90 days)
+   - Language barriers in documentation
+
+E) CHARGEBACK AFTER RETURN
+   - Customer returned item, refund in progress
+   - Customer gets impatient, files chargeback
+   - Evidence: Show return was received, refund processing
+   - Contact customer to withdraw chargeback
+
+F) VERY OLD CHARGEBACKS (>90 days)
+   - System may lack detailed records (migration gap)
+   - Do best with available evidence
+   - If insufficient evidence: Accept loss (cost-benefit)
+
+SYSTEM LIMITATIONS:
+- Payment processor system integration incomplete (some manual data entry required)
+- Historical transaction data >90 days may be incomplete
+- Shipping tracking links expire after 120 days (screenshot early)
+- Customer IP logs retained 60 days only
+- Chargeback response system doesn't support videos (only PDFs, images)
+
+CHARGEBACK REASON CODE REFERENCE (Quick Guide):
+
+VISA:
+- 10.4: Fraud - card absent
+- 11.1/11.2: Cancelled transaction or refund not received
+- 12.1: Late presentment
+- 13.1: Not received
+- 13.2: Cancelled recurring
+- 13.3: Not as described
+
+MASTERCARD:
+- 4837: No cardholder authorization (fraud)
+- 4840: Fraudulent processing
+- 4853: Goods/services not received or not as described
+- 4855: Non-receipt of merchandise
+- 4863: Cardholder does not recognize
+
+AMERICAN EXPRESS:
+- Fraud: Unauthorized charge
+- C08: Goods/services not received
+- C32: Goods/services damaged or defective
+
+ESCALATION CRITERIA:
+- Chargeback >$1,000: Finance VP approval required for representment
+- Pre-arbitration decision: VP approval required (high cost)
+- Multiple chargebacks from same customer: Fraud Prevention team review
+- Chargeback ratio exceeds 1%: Payment processor may impose penalties - escalate to CFO
+- Legal threat from customer about chargeback handling: Legal Compliance
+
+COLLABORATION:
+- Customer Support: Investigates customer communications, gathers context
+- Finance: Manages representment submission, tracks losses
+- Legal: Handles complex disputes, arbitration
+- IT: Provides technical evidence (IP logs, device fingerprinting)
+- Warehouse: Confirms shipping and delivery details
+
+FINANCIAL IMPACT:
+- Average chargeback: $200-300
+- Chargeback fee: $15-25 per case (regardless of outcome)
+- Win rate: Currently 58% (industry average 40-60%)
+- Monthly chargeback losses: ~$8K
+- Prevention efforts have saved ~$15K over past year
+
+RELATED SOPS:
+- SOP-003: Billing Disputes (handle before it becomes chargeback)
+- SOP-007: Fraud Prevention (prevent unauthorized transactions)
+- SOP-001: Standard Returns (proper refund process customers should use)
+
+NOTES:
+- Chargebacks are lose-lose: Customer banks penalize us, we lose time/money fighting
+- Best strategy: Prevent chargebacks by excellent customer service
+- When customer contacts with issue: Resolve immediately (prevents chargeback filing)
+- "Friendly fraud" (customer files chargeback instead of return) is 60-70% of our chargebacks
+- Education: Some customers don't realize chargeback is "nuclear option"
+- High chargeback ratio can result in: Higher processing fees, merchant account termination
+- Payment processor reviews our account quarterly - chargeback ratio is key metric

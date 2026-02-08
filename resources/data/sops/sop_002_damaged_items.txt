@@ -1,0 +1,218 @@
+SOP-002: Damaged or Defective Items Received
+Version: 1.8
+Last Updated: 2025-01-10
+Department: Customer Support
+---
+
+PURPOSE:
+Handle customer reports of items received in damaged or defective condition, providing expedited resolution to maintain customer trust.
+
+SCOPE:
+Covers items damaged during shipping OR manufacturing defects discovered upon receipt. Does not cover damage caused by customer use (normal wear and tear).
+
+PREREQUISITES:
+- Customer must report damage within 14 days of delivery
+- Photo evidence strongly recommended but not required
+- Order must be locatable in system
+
+PROCEDURE:
+
+1. INITIAL ASSESSMENT
+   a. Ask customer to describe the damage:
+      - Packaging damage (box crushed, torn, wet)
+      - Product damage (broken, scratched, missing parts)
+      - Functional defect (doesn't work, malfunctions)
+
+   b. Request photos if not already provided:
+      - Photo of damaged packaging (if applicable)
+      - Photo of damaged product
+      - Photo of product label/serial number (electronics only)
+      - NOTE: Some customers unable to provide photos (accessibility, tech issues)
+        → If no photos after 2 requests: Proceed based on description
+
+   c. Verify reporting timeline:
+      - Within 14 days of delivery: Full resolution available
+      - 15-30 days: Possible resolution (supervisor approval required)
+      - >30 days: Likely manufacturing warranty issue, not shipping damage
+        → Refer to manufacturer warranty process (SOP-010)
+
+2. DOCUMENT THE ISSUE
+   a. Create damage report in system:
+      - Case Type: "Damaged on Arrival" OR "Defective Product"
+      - Severity:
+        * Minor: Cosmetic damage, fully functional (e.g., small scratch)
+        * Major: Significant damage, partially functional
+        * Critical: Unusable, safety concern, completely broken
+
+   b. Check if this product has multiple damage reports:
+      - System flag if >5 reports in 30 days for same SKU
+      - If flagged: Notify Quality Assurance team
+      - QA may issue recall or supplier investigation
+
+   c. Record carrier information:
+      - Which shipping carrier delivered?
+      - Was package visibly damaged on delivery?
+      - Did customer refuse delivery OR accept damaged package?
+
+3. DETERMINE RESOLUTION PATH
+
+   A. SIMPLE REPLACEMENT (Standard Path)
+      Conditions:
+      - Item currently in stock
+      - Value <$300
+      - Clear damage/defect described
+
+      Action:
+      - Ship replacement immediately (2-day shipping)
+      - No need to return damaged item if value <$75
+      - If value >$75: Request return of damaged item (we provide label)
+
+   B. REFUND (When replacement unavailable)
+      Conditions:
+      - Item out of stock
+      - Item discontinued
+      - Customer prefers refund
+
+      Action:
+      - Full refund to original payment method
+      - Process within 24 hours (expedited)
+      - No return required for damaged items
+      - Customer may keep or dispose of damaged item
+
+   C. ADVANCED TROUBLESHOOTING (Electronics)
+      Conditions:
+      - Electronic item with claimed defect
+      - Unit appears physically intact
+      - Possible user error vs actual defect
+
+      Action:
+      - Walk through troubleshooting steps (use product-specific guides)
+      - Common issues: Not charged, wrong mode, compatibility
+      - If still not working after troubleshooting: Proceed with replacement/refund
+      - Time limit: Spend max 15 minutes troubleshooting
+        → If unresolved, assume defect and replace
+
+   D. HIGH-VALUE ITEMS (>$500)
+      - Requires manager approval before shipping replacement
+      - May require return of damaged item for inspection
+      - Consider offering partial refund + keep item (if usable)
+      - Photo evidence REQUIRED (no exceptions)
+
+4. PROCESS RESOLUTION
+
+   a. Replacement shipment:
+      - Expedited shipping (2-day) at no charge
+      - Email tracking info immediately
+      - If item backordered:
+        * Offer alternative product (similar specs) OR
+        * Refund + 15% future purchase credit for inconvenience
+
+   b. Damaged item return (if required):
+      - Generate return label (Template: DM-RETURN-001)
+      - RMA format: DMG-YYYYMMDD-XXXXX
+      - Return timeline: 14 days (not strictly enforced for damaged items)
+
+   c. Refund processing:
+      - Full refund (including original shipping)
+      - 3-5 business days to payment method
+      - If original payment method unavailable (card expired, closed account):
+        → Offer check by mail OR store credit (customer choice)
+
+5. CUSTOMER COMMUNICATION
+   - Acknowledge damage report within 2 hours (peak hours)
+   - Set expectations:
+     * Replacement arriving in 2-4 business days
+     * Refund processing in 3-5 business days
+   - Proactive updates if delays occur
+
+   - Template: CS-DM-002 (Damage Acknowledgment)
+   - Template: CS-DM-004 (Replacement Shipped)
+   - Template: CS-DM-006 (Refund Processed)
+
+6. CARRIER CLAIM FILING (if applicable)
+   - Damage during shipping: File claim with carrier
+   - Customer not involved in claims process (we handle)
+   - Package value >$200: Requires carrier inspection
+     → May delay resolution by 5-7 days
+     → In meantime, ship replacement to customer (we absorb risk)
+
+   - Carrier claim success rate varies:
+     * FedEx: ~75% approval
+     * UPS: ~65% approval
+     * USPS: ~40% approval (slowest process)
+
+7. DOCUMENTATION & FOLLOW-UP
+   - Log resolution in damage tracking system
+   - Flag product in inventory if multiple damage reports
+   - Follow up email 7 days after resolution:
+     * "Is your replacement working well?"
+     * "Were you satisfied with resolution?"
+     * Collect feedback for improvement
+
+EDGE CASES & EXCEPTIONS:
+
+A) CUSTOMER DAMAGED ITEM DURING ATTEMPTED RETURN
+   - Original item was fine, customer trying to return, damaged it in return shipping
+   - Different from "damaged on arrival"
+   - Handled under SOP-001 (standard returns, possible partial refund)
+
+B) MISSING PARTS vs DAMAGED
+   - If item missing parts but not damaged:
+     * First check if parts sold separately
+     * Contact manufacturer for replacement parts (often free)
+     * If parts unavailable: Full replacement or refund
+
+C) COSMETIC DAMAGE ON FINAL SALE / CLEARANCE ITEMS
+   - Final sale items sold "as-is"
+   - BUT if damage not disclosed: Customer entitled to refund
+   - If customer claims damage but item was marked "cosmetic damage" in listing:
+     → Review original listing for damage disclosure
+     → If disclosed: No refund
+     → If not disclosed: Full refund
+
+D) INTERNATIONAL SHIPMENTS
+   - Higher damage rate (longer transit)
+   - Replacement shipping costly
+   - Usually offer refund instead of replacement
+   - Customs may complicate returns
+
+E) THIRD-PARTY SELLER ITEMS (Marketplace)
+   - Items sold by third-party sellers on our platform
+   - MUST route to third-party seller support (SOP-012)
+   - We do NOT handle directly
+   - Verify seller info in system: Field "Sold by: [Company Name]"
+
+F) DAMAGED DURING DELIVERY (VISIBLE DAMAGE)
+   - If customer reports package arrived visibly damaged:
+     * Should have noted on delivery receipt OR refused package
+     * If accepted damaged package: Still covered under this SOP
+     * If refused package: Item returned to us, issue refund immediately
+
+SYSTEM LIMITATIONS:
+- Damage photo uploads: System has 10MB limit per photo
+  → If customer has high-res photos: Ask for email instead
+- Stock availability: System updates every 4 hours, not real-time
+  → Item may show in-stock but actually unavailable
+  → Confirm with warehouse before promising replacement
+- Carrier claim system: Separate platform, manual entry required
+  → Sometimes claims don't sync back to main system
+
+ESCALATION CRITERIA:
+- Damage caused safety concern: IMMEDIATE escalation to Safety team
+- Customer threatens lawsuit: Escalate to Legal
+- Repeated damage on same customer's orders (>3 in 6 months): Investigate for fraud
+- High-value electronics (>$1000): Supervisor approval required
+- Customer dissatisfied with resolution: Offer to escalate to supervisor
+
+SPECIAL NOTES:
+- Peak season (Nov-Dec): Damage rate increases 20-30% (more volume, rushed handling)
+- Fragile items: Should have been marked "Fragile" in shipping
+  → If not marked and damaged: Our error, always replace
+- Gift items: If gift recipient reports damage, must contact gift sender for order details
+  → Privacy concerns: Cannot share sender info without permission
+
+RELATED SOPS:
+- SOP-001: Standard Returns (if item working, just changed mind)
+- SOP-006: Wrong Item Shipped (different issue)
+- SOP-010: Manufacturer Warranties (>30 days after delivery)
+- SOP-012: Third-Party Seller Support (marketplace items)
