@@ -1,0 +1,157 @@
+SOP-001: Standard Product Returns
+Version: 2.1
+Last Updated: 2025-01-15
+Department: Customer Support
+---
+
+PURPOSE:
+Process customer return requests for items purchased within the return window, ensuring consistent handling and customer satisfaction.
+
+SCOPE:
+Applies to all non-final-sale items purchased within 30 days. Does not cover damaged items (see SOP-002) or wrong item shipments (see SOP-006).
+
+PREREQUISITES:
+- Customer account must be accessible in system
+- Order details must be available
+- NOTE: If order is older than 90 days, historical data may be incomplete in new system (migration gap)
+
+PROCEDURE:
+
+1. VERIFY CUSTOMER & ORDER
+   a. Locate customer account using email or order number
+   b. Confirm order date and items purchased
+   c. Check if order was placed before 2024-03-15 (old system):
+      - If YES: Historical order data may be limited. Proceed with available information.
+      - If NO: Full order history available.
+
+2. CHECK RETURN ELIGIBILITY
+   a. Calculate days since delivery (use delivery date, NOT order date)
+   b. Within 30 days of delivery?
+      - YES: Proceed to step 3
+      - NO: Check if customer has Premium account
+        * Premium: Extended 60-day return window → Proceed to step 3
+        * Regular: Outside return window → Offer store credit (50% value) OR escalate to supervisor for exception
+
+   c. Check item condition requirements:
+      - Must be unworn/unused
+      - Original packaging preferred but not required
+      - Tags attached (clothing only)
+
+   d. Final sale items (clearance marked >70% off):
+      - NOT eligible for return
+      - Can only offer store credit as goodwill gesture (requires supervisor approval)
+
+3. ISSUE RETURN AUTHORIZATION
+   a. Generate RMA (Return Merchandise Authorization) number
+      - Format: RMA-YYYYMMDD-XXXXX
+      - System generates automatically IF customer account linked
+      - If guest checkout (no account): Manually create RMA in "Guest Returns" sheet
+
+   b. Send return instructions email (Template: CS-RT-001)
+      - RMA number
+      - Return shipping label (if eligible, see below)
+      - Packaging instructions
+      - Timeline expectations (5-7 business days after receipt)
+
+   c. FREE return shipping eligibility:
+      - Order value >$50: Free prepaid label
+      - Order value <$50: Customer pays return shipping UNLESS:
+        * Premium account: Always free
+        * Item was defective: Always free (but should use SOP-002 instead)
+        * Our error (wrong item sent): Always free (but should use SOP-006 instead)
+
+4. AWAIT PRODUCT RECEIPT
+   - Expected timeline: 7-10 business days
+   - Track using RMA number
+   - NOTE: Warehouse processes returns M-F only (no weekend processing)
+
+5. WAREHOUSE INSPECTION
+   - Warehouse team inspects within 2 business days of receipt
+   - Possible outcomes:
+     a) Approved - Item in acceptable condition
+     b) Partial approval - Minor damage (customer notified, offered partial refund)
+     c) Rejected - Item used/damaged beyond policy
+
+   - IMPORTANT: Inspection results sometimes delayed if returned to wrong facility
+     (we have 2 warehouses; items may need internal transfer)
+
+6. PROCESS REFUND
+   a. Full refund approved:
+      - Refund to original payment method
+      - Processing time: 3-5 business days
+      - Customer charged for return shipping if applicable (deducted from refund)
+
+   b. Partial refund (damaged during return):
+      - Supervisor determines refund percentage
+      - Call customer to explain BEFORE processing
+      - Get verbal confirmation
+
+   c. Refund rejected:
+      - Item returned to customer at their expense
+      - OR offer to dispose of item (customer must confirm in writing)
+
+7. CUSTOMER NOTIFICATION
+   - Send refund confirmation email (Template: CS-RT-003)
+   - Include:
+     * Refund amount
+     * Method (original payment)
+     * Expected timeline
+     * Any deductions (return shipping, restocking fee if applicable)
+
+8. DOCUMENTATION
+   - Log return in system with:
+     * RMA number
+     * Return reason (dropdown: "Changed mind", "Wrong size", "Quality issue", etc.)
+     * Refund amount
+     * Resolution date
+
+   - IF system is down: Log in "Manual Returns Log" spreadsheet
+     (Sync to system when available)
+
+EDGE CASES & EXCEPTIONS:
+
+A) LOST RETURN SHIPMENT
+   - If customer's return shipment lost by carrier:
+     * Customer used our prepaid label: We absorb cost, process refund
+     * Customer used own shipping: Customer files claim with carrier
+     * If tracking shows "delivered" but warehouse never received:
+       → Escalate to Warehouse Manager AND Customer Service Lead
+       → May take 5-10 business days to locate
+
+B) INTERNATIONAL RETURNS
+   - Customers responsible for return shipping costs
+   - Customs fees not refunded
+   - Extended timeline (2-4 weeks)
+   - Refund in original currency (may differ due to exchange rates)
+
+C) GIFT RETURNS (no receipt)
+   - Can look up order if gift giver used their email
+   - If cannot locate order:
+     * Offer store credit at current selling price
+     * Requires manager approval for items >$100
+
+D) SYSTEM LIMITATIONS
+   - Orders from old system (pre-March 2024): Limited data available
+     * May not have delivery date → Use order date + 7 days as estimate
+     * May not show payment method → Offer store credit instead
+   - Returns during system maintenance (first Monday of month, 2-4am EST):
+     * Process manually, sync later
+
+ESCALATION CRITERIA:
+- Refund >$500: Requires manager approval
+- Customer disputes inspection results: Escalate to supervisor
+- Outside return window but exceptional circumstances: Supervisor decision
+- Customer threatening legal action: Immediately escalate to Legal Compliance team
+- Premium account issues: Route to Premium Support team
+
+NOTES:
+- Processing times are estimates, not guarantees
+- Holidays may extend timelines by 2-3 business days
+- Peak season (Nov-Dec): Add 3-5 days to all timelines
+- Some older orders lack complete data due to system migration - use best judgment
+
+RELATED SOPS:
+- SOP-002: Damaged Items Received
+- SOP-003: Billing Disputes & Duplicate Charges
+- SOP-006: Wrong Item Shipped
+- SOP-008: Refund Status Inquiries

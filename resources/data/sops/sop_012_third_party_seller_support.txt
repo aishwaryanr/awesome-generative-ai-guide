@@ -1,0 +1,369 @@
+SOP-012: Third-Party Marketplace Seller Support
+Version: 1.4
+Last Updated: 2025-01-17
+Department: Marketplace Support / Customer Support
+---
+
+PURPOSE:
+Handle customer inquiries related to products sold by third-party sellers on our marketplace platform, facilitating resolution between customer and seller while protecting platform standards.
+
+SCOPE:
+Covers all orders where "Sold by: [Third-Party Seller Name]" appears in order details. Does not cover items sold directly by our company (use standard SOPs for those).
+
+PREREQUISITES:
+- Access to Marketplace Seller Portal (view-only for customer support)
+- Understanding of marketplace policies and seller agreements
+- Cannot directly refund/resolve on behalf of seller (only facilitate)
+- Escalation path to Marketplace Operations team
+
+PROCEDURE:
+
+1. IDENTIFY THIRD-PARTY SELLER ORDER
+
+   A. CHECK ORDER DETAILS:
+      - Look for "Sold by: [Seller Name]" field
+      - If says "Sold by: [Our Company Name]" → Use standard SOPs (not this one)
+      - If says "Sold by: [Third-Party Name]" → This SOP applies
+
+   B. SELLER TYPES IN OUR MARKETPLACE:
+      - Fulfilled by Seller (FBS): Seller ships from their own warehouse
+      - Fulfilled by Us (FBU): Seller stores inventory in our warehouse, we ship
+      - Hybrid: Some items FBS, some FBU (check per-order)
+
+   C. GATHER SELLER INFO:
+      - Seller name and ID
+      - Seller performance metrics:
+        * Order defect rate (target: <1%)
+        * Late shipment rate (target: <4%)
+        * Customer response time (target: <24 hours)
+        * Seller rating (1-5 stars)
+      - Seller status: Active, Under Review, Suspended
+
+2. CUSTOMER ISSUE CLASSIFICATION
+
+   Common issues with marketplace orders:
+
+   A. SHIPMENT ISSUES (~40%):
+      - Item not received
+      - Item arrived late
+      - Tracking not provided
+      - Wrong shipping method used
+
+   B. PRODUCT ISSUES (~35%):
+      - Wrong item sent
+      - Damaged or defective
+      - Not as described
+      - Missing parts/accessories
+
+   C. RETURN/REFUND ISSUES (~15%):
+      - Seller not responding to return request
+      - Seller refusing valid return
+      - Return address unclear
+      - Refund not issued after return
+
+   D. SELLER COMMUNICATION ISSUES (~10%):
+      - Seller not responding to messages
+      - Seller providing conflicting information
+      - Language barrier
+
+3. INITIAL RESPONSE & TRIAGE
+
+   A. HAS CUSTOMER CONTACTED SELLER DIRECTLY?
+      - Check message history in Marketplace Messages
+      - If NO: Direct customer to contact seller first (except urgent cases)
+      - If YES but no response >48 hours: Proceed with facilitation
+      - If YES and seller responded but dispute unresolved: Mediate
+
+   B. URGENT CASES (bypass seller contact requirement):
+      - Safety issue (dangerous product, contamination)
+      - High-value item (>$500) not received
+      - Seller appears abandoned (no activity in 7+ days)
+      - Obvious violation of marketplace policies
+
+   C. WITHIN MARKETPLACE GUARANTEE TIMEFRAME?
+      - Orders <30 days old: Full guarantee applies
+      - Orders 31-90 days: Limited guarantee (defects only, not returns)
+      - Orders >90 days: Refer to manufacturer warranty (SOP-010)
+
+4. FACILITATION PROCESS
+
+   A. FULFILLED BY SELLER (FBS) ORDERS:
+      Seller is responsible for:
+      - Shipping
+      - Customer service
+      - Returns processing
+      - Refunds
+
+      Our role:
+      - Facilitate communication
+      - Enforce marketplace policies
+      - Step in if seller unresponsive
+      - Protect customer under guarantee
+
+      Action:
+      1. Send seller message (template: MKT-SEL-001):
+         "Hello [Seller],
+         Customer [Name] has reported [issue] with order [ID].
+         Please respond within 24 hours with resolution plan.
+         Our marketplace policies require [specific policy].
+         If unresponsive, we will step in to resolve per guarantee."
+
+      2. Notify customer that seller has been contacted
+      3. Set 24-hour follow-up reminder
+      4. If seller responds: Monitor resolution
+      5. If seller unresponsive: Escalate to Marketplace Operations
+
+   B. FULFILLED BY US (FBU) ORDERS:
+      We handle:
+      - Shipping
+      - Returns processing (item returns to our warehouse)
+
+      Seller handles:
+      - Product quality
+      - Refund decisions
+      - Customer inquiries
+
+      Action:
+      - Shipping issues: Handle like standard orders (we shipped it)
+      - Product issues: Route to seller for decision
+      - Returns: Accept return to our warehouse, await seller refund decision
+
+   C. SELLER UNRESPONSIVE (>48 hours):
+      - Escalate to Marketplace Operations team
+      - They contact seller via phone/email (escalated channels)
+      - If still unresponsive after 72 hours total:
+        → Marketplace Operations may issue refund on seller's behalf
+        → Funds deducted from seller's account balance
+        → Seller penalized for policy violation
+
+5. COMMON RESOLUTION PATHS
+
+   A. ITEM NOT RECEIVED:
+      FBS orders:
+      - Seller must provide tracking information
+      - If no tracking: Seller must refund OR reship
+      - If tracking shows delivered but customer claims not received:
+        → Investigate with carrier (seller's responsibility)
+        → If carrier confirms delivery: Not covered by guarantee
+        → If carrier confirms loss: Seller must refund/reship
+
+      FBU orders:
+      - We investigate (same process as standard orders)
+      - If lost in our shipping: We issue refund/reship
+      - Seller not penalized for our shipping failure
+
+   B. WRONG OR DAMAGED ITEM:
+      - Require photo evidence from customer
+      - Share with seller
+      - Seller options:
+        * Reship correct item + arrange return of wrong item
+        * Full refund + keep wrong item (if low value)
+        * Partial refund + keep item (if usable but defective)
+      - Seller must respond within 24 hours
+      - If seller refuses reasonable resolution: Marketplace Operations forces refund
+
+   C. RETURN REQUEST:
+      - Customer wants to return (changed mind, doesn't fit, etc.)
+      - Check seller's return policy:
+        * Some sellers offer 30-day returns (encouraged)
+        * Some offer "no returns" on certain items (allowed for specific categories)
+        * Policy must be clearly stated in listing (if not, default 30-day applies)
+
+      - FBS: Seller provides return address and label (or customer pays return shipping)
+      - FBU: Return to our warehouse, we process, notify seller, seller issues refund
+
+      - Seller has 2 business days after receiving return to issue refund
+      - If seller doesn't refund: Marketplace Operations forces refund + penalty
+
+   D. NOT AS DESCRIBED:
+      - Review product listing (screenshots)
+      - Compare to customer's description of received item
+      - Check if listing was misleading or inaccurate
+      - If genuinely not as described:
+        → Seller must accept return + full refund (even if "no return" policy)
+        → Seller may receive policy violation strike
+      - If item matches listing but customer misunderstood:
+        → Standard return policy applies (seller not at fault)
+
+6. MARKETPLACE GUARANTEE ACTIVATION
+
+   When seller fails to meet obligations, Marketplace Guarantee ensures customer protection:
+
+   A. GUARANTEE COVERS:
+      - Item not received (no tracking or tracking shows lost)
+      - Item significantly not as described
+      - Item damaged in shipping (FBS only; FBU covered by us)
+      - Seller refusing valid return
+      - Seller not issuing refund after valid return received
+
+   B. GUARANTEE DOES NOT COVER:
+      - Changed mind on "no return" items (if clearly stated)
+      - Damage after delivery (customer's fault)
+      - Late delivery within reasonable window (<7 days late)
+      - Buyer's remorse on correctly described item
+
+   C. GUARANTEE CLAIM PROCESS:
+      1. Customer contacts us (after attempting seller contact)
+      2. We verify: Issue exists, seller unresponsive/refusing
+      3. Marketplace Operations reviews case (usually <24 hours)
+      4. If approved: We issue refund to customer
+      5. Funds debited from seller account
+      6. Seller receives policy violation notice
+
+7. SELLER PERFORMANCE MANAGEMENT
+
+   A. POLICY VIOLATIONS (tracked by Marketplace Operations):
+      - Minor violations: Warning (excessive late shipments, slow responses)
+      - Moderate violations: Account review (multiple customer complaints)
+      - Major violations: Suspension (fraud, dangerous products, repeated failures)
+
+   B. WHEN TO ESCALATE FOR SELLER REVIEW:
+      - Multiple customers reporting same issue (>5 in 30 days)
+      - Pattern of "not as described" complaints
+      - Consistent unresponsiveness
+      - Suspected counterfeit products
+      - Safety concerns
+
+   C. SELLER ACCOUNT STATUS:
+      - Active: Good standing, orders processing normally
+      - Under Review: Performance issues, new orders may be held
+      - Suspended: Cannot fulfill orders, listings hidden
+      - Banned: Removed from marketplace permanently
+
+   If customer orders from Under Review or Suspended seller:
+   - Orders may be automatically canceled
+   - Customer notified and refunded
+   - Suggested alternative sellers for same product
+
+8. CUSTOMER COMMUNICATION
+
+   A. SET EXPECTATIONS:
+      - "This item is sold by [Seller Name], a third-party seller on our marketplace"
+      - "We're facilitating resolution and ensuring our marketplace policies are followed"
+      - "Seller has 24 hours to respond, then we'll escalate if needed"
+      - Timeline: Most cases resolved in 3-5 business days
+
+   B. TEMPLATES:
+      - MKT-CUST-001: Third-party order explanation
+      - MKT-CUST-002: Seller contacted, awaiting response
+      - MKT-CUST-003: Marketplace guarantee claim filed
+      - MKT-CUST-004: Resolution complete
+
+   C. REASSURANCE:
+      Many customers worried about third-party sellers:
+      - "All sellers vetted before joining marketplace"
+      - "Our Marketplace Guarantee protects you"
+      - "We monitor seller performance and remove poor performers"
+      - "Your payment is secure with us, not held by seller"
+
+9. DOCUMENTATION
+
+   A. LOG ALL MARKETPLACE CASES:
+      - Order number
+      - Seller name and ID
+      - Issue type
+      - Date seller contacted
+      - Seller response (if any)
+      - Resolution
+      - Guarantee claimed? (Y/N)
+
+   B. MONTHLY SELLER SCORECARD:
+      - Customer complaint rate per seller
+      - Response time average
+      - Refund/return rate
+      - Shared with Marketplace Operations for seller management
+
+EDGE CASES & EXCEPTIONS:
+
+A) SELLER NO LONGER IN MARKETPLACE
+   - Seller account closed or banned after customer placed order
+   - Order may still be fulfilled if already shipped
+   - If not shipped: Automatic cancellation + full refund
+   - Guarantee automatically applies (no seller to contest)
+
+B) CUSTOMER DISPUTES CHARGE WITH BANK (Chargeback)
+   - Customer filed chargeback on marketplace order
+   - We represent both platform and seller
+   - Evidence gathering: Contact seller for their records
+   - If seller unresponsive: Harder to win chargeback
+   - If we lose chargeback: Funds deducted from seller account (not our loss)
+   - See SOP-015 for chargeback procedures
+
+C) INTERNATIONAL SELLERS
+   - Seller located in different country than customer
+   - Longer shipping times expected
+   - Return shipping may be expensive/complicated
+   - Currency differences
+   - Language barriers (we may provide translation)
+
+D) COUNTERFEIT PRODUCTS SUSPECTED
+   - IMMEDIATE escalation to Brand Protection team
+   - Do NOT inform seller (investigation needed)
+   - Customer issued immediate refund
+   - Seller account frozen pending investigation
+   - May involve Legal team and brand owners
+
+E) MULTIPLE SELLERS, ONE ORDER
+   - Customer ordered from multiple sellers in single checkout
+   - Each item handled separately (different sellers)
+   - One item issue doesn't affect others
+   - Refunds processed per-seller, not whole order
+
+F) SELLER OFFERS RESOLUTION OUTSIDE PLATFORM
+   - Seller asks customer to cancel claim for direct payment (red flag)
+   - Seller offers "better deal" outside marketplace (policy violation)
+   - Instruct customer: "All transactions must stay on platform for protection"
+   - Report seller to Marketplace Operations (potential fraud)
+
+SYSTEM LIMITATIONS:
+- Seller message system: 24-48 hour delivery (not instant)
+- Some sellers have language barriers (translation not always available)
+- FBS tracking: Some sellers use non-standard carriers (limited tracking visibility)
+- Seller account balance: If negative, refunds may be delayed (we front the money)
+- Historical seller data: Pre-2024 incomplete due to system migration
+
+MARKETPLACE POLICIES (Key Points):
+
+- Seller must ship within 2 business days (or stated handling time)
+- Tracking must be provided for orders >$50
+- Seller must respond to customer messages within 24 hours
+- Valid returns must be refunded within 2 business days of receipt
+- Listings must accurately describe product (misleading = violation)
+- Returns accepted within 30 days unless specific exemption
+- No counterfeit, illegal, or unsafe products (immediate ban)
+
+ESCALATION CRITERIA:
+- Seller unresponsive >48 hours: Marketplace Operations
+- Safety concern: Safety team + Marketplace Operations immediately
+- Suspected counterfeit: Brand Protection team
+- High-value issue (>$1000): Marketplace Operations Manager
+- Customer threatening legal action: Legal Compliance
+- Seller harassing customer: Marketplace Operations + potentially ban seller
+
+COLLABORATION:
+- Marketplace Operations: Seller management, policy enforcement
+- Brand Protection: Counterfeit investigations
+- Legal: Seller contract issues, IP disputes
+- Finance: Payment holds, refund processing
+- Warehouse (FBU only): Returns processing, inventory management
+
+METRICS (Marketplace Health):
+- % of marketplace orders with issues: Currently 3.2% (target: <3%)
+- Average resolution time: 4.1 days (target: <3 days)
+- Marketplace Guarantee claim rate: 0.8% of orders (target: <1%)
+- Seller response rate: 89% within 24 hours (target: >95%)
+- Customer satisfaction (marketplace orders): 4.1/5 stars (target: >4.3)
+
+RELATED SOPS:
+- SOP-001: Standard Returns (similar process but direct orders)
+- SOP-002: Damaged Items (similar process but direct orders)
+- SOP-006: Wrong Item Shipped (similar process but direct orders)
+- SOP-015: Chargebacks (if customer disputes with bank)
+
+NOTES:
+- Marketplace adds complexity but also product selection
+- Balance: Protect customers but don't over-penalize sellers
+- Most sellers are honest small businesses trying their best
+- ~5% of sellers cause 80% of problems (Pareto principle applies)
+- Proactive seller vetting reduces downstream customer issues
+- Clear policies + strong guarantee = customer trust in marketplace

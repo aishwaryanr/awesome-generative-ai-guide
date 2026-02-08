@@ -1,0 +1,300 @@
+SOP-004: Account Access Issues & Password Resets
+Version: 1.5
+Last Updated: 2025-01-18
+Department: Customer Support / IT Security
+---
+
+PURPOSE:
+Assist customers who cannot access their accounts due to forgotten passwords, locked accounts, email access issues, or other authentication problems.
+
+SCOPE:
+Covers account access issues for customer-facing accounts. Does not cover employee accounts (IT Helpdesk) or business/wholesale accounts (B2B Support).
+
+PREREQUISITES:
+- Customer must verify identity before any account changes
+- Cannot reset password for customer - they must do it themselves via secure link
+- Some actions require IT Security approval
+
+PROCEDURE:
+
+1. IDENTIFY THE ACCESS ISSUE
+
+   a. Ask customer to describe problem:
+      - "Forgot password" (most common)
+      - "Account locked" (after multiple failed login attempts)
+      - "Email not recognized" (typo or different email)
+      - "Can't receive password reset email"
+      - "Account hacked/compromised"
+      - "Two-factor authentication (2FA) issues"
+
+   b. Check account status in system:
+      - Active
+      - Locked (security lock after failed attempts)
+      - Suspended (fraud flag or payment issue)
+      - Closed (customer or system closed account)
+      - Merged (duplicate account merged into another)
+
+2. VERIFY CUSTOMER IDENTITY
+
+   SECURITY CRITICAL: Never reset or modify account without proper verification
+
+   a. Primary verification methods:
+      - Can access registered email: Send verification code (6-digit)
+      - Can access phone (if on file): Send SMS verification code
+      - Can provide recent order number + billing zip code
+      - Can answer security questions (if set up)
+
+   b. If primary methods fail:
+      - Last 4 digits of payment method on file
+      - Shipping address on last order
+      - Approximate date of last order
+      - Items purchased (last 3 orders)
+
+   c. If still cannot verify:
+      - Escalate to IT Security team
+      - May require photo ID submission via secure upload portal
+      - Process takes 24-48 hours
+
+   IMPORTANT: If verification fails after 3 attempts:
+   → Cannot proceed (security policy)
+   → Customer must use password reset flow independently
+   → Do not override security measures
+
+3. RESOLUTION BY ISSUE TYPE
+
+   A. FORGOT PASSWORD (Email accessible)
+      - Customer must use self-service password reset:
+        * Go to login page
+        * Click "Forgot Password"
+        * Enter email address
+        * Check email for reset link (expires in 1 hour)
+        * Create new password
+
+      - If reset email not arriving:
+        * Check spam/junk folder
+        * Verify correct email address (common: typos in email)
+        * Check if email provider blocking our domain (rare)
+          → Add support@[company].com to contacts, try again
+        * System delay (emails can take 5-10 minutes during peak)
+
+      - If email definitely not arriving after 15 minutes:
+        * Try alternative verification (phone SMS)
+        * Or escalate to IT to check email delivery logs
+        * May be issue with specific email provider (AOL, older ISPs sometimes problematic)
+
+   B. ACCOUNT LOCKED (Failed Login Attempts)
+      - Auto-locks after 5 failed password attempts
+      - Security measure to prevent brute-force attacks
+      - Unlocks automatically after 30 minutes
+      - OR customer can use "Forgot Password" immediately (bypasses lock)
+
+      - If customer needs immediate access:
+        * Option 1: Wait 30 minutes
+        * Option 2: Reset password now (recommended)
+
+      - If locked due to suspicious activity (not just wrong password):
+        * System may extend lock to 24 hours
+        * Customer sees message: "Account temporarily locked for security review"
+        * Must escalate to IT Security - agent cannot unlock
+        * IT reviews: 4-6 hours during business hours, up to 24 hours on weekends
+
+   C. EMAIL NOT RECOGNIZED
+      - Common issue: Customer has multiple emails, can't remember which one
+      - Search by:
+        * Name + zip code
+        * Phone number (if provided)
+        * Order number (if available)
+
+      - If account found with different email:
+        * Inform customer of correct email (but read it back obscured for security):
+          "Your account is registered with j***@g***.com - do you recognize this?"
+        * Customer must access that email for password reset
+
+      - If account NOT found:
+        * Customer may not have created account (guest checkout)
+        * Or account deleted/merged
+        * Check "Deleted Accounts" table (requires supervisor access)
+        * If deleted: Can reactivate within 60 days (after that, permanently deleted)
+
+   D. CAN'T RECEIVE PASSWORD RESET EMAIL
+      - Email delivery issues more common than system issues
+
+      - Troubleshooting steps:
+        1. Confirm correct email (have customer spell it out)
+        2. Check spam/junk folder
+        3. Check email filters/rules blocking our domain
+        4. Try sending to alternative email (if on file)
+        5. Check if email inbox full (less common now)
+        6. Provider-specific issues:
+           * AOL, Yahoo: Sometimes delayed 15-30 minutes
+           * Corporate emails: IT may block external links
+           * School emails (.edu): Often have aggressive spam filters
+
+      - If none work:
+        * Use SMS phone verification (if phone on file)
+        * If no phone: Security questions
+        * If none available: Escalate to IT + require ID verification
+
+   E. ACCOUNT HACKED / COMPROMISED
+      - HIGH PRIORITY - potential fraud
+
+      - Indicators of compromise:
+        * Orders placed customer didn't make
+        * Shipping address changed
+        * Payment method added/changed
+        * Email address changed
+        * Password recently changed (but not by customer)
+
+      - IMMEDIATE actions:
+        1. Place security hold on account (prevent new orders)
+        2. Force password reset
+        3. Remove any suspicious payment methods
+        4. Remove any suspicious shipping addresses
+        5. Cancel any pending orders (if shipped, attempt intercept)
+        6. Notify IT Security team
+
+      - Investigation:
+        * Check account activity log:
+          - Recent logins (IP addresses, locations, devices)
+          - Recent changes (email, password, payment, address)
+        * Check order history for unauthorized orders
+        * Review payment disputes (chargebacks filed?)
+
+      - Resolution:
+        * Reset all account credentials
+        * Enable 2FA (mandatory for compromised accounts)
+        * Issue refunds for unauthorized orders
+        * Provide incident report to customer
+        * Timeline: 1-2 business days for full resolution
+
+   F. TWO-FACTOR AUTHENTICATION (2FA) ISSUES
+      - Customer enabled 2FA, now can't receive codes
+
+      - Scenarios:
+        a) Phone number changed/lost:
+           * Use backup codes (if customer saved them)
+           * If no backup codes: Must verify identity, then IT removes 2FA
+           * Re-enable 2FA with new phone number
+
+        b) 2FA app deleted/phone replaced:
+           * Similar to above
+           * Must verify identity, IT removes 2FA
+           * Customer re-enables with new device
+
+        c) Codes not working (wrong time sync):
+           * 2FA codes time-sensitive
+           * Check device clock - must be accurate
+           * Common issue: Phone set to wrong timezone
+
+        d) Never set up 2FA but system asking for it:
+           * May be enabled by mistake
+           * Or security measure after suspicious activity
+           * Verify identity, then IT can adjust
+
+4. DOCUMENTATION
+   - Log in system:
+     * Issue type (dropdown)
+     * Verification method used
+     * Resolution provided
+     * Any security flags noted
+
+   - If security incident:
+     * Create separate incident report
+     * Notify IT Security AND customer
+     * Document timeline of events
+
+5. CUSTOMER COMMUNICATION
+   - Be patient - authentication issues frustrating
+   - Use simple language (avoid tech jargon)
+   - Provide step-by-step instructions
+   - Acknowledge security measures may be inconvenient but protect their account
+
+   - Templates:
+     * CS-ACC-001: Password Reset Instructions
+     * CS-ACC-003: Account Locked Notification
+     * CS-ACC-005: Security Incident Notification
+
+6. FOLLOW-UP
+   - For security incidents: Follow up 24 hours after resolution
+   - For standard password resets: No follow-up needed
+   - If customer expressed frustration: Personal follow-up email from manager
+
+EDGE CASES & EXCEPTIONS:
+
+A) DECEASED ACCOUNT HOLDER
+   - Family member trying to access deceased person's account
+   - CANNOT provide access without legal documentation
+   - Require:
+     * Death certificate
+     * Proof of legal authority (executor of estate, etc.)
+   - Escalate to Legal team
+   - Process takes 5-10 business days
+
+B) ACCOUNT UNDER 13 YEARS OLD
+   - COPPA compliance issue
+   - Accounts for children <13 require parental consent
+   - If discovered:
+     * Suspend account immediately
+     * Request parental verification
+     * Or close account and refund orders
+   - Notify Legal Compliance
+
+C) BUSINESS ACCOUNT vs PERSONAL
+   - Sometimes business owner trying to access personal account settings
+   - Business accounts managed differently (B2B portal)
+   - Cannot merge business and personal accounts
+   - Must use separate logins
+
+D) INTERNATIONAL ACCOUNTS WITH PHONE VERIFICATION
+   - SMS codes to international numbers sometimes fail
+   - Higher cost for company to send international SMS
+   - Prefer email verification for international customers
+   - If SMS required: May take 15-30 minutes to arrive
+
+E) ACCOUNT MERGED DUE TO DUPLICATE
+   - Customer had 2 accounts with different emails
+   - System auto-merged to primary account
+   - Customer trying to access old email/account
+   - Explain merge, provide primary account details
+   - Order history combined in primary account
+
+F) CORPORATE EMAIL BLOCKS RESET LINKS
+   - Corporate IT often blocks password reset links (security policy)
+   - Customer must:
+     * Update account with personal email OR
+     * Contact their IT to whitelist our domain OR
+     * Use phone verification instead
+
+SYSTEM LIMITATIONS:
+- Password reset links expire after 1 hour (cannot extend)
+- Account lockout timer cannot be manually overridden (30-min fixed)
+- SMS verification: Some countries not supported (Cuba, North Korea, Syria)
+- Email delivery: Not instant (can take 1-10 minutes)
+- 2FA backup codes: Only generated once (if lost, must remove 2FA)
+
+ESCALATION CRITERIA:
+- Cannot verify identity after 3 attempts: Security team
+- Account compromise suspected: IT Security (immediate)
+- Account locked >24 hours: IT Support
+- Need to access deleted account: Database team + supervisor
+- Legal documentation required: Legal team
+- Customer threatening legal action: Legal Compliance
+
+SECURITY RED FLAGS (escalate immediately):
+- Customer knows order details but fails basic verification
+- Multiple people calling about same account
+- Requests to change email/phone without proper verification
+- Pressuring agent to bypass security measures
+- Account has recent suspicious activity + access request
+
+RELATED SOPS:
+- SOP-007: Account Security & Fraud Prevention
+- SOP-003: Billing Disputes (if compromised account used for fraud)
+- SOP-014: Privacy & Data Requests (if customer wants account data)
+
+NOTES:
+- Security vs convenience tradeoff: Always favor security
+- Cannot "just help customer out" by bypassing verification - termination offense
+- Document every verification attempt and method used
+- If uncertain about security: Escalate rather than risk compromise
+- Remember: Account access = access to payment methods, order history, personal info

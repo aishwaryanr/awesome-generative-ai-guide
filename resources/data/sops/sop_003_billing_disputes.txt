@@ -1,0 +1,289 @@
+SOP-003: Billing Disputes & Duplicate Charges
+Version: 2.3
+Last Updated: 2025-01-20
+Department: Customer Support / Finance
+---
+
+PURPOSE:
+Investigate and resolve billing issues including duplicate charges, incorrect amounts, unauthorized charges, and refund delays.
+
+SCOPE:
+Covers all billing-related disputes for orders placed within 90 days. Older disputes require Finance team review. Does not cover chargebacks filed with banks (see SOP-015).
+
+PREREQUISITES:
+- Access to billing system (requires elevated permissions)
+- Customer identity verified (security questions OR order confirmation code)
+- Original transaction must be visible in system
+
+PROCEDURE:
+
+1. INITIAL VERIFICATION & TRIAGE
+   a. Verify customer identity:
+      - Email address matches account
+      - Can provide order number OR last 4 digits of payment method
+      - If verification fails: Cannot proceed (security policy)
+        → Advise customer to contact from registered email
+
+   b. Identify dispute type:
+      - DUPLICATE CHARGE: Same amount charged multiple times
+      - INCORRECT AMOUNT: Charge different from order total
+      - UNAUTHORIZED CHARGE: Customer claims didn't place order
+      - REFUND NOT RECEIVED: Previous refund not showing in account
+      - SUBSCRIPTION ISSUE: Recurring charge customer wants cancelled
+
+   c. Check dispute history:
+      - Has customer disputed charges before? (fraud flag if >3 times in 6 months)
+      - Are multiple customers reporting issues with same transaction date?
+        → May indicate payment processor outage or batch error
+
+2. INVESTIGATE THE CHARGE
+
+   A. DUPLICATE CHARGES
+      - Check transaction log:
+        * Was order submitted multiple times? (common: customer clicked "Pay" multiple times)
+        * System error? (payment gateway timeout causing double processing)
+        * Separate orders? (cart reopened, placed second order)
+
+      - Verify charge status:
+        * Both charges "settled" (fully processed)
+        * One "settled", one "pending" (may auto-cancel in 3-5 days)
+        * One "settled", one "pre-authorization hold" (NOT actual charge, will drop off)
+
+      - IMPORTANT: Pre-authorization holds look like charges but aren't
+        → Show as "pending" in customer's bank
+        → Drop off in 3-7 business days
+        → We cannot "cancel" a hold, only bank can release
+        → Common with gas station-style authorization
+
+      Action based on findings:
+      - Two actual charges: Refund duplicate immediately
+      - One charge + one hold: Explain hold will drop, no action needed (but offer goodwill credit)
+      - Two separate orders: Explain both valid, offer to cancel/return one if desired
+
+   B. INCORRECT AMOUNT CHARGED
+      - Compare:
+        * Order total shown in confirmation email
+        * Amount actually charged
+        * Cart contents at checkout
+
+      - Common causes:
+        * Tax calculation error (wrong state/region detected)
+        * Shipping cost added but not shown properly
+        * Discount code not applied
+        * Currency conversion (international orders)
+        * Tip added on mobile (some mobile browsers have tip prompts)
+
+      - Calculate correct amount:
+        Items: $XXX
+        Shipping: $XXX
+        Tax: $XXX
+        Discount: -$XXX
+        TOTAL: $XXX
+
+      - If we overcharged: Refund difference immediately
+      - If we undercharged:
+        * Our error: Customer keeps discount (goodwill)
+        * If amount >$50 undercharged: Finance must approve (may request additional payment)
+
+   C. UNAUTHORIZED CHARGES / FRAUD
+      - HIGH PRIORITY - potential account compromise
+
+      - Interview customer:
+        * Do they recognize the shipping address?
+        * Do they live with anyone who may have ordered?
+        * Have they shared account access with family?
+        * Was their payment method stolen/compromised?
+
+      - Check order details:
+        * Shipped to customer's registered address: Likely legitimate
+        * Shipped elsewhere: Possible fraud
+        * Digital items (gift cards, downloads): High fraud risk
+
+      - Check account activity:
+        * Recent password changes?
+        * Login from unusual location/IP?
+        * Shipping address added recently?
+
+      Action based on fraud assessment:
+      - LOW RISK (probably legitimate, customer forgot):
+        → Explain order details, offer return option
+      - MEDIUM RISK (unclear):
+        → Supervisor review required
+      - HIGH RISK (likely fraudulent):
+        → Cancel order if not shipped
+        → If shipped, intercept package (contact warehouse)
+        → Issue refund
+        → Reset account password
+        → Place account security hold (additional verification required for future orders)
+        → Report to Fraud Prevention team
+
+   D. REFUND NOT RECEIVED
+      - Locate original refund transaction:
+        * Check refund date in system
+        * Refund method (original payment method vs store credit)
+        * Refund status: Processed, Pending, Failed
+
+      - Timeline expectations:
+        * Credit card: 5-7 business days after processing
+        * Debit card: 3-5 business days
+        * PayPal: 1-3 business days
+        * Bank transfer: 7-10 business days
+        * Check by mail: 10-14 business days
+
+      - Common issues:
+        * Refund processed, but within normal timeframe (customer checking too soon)
+        * Refunded to expired/closed card (bank should redirect to new card, but sometimes fails)
+        * Refunded to wrong payment method (customer used multiple cards, we refunded to original but they're checking different card)
+        * Refund failed (payment processor rejected it)
+
+      - If refund shows "Failed" in system:
+        * Contact Finance team to investigate
+        * May need to issue refund via alternative method (check, bank transfer)
+        * Requires 3-5 business days for Finance review
+
+3. RESOLUTION & PROCESSING
+
+   a. Immediate refund authority:
+      - Amounts <$200: Agent can process immediately
+      - Amounts $200-$500: Supervisor approval required (usually granted same day)
+      - Amounts >$500: Finance team approval (may take 1-2 business days)
+
+   b. Issue refund:
+      - System button: "Issue Refund"
+      - Select reason code (required for reporting):
+        * DUPLICATE_CHARGE
+        * OVERCHARGE_ERROR
+        * FRAUD_PROTECTION
+        * CUSTOMER_DISPUTE_OTHER
+
+      - Refund to:
+        * Original payment method (default)
+        * Alternative method if original unavailable:
+          → Store credit (instant)
+          → Check by mail (10-14 days)
+          → Bank transfer (3-5 days, requires bank details)
+
+   c. Document resolution:
+      - Case notes must include:
+        * Dispute type
+        * Investigation findings
+        * Refund amount and method
+        * Customer notified? (Y/N)
+        * Any fraud indicators? (Y/N)
+
+4. CUSTOMER COMMUNICATION
+   - Acknowledge dispute within 4 hours
+   - Set expectations:
+     * Investigation may take 24-48 hours for complex cases
+     * Refund processing time (varies by method)
+     * Next steps if refund doesn't appear
+
+   - Use templates:
+     * CS-BL-001: Dispute Acknowledgment
+     * CS-BL-003: Duplicate Charge Resolution
+     * CS-BL-005: Refund Processed Confirmation
+
+   - For pre-authorization holds:
+     * Explain clearly this is NOT a charge
+     * Cannot be cancelled by us
+     * Will auto-release in 3-7 days
+     * Provide link to article explaining holds
+
+5. FOLLOW-UP & PREVENTION
+   - Follow up 7-10 days after resolution:
+     * "Did your refund appear?"
+     * "Were you satisfied with resolution?"
+
+   - Log issue for trend analysis:
+     * Multiple duplicate charges on same day: Payment processor issue
+     * Multiple disputes from same payment method: Possible fraud ring
+     * Pattern of overcharges: Tax calculation bug
+
+EDGE CASES & EXCEPTIONS:
+
+A) CHARGEBACK FILED WITH BANK
+   - Customer went directly to bank and filed dispute
+   - Bank has already reversed charge
+   - We receive chargeback notification
+   - IMMEDIATELY escalate to Chargeback team (SOP-015)
+   - DO NOT issue additional refund (customer already has money back)
+   - If we also refund, customer has double refund (must recover one)
+
+B) INTERNATIONAL CURRENCY ISSUES
+   - Customer charged in USD but expected local currency (or vice versa)
+   - Exchange rate fluctuations between order and charge
+   - Currency conversion fees added by bank (not our charge)
+   - Solution: Explain breakdown, refund if our error in currency selection
+
+C) SUBSCRIPTION CANCELLATION REQUESTS
+   - Customer wants to cancel recurring subscription
+   - Check subscription status:
+     * Active: Can cancel, refund current period (prorated)
+     * Already cancelled: Confirm cancellation date, explain final charge
+     * Paused: Explain pause status, offer to fully cancel
+
+   - Subscription refund policy:
+     * Cancel before renewal date: No charge, no refund needed
+     * Cancel after renewal: Refund full amount (customer-friendly policy)
+     * Note: Changed in 2024, old policy was no refunds - be aware when reviewing old cases
+
+D) PAYMENT METHOD EXPIRED/CHANGED
+   - Cannot refund to expired card
+   - Options:
+     * New card from same bank: Often auto-routes to new card
+     * Different payment method: Requires customer to provide new details
+     * Store credit: Instant alternative
+     * Check by mail: Backup option (slowest)
+
+E) BATCH PROCESSING ERRORS
+   - Occasionally, payment processor has batch error
+   - Multiple customers charged incorrectly on same date
+   - Finance team issues mass refund
+   - If customer contacts before mass refund processed:
+     → Check internal alerts for batch error notice
+     → Explain proactive refund in progress
+     → Avoid processing duplicate refund
+
+F) PARTIAL CHARGES (MULTIPLE ITEMS)
+   - Order has 3 items, customer disputes charge for 1 item
+   - Cannot refund single item from multi-item charge
+   - Options:
+     * Process full refund, customer reorders other items
+     * Process partial refund (manual Finance team request)
+     * Offer store credit for disputed item value
+
+SYSTEM LIMITATIONS:
+- Refund system only processes M-F (no weekend processing)
+- Maximum refund per transaction: $10,000 (higher amounts require wire transfer)
+- Payment gateway logs retained 90 days only
+  → Disputes >90 days: Must request from Finance archives (2-3 day wait)
+- Some payment methods don't support refunds (prepaid cards, gift cards)
+  → Offer store credit instead
+
+ESCALATION CRITERIA:
+- Amount >$500: Supervisor approval needed
+- Suspected fraud: Fraud Prevention team
+- Chargeback filed: Chargeback team (DO NOT handle in regular support)
+- Customer threatens legal action: Legal Compliance team
+- Refund failed/rejected by processor: Finance team
+- Customer dissatisfied after 2 attempts: Escalate to support manager
+
+FRAUD INDICATORS (escalate immediately):
+- Multiple disputes from same customer in short timeframe
+- Dispute claims "unauthorized" but order shipped to customer's address
+- Customer unable to verify basic account details
+- IP address shows different country than billing address
+- High-value orders with free email domain (gmail, yahoo) + new account
+- Multiple payment methods attempted before successful charge
+
+RELATED SOPS:
+- SOP-001: Standard Returns (if customer wants to return item AND get refund)
+- SOP-007: Account Security & Compromise
+- SOP-015: Chargeback Management
+- SOP-018: Subscription Cancellations
+
+NOTES:
+- Be empathetic - billing issues cause stress and distrust
+- Assume customer is telling truth unless clear fraud indicators
+- When in doubt, favor customer (within reason) - cost of goodwill < cost of lost customer
+- Peak periods (Black Friday, holidays): Higher volume of billing errors due to system strain

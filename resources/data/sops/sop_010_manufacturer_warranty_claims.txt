@@ -1,0 +1,395 @@
+SOP-010: Manufacturer Warranty Claims
+Version: 1.7
+Last Updated: 2025-01-21
+Department: Customer Support / Product Support
+---
+
+PURPOSE:
+Assist customers with manufacturer warranty claims for defective products outside our return window, facilitating resolution between customer and manufacturer while providing support throughout the process.
+
+SCOPE:
+Covers warranty claims on products >30 days after delivery (or >60 days for Premium accounts). For issues within return window, use SOP-002 instead. Applies to products with manufacturer warranties only (not all products have warranties).
+
+PREREQUISITES:
+- Product must have manufacturer warranty (check product details in system)
+- Customer must have proof of purchase (order confirmation)
+- Defect must be covered under warranty terms
+- Product must be within warranty period (varies by manufacturer: 90 days to lifetime)
+
+PROCEDURE:
+
+1. DETERMINE IF WARRANTY APPLIES
+
+   A. CHECK PRODUCT WARRANTY STATUS:
+      - Search product SKU in system
+      - View "Warranty Information" field:
+        * "Manufacturer: 1-year limited warranty"
+        * "Manufacturer: 90-day defect warranty"
+        * "Manufacturer: Lifetime warranty"
+        * "No manufacturer warranty" (typically: consumables, accessories, final sale items)
+
+   B. CALCULATE DAYS SINCE PURCHASE:
+      - Use delivery date (not order date)
+      - Example: Product delivered Jan 15, today is April 20 → 95 days
+      - Within our return window? (30/60 days)
+        → YES: Use SOP-002 (we handle directly)
+        → NO: Proceed with manufacturer warranty
+
+   C. VERIFY DEFECT TYPE IS COVERED:
+      Most warranties cover:
+      - Manufacturing defects (faulty components, poor assembly)
+      - Premature failure (product stops working under normal use)
+      - Performance issues (doesn't perform as specified)
+
+      Most warranties DO NOT cover:
+      - Physical damage (dropped, liquid damage, impact)
+      - Normal wear and tear (battery degradation, cosmetic aging)
+      - Misuse or abuse (used outside intended purpose)
+      - Unauthorized modifications (customer took apart, modified)
+      - Consumable parts (batteries, filters, etc. have separate shorter warranties)
+
+   D. IDENTIFY WARRANTY DURATION:
+      Common warranty periods by product category:
+      - Electronics: 1 year standard (some 2-3 years)
+      - Appliances: 1-2 years
+      - Furniture: 1-5 years (varies widely)
+      - Tools: 90 days to lifetime (depending on brand)
+      - Clothing/Shoes: 30-90 days (limited)
+      - Kitchen items: 1 year typical
+
+      NOTE: Extended warranties (purchased separately) tracked in different system
+      → If customer has extended warranty: Route to Extended Warranty dept (SOP-019)
+
+2. GATHER REQUIRED INFORMATION
+
+   Before contacting manufacturer, collect:
+
+   A. CUSTOMER INFORMATION:
+      - Name
+      - Email address
+      - Phone number
+      - Shipping address (for replacement/repair return)
+
+   B. PRODUCT INFORMATION:
+      - Product name and model number
+      - Serial number (critical for many manufacturers)
+        * Often located on product label, bottom of device, or battery compartment
+        * If customer can't find: Provide guidance on typical locations
+        * Some manufacturers won't process claim without serial number
+      - Date of purchase (order confirmation)
+      - SKU or product code
+
+   C. DEFECT DESCRIPTION:
+      - What is wrong? (specific symptoms)
+      - When did issue start?
+      - Does it happen constantly or intermittently?
+      - Has customer attempted any troubleshooting?
+      - Photos/videos of issue (if helpful)
+
+   D. PROOF OF PURCHASE:
+      - Order confirmation email
+      - Receipt (we can provide)
+      - Invoice
+      - Delivery confirmation
+
+3. MANUFACTURER CONTACT METHODS
+
+   We maintain manufacturer contact database:
+
+   A. DIRECT MANUFACTURER WARRANTY (most common):
+      - Customer contacts manufacturer directly
+      - We provide manufacturer contact information
+      - We provide proof of purchase documentation
+      - Customer handles claim with manufacturer
+      - Manufacturer ships replacement or provides repair instructions
+
+   B. RETAILER-FACILITATED WARRANTY (select manufacturers):
+      - Some manufacturers allow us to submit claims on customer's behalf
+      - Faster process for customer
+      - Requires manufacturer portal access (we have for major brands)
+      - List of supported manufacturers in system under "Facilitated Warranty Program"
+
+   C. MAIL-IN REPAIR (less common now):
+      - Customer ships product to manufacturer repair center
+      - Manufacturer repairs and returns
+      - Turnaround: 2-4 weeks typically
+      - Shipping costs vary (some free, some customer pays)
+
+4. PROCESS BY MANUFACTURER TYPE
+
+   A. TIER 1 MANUFACTURERS (Major brands, good support):
+      Examples: Apple, Samsung, Sony, LG, KitchenAid, DeWalt
+
+      Process:
+      - Customer contacts manufacturer (phone, online portal, or in-person at authorized center)
+      - Manufacturer has dedicated customer service
+      - Turnaround: 7-14 days typical
+      - Options usually include: Replacement, repair, or refund
+
+      Our role:
+      - Provide manufacturer contact info
+      - Provide proof of purchase
+      - Explain process to customer
+      - Follow up if customer reports issues with manufacturer
+
+   B. TIER 2 MANUFACTURERS (Smaller brands, moderate support):
+      Process:
+      - May have limited customer service hours
+      - Email or online form primary contact method
+      - Response time: 3-5 business days
+      - Turnaround: 2-4 weeks
+      - May offer repair only (not replacement)
+
+      Our role:
+      - Same as Tier 1 but set expectations for slower process
+      - May need to follow up with manufacturer if unresponsive
+
+   C. TIER 3 MANUFACTURERS (Small/unknown brands, poor/no support):
+      Process:
+      - May not have functional customer service
+      - Email bounces or no response
+      - Company may be out of business
+
+      Our role:
+      - Attempt to contact manufacturer on customer's behalf
+      - If manufacturer unresponsive after 7 days:
+        * Offer goodwill store credit (typically 20-30% of purchase price)
+        * Or advise customer of limited options
+      - Document manufacturer non-responsiveness (affects future purchasing decisions)
+
+5. FACILITATED WARRANTY PROCESS (Select Manufacturers Only)
+
+   For manufacturers in Facilitated Warranty Program:
+
+   A. SUBMIT CLAIM VIA MANUFACTURER PORTAL:
+      1. Log into manufacturer portal (credentials in secure system)
+      2. Create warranty claim case:
+         - Customer information
+         - Product information (model, serial number)
+         - Defect description
+         - Proof of purchase (upload)
+         - Requested resolution (typically replacement)
+      3. Submit claim
+      4. Receive claim number
+
+   B. TRACK CLAIM STATUS:
+      - Check portal daily for updates
+      - Manufacturers typically respond within 2-5 business days:
+        * APPROVED: Replacement shipped or repair authorized
+        * MORE INFO NEEDED: Clarification requested (contact customer)
+        * DENIED: Not covered under warranty (see step 7)
+
+   C. COMMUNICATE WITH CUSTOMER:
+      - Provide claim number
+      - Set expectations: "Manufacturer reviewing, typically 3-5 days"
+      - Proactive updates as claim progresses
+      - Notify when replacement ships (with tracking)
+
+6. ADVANCED TROUBLESHOOTING (Before Warranty Claim)
+
+   Some manufacturers require troubleshooting attempts before accepting claim:
+
+   A. COMMON TROUBLESHOOTING STEPS:
+      Electronics:
+      - Power cycle (turn off/on, unplug/replug)
+      - Reset to factory settings
+      - Update firmware/software
+      - Check connections and cables
+      - Try different power outlet
+
+      Appliances:
+      - Check power source
+      - Verify proper installation
+      - Check for obstructions
+      - Clean filters or vents
+      - Consult user manual
+
+   B. MANUFACTURER TROUBLESHOOTING REQUIREMENTS:
+      - Some manufacturers won't accept claim without proof of troubleshooting
+      - Document steps customer has tried
+      - If customer refuses to troubleshoot:
+        * Explain manufacturer may require it
+        * Some manufacturers charge inspection fees if no defect found
+
+   C. TIME LIMIT:
+      - Spend max 15-20 minutes on troubleshooting with customer
+      - If unresolved: Proceed with warranty claim
+      - Customer can continue troubleshooting with manufacturer directly
+
+7. WARRANTY CLAIM DENIALS
+
+   Manufacturer may deny warranty claim for:
+
+   A. COMMON DENIAL REASONS:
+      - Damage due to misuse (customer fault)
+      - Product modified or repaired by unauthorized party
+      - Normal wear and tear (not a defect)
+      - Out of warranty period
+      - No proof of purchase
+      - Serial number doesn't match or is missing
+
+   B. IF DENIED:
+      - Explain denial reason to customer
+      - Check if denial is accurate (sometimes manufacturer errors)
+      - If denial seems incorrect:
+        * Gather additional evidence
+        * Appeal with manufacturer
+        * Escalate within manufacturer's system
+
+   C. IF DENIAL IS VALID:
+      - Explain warranty doesn't cover this issue
+      - Offer alternatives:
+        * Paid repair through manufacturer (if available)
+        * Third-party repair (customer's choice, voids remaining warranty)
+        * Replace product (customer purchases new one)
+        * Goodwill discount on replacement purchase (10-15%, supervisor approval)
+
+8. GOODWILL RESOLUTIONS (When Warranty Doesn't Apply but Customer Deserves Help)
+
+   Situations where we might offer goodwill despite no warranty:
+
+   A. JUST OUTSIDE WARRANTY PERIOD:
+      - Product fails 1-2 months after warranty expires
+      - Strong case for premature failure
+      - Supervisor can approve: 20-30% discount on replacement purchase
+
+   B. MANUFACTURER UNRESPONSIVE:
+      - Warranty exists but manufacturer doesn't respond
+      - After 10 business days of attempting contact
+      - Offer: Store credit for 30-40% of original purchase price
+
+   C. KNOWN PRODUCT DEFECT:
+      - Multiple customers reporting same issue (pattern)
+      - Product may have design flaw
+      - Document and escalate to Product Quality team
+      - May offer replacement or refund as goodwill
+
+   D. PREMIUM ACCOUNT CUSTOMERS:
+      - Premium customers get enhanced support
+      - More generous goodwill gestures
+      - Extended consideration period
+
+9. CUSTOMER COMMUNICATION & EXPECTATIONS
+
+   A. SET REALISTIC EXPECTATIONS:
+      - "Manufacturer warranty process takes 2-4 weeks typically"
+      - "We'll provide all necessary documentation, but you'll work directly with manufacturer"
+      - "Warranty terms are set by manufacturer, not us"
+      - "Some manufacturers offer replacement, others repair only"
+
+   B. TEMPLATES:
+      - CS-WR-001: Warranty Process Explanation
+      - CS-WR-002: Manufacturer Contact Information
+      - CS-WR-003: Claim Submitted (facilitated warranties)
+      - CS-WR-004: Warranty Claim Status Update
+
+   C. EMPATHY & SUPPORT:
+      - Customers frustrated product failed
+      - Warranty process can be slow and confusing
+      - Acknowledge frustration: "I understand this is inconvenient"
+      - Be advocate: "I'll help you through this process"
+
+10. DOCUMENTATION
+
+    A. LOG IN WARRANTY TRACKING SYSTEM:
+       - Order number
+       - Product SKU and serial number
+       - Defect description
+       - Manufacturer name
+       - Claim number (if facilitated)
+       - Outcome (approved, denied, pending)
+       - Resolution date
+
+    B. TRACK MANUFACTURER RESPONSIVENESS:
+       - Which manufacturers have good warranty support?
+       - Which are slow or unresponsive?
+       - Data informs future product purchasing decisions
+       - Share quarterly report with Product Team
+
+    C. FOLLOW-UP:
+       - Check claim status if no update in 7 days
+       - Contact customer when claim resolved
+       - Survey: "Were you satisfied with warranty process?"
+
+EDGE CASES & EXCEPTIONS:
+
+A) GREY MARKET PRODUCTS
+   - Product purchased from unauthorized reseller before customer bought from us
+   - Serial number may indicate grey market origin
+   - Some manufacturers void warranty for grey market
+   - Usually not applicable to us (we buy from authorized channels)
+   - But if suspected: Flag for Product Team investigation
+
+B) REFURBISHED PRODUCTS
+   - Sold as refurbished with disclosure
+   - May have different warranty (90 days common)
+   - Manufacturer may not honor refurbished product warranties
+   - Our responsibility: Ensure warranty terms clear at purchase
+
+C) INTERNATIONAL WARRANTIES
+   - Product purchased in US but customer moved overseas
+   - Some manufacturers have regional warranties (don't cover outside original region)
+   - Some require product be serviced in country of purchase
+   - We can only provide proof of purchase; customer must work with manufacturer on region issues
+
+D) MANUFACTURER OUT OF BUSINESS
+   - Company went bankrupt or ceased operations
+   - Warranty effectively void (no one to honor it)
+   - Check for: Was brand acquired by another company? (may honor warranties)
+   - Offer: Goodwill discount on replacement product (20-30%)
+
+E) RECALL vs WARRANTY
+   - If product recalled by manufacturer: Different process (SOP-017)
+   - Safety recalls are urgent (immediate stop-use, return/refund)
+   - Warranty is for defects, recall is for safety hazards
+   - Check CPSC website if product safety is concerned
+
+F) BUNDLED PRODUCTS
+   - Customer bought bundle (e.g., laptop + bag + mouse)
+   - One item defective, others fine
+   - Warranty applies per-item (not bundle as whole)
+   - Handle defective item warranty separately
+
+SYSTEM LIMITATIONS:
+- Warranty information not available for all products (data gaps, especially older products)
+- Manufacturer contact info sometimes outdated (companies change, merge)
+- Serial number verification: We can't always verify if serial number is valid
+- Facilitated Warranty Program limited to ~30 major manufacturers
+- Manufacturer portal logins: Some expire and require re-credentialing
+
+MANUFACTURER RELATIONSHIP MANAGEMENT:
+- We buy products from manufacturers/distributors
+- Good relationship = better warranty support for our customers
+- Quarterly reviews with major manufacturers:
+  * Warranty claim volume
+  * Denial rates
+  * Customer satisfaction
+  * Turnaround times
+- Manufacturers with poor warranty support may be deprioritized in future purchasing
+
+ESCALATION CRITERIA:
+- Manufacturer unresponsive >10 business days: Product Team (may escalate to manufacturer account manager)
+- Multiple customers with same product defect (>10 reports): Product Quality team
+- Safety concern: Safety team immediately + possible recall process
+- Customer threatening legal action: Legal Compliance
+- High-value product (>$1000) warranty denied: Supervisor review for goodwill options
+
+METRICS:
+- Warranty claim volume: ~2% of orders (outside return window)
+- Manufacturer approval rate: ~75% (25% denied)
+- Average claim duration: 18 days (target: <21 days)
+- Customer satisfaction (warranty support): 3.9/5 stars (target: >4.0)
+- Goodwill resolution rate (when warranty fails): 15% of denied claims
+
+RELATED SOPS:
+- SOP-002: Damaged Items (use for products within return window)
+- SOP-012: Third-Party Sellers (warranty process differs for marketplace items)
+- SOP-017: Product Recalls (safety recalls, not warranties)
+- SOP-019: Extended Warranty Claims (separately purchased coverage)
+
+NOTES:
+- Warranty support is value-add (builds customer loyalty even when product fails)
+- We don't control warranty process but can influence by being good advocate
+- Manufacturer warranty quality influences customer perception of us
+- Clear communication prevents customer frustration with slow manufacturer processes
+- Some manufacturers improving: Digital portals, advanced replacements, better communication
