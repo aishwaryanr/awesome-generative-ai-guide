@@ -1,0 +1,34 @@
+# Environment
+.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Jupyter
+.ipynb_checkpoints
+*.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Results (generated during notebook runs)
+data/*_results.csv
+data/*_metrics.csv
+data/*_errors.csv
+data/*_GROUNDED.csv
+
+# Phoenix data
+.phoenix/
+phoenix_data/

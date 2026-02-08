@@ -7,7 +7,7 @@ Interactive Jupyter notebooks teaching agentic AI concepts from first principles
 ### V1: Action Autonomy - Router Agent
 **File:** `v1_action_autonomy.ipynb`
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/v1_action_autonomy.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/agentic_ai_course_lil/v1_action_autonomy.ipynb)
 
 Learn to build an AI agent that performs single, well-defined actions:
 - Customer message routing with 93% accuracy
@@ -23,7 +23,7 @@ Learn to build an AI agent that performs single, well-defined actions:
 ### V2: Planning Autonomy - Multi-Step Planner
 **File:** `v2_planning_autonomy_UPDATED.ipynb`
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/v2_planning_autonomy_UPDATED.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/agentic_ai_course_lil/v2_planning_autonomy_UPDATED.ipynb)
 
 Build on V1 by adding retrieval and multi-step planning:
 - RAG system with BM25 retrieval
@@ -59,14 +59,14 @@ Build on V1 by adding retrieval and multi-step planning:
 1. Clone the repository:
    ```bash
    git clone https://github.com/aishwaryanr/awesome-generative-ai-guide.git
-   cd awesome-generative-ai-guide/resources
+   cd awesome-generative-ai-guide/resources/agentic_ai_course_lil
    ```
 2. Install dependencies:
    ```bash
    pip install openai pandas python-dotenv rank-bm25
    pip install 'arize-phoenix[evals]' openinference-instrumentation-openai
    ```
-3. Create `.env` file in the `resources/` directory:
+3. Create `.env` file in the `resources/agentic_ai_course_lil/` directory:
    ```
    OPENAI_API_KEY=sk-your-key-here
    ```
@@ -77,28 +77,29 @@ Build on V1 by adding retrieval and multi-step planning:
 
 ## 📁 Project Structure
 
-These notebooks are located in the `resources/` directory of the main repository:
+These notebooks are located in the `resources/agentic_ai_course_lil/` directory of the main repository:
 
 ```
 awesome-generative-ai-guide/
 └── resources/
-    ├── v1_action_autonomy.ipynb          # V1: Routing agent
-    ├── v2_planning_autonomy_UPDATED.ipynb # V2: Planning agent
-    ├── data/
-    │   ├── v1_test_cases.csv              # 30 routing test cases
-    │   ├── v2_test_cases.csv              # 22 planning test cases
-    │   └── sops/                          # Standard Operating Procedures
-    │       ├── sop_001.txt                # Returns SOP
-│       ├── sop_003.txt                # Billing SOP
-│       └── ...
-└── assets/
-    └── diagrams/                      # Architecture diagrams
-        ├── autonomy_ladder.png
-        ├── v1_architecture.png
-        ├── v1_data_flow.png
-        ├── v2_architecture.png
-        ├── v2_data_flow.png
-        └── v2_sop_retrieval.png
+    └── agentic_ai_course_lil/
+        ├── v1_action_autonomy.ipynb          # V1: Routing agent
+        ├── v2_planning_autonomy_UPDATED.ipynb # V2: Planning agent
+        ├── data/
+        │   ├── v1_test_cases.csv              # 30 routing test cases
+        │   ├── v2_test_cases.csv              # 22 planning test cases
+        │   └── sops/                          # Standard Operating Procedures
+        │       ├── sop_001.txt                # Returns SOP
+        │       ├── sop_003.txt                # Billing SOP
+        │       └── ...
+        └── assets/
+            └── diagrams/                      # Architecture diagrams
+                ├── autonomy_ladder.png
+                ├── v1_architecture.png
+                ├── v1_data_flow.png
+                ├── v2_architecture.png
+                ├── v2_data_flow.png
+                └── v2_sop_retrieval.png
 ```
 
 ## 🎯 Learning Path
