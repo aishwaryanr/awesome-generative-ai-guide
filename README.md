@@ -341,3 +341,5 @@ year = {2024}
 
 
 <sup>**</sup> This section is sponsored. We do not endorse or guarantee the product/service and are not responsible for any issues arising from its use. Please evaluate and use at your discretion.
+
+- [AgentMarket](https://agentmarket.cloud) - B2A marketplace for AI agents. 189 listings, real energy data (28M+ records), discovery API, LangChain/MCP integration.
