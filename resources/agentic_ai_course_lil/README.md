@@ -1,186 +1,137 @@
-# Agentic AI Course - Action & Planning Autonomy
+# Agentic AI: Build Your First Agentic AI System
 
-Interactive Jupyter notebooks teaching agentic AI concepts from first principles.
+This is the repository for the LinkedIn Learning course `Agentic AI: Build Your First Agentic AI System`. The full course is available from [LinkedIn Learning][lil-course-url].
 
-## 📚 Notebooks
+![Agentic AI: Build Your First Agentic AI System][lil-thumbnail-url]
 
-### V1: Action Autonomy - Router Agent
-**File:** `v1_action_autonomy.ipynb`
+## Course Description
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/agentic_ai_course_lil/v1_action_autonomy.ipynb)
+Learn to build production-ready agentic AI systems using the Autonomy Ladder framework. This hands-on course guides you through implementing two complete systems - from simple action classification to multi-step planning with retrieval - while teaching systematic evaluation, error analysis, and continuous improvement patterns that work in real production environments.
 
-Learn to build an AI agent that performs single, well-defined actions:
-- Customer message routing with 93% accuracy
-- Iterative prompt improvement (Prompt 1 → Prompt 2)
-- LLM observability with Arize Phoenix
-- Evaluation-driven development
+## Instructions
 
-**What you'll build:**
-- RouterAgent that classifies customer messages into departments
-- Evaluation pipeline with 30 test cases
-- Phoenix tracing integration for debugging
+This repository has branches for each of the videos in the course. You can use the branch pop up menu in GitHub to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
 
-### V2: Planning Autonomy - Multi-Step Planner
-**File:** `v2_planning_autonomy_UPDATED.ipynb`
+## Course Notebooks
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/agentic_ai_course_lil/v2_planning_autonomy_UPDATED.ipynb)
+This course uses two main Jupyter notebooks that you'll run on Google Colab:
 
-Build on V1 by adding retrieval and multi-step planning:
-- RAG system with BM25 retrieval
-- Multi-step action plan generation
-- Custom metrics design from observed failures
-- LLM-as-Judge evaluation (3-class: good/partial/bad)
+### Chapter 3: V1 Action Autonomy (Router Agent)
+**[Open action_autonomy.ipynb in Colab](https://colab.research.google.com/github/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/agentic_ai_course_lil/action_autonomy.ipynb)** - Use this notebook throughout Chapter 3. The notebook includes clear chapter break markers (🎬 End of Chapter) that show you where to stop for each video.
 
-**What you'll build:**
-- PlanningAgent that generates detailed action plans
-- BM25 SOP retrieval system
-- Custom evaluation metrics (SOP Recall + Plan Alignment)
-- Prompt improvement workflow (K=2→4, gpt-4o→gpt-5)
+### Chapter 4: V2 Planning Autonomy (Planning Agent)
+**[Open planning_autonomy.ipynb in Colab](https://colab.research.google.com/github/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/agentic_ai_course_lil/planning_autonomy.ipynb)** - Use this notebook throughout Chapter 4. The notebook includes clear chapter break markers (🎬 End of Chapter) that show you where to stop for each video.
 
-## 🚀 Getting Started
+## Running the Notebooks
 
-### Prerequisites
-- Python 3.8+
-- OpenAI API key
-- Jupyter Notebook or Google Colab
+All notebooks in this course are designed to run on **Google Colab** with no local setup required.
 
-### Installation
+### Quick Start with Google Colab
 
-#### Option 1: Google Colab (Recommended)
-1. Click the "Open in Colab" badge above for V1 or V2
-2. Add your OpenAI API key to Colab Secrets:
-   - Click 🔑 icon in left sidebar
-   - Name: `OPENAI_API_KEY`
-   - Value: Your API key
-   - Enable notebook access
-3. Run all cells! (Repository will be cloned automatically)
+1. **Open the notebook in Colab**: Click on the notebook link above (e.g., "Open action_autonomy.ipynb in Colab") to launch it directly in Google Colab
 
-#### Option 2: Local Setup
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/aishwaryanr/awesome-generative-ai-guide.git
-   cd awesome-generative-ai-guide/resources/agentic_ai_course_lil
-   ```
-2. Install dependencies:
-   ```bash
-   pip install openai pandas python-dotenv rank-bm25
-   pip install 'arize-phoenix[evals]' openinference-instrumentation-openai
-   ```
-3. Create `.env` file in the `resources/agentic_ai_course_lil/` directory:
-   ```
-   OPENAI_API_KEY=sk-your-key-here
-   ```
-4. Launch Jupyter:
-   ```bash
-   jupyter notebook
-   ```
+2. **Set up your OpenAI API key**:
+   - In Colab, click the key icon (🔑) in the left sidebar
+   - Add a new secret named `OPENAI_API_KEY`
+   - Paste your OpenAI API key as the value
+   - Toggle the "Notebook access" switch to enable access
 
-## 📁 Project Structure
+3. **Run the notebook**: Execute cells in order, stopping at chapter break markers as indicated in the videos
 
-These notebooks are located in the `resources/agentic_ai_course_lil/` directory of the main repository:
+## Prerequisites
+
+- **OpenAI API Key**: You'll need an OpenAI API key to run the notebooks. [Get one here](https://platform.openai.com/api-keys)
+- **Basic Python Knowledge**: Familiarity with Python and Jupyter notebooks is helpful
+- **Google Account**: Required for using Google Colab
+
+## What You'll Build
+
+### V1: Action Autonomy (Router Agent)
+A customer support routing agent that:
+- Classifies customer messages into appropriate departments
+- Uses systematic evaluation to measure baseline performance
+- Applies error analysis to discover improvement opportunities
+- Implements targeted improvements and validates results
+
+**Key Concepts:**
+- Simple prompt engineering
+- Systematic evaluation
+- Continuous Calibration (CC): Analyzing failures to discover improvements
+- Continuous Deployment (CD): Implementing and validating improvements
+
+### V2: Planning Autonomy (Planning Agent)
+A multi-step planning agent that:
+- Routes messages using V1's proven routing (builds on V1!)
+- Retrieves relevant procedures from a knowledge base using BM25
+- Generates detailed, multi-step action plans
+- Uses custom metrics to measure and improve retrieval and plan quality
+
+**Key Concepts:**
+- RAG (Retrieval Augmented Generation) with BM25
+- Custom metrics design from observations
+- LLM-as-Judge for plan evaluation
+- Incremental building (V2 = V1 + new capabilities)
+
+## Course Structure
+
+The course follows a systematic pattern for both autonomy levels:
+
+1. **Build**: Implement the baseline system
+2. **Test**: Run evaluation to establish baseline metrics
+3. **Calibrate (CC)**: Observe failures, analyze patterns, design metrics
+4. **Deploy (CD)**: Make targeted improvements, re-evaluate, validate gains
+
+This CC/CD pattern works for production systems and teaches you how to systematically improve any agentic AI system.
+
+## Repository Structure
 
 ```
-awesome-generative-ai-guide/
-└── resources/
-    └── agentic_ai_course_lil/
-        ├── v1_action_autonomy.ipynb          # V1: Routing agent
-        ├── v2_planning_autonomy_UPDATED.ipynb # V2: Planning agent
-        ├── data/
-        │   ├── v1_test_cases.csv              # 30 routing test cases
-        │   ├── v2_test_cases.csv              # 22 planning test cases
-        │   └── sops/                          # Standard Operating Procedures
-        │       ├── sop_001.txt                # Returns SOP
-        │       ├── sop_003.txt                # Billing SOP
-        │       └── ...
-        └── assets/
-            └── diagrams/                      # Architecture diagrams
-                ├── autonomy_ladder.png
-                ├── v1_architecture.png
-                ├── v1_data_flow.png
-                ├── v2_architecture.png
-                ├── v2_data_flow.png
-                └── v2_sop_retrieval.png
+├── action_autonomy.ipynb          # Chapter 3: V1 Action Autonomy
+├── planning_autonomy.ipynb        # Chapter 4: V2 Planning Autonomy
+├── data/
+│   ├── v1_test_cases.csv          # Test cases for V1 evaluation
+│   ├── v2_test_cases.csv          # Test cases for V2 evaluation
+│   └── sops/                      # Standard Operating Procedures (V2)
+│       ├── sop_001.txt
+│       ├── sop_002.txt
+│       └── ...
+└── assets/
+    └── diagrams/                  # Architecture diagrams
+        ├── autonomy_ladder.png
+        ├── v1_architecture.png
+        ├── v2_architecture.png
+        └── ...
 ```
 
-## 🎯 Learning Path
+## Troubleshooting
 
-**Start here:** V1 Action Autonomy
-1. Understand single-action agents
-2. Learn evaluation-driven development
-3. Use Phoenix for LLM observability
-4. Iterate to improve accuracy
+### "ModuleNotFoundError" in Colab
+- Run the first cell that installs packages: `!pip install -q openai pandas ...`
+- Restart the runtime if needed: Runtime > Restart runtime
 
-**Then:** V2 Planning Autonomy
-1. Build on V1's routing (don't start from scratch!)
-2. Add retrieval with BM25
-3. Generate multi-step plans
-4. Design custom metrics from failures
+### "Invalid API Key"
+- Verify your OpenAI API key is set correctly in Colab Secrets
+- Check that "Notebook access" is enabled for the secret
 
-## 🔑 Key Concepts
+### Phoenix UI not loading
+- Use the Colab-compatible Phoenix setup (already configured in notebooks)
+- The Phoenix UI may take 30-60 seconds to start
 
-### V1: Action Autonomy
-- **Routing**: Single classification decision
-- **Evaluation**: Routing accuracy metric
-- **Observability**: Phoenix traces for debugging
-- **Iteration**: Prompt 1 (73%) → Prompt 2 (93%)
+### Images not displaying
+- Images are loaded from the `assets/diagrams` folder in the repository
+- Ensure you're viewing the notebook from the correct branch
 
-### V2: Planning Autonomy
-- **RAG**: BM25 retrieval of relevant SOPs
-- **Planning**: Multi-step action generation
-- **Custom Metrics**: SOP Recall + Plan Alignment
-- **LLM-as-Judge**: GPT-4o evaluates GPT-5 outputs
-- **Trace-First**: Observe → Discover → Measure → Improve
+## Additional Resources
 
-## 📊 Expected Results
-
-### V1 Routing Accuracy
-- Prompt 1 (baseline): 73%
-- Prompt 2 (improved): 93%
-- **Improvement:** +20 percentage points
-
-### V2 Planning Metrics
-- **SOP Recall:**
-  - Prompt 1 (K=2): 53.79%
-  - Prompt 2 (K=4): 75.76% (+40.8%)
-- **Plan Alignment:**
-  - Prompt 1 (gpt-4o): 72% good plans
-  - Prompt 2 (gpt-5): 100% good plans (+28%)
-
-## 🛠️ Technologies Used
-
-- **OpenAI API**: gpt-4o, gpt-4o-mini, gpt-5
-- **Arize Phoenix**: LLM observability and tracing
-- **BM25 (rank-bm25)**: Keyword-based retrieval
-- **Pandas**: Data manipulation
-- **Jupyter**: Interactive notebooks
-
-## 📖 Additional Resources
-
-- [OpenAI API Documentation](https://platform.openai.com/docs)
 - [Arize Phoenix Documentation](https://docs.arize.com/phoenix)
-- [BM25 Algorithm](https://en.wikipedia.org/wiki/Okapi_BM25)
+- [OpenAI API Documentation](https://platform.openai.com/docs)
+- [BM25 Algorithm Explanation](https://en.wikipedia.org/wiki/Okapi_BM25)
 
-## 🎓 Course Philosophy
+## Instructor
 
-1. **Incremental Building**: Each version builds on the previous
-2. **Evaluation-First**: Measure before and after improvements
-3. **Observe Failures**: Design metrics from real issues, not assumptions
-4. **Targeted Improvements**: One change per metric
+**Aishwarya Naresh Reganti**
 
-## 📝 License
+[0]: # (Replace these placeholder URLs with actual course URLs)
 
-MIT License - feel free to use for learning and teaching!
-
-## 🤝 Contributing
-
-This is a teaching resource. If you find issues or have improvements:
-1. Open an issue describing the problem
-2. Suggest improvements via pull request
-
-## ⚠️ Cost Warning
-
-These notebooks make OpenAI API calls. Costs are typically:
-- V1: ~$0.50-$1.00 for full evaluation
-- V2: ~$1.00-$2.00 for full evaluation (depends on K and model)
-
-Set up billing limits in your OpenAI account!
+[lil-course-url]: https://www.linkedin.com/learning/agentic-ai-build-your-first-agentic-ai-system
+[lil-thumbnail-url]: https://media.licdn.com/dms/image/v2/D4E0DAQG0eDHsyOSqTA/learning-public-crop_675_1200/B4EZVdqqdwHUAY-/0/1741033220778?e=2147483647&v=beta&t=FxUDo6FA8W8CiFROwqfZKL_mzQhYx9loYLfjN-LNjgA
