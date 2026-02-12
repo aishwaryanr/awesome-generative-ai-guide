@@ -163,3 +163,17 @@ One of its latest features, Audio Overview, transforms text-based sources into e
 
 **Getting Started with NotebookLM:**  
 - [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)  
+
+## Taskade Genesis
+
+**Taskade Genesis** is an AI-powered platform for building custom AI agents, workflows, and apps using natural language. It supports multi-model orchestration across 11+ models from OpenAI, Anthropic, and Google—including GPT-4o, Claude, and Gemini—so teams can pick the right model for each task without switching tools.  
+[Visit Taskade Genesis](https://taskade.com/genesis)
+
+With Taskade, users can create custom AI agents equipped with 22+ built-in tools, persistent memory, and slash commands. Multiple agents can collaborate in real time on shared projects, enabling multi-agent orchestration for complex workflows. The platform also offers workflow automation with branching, looping, filtering, and 100+ integrations.  
+
+Taskade provides an open-source MCP (Model Context Protocol) server, allowing developers to extend agent capabilities and integrate with external systems programmatically.  
+[Taskade MCP Server on GitHub](https://github.com/taskade/mcp)
+
+**Getting Started with Taskade Genesis:**  
+- [Taskade Genesis Overview](https://taskade.com/genesis)  
+- [Taskade on GitHub](https://github.com/taskade)
