@@ -264,6 +264,7 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 ## :paperclip: Resources
 
 - [ICLR 2024 Paper Summaries](https://areganti.notion.site/06f0d4fe46a94d62bff2ae001cfec22c?v=d501ca62e4b745768385d698f173ae14)
+- [Awesome Code Docs](https://github.com/johnxie/awesome-code-docs) - Curated deep-dive tutorials for open-source AI and software projects.
 
 ---
 
