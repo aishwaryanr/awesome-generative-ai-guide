@@ -161,5 +161,27 @@ One of its latest features, Audio Overview, transforms text-based sources into e
 
 
 
-**Getting Started with NotebookLM:**  
-- [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)  
+**Getting Started with NotebookLM:**
+- [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)
+
+---
+
+# AI Chatbots & Conversational AI
+*Platforms and tools for creating engaging conversational experiences and AI-powered characters.*
+
+## Character AI Bots
+
+**Character AI Bots** is a free platform offering 50+ diverse AI characters for roleplay, education, and creative exploration. The platform features a wide range of characters including anime personalities, historical figures, fantasy characters, and more, making AI conversations accessible and engaging for various use cases.
+[Visit Character AI Bots](https://characteraibots.com)
+
+With no registration required, users can immediately start interacting with AI characters tailored for different purposes—from educational conversations with historical figures to creative roleplay with fictional characters. The platform is designed to make AI interaction fun, accessible, and educational.
+
+**Key Features:**
+- 50+ diverse AI characters across multiple categories
+- Completely free to use with no registration required
+- Educational applications with historical and scientific figures
+- Creative exploration through roleplay and storytelling
+- Active development with regular character additions
+
+**Getting Started with Character AI Bots:**
+- [Explore Character AI Bots](https://characteraibots.com)
