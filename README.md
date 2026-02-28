@@ -308,7 +308,8 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 - [Free LLM Fine-Tuning Notebooks](https://levelup.gitconnected.com/14-free-large-language-models-fine-tuning-notebooks-532055717cb7) by Youssef Hosni
 
 
-#### Comprehensive LLM Code Repositories 
+#### Comprehensive LLM Code Repositories
+- [dna-claude-analysis](https://github.com/shmlkv/dna-claude-analysis) Personal genome analysis toolkit with Python scripts analyzing raw DNA data across 17 categories (health risks, ancestry, pharmacogenomics, nutrition, psychology, etc.) and generating a terminal-style single-page HTML visualization
 - [LLM-PlayLab](https://github.com/Sakil786/LLM-PlayLab) This playlab encompasses a multitude of projects crafted through the utilization of Transformer Models
 
 
