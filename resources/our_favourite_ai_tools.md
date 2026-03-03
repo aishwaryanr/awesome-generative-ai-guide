@@ -150,6 +150,17 @@ Replit Agents also support collaborative coding by offering insights and suggest
 - [Replit Agents Documentation](https://docs.replit.com/replitai/agent)  
 - [YouTube: Meet the Replit Agent](https://www.youtube.com/watch?v=IYiVPrxY8-Y)
 
+## CiteMe
+
+**CiteMe** is an AI-powered academic citation generator that helps researchers, students, and academics find and format references instantly. It searches 11+ academic databases—including OpenAlex, PubMed, Semantic Scholar, CrossRef, and SciELO—and formats citations in 40+ styles such as APA, MLA, Chicago, Harvard, IEEE, and ABNT.
+[Visit CiteMe](https://citeme.app)
+
+CiteMe is available as a web app, Chrome extension, Google Docs add-on, and Microsoft Word add-in, integrating directly into existing research workflows. The platform uses AI for intelligent search term extraction and result ranking, helping users find the most relevant academic sources quickly.
+
+**Getting Started with CiteMe:**
+- [CiteMe Web App](https://citeme.app)
+- [Chrome Extension](https://chromewebstore.google.com/detail/citeme)
+
 ## NotebookLM
 
 **NotebookLM** is an AI-powered research and note-taking assistant developed by Google Labs. Designed to help users make sense of complex information, it grounds its responses in the sources you upload, such as documents, PDFs, and Google Slides, providing citations and relevant quotes for accuracy. 
