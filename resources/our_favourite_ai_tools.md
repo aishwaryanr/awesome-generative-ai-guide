@@ -161,5 +161,15 @@ One of its latest features, Audio Overview, transforms text-based sources into e
 
 
 
-**Getting Started with NotebookLM:**  
-- [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)  
+**Getting Started with NotebookLM:**
+- [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)
+
+## Cursor Rules Collection
+
+**Cursor Rules Collection** is an open-source repository of 35+ ready-to-use `.cursorrules` files covering 16 popular frameworks and languages, including React, Next.js, Python, TypeScript, Go, Rust, Vue, Angular, and more. These rule files configure [Cursor](https://cursor.sh/)—the AI-powered code editor—to follow framework-specific best practices, coding conventions, and architectural patterns when generating code.
+[Browse the Collection on GitHub](https://github.com/survivorforge/cursor-rules)
+
+Each rules file encodes expert-level knowledge about a specific technology stack, guiding the AI assistant to produce idiomatic, production-quality code from the start. This eliminates the need to manually prompt for coding standards on every request and helps teams maintain consistency across projects.
+
+**Getting Started with Cursor Rules Collection:**
+- [GitHub Repository](https://github.com/survivorforge/cursor-rules) — Clone or download individual rule files for your stack
