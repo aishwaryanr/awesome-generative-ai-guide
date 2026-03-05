@@ -150,6 +150,21 @@ Replit Agents also support collaborative coding by offering insights and suggest
 - [Replit Agents Documentation](https://docs.replit.com/replitai/agent)  
 - [YouTube: Meet the Replit Agent](https://www.youtube.com/watch?v=IYiVPrxY8-Y)
 
+## Autohand Code CLI
+
+**Autohand Code CLI** is a self-evolving autonomous coding agent that runs directly in your terminal. Built with autonomy and scalability at its core, it uses the ReAct pattern to reason about and modify entire codebases through natural language. It supports multiple LLM providers including OpenRouter, Anthropic, OpenAI, Ollama, and local models.
+[Explore Autohand Code CLI](https://github.com/autohandai/code-cli)
+
+With 40+ built-in tools for file operations, git workflows, search, and multi-file editing, Autohand Code CLI enables developers to work on complex codebases without leaving the terminal. Its modular skill system and semantic code search allow for deep codebase understanding, while session management with resume capability ensures continuity across work sessions.
+
+Autohand Code CLI also integrates with VS Code and Zed editors, and is licensed under Apache 2.0, making it a fully open-source solution for autonomous software development.
+
+**Getting Started with Autohand Code CLI:**
+- [Autohand Code CLI Documentation](https://www.autohand.ai/code/)
+- [GitHub Repository](https://github.com/autohandai/code-cli)
+
+---
+
 ## NotebookLM
 
 **NotebookLM** is an AI-powered research and note-taking assistant developed by Google Labs. Designed to help users make sense of complex information, it grounds its responses in the sources you upload, such as documents, PDFs, and Google Slides, providing citations and relevant quotes for accuracy. 
