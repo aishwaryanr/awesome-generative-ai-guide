@@ -261,7 +261,7 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 
 ---
 
-- [Agent OS](https://github.com/imran-siddique/agent-os): A kernel architecture for governing autonomous AI agents. Provides policy enforcement, trust scoring, circuit breakers, and audit trails. Integrates with LangGraph, LlamaIndex, Dify, OpenAI Agents SDK. Covers 8/10 OWASP Agentic Top 10 risks. [PyPI](https://pypi.org/project/agent-os-kernel/) | [Docs](https://imran-siddique.github.io/agent-os-docs/)
+- [Agent OS](https://github.com/microsoft/agent-governance-toolkit): A kernel architecture for governing autonomous AI agents. Provides policy enforcement, trust scoring, circuit breakers, and audit trails. Integrates with LangGraph, LlamaIndex, Dify, OpenAI Agents SDK. Covers 8/10 OWASP Agentic Top 10 risks. [PyPI](https://pypi.org/project/agent-os-kernel/) | [Docs](https://github.com/microsoft/agent-governance-toolkit/tree/main/docs/)
 
 ## :paperclip: Resources
 
