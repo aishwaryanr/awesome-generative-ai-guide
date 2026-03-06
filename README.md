@@ -249,6 +249,7 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 11. [Multi-Agent Systems with AutoGen](https://www.manning.com/books/multi-agent-systems-with-autogen) by Victor Dibia [Book]
 12. [Large Language Model Agents MOOC, Fall 2024](https://llmagents-learning.org/f24) by Dawn Song & Xinyun Chen – A comprehensive course covering foundational and advanced topics on LLM agents.
 13. [CS294/194-196 Large Language Model Agents](https://rdi.berkeley.edu/llm-agents/f24) by UC Berkeley
+14. [Learn Agentic Patterns](https://learnagenticpatterns.com) – Free interactive curriculum covering 21 agentic AI design patterns with code examples, architecture diagrams, and interactive decision-making games.
 
 
 
