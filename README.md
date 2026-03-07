@@ -300,6 +300,7 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 - [LLM tutorials](https://github.com/ollama/ollama/tree/main/examples) by Ollama
 - [LLM Hub](https://github.com/mallahyari/llm-hub) by mallahyari
 - [RAG cookbook](https://docs.camel-ai.org/cookbooks/agents_with_rag.html) by CAMEL-AI
+- [WFGY Debug Problem Map](https://github.com/onestardao/WFGY/blob/main/ProblemMap/README.md) by onestardao
 
 #### Fine-Tuning Tutorials
 
