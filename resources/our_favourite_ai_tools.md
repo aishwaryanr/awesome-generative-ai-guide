@@ -150,6 +150,18 @@ Replit Agents also support collaborative coding by offering insights and suggest
 - [Replit Agents Documentation](https://docs.replit.com/replitai/agent)  
 - [YouTube: Meet the Replit Agent](https://www.youtube.com/watch?v=IYiVPrxY8-Y)
 
+## Steel Browser
+
+**Steel Browser** is an open-source browser sandbox and automation infrastructure for AI agents and apps, built for session-backed web workflows, extraction, screenshots, PDFs, proxies, and anti-bot-sensitive automation.
+[Visit Steel Browser](https://github.com/steel-dev/steel-browser)
+
+Steel gives developers a reliable browser execution layer for agentic web tasks such as multi-step navigation, authenticated flows, scraping, and artifact capture. It fits this section because it helps teams prototype, run, and debug browser-based AI workflows with verifiable outputs.
+
+**Getting Started with Steel Browser:**
+- [Steel Docs](https://docs.steel.dev/)
+- [Steel CLI](https://github.com/steel-dev/cli)
+- [steel-browser skill](https://github.com/steel-dev/cli/tree/main/skills/steel-browser)
+
 ## NotebookLM
 
 **NotebookLM** is an AI-powered research and note-taking assistant developed by Google Labs. Designed to help users make sense of complex information, it grounds its responses in the sources you upload, such as documents, PDFs, and Google Slides, providing citations and relevant quotes for accuracy. 
