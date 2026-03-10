@@ -14,7 +14,7 @@ In every section, we'll not only describe the component but also provide resourc
 
 As you explore each section, select a few resources to help build the app with the component and proceed further.
 
-![llm_app_steps.png](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/llm_app_steps.png)
+![llm_app_steps.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/llm_app_steps.png)
 
 ## 1. Simple LLM App (Prompt + LLM)
 

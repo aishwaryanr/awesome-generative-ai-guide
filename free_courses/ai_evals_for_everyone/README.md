@@ -34,7 +34,7 @@ Start from zero and learn step-by-step how to build AI evaluation systems. This 
 
 ## 📖 Course Chapters
 
-1. **[WTH are AI Evals?](./chapters/01_wth_are_ai_evals.md)** - Understanding why AI evaluation is different and unavoidable
+1. **[What are AI Evals?](./chapters/01_what_are_ai_evals.md)** - Understanding why AI evaluation is different and unavoidable
 2. **[Model Evaluations vs Product Evaluations](./chapters/02_model_vs_product_evaluations.md)** - Learning the crucial distinction that trips up most teams
 3. **[The Evaluation Framework](./chapters/03_evaluation_building_blocks.md)** - Core components for systematic evaluation
 4. **[Building Reference Datasets](./chapters/04_building_reference_datasets.md)** - Creating reference datasets before you launch your product

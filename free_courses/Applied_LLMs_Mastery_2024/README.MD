@@ -1,6 +1,6 @@
 # Applied LLMs Mastery 2024
 
-![mind_map.png](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/mind_map.png)
+![mind_map.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/mind_map.png)
 
 # About This Course
 
@@ -51,7 +51,7 @@ To cite this guide, use the below format:
 ```
 @article{areganti_generative_ai_guide,
 author = {Reganti, Aishwarya},
-journal = {https://github.com/aishwaryanr/awesome-generative-ai-resources},
+journal = {https://github.com/aishwaryanr/awesome-generative-ai-guide},
 month = {01},
 title = {{Generative AI Guide}},
 year = {2024}

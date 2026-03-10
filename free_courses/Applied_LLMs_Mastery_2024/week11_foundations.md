@@ -34,7 +34,7 @@ Recurrent Neural Networks (RNNs) are a type of artificial neural network designe
 
 The basic principle behind RNNs is that they have connections that form a directed cycle, allowing information to be passed from one step of the network to the next. This means that the output of the network at a particular time step depends not only on the current input but also on the previous inputs and the internal state of the network, which captures information from earlier time steps.
 
-![Screenshot 2024-02-23 at 10.24.38 AM.png](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/Screenshot_2024-02-23_at_10.24.38_AM.png)
+![Screenshot 2024-02-23 at 10.24.38 AM.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/Screenshot_2024-02-23_at_10.24.38_AM.png)
 
 Image Source: [https://colah.github.io/posts/2015-08-Understanding-LSTMs/](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 
@@ -51,9 +51,9 @@ While RNNs are powerful models for handling sequential data, they can suffer fro
 
 LSTM networks are thus an enhanced version of RNNs designed to better handle sequences of data like text just like RNNs, but with the below improvements:
 
-![Screenshot 2024-02-23 at 10.32.53 AM.png](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/Screenshot_2024-02-23_at_10.32.53_AM.png)
+![Screenshot 2024-02-23 at 10.32.53 AM.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/Screenshot_2024-02-23_at_10.32.53_AM.png)
 
-![Screenshot 2024-02-23 at 10.33.00 AM.png](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/Screenshot_2024-02-23_at_10.33.00_AM.png)
+![Screenshot 2024-02-23 at 10.33.00 AM.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/Screenshot_2024-02-23_at_10.33.00_AM.png)
 
 Image Source: [https://colah.github.io/posts/2015-08-Understanding-LSTMs/](https://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 
@@ -75,13 +75,13 @@ That's where Sequence-to-Sequence (Seq2Seq) models come in; they work by employi
 
 We won’t dive too deep into the workings here for brevity, [this](https://www.analyticsvidhya.com/blog/2020/08/a-simple-introduction-to-sequence-to-sequence-models/#:~:text=Sequence%20to%20Sequence%20(often%20abbreviated,Chatbots%2C%20Text%20Summarization%2C%20etc.) article is a great read for those interested: 
 
-![s2s_11.png](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/s2s_11.png)
+![s2s_11.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/s2s_11.png)
 
 Image Source: [https://towardsdatascience.com/sequence-to-sequence-model-introduction-and-concepts-44d9b41cd42d](https://towardsdatascience.com/sequence-to-sequence-model-introduction-and-concepts-44d9b41cd42d)
 
 ### Seq2Seq models  + Attention
 
-![Screenshot 2024-02-24 at 2.19.47 PM.png](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/Screenshot_2024-02-24_at_2.19.47_PM.png)
+![Screenshot 2024-02-24 at 2.19.47 PM.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/Screenshot_2024-02-24_at_2.19.47_PM.png)
 
 Image Source: [https://lena-voita.github.io/nlp_course/seq2seq_and_attention.html](https://lena-voita.github.io/nlp_course/seq2seq_and_attention.html)
 
@@ -104,7 +104,7 @@ The problem with Seq2Seq models with attention lies in their computational ineff
 
 The Transformer model was introduced to address these limitations and improve the efficiency and effectiveness of sequence-to-sequence tasks. Here's how the Transformer model solves the problems of Seq2Seq models with attention:
 
-![transformer_11](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/transformer_11.png)
+![transformer_11](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/transformer_11.png)
 
 Image Source: [https://arxiv.org/pdf/1706.03762.pdf](https://arxiv.org/pdf/1706.03762.pdf)
 

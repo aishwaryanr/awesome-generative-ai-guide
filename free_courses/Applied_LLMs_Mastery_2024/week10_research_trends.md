@@ -12,7 +12,7 @@ Moreover, the development of MM-LLMs has been greatly aided by the adoption of c
 
 To understand how MM-LLMs function, we can go over some common architectural components. Most MM-LLMs can be divided in 5 main components as shown in the image below. The components explained below are adapted from the paper “[MM-LLMs: Recent Advances in MultiModal Large Language Models](https://arxiv.org/pdf/2401.13601.pdf)”. Let’s understand each of the components in detail.
 
-![Screenshot 2024-02-18 at 3.09.34 PM.png](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/Screenshot_2024-02-18_at_3.09.34_PM.png)
+![Screenshot 2024-02-18 at 3.09.34 PM.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/Screenshot_2024-02-18_at_3.09.34_PM.png)
 
 Image Source: [https://arxiv.org/pdf/2401.13601.pdf](https://arxiv.org/pdf/2401.13601.pdf)
 
@@ -43,7 +43,7 @@ Therefore MM-LLMs are trained to understand and generate content from multiple s
 
 The below diagram summarizes popular MM-LLMs and models used for each of their components.
 
-![Screenshot 2024-02-18 at 3.18.49 PM.png](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/Screenshot_2024-02-18_at_3.18.49_PM.png)
+![Screenshot 2024-02-18 at 3.18.49 PM.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/Screenshot_2024-02-18_at_3.18.49_PM.png)
 
 Image Source: [https://arxiv.org/pdf/2401.13601.pdf](https://arxiv.org/pdf/2401.13601.pdf)
 
@@ -122,7 +122,7 @@ In this scenario, the LLM agent not only aids in the execution of complex and ti
 
 The framework for LLM agents can be conceptualized through various lenses, and one such perspective is offered by the paper “[A Survey on Large Language Model based Autonomous Agents](https://arxiv.org/pdf/2308.11432.pdf)”, through its distinctive components.  This architecture is composed of four key modules: the Profiling Module, Memory Module, Planning Module, and Action Module. Each of these modules plays a crucial role in enabling the LLM agent to act autonomously and effectively in various scenarios.
 
-![Screenshot 2024-02-18 at 3.46.23 PM.png](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/Screenshot_2024-02-18_at_3.46.23_PM.png)
+![Screenshot 2024-02-18 at 3.46.23 PM.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/Screenshot_2024-02-18_at_3.46.23_PM.png)
 
 Image Source : [https://arxiv.org/pdf/2308.11432.pdf](https://arxiv.org/pdf/2308.11432.pdf)
 

@@ -327,7 +327,7 @@ To cite this guide, use the below format:
 ```
 @article{areganti_generative_ai_guide,
 author = {Reganti, Aishwarya Naresh},
-journal = {https://github.com/aishwaryanr/awesome-generative-ai-resources},
+journal = {https://github.com/aishwaryanr/awesome-generative-ai-guide},
 month = {01},
 title = {{Generative AI Guide}},
 year = {2024}

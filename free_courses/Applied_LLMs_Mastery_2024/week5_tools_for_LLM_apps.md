@@ -24,7 +24,7 @@ We can broadly categorize tools into four major groups:
 3. **Output Tools**: These tools are utilized for managing the output from the LLM application, essentially focusing on post-output processes.
 4. **Application Tools**: These tools oversee the comprehensive management of the aforementioned three components, including application hosting, monitoring, and more.
 
-![tools_1.png](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/tools_1.png)
+![tools_1.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/tools_1.png)
 
 If you're remember from the previous content  how RAG operates, an application typically follows these steps:
 
@@ -37,7 +37,7 @@ Hosting and monitoring LLM responses are integrated into the overall application
 
 💡If you’re still unsure why each of these tool categories are required, please review the previous weeks’ content to understand how RAG and Fine-Tuning applications work
 
-![tools_3.png](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/tools_3.png)
+![tools_3.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/tools_3.png)
 
 Summary of tools available to build LLM Apps
 
@@ -108,7 +108,7 @@ Orchestration tools in the context of LLM applications are software frameworks d
 
 Frameworks like **LangChain** and **LlamaIndex** work by simplifying complex processes such as prompt chaining, interfacing with external APIs, integrating contextual data from vector databases, and maintaining consistency across multiple LLM interactions. They offer templates for a wide range of applications, making them particularly popular among hobbyists and startups eager to launch their applications quickly, with LangChain leading in usage.
 
-![tools_2.png](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/tools_2.png)
+![tools_2.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/tools_2.png)
 
 Image Source: [https://stackoverflow.com/questions/76990736/differences-between-langchain-llamaindex](https://stackoverflow.com/questions/76990736/differences-between-langchain-llamaindex)
 

@@ -12,7 +12,7 @@ In summary, this part of the course provides a practical and informative explora
 
 ## History and Background
 
-![history](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/history.png)
+![history](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/history.png)
 
                    Image Source: [https://medium.com/womenintechnology/ai-c3412c5aa0ac](https://medium.com/womenintechnology/ai-c3412c5aa0ac)
 
@@ -46,7 +46,7 @@ The "Large" aspect amplifies their capabilities. Traditional language models, es
 
 Take a look at the infographic from “Information is beautiful” below to see how many parameters recent LLMs have. You can view the live visualization [here](https://informationisbeautiful.net/visualizations/the-rise-of-generative-ai-large-language-models-llms-like-chatgpt/)
 
-![llm_sizes.png](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/llm_sizes.png)
+![llm_sizes.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/llm_sizes.png)
 
 Image source: [https://informationisbeautiful.net/visualizations/the-rise-of-generative-ai-large-language-models-llms-like-chatgpt/](https://informationisbeautiful.net/visualizations/the-rise-of-generative-ai-large-language-models-llms-like-chatgpt/) 
 
@@ -87,7 +87,7 @@ We will be diving deep into each of these methods during the course.
 
 LLMs are already being leveraged in various applications showcasing their versatility and power of these models in transforming several domains. Here's how LLMs can be applied to specific cases:
 
-![Blue and Grey Illustrative Creative Mind Map.png](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/Blue_and_Grey_Illustrative_Creative_Mind_Map.png)
+![Blue and Grey Illustrative Creative Mind Map.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/Blue_and_Grey_Illustrative_Creative_Mind_Map.png)
 
 1. **Content Generation:**
     - LLMs excel in content generation by understanding context and generating coherent and contextually relevant text. They can be employed to automatically generate creative content for marketing, social media posts, and other communication materials, ensuring a high level of quality and relevance.
@@ -125,13 +125,13 @@ Summary of popular LLM use-cases
 
 Understanding the utilization of generative AI models, especially LLMs, can also be gleaned from the extensive array of startups operating in this domain. An [infographic](https://www.sequoiacap.com/article/generative-ai-act-two/) presented by Sequoia Capital highlighted these companies across diverse sectors, illustrating the versatile applications and the significant presence of numerous players in the generative AI space.
 
-![business_cases.png](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/business_cases.png)
+![business_cases.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/business_cases.png)
 
                                 Image Source: [https://markovate.com/blog/applications-and-use-cases-of-llm/](https://markovate.com/blog/applications-and-use-cases-of-llm/)
 
 ## LLM Challenges
 
-![llm_challenges.png](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/llm_challenges.png)
+![llm_challenges.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/llm_challenges.png)
 
 Although LLMs have undoubtedly revolutionized various applications, numerous challenges persist. These challenges are categorized into different themes:
 

@@ -62,13 +62,13 @@ Techniques such as contrastive learning, as well as supervised and unsupervised 
 
 Instruction fine-tuning is a method that has gained prominence in making LLMs more practical for real-world applications. In contrast to standard supervised fine-tuning, where models are trained on input examples and corresponding outputs, instruction tuning involves augmenting input-output examples with explicit instructions. This unique approach enables instruction-tuned models to generalize more effectively to new tasks. The data for instruction tuning is constructed differently, with instructions providing additional context for the model.  
 
-![finetuning.png](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/finetuning.png)
+![finetuning.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/finetuning.png)
 
 Image Source: [Wei et al., 2022](https://openreview.net/forum?id=gEZrGCozdqR)
 
 One notable dataset for instruction tuning is "Natural Instructions". This dataset consists of 193,000 instruction-output examples sourced from 61 existing English NLP tasks. The uniqueness of this dataset lies in its structured approach, where crowd-sourced instructions from each task are aligned to a common schema. Each instruction is associated with a task, providing explicit guidance on how the model should respond. The instructions cover various fields, including a definition, things to avoid, and positive and negative examples. This structured nature makes the dataset valuable for fine-tuning models, as it provides clear and detailed instructions for the desired task. However, it's worth noting that the outputs in this dataset are relatively short, which might make the data less suitable for generating long-form content. Despite this limitation, Natural Instructions serves as a rich resource for training models through instruction tuning, enhancing their adaptability to specific NLP tasks. The below image contains an example instruction format
 
-![finetuning_1.png](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/finetuning_1.png)
+![finetuning_1.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/finetuning_1.png)
 
  Image Source: **[Mishra et al., 2022](https://aclanthology.org/2022.acl-long.244/)**
 
@@ -87,7 +87,7 @@ The subsequent step involves generating a reward model (RM) calibrated with huma
 **3. Fine-Tuning with RL:**
 The final step entails fine-tuning the initial LLM using reinforcement learning. Proximal Policy Optimization (PPO) is a commonly used RL algorithm for this task. The RL policy is the LM that takes in a prompt and produces text, with actions corresponding to tokens in the LM's vocabulary. The reward function, derived from the preference model and a constraint on policy shift, guides the fine-tuning. PPO updates the LM's parameters to maximize the reward metrics in the current batch of prompt-generation pairs. Some parameters of the LM are frozen due to computational constraints, and the fine-tuning aims to align the model with human preferences.
 
-![finetuning_2.png](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/finetuning_2.png)
+![finetuning_2.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/finetuning_2.png)
 
  Image Source: [https://openai.com/research/instruction-following](https://openai.com/research/instruction-following)
 
@@ -97,7 +97,7 @@ The final step entails fine-tuning the initial LLM using reinforcement learning.
 
 Direct Preference Optimization (DPO) is an equivalent of RLHF and has been gaining significant traction these days. DPO offers a straightforward method for fine-tuning large language models based on human preferences. It eliminates the need for a complex reward model and directly incorporates user feedback into the optimization process. In DPO, users simply compare two model-generated outputs and express their preferences, allowing the LLM to adjust its behavior accordingly. This user-friendly approach comes with several advantages, including ease of implementation, computational efficiency, and greater control over the LLM's behavior.
 
-![finetuning_3.png](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/finetuning_3.png)
+![finetuning_3.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/finetuning_3.png)
 
   Image Source: [Rafailov, Rafael, et al.](https://arxiv.org/html/2305.18290v2)
 
@@ -145,7 +145,7 @@ In summary, PEFT offers a practical and efficient solution for fine-tuning large
 
 A summary of the most popular PEFT methods are in the chart below. Please download for improved visibility.
 
-[PEFT (1).pdf](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/PEFT_(1).pdf)
+[PEFT (1).pdf](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/PEFT_(1).pdf)
 
 ## Read/Watch These Resources (Optional)
 
