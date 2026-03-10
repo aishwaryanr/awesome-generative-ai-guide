@@ -7,7 +7,7 @@
 set -e
 cd "$(dirname "$0")/.."
 
-REMOTE="${1:-fork}"
+REMOTE="${1:-origin}"
 echo "=== awesome-generative-ai-guide: fix and push to $REMOTE ==="
 
 git checkout main 2>/dev/null || true
@@ -30,9 +30,9 @@ echo ""
 echo "Pushing to $REMOTE/main..."
 if git push "$REMOTE" main 2>/dev/null; then
   echo "✓ Push successful!"
-  [[ "$REMOTE" == "fork" ]] && echo "Open PR: https://github.com/aishwaryanr/awesome-generative-ai-guide/compare"
+  [[ "$REMOTE" == "origin" ]] && echo "Open PR: https://github.com/aishwaryanr/awesome-generative-ai-guide/compare"
 else
-  echo "✗ Push failed. Run: gh repo fork --remote-only"
-  echo "  Or: git remote add fork git@github.com:YOUR_USER/awesome-generative-ai-guide.git"
+  echo "✗ Push failed. If email privacy error: use GitHub no-reply email in git config"
+  echo "  git config user.email 'USERNAME@users.noreply.github.com'"
   exit 1
 fi
