@@ -88,7 +88,7 @@ Start from zero and learn step-by-step how to build AI evaluation systems. This 
 
 - **[Advanced Evals Course](https://maven.com/aishwarya-kiriti/evals-problem-first)** - Already building AI? Take our newly launched course focused on systematically improving your AI products through advanced evaluation techniques.
 
-*📝 Note: Use code **GITHUB15** for a limited 15% off on Maven courses (valid until January 15th, 2025)*
+*📝 Note: Use code **GITHUB15** for a limited 15% off on Maven courses (valid until August 15th, 2026)*
 
 ### 📱 Stay Connected
 - **Follow [Aishwarya on LinkedIn](https://www.linkedin.com/in/areganti/)** for AI evaluation insights and updates
