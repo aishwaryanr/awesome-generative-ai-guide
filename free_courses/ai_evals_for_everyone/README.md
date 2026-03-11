@@ -77,9 +77,6 @@ Start from zero and learn step-by-step how to build AI evaluation systems. This 
 ### 🎬 YouTube Video Series
 **[Watch the Complete Video Course](https://www.youtube.com/playlist?list=PLZoalK-hTD4VPIkRXNdSEwcTCt2QUgEPR)** - All chapters available as videos, plus 3 bonus hands-on chapters on building evals with Arize AI!
 
-### 📅 Attend Our Live Session
-**[Join our upcoming free session on State of Applied AI in 2025](https://maven.com/p/ad857c/state-of-applied-ai-in-2025-report)** on January 5th! Get insights into the latest trends, challenges, and opportunities in production AI systems.
-
 ### 🎯 Our Maven Courses
 
 **Choose the course that fits your learning journey:**
