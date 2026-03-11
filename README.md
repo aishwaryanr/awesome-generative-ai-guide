@@ -263,6 +263,7 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 
 ## :paperclip: Resources
 
+- [LLM Benchmark Costco](https://github.com/joe1chief/llm-benchmark-costco) - A searchable database of 378+ LLM evaluation benchmarks across 12 capability dimensions (Agent, Multimodal, Code, Reasoning, Safety, Medical, etc.), with inline PDF reading, Mermaid build flowcharts, bilingual EN/ZH UI, and automated CI/CD. [Live Demo](https://joe1chief.github.io/llm-benchmark-costco/)
 - [ICLR 2024 Paper Summaries](https://areganti.notion.site/06f0d4fe46a94d62bff2ae001cfec22c?v=d501ca62e4b745768385d698f173ae14)
 
 ---
