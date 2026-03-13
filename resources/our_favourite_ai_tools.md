@@ -121,7 +121,20 @@ With Opik, you can log, view, and evaluate your LLM (Large Language Model) trace
 
 ---
 
-# AI-Powered Tools  
+# AI Cost Optimization
+*Tools that help AI practitioners and teams compare and optimize infrastructure spending.*
+
+## Deploybase
+
+**Deploybase** is a real-time pricing dashboard that tracks GPU and LLM inference costs across all major cloud and inference providers. It helps AI practitioners and teams compare pricing to optimize their infrastructure spending.
+[Visit Deploybase](https://deploybase.ai/)
+
+*Getting Started with Deploybase:*
+- [Deploybase Dashboard](https://deploybase.ai/)
+
+---
+
+# AI-Powered Tools
 *Products designed to streamline the AI development lifecycle, from prototyping to debugging and performance tuning.*
 
 ## Vercel v0
