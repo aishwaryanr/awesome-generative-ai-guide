@@ -38,9 +38,22 @@ The framework streamlines every stage of the LLM application lifecycle—from pr
 Developers can also access extensive guides, tutorials, and community support through LangChain's GitHub repository, making it a versatile resource for creating intelligent systems.  
 [Visit LangChain on GitHub](https://github.com/langchain-ai/langchain?utm_source=chatgpt.com)
 
-**Getting Started with LangChain:**  
-- [Official Getting Started Guide](https://python.langchain.com/docs/introduction/?utm_source=chatgpt.com)  
+**Getting Started with LangChain:**
+- [Official Getting Started Guide](https://python.langchain.com/docs/introduction/?utm_source=chatgpt.com)
 <!-- - [YouTube: LangChain Explained in 13 Minutes | QuickStart Tutorial for Beginners](https://www.youtube.com/watch?v=aywZrzNaKjs) -->
+
+---
+
+## Hive
+
+**Hive** is an open-source AI agent framework by Aden (YC-backed) that enables developers to build goal-driven, self-improving autonomous agents. Instead of manually defining step-by-step workflows, developers define outcomes in natural language, and Hive auto-generates the agent graph. When agents fail, the framework captures failure data and evolves the agent graph automatically.
+[Explore Hive on GitHub](https://github.com/aden-hive/hive)
+
+Key features include MCP integration with 100+ tools, human-in-the-loop support, real-time observability, cost controls, and 20+ pre-built agent templates for business automation tasks like email management, lead routing, and competitive intelligence.
+[Read the Documentation](https://github.com/aden-hive/hive/tree/main/docs)
+
+**Getting Started with Hive:**
+- [Hive Quick-Start Guide](https://github.com/aden-hive/hive#quick-start)
 
 ---
 
