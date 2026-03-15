@@ -113,10 +113,28 @@ The platform also offers real-time monitoring and alerting, which ensures that A
 With Opik, you can log, view, and evaluate your LLM (Large Language Model) traces during both development and production. The platform, combined with LLM-as-a-Judge evaluators, helps you identify and resolve issues in your LLM applications efficiently.
 
 
-**Getting Started with Opik:**  
+**Getting Started with Opik:**
 - [Opik Documentation](https://www.comet.ml/docs/opik/quickstart)
 - [YouTube: Introducing Opik: Open-Source LLM Evaluation from Comet](https://www.youtube.com/watch?v=B4oboG62lyA)
 
+## shekel
+
+**shekel** is a Python library that provides runtime budget guardrails for AI agents. It solves a critical production problem: AI agents quietly run up unexpected costs through retries, tool loops, and runaway LLM calls. shekel sets hard spending limits that are enforced at runtime, not just in prompts.
+[Visit shekel on GitHub](https://github.com/arieradle/shekel)
+
+With a single context manager, you can wrap any agent or LLM call with a hard USD cap. When the limit is reached, shekel raises a `BudgetExceeded` exception, stopping spend immediately. It works transparently across OpenAI, Anthropic, Gemini, LangChain, LangGraph, CrewAI, AutoGen, LlamaIndex, MCP, OpenAI Agents SDK, LiteLLM, and HuggingFace.
+
+```python
+from shekel import budget
+
+with budget(max_usd=5.00):
+    run_my_agent()
+```
+
+**Getting Started with shekel:**
+- [shekel Documentation & Quick-Start](https://github.com/arieradle/shekel#readme)
+- [Example: LangGraph agent with budget guardrails](https://github.com/arieradle/shekel/blob/main/examples/langgraph_demo.py)
+- [Example: Nested research agent](https://github.com/arieradle/shekel/blob/main/examples/nested_research_agent.py)
 
 
 ---
