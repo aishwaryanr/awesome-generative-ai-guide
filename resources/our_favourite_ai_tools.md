@@ -161,5 +161,16 @@ One of its latest features, Audio Overview, transforms text-based sources into e
 
 
 
-**Getting Started with NotebookLM:**  
-- [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)  
+**Getting Started with NotebookLM:**
+- [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)
+
+## OpenVoiceUI
+
+**OpenVoiceUI** is an open-source (MIT) voice-powered AI assistant platform that lets developers connect any LLM, any TTS engine, and any STT provider through a unified interface. It features a live web canvas for visual content, music generation, and multi-agent orchestration — all installable with a single command.
+[Visit OpenVoiceUI on GitHub](https://github.com/MCERQUA/OpenVoiceUI)
+
+The platform supports provider-agnostic voice conversations, letting you swap between OpenAI, Anthropic, open-source models, or any compatible endpoint without changing application code. Its canvas system enables agents to display rich visual content alongside voice interactions, making it suitable for building interactive AI assistants.
+
+**Getting Started with OpenVoiceUI:**
+- [OpenVoiceUI Documentation](https://github.com/MCERQUA/OpenVoiceUI#readme)
+- [npm Package](https://www.npmjs.com/package/openvoiceui) — Install with `npx openvoiceui setup`
