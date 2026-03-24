@@ -80,6 +80,8 @@ Every `build.md` file has a troubleshooting section at the bottom covering the m
 
 Use what you built. Talk to your Claw every day for a week. Notice where the tone is off, where the rules are too strict or too loose, where the memory is missing context. Then update SOUL.md, USER.md, or AGENTS.md to fix those specific gaps. After that, explore new integrations one at a time: Google Calendar, Obsidian, Slack, or more specialist agents. Day 10's learn file has a full list of next steps.
 
+For ideas on what to build next, check out our [Best OpenClaw Resources by Category](best-openclaw-resources.md). It has use cases, community content, and the best guides we found for getting more out of OpenClaw.
+
 ---
 
 [← Back to Course Overview](README.md)
