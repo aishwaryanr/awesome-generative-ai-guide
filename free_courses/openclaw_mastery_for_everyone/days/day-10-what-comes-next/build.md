@@ -41,9 +41,7 @@ The optional completion code goes in the last question of the form. The form sti
 
 Copy and paste this into the OpenClaw web chat:
 
-> Read `claw-instructions-run-course-verification.md` and follow every step. Review my setup across the course, tell me which days look complete, generate the optional completion code, and stop when the report is complete.
-
-<!-- TODO: Replace `claw-instructions-run-course-verification.md` with the full raw GitHub URL once the repo is hosted. The Claw needs a URL to fetch the file. -->
+> Read `https://raw.githubusercontent.com/aishwaryanr/awesome-generative-ai-guide/main/free_courses/openclaw_mastery_for_everyone/days/day-10-what-comes-next/claw-instructions-run-course-verification.md` and follow every step. Review my setup across the course, tell me which days look complete, generate the optional completion code, and stop when the report is complete.
 
 That [instruction file](./claw-instructions-run-course-verification.md) tells the Claw to:
 

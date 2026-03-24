@@ -47,9 +47,7 @@ You are checking two things here: whether the skill is ready for the send workfl
 
 After you are happy with the inspection, copy and paste this into the web chat:
 
-> Read `claw-instructions-configure-outbound-email.md` and follow every step. Reuse my Day 6 Gmail setup, add the SMTP side for Day 8, add the outbound email rules, tell me exactly what changed, and stop when the setup report is complete.
-
-<!-- TODO: Replace `claw-instructions-configure-outbound-email.md` with the full raw GitHub URL once the repo is hosted. The Claw needs a URL to fetch the file. -->
+> Read `https://raw.githubusercontent.com/aishwaryanr/awesome-generative-ai-guide/main/free_courses/openclaw_mastery_for_everyone/days/day-08-let-it-write/claw-instructions-configure-outbound-email.md` and follow every step. Reuse my Day 6 Gmail setup, add the SMTP side for Day 8, add the outbound email rules, tell me exactly what changed, and stop when the setup report is complete.
 
 That [instruction file](./claw-instructions-configure-outbound-email.md) tells the Claw to:
 
@@ -68,9 +66,7 @@ The Day 6 App Password is the same credential you use here. Gmail App Passwords 
 
 After outbound email is configured, copy and paste this into the web chat:
 
-> Read `claw-instructions-create-follow-up-email.md` and follow every step. Create `follow-up-email` for this workspace, tell me how to trigger it, and stop when you're done.
-
-<!-- TODO: Replace `claw-instructions-create-follow-up-email.md` with the full raw GitHub URL once the repo is hosted. The Claw needs a URL to fetch the file. -->
+> Read `https://raw.githubusercontent.com/aishwaryanr/awesome-generative-ai-guide/main/free_courses/openclaw_mastery_for_everyone/days/day-08-let-it-write/claw-instructions-create-follow-up-email.md` and follow every step. Create `follow-up-email` for this workspace, tell me how to trigger it, and stop when you're done.
 
 That [instruction file](./claw-instructions-create-follow-up-email.md) tells the Claw to create one custom workspace skill that:
 
@@ -89,9 +85,7 @@ After this step, type `/new` in OpenClaw before you test the new skill.
 
 Copy and paste this into the web chat:
 
-> Read `claw-instructions-finalize-outbound-email.md` and follow every step. Verify the Day 8 outbound email setup, give me the exact test messages to use, and report PASS or FAIL.
-
-<!-- TODO: Replace `claw-instructions-finalize-outbound-email.md` with the full raw GitHub URL once the repo is hosted. The Claw needs a URL to fetch the file. -->
+> Read `https://raw.githubusercontent.com/aishwaryanr/awesome-generative-ai-guide/main/free_courses/openclaw_mastery_for_everyone/days/day-08-let-it-write/claw-instructions-finalize-outbound-email.md` and follow every step. Verify the Day 8 outbound email setup, give me the exact test messages to use, and report PASS or FAIL.
 
 That [instruction file](./claw-instructions-finalize-outbound-email.md) tells it to:
 

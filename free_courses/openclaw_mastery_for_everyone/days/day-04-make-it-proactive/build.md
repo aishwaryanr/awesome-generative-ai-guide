@@ -20,9 +20,7 @@ The operational steps live in [`claw-instructions-create-daily-reflection-cron.m
 
 Copy and paste the following message into the web chat:
 
-> Read `claw-instructions-create-daily-reflection-cron.md` and follow every step. Ask me only for the decisions you still need, create the cron job, and stop when you're done.
-
-<!-- TODO: Replace `claw-instructions-create-daily-reflection-cron.md` with the full raw GitHub URL once the repo is hosted. The Claw needs a URL to fetch the file. -->
+> Read `https://raw.githubusercontent.com/aishwaryanr/awesome-generative-ai-guide/main/free_courses/openclaw_mastery_for_everyone/days/day-04-make-it-proactive/claw-instructions-create-daily-reflection-cron.md` and follow every step. Ask me only for the decisions you still need, create the cron job, and stop when you're done.
 
 [`claw-instructions-create-daily-reflection-cron.md`](./claw-instructions-create-daily-reflection-cron.md) tells the Claw to:
 

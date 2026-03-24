@@ -21,9 +21,7 @@ All configuration for this step lives in `~/.openclaw/openclaw.json`.
 
 Copy and paste the following message into the web chat:
 
-> Read `claw-instructions-connect-telegram.md` and follow every step. Ask me only for what you need, configure Telegram, verify it works, and stop when you're done.
-
-<!-- TODO: Replace `claw-instructions-connect-telegram.md` with the full raw GitHub URL once the repo is hosted. The Claw needs a URL to fetch the file. -->
+> Read `https://raw.githubusercontent.com/aishwaryanr/awesome-generative-ai-guide/main/free_courses/openclaw_mastery_for_everyone/days/day-03-connect-a-channel/claw-instructions-connect-telegram.md` and follow every step. Ask me only for what you need, configure Telegram, verify it works, and stop when you're done.
 
 [`claw-instructions-connect-telegram.md`](./claw-instructions-connect-telegram.md) tells the Claw to:
 
