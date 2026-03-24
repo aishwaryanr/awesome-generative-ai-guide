@@ -6,7 +6,9 @@
 
 No. The entire course runs on a cloud VPS (Virtual Private Server). You rent one from Hostinger using their one-click OpenClaw template, and Day 1 walks you through it. All you need is a laptop or desktop with a browser and a Telegram account on your phone.
 
-Some experienced users run OpenClaw on a Mac mini at home. That works well, but it is not required for this course and we do not cover that setup here. A VPS is simpler, always on, and does not depend on your home network staying up.
+Some experienced users run OpenClaw on a Mac mini at home. That works well, and you can always port to hardware once you have learned how OpenClaw works. But most people get overwhelmed with the hardware setup requirements and end up never configuring their Claw properly. This course is designed to save you from that overwhelm: you learn the concepts and build a working setup first, on infrastructure that is ready in minutes.
+
+🎁 Complete the course and score 10/10 on the certification assessment? You could walk away with a free Mac mini. You will learn more about it as you go through the course.
 
 ---
 
