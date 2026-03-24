@@ -115,8 +115,6 @@ The build walks you through deploying on Hostinger and then verifying the securi
 
 Open [`build.md`](build.md) and follow the steps. The first half walks you through the Hostinger interface. The second half is a conversation with your Claw, where you ask it to verify its own security.
 
-<!-- TODO: Replace `build.md` with the full raw GitHub URL once the repo is hosted. The Claw needs a URL to fetch the file. -->
-
 ![From blank VPS to secured gateway](../../diagrams/day-01-vps-to-gateway.png)
 
 Tomorrow you give it an identity: four files that turn a running process into something that actually knows you.

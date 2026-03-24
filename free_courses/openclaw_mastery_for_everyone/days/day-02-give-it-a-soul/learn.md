@@ -251,9 +251,7 @@ You now understand what these four files do, why they are separate, and how they
 
 Open your web chat and tell your Claw:
 
-> I need to set up your identity files. Read `build.md` and walk me through the process.
-
-<!-- TODO: Replace `build.md` with the full raw GitHub URL once the repo is hosted. The Claw needs a URL to fetch the file. -->
+> I need to set up your identity files. Read `https://raw.githubusercontent.com/aishwaryanr/awesome-generative-ai-guide/main/free_courses/openclaw_mastery_for_everyone/days/day-02-give-it-a-soul/build.md` and walk me through the process.
 
 The Claw will read the file, ask you the right questions at each step, create the files, and verify everything is loaded correctly. You can also open [`build.md`](build.md) yourself to follow along or read ahead.
 

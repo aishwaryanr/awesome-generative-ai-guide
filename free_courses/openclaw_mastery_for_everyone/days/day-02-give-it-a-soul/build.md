@@ -34,9 +34,7 @@ Work through the files in this order:
 
 Copy and paste the following message into the web chat:
 
-> Read `claw-instructions-create-soul.md` and follow every step. Ask the questions in order, create `SOUL.md`, and stop when you're done.
-
-<!-- TODO: Replace `claw-instructions-create-soul.md` with the full raw GitHub URL once the repo is hosted. The Claw needs a URL to fetch the file. -->
+> Read `https://raw.githubusercontent.com/aishwaryanr/awesome-generative-ai-guide/main/free_courses/openclaw_mastery_for_everyone/days/day-02-give-it-a-soul/claw-instructions-create-soul.md` and follow every step. Ask the questions in order, create `SOUL.md`, and stop when you're done.
 
 That [instruction file](./claw-instructions-create-soul.md) tells the Claw to:
 
@@ -59,9 +57,7 @@ Take your time here. Specific prohibitions and concrete language habits are more
 
 After `SOUL.md` is finished, copy and paste this into the web chat:
 
-> Read `claw-instructions-create-user.md` and follow every step. Ask the questions in order, create `USER.md`, and stop when you're done.
-
-<!-- TODO: Replace `claw-instructions-create-user.md` with the full raw GitHub URL once the repo is hosted. The Claw needs a URL to fetch the file. -->
+> Read `https://raw.githubusercontent.com/aishwaryanr/awesome-generative-ai-guide/main/free_courses/openclaw_mastery_for_everyone/days/day-02-give-it-a-soul/claw-instructions-create-user.md` and follow every step. Ask the questions in order, create `USER.md`, and stop when you're done.
 
 [`claw-instructions-create-user.md`](./claw-instructions-create-user.md) creates the briefing document about *you*: your role, location, working style, and what is currently on your plate. Keep sensitive or private details out of `USER.md`. That kind of context belongs in `MEMORY.md`, which is private-session-only.
 
@@ -73,9 +69,7 @@ The most important part of `USER.md` is the **Focus** section. Make it current. 
 
 After `USER.md` is finished, copy and paste this into the web chat:
 
-> Read `claw-instructions-create-agents.md` and follow every step. Create `AGENTS.md`, confirm the names are consistent, and stop when you're done.
-
-<!-- TODO: Replace `claw-instructions-create-agents.md` with the full raw GitHub URL once the repo is hosted. The Claw needs a URL to fetch the file. -->
+> Read `https://raw.githubusercontent.com/aishwaryanr/awesome-generative-ai-guide/main/free_courses/openclaw_mastery_for_everyone/days/day-02-give-it-a-soul/claw-instructions-create-agents.md` and follow every step. Create `AGENTS.md`, confirm the names are consistent, and stop when you're done.
 
 [`claw-instructions-create-agents.md`](./claw-instructions-create-agents.md) creates the operating manual the Claw follows every session:
 
@@ -93,9 +87,7 @@ Most of it is pre-written. The main thing to verify is that the Claw name and us
 
 After `AGENTS.md` is finished, copy and paste this into the web chat:
 
-> Read `claw-instructions-create-memory.md` and follow every step. Ask the questions in order, create `MEMORY.md`, and stop when you're done.
-
-<!-- TODO: Replace `claw-instructions-create-memory.md` with the full raw GitHub URL once the repo is hosted. The Claw needs a URL to fetch the file. -->
+> Read `https://raw.githubusercontent.com/aishwaryanr/awesome-generative-ai-guide/main/free_courses/openclaw_mastery_for_everyone/days/day-02-give-it-a-soul/claw-instructions-create-memory.md` and follow every step. Ask the questions in order, create `MEMORY.md`, and stop when you're done.
 
 [`claw-instructions-create-memory.md`](./claw-instructions-create-memory.md) is the only identity file designed to grow over time. It stores:
 
@@ -112,9 +104,7 @@ If you do not want to answer one of the setup questions yet, skip it. The file c
 
 After `MEMORY.md` is finished, copy and paste this into the web chat:
 
-> Read `claw-instructions-finalize-identity.md` and follow every step. Set permissions, restart the gateway, run the verification, and report PASS or FAIL for each item.
-
-<!-- TODO: Replace `claw-instructions-finalize-identity.md` with the full raw GitHub URL once the repo is hosted. The Claw needs a URL to fetch the file. -->
+> Read `https://raw.githubusercontent.com/aishwaryanr/awesome-generative-ai-guide/main/free_courses/openclaw_mastery_for_everyone/days/day-02-give-it-a-soul/claw-instructions-finalize-identity.md` and follow every step. Set permissions, restart the gateway, run the verification, and report PASS or FAIL for each item.
 
 That [instruction file](./claw-instructions-finalize-identity.md) tells it to:
 

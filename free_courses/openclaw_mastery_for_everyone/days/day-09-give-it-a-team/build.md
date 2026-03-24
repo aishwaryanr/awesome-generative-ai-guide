@@ -45,9 +45,7 @@ This makes the model decision explicit before the new agent exists. The Day 9 wr
 
 After you are happy with the plan, copy and paste this into the web chat:
 
-> Read `claw-instructions-create-writer-agent.md` and follow every step. Ask the setup questions in order, create the `writer` agent, keep the writer identity files detailed, choose its model from my existing provider setup, and stop when you're done.
-
-<!-- TODO: Replace `claw-instructions-create-writer-agent.md` with the full raw GitHub URL once the repo is hosted. The Claw needs a URL to fetch the file. -->
+> Read `https://raw.githubusercontent.com/aishwaryanr/awesome-generative-ai-guide/main/free_courses/openclaw_mastery_for_everyone/days/day-09-give-it-a-team/claw-instructions-create-writer-agent.md` and follow every step. Ask the setup questions in order, create the `writer` agent, keep the writer identity files detailed, choose its model from my existing provider setup, and stop when you're done.
 
 [`claw-instructions-create-writer-agent.md`](./claw-instructions-create-writer-agent.md) tells the Claw to:
 
@@ -65,9 +63,7 @@ The detail in the writer `SOUL.md` is the point. This agent is supposed to sound
 
 After `writer` is created, copy and paste this into the web chat:
 
-> Read `claw-instructions-enable-teamwork.md` and follow every step. Enable delegation between `main` and `writer`, add a short rule so long-form writing goes to the writer, and stop when you're done.
-
-<!-- TODO: Replace `claw-instructions-enable-teamwork.md` with the full raw GitHub URL once the repo is hosted. The Claw needs a URL to fetch the file. -->
+> Read `https://raw.githubusercontent.com/aishwaryanr/awesome-generative-ai-guide/main/free_courses/openclaw_mastery_for_everyone/days/day-09-give-it-a-team/claw-instructions-enable-teamwork.md` and follow every step. Enable delegation between `main` and `writer`, add a short rule so long-form writing goes to the writer, and stop when you're done.
 
 [`claw-instructions-enable-teamwork.md`](./claw-instructions-enable-teamwork.md) tells the Claw to:
 

@@ -62,9 +62,7 @@ This is the first useful shift in Day 7. Your Claw stops guessing on current top
 
 After you have the Brave API key, copy and paste this into the web chat:
 
-> Read `claw-instructions-configure-web-search.md` and follow every step. Configure the built-in `web_search` tool to use Brave Search for this agent. I already have the Brave API key and will paste it when you ask. Stop when the setup is complete and tell me the exact validation prompt to run next.
-
-<!-- TODO: Replace `claw-instructions-configure-web-search.md` with the full raw GitHub URL once the repo is hosted. The Claw needs a URL to fetch the file. -->
+> Read `https://raw.githubusercontent.com/aishwaryanr/awesome-generative-ai-guide/main/free_courses/openclaw_mastery_for_everyone/days/day-07-make-it-research/claw-instructions-configure-web-search.md` and follow every step. Configure the built-in `web_search` tool to use Brave Search for this agent. I already have the Brave API key and will paste it when you ask. Stop when the setup is complete and tell me the exact validation prompt to run next.
 
 [`claw-instructions-configure-web-search.md`](./claw-instructions-configure-web-search.md) tells the Claw to:
 
@@ -79,9 +77,7 @@ After you have the Brave API key, copy and paste this into the web chat:
 
 After `web_search` is working, copy and paste this into the web chat:
 
-> Read `claw-instructions-create-research-brief.md` and follow every step. Create a `research-brief` skill for this workspace that uses `web_search` only, tell me how to trigger it, and stop when you're done.
-
-<!-- TODO: Replace `claw-instructions-create-research-brief.md` with the full raw GitHub URL once the repo is hosted. The Claw needs a URL to fetch the file. -->
+> Read `https://raw.githubusercontent.com/aishwaryanr/awesome-generative-ai-guide/main/free_courses/openclaw_mastery_for_everyone/days/day-07-make-it-research/claw-instructions-create-research-brief.md` and follow every step. Create a `research-brief` skill for this workspace that uses `web_search` only, tell me how to trigger it, and stop when you're done.
 
 [`claw-instructions-create-research-brief.md`](./claw-instructions-create-research-brief.md) tells the Claw to create one custom skill that:
 

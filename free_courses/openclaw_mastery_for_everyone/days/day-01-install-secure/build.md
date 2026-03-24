@@ -29,9 +29,7 @@ Everything from here forward is a conversation with your Claw. You paste one mes
 
 Copy and paste the following message into the web chat:
 
-> Read `claw-instructions-security.md` and follow every step. Report the result of each check and fix anything that fails.
-
-<!-- TODO: Replace `claw-instructions-security.md` with the full raw GitHub URL once the repo is hosted. The Claw needs a URL to fetch the file. -->
+> Read `https://raw.githubusercontent.com/aishwaryanr/awesome-generative-ai-guide/main/free_courses/openclaw_mastery_for_everyone/days/day-01-install-secure/claw-instructions-security.md` and follow every step. Report the result of each check and fix anything that fails.
 
 [`claw-instructions-security.md`](./claw-instructions-security.md) contains 10 checks covering the OS, open ports, firewall, OpenClaw's security audit, gateway configuration, file permissions, channels, web search, the heartbeat, and a final restart. Each check includes the expected result and an explanation of why it matters, so you can follow along as the Claw works through it.
 

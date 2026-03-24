@@ -44,9 +44,7 @@ Today's ClawHub skill example is `document-summary`. It is a good Day 5 starting
 
 After you are happy with the inspection, copy and paste this into the web chat:
 
-> Read `claw-instructions-install-document-summary.md` and follow every step. Install `document-summary` into this workspace, tell me how to trigger it, and stop when you're done.
-
-<!-- TODO: Replace `claw-instructions-install-document-summary.md` with the full raw GitHub URL once the repo is hosted. The Claw needs a URL to fetch the file. -->
+> Read `https://raw.githubusercontent.com/aishwaryanr/awesome-generative-ai-guide/main/free_courses/openclaw_mastery_for_everyone/days/day-05-give-it-skills/claw-instructions-install-document-summary.md` and follow every step. Install `document-summary` into this workspace, tell me how to trigger it, and stop when you're done.
 
 [`claw-instructions-install-document-summary.md`](./claw-instructions-install-document-summary.md) tells the Claw to:
 
@@ -69,9 +67,7 @@ After this step, type `/new` in OpenClaw to start a fresh session before you con
 
 After `document-summary` is installed, copy and paste this into the web chat:
 
-> Read `claw-instructions-create-quick-note-skill.md` and follow every step. Create `quick-note` in this workspace, tell me how to trigger it, and stop when you're done.
-
-<!-- TODO: Replace `claw-instructions-create-quick-note-skill.md` with the full raw GitHub URL once the repo is hosted. The Claw needs a URL to fetch the file. -->
+> Read `https://raw.githubusercontent.com/aishwaryanr/awesome-generative-ai-guide/main/free_courses/openclaw_mastery_for_everyone/days/day-05-give-it-skills/claw-instructions-create-quick-note-skill.md` and follow every step. Create `quick-note` in this workspace, tell me how to trigger it, and stop when you're done.
 
 [`claw-instructions-create-quick-note-skill.md`](./claw-instructions-create-quick-note-skill.md) tells the Claw to create one small custom skill that:
 
@@ -96,9 +92,7 @@ After this step, type `/new` in OpenClaw to start a fresh session before you con
 
 After `quick-note` is created, copy and paste this into the web chat:
 
-> Read `claw-instructions-finalize-skills.md` and follow every step. Verify both skills, tell me the exact test message for each one, and report PASS or FAIL.
-
-<!-- TODO: Replace `claw-instructions-finalize-skills.md` with the full raw GitHub URL once the repo is hosted. The Claw needs a URL to fetch the file. -->
+> Read `https://raw.githubusercontent.com/aishwaryanr/awesome-generative-ai-guide/main/free_courses/openclaw_mastery_for_everyone/days/day-05-give-it-skills/claw-instructions-finalize-skills.md` and follow every step. Verify both skills, tell me the exact test message for each one, and report PASS or FAIL.
 
 That [instruction file](./claw-instructions-finalize-skills.md) tells it to:
 

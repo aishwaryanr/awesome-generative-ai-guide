@@ -64,9 +64,7 @@ You are checking two things here: whether the skill matches the name, and whethe
 
 After you are happy with the inspection, copy and paste this into the web chat:
 
-> Read `claw-instructions-install-imap-smtp-email.md` and follow every step. Install `imap-smtp-email` for this workspace, configure Gmail inbox reading for Day 6, tell me where the config lives, and stop when the install report is complete.
-
-<!-- TODO: Replace `claw-instructions-install-imap-smtp-email.md` with the full raw GitHub URL once the repo is hosted. The Claw needs a URL to fetch the file. -->
+> Read `https://raw.githubusercontent.com/aishwaryanr/awesome-generative-ai-guide/main/free_courses/openclaw_mastery_for_everyone/days/day-06-tame-your-inbox/claw-instructions-install-imap-smtp-email.md` and follow every step. Install `imap-smtp-email` for this workspace, configure Gmail inbox reading for Day 6, tell me where the config lives, and stop when the install report is complete.
 
 That [instruction file](./claw-instructions-install-imap-smtp-email.md) tells the Claw to:
 
@@ -84,9 +82,7 @@ After this step, type `/new` in OpenClaw before you continue.
 
 Copy and paste this into the web chat:
 
-> Read `claw-instructions-create-email-triage.md` and follow every step. Create `email-triage`, add the Day 6 email safety rules, create the morning Gmail cron job, tell me how to trigger it, and stop when the report is complete.
-
-<!-- TODO: Replace `claw-instructions-create-email-triage.md` with the full raw GitHub URL once the repo is hosted. The Claw needs a URL to fetch the file. -->
+> Read `https://raw.githubusercontent.com/aishwaryanr/awesome-generative-ai-guide/main/free_courses/openclaw_mastery_for_everyone/days/day-06-tame-your-inbox/claw-instructions-create-email-triage.md` and follow every step. Create `email-triage`, add the Day 6 email safety rules, create the morning Gmail cron job, tell me how to trigger it, and stop when the report is complete.
 
 That [instruction file](./claw-instructions-create-email-triage.md) tells the Claw to:
 
@@ -105,9 +101,7 @@ After this step, type `/new` in OpenClaw before you continue.
 
 Copy and paste this into the web chat:
 
-> Read `claw-instructions-finalize-inbox.md` and follow every step. Verify the Day 6 Gmail inbox setup and report PASS or FAIL.
-
-<!-- TODO: Replace `claw-instructions-finalize-inbox.md` with the full raw GitHub URL once the repo is hosted. The Claw needs a URL to fetch the file. -->
+> Read `https://raw.githubusercontent.com/aishwaryanr/awesome-generative-ai-guide/main/free_courses/openclaw_mastery_for_everyone/days/day-06-tame-your-inbox/claw-instructions-finalize-inbox.md` and follow every step. Verify the Day 6 Gmail inbox setup and report PASS or FAIL.
 
 That [instruction file](./claw-instructions-finalize-inbox.md) tells it to:
 
