@@ -68,7 +68,11 @@ If you already have a running OpenClaw instance, you can skim the learn files fo
 
 ### What if something breaks during a build?
 
-Every `build.md` file has a troubleshooting section at the bottom covering the most common issues for that day. If you hit something not covered there, the [OpenClaw community](https://docs.openclaw.ai) and our live sessions are good places to get help.
+Every `build.md` file has a troubleshooting section at the bottom covering the most common issues for that day. If you hit something not covered there, you have a few options:
+
+- **Live sessions**: Join one of our scheduled sessions and ask directly.
+- **OpenClaw community**: Browse questions and answers on the [OpenClaw community](https://docs.openclaw.ai).
+- **Open an issue**: If you found a bug or a gap in the troubleshooting guide, [open an issue on this repository](https://github.com/aishwaryanr/awesome-generative-ai-guide/issues). We will add it to the troubleshooting section so it helps everyone who comes after you. Help us make this the best free course out there.
 
 ---
 
