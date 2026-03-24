@@ -1,4 +1,4 @@
-# OpenClaw Mastery for Everyone
+# 🦞 OpenClaw Mastery for Everyone
 
 *Created by [Aishwarya Reganti](https://www.linkedin.com/in/areganti/) & [Kiriti Badam](https://www.linkedin.com/in/sai-kiriti-badam/)*
 
@@ -25,7 +25,7 @@ Everyone who completes the course can earn a certificate. The assessment has a f
 
 Take the assessment here: [OpenClaw Mastery Assessment](https://docs.google.com/forms/d/e/1FAIpQLSeoR5wfheIkD0hCaf3eYmJ6s8aNMbylfJ00hi6djlkpIuF1FA/viewform)
 
-Score 10/10 and attend one of our live sessions? You could walk away with a Mac mini.
+🎁 Score 10/10 and attend one of our live sessions? You could walk away with a Mac mini.
 
 ---
 
@@ -90,7 +90,7 @@ We're running two live sessions for this course. We'll go over the same workflow
 - **Session 1:** [April 10, 2026, 9:30 AM Pacific](https://maven.com/p/ddf4e5/open-claw-mastery-for-everyone-open-house)
 - **Session 2:** [April 19, 2026, 9:00 AM Pacific](https://maven.com/p/da9448/open-claw-mastery-for-everyone-open-house)
 
-One lucky participant who scores 10/10 on the [certification assessment](https://docs.google.com/forms/d/e/1FAIpQLSeoR5wfheIkD0hCaf3eYmJ6s8aNMbylfJ00hi6djlkpIuF1FA/viewform) will be called out during the live session. If they're attending live, they'll walk away with a Mac mini.
+🎁 One lucky participant who scores 10/10 on the [certification assessment](https://docs.google.com/forms/d/e/1FAIpQLSeoR5wfheIkD0hCaf3eYmJ6s8aNMbylfJ00hi6djlkpIuF1FA/viewform) will be called out during the live session. If they're attending live, they'll walk away with a Mac mini.
 
 ---
 
