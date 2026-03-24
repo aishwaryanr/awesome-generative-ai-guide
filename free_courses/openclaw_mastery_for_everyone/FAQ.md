@@ -46,8 +46,8 @@ OpenClaw supports Anthropic (Claude), OpenAI (GPT), Google (Gemini), DeepSeek, a
 
 Three costs to consider:
 
-1. **VPS hosting**: Hostinger plans start at a few dollars per month.
-2. **AI API usage**: Depends on your provider and how much you use your Claw. Mid-tier models are significantly cheaper than top-tier. Most users spend under $20/month for daily personal use.
+1. **VPS hosting**: About $25/month on Hostinger.
+2. **AI API usage**: Depends on your provider and how much you use your Claw. Mid-tier models are significantly cheaper than top-tier. We cover which providers work well and how to reduce your costs in the [API key guide](getting-your-api-key.md).
 3. **The course itself**: Free. Always will be.
 
 ---
