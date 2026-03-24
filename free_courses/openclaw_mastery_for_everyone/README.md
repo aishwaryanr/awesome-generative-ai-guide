@@ -120,6 +120,12 @@ Check out our [Best OpenClaw Resources by Category](best-openclaw-resources.md) 
 
 ---
 
+## 💬 Share the Love
+
+If you loved the course, please share it! Tag [Aishwarya](https://www.linkedin.com/in/areganti/), [Kiriti](https://www.linkedin.com/in/sai-kiriti-badam/), and [LevelUp Labs](https://www.linkedin.com/company/levelup-labs-ai/) on LinkedIn and let us know how much you scored. It truly makes our day.
+
+---
+
 ## 📄 License
 
 All content, images, and diagrams in this course are owned by [LevelUp Labs](https://levelup-labs.ai). This course is free and open source. You are welcome to use, share, and build on it, but please credit LevelUp Labs and link back to this repository if you do.
