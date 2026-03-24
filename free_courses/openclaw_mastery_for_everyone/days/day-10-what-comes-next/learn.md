@@ -138,6 +138,10 @@ If you want to keep learning with us:
 - [LevelUp Labs on LinkedIn](https://www.linkedin.com/company/levelup-labs-ai/)
 - [More courses at levelup-labs.ai/education](https://levelup-labs.ai/education)
 
+**We also run some of the most popular AI courses on Maven.** Wherever you are in your learning journey, check them out:
+- **[#1 Rated Enterprise AI Course](https://maven.com/aishwarya-kiriti/genai-system-design)**: build enterprise AI systems from scratch.
+- **[Advanced Evals Course](https://maven.com/aishwarya-kiriti/evals-problem-first)**: systematically improve your AI products through evaluation techniques.
+
 ---
 
 ## Ready to Build?
@@ -154,12 +158,6 @@ Open [`build.md`](build.md) and give it to your Claw.
 - The OpenClaw community maintains a [workspace templates library](https://docs.openclaw.ai/community/workspace-templates) with specialized setups for specific roles: technical product managers, researchers, writers. Worth reviewing once your baseline is stable.
 - For backup: the workspace directory is just files. A private Git repository with an automated script that strips secrets before each commit is the most reliable backup approach.
 - Check out our [Best OpenClaw Resources by Category](../../best-openclaw-resources.md) for a curated list of use cases, guides, and community content.
-
----
-
-**We also run some of the most popular AI courses on Maven.** Wherever you are in your learning journey, check them out:
-- **[#1 Rated Enterprise AI Course](https://maven.com/aishwarya-kiriti/genai-system-design)**: build enterprise AI systems from scratch.
-- **[Advanced Evals Course](https://maven.com/aishwarya-kiriti/evals-problem-first)**: systematically improve your AI products through evaluation techniques.
 
 ---
 
