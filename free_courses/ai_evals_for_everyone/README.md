@@ -26,6 +26,10 @@ Welcome to **AI Evals for Everyone**, a beginner-friendly 101 course that clears
 
 **[Start Your Certification Journey →](https://ai-evals-course-website-2025.vercel.app/quiz-google.html)**
 
+## 💬 What Students Are Saying
+
+See what others who completed the course have to say: [Student Testimonials](https://testimonial.to/evals-for-everyone/all)
+
 ## 📚 Course Overview
 
 Start from zero and learn step-by-step how to build AI evaluation systems. This 101 course cuts through the hype and confusion to give you clear, practical guidance you can implement immediately.
