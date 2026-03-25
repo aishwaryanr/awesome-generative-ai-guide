@@ -120,6 +120,8 @@ This lets you run one gateway on your VPS and host multiple specialized agents. 
 
 The real power of named agents shows up when you pair a generalist with a specialist. Your main Claw is good at everything: email triage, scheduling, research, quick answers. But for tasks that need deep domain expertise, like writing long-form content in a specific voice, a specialist agent with a detailed SOUL.md tuned to that domain will outperform the generalist every time. The generalist coordinates and delegates. The specialist executes.
 
+For this course, the setup stays inside OpenClaw chat. You tell your main Claw to create the writer agent, write the detailed workspace files, and wire up the connection. The important part is the boundary it creates: one agent coordinates, one agent writes.
+
 ---
 
 ## Agent-to-Agent Communication
@@ -160,7 +162,7 @@ Today's build creates one specialist as a concrete example of the pattern. After
 
 ## Ready to Build?
 
-You now understand two distinct ways to give your Claw a team. Sub-agents handle parallel work, either automatically or under your manual control. Named agents handle persistent role separation, with their own workspaces, identities, and channel routing. When you connect them through agent-to-agent messaging, your main Claw becomes a coordinator that delegates to specialists. The build creates a specialist writer agent, enables communication between the two, and tests the full delegation workflow.
+You now understand two distinct ways to give your Claw a team. Sub-agents handle parallel work, either automatically or under your manual control. Named agents handle persistent role separation, with their own workspaces, identities, and channel routing. When you connect them through agent-to-agent messaging, your main Claw becomes a coordinator that delegates to specialists. The build stays inside chat: your main Claw creates a specialist writer agent, gives it a detailed SOUL.md, chooses the writer model from the provider family you already configured, enables communication between the two, and tests the full delegation workflow. [`build.md`](build.md) shows you the sequence and the specific `claw-instructions-*.md` files to hand to OpenClaw.
 
 Open [`build.md`](build.md) and give it to your Claw.
 
