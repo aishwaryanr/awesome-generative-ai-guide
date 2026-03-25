@@ -30,13 +30,15 @@ You get the convenience of a managed inbox with guardrails tight enough that you
 
 This is where the pieces from earlier days come together.
 
-On Day 5, you learned that a skill is a set of plain-English instructions that tells your Claw how to do something specific. Email works the same way. You'll install a skill from ClawHub called `imap-email`. This skill tells your Claw how to connect to your email provider using a protocol called IMAP (the same protocol your phone's mail app and desktop clients like Outlook use to read messages), log in with credentials you provide, and pull your messages. The email content then gets fed into your Claw's context, just like a Telegram message would, so it can read, understand, and summarize what's there.
+On Day 5, you learned that a skill is a set of plain-English instructions that tells your Claw how to do something specific. Email works the same way. You'll install a skill from ClawHub called `imap-smtp-email`. The same skill covers both directions of email across the course: IMAP for reading and SMTP for sending. Today you configure the Gmail reading side. Day 8 adds the sending side.
+
+IMAP is the protocol that lets the skill read messages from Gmail. The email content then gets fed into your Claw's context, just like a Telegram message would, so it can read, understand, and summarize what's there.
 
 Here's the full flow:
 
 ![How email flows into your Claw](../../diagrams/day-06-email-flow.png)
 
-The heartbeat system from Day 4 drives the schedule. Every time the scheduler ticks, your Claw can check for new messages, categorize them, and send you a summary on Telegram. The identity files from Day 2 shape how it communicates the results. It's the same architecture you've been building all week, with email as a new input.
+The same cron pattern from Day 4 drives the schedule. At the exact time you choose, a recurring cron job wakes up, checks Gmail, categorizes new messages, and sends you a summary on Telegram. The identity files from Day 2 shape how it communicates the results. It's the same architecture you've been building all week, with email as a new input.
 
 Today we connect with read-only access. Your Claw can scan, categorize, and summarize, but it has zero ability to send, reply, or modify anything in your inbox. You watch what it puts in front of you and decide whether the categorization makes sense. Once you've run it for a few days and the triage feels right, adding reply capability is one configuration change. The Go Deeper section covers that path.
 
@@ -69,9 +71,9 @@ The honest takeaway: we'll make this as safe as we reasonably can, and the read-
 
 On Day 4, you set up an evening reflection: your Claw reaches out at the end of the day to help you journal. Now that your Claw has access to your inbox, it makes sense to add the other bookend: a morning summary.
 
-This is a new heartbeat task. Each morning, your Claw scans your inbox for anything that arrived since the last check, categorizes it, and sends you a short summary on Telegram. You wake up, check your phone, and know what needs your attention before you open your email. The evening reflection helps you look back. The morning summary helps you look ahead.
+This is another cron job. The morning summary wants exact timing, so the build uses the same cron path you used on Day 4. Each morning, your Claw scans your inbox for anything that arrived since the last check, categorizes it, and sends you a short summary on Telegram. You wake up, check your phone, and know what needs your attention before you open your email. The evening reflection helps you look back. The morning summary helps you look ahead.
 
-The build adds this to your HEARTBEAT.md alongside the evening reflection.
+The build creates this as its own cron job alongside the daily reflection from Day 4.
 
 ---
 
@@ -116,15 +118,13 @@ FYI: 4 newsletters, 2 receipts, 1 shipping confirmation. Ask if you want details
 Skip: 11 archived.
 ```
 
-You define the rules for each category in the skill configuration. The more specific your rules, the better the triage. "Emails from anyone in my contacts list where the subject contains 'urgent' or 'deadline'" is a strong Urgent rule. "Anything that looks important" produces inconsistent results. Define the signals your Claw should look for, and it will find them reliably.
+You define the rules for each category in a small workspace skill that sits on top of `imap-smtp-email`. The more specific your rules, the better the triage. "Emails from anyone in my contacts list where the subject contains 'urgent' or 'deadline'" is a strong Urgent rule. "Anything that looks important" produces inconsistent results. Define the signals your Claw should look for, and it will find them reliably.
 
 ---
 
 ## Ready to Build?
 
-You now understand how your Claw connects to email using the same skill and heartbeat architecture from earlier days, why email needs extra protection against prompt injection, and why read-only access is the right starting point. The build connects your inbox, configures triage categories, and adds injection protection to AGENTS.md.
-
-Open [`build.md`](build.md) and give it to your Claw.
+You now understand how your Claw connects to Gmail using the same skill and cron architecture from earlier days, why email needs extra protection against prompt injection, and why inbox reading is the right starting point. The build walks through the current Gmail App Password flow, installs `imap-smtp-email` from ClawHub, creates the triage skill, adds injection protection to AGENTS.md, and schedules the morning summary as a cron job. [`build.md`](build.md) shows you what to do yourself and which short `claw-instructions-*.md` files to paste into OpenClaw chat.
 
 Tomorrow you give your Claw the ability to go out and find information on its own: web search and browser automation.
 

@@ -67,22 +67,21 @@ Stripe already does this. They publish an Agent Toolkit that gives AI agents acc
 
 OpenClaw discovers skills from three locations, and when two skills share the same name, workspace wins.
 
-```
-Skill Discovery (workspace always wins)
-──────────────────────────────────────────────────────────────
-TIER          LOCATION                           SCOPE
-──────────    ─────────────────────────────────   ──────────────────
-Bundled       Ships with OpenClaw                 Always available
-Managed       ~/.openclaw/skills/                 All workspaces
-Workspace     ~/.openclaw/workspace/skills/       This agent only ← wins
-──────────────────────────────────────────────────────────────
-```
+**Skill Discovery (workspace always wins)**
+
+| Tier | Location | Scope |
+| --- | --- | --- |
+| Bundled | Ships with OpenClaw | Always available |
+| Managed | `~/.openclaw/skills/` | All workspaces |
+| Workspace | `~/.openclaw/workspace/skills/` | This agent only; takes precedence |
 
 **Bundled skills** ship with OpenClaw and are always available without installation. These cover common integrations like web search, basic calendar read, and file access. They are a useful baseline that works out of the box.
 
 **Managed skills** live in `~/.openclaw/skills/` and are installed via ClawHub. They are available across all your workspaces on the same machine. Good for general-purpose skills you want everywhere.
 
-**Workspace skills** live inside your specific workspace at `~/.openclaw/workspace/skills/`. Your workspace is the directory at `~/.openclaw/workspace/` that holds everything specific to your agent: the identity files from Day 2, the HEARTBEAT.md from Day 4, and now the skills directory. It's your agent's home.
+**Workspace skills** live inside your specific workspace at `~/.openclaw/workspace/skills/`. Your workspace is the directory at `~/.openclaw/workspace/` that holds everything specific to your agent: the identity files from Day 2, the proactive step from Day 4, and now the skills directory. It's your agent's home.
+
+In the Hostinger setup used in this course, you are not opening a shell and running these commands yourself. The paths and registry terms matter because they explain how OpenClaw works under the hood. Your Claw is the thing performing the inspection, install, and file-writing steps for you.
 
 You can run multiple workspaces on the same OpenClaw installation, each one a separate agent with its own personality, rules, and skills. Workspace skills are scoped to this agent only, which makes them the right place for anything specific to your context: a skill that knows about your particular project structure, your internal tools, or your workflow.
 
@@ -108,11 +107,13 @@ Here's a complete working skill that captures quick notes to your memory:
 
 ```
 Example: quick-note/SKILL.md
-──────────────────────────────────────────────────────────────
 ---
 name: quick-note
-description: Captures a quick note to today's memory file with a timestamp.
-              Triggered by messages like "note:", "remember:", or "jot down:".
+description: >
+  Captures a quick note from messages starting with "note:".
+  Classifies it, saves it to today's memory file, and tracks open loops
+  when the note implies future action.
+
 ---
 
 When the user sends a message starting with "note:", "remember:", or
@@ -126,7 +127,6 @@ When the user sends a message starting with "note:", "remember:", or
 4. Confirm to the user: "Noted: [first 50 chars]..."
 
 If the memory directory is missing, create it first.
-──────────────────────────────────────────────────────────────
 ```
 
 The YAML header (the part between the `---` markers) has a name and a description. The description is what the agent uses to decide when to invoke the skill. A vague description like "helps with tasks" triggers unpredictably, if at all. A specific description like "captures a quick note to today's memory file with a timestamp" triggers exactly when you want it.
@@ -143,7 +143,7 @@ One thing worth knowing: you rarely have to write skills entirely by hand. If yo
 
 You now understand what skills are, how they compare to MCP (wiring vs. behavior), why enterprises publish curated skills instead of exposing raw APIs, what a workspace is, how the three tiers of discovery work, why inspecting before installing matters, and how to write a custom skill or have your Claw draft one for you. The build walks you through what skills are already available, installs one from ClawHub, and helps you write your first custom skill.
 
-Open [`build.md`](build.md) and give it to your Claw.
+Open [`build.md`](build.md). It walks you through Day 5 in stages: inspect one fixed community skill from ClawHub, install it, then create a richer `quick-note` skill inside this workspace.
 
 Tomorrow is the first real integration: email. The skills you've added today will start becoming useful as your Claw gains access to more of your world.
 
@@ -154,12 +154,6 @@ Tomorrow is the first real integration: email. The skills you've added today wil
 - The SKILL.md format supports metadata gates: you can require specific CLI tools to be installed, environment variables to be set, or restrict a skill to specific operating systems. The [SKILL.md specification](https://docs.openclaw.ai/skills/skill-md) covers the full list of supported gates.
 - The [`clawvet` tool](https://docs.openclaw.ai/security/clawvet) automates security scanning for skills. Run `clawvet scan <skill-dir>` on any skill directory to check for known malicious patterns, suspicious outbound calls, and scope violations before you install.
 - If you've built an MCP server, you're 90% of the way to building an OpenClaw skill. The MCP server handles the connectivity; wrapping it in a SKILL.md with workflow instructions turns it into a full skill. The [ClawHub documentation on MCP conversion](https://docs.openclaw.ai/skills/mcp-to-skill) covers the pattern.
-
----
-
-**We also run some of the most popular AI courses on Maven.** Wherever you are in your learning journey, check them out:
-- **[#1 Rated Enterprise AI Course](https://maven.com/aishwarya-kiriti/genai-system-design)**: build enterprise AI systems from scratch.
-- **[Advanced Evals Course](https://maven.com/aishwarya-kiriti/evals-problem-first)**: systematically improve your AI products through evaluation techniques.
 
 ---
 

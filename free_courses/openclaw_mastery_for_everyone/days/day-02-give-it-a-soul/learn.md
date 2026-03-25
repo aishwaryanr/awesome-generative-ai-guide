@@ -247,13 +247,7 @@ The calibration that matters most, the thing that makes the agent start to feel 
 
 ## Ready to Build?
 
-You now understand what these four files do, why they are separate, and how they work together through a session. The build walks you through creating all four, with your Claw leading the conversation.
-
-Open your web chat and tell your Claw:
-
-> I need to set up your identity files. Read `https://raw.githubusercontent.com/aishwaryanr/awesome-generative-ai-guide/main/free_courses/openclaw_mastery_for_everyone/days/day-02-give-it-a-soul/build.md` and walk me through the process.
-
-The Claw will read the file, ask you the right questions at each step, create the files, and verify everything is loaded correctly. You can also open [`build.md`](build.md) yourself to follow along or read ahead.
+You now understand what these four files do, why they are separate, and how they work together through a session. The [`build.md`](build.md) walks you through creating all four, with your Claw leading the conversation.
 
 By the time you finish, your Claw will have a name, a set of constraints, and enough context about you to be genuinely useful on Day 3 when you connect it to your phone.
 

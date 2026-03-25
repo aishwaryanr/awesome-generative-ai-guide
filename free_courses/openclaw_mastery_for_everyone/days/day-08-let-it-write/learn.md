@@ -54,7 +54,7 @@ Once you have run a particular workflow ten or twenty times and it consistently 
 
 ## How the Connection Works
 
-On Day 6, you installed the `imap-email` skill and set up IMAP credentials so your Claw could read your inbox. Today you extend that connection in the opposite direction with SMTP, the protocol for sending email.
+On Day 6, you installed the `imap-smtp-email` skill and set up IMAP credentials so your Claw could read your inbox. Today you extend that connection in the opposite direction with SMTP, the protocol for sending email.
 
 IMAP pulls messages in. SMTP pushes messages out. They are two sides of the same email system, and they use the same credentials. If you set up a Gmail App Password on Day 6, that same password works for SMTP. If you use Outlook, the same account credentials work for both directions.
 
@@ -82,9 +82,7 @@ Today's build focuses on composing new messages only. Replying and forwarding co
 
 ## Ready to Build?
 
-You now understand the difference between internal writes (workspace files, automatic, easy to undo) and external writes (email, need confirmation, affect other people). You know how SMTP extends the IMAP connection you set up on Day 6, and why approval gates are the safety mechanism that makes outbound email practical. The build adds SMTP credentials alongside your existing IMAP setup, installs the send-capable skill, configures approval gates, and tests a complete compose-and-send workflow end-to-end.
-
-Open [`build.md`](build.md) and give it to your Claw.
+You now understand the difference between internal writes (workspace files, automatic, easy to undo) and external writes (email, need confirmation, affect other people). You know how SMTP extends the IMAP connection you set up on Day 6, and why approval gates are the safety mechanism that makes outbound email practical. The build adds SMTP credentials alongside your existing IMAP setup, installs the send-capable skill, configures approval gates, and tests a complete compose-and-send workflow end-to-end. [`build.md`](build.md) walks you through the sequence and points to the short `claw-instructions-*.md` files that belong in OpenClaw chat.
 
 Tomorrow you give your Claw a team.
 

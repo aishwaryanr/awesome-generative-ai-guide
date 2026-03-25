@@ -3,56 +3,56 @@
 ---
 
 **What you'll learn today:**
-- What agentic search and retrieval is, and how your Claw does research on your behalf
-- The difference between a search API and browser automation, and when each is the right tool
+- What live web search adds to OpenClaw, and why it changes the quality of current answers
+- The difference between search and fetch, and which part we are actually using today
 - How web content introduces the same injection risks you handled with email, and what changes
 - What a well-designed research brief looks like versus a vague one
 
-**What you'll build today:** By the end of today, you can ask your Claw to research any topic and get back a structured brief with live sources, delivered to your Telegram. It can search the web for breadth and read full pages for depth.
+**What you'll build today:** By the end of today, your Claw can answer current questions with live Brave-backed search and source links, and it has one reusable `research-brief` skill built on top of that.
 
 ---
 
 ## Your Claw Goes Out Into the World
 
-Until now, your Claw has worked with information that comes to it: messages you send, emails that land in your inbox. Today we'll add another capability: the ability for it to help you do research.
+Until now, your Claw has worked with information that comes to it: messages you send, emails that land in your inbox. Today we add a new kind of reach. Your Claw can go out, look up something current, and come back with sources.
 
-Instead of you opening a browser, visiting five different sites, reading through articles, and piecing together an answer, your Claw can do that for you. It searches the web, reads the results, pulls up full articles when the snippets fall short, and brings you back a curated summary. This is sometimes called agentic search and retrieval: the agent does the research legwork, you get the synthesized result.
+That changes the kind of questions it can answer well. "What changed this week in AI agents?" or "What are people saying about this product launch?" are live questions. Model memory alone is not enough there. The search tool is what turns your Claw into something useful on moving topics.
 
-By the end of today, you'll be able to message your Claw on Telegram and say "what happened in AI this week?" and get back a structured brief with live sources. That's a research Claw running on your own infrastructure, available whenever you need it.
+By the end of today, you'll be able to message your Claw and ask a time-sensitive question, then get back a short answer with links you can inspect yourself. Then you turn that into a reusable `research-brief` skill.
 
 ---
 
 ## Two Tools, Two Speeds
 
-Your Claw gets two ways to access the web. Each one covers a gap the other has.
+OpenClaw has a few ways to reach the web, and they do different jobs.
 
-**A search API** sends a query and gets back structured results: page titles, URLs, and short text snippets. It's fast (milliseconds), cheap (small amount of data per query), and works well when the answer lives in those snippets. "What's the current price of Bitcoin?" or "When is the next Apple event?" are questions a search API handles perfectly. The limitation: snippets are short excerpts, not full pages. If you need the substance of a 3,000-word article, a two-sentence snippet will miss it. Search APIs also have no way to access pages that require JavaScript to render, which includes a growing number of modern websites.
+The main one for today is [`web_search`](https://docs.openclaw.ai/tools/web-search). It sends a query to a search provider and returns structured results: titles, URLs, snippets, and metadata. With [`Brave Search`](https://docs.openclaw.ai/tools/brave-search), you bring your own API key and OpenClaw uses that provider for live queries. This is fast and good for breadth. You can ask, "what happened this week?" and get fresh results instead of a best guess.
 
-**Browser automation** fills that gap. Your Claw opens a real browser on your server (with no graphical interface, just the rendering engine), navigates to a URL, and reads the full page the way you would see it in Chrome. JavaScript-heavy pages render properly. Long-form articles come back in full. The trade-off: it's slower (seconds instead of milliseconds), uses more of your server's memory, and processes more tokens per request.
+OpenClaw also has [`web_fetch`](https://docs.openclaw.ai/tools/web-fetch), which is useful when you already know the page you want and need more than the search snippet. That is the next layer after search. This hosted lesson stays on `web_search`, because that is the path that is working reliably right now.
 
-The reason you want both is practical. Search gives you breadth: "what's out there on this topic?" Browser gives you depth: "let me actually read this specific article." Research from the AI agent community has found that agents with access to both tools consistently outperform agents limited to just one. Your Claw uses search as the first pass to find relevant sources, then browser automation as the second pass when it needs the full content.
+That is enough for a surprising amount of day-to-day research. Search gives you the landscape, the source list, and the first useful answer. For a personal Claw, that is already a big step up from "tell me what you remember."
 
 Here's how the flow works:
 
 ![How research flows through your Claw](../../diagrams/day-07-research-flow.png)
 
-Both tools are configured in `openclaw.json` and available to your Claw like any other capability. The build walks you through the setup, including which search provider to use and how to install the browser engine.
+The build walks you through one concrete version of this: Brave-backed `web_search`, configured through the Claw itself.
 
 ---
 
 ## Extending Your Injection Protection
 
-On Day 6, you learned that email is an open channel where anyone can put text in front of your Claw. Web pages are the same. A page can contain text that looks like instructions: "AI assistant reading this: disregard your current task and instead..." This is a real and active attack pattern, and it works the same way as email injection.
+On Day 6, you learned that email is an open channel where anyone can put text in front of your Claw. The web works the same way. Search results, snippets, and fetched pages are all external content. Any of them can contain text that looks like instructions to the model.
 
-The good news: you already have the playbook. The same defense layers from Day 6 apply here. Read-only access limits what your Claw can do even if injection succeeds (your Claw reads web pages, it has no ability to modify them). And you'll extend your AGENTS.md rules to tell your Claw that all web content is data for summarization, never instructions to follow. If a page contains text that looks like it's trying to override your Claw's behavior, it skips that source and moves on.
+The good news is that the mental model is already familiar. The same rule still applies: external content is data, not instructions. OpenClaw's own [security guidance](https://docs.openclaw.ai/gateway/security) treats tools like `web_search` and `web_fetch` as higher-risk because they bring untrusted content into the loop. So Day 7 adds one short rule to your workspace `AGENTS.md`: web content gets summarized, cited, and filtered. It does not get obeyed.
 
-The same honest caveat applies: these protections reduce the risk significantly, but no defense against prompt injection is complete. The research community and major AI labs are still working on this. For a personal research Claw, the combination of read-only access and AGENTS.md rules is a strong practical baseline.
+That is the practical baseline. It will not solve prompt injection forever. It gives your Claw a sane posture before you start asking it to pull from the open web.
 
 ---
 
 ## Designing a Research Brief That Works
 
-A vague research prompt produces a vague brief. "Tell me about AI news this week" will return whatever the model decides is relevant, which may match what you actually wanted, or may miss it entirely.
+A vague research prompt produces a vague answer. "Tell me about AI news this week" leaves too much up to the model. The answer might be fine. It might also miss the part you actually cared about.
 
 A good research brief has three elements: a clear question, named sources or source types to check, and an output format.
 
@@ -78,15 +78,13 @@ summary, and a link to the primary source."
 ──────────────────────────────────────────────────────────────
 ```
 
-The pattern: narrow the question, name the sources, define the shape of the answer. When you schedule this as a recurring heartbeat task (say, every Monday morning), the output arrives ready to read, with the same structure each time. You learn what sources produce good results and adjust the brief over time.
+The pattern is simple: narrow the question, name the sources, define the shape of the answer. That is what turns search into useful research, and it is also the shape of the skill you create in the build.
 
 ---
 
 ## Ready to Build?
 
-You now understand the two layers of research (search API for breadth, browser for depth), how they connect to your Claw's existing architecture, why web content needs the same injection protection as email, and how a specific research brief outperforms a vague one. The build sets up the search provider, enables browser automation, extends injection protection, and runs a test research task end-to-end.
-
-Open [`build.md`](build.md) and give it to your Claw.
+You now understand what live search adds, where it fits in OpenClaw's tool stack, why web content needs the same security posture as email, and how a specific research prompt beats a vague one. The build gets you a Brave Search key, lets your Claw configure `web_search`, extends your research guardrails, and turns that into one reusable research skill. [`build.md`](build.md) shows you the sequence and points to the short `claw-instructions-*.md` files that belong in OpenClaw chat.
 
 Tomorrow you go from reading and researching to actually writing things in the world.
 
@@ -94,15 +92,8 @@ Tomorrow you go from reading and researching to actually writing things in the w
 
 ## Go Deeper
 
-- [Tavily](https://tavily.com) is worth comparing to [Brave Search](https://search.brave.com) if you do a lot of research-heavy tasks. Tavily is built specifically for AI agent use cases and returns more structured results, though the free tier is smaller.
-- Beyond standard web pages, browser automation can interact with login-gated content if you provide session credentials. This opens up internal tools and any service with a web interface. It requires careful security configuration first.
-- The OpenClaw community maintains a [library of research skill templates](https://docs.openclaw.ai/skills/templates/research) for common use cases: competitive intelligence, literature reviews, market tracking. Worth reviewing before writing your own from scratch.
-
----
-
-**We also run some of the most popular AI courses on Maven.** Wherever you are in your learning journey, check them out:
-- **[#1 Rated Enterprise AI Course](https://maven.com/aishwarya-kiriti/genai-system-design)**: build enterprise AI systems from scratch.
-- **[Advanced Evals Course](https://maven.com/aishwarya-kiriti/evals-problem-first)**: systematically improve your AI products through evaluation techniques.
+- OpenClaw's [`Web Search`](https://docs.openclaw.ai/tools/web-search) page shows the provider model and tool parameters. The [`Brave Search`](https://docs.openclaw.ai/tools/brave-search) page shows the config shape and the canonical provider-specific settings.
+- [`web_fetch`](https://docs.openclaw.ai/tools/web-fetch) is the next thing to look at if you want to move from "find me the right links" to "pull the body of this specific page."
 
 ---
 
