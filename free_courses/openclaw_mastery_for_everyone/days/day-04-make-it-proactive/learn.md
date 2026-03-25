@@ -4,7 +4,7 @@
 
 **What you'll learn today:**
 - How your server runs tasks while you sleep, and what daemons and schedulers are
-- What HEARTBEAT.md is and how it turns plain English instructions into scheduled behavior
+- What `HEARTBEAT.md` is and how it turns plain English instructions into scheduled behavior
 - What an isolated session is and why it matters for cost and reliability
 
 **What you'll build today:** By the end of today, your Claw reaches out to you for the first time. An evening reflection arrives on your Telegram, unprompted, on a schedule you set. This is your Claw's first proactive behavior.
@@ -33,11 +33,13 @@ The OpenClaw gateway you set up on Day 1 is one of these daemons. It starts when
 
 The gateway also has its own built-in scheduler. Think of it like cron, but living inside the gateway itself. Every 30 minutes (or whatever interval you configure), this internal scheduler wakes up and checks whether any tasks are due. The tasks live in a file called HEARTBEAT.md.
 
+OpenClaw also supports [`cron`](https://docs.openclaw.ai/automation/cron-jobs) for jobs that need exact timing. Heartbeat is the repeating background loop. Cron is the exact scheduler. You'll use cron in the build, but it helps to understand heartbeat first because the same proactive model starts here.
+
 ---
 
 ## What HEARTBEAT.md Is
 
-HEARTBEAT.md is a plain markdown file that lives in your workspace. It contains a list of tasks written in natural language, each with a schedule. The gateway's internal scheduler reads this file on every tick and processes whatever is due.
+[`HEARTBEAT.md`](https://docs.openclaw.ai/gateway/heartbeat) is a plain markdown file that lives in your workspace. It contains a list of tasks written in natural language, each with a schedule. The gateway's internal scheduler reads this file on every tick and processes whatever is due.
 
 The name fits. A heartbeat is rhythmic, automatic, and constant. It runs whether you're paying attention or not. That's exactly what this file does: it gives your Claw a pulse.
 
@@ -48,6 +50,8 @@ Here's the full loop:
 The gateway's scheduler ticks, reads HEARTBEAT.md, runs any due tasks, delivers the output, and goes back to waiting. If nothing is due, it skips the cycle entirely. You also configure active hours, so the scheduler only ticks during your waking hours. Outside that window, silence.
 
 The tasks themselves are written in plain English. "Send reflection prompts to Telegram. Wait for replies. Save answers to today's journal file." The AI model reads those instructions and follows them, using whatever tools are available. It's a flexible instruction to an agent that can reason, adapt, and make judgment calls about how to carry it out.
+
+Heartbeat is best when you want periodic awareness. "Check this every so often and decide whether anything matters" is a heartbeat job. If you need something to happen at an exact time, OpenClaw recommends [`cron`](https://docs.openclaw.ai/automation/cron-vs-heartbeat) instead.
 
 ---
 
@@ -85,13 +89,15 @@ Reply whenever you're ready. I'll save your answers to today's journal.
 
 You reply via Telegram. Your Claw saves the entry to a daily journal file. Over time, those entries accumulate into something useful: a record of what you were thinking, what was hard, and what you wanted to change, all without ever opening a journaling app.
 
+For today's build, you'll use [`cron`](https://docs.openclaw.ai/automation/cron-jobs) instead of heartbeat because the reflection should arrive at the exact time you choose.
+
 ---
 
 ## Ready to Build?
 
-You now understand how your server keeps the gateway running while you sleep, what HEARTBEAT.md is and how the gateway's internal scheduler drives it, and why isolated sessions keep scheduled tasks cheap and reliable. The build enables HEARTBEAT.md, configures the daily reflection, and runs it once so you can see the output.
+You now understand how your server keeps the gateway running while you sleep, what HEARTBEAT.md is and how the gateway's internal scheduler drives it, and why isolated sessions keep scheduled tasks cheap and reliable. The build creates a daily reflection cron job, connects it to Telegram, and runs it once so you can see the full loop.
 
-Open [`build.md`](build.md) and give it to your Claw.
+Follow along the steps in [`build.md`](build.md) to make your Claw proactive.
 
 Tomorrow you give it skills: extending what it can do beyond the capabilities it shipped with.
 

@@ -74,7 +74,7 @@ Here are natural next steps, roughly in order of impact:
 
 **Tune what you have.** Spend your first week after the course just using your Claw and adjusting the config files based on real experience. This matters more than any new integration.
 
-**Add more heartbeat tasks.** You built scheduled tasks on Days 4 and 6. The same mechanism works for anything you want your Claw to do on a schedule: an evening debrief that extracts open loops from the day, a hydration reminder every two hours, a weekly check-in prompt to call your family, a Friday summary of what you accomplished. Think about the rhythms of your day and what would be genuinely useful to automate.
+**Add more scheduled jobs.** You built cron-based scheduled tasks on Days 4 and 6. The same mechanism works for anything you want your Claw to do on a schedule: an evening debrief that extracts open loops from the day, a hydration reminder every two hours, a weekly check-in prompt to call your family, a Friday summary of what you accomplished. Think about the rhythms of your day and what would be genuinely useful to automate.
 
 **Explore more integrations.** Google Calendar via the `gog` skill and OAuth. Obsidian vault integration for a personal knowledge base. Slack for work communication. Each one follows the same pattern you have practiced: inspect the skill, install it, verify it, add rules to AGENTS.md.
 
