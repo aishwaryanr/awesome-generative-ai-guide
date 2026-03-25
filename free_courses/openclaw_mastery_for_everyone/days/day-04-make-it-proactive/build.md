@@ -112,3 +112,7 @@ Ask the Claw to inspect the cron expression and timezone together. Most timing m
 
 **You start getting duplicate reflections**
 Ask the Claw to list the active cron jobs and look for an older reflection job that should be disabled or removed.
+
+---
+
+[← Day 4 Learn](./learn.md) | [Day 5: Give It Skills →](../day-05-give-it-skills/build.md)

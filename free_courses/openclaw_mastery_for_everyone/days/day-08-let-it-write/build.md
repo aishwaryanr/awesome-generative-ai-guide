@@ -162,3 +162,7 @@ Check spam first. If it is not there, ask the Claw to verify that `SMTP_FROM` ma
 
 **The new skill does not seem active**
 Type `/new` in OpenClaw, then test `follow-up-email` again.
+
+---
+
+[← Day 8 Learn](./learn.md) | [Day 9: Give It a Team →](../day-09-give-it-a-team/build.md)

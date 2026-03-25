@@ -82,7 +82,7 @@ This is the second half of Day 5. You teach your Claw one behavior that is speci
 After this step, type `/new` in OpenClaw to start a fresh session before you continue.
 
 > [!WARNING]
-> Do an additional check on the OpenClaw Web insterface, go to `Agents --> Skills` and make sure that the skills are enabled.
+> Do an additional check on the OpenClaw Web interface, go to `Agents --> Skills` and make sure that the skills are enabled.
 
 ![Are skills enabled?](../../diagrams/day-05-are-skills-enabled.png)
 
@@ -148,3 +148,7 @@ Ask the Claw to rewrite it around the exact `note:` trigger you plan to send fro
 
 **The skill does not seem available yet**
 Type `/new` in OpenClaw to start a fresh session, then test again.
+
+---
+
+[← Day 5 Learn](./learn.md) | [Day 6: Tame Your Inbox →](../day-06-tame-your-inbox/build.md)

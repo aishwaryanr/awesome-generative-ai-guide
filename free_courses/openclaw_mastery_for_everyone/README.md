@@ -6,7 +6,7 @@
 
 ---
 
-You've probably seen OpenClaw all over the internet: on social media, YouTube, Reddit, tech blogs. Someone has it connected to their email, their calendar, their WhatsApp, with sub-agents running in parallel and automated workflows firing throughout the day. You follow along, set it all up in an afternoon, and hit your first bug. That bug leads to another. Three hours in, you're debugging a system you don't understand.
+You've probably seen OpenClaw all over the internet: on social media, YouTube, Reddit, tech blogs. Someone has it connected to their email, their calendar, their WhatsApp, with sub-agents running in parallel and automated workflows firing throughout the day. You follow along, set it all up in an afternoon, and hit your first bug. That bug leads to another. Three hours in, you are debugging a system you do not understand.
 
 This course fixes that.
 
@@ -32,7 +32,7 @@ Take the assessment here: [OpenClaw Mastery Assessment](https://docs.google.com/
 ## 💡 How It Works
 
 - **Two files per day.** `learn.md` is the theory: what you're building, why it matters, and how it works under the hood. `build.md` is the hands-on guide you follow to actually set it up. Read the learn, then do the build.
-- **Your Claw builds itself.** Each build includes prompts you paste into the web chat. Those prompts point your Claw to `claw-instructions` files in this repo, and it takes over from there: reading the steps, running the commands, configuring itself, and reporting back to you. You don't need to open those files yourself (though you can if you're curious). Your job is to answer a few questions, confirm a few decisions, and watch your Claw do the rest.
+- **Your Claw builds itself.** Each build includes prompts you paste into the web chat. Those prompts point your Claw to `claw-instructions` files in this repo, and it takes over from there: reading the steps, running the commands, configuring itself, and reporting back to you. You do not need to open those files yourself (though you can if you're curious). Your job is to answer a few questions, confirm a few decisions, and watch your Claw do the rest.
 - **Transferable knowledge.** Identity files, tool permissions, approval gates, agent delegation, scheduled automation: these concepts apply across personal AI assistants, with OpenClaw as the concrete example.
 
 ---

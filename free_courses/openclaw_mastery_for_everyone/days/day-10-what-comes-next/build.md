@@ -87,3 +87,7 @@ That is fine. Submit the assessment anyway. The optional code is there to summar
 
 **The Claw asks you to run shell commands**
 Tell it to inspect the current setup itself and keep the Day 10 review inside chat.
+
+---
+
+[← Day 10 Learn](./learn.md) | [← Back to Course Overview](../../README.md)

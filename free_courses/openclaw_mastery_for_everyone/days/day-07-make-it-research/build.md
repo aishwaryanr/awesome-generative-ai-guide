@@ -142,3 +142,7 @@ Type `/new` in OpenClaw, then test again.
 
 **The Claw asks you to run shell commands**
 Tell it to configure the tool itself and keep the setup inside chat.
+
+---
+
+[← Day 7 Learn](./learn.md) | [Day 8: Let It Write →](../day-08-let-it-write/build.md)

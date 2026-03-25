@@ -193,3 +193,7 @@ Check my Gmail and tell me only what needs attention today.
 ```
 
 This is the Day 6 payoff. Your Claw reads the inbox noise, compresses it, and gives you the part that actually deserves your time.
+
+---
+
+[← Day 6 Learn](./learn.md) | [Day 7: Make It Research →](../day-07-make-it-research/build.md)

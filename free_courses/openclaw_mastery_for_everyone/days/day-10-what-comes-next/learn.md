@@ -155,7 +155,7 @@ Open [`build.md`](build.md) and give it to your Claw.
 ## Go Deeper
 
 - SOUL.md and USER.md drift over time. Your role changes, your priorities shift, your communication style evolves. Building a quarterly review into HEARTBEAT.md (a task that prompts you to update these files) keeps your Claw calibrated.
-- The OpenClaw community maintains a [workspace templates library](https://docs.openclaw.ai/community/workspace-templates) with specialized setups for specific roles: technical product managers, researchers, writers. Worth reviewing once your baseline is stable.
+- The OpenClaw community maintains a [workspace templates library](https://docs.openclaw.ai) with specialized setups for specific roles: technical product managers, researchers, writers. Worth reviewing once your baseline is stable.
 - For backup: the workspace directory is just files. A private Git repository with an automated script that strips secrets before each commit is the most reliable backup approach.
 - Check out our [Best OpenClaw Resources by Category](../../best-openclaw-resources.md) for a curated list of use cases, guides, and community content.
 
