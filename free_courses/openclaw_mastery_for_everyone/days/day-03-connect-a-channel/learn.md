@@ -74,7 +74,11 @@ If you went through [build.md](../day-01-install-secure/build.md) on Day 1, you 
 
 ## Model Selection: Start Mid-Tier
 
-The onboarding wizard asked you to pick a model on Day 1. The model tier table shows where each provider draws the lines:
+Your primary model lives in Hostinger's agent settings. Open your agent, go to `Settings` -> `Config`, and change the primary model there. This is the screen you'll use:
+
+![Hostinger agent settings showing model selection](../../diagrams/day-03-hostinger-model-selection.png)
+
+The model tier table shows where each provider draws the lines:
 
 ```
 Provider        Top Tier              Mid-Tier (start here)     Fast/Cheap
@@ -96,7 +100,7 @@ Once you know which tasks push the limits of what the mid-tier handles well, you
 
 You now understand how the channel connection bridges your phone to the gateway on your VPS, and why Telegram is the right first channel. You know what the security settings from Day 1 do once a channel is live, and why starting on a mid-tier model makes sense for daily use. The build creates your Claw's Telegram connection, links it to your OpenClaw instance, and confirms everything works from your phone.
 
-Open [`build.md`](build.md) and give it to your Claw.
+Follow along the steps in [`build.md`](build.md) to connect your Claw to Telegram.
 
 Tomorrow your Claw starts texting you first.
 
