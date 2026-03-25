@@ -79,7 +79,7 @@ Zero prior experience with servers, Docker, or AI agents required.
 ## 🛠️ What You Need to Start
 
 - An API key from your preferred AI provider ([here's how to get one](getting-your-api-key.md))
-- A Hostinger VPS: deploy the [one-click OpenClaw template](https://www.hostinger.com/vps/docker/openclaw) and Day 1 walks you through it
+- A Hostinger VPS: deploy the one-click OpenClaw template and Day 1 walks you through it
 
 ---
 
