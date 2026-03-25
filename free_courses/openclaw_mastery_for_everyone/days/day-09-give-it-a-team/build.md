@@ -194,3 +194,7 @@ I want to publish something on [your topic]. Pull together the angle, audience, 
 ```
 
 This is the Day 9 shift. Your Claw no longer has to do every kind of work in one voice.
+
+---
+
+[← Day 9 Learn](./learn.md) | [Day 10: What Comes Next →](../day-10-what-comes-next/build.md)
