@@ -150,6 +150,16 @@ Replit Agents also support collaborative coding by offering insights and suggest
 - [Replit Agents Documentation](https://docs.replit.com/replitai/agent)  
 - [YouTube: Meet the Replit Agent](https://www.youtube.com/watch?v=IYiVPrxY8-Y)
 
+## Cortex
+
+**Cortex** is a persistent AI memory layer for coding assistants. It auto-captures decisions, patterns, and context from Claude Code, Cursor, and Cline sessions using a 3-layer memory architecture (working/episodic/semantic). Available as a VSCode extension, CLI, and MCP server.
+[Visit Cortex on GitHub](https://github.com/SKULLFIRE07/cortex-memory)
+
+**Getting Started with Cortex:**
+- [VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=cortex-dev.cortex-ai-memory)
+
+---
+
 ## NotebookLM
 
 **NotebookLM** is an AI-powered research and note-taking assistant developed by Google Labs. Designed to help users make sense of complex information, it grounds its responses in the sources you upload, such as documents, PDFs, and Google Slides, providing citations and relevant quotes for accuracy. 
