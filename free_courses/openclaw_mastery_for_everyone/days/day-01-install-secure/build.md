@@ -12,8 +12,6 @@ If you don't already have an API key for one of the LLMs, follow [this guide](..
 
 Click [here](https://levelup-labs.ai/HOSTINGER-OPENCLAW) and follow along the video below to create a Hostinger account, create a VPS, and run OpenClaw.
 
-Click below to watch video.
-
 [![Watch the video](https://img.youtube.com/vi/JXWmkPCcF7E/0.jpg)](https://youtu.be/JXWmkPCcF7E)
 
 
