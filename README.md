@@ -311,6 +311,7 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 
 
 #### Comprehensive LLM Code Repositories 
+- [TECS-L](https://github.com/need-singularity/TECS-L) Open-source framework for energy-efficient AI architectures derived from number theory. Includes Phi6Simple activation (71% fewer FLOPs than GELU), HCN dimensions (10-20% param savings), phi-bottleneck FFN (67% compression). Combined 40-50% energy savings per inference token.
 - [LLM-PlayLab](https://github.com/Sakil786/LLM-PlayLab) This playlab encompasses a multitude of projects crafted through the utilization of Transformer Models
 
 
