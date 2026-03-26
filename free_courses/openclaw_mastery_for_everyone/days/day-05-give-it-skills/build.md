@@ -2,6 +2,8 @@
 
 This is the user-facing guide for Day 5. Today you do the skill flow in stages. First you inspect a public skill. Then you install it. Then you create one small skill of your own.
 
+[ClawHub](https://clawhub.ai/) is OpenClaw's public skill registry. Think of it as the directory where people publish reusable skills so other OpenClaw users can inspect them, install them, and build on them. In this course, you do not interact with ClawHub directly through a shell. You ask your Claw to inspect or install a skill, and it handles the registry steps for you.
+
 The operational steps are split between this file and a few small instruction files. This file is for you. The instruction files are for your Claw.
 
 ---
