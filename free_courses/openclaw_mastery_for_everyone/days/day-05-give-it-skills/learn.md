@@ -39,7 +39,9 @@ Skills are about behavior: once the model is connected to Gmail via MCP, a skill
 
 ## Why Skills Took Off
 
-The key insight: skills are shareable. Someone packages their email triage routine, publishes it to ClawHub (OpenClaw's skill registry, accessible via the `clawhub` command-line tool), and anyone else can install it in one command. You get someone else's workflow, tested and refined, without building it yourself.
+The key insight: skills are shareable. 
+
+[ClawHub](https://clawhub.ai/) is OpenClaw's public skill registry: a catalog of installable skills that the community and companies publish for others to reuse. If skills are the reusable behaviors, ClawHub is the place people share and discover them. Under the hood, OpenClaw accesses that registry through the `clawhub` command-line tool, but for this course your Claw is the actor. You inspect and install through chat, and your Claw handles the registry interaction for you.
 
 ClawHub crossed 13,000 published skills in early 2026. The pattern mirrors what npm did for JavaScript libraries or what app stores did for phone apps: a marketplace where people share solutions to problems they have already solved. The difference is that these solutions are plain-English instructions, so you can read exactly what a skill does before you install it.
 
