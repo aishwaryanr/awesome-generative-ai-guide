@@ -164,8 +164,6 @@ Today's build creates one specialist as a concrete example of the pattern. After
 
 You now understand two distinct ways to give your Claw a team. Sub-agents handle parallel work, either automatically or under your manual control. Named agents handle persistent role separation, with their own workspaces, identities, and channel routing. When you connect them through agent-to-agent messaging, your main Claw becomes a coordinator that delegates to specialists. The build stays inside chat: your main Claw creates a specialist writer agent, gives it a detailed SOUL.md, chooses the writer model from the provider family you already configured, enables communication between the two, and tests the full delegation workflow. [`build.md`](build.md) shows you the sequence and the specific `claw-instructions-*.md` files to hand to OpenClaw.
 
-Open [`build.md`](build.md) and give it to your Claw.
-
 Tomorrow is the final day: a full review of everything you have built, a verification across all ten days, and the course assessment.
 
 ---

@@ -146,9 +146,7 @@ If you want to keep learning with us:
 
 ## Ready to Build?
 
-This is the last build. It runs the health check and reviews your configuration files one final time. If you want to complete the optional Claw verification test on the assessment, give your Claw the [`build.md`](build.md) file and it will generate a unique code.
-
-Open [`build.md`](build.md) and give it to your Claw.
+This is the last build. [`build.md`](build.md) opens the assessment flow, has your Claw review the setup day by day, and gives you one optional completion code to paste into the final question of the Google form.
 
 ---
 
