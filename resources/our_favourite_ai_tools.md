@@ -163,3 +163,28 @@ One of its latest features, Audio Overview, transforms text-based sources into e
 
 **Getting Started with NotebookLM:**  
 - [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)  
+
+---
+
+## Locally Uncensored
+
+**Locally Uncensored** is a free, open-source desktop application that provides an all-in-one local AI experience for uncensored chat, image generation, and video creation. Built with React, TypeScript, and Tauri, it leverages Ollama for LLM inference and ComfyUI for image and video workflows — all running entirely on your own hardware with no cloud dependency.
+[Visit Locally Uncensored on GitHub](https://github.com/PurpleDoubleD/locally-uncensored)
+
+The app is designed to give users complete control over their AI experience without censorship or data collection. It supports a wide range of open-source models and provides an intuitive interface for switching between chat, image generation, and video creation modes.
+
+**Getting Started with Locally Uncensored:**
+- [GitHub Repository & Documentation](https://github.com/PurpleDoubleD/locally-uncensored)
+
+
+---
+
+## Locally Uncensored
+
+**Locally Uncensored** is a free, open-source desktop application that provides an all-in-one local AI experience for uncensored chat, image generation, and video creation. Built with React, TypeScript, and Tauri, it leverages Ollama for LLM inference and ComfyUI for image and video workflows, all running entirely on your own hardware with no cloud dependency.
+[Visit Locally Uncensored on GitHub](https://github.com/PurpleDoubleD/locally-uncensored)
+
+The app is designed to give users complete control over their AI experience without censorship or data collection. It supports a wide range of open-source models and provides an intuitive interface for switching between chat, image generation, and video creation modes.
+
+**Getting Started with Locally Uncensored:**
+- [GitHub Repository and Documentation](https://github.com/PurpleDoubleD/locally-uncensored)
