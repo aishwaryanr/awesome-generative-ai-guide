@@ -161,5 +161,15 @@ One of its latest features, Audio Overview, transforms text-based sources into e
 
 
 
-**Getting Started with NotebookLM:**  
-- [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)  
+**Getting Started with NotebookLM:**
+- [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)
+
+## Rosebud AI
+
+**Rosebud AI** is a vibe coding platform that enables anyone to create 3D games and interactive web apps using AI—no coding experience required. By describing what you want to build in natural language, Rosebud translates your ideas into fully functional projects, making game development and creative coding accessible to everyone.
+[Visit Rosebud AI](https://rosebud.ai)
+
+The platform supports rapid prototyping and iterative development, allowing creators to go from concept to playable game in minutes. With built-in support for 3D environments, physics, and interactive elements, Rosebud AI empowers hobbyists, educators, and professionals alike to bring their creative visions to life without writing a single line of code.
+
+**Getting Started with Rosebud AI:**
+- [Rosebud AI Website](https://rosebud.ai)
