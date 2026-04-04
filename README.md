@@ -312,6 +312,7 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 
 #### Comprehensive LLM Code Repositories 
 - [LLM-PlayLab](https://github.com/Sakil786/LLM-PlayLab) This playlab encompasses a multitude of projects crafted through the utilization of Transformer Models
+- [LongTrainer](https://github.com/ENDEVSOLS/Long-Trainer) A production-ready RAG framework built on top of LangChain for multi-tenant memory, tracking, and streaming.
 
 
 ---
