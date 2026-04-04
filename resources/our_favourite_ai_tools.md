@@ -163,3 +163,20 @@ One of its latest features, Audio Overview, transforms text-based sources into e
 
 **Getting Started with NotebookLM:**  
 - [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)  
+
+# LLM Benchmarking & Monitoring
+*Tools for measuring and comparing LLM API provider performance in production.*
+
+## LLM Benchmark
+
+**LLM Benchmark** is a self-hosted platform to benchmark, monitor, and compare LLM API providers in one place. Measure latency, TTFT, throughput, and reliability across OpenAI, Anthropic, Google Gemini, and any OpenAI-compatible endpoint. Deploy with a single command via Docker.
+
+[Explore LLM Benchmark](https://github.com/chuangyiyongxian/llm-benchmark)
+
+Key features include configurable concurrency (1–50), warmup runs, continuous health monitoring with a 24h dashboard, an interactive playground with streaming and vision support, and persistent history with CSV/JSON export.
+
+**Getting Started with LLM Benchmark:**
+- [GitHub Repository](https://github.com/chuangyiyongxian/llm-benchmark)
+- [Quick Start Guide](https://github.com/chuangyiyongxian/llm-benchmark#quick-start)
+
+---
