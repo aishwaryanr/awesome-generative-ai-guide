@@ -163,3 +163,30 @@ One of its latest features, Audio Overview, transforms text-based sources into e
 
 **Getting Started with NotebookLM:**  
 - [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)  
+
+---
+
+# AI-Powered Sales & Outbound Tools  
+*CLI tools that bring AI-driven sales automation and intent signal monitoring to the terminal.*
+
+## Overloop CLI
+
+**Overloop CLI** is an open-source, AI-powered outbound engine designed for B2B sales teams and developers who prefer working from the terminal. It provides access to a 450M+ contact database, lets you run multi-channel campaigns (email and LinkedIn), enroll prospects into sequences, and manage conversations -- all with structured JSON output that pipes into existing workflows.  
+[Visit Overloop](https://agent.overloop.ai)
+
+The tool is built for automation-first teams that want to integrate outbound prospecting into scripts, CI pipelines, or agent workflows. Every command returns JSON, making it straightforward to compose with other CLI tools or feed into dashboards.
+
+**Getting Started with Overloop CLI:**  
+- [GitHub Repository](https://github.com/sortlist/overloop-cli)  
+- Install: `npm install -g overloop-cli`
+
+## Signals CLI
+
+**Signals CLI** is an open-source intent signal monitoring tool for B2B teams. It tracks LinkedIn engagement, keyword posters, job changers, and funding events from the command line, surfacing buying signals that help sales teams reach prospects at the right moment.  
+[GitHub Repository](https://github.com/sortlist/signals-cli)
+
+Signals CLI outputs structured JSON, making it easy to pipe results into CRMs, outbound tools, or custom scripts. It is designed for teams that want to monitor market signals programmatically rather than through a web dashboard.
+
+**Getting Started with Signals CLI:**  
+- [GitHub Repository](https://github.com/sortlist/signals-cli)  
+- Install: `npm install -g signals-sortlist-cli`
