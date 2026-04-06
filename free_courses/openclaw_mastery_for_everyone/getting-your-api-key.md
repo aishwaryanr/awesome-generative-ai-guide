@@ -20,6 +20,8 @@ OpenClaw is an always-on agent. Unlike a chatbot you open and close, it runs con
 
 For this course, we recommend setting aside **$20 to $30** for API usage if you're paying per token. That's a comfortable upper bound assuming you're experimenting and playing around as you learn. If you already have a **ChatGPT Plus or Pro subscription**, OpenAI lets you connect OpenClaw via OAuth so your usage draws from your subscription instead of per-token billing. That's the most predictable way to manage costs.
 
+> **Note:** Anthropic Claude subscriptions (Pro and Max) **do not cover** OpenClaw usage. You will need a Claude API key to use Claude with OpenClaw. See the [Anthropic (Claude)](#anthropic-claude) section below for details.
+
 Many people in the OpenClaw community run local models on Mac minis or other dedicated hardware to avoid API costs entirely. That's a valid path, but it comes with a larger learning curve. If you've never set up OpenClaw before, we recommend starting with an API key or subscription so you can focus on learning how OpenClaw works. You can always add local models and dedicated hardware later once you're comfortable.
 
 ---
@@ -62,6 +64,12 @@ Google has the most generous free tier for getting started. No credit card, no p
 ---
 
 ## Anthropic (Claude)
+
+> **Note:** Claude subscriptions (Pro and Max) **do not cover usage on third-party tools** like OpenClaw. To use Claude with OpenClaw, you need an API key with pay-per-token billing (steps below). Your subscription still works normally on Anthropic's own products (Claude.ai, Claude Code, Claude Desktop, and Claude Cowork).
+>
+> For more details, see the [OpenClaw Anthropic provider docs](https://docs.openclaw.ai/providers/anthropic).
+
+### Get your API key
 
 1. Go to [console.anthropic.com](https://console.anthropic.com)
 2. Click **"Sign Up"** and register with Google, Microsoft, Apple, or email
