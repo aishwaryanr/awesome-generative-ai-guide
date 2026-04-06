@@ -20,6 +20,7 @@ We'll be updating this repository regularly, so keep an eye out for the latest a
 Happy Learning!
 
 ---
+- [guardian-agent-prompts](https://github.com/milkomida77/guardian-agent-prompts) - 49 production-tested AI agent system prompts for generative AI workflow orchestration, automated model management, and multi-agent coordination. MIT licensed.
 ## :star: Top AI Tools List
 
 Discover our favorite AI tools spanning every layer of AI application development. Click [here](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/our_favourite_ai_tools.md) to learn more.
