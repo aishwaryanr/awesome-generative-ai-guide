@@ -162,4 +162,20 @@ One of its latest features, Audio Overview, transforms text-based sources into e
 
 
 **Getting Started with NotebookLM:**  
-- [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)  
+- [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)
+
+---
+
+# AI Agent Orchestration
+
+## Guardian Agent Prompts
+
+**Guardian Agent Prompts** is an open-source collection of 57 specialized AI agent system prompts designed for multi-agent orchestration. It provides a production-tested framework for coordinating multiple Claude Code agents through a single orchestrator that routes tasks, prevents duplicates, and enforces quality gates.
+
+Key features include an anti-duplication registry (55% similarity threshold), 5-step quality verification (file diff, tests, secrets scan, build, scope check), keyword-based task routing to specialized agents (coding, security, trading, OSINT, business), and 30-minute heartbeat monitoring to catch stale assignments.
+
+Battle-tested across 10,000+ production tasks with 57 specialized agents spanning coding, security, trading, OSINT, and business automation.
+
+**Getting Started:**
+- [GitHub Repository](https://github.com/milkomida77/guardian-agent-prompts)
+- [Gumroad: Full Agent System](https://milkomida77.gumroad.com/l/yfqpn)
