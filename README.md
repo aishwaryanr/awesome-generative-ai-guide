@@ -22,6 +22,8 @@ Happy Learning!
 ---
 ## :star: Top AI Tools List
 
+- [RemoteOpenClaw](https://remoteopenclaw.com) - Open marketplace for AI skills and personas built on OpenClaw. Discover, share, and sell AI agent capabilities.
+
 Discover our favorite AI tools spanning every layer of AI application development. Click [here](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/our_favourite_ai_tools.md) to learn more.
 
 ---
