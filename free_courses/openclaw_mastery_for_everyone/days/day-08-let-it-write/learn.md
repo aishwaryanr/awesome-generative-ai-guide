@@ -91,7 +91,7 @@ Tomorrow you give your Claw a team.
 ## Go Deeper
 
 - Once compose is working reliably, the natural next step is reply capability. The pattern: add a rule in AGENTS.md that allows replies only to threads you explicitly started or where you are already a participant. This keeps your Claw from jumping into conversations it was only CC'd on.
-- Google Calendar integration via the `gog` skill and OAuth is worth adding after email sending is stable. It follows the same creation-first approach: start with creating events, then add attendee management, then modification and deletion. The [`gog` skill readme](https://docs.openclaw.ai/skills/gog) covers the full setup.
+- Google Calendar integration via the `gog` skill and OAuth is worth adding after email sending is stable. It follows the same creation-first approach: start with creating events, then add attendee management, then modification and deletion. The [`gog` skill readme](https://clawhub.ai/steipete/gog) covers the full setup.
 - Auto-send rules for specific message types are the next level of trust. For example, a rule that sends weekly status updates without confirmation after you have manually approved the same format ten times. The principle stays the same: prove the workflow first, then remove the gate.
 
 ---
