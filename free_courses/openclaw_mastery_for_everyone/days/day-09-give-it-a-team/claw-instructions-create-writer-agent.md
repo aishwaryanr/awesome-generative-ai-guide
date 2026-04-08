@@ -21,6 +21,7 @@ Use this rule:
 
 - If the main setup uses an OpenAI primary model, use `gpt-5.4`.
 - If the main setup uses an Anthropic primary model, use `claude-sonnet-4.6`, or the equivalent Claude Sonnet 4.6 identifier already present in this installation.
+- If the main setup uses a Google primary model, use `Gemini 3 Flash`, or the equivalent Gemini 3 Flash identifier already present in this installation.
 - If the main setup already uses one of those exact models, reuse it.
 - If the config is genuinely ambiguous, ask one short question instead of guessing.
 
