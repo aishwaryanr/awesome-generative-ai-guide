@@ -26,6 +26,7 @@ Discover our favorite AI tools spanning every layer of AI application developmen
 
 ---
 
+- [Gitstar](https://gitstar.ai?utm_medium=github_readme&utm_source=awesome_list&utm_campaign=aishwaryanr_awesome-generative-ai-guide) - Social feed for GitHub. Follow developers, discover trending repos, activity feeds.
 ## :speaker: Announcements
 
 - **NEW: OpenClaw Mastery for Everyone is now live with certification!** ([Click Here](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/openclaw_mastery_for_everyone/README.md))
