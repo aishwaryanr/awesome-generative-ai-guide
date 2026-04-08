@@ -10,15 +10,13 @@ An API key is a unique code that lets OpenClaw communicate with your AI provider
 
 Think of it this way: your subscription lets *you* use the chatbot. An API key lets *your Claw* use the AI model. They're billed separately and managed in different places.
 
-The one exception is OpenAI, which lets you connect OpenClaw directly to your ChatGPT subscription via OAuth (more on that below).
-
 ---
 
 ## A Note on Costs
 
 OpenClaw is an always-on agent. Unlike a chatbot you open and close, it runs continuously, processes messages, executes scheduled tasks, and calls your AI provider throughout the day. That means token costs can add up quickly, especially with more capable models.
 
-For this course, we recommend setting aside **$20 to $30** for API usage if you're paying per token. That's a comfortable upper bound assuming you're experimenting and playing around as you learn. If you already have a **ChatGPT Plus or Pro subscription**, OpenAI lets you connect OpenClaw via OAuth so your usage draws from your subscription instead of per-token billing. That's the most predictable way to manage costs.
+For this course, we recommend setting aside **$20 to $30** for API usage if you're paying per token. That's a comfortable upper bound assuming you're experimenting and playing around as you learn.
 
 > **Note:** Anthropic Claude subscriptions (Pro and Max) **do not cover** OpenClaw usage. You will need a Claude API key to use Claude with OpenClaw. See the [Anthropic (Claude)](#anthropic-claude) section below for details.
 
@@ -28,13 +26,9 @@ Many people in the OpenClaw community run local models on Mac minis or other ded
 
 ## OpenAI (GPT)
 
-OpenAI is the only provider that lets you use a subscription instead of paying per token. If you already have a ChatGPT Plus or Pro plan, this is the most cost-effective way to run OpenClaw.
+OpenAI is the only provider here that also supports a subscription-backed OAuth path instead of pay-per-token billing. If you already have a ChatGPT Plus or Pro plan, that can reduce direct model costs, but this course still uses the API key flow for Day 1 because it is easier to set up reliably on Hostinger.
 
-### Option A: Use your ChatGPT subscription (recommended)
-
-If you have ChatGPT Plus ($20/month) or Pro ($200/month), you can connect OpenClaw via OAuth. Your Claw's usage draws from your subscription limits instead of per-token billing. This is covered in the Day 1 setup on Hostinger.
-
-### Option B: Use an API key
+### Get your API key
 
 1. Go to [platform.openai.com](https://platform.openai.com)
 2. Click **"Sign up"** and register with email, Google, Microsoft, or Apple
