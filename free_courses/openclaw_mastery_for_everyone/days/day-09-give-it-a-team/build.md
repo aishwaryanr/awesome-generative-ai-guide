@@ -35,7 +35,7 @@ This order keeps the setup clear. First you confirm which capable model family y
 
 Copy and paste this into the web chat:
 
-> Before we change anything, inspect my current setup and tell me which primary model family my main Claw is using and whether the writer should use `gpt-5.4` or `claude-sonnet-4.6`. Do not make changes yet.
+> Before we change anything, inspect my current setup and tell me which primary model family my main Claw is using and whether the writer should use `gpt-5.4`, `claude-sonnet-4.6`, or `Gemini 3 Flash`. Do not make changes yet.
 
 This makes the model decision explicit before the new agent exists. The Day 9 writer should stay on the same high-capability provider family you already configured.
 
@@ -53,7 +53,7 @@ After you are happy with the plan, copy and paste this into the web chat:
 - ask a few short questions about topics, audience, and voice
 - create a named `writer` agent with its own workspace
 - write a detailed `SOUL.md` plus scoped `USER.md`, `AGENTS.md`, and starter `MEMORY.md`
-- choose `gpt-5.4` or `claude-sonnet-4.6` based on the model family already running on your main setup
+- choose `gpt-5.4`, `claude-sonnet-4.6`, or `Gemini 3 Flash` based on the model family already running on your main setup
 
 The detail in the writer `SOUL.md` is the point. This agent is supposed to sound different from your generalist Claw.
 
@@ -98,7 +98,7 @@ Keep this in mind before you start the checks below. A quick toggle usually clea
 
 ### Named Agents
 - [ ] A `writer` named agent exists
-- [ ] The writer uses `gpt-5.4` or `claude-sonnet-4.6`, chosen from the same provider family as the main setup
+- [ ] The writer uses `gpt-5.4`, `claude-sonnet-4.6`, or `Gemini 3 Flash`, chosen from the same provider family as the main setup
 - [ ] The writer workspace has a detailed `SOUL.md` tuned for long-form writing
 - [ ] The writer workspace has `USER.md`, `AGENTS.md`, and `MEMORY.md`
 - [ ] Agent-to-agent communication is enabled between `main` and `writer`
