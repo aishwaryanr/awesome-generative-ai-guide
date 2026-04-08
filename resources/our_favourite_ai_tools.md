@@ -163,3 +163,18 @@ One of its latest features, Audio Overview, transforms text-based sources into e
 
 **Getting Started with NotebookLM:**  
 - [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)  
+
+---
+
+# SEO & AI Optimization  
+*Tools that help websites become more discoverable and understandable by AI systems and answer engines.*
+
+## AEO Scanner
+
+**AEO Scanner** is a free Answer Engine Optimization (AEO) scoring tool that analyzes websites across 9 AI-friendliness metrics, including meta tags, Open Graph, JSON-LD structured data, FAQ schema, content structure, image alt text, social cards, contact information, and llms.txt support. It generates ready-to-use fix-it code snippets so developers can quickly improve their site's compatibility with AI crawlers and answer engines.  
+[Visit AEO Scanner](https://aeo.codecity.com.tw/)
+
+The tool also tracks over 30 AI crawlers (such as GPTBot, ClaudeBot, and PerplexityBot) and provides a public leaderboard and directory of scanned sites. Reports are saved locally and can be reviewed over time to measure optimization progress.
+
+**Getting Started with AEO Scanner:**  
+- [Try AEO Scanner](https://aeo.codecity.com.tw/)
