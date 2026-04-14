@@ -163,3 +163,18 @@ One of its latest features, Audio Overview, transforms text-based sources into e
 
 **Getting Started with NotebookLM:**  
 - [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)  
+
+---
+
+# Developer Utilities  
+*Privacy-first tools for everyday developer tasks.*
+
+## Formatho Tools
+
+**Formatho Tools** is a collection of 100+ privacy-first developer utilities covering encoding/decoding, text transformation, data formatting, image processing, and more. All processing happens client-side — no data ever leaves the browser. No signup or account required.
+
+[Visit Formatho Tools](https://formatho.com/Tools)  
+[GitHub: awesome-ai-tools](https://github.com/formatho/awesome-ai-tools)
+
+**Getting Started with Formatho Tools:**  
+- [Browse all tools](https://formatho.com/Tools)
