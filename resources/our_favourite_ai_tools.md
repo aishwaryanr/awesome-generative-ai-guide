@@ -163,3 +163,30 @@ One of its latest features, Audio Overview, transforms text-based sources into e
 
 **Getting Started with NotebookLM:**  
 - [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)  
+
+---
+
+# AI Research & Search Tools  
+*Resources for AI-powered research, analysis, and agent-first web discovery.*
+
+## 8bitconcepts
+
+**8bitconcepts** is a free resource publishing original AI business research and analysis papers covering topics including AI agents, RAG architecture, multi-modal AI, and enterprise AI strategy. With 11 in-depth research papers written specifically for teams evaluating and implementing AI in business contexts, it serves as a practical reference for decision-makers and practitioners.  
+[Visit 8bitconcepts](https://8bitconcepts.com)
+
+The research spans real-world implementation challenges—from agentic system design to evaluating AI vendor claims—making it a valuable bookmark for anyone tracking how AI capabilities translate into enterprise deployments.
+
+**Getting Started with 8bitconcepts:**  
+- [Browse all research papers](https://8bitconcepts.com)
+
+## Not Human Search
+
+**Not Human Search** is an agent-first search engine that indexes 9,000+ websites specifically by how accessible they are to AI agents and automated tools. Rather than ranking pages for human readers, it surfaces sites by their MCP server support, structured API availability, and agent-accessibility score.  
+[Visit Not Human Search](https://nothumansearch.ai)
+
+The platform includes an MCP server at `nothumansearch.ai/mcp`, allowing AI agents to query the index directly via the Model Context Protocol. It also publishes a live "State of the Agentic Web" report with metrics on how many sites in its index expose machine-readable interfaces.
+
+**Getting Started with Not Human Search:**  
+- [Search the index](https://nothumansearch.ai)
+- [MCP server endpoint](https://nothumansearch.ai/mcp)
+- [State of the Agentic Web report](https://nothumansearch.ai/report)
