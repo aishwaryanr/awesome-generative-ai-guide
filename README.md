@@ -266,6 +266,7 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 ## :paperclip: Resources
 
 - [ICLR 2024 Paper Summaries](https://areganti.notion.site/06f0d4fe46a94d62bff2ae001cfec22c?v=d501ca62e4b745768385d698f173ae14)
+- [Enterprise AI Engineering Notes (hjLabs)](https://hemangjoshi37a.github.io/hjLabs-AI-Engineering-Notes/) - Five field-notes from production deployments: LLM agents, RAG with Qdrant binary quantization, CrewAI vs LangGraph vs AutoGen comparison, enterprise AI buyer's checklist.
 
 ---
 
