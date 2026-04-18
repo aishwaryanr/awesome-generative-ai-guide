@@ -163,3 +163,13 @@ One of its latest features, Audio Overview, transforms text-based sources into e
 
 **Getting Started with NotebookLM:**  
 - [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)  
+
+---
+
+# AI Developer Utilities
+*Tools that help developers compare, evaluate, and choose AI models.*
+
+## AI Dev Tools Directory
+A free, real-time pricing comparison and benchmark suite for 61+ AI coding models. Features interactive ROI calculator, value analyzer, switching cost analyzer, and public JSON API for programmatic access.  
+[Visit AI Dev Tools Directory](https://aidevtools-3qf.pages.dev/)
+
