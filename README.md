@@ -248,7 +248,7 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 8. [Building Agentic RAG with LlamaIndex](https://www.deeplearning.ai/short-courses/building-agentic-rag-with-llamaindex/) by Deeplearning.AI
 9. [Agents Tools & Function Calling with Amazon Bedrock (How-to)](https://www.youtube.com/watch?app=desktop&v=2L_XE6g3atI) by AWS Developers
 10. [ChatGPT & Zapier: Agentic AI for Everyone](https://www.coursera.org/learn/agentic-ai-chatgpt-zapier) by Coursera
-11. [Multi-Agent Systems with AutoGen](https://www.manning.com/books/multi-agent-systems-with-autogen) by Victor Dibia [Book]
+11. [Multi-Agent Systems with AutoGen](https://www.manning.com/books/multi-agent-systems-with-autogen-cx) by Victor Dibia [Book]
 12. [Large Language Model Agents MOOC, Fall 2024](https://llmagents-learning.org/f24) by Dawn Song & Xinyun Chen – A comprehensive course covering foundational and advanced topics on LLM agents.
 13. [CS294/194-196 Large Language Model Agents](https://rdi.berkeley.edu/llm-agents/f24) by UC Berkeley
 
