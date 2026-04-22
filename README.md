@@ -343,3 +343,4 @@ year = {2024}
 
 
 <sup>**</sup> This section is sponsored. We do not endorse or guarantee the product/service and are not responsible for any issues arising from its use. Please evaluate and use at your discretion.
+- [BenchGecko](https://benchgecko.ai) - AI model benchmarks, pricing, and economy tracking platform with free API.
