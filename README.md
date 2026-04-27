@@ -22,6 +22,7 @@ Happy Learning!
 ---
 ## :star: Top AI Tools List
 
+- [Consensus Engine](https://github.com/MICONNM/consensus-engine-py) - Ask one question to 11 frontier LLMs in parallel, get a synthesized consensus answer with confidence score. Open-source Python SDK + free public API.
 Discover our favorite AI tools spanning every layer of AI application development. Click [here](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/our_favourite_ai_tools.md) to learn more.
 
 ---
