@@ -214,7 +214,7 @@ You need to test your LLM judge against human evaluations:
 - Refine your prompt and criteria based on the differences
 - Repeat until alignment is acceptable
 
-We leave you here since this is a 101 course, but building reliable LLM judges can be a course on its own. Remember to dig deeper on learning them well.
+We leave you here since this is a 101 course, but building reliable LLM judges can be a course on its own. Remember to dig deeper to learn these concepts well.
 
 **Want to go deeper?** Choose the course that fits your journey:
 - **New to AI?** Check out our **[#1 rated Enterprise AI Course on Maven](https://maven.com/aishwarya-kiriti/genai-system-design)** for comprehensive guidance on building production-ready AI systems from scratch.
