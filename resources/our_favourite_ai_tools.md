@@ -163,3 +163,19 @@ One of its latest features, Audio Overview, transforms text-based sources into e
 
 **Getting Started with NotebookLM:**  
 - [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)  
+
+---
+
+# Agent Memory Infrastructure  
+*Self-hosted backends that give LLM agents persistent, structured memory across sessions.*
+
+## Dakera
+
+**Dakera** is a production-grade, self-hosted agent memory server built in Rust. It provides LLM agents with persistent, graph-enhanced memory that survives across sessions — without routing private data through third-party cloud services. Dakera stores memories with decay weighting (recent and important memories surface first), maintains a knowledge graph of entities and their relationships, and supports temporal reasoning so agents can recall not just what happened but when. It exposes a standard MCP interface, making it compatible with any MCP-aware agent framework, and ships as a single deployable binary.  
+[Visit Dakera on GitHub](https://github.com/Dakera-AI/dakera-mcp)
+
+Key capabilities include multi-namespace isolation (separate memory spaces per user or agent), hybrid semantic and full-text search, knowledge graph traversal, and session-scoped memory grouping.
+
+**Getting Started with Dakera:**  
+- [Dakera MCP on GitHub](https://github.com/Dakera-AI/dakera-mcp)  
+- [Deployment Guide](https://github.com/Dakera-AI/dakera-deploy)  
