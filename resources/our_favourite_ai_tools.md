@@ -7,6 +7,21 @@ Welcome to our curated list of favourite AI tools. This resource highlights a va
 # AI Model Providers  
 *For foundational AI model providers specializing in language, vision, or multimodal models.*
 
+## AI Models Catalog
+
+**AI Models Catalog** is a structured, open-source catalog of 4,587+ AI models across 95 providers with pricing, context windows, and capabilities. All data is sourced from first-party APIs—not third-party aggregators—ensuring accuracy and reliability. The catalog includes TypeScript types and Zod runtime validation, making it easy to integrate into developer workflows.  
+[Visit AI Models Catalog](https://github.com/i-need-token/ai-models)
+
+The catalog features an interactive web interface with search, filter, compare, export (CSV/JSON), price calculator, and model picker wizard. It covers all major providers including OpenAI, Anthropic, Google, Meta, DeepSeek, Mistral, xAI, and 88 more. Data is available as YAML files, JSON, CSV, npm package, and GitHub Action.  
+[Explore the Interactive Catalog](https://i-need-token.github.io/ai-models/)
+
+**Getting Started with AI Models Catalog:**  
+- [Quick Start Guide](https://github.com/i-need-token/ai-models/blob/main/docs/quick-start.md)  
+- [npm Package](https://www.npmjs.com/package/ai-models)  
+- [GitHub Action](https://github.com/i-need-token/ai-models/blob/main/action.yml)  
+
+---
+
 ## Anthropic
 
 Founded in 2021 by former OpenAI executives Dario and Daniela Amodei, **Anthropic** is an AI safety and research company based in San Francisco. The company focuses on developing reliable and interpretable AI systems with a strong emphasis on safety and ethical considerations. Their interdisciplinary team includes experts in machine learning, physics, policy, and product development, all collaborating to create beneficial AI technologies.  
