@@ -260,6 +260,7 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 
 1. [Avoiding AI Harm](https://www.coursera.org/learn/avoiding-ai-harm) by Coursera
 2. [Developing AI Policy](https://www.coursera.org/learn/developing-ai-policy) by Coursera
+3. [TutorialSearch](https://tutorialsearch.io/) - Free cross-platform search engine indexing 50,000+ tutorials from Udemy, Skillshare, Pluralsight, and other major learning platforms across 45+ categories.
 
 ---
 
