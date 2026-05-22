@@ -66,6 +66,7 @@ Join 1000+ students on this 10-week adventure as we delve into the application o
 Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/week2_prompting.md)**
 
 - Basic Prompting Principles
+- [TutorialSearch](https://tutorialsearch.io/) - Free cross-platform search engine indexing 50,000+ tutorials from Udemy, Skillshare, Pluralsight, and other major learning platforms across 45+ categories.
 - Types of Prompting
 - Applications, Risks and Advanced Prompting
 
