@@ -117,6 +117,18 @@ With Opik, you can log, view, and evaluate your LLM (Large Language Model) trace
 - [Opik Documentation](https://www.comet.ml/docs/opik/quickstart)
 - [YouTube: Introducing Opik: Open-Source LLM Evaluation from Comet](https://www.youtube.com/watch?v=B4oboG62lyA)
 
+### guard-eval-harness
+
+**guard-eval-harness (`geh`)** is an MIT-licensed CLI for benchmarking the LLM safety guardrail and moderation classifier models that wrap production LLM applications — Llama Guard 3, ShieldGemma, WildGuard, Qwen3-Guard, OpenAI Moderation, and others — against 80+ public safety datasets (XSTest, ToxicChat, HarmBench, BeaverTails, WildGuardMix, and more).
+
+[Explore guard-eval-harness](https://github.com/Virtue-Research/guard-eval-harness)
+
+It standardizes both sides of the safety-classifier comparison: dataset loading (with documented label-normalization mappings) and metric shape (per-threshold F1/AUROC, FPR/FNR tradeoff curves), with pluggable adapters for HuggingFace, vLLM (offline + HTTP), OpenAI, Anthropic, and generic HTTP endpoints. Useful when teams need to objectively decide which safety classifier to deploy in front of an LLM product, rather than relying on the slightly-different evaluation slice each model ships with in its release card.
+
+**Getting Started with guard-eval-harness:**
+- [Repository and Quickstart](https://github.com/Virtue-Research/guard-eval-harness#readme)
+- [Documentation](https://virtue-research.github.io/guard-eval-harness/)
+
 
 
 ---
