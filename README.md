@@ -312,6 +312,8 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 
 #### Comprehensive LLM Code Repositories 
 - [LLM-PlayLab](https://github.com/Sakil786/LLM-PlayLab) This playlab encompasses a multitude of projects crafted through the utilization of Transformer Models
+- [RAG Techniques](https://github.com/NirDiamant/RAG_Techniques) by Nir Diamant — 35+ runnable Jupyter notebooks covering advanced RAG techniques (chunking, query transformation/HyDE, reranking, self-RAG, graph RAG, evaluation)
+- [GenAI Agents](https://github.com/NirDiamant/GenAI_Agents) by Nir Diamant — 50+ tutorials and reference implementations for building GenAI agents, from simple bots to multi-agent systems
 
 
 ---
