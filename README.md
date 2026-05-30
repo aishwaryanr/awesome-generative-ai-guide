@@ -347,3 +347,4 @@ year = {2024}
 ## Security & Safety Tools
 
 - **[OWASP Agent Memory Guard](https://github.com/OWASP/www-project-agent-memory-guard)** - Official OWASP reference implementation for AI agent memory poisoning defense (ASI06 from OWASP Top 10 for Agentic AI Systems). Provides pre-write scanning, pre-read validation, and audit logging for agent memory.
+- **[EmbedGuard](https://github.com/neerazz/embedguard)** - Adversarial embedding defense for RAG and LLM pipelines. Detects and filters perturbed/poisoned embeddings before retrieval to mitigate embedding-space attacks (IJCESEN 2026, DOI 10.22399/ijcesen.4869). MIT licensed.
