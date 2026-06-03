@@ -121,6 +121,20 @@ With Opik, you can log, view, and evaluate your LLM (Large Language Model) trace
 
 ---
 
+### Spanlens
+
+**Spanlens** is an open-source (MIT) LLM observability platform built for application developers. The integration is a one-line baseURL swap or a drop-in SDK that captures every OpenAI, Anthropic, or Gemini call with full body, model, tokens, cost, latency, and trace context. No callback handler required for code paths you do not own (third-party libraries, background workers, MCP servers).
+
+Spanlens differentiates with Critical Path agent tracing (highlights the longest dependency chain in multi-step agents), Prompt A/B with Welch t-test for statistical significance on latency and cost, a model-swap savings recommender that surfaces concrete dollar savings, and built-in PII and prompt-injection detection. The entire stack is MIT licensed with no enterprise-edition folder, and self-host runs from one Docker Compose file.
+
+**Getting Started with Spanlens:**  
+- [Spanlens Documentation](https://www.spanlens.io/docs/quick-start)
+- [GitHub: spanlens/Spanlens](https://github.com/spanlens/Spanlens)
+
+
+
+---
+
 # AI-Powered Tools  
 *Products designed to streamline the AI development lifecycle, from prototyping to debugging and performance tuning.*
 
