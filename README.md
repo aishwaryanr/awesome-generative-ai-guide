@@ -281,6 +281,10 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 6. Generative Models Foundations
 7. Latest Research Trends
 
+#### Study Materials:
+
+- [LLM Flashcards](https://github.com/llmsresearch/llm-flashcards) - Hand-drawn flashcards covering transformer internals, attention, KV cache, RAG, fine-tuning, agents, and inference. Useful for visual revision before LLM and ML engineering interview rounds.
+
 #### GenAI System Design (Coming Soon):
 
 1. Designing an LLM-Powered Search Engine
