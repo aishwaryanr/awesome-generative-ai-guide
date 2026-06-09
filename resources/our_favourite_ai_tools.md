@@ -124,6 +124,15 @@ With Opik, you can log, view, and evaluate your LLM (Large Language Model) trace
 # AI-Powered Tools  
 *Products designed to streamline the AI development lifecycle, from prototyping to debugging and performance tuning.*
 
+## igly.ai
+
+**igly.ai** is an AI image editing platform for creators, marketers, and product teams that need fast visual edits without a traditional design workflow. It supports background removal, inpainting, image upscaling, and generative fill, making it useful for product photos, social graphics, and iterative creative assets.
+[Visit igly.ai](https://igly.ai)
+
+**Getting Started with igly.ai:**
+- [Try igly.ai](https://igly.ai)
+- [YouTube: igly.ai demo](https://www.youtube.com/watch?v=HB2E1WZ12is)
+
 ## Vercel v0
 
 **Vercel v0** is an experimental, AI-enhanced version of Vercel's deployment platform, tailored specifically for developers working on AI-driven applications. It integrates state-of-the-art performance tuning and debugging tools into the development workflow, allowing developers to deploy applications with optimal speed and efficiency.  
