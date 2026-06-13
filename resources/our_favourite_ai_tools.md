@@ -119,6 +119,16 @@ With Opik, you can log, view, and evaluate your LLM (Large Language Model) trace
 
 
 
+## Prismix
+
+**Prismix** is a real-time AI status monitoring hub that aggregates uptime data and incident reports for 75+ AI services, including OpenAI, Anthropic, Google Gemini, Cursor, GitHub Copilot, Mistral, xAI, DeepSeek, Perplexity, and more. Beyond status monitoring, Prismix also offers a curated AI news feed from 70+ sources and a directory of 500+ Model Context Protocol (MCP) servers with bundle collections and release tracking.  
+[Visit Prismix](https://prismix.dev)
+
+Prismix provides a single dashboard to check whether your AI providers are experiencing outages or degraded performance, subscribe to alerts, and stay current on AI developments—all without requiring a sign-up to browse.
+
+**Getting Started with Prismix:**  
+- [Check AI Service Status](https://prismix.dev)
+
 ---
 
 # AI-Powered Tools  
