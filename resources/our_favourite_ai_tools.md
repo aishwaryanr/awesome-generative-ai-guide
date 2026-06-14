@@ -117,6 +117,17 @@ With Opik, you can log, view, and evaluate your LLM (Large Language Model) trace
 - [Opik Documentation](https://www.comet.ml/docs/opik/quickstart)
 - [YouTube: Introducing Opik: Open-Source LLM Evaluation from Comet](https://www.youtube.com/watch?v=B4oboG62lyA)
 
+## Future AGI
+
+**Future AGI** is an open-source, self-hostable platform for evaluating, tracing, and guardrailing LLM and AI agent applications across development and production. It offers 70+ evaluation metrics, LLM-as-a-Judge evaluators, multimodal and custom evals, and OpenTelemetry-native tracing across 50+ frameworks.  
+[Explore Future AGI](https://futureagi.com/)
+
+Beyond monitoring, Future AGI lets teams simulate edge cases before launch, apply real-time guardrails against unsafe outputs, and auto-optimize prompts and agents from production failures, closing the feedback loop so agents improve over time rather than just being observed.
+
+**Getting Started with Future AGI:**  
+- [Future AGI Documentation](https://docs.futureagi.com/)
+- [GitHub](https://github.com/future-agi/future-agi)
+
 
 
 ---
