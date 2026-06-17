@@ -163,3 +163,11 @@ One of its latest features, Audio Overview, transforms text-based sources into e
 
 **Getting Started with NotebookLM:**  
 - [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)  
+
+## Remio
+
+**Remio** is a local-first AI memory and knowledge base desktop app for users and AI agents. It parses files, webpages, recordings, emails, messages, images, and notes into local indexes and vectors, helping teams retrieve focused personal context instead of repeatedly scanning folders or loading whole documents into prompts.
+[Visit Remio](https://remio.ai/)
+
+**Getting Started with Remio:**  
+- [Download Remio](https://remio.ai/)  
