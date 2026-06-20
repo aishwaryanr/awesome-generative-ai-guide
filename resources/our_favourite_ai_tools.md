@@ -44,7 +44,32 @@ Developers can also access extensive guides, tutorials, and community support th
 
 ---
 
-# Low-Code/No-Code AI Tools  
+## Dakera
+
+**Dakera** is a self-hosted memory infrastructure designed specifically for AI agents. It provides persistent, long-term memory storage that enables AI agents to recall past interactions, user preferences, and contextual information across sessions. Dakera is built for developers who need their AI agents to maintain coherent, stateful conversations without relying on external cloud services.
+
+- [Visit Dakera](https://dakera.ai)
+- [Explore Dakera Docs](https://docs.dakera.ai)
+- [Dakera on GitHub](https://github.com/dakera-ai/dakera)
+
+**Getting Started with Dakera:**  
+- [Official Getting Started Guide](https://docs.dakera.ai/getting-started)
+
+---
+
+## Suppr Deep Research
+
+**Suppr Deep Research** is an AI-powered research tool designed for source-backed literature workflows. It helps researchers, academics, and knowledge workers conduct deep, source-verified research by automatically finding, analyzing, and synthesizing information from multiple sources. Suppr Deep Research ensures that every claim is backed by citations and original sources, making it ideal for academic papers, literature reviews, and evidence-based research.
+
+- [Visit Suppr Deep Research](https://suppr.ai)
+- [Explore Suppr Docs](https://docs.suppr.ai)
+
+**Getting Started with Suppr Deep Research:**  
+- [Quick Start Guide](https://docs.suppr.ai/quickstart)
+
+---
+
+# Low-Code/No-Code AI Tools
 *Tools that make AI more accessible to non-technical users through simplified interfaces.*
 
 ## Oumi
