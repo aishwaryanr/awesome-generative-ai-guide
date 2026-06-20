@@ -93,6 +93,12 @@ This is the Control UI port that Hostinger's proxy uses to reach your Claw. It i
 **Claw asks about risk posture**
 Choose **VPS Hardened**. This gives you deny-by-default settings and the tightest configuration. We loosen specific settings intentionally on later days as we add capabilities.
 
+**WhatsApp plugin crashes with "missing light-runtime-api"**
+This is a known issue with the WhatsApp plugin in recent OpenClaw versions. This course uses Telegram instead, so you can safely ignore this error or disable the WhatsApp plugin.
+
+**Gateway Dashboard shows "control ui requires device identity"**
+You need to access the dashboard securely. Follow Hostinger's recommendations on how to fix this: [Hostinger OpenClaw Access Guide](https://www.hostinger.com/support/how-to-install-openclaw-on-hostinger-vps/#access).
+
 ---
 
 [← Back to Course Overview](../../README.md) | [Day 2: Make It Personal →](../day-02-give-it-a-soul/learn.md)

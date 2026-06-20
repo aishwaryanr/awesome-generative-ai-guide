@@ -46,11 +46,11 @@ Today's ClawHub skill example is `document-summary`. It is a good Day 5 starting
 
 After you are happy with the inspection, copy and paste this into the web chat:
 
-> Read `https://raw.githubusercontent.com/aishwaryanr/awesome-generative-ai-guide/main/free_courses/openclaw_mastery_for_everyone/days/day-05-give-it-skills/claw-instructions-install-document-summary.md` and follow every step. Install `document-summary` into this workspace, tell me how to trigger it, and stop when you're done.
+> Read `https://raw.githubusercontent.com/aishwaryanr/awesome-generative-ai-guide/main/free_courses/openclaw_mastery_for_everyone/days/day-05-give-it-skills/claw-instructions-install-document-summary.md` and follow every step. Install `document-summary` from ClawHub into this workspace, tell me how to trigger it, and stop when you're done.
 
 [`claw-instructions-install-document-summary.md`](./claw-instructions-install-document-summary.md) tells the Claw to:
 
-- install `document-summary` into this workspace after confirmation
+- install `document-summary` from ClawHub into this workspace after confirmation
 - verify where it landed and whether it is ready
 - tell you the exact request patterns to use from Telegram or web chat
 - tell you to type `/new` in OpenClaw before trying to use the new skill

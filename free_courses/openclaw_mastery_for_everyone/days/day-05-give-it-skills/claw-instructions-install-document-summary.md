@@ -1,6 +1,6 @@
 # Day 5: Install `document-summary`
 
-Install `document-summary` into this workspace.
+Install `document-summary` from ClawHub into this workspace.
 
 If the user has not already approved the install, ask for confirmation first.
 If it is already installed and ready, report that instead of duplicating it.
