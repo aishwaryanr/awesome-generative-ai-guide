@@ -251,6 +251,7 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 11. [Multi-Agent Systems with AutoGen](https://www.manning.com/books/multi-agent-systems-with-autogen-cx) by Victor Dibia [Book]
 12. [Large Language Model Agents MOOC, Fall 2024](https://llmagents-learning.org/f24) by Dawn Song & Xinyun Chen – A comprehensive course covering foundational and advanced topics on LLM agents.
 13. [CS294/194-196 Large Language Model Agents](https://rdi.berkeley.edu/llm-agents/f24) by UC Berkeley
+14. [Multi-Agent Orchestration with Claude Code](https://github.com/NickScherbakov/ClaudeCodeManual) by NickScherbakov — Free 15-chapter browser-based course on the Workflow tool: pipeline() vs parallel(), loop-until-dry, adversarial verify, budget-aware loops. 14 hands-on labs, no install.
 
 
 
