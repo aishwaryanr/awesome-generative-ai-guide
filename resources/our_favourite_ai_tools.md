@@ -163,3 +163,14 @@ One of its latest features, Audio Overview, transforms text-based sources into e
 
 **Getting Started with NotebookLM:**  
 - [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)  
+
+## AI Prompt Architect
+
+**AI Prompt Architect** is a comprehensive production-grade prompt engineering platform that provides developers with a robust toolset to build, test, and optimize AI applications. It offers a 33-command CLI, a native MCP Server for autonomous orchestration, and advanced features like multi-model evaluation and the STCO framework to ensure consistent prompt performance across different LLMs.
+[Visit AI Prompt Architect](https://aipromptarchitect.co.uk)
+
+Designed specifically for developer workflows, it allows integration directly into IDEs and terminals, offering real-time AI assistant optimizations. Furthermore, their MCP Server integrations seamlessly connect AI Prompt Architect to platforms like Claude Desktop and Cursor.
+
+**Getting Started with AI Prompt Architect:**  
+- [AI Prompt Architect Documentation](https://aipromptarchitect.co.uk/docs)  
+- [GitHub Repository](https://github.com/ai-prompt-architect)
