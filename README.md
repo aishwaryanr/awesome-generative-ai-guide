@@ -349,3 +349,4 @@ year = {2024}
 ## Security & Safety Tools
 
 - **[OWASP Agent Memory Guard](https://github.com/OWASP/www-project-agent-memory-guard)** - Official OWASP reference implementation for AI agent memory poisoning defense (ASI06 from OWASP Top 10 for Agentic AI Systems). Provides pre-write scanning, pre-read validation, and audit logging for agent memory.
+- [Toolquix - AI Tools](https://toolquix.com/categories/ai-tools) - A curated directory of free AI tools, ChatGPT resources, and artificial intelligence software.
