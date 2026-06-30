@@ -20,6 +20,10 @@ We'll be updating this repository regularly, so keep an eye out for the latest a
 Happy Learning!
 
 ---
+## 🧭 AI Agent Skills Discovery
+
+- [Skill Hub](https://github.com/rdone4425/skill) — AI Agent Skills 导航站，4,100+ skills across 22 categories. Multi-platform: OpenAI Codex, Claude, Hermes, OpenCode, OpenClaw. Live: [skill.442595.xyz](https://skill.442595.xyz/)
+
 ## :star: Top AI Tools List
 
 Discover our favorite AI tools spanning every layer of AI application development. Click [here](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/our_favourite_ai_tools.md) to learn more.
