@@ -349,3 +349,4 @@ year = {2024}
 ## Security & Safety Tools
 
 - **[OWASP Agent Memory Guard](https://github.com/OWASP/www-project-agent-memory-guard)** - Official OWASP reference implementation for AI agent memory poisoning defense (ASI06 from OWASP Top 10 for Agentic AI Systems). Provides pre-write scanning, pre-read validation, and audit logging for agent memory.
+- **[Context Kit](https://github.com/JDDavenport/context-kit)** — Personal Context Artifacts: 4 Markdown templates + 5 Claude Code skills for giving AI agents deep personal context. MIT, one-command install.
