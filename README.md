@@ -314,6 +314,7 @@ Engineering](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/mai
 - [LLM-PlayLab](https://github.com/Sakil786/LLM-PlayLab) This playlab encompasses a multitude of projects crafted through the utilization of Transformer Models
 - [RAG Techniques](https://github.com/NirDiamant/RAG_Techniques) by Nir Diamant — 35+ runnable Jupyter notebooks covering advanced RAG techniques (chunking, query transformation/HyDE, reranking, self-RAG, graph RAG, evaluation)
 - [GenAI Agents](https://github.com/NirDiamant/GenAI_Agents) by Nir Diamant — 50+ tutorials and reference implementations for building GenAI agents, from simple bots to multi-agent systems
+- [nika](https://github.com/supernovae-st/nika) by SuperNovae Studio — open-source (Rust, AGPL) workflow engine for AI with 25+ embedded runnable examples: learn agent workflows as reviewable .nika.yaml files, statically checked before execution, runnable offline with zero API keys (mock and Ollama paths)
 
 
 ---
