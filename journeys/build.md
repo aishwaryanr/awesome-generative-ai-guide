@@ -219,6 +219,7 @@ Advanced research tables that inform production choices live in [Understand 201]
 Curated sequences through the levels toward a specific outcome:
 
 - **[Agent Builder](../paths/agent-builder.md)**: Agentic AI Crash Course to Agentic RAG 101 to AI Evals to Securing Agentic AI Systems.
+- **[Harness Engineering](../paths/harness-engineering.md)**: agent = model + harness. From using Claude Code, Cursor, and Codex to assembling and evaluating your own harness (tools, context, memory, MCP, multi-agent).
 - **[Interview Prep](../paths/interview-prep.md)**: the 60 GenAI interview questions, topic-tagged.
 
 ---
