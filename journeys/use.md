@@ -25,7 +25,7 @@ What LLMs are (no math), prompting basics, and using ChatGPT and Claude well.
 
 Power-user prompting and context techniques, connecting tools, using agent harnesses for your own work, and building personal multi-step automations.
 
-- **[OpenClaw Mastery for Everyone](../free_courses/openclaw_mastery_for_everyone/README.md)** ⭐ 📖 (2026) certified: a ten-day path to configure and run your own personal AI assistant. Topic: [Agents](../topics/agents.md) (personal). Also relevant to [Build 101](build.md#build-101-foundations-to-build). See also the [best OpenClaw resources](../free_courses/openclaw_mastery_for_everyone/best-openclaw-resources.md) and [getting your API key](../free_courses/openclaw_mastery_for_everyone/getting-your-api-key.md).
+- **[OpenClaw Mastery for Everyone](../free_courses/openclaw_mastery_for_everyone/README.md)** ⭐ 📖 (2026) certified: a 10-day path to configure and run your own personal AI assistant. Topic: [Agents](../topics/agents.md) (personal). Also relevant to [Build 101](build.md#build-101-foundations-to-build). See also the [best OpenClaw resources](../free_courses/openclaw_mastery_for_everyone/best-openclaw-resources.md) and [getting your API key](../free_courses/openclaw_mastery_for_everyone/getting-your-api-key.md).
 
 Using agent harnesses for your own work (Topic: [Agents](../topics/agents.md)):
 

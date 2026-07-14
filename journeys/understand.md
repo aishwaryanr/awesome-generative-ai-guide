@@ -19,7 +19,7 @@ Transformers, pretraining, seminal papers, and how to read a paper.
 ### LevelUp originals and guides
 
 - **[Survey Papers](../research_updates/survey_papers.md)** ⭐ 📖 (2024) 🔴 aging: a curated set of survey papers across LLM topics.
-- **[LLM Lingo](../resources/llm_lingo)** ⭐ 📖: a six-part glossary of commonly used LLM terms with plain-language definitions. Topic: [Foundations](../topics/foundations.md). Also relevant to [Build 101](build.md#build-101-foundations-to-build).
+- **[LLM Lingo](../resources/llm_lingo)** ⭐ 📖: a 6-part glossary of commonly used LLM terms with plain-language definitions. Topic: [Foundations](../topics/foundations.md). Also relevant to [Build 101](build.md#build-101-foundations-to-build).
 - **[Agentic AI Crash Course](../free_courses/agentic_ai_crash_course/README.md)** ⭐ 📖 (2025): a conceptual grounding in agents that also serves builders. Primary home: [Build 101](build.md#build-101-foundations-to-build).
 - **[Generative AI Genius](../free_courses/generative_ai_genius/README.md)** ⭐ 📖 (2024): a beginner introduction. Primary home: [Use 101](use.md#use-101-start-using-ai).
 
@@ -59,7 +59,7 @@ Latest additions (2025-2026):
 
 ### AI harm and policy
 
-These two courses touch responsible use and governance, relevant here and on the [Safety and Security](../topics/safety-security.md) topic page.
+These 2 courses touch responsible use and governance, relevant here and on the [Safety and Security](../topics/safety-security.md) topic page.
 
 - **[Avoiding AI Harm](https://www.coursera.org/learn/avoiding-ai-harm)** 🌐 📖 by Coursera
 - **[Developing AI Policy](https://www.coursera.org/learn/developing-ai-policy)** 🌐 📖 by Coursera
@@ -87,7 +87,7 @@ Monthly papers, the annual report, and open problems.
 - **[State of AI 2025 Report](../research_updates/state_of_ai_2025_report/README.md)** ⭐ 📖 (2026): a full report with its own build pipeline (HTML and [PDF](../research_updates/state_of_ai_2025_report/State_of_AI_2025_Report.pdf)).
 - **[Monthly Best Papers: 2026](../research_updates/2026_papers)** ⭐ 📖 (2026): the current monthly feed, January through June 2026.
 - **[Monthly Best Papers: 2025](../research_updates/2025_papers)** ⭐ 📖 (2025): the full year, January through December 2025.
-- **[Monthly Best Papers: 2024 (archive)](../research_updates/2024_papers)** ⭐ 📖 🔴 archived: eleven monthly lists from 2024, kept for reference.
+- **[Monthly Best Papers: 2024 (archive)](../research_updates/2024_papers)** ⭐ 📖 🔴 archived: 11 monthly lists from 2024, kept for reference.
 
 The monthly feed is updated regularly with each month's most notable applied AI papers.
 

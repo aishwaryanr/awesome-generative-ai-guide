@@ -8,7 +8,7 @@ How language models work: transformers, pretraining, the vocabulary, and the men
 
 ## 🔬 Understand 101 (primary)
 
-- **[LLM Lingo](../resources/llm_lingo)** ⭐ 📖: six-part glossary of common LLM terms in plain language.
+- **[LLM Lingo](../resources/llm_lingo)** ⭐ 📖: 6-part glossary of common LLM terms in plain language.
 - **[Survey Papers](../research_updates/survey_papers.md)** ⭐ 📖 (2024) 🔴 aging: survey papers across LLM topics.
 - The free foundations courses (ETH, Princeton, Stanford CS324, Huggingface, Google, and more) are listed on [Understand 101](../journeys/understand.md#understand-101-foundations-and-how-to-read-research).
 

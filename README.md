@@ -14,6 +14,7 @@ Pick the door that fits you. Each journey has its own 101 to 301 path.
 - 🏗️ **I want to build AI systems** → [Build AI](journeys/build.md)
 - 🔬 **I want to understand the research** → [Understand AI](journeys/understand.md)
 - 💬 **I'm prepping for an interview** → [Interview Prep](paths/interview-prep.md)
+- 📚 **I just want to browse every free course** → [All free courses, by topic](courses.md)
 
 ---
 
@@ -37,17 +38,19 @@ Already know your subject? Jump straight to it. Each topic page gathers everythi
 
 [LLM Foundations](topics/foundations.md) · [Prompting and Context](topics/prompting.md) · [Retrieval and RAG](topics/rag.md) · [Fine-tuning](topics/fine-tuning.md) · [AI Agents](topics/agents.md) · [Evaluation and Observability](topics/evaluation.md) · [Multimodal](topics/multimodal.md) · [Production and LLMOps](topics/production.md) · [Safety and Security](topics/safety-security.md)
 
+Or see every free course in one place: **[All free courses, by topic](courses.md)**.
+
 ---
 
 ## :mortar_board: Featured LevelUp courses
 
 Free, created by [Aishwarya Naresh Reganti](https://www.linkedin.com/in/aishwarya-naresh-reganti/) and the LevelUp team, several with certification:
 
-- **[AI Evals for Everyone](free_courses/ai_evals_for_everyone/README.md)** (certified): ten chapters on evaluating LLM and agentic systems.
-- **[OpenClaw Mastery for Everyone](free_courses/openclaw_mastery_for_everyone/README.md)** (certified): a ten-day path to configure and run your own personal AI assistant.
-- **[Agentic AI Crash Course](free_courses/agentic_ai_crash_course/README.md)**: ten parts on agents, tools, RAG, MCP, planning, memory, and multi-agent systems.
+- **[AI Evals for Everyone](free_courses/ai_evals_for_everyone/README.md)** (certified): 10 chapters on evaluating LLM and agentic systems.
+- **[OpenClaw Mastery for Everyone](free_courses/openclaw_mastery_for_everyone/README.md)** (certified): a 10-day path to configure and run your own personal AI assistant.
+- **[Agentic AI Crash Course](free_courses/agentic_ai_crash_course/README.md)**: 10 parts on agents, tools, RAG, MCP, planning, memory, and multi-agent systems.
 - **[Generative AI Genius](free_courses/generative_ai_genius/README.md)**: a no-math beginner introduction to generative AI.
-- **[Applied LLMs Mastery (2024 edition)](free_courses/Applied_LLMs_Mastery_2024/README.MD)**: an eleven-week foundational course, archived as a 2024 edition. [Course website](https://areganti.notion.site/Applied-LLMs-Mastery-2024-562ddaa27791463e9a1286199325045c).
+- **[Applied LLMs Mastery (2024 edition)](free_courses/Applied_LLMs_Mastery_2024/README.MD)**: an 11-week foundational course, archived as a 2024 edition. [Course website](https://areganti.notion.site/Applied-LLMs-Mastery-2024-562ddaa27791463e9a1286199325045c).
 
 ---
 
@@ -70,7 +73,7 @@ Newest first:
 - **OpenClaw Mastery for Everyone** is live with certification. ([Course](free_courses/openclaw_mastery_for_everyone/README.md))
 - **AI Evals for Everyone** is live with certification. ([Course](free_courses/ai_evals_for_everyone/README.md))
 - **State of AI 2025 Report** published, with its own build pipeline. ([Report](research_updates/state_of_ai_2025_report/README.md))
-- **Agentic AI Crash Course** released in ten parts. ([Course](free_courses/agentic_ai_crash_course/README.md))
+- **Agentic AI Crash Course** released in 10 parts. ([Course](free_courses/agentic_ai_crash_course/README.md))
 - **Living research tables** for evaluation, agentic search and retrieval, and RAG are being kept current. ([Research updates](research_updates/))
 
 ---
@@ -78,7 +81,7 @@ Newest first:
 ## :paperclip: Resources
 
 - [ICLR 2024 Paper Summaries](https://areganti.notion.site/06f0d4fe46a94d62bff2ae001cfec22c?v=d501ca62e4b745768385d698f173ae14)
-- [LLM Lingo](resources/llm_lingo): a six-part glossary of common LLM terms.
+- [LLM Lingo](resources/llm_lingo): a 6-part glossary of common LLM terms.
 - [Monthly Best GenAI Papers](research_updates/): the monthly paper lists (see [Understand AI](journeys/understand.md#understand-301-the-frontier-feed)).
 
 ---
