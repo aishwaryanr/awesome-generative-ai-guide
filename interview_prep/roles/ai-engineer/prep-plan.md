@@ -36,27 +36,27 @@ Assumes roughly 10 to 15 hours per week. Read [rounds.md](rounds.md) once up fro
 
 ### Week 1: Fundamentals and the anchor project skeleton
 
-- **Day 1:** Read [README.md](README.md) and [rounds.md](rounds.md). Skim the [Foundations topic page](../../../topics/foundations.md). Answer [questions.md](questions.md) 1 to 9 (LLM fundamentals) out loud; note what you cannot explain.
-- **Day 2:** Prompting and context engineering: questions 10 to 16, plus [Effective context engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) and the [Prompt Engineering Guide](https://www.promptingguide.ai/). Practice getting reliable structured output from an API.
+- **Day 1:** Read [README.md](README.md) and [rounds.md](rounds.md). Skim the [Foundations topic page](../../../topics/foundations.md). Answer the [LLM fundamentals questions](questions.md#llm-fundamentals) out loud; note what you cannot explain.
+- **Day 2:** Prompting and context engineering: the [Prompting and context engineering questions](questions.md#prompting-and-context-engineering), plus [Effective context engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) and the [Prompt Engineering Guide](https://www.promptingguide.ai/). Practice getting reliable structured output from an API.
 - **Day 3:** Stand up the anchor project skeleton: ingestion, chunking, embedding, a basic retrieve-then-generate loop with citations. No evals yet.
-- **Day 4:** RAG mechanics: questions 17 to 24. Read the [RAG survey](https://arxiv.org/abs/2312.10997) intro and the [RAG evaluation guide](https://www.evidentlyai.com/llm-guide/rag-evaluation). Add the refusal path to your project.
-- **Day 5:** RAG at scale and failure modes: questions 25 to 29. Add hybrid retrieval or a reranker to the project and note the quality change.
+- **Day 4:** RAG mechanics: the [Retrieval and RAG questions](questions.md#retrieval-and-rag). Read the [RAG survey](https://arxiv.org/abs/2312.10997) intro and the [RAG evaluation guide](https://www.evidentlyai.com/llm-guide/rag-evaluation). Add the refusal path to your project.
+- **Day 5:** RAG at scale and failure modes: more of the [Retrieval and RAG questions](questions.md#retrieval-and-rag). Add hybrid retrieval or a reranker to the project and note the quality change.
 - **Weekend:** Work the [Agentic AI Crash Course](../../../free_courses/agentic_ai_crash_course/README.md) parts 1 to 5. Rest one day.
 
 ### Week 2: Agents, evaluation, and depth
 
-- **Day 6:** Agents and tool use: questions 30 to 39. Read [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) (workflows versus agents) and [Model Context Protocol](https://modelcontextprotocol.io/introduction). Finish the Agentic AI Crash Course (parts 6 to 10).
+- **Day 6:** Agents and tool use: the [Agents and tool use questions](questions.md#agents-and-tool-use). Read [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) (workflows versus agents) and [Model Context Protocol](https://modelcontextprotocol.io/introduction). Finish the Agentic AI Crash Course (parts 6 to 10).
 - **Day 7:** Add the tool-using step to your anchor project with an iteration cap and error handling. Keep it simple; resist over-engineering.
-- **Day 8:** Evaluation: questions 40 to 46. Work through [AI Evals for Everyone](../../../free_courses/ai_evals_for_everyone/README.md) and the [Ragas docs](https://docs.ragas.io/en/stable/).
+- **Day 8:** Evaluation: the [Evaluation questions](questions.md#evaluation). Work through [AI Evals for Everyone](../../../free_courses/ai_evals_for_everyone/README.md) and the [Ragas docs](https://docs.ragas.io/en/stable/).
 - **Day 9:** Build the eval set and script for your project (retrieval hit rate, faithfulness, answer relevance, refusal rate). This is the differentiator; spend real time here.
-- **Day 10:** Reasoning models and cost/latency: questions 47 to 55. Read [Agents](https://huyenchip.com/2025/01/07/agents.html) and [Common pitfalls](https://huyenchip.com/2025/01/16/ai-engineering-pitfalls.html). Add caching and a token-budget trimmer to your project.
-- **Weekend:** Safety and security: questions 56 to 61, plus the [Safety topic page](../../../topics/safety-security.md) and [Securing Agentic AI Systems](../../../resources/securing_agentic_ai_systems.md). Add basic input/output guardrails. Rest one day.
+- **Day 10:** Reasoning models and cost/latency: the [Reasoning models](questions.md#reasoning-models) and [Cost, latency, and deployment](questions.md#cost-latency-and-deployment) questions. Read [Agents](https://huyenchip.com/2025/01/07/agents.html) and [Common pitfalls](https://huyenchip.com/2025/01/16/ai-engineering-pitfalls.html). Add caching and a token-budget trimmer to your project.
+- **Weekend:** Safety and security: the [Safety and responsible AI questions](questions.md#safety-and-responsible-ai), plus the [Safety topic page](../../../topics/safety-security.md) and [Securing Agentic AI Systems](../../../resources/securing_agentic_ai_systems.md). Add basic input/output guardrails. Rest one day.
 
 ### Week 3: System design, mocks, and polish
 
-- **Day 11:** System design: questions 62 to 66. Re-read the system-design section of [rounds.md](rounds.md). Do one design out loud on a whiteboard, timed to 45 minutes.
+- **Day 11:** System design: the [System design questions](questions.md#system-design). Re-read the system-design section of [rounds.md](rounds.md). Do one design out loud on a whiteboard, timed to 45 minutes.
 - **Day 12:** Two more timed system-design drills (enterprise RAG with access control, and an agent with a latency budget). Record yourself; check you started from requirements and quantified cost and latency.
-- **Day 13:** Business and judgment: questions 67 to 71. Prepare 5 behavioral stories in situation-task-action-result form, at least one about an AI system failing in production, drawn from your anchor project and past work.
+- **Day 13:** Business and judgment: the [Business and judgment questions](questions.md#business-and-judgment). Prepare 5 behavioral stories in situation-task-action-result form, at least one about an AI system failing in production, drawn from your anchor project and past work.
 - **Day 14:** Coding round practice: implement, from scratch and timed, a chunk-retrieve-cite function, a structured-extraction function with validation, and a capped tool loop. Handle every unhappy path.
 - **Day 15:** Polish the anchor project README and demo. Do a full mock loop with a friend or out loud: coding, system design, behavioral.
 - **Day 16:** Review your weak areas from the mocks. Re-answer any [questions.md](questions.md) items you fumbled. Prepare questions for the hiring manager.
@@ -68,11 +68,11 @@ Assumes roughly 10 to 15 hours per week. Read [rounds.md](rounds.md) once up fro
 
 Assumes the onsite is days away and you can commit 4 to 6 focused hours per day. Prioritize ruthlessly: breadth of answers plus one demonstrable project beats deep study of any single topic.
 
-- **Day 1:** Read [README.md](README.md) and [rounds.md](rounds.md). Work [questions.md](questions.md) 1 to 29 (fundamentals, prompting, RAG) out loud. If you have no project to show, start a minimal RAG app today: ingest, retrieve, cite, refuse.
-- **Day 2:** [questions.md](questions.md) 30 to 46 (agents, tool use, evaluation). Read [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) and skim the [RAG evaluation guide](https://www.evidentlyai.com/llm-guide/rag-evaluation). Add a tiny eval (even 10 labeled questions) to your app.
-- **Day 3:** [questions.md](questions.md) 47 to 61 (reasoning models, cost/latency, safety). Read [Effective context engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents). Add caching, an iteration cap, and one guardrail to your app.
-- **Day 4:** System design: questions 62 to 66. Do two timed 45-minute designs out loud (a support agent, and enterprise RAG with access control). Force yourself to start from requirements and put numbers on cost and latency.
-- **Day 5:** Behavioral and judgment: questions 67 to 71. Write and rehearse 4 to 5 stories, one about an AI failure in production. Finalize your project demo and a clear README.
+- **Day 1:** Read [README.md](README.md) and [rounds.md](rounds.md). Work the [LLM fundamentals](questions.md#llm-fundamentals), [Prompting and context engineering](questions.md#prompting-and-context-engineering), and [Retrieval and RAG](questions.md#retrieval-and-rag) questions out loud. If you have no project to show, start a minimal RAG app today: ingest, retrieve, cite, refuse.
+- **Day 2:** The [Agents and tool use](questions.md#agents-and-tool-use) and [Evaluation](questions.md#evaluation) questions. Read [Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) and skim the [RAG evaluation guide](https://www.evidentlyai.com/llm-guide/rag-evaluation). Add a tiny eval (even 10 labeled questions) to your app.
+- **Day 3:** The [Reasoning models](questions.md#reasoning-models), [Cost, latency, and deployment](questions.md#cost-latency-and-deployment), and [Safety and responsible AI](questions.md#safety-and-responsible-ai) questions. Read [Effective context engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents). Add caching, an iteration cap, and one guardrail to your app.
+- **Day 4:** System design: the [System design questions](questions.md#system-design). Do two timed 45-minute designs out loud (a support agent, and enterprise RAG with access control). Force yourself to start from requirements and put numbers on cost and latency.
+- **Day 5:** Behavioral and judgment: the [Business and judgment questions](questions.md#business-and-judgment). Write and rehearse 4 to 5 stories, one about an AI failure in production. Finalize your project demo and a clear README.
 - **Day 6:** Full mock loop out loud: one coding problem (chunk-retrieve-cite or structured extraction with validation), one system design, one behavioral. Fix the biggest gap the mock exposes.
 - **Day 7 (light):** Re-skim your weak [questions.md](questions.md) sections and the [60 GenAI Interview Questions](../../60_gen_ai_questions.md). Prepare questions for the hiring manager. Rest.
 
@@ -80,10 +80,10 @@ Assumes the onsite is days away and you can commit 4 to 6 focused hours per day.
 
 ## Day-of checklist
 
-- Can you state, in one sentence each, when to use prompting vs RAG vs fine-tuning vs an agent? (Questions 17, 30, 67.)
+- Can you state, in one sentence each, when to use prompting vs RAG vs fine-tuning vs an agent? (See the [Business and judgment questions](questions.md#business-and-judgment).)
 - Can you describe your anchor project's architecture and one tradeoff you would change?
-- Can you name the RAG triad and how you would evaluate a RAG system? (Questions 23, 24.)
-- Do you have a number ready for a rough cost per query and a latency budget split? (Questions 50, 51.)
+- Can you name the RAG triad and how you would evaluate a RAG system? (See the [Retrieval and RAG questions](questions.md#retrieval-and-rag).)
+- Do you have a number ready for a rough cost per query and a latency budget split? (See the [Cost, latency, and deployment questions](questions.md#cost-latency-and-deployment).)
 - Do you have one production-failure story with a real lesson?
 - For coding: default to structured output, handle the empty-retrieval and malformed-output cases, and cap every loop.
 - For system design: requirements first, simplest approach that clears the bar, evaluation and monitoring as part of the design, then failure modes.

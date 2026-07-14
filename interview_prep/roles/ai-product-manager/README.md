@@ -35,7 +35,7 @@ Titles you will see for the same work: AI PM, GenAI PM, ML PM, Agent PM, AI Plat
 |------|----------------|-------------------------------|
 | **Traditional PM** | A feature and its funnel | Adds capability judgment, probabilistic UX, evals, and cost/latency/risk tradeoffs on top of normal PM. |
 | **Data / ML PM (predictive)** | A model in a pipeline | Overlaps heavily; AI PM leans toward generative and agentic products, prompts-as-spec, and RAG rather than only classification and ranking. |
-| **AI / LLM Engineer** | The system's code | The PM decides what to build and why, sets eval targets and launch gates, and owns the tradeoffs; the engineer builds it. See the [AI/LLM Engineer track](../../role_based_prep.md). |
+| **AI / LLM Engineer** | The system's code | The PM decides what to build and why, sets eval targets and launch gates, and owns the tradeoffs; the engineer builds it. See the [AI/LLM Engineer track](../../README.md). |
 | **Applied Scientist** | Model quality and research | The scientist pushes the metric; the PM decides which metric matters to the user and when good enough ships. |
 | **AI Program / TPM** | Delivery and coordination | The TPM drives execution across teams; the AI PM owns the what and the why and the success definition. |
 | **Designer (AI UX)** | The interaction | Partners closely; the PM owns tradeoffs and metrics, the designer owns the interaction craft. |
@@ -63,4 +63,4 @@ The **evaluation and technical-depth round is the one that most predicts the hir
 3. Close gaps with the topic pages and [resources.md](resources.md) / [courses.md](courses.md).
 4. Follow [prep-plan.md](prep-plan.md) to sequence everything into a dated path.
 
-Related repo starting points: the [60 GenAI Interview Questions](../../60_gen_ai_questions.md), the [Role-Based Interview Prep](../../role_based_prep.md) tracks, the [GenAI](../../../resources/genai_roadmap.md), [Agents](../../../resources/agents_roadmap.md), and [RAG](../../../resources/RAG_roadmap.md) roadmaps, and the [State of AI 2025 report](../../../research_updates/state_of_ai_2025_report/README.md) for current context.
+Related repo starting points: the [60 GenAI Interview Questions](../../60_gen_ai_questions.md), the [Role-Based Interview Prep](../../README.md) tracks, the [GenAI](../../../resources/genai_roadmap.md), [Agents](../../../resources/agents_roadmap.md), and [RAG](../../../resources/RAG_roadmap.md) roadmaps, and the [State of AI 2025 report](../../../research_updates/state_of_ai_2025_report/README.md) for current context.

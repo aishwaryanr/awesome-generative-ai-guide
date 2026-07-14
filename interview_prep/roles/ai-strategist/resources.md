@@ -12,7 +12,7 @@ Curated, free resources to prepare for the AI Strategist loop. Every external li
 - [Agentic RAG 101](../../../resources/agentic_rag_101.md), [Agents 101 guide](../../../resources/agents_101_guide.md), [Fine-tuning 101](../../../resources/fine_tuning_101.md), [Securing agentic AI systems](../../../resources/securing_agentic_ai_systems.md): practical guides.
 - [State of AI 2025 report](../../../research_updates/state_of_ai_2025_report/README.md): the market context you will be quizzed on.
 - [RAG research table](../../../research_updates/rag_research_table.md), [AI evaluation 2025 table](../../../research_updates/ai_evaluation_2025_table.md), [Agentic search and retrieval table](../../../research_updates/agentic_search_retrieval_table.md): current, cited research.
-- [60 GenAI interview questions](../../60_gen_ai_questions.md) and [role-based prep](../../role_based_prep.md): the question banks.
+- [60 GenAI interview questions](../../60_gen_ai_questions.md) and [role-based prep](../../README.md): the question banks.
 - Builder paths, to understand what your engineers do: [Harness engineering](../../../paths/harness-engineering.md), [Agent builder](../../../paths/agent-builder.md).
 
 ---
