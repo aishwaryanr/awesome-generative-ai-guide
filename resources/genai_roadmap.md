@@ -1,76 +1,92 @@
-# 5-Day LLM Foundations Roadmap 2024
+# 5-Day LLM Foundations Roadmap
 
-If you're feeling overwhelmed by the scattered knowledge about LLMs, this roadmap and curated resources from top sources are here to guide you. Dedicate 2-3 hours daily to understand the resources thoroughly, and by the fifth day, you'll be ready to develop your own LLM application! **This roadmap is designed for individuals with basic machine learning knowledge**. The optional content can be explored when time permits. Enjoy the learning journey! Once you've established your foundation, utilize this repository to delve into research papers, explore additional courses, and continue enhancing your skills.
+If you're feeling overwhelmed by the scattered knowledge about LLMs, this roadmap and curated resources from top sources are here to guide you. Dedicate 2 to 3 hours daily to work through the resources thoroughly, and by the fifth day you'll be ready to build your own LLM application. **This roadmap is designed for individuals with basic machine learning knowledge.** Once you've established your foundation, use this repository to dive into research papers, explore additional courses, and keep building.
 
-![Applied_LLMs_(28).png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/img/Applied_LLMs_(28).png)
+![5-Day LLM Foundations Roadmap](img/llm_foundations_roadmap.png)
 
-## Day 1: LLM Basics and Foundations
+> Updated for 2026. The way people build with LLMs has changed: most builders never fine-tune a model, they assemble prompting, context, retrieval, and tools into an agent, then evaluate it. So the core 5 days below take you from foundations to a working, evaluated agent. Fine-tuning is here too, as an optional advanced day for when you actually need it.
 
-**Watch these videos (1 hour):**
+## Day 1: LLM and Reasoning Model Foundations
 
-1. LLM Foundations by FullStack ([link](https://fullstackdeeplearning.com/llm-bootcamp/spring-2023/llm-foundations/))
+**Watch (about 1 hour):**
 
-**Read these resources (1 hour):**
+1. Intro to Large Language Models by Andrej Karpathy ([link](https://www.youtube.com/watch?v=zjkBMFhNj_g))
+2. How Transformer LLMs Work by DeepLearning.AI ([link](https://www.deeplearning.ai/courses/how-transformer-llms-work))
 
-1. Applied LLMs Mastery course week 1 content ([link](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/week1_part1_foundations.md))
-2. Applications of LLMs article by CellStrat ([link](https://cellstrat.medium.com/real-world-use-cases-for-large-language-models-llms-d71c3a577bf2))
-3. What are LLMs article by Amazon ([link](https://aws.amazon.com/what-is/large-language-model/))
-4. **(Optional)** A survey of LLMs paper([link](https://arxiv.org/abs/2303.18223)) 
+**Read (about 1 hour):**
+
+1. LLM Lingo: the common terms in plain language ([link](../resources/llm_lingo))
+2. What are LLMs, by Amazon ([link](https://aws.amazon.com/what-is/large-language-model/))
+3. **(Optional, go deeper)** Build a GPT from scratch, Neural Networks: Zero to Hero by Andrej Karpathy ([link](https://karpathy.ai/zero-to-hero.html))
 
 ---
 
-## Day 2: Prompting for LLMs
+## Day 2: Prompting and Context Engineering
 
-**Watch these videos (1 hour):**
+Prompting is the fastest lever. In 2026 the bigger skill is context engineering: deciding what the model sees, not just how you phrase the ask.
 
-1. Prompt engineering course by [Deeplearning.AI](http://Deeplearning.AI) ([link](https://www.deeplearning.ai/short-courses/chatgpt-prompt-engineering-for-developers/))
+**Watch (about 1 hour):**
 
-**Read these resources (1 hour):**
+1. Prompt Engineering Interactive Tutorial by Anthropic ([link](https://github.com/anthropics/courses/tree/master/prompt_engineering_interactive_tutorial))
 
-1. Applied LLMs Mastery week course 2 content ([link](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/week2_prompting.md))
-2. Introduction to prompt engineering guide ([link](https://www.promptingguide.ai/introduction))
-3. Advanced prompt engineering techniques guide ([link](https://www.promptingguide.ai/techniques))
+**Read (about 1 hour):**
+
+1. Introduction to prompt engineering ([link](https://www.promptingguide.ai/introduction))
+2. Advanced prompt engineering techniques ([link](https://www.promptingguide.ai/techniques))
 
 ---
 
 ## Day 3: Retrieval Augmented Generation (RAG)
 
-**Watch these videos (30 mins):**
+**Watch (about 1 hour):**
 
-1. What is RAG by [Deeplearning.AI](http://Deeplearning.AI) ([link](https://learn.deeplearning.ai/building-applications-vector-databases/lesson/3/retrieval-augmented-generation-(rag)))
-2. Building production ready RAG applications course by LlamaIndex ([Link](https://www.youtube.com/watch?v=TRjq7t2Ms5I))
-3. **(Optional**) RAG with pinecone and Langchain video ([link](https://www.youtube.com/watch?v=J_tCD_J6w3s))
+1. Retrieval Augmented Generation (RAG) by DeepLearning.AI ([link](https://www.deeplearning.ai/courses/retrieval-augmented-generation))
 
-**Read these resources (1 hour):**
+**Read (about 1 hour):**
 
-1. Applied LLMs Mastery course week 4 content ([link](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/week4_RAG.md))
-2. RAG blog post by Amazon ([link](https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-foundation-models-customize-rag.html))
-3. Blog on advanced RAG techniques by Akash ([link](https://akash-mathur.medium.com/advanced-rag-optimizing-retrieval-with-additional-context-metadata-using-llamaindex-aeaa32d7aa2f))
+1. Agentic RAG 101: retrieval combined with agentic control ([link](../resources/agentic_rag_101.md))
+2. **(Optional, current research)** Most impactful RAG papers, updated regularly ([link](../research_updates/rag_research_table.md))
 
 ---
 
-## Day 4: LLM Fine-Tuning
+## Day 4: Agents and Tools
 
-**Watch these videos (1.5 hours):**
+An agent is a model plus a harness: tools, memory, and a loop that lets it take actions, not just answer. This is how most real LLM applications are built now.
 
-1. LLM Fine-Tuning [Deeplearning.AI](http://Deeplearning.AI) ([link](https://learn.deeplearning.ai/finetuning-large-language-models/lesson/1/introduction))
-2. Advanced fine-tuning techniques on YouTube by Shaw ([link](https://www.youtube.com/watch?v=eC6Hd1hFvos))
+**Watch (about 1 hour):**
 
-**Read these resources (1 hour):**
+1. AI Agents Course, unit 0, by Hugging Face ([link](https://huggingface.co/learn/agents-course/unit0/introduction))
 
-1. Applied LLMs Mastery course week 3 content ([link](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/week3_finetuning_llms.md))
-2. Guide for fine-tuning LLMs by Labellerr ([link](https://www.labellerr.com/blog/comprehensive-guide-for-fine-tuning-of-llms/))
-3. PEFT methods by HuggingFace ([link](https://huggingface.co/blog/peft))
+**Read (about 1.5 hours):**
+
+1. Agentic AI Crash Course: agents, tools, RAG, MCP, planning, memory, multi-agent ([link](../free_courses/agentic_ai_crash_course/README.md))
+2. Introduction to the Model Context Protocol by Anthropic ([link](https://anthropic.skilljar.com/introduction-to-model-context-protocol))
 
 ---
 
-## Day 5: LLM Applications and Tooling
+## Day 5: Evaluation and Shipping
 
-**Watch these videos (1 hour):**
+Building an agent is half the job. The other half is knowing whether it works, and catching it when it breaks in production. That is evaluation and observability.
 
-1. Build your own LLM application using LangChain course by [Deeplearning.AI](http://Deeplearning.AI) ([link](https://learn.deeplearning.ai/langchain/lesson/1/introduction))
+**Watch (about 1 hour):**
 
-**Read these resources (1 hour):**
+1. Evaluating AI Agents by DeepLearning.AI and Arize ([link](https://www.deeplearning.ai/courses/evaluating-ai-agents))
 
-1. Applied LLMs Mastery course week 5 content ([link](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/week5_tools_for_LLM_apps.md))
-2. Tools for LLM Applications blog by a16z ([link](https://a16z.com/emerging-architectures-for-llm-applications/))
+**Read (about 1 hour):**
+
+1. AI Evals for Everyone: model vs product evals, reference datasets, metrics, monitoring ([link](../free_courses/ai_evals_for_everyone/README.md))
+2. **(Optional)** Securing Agentic AI Systems: what breaks once you ship ([link](../resources/securing_agentic_ai_systems.md))
+
+---
+
+## Optional Advanced Day: Fine-Tuning and Post-Training
+
+Most builders reach for prompting, RAG, and agents long before they fine-tune. When you do need to change model behavior, this is the modern toolkit: supervised fine-tuning, preference optimization (DPO), and reinforcement learning on verifiable rewards (GRPO).
+
+**Watch:** Post-training of LLMs by DeepLearning.AI ([link](https://www.deeplearning.ai/courses/post-training-of-llms))
+
+**Read:** Fine-tuning 101 ([link](../resources/fine_tuning_101.md)) · PEFT methods by Hugging Face ([link](https://huggingface.co/blog/peft)) · the RLHF and post-training course by Nathan Lambert ([link](https://rlhfbook.com/course))
+
+---
+
+**Where to next:** browse [all free courses by topic](../courses.md), follow the monthly [best papers](../research_updates/2026_papers) and the [State of AI report](../research_updates/state_of_ai_2025_report/README.md), or pick a [learning path](../paths/agent-builder.md) and keep going.
