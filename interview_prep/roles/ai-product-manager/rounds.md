@@ -16,6 +16,16 @@ Quick map of the loop:
 
 ---
 
+## The interview loop
+
+```text
+ [1] Recruiter -> [2] Product sense -> [3] Metrics -> [4] AI literacy -> [5] Behavioral -> [6] Execution -> [7] Prototype -> OFFER
+     fit            design a feature    analytical     what AI can /      leadership       cross-func       build a live
+                    end to end          + evals        cannot do          judgment         coordination     demo (2026)
+```
+
+The product-sense round, designing an AI feature end to end, is the heart of the loop.
+
 ## 1. Recruiter screen
 
 **What it tests.** Whether you fit the archetype (genuinely an AI PM, not a PM who read a few blog posts), your motivation, one AI product you truly owned, and logistics (level, comp, timeline, location).
