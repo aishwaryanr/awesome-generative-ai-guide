@@ -2,7 +2,7 @@
 
 Retrieval Augmented Generation (RAG) is still one of the most common ways to put an LLM to work on your own data, and it has grown well beyond "stuff some chunks into the prompt." This 3-day plan takes you from retrieval basics, to building a real RAG app, to the agentic and advanced techniques that matter in 2026. Plan for about 2 to 3 hours a day.
 
-![RAG_roadmap.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/img/RAG_roadmap.png)
+![3-Day RAG Roadmap](img/rag_roadmap.png)
 
 > Updated for 2026. RAG is now often agentic: the model decides what to retrieve, iterates, and sometimes skips the vector store entirely. Day 3 takes you there.
 
