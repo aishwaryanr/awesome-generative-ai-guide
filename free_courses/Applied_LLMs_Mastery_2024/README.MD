@@ -1,3 +1,7 @@
+> ⚠️ **Archived (2024 edition).** This material reflects the state of the field when
+> written and is kept for reference. For current material see the
+> [repository index](../../README.md).
+
 # Applied LLMs Mastery 2024
 
 ![mind_map.png](https://github.com/aishwaryanr/awesome-generative-ai-resources/blob/main/free_courses/Applied_LLMs_Mastery_2024/img/mind_map.png)

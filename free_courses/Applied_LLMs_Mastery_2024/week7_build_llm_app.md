@@ -1,3 +1,7 @@
+> ⚠️ **Archived (2024 edition).** This material reflects the state of the field when
+> written and is kept for reference. For current material see the
+> [repository index](../../README.md).
+
 # [Week 7] Building Your Own LLM Application
 
 ## ETMI5: Explain to Me in 5
