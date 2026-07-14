@@ -22,7 +22,7 @@ Use the topic pages to review the subject behind any question you miss:
 
 ## Prepare by role
 
-Different roles are tested on different things. See **[Role-Based Interview Prep](../interview_prep/role_based_prep.md)** for role-specific tracks: AI / LLM Engineer, ML / Fine-tuning Engineer, Applied Scientist, AI Product Manager, and Solutions Architect.
+Different roles are tested on different things. See the **[Role-Based Interview Prep hub](../interview_prep/README.md)** for deep per-role folders (AI Engineer, AI PM, Forward-Deployed Engineer, AI Strategist): interview rounds, a question bank with answers, resources, courses, and a prep plan each.
 
 ## What comes next
 

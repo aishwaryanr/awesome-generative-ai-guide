@@ -62,7 +62,7 @@ Discover our favorite AI tools spanning every layer of AI application developmen
 
 ## :computer: Interview Prep
 
-Head to the **[Interview Prep path](paths/interview-prep.md)**, which wraps the [60 GenAI Interview Questions](interview_prep/60_gen_ai_questions.md) and points you at the topic pages to shore up any weak area. New: **[Role-Based Interview Prep](interview_prep/role_based_prep.md)** maps the common AI roles (LLM Engineer, ML Engineer, Applied Scientist, PM, Solutions Architect) to what each interview tests. System-design interview drills are planned for a later build phase.
+Head to the **[Interview Prep path](paths/interview-prep.md)**, which wraps the [60 GenAI Interview Questions](interview_prep/60_gen_ai_questions.md) and points you at the topic pages to shore up any weak area. New: a deep **[Role-Based Interview Prep hub](interview_prep/README.md)** with a full folder per role (AI Engineer, AI PM, Forward-Deployed Engineer, AI Strategist): role overview, interview rounds, a large question bank with answers, resources, courses, and a prep plan. System-design interview drills are planned for a later build phase.
 
 ---
 
