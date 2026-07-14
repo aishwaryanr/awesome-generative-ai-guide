@@ -2,7 +2,7 @@
 
 Measuring whether an LLM or agentic system works: benchmarks, LLM-as-judge, reference datasets, production monitoring, and red teaming. One of the repo's strongest subjects, anchored by the AI Evals course and the evaluation research table.
 
-**Tags:** `Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp original / 🌐 External · year`.
+**Tags:** `Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp Labs original / 🌐 External · year`.
 
 ---
 

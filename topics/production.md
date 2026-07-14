@@ -2,7 +2,7 @@
 
 Running LLM systems in production: LLMOps, serving and latency, cost, deployment, monitoring, and automated testing. A thin subject today, backfilled by the LLMOps courses from the free-courses list.
 
-**Tags:** `Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp original / 🌐 External · year`.
+**Tags:** `Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp Labs original / 🌐 External · year`.
 
 ---
 

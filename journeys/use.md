@@ -5,7 +5,7 @@ For professionals, operators, and light engineers who want to apply AI to their 
 - [Use 101 🟢: start using AI](#use-101-start-using-ai)
 - [Use 201 and 301 🟡🔴: power-user and personal automation](#use-201-and-301-power-user-and-personal-automation)
 
-**How to read a row:** title, then tags. `Level 🟢/🟡/🔴 · Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp original / 🌐 External · year`.
+**How to read a row:** title, then tags. `Level 🟢/🟡/🔴 · Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp Labs original / 🌐 External · year`.
 
 Related: [browse all topics](../README.md#browse-by-topic) · sibling journeys [Build AI](build.md) and [Understand AI](understand.md).
 

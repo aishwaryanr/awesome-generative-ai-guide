@@ -2,7 +2,7 @@
 
 Agents that plan, use tools, hold memory, and coordinate: single-agent and multi-agent systems, tool use, MCP, and agentic retrieval. This is the deepest subject in the repo, consistent with Build being the flagship journey.
 
-**Tags:** `Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp original / 🌐 External · year`.
+**Tags:** `Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp Labs original / 🌐 External · year`.
 
 ---
 

@@ -2,7 +2,7 @@
 
 Keeping AI systems safe and secure: guardrails, prompt injection, agentic attack vectors, red teaming, responsible use, and policy.
 
-**Tags:** `Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp original / 🌐 External · year`.
+**Tags:** `Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp Labs original / 🌐 External · year`.
 
 ---
 
