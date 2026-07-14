@@ -1,67 +1,51 @@
-# 3 Day RAG Roadmap: Understanding, Building and Evaluating RAG Systems 2024
+# 3-Day RAG Roadmap
 
-Retrieval Augmented Generation (RAG) has become a popular application of LLMs recently, with significant progress made in just a few months. Its popularity stems from its lightweight nature and the ease with which it can be integrated with any LLM. To help you get acquainted with RAG, we have put together a 3-day learning plan.
-
-This guide will introduce you to the fundamentals, show you how to develop applications, delve into advanced functionalities, and teach you how to assess RAG applications. Plan to spend about 2-3 hours each day on the provided materials.
-
-Happy Learning!
+Retrieval Augmented Generation (RAG) is still one of the most common ways to put an LLM to work on your own data, and it has grown well beyond "stuff some chunks into the prompt." This 3-day plan takes you from retrieval basics, to building a real RAG app, to the agentic and advanced techniques that matter in 2026. Plan for about 2 to 3 hours a day.
 
 ![RAG_roadmap.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/img/RAG_roadmap.png)
 
-## Day 1: Introduction to RAG
+> Updated for 2026. RAG is now often agentic: the model decides what to retrieve, iterates, and sometimes skips the vector store entirely. Day 3 takes you there.
 
-**Watch these videos:**
+## Day 1: Retrieval Foundations
 
-1. Explanation of RAG by [DeepLearning.AI](http://DeepLearning.AI) ([link](<https://learn.deeplearning.ai/courses/building-applications-vector-databases/lesson/3/retrieval-augmented-generation-(rag)>))
+Start with the retrieval half of RAG: embeddings, vector search, and chunking. Get this right and the rest follows.
 
-**Read these resources:**
+**Watch (about 1 hour):**
 
-1. What is RAG by DataStax ([link](https://www.datastax.com/guides/what-is-retrieval-augmented-generation))
-2. Retrieval-Augmented Generation (RAG) from basics to advanced by Tejpal Kumawat ([link](https://medium.com/@tejpal.abhyuday))
+1. Retrieval Augmented Generation (RAG) by DeepLearning.AI ([link](https://www.deeplearning.ai/courses/retrieval-augmented-generation))
 
----
+**Read (about 1 hour):**
 
-## Day 2: Advanced RAG + Build Your Own RAG System
-
-**Watch these videos:**
-
-1. Advanced RAG series (6 videos) by Sam Witteveen ([link](https://www.youtube.com/watch?v=f4LeWlt3T8Y&t=125s))
-2. LangChain101: Question A 300 Page Book (w/ OpenAI + Pinecone) by Greg Kamradt ([link](https://www.youtube.com/watch?v=h0DHDp1FbmQ))
-
-**Read these resources:**
-
-1. Blog on advanced RAG techniques by Akash ([link](https://akash-mathur.medium.com/advanced-rag-optimizing-retrieval-with-additional-context-metadata-using-llamaindex-aeaa32d7aa2f))
-2. RAG hands-on tutorials on GitHub([link](https://github.com/gkamradt/langchain-tutorials/blob/main/data_generation/Ask%20A%20Book%20Questions.ipynb))
+1. Agentic RAG 101: how retrieval fits with agentic control ([link](../resources/agentic_rag_101.md))
+2. **(Foundational anchor)** The original RAG paper ([link](https://arxiv.org/abs/2005.11401))
 
 ---
 
-## Day 3: RAG Evaluation and Challenges
+## Day 2: Build a RAG App
 
-**Watch these videos:**
+Move from concept to a working pipeline: chunking strategy, reranking, hybrid search, and how to evaluate what you build.
 
-1. LlamaIndex Sessions: 12 RAG Pain Points and Solutions ([link](https://www.youtube.com/watch?v=EBpT_cscTis))
-2. Building and Evaluating Advanced RAG Applications by [DeepLearning.AI](http://DeepLearning.AI)([link](https://www.deeplearning.ai/short-courses/building-evaluating-advanced-rag/))
-3. Challenges with Naive RAG & How to Evaluate RAG Applications? by ActiveLoop ([link](https://www.youtube.com/watch?v=CgQdg0SRuC0))
+**Watch (about 1 hour):**
 
-**Read these resources:**
+1. Advanced Retrieval for AI with Chroma by DeepLearning.AI ([link](https://www.deeplearning.ai/short-courses/advanced-retrieval-for-ai/))
 
-1. 12 RAG Pain Points and Solutions article([link](https://towardsdatascience.com/12-rag-pain-points-and-proposed-solutions-43709939a28c))
-2. RAGas core concepts for evaluating RAG([link](https://docs.ragas.io/en/stable/concepts/index.html))
+**Read (about 1 hour):**
 
----
-
-## Optional Resources to Read
-
-1. Week 4 content from Applied LLMs mastery course on RAG ([link](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/free_courses/Applied_LLMs_Mastery_2024/week4_RAG.md))
-2. “Seven Failure Points When Engineering a Retrieval Augmented
-   Generation System” paper([link](https://arxiv.org/pdf/2401.05856.pdf))
-3. “Retrieval-Augmented Generation for Large Language Models: A Survey” paper([link](https://arxiv.org/abs/2312.10997))
-4. RAG description and available tools on Huggingface([link](https://huggingface.co/transformers/v3.3.1/model_doc/rag.html))
-5. Original RAG paper "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks” ([link](https://proceedings.neurips.cc/paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.html))
+1. Agentic AI Crash Course, part 4: RAG and agentic RAG ([link](../free_courses/agentic_ai_crash_course/part4_what_is_rag_and_agentic.md))
+2. **(Optional, current research)** Most impactful RAG papers, updated regularly ([link](../research_updates/rag_research_table.md))
 
 ---
 
-## Latest RAG Research from 2023-2024
+## Day 3: Agentic and Advanced RAG
 
-[Click Here](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/research_updates/rag_research_table.md)
+The frontier: agentic retrieval, GraphRAG, reranking, and the long-context tradeoffs that decide when RAG is even the right tool.
+
+**Read (about 1.5 hours):**
+
+1. Most impactful RAG papers, the living research table ([link](../research_updates/rag_research_table.md))
+2. Agentic Search and Retrieval research table ([link](../research_updates/agentic_search_retrieval_table.md))
+3. **(Foundational anchor)** Retrieval-Augmented Generation for Large Language Models: A Survey ([link](https://arxiv.org/abs/2312.10997))
+
 ---
+
+**Where to next:** the full [RAG topic page](../topics/rag.md), [all free courses by topic](../courses.md), or the [Agent Builder path](../paths/agent-builder.md).
