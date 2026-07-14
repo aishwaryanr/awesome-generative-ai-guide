@@ -6,6 +6,16 @@ A loop typically has 5 to 8 stages over 3 to 6 weeks. Roughly half the loop is t
 
 ---
 
+## The interview loop
+
+```text
+ [1] Recruiter -> [2] Hiring mgr -> [3] Coding -> [4] System design -> [5] Ambiguous case -> [6] Client sim -> [7] Values -> OFFER
+     fit            motivation &     build          architecture         DECOMPOSE a vague     customer         behavioral
+                    scope            fast           under constraints    problem (signature)   communication
+```
+
+Round 5, decomposing a vague business problem, is the signature round for this role.
+
 ## 1. Recruiter screen
 
 **What it tests:** Motivation, role fit, communication baseline, and logistics (timeline, location, compensation range). Whether you understand what an FDE actually does.
