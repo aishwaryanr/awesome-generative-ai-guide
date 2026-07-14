@@ -1,3 +1,7 @@
+> ⚠️ **Archived (2024 edition).** This material reflects the state of the field when
+> written and is kept for reference. For current material see the
+> [repository index](../../README.md).
+
 ## :star:January 2024 Best GenAI Papers
 
 | Date        | Name                                                                                                                  | Summary                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                | Topics                  |

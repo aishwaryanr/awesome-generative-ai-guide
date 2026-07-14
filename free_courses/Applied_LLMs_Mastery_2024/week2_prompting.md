@@ -1,3 +1,7 @@
+> ⚠️ **Archived (2024 edition).** This material reflects the state of the field when
+> written and is kept for reference. For current material see the
+> [repository index](../../README.md).
+
 # [Week 2] Prompting and Prompt Engineering
 
 ## ETMI5: Explain to Me in 5
