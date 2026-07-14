@@ -2,7 +2,7 @@
 
 Agents are how most real LLM applications get built now: a model wrapped in a harness of tools, memory, and a loop, so it can take actions and not just answer. This roadmap takes you from "what is an agent" to a working, evaluated agent in 5 days, using free resources and materials from this repository. Plan for about 2 to 3 hours a day.
 
-![agent_roadmap_image.gif](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/img/agent_roadmap_image.gif)
+![5-Day AI Agents Roadmap](img/ai_agents_roadmap.png)
 
 > Updated for 2026. Agents changed more than any other area since 2024: reasoning models, the Model Context Protocol, agent harnesses, and real evaluation are now the core, so this roadmap is built around them.
 
