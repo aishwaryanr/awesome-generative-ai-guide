@@ -6,6 +6,16 @@ The single highest-leverage habit for this role: do timed, out-loud reps of the 
 
 ---
 
+## Timeline
+
+```text
+3-week plan. Weight the effort to your buyer type (consultancy = case, enterprise = stakeholder/governance, AI-forward = technical decomposition).
+
+  Week 1 |== Build fluency (no technical round rattles you) ==|
+  Week 2 |== Build strategy judgment (the case + the numbers) =|
+  Week 3 |== Communication, behavioral, and polish ===========| --> LOOP
+```
+
 ## The 3-week plan
 
 ### Week 1: Build fluency (so no technical round can rattle you)

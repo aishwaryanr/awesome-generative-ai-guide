@@ -8,6 +8,16 @@ Concrete, day-by-day plans that sequence the [rounds](rounds.md), [questions](qu
 
 ---
 
+## Timeline
+
+```text
+3-week plan (about 2-3 hrs per weekday).
+
+  Week 1 |== Foundations + technical fluency ===========|
+  Week 2 |== Agents, evaluation, and system design ======|
+  Week 3 |== Judgment, communication, behavioral, mocks ==| --> ONSITE
+```
+
 ## 3-week plan
 
 ### Week 1: foundations and technical fluency

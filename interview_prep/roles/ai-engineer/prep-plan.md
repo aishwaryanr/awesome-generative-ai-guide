@@ -6,6 +6,16 @@ Jump to: [The anchor project](#the-anchor-project) - [3-week track](#3-week-trac
 
 ---
 
+## Timeline
+
+```text
+3-week track (10-15 hrs/week). Everything hangs off one anchor project you build and evaluate.
+
+  Week 1 |== Fundamentals + build the anchor project skeleton ==|
+  Week 2 |== Agents, evaluation: add a tool step + an eval set ==|
+  Week 3 |== System design, timed mocks, polish + demo =========| --> ONSITE
+```
+
 ## The anchor project
 
 Before either plan, commit to building one production-shaped project and finishing it. The highest-signal choice is a **RAG app with evaluation and a small agent layer**:
