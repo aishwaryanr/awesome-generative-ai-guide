@@ -2,7 +2,7 @@
 
 Generative AI is moving fast, and this repository is a comprehensive hub for generative AI research, courses, interview materials, notebooks, and more. Everything is now organized around one question: what do you want to do?
 
-<a href="https://trendshift.io/repositories/7663" target="_blank"><img src="https://trendshift.io/api/badge/repositories/7663" alt="aishwaryanr%2Fawesome-generative-ai-guide | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
+<a href="https://trendshift.io/repositories/7663?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-7663" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/7663/daily" alt="aishwaryanr%2Fawesome-generative-ai-guide | Trendshift" width="250" height="55"/></a> <a href="https://trendshift.io/repositories/7663?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-7663" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/7663" alt="aishwaryanr%2Fawesome-generative-ai-guide | Trendshift" width="250" height="55"/></a>
 
 ---
 
@@ -13,7 +13,7 @@ Pick the door that fits you. Each journey has its own 101 to 301 path.
 - 🧑‍💻 **I want to use AI in my work** → [Use AI](journeys/use.md)
 - 🏗️ **I want to build AI systems** → [Build AI](journeys/build.md)
 - 🔬 **I want to understand the research** → [Understand AI](journeys/understand.md)
-- 💬 **I'm prepping for an interview** → [Interview Prep](paths/interview-prep.md)
+- 💬 **I'm prepping for an interview** → [Interview Prep hub](interview_prep/README.md)
 - 📚 **I just want to browse every free course** → [All free courses, by topic](courses.md)
 
 ---
@@ -52,6 +52,8 @@ Free, created by [Aishwarya Naresh Reganti](https://www.linkedin.com/in/aishwary
 - **[Generative AI Genius](free_courses/generative_ai_genius/README.md)**: a no-math beginner introduction to generative AI.
 - **[Applied LLMs Mastery (2024 edition)](free_courses/Applied_LLMs_Mastery_2024/README.MD)**: an 11-week foundational course, archived as a 2024 edition. [Course website](https://areganti.notion.site/Applied-LLMs-Mastery-2024-562ddaa27791463e9a1286199325045c).
 
+For every free course (LevelUp Labs originals and vetted external), organized by topic, see the full **[All Free Courses, by Topic](courses.md)** list.
+
 ---
 
 ## :star: Top AI Tools List
@@ -62,7 +64,14 @@ Discover our favorite AI tools spanning every layer of AI application developmen
 
 ## :computer: Interview Prep
 
-Head to the **[Interview Prep path](paths/interview-prep.md)**, which wraps the [60 GenAI Interview Questions](interview_prep/60_gen_ai_questions.md) and points you at the topic pages to shore up any weak area. New: a deep **[Role-Based Interview Prep hub](interview_prep/README.md)** with a full folder per role (AI Engineer, AI PM, Forward-Deployed Engineer, AI Strategist): role overview, interview rounds, a large question bank with answers, resources, courses, and a prep plan. System-design interview drills are planned for a later build phase.
+A full **[Role-Based Interview Prep hub](interview_prep/README.md)**: pick your role and work its folder end to end (overview, interview rounds, a deep question bank with answers, resources, courses, and a prep plan).
+
+- 🏗️ **[AI Engineer](interview_prep/roles/ai-engineer/README.md)**: build LLM apps, RAG, agents, evaluation, and system design.
+- 📋 **[AI Product Manager](interview_prep/roles/ai-product-manager/README.md)**: product sense, metrics, tradeoffs, and responsible AI.
+- 🚀 **[Forward-Deployed Engineer](interview_prep/roles/forward-deployed-engineer/README.md)**: build, integrate, and deploy at the customer under ambiguity.
+- 🧭 **[AI Strategist](interview_prep/roles/ai-strategist/README.md)**: strategy, ROI, build vs buy, governance, and change management.
+
+Everyone starts with the shared **[60 GenAI Interview Questions](interview_prep/60_gen_ai_questions.md)**, then works their role. System-design interview drills are planned for a later build phase.
 
 ---
 

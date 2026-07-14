@@ -4,6 +4,8 @@
 
 The idea in one line: **an agent is a model plus a harness.** The model reasons; the harness is everything you build around it so it can act, prompting, context, tools, memory, retrieval, the loop, and verification. This path takes you from using pre-built harnesses to assembling and evaluating your own.
 
+Start with the **[Harness Engineering 101 guide](../resources/harness_engineering.md)** for the full theory (what a harness is, the maturity ladder, the agency-control tradeoff, context rot, verification loops, the lethal trifecta), then use this path to go deeper.
+
 `Level 🟡→🔴 · Source ⭐ LevelUp Labs original / 🌐 External`
 
 ---

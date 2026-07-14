@@ -6,6 +6,14 @@ Retrieval Augmented Generation (RAG) is still one of the most common ways to put
 
 > Updated for 2026. RAG is now often agentic: the model decides what to retrieve, iterates, and sometimes skips the vector store entirely. Day 3 takes you there.
 
+```text
+The RAG pipeline:
+
+  question --> RETRIEVE --> relevant chunks --> AUGMENT the prompt --> LLM --> grounded answer
+                  |
+          vector search / keyword / hybrid
+```
+
 ## Day 1: Retrieval Foundations
 
 Start with the retrieval half of RAG: embeddings, vector search, and chunking. Get this right and the rest follows.

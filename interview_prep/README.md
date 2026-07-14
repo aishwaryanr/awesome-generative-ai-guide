@@ -8,12 +8,29 @@ This section is a set of self-contained prep folders, one for each major AI role
 2. **Work that folder end to end.** Each one is built to be the only resource you need for that loop: read the overview, study the rounds, drill the question bank, then follow the prep plan through to interview day.
 3. **Layer in the shared fundamentals.** Every role assumes a working grasp of the core generative AI concepts. Use the shared material below to fill gaps or to refresh before a technical screen.
 
+```text
+Pick your role, then work its folder end to end:
+
+  Overview  ->  Rounds  ->  Question bank  ->  Resources + Courses  ->  Prep plan  ->  interview day
+  what the      the loop,    drill the          go deep where            day-by-day
+  job is        each round   answered Q&A       you are thin             plan
+```
+
 ## Pick your role
 
 - **[AI Engineer](roles/ai-engineer/README.md)**: builds LLM-powered product features that ship and hold up in production. Prompting, context engineering, RAG, agents, evals, and reliability.
 - **[AI Product Manager](roles/ai-product-manager/README.md)**: owns products whose core behavior comes from a model. Capability judgment, probabilistic UX, evaluation, and cost, latency, and risk tradeoffs.
 - **[Forward-Deployed Engineer](roles/forward-deployed-engineer/README.md)**: customer-facing engineer who embeds with a client, learns their domain, and ships working AI systems fast, from a vague business problem to a running product people trust.
 - **[AI Strategist](roles/ai-strategist/README.md)**: advises an organization on where AI creates value, how to sequence adoption, whether to build or buy, and how to manage cost, return, risk, and governance.
+
+Not sure which is you? A quick comparison:
+
+| Role | You mainly | Signature round | Heaviest topics |
+|---|---|---|---|
+| [AI Engineer](roles/ai-engineer/README.md) | build LLM features that ship | take-home + system design | RAG, agents, evaluation, system design |
+| [AI Product Manager](roles/ai-product-manager/README.md) | decide what to build and why | product sense (design a feature) | capability judgment, metrics, tradeoffs |
+| [Forward-Deployed Engineer](roles/forward-deployed-engineer/README.md) | build and deploy at the customer | ambiguous-case decomposition | full-stack build, communication, ambiguity |
+| [AI Strategist](roles/ai-strategist/README.md) | advise on where AI creates value | the strategy case | landscape fluency, ROI, governance |
 
 ## Shared fundamentals for everyone
 

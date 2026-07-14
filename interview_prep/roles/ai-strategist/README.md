@@ -86,7 +86,7 @@ Use these to build real fluency, not just talking points:
 - **Market context you will be quizzed on**: [State of AI 2025 report](../../../research_updates/state_of_ai_2025_report/README.md).
 - **The current research tables**: [RAG](../../../research_updates/rag_research_table.md), [AI evaluation 2025](../../../research_updates/ai_evaluation_2025_table.md), [Agentic search and retrieval](../../../research_updates/agentic_search_retrieval_table.md).
 - **Roadmaps and guides**: [GenAI roadmap](../../../resources/genai_roadmap.md), [Agents roadmap](../../../resources/agents_roadmap.md), [RAG roadmap](../../../resources/RAG_roadmap.md), [Agentic RAG 101](../../../resources/agentic_rag_101.md), [Agents 101](../../../resources/agents_101_guide.md), [Securing agentic AI systems](../../../resources/securing_agentic_ai_systems.md).
-- **The question banks**: [60 GenAI interview questions](../../60_gen_ai_questions.md) and [role-based prep](../../role_based_prep.md).
+- **The question banks**: [60 GenAI interview questions](../../60_gen_ai_questions.md) and [role-based prep](../../README.md).
 - **Builder paths** (to understand what your engineers actually do): [Harness engineering](../../../paths/harness-engineering.md), [Agent builder](../../../paths/agent-builder.md).
 
 Next: **[rounds.md](rounds.md)**.
