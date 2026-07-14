@@ -1,5 +1,7 @@
 # Topic: AI Agents
 
+> 📚 **Full course list:** the complete, always-current set of free courses on this topic lives in [All free courses: AI Agents](../courses.md#ai-agents). The entries below are organized by journey and level.
+
 Agents that plan, use tools, hold memory, and coordinate: single-agent and multi-agent systems, tool use, MCP, and agentic retrieval. This is the deepest subject in the repo, consistent with Build being the flagship journey.
 
 **Tags:** `Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp Labs original / 🌐 External · year`.

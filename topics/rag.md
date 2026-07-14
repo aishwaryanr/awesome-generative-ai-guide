@@ -1,5 +1,7 @@
 # Topic: Retrieval and RAG
 
+> 📚 **Full course list:** the complete, always-current set of free courses on this topic lives in [All free courses: Retrieval and RAG](../courses.md#retrieval-and-rag). The entries below are organized by journey and level.
+
 Retrieval-augmented generation: grounding a model in your data, vector search, chunking, reranking, and agentic retrieval. This is one of the repo's strongest subjects, spanning build-a-RAG-app work and RAG research.
 
 **Tags:** `Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp Labs original / 🌐 External · year`.

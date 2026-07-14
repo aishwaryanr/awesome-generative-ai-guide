@@ -1,5 +1,7 @@
 # Topic: Production and LLMOps
 
+> 📚 **Full course list:** the complete, always-current set of free courses on this topic lives in [All free courses: Production and LLMOps](../courses.md#production-and-llmops). The entries below are organized by journey and level.
+
 Running LLM systems in production: LLMOps, serving and latency, cost, deployment, monitoring, and automated testing. A thin subject today, backfilled by the LLMOps courses from the free-courses list.
 
 **Tags:** `Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp Labs original / 🌐 External · year`.

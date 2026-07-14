@@ -1,5 +1,7 @@
 # Topic: LLM Foundations
 
+> 📚 **Full course list:** the complete, always-current set of free courses on this topic lives in [All free courses: LLM Foundations](../courses.md#foundations). The entries below are organized by journey and level.
+
 How language models work: transformers, pretraining, the vocabulary, and the mental model you need before building or reading research. The same subject appears at different depths in different journeys, listed below.
 
 **Tags:** `Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp Labs original / 🌐 External · year`.
