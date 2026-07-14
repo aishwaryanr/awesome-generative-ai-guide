@@ -6,6 +6,17 @@ Jump to: [Recruiter screen](#1-recruiter--hiring-manager-screen) - [AI landscape
 
 ---
 
+## The interview loop
+
+```text
+ [1] Screen -> [2] AI fluency -> [3] Case -> [4] Light design -> [5] Stakeholder -> [6] Behavioral -> [7] Take-home -> [8] Debrief -> OFFER
+    fit          landscape        THE heart:   strategy to        communicate to     values            written         your
+                 knowledge        strategy     architecture       non-technical       judgment          case           questions
+                                  case
+```
+
+The case round is the heart of the loop.
+
 ## 1. Recruiter / hiring-manager screen
 
 **What it tests.** Basic fit, motivation, whether you can talk about AI in business terms without either hand-waving or drowning the recruiter in jargon, seniority calibration, and comp alignment. The hiring-manager version goes deeper on your actual track record with AI initiatives.

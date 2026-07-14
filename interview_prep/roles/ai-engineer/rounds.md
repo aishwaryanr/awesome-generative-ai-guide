@@ -6,6 +6,16 @@ Jump to: [Recruiter screen](#1-recruiter-screen) - [Technical / coding](#2-techn
 
 ---
 
+## The interview loop
+
+```text
+ [1] Recruiter -> [2] Coding -> [3] Take-home -> [4] System design -> [5] Behavioral -> [6] Hiring mgr -> OFFER
+     fit &          LLM          end-to-end       architect &          how you          judgment &
+     story          plumbing     build + evals    defend tradeoffs     work             team fit
+```
+
+The take-home and the system-design round carry the most weight for this role.
+
 ## 1. Recruiter screen
 
 **What it tests.** Basic fit: are you real, are you at the right level, do your motivation and comp expectations line up, and can you tell your project story in plain language. No deep technical grilling, but a vague or buzzword-heavy answer here can end the loop.

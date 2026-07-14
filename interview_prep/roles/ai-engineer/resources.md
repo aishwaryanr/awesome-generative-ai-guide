@@ -12,7 +12,7 @@ This repository is built for exactly this prep. Ground yourself here first, then
 
 - [Topic: Foundations](../../../topics/foundations.md), [Prompting](../../../topics/prompting.md), [RAG](../../../topics/rag.md), [Agents](../../../topics/agents.md), [Evaluation](../../../topics/evaluation.md), [Production](../../../topics/production.md), [Safety and Security](../../../topics/safety-security.md): each topic page is organized by journey and level with the best free material.
 - [60 GenAI Interview Questions](../../60_gen_ai_questions.md): the repo's flagship question bank.
-- [Role-Based Interview Prep](../../role_based_prep.md): quick role tracks including AI / LLM Engineer.
+- [Role-Based Interview Prep](../../README.md): quick role tracks including AI / LLM Engineer.
 - [GenAI Roadmap](../../../resources/genai_roadmap.md), [Agents Roadmap](../../../resources/agents_roadmap.md), [RAG Roadmap](../../../resources/RAG_roadmap.md): structured learning paths.
 - [Journeys: Build](../../../journeys/build.md), [Use](../../../journeys/use.md), [Understand](../../../journeys/understand.md).
 - [Paths: Harness Engineering](../../../paths/harness-engineering.md), [Agent Builder](../../../paths/agent-builder.md).
