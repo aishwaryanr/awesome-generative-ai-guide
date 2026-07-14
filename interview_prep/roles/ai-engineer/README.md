@@ -41,7 +41,7 @@ Leveling roughly tracks scope:
 
 ## How this role differs from adjacent roles
 
-- **vs. ML / Fine-tuning Engineer:** they train and post-train models (LoRA, SFT, DPO, RLHF, GRPO, quantization). You mostly consume models and engineer the system around them. Overlap exists, but if the loop centers on training-loop internals, that is the ML role. See [role_based_prep.md](../../role_based_prep.md) for that track.
+- **vs. ML / Fine-tuning Engineer:** they train and post-train models (LoRA, SFT, DPO, RLHF, GRPO, quantization). You mostly consume models and engineer the system around them. Overlap exists, but if the loop centers on training-loop internals, that is the ML role. See the [interview prep hub](../../README.md) for the other role tracks.
 - **vs. Applied Scientist / Research Engineer:** they invent methods and design evals for brand-new capabilities, with more research depth. You optimize for shipping a reliable product. AI Engineer loops are lighter on paper-reproduction, heavier on production judgment.
 - **vs. AI Product Manager:** they decide what to build and why; you decide how and build it. You still need the PM's cost-quality-latency intuition to defend tradeoffs.
 - **vs. Solutions Architect / Enterprise AI:** heavy overlap at enterprises. The architect leans toward integration, access control, and rollout across an org; the AI Engineer leans toward writing the code that runs it. Enterprise AI Engineer loops pull in the architect's concerns.
@@ -72,9 +72,9 @@ Use these to shore up any topic. Paths are relative to this folder.
 - **Topics:** [Foundations](../../../topics/foundations.md) - [Prompting](../../../topics/prompting.md) - [RAG](../../../topics/rag.md) - [Agents](../../../topics/agents.md) - [Evaluation](../../../topics/evaluation.md) - [Fine-tuning](../../../topics/fine-tuning.md) - [Production](../../../topics/production.md) - [Safety and Security](../../../topics/safety-security.md) - [Multimodal](../../../topics/multimodal.md)
 - **Journeys:** [Build](../../../journeys/build.md) - [Use](../../../journeys/use.md) - [Understand](../../../journeys/understand.md)
 - **Paths:** [Harness Engineering](../../../paths/harness-engineering.md) - [Agent Builder](../../../paths/agent-builder.md)
-- **Core question banks:** [60 GenAI Interview Questions](../../60_gen_ai_questions.md) - [Role-Based Interview Prep](../../role_based_prep.md)
+- **Core question banks:** [60 GenAI Interview Questions](../../60_gen_ai_questions.md) - [Role-Based Interview Prep](../../README.md)
 - **Free courses (all, by topic):** [courses.md](../../../courses.md)
 
 ---
 
-Back to [Role-Based Interview Prep](../../role_based_prep.md) - [repository index](../../../README.md).
+Back to [Role-Based Interview Prep](../../README.md) - [repository index](../../../README.md).

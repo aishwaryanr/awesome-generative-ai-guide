@@ -23,16 +23,16 @@ Concrete, day-by-day plans that sequence the [rounds](rounds.md), [questions](qu
 ### Week 1: foundations and technical fluency
 
 **Day 1: Map the role and self-assess.**
-Read [README](README.md) and [rounds](rounds.md). Read the [Exponent 2026 FDE guide](https://www.tryexponent.com/blog/forward-deployed-engineer-interview-the-definitive-2026-guide-fde) and the [Perspective AI FDE guide](https://getperspective.ai/blog/forward-deployed-engineer-interview-questions-2026-prep-guide). Rate yourself 1 to 5 on each of the 9 [question themes](questions.md); the lowest two get extra time this week.
+Read [README](README.md) and [rounds](rounds.md). Read the [Exponent 2026 FDE guide](https://www.tryexponent.com/blog/forward-deployed-engineer-interview-the-definitive-2026-guide-fde) and the [Perspective AI FDE guide](https://getperspective.ai/blog/forward-deployed-engineer-interview-questions-2026-prep-guide). Rate yourself 1 to 5 on each of the 10 [question themes](questions.md); the lowest two get extra time this week.
 
 **Day 2: Foundations.**
-Work the [Foundations topic](../../../topics/foundations.md). If shaky, read [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/). Answer questions 6 to 12 in [questions.md](questions.md) out loud, then refine.
+Work the [Foundations topic](../../../topics/foundations.md). If shaky, read [The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/). Answer the [GenAI foundations questions](questions.md#2-genai-foundations) out loud, then refine.
 
 **Day 3: Prompting and context engineering.**
 Do part of [ChatGPT Prompt Engineering for Developers](https://learn.deeplearning.ai/courses/chatgpt-prompt-eng/lesson/1/introduction) and read [Anthropic on context engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents). Skim the [Prompt Engineering Guide](https://www.promptingguide.ai/).
 
 **Day 4: RAG, part 1.**
-Read the [RAG topic](../../../topics/rag.md) and [Agentic RAG 101](../../../resources/agentic_rag_101.md). Answer questions 13 to 19 aloud.
+Read the [RAG topic](../../../topics/rag.md) and [Agentic RAG 101](../../../resources/agentic_rag_101.md). Answer the [Retrieval and RAG questions](questions.md#3-retrieval-and-rag) aloud.
 
 **Day 5: RAG, part 2 (hands-on).**
 Build a small RAG pipeline over a folder of documents (chunk, embed, retrieve, answer, cite), following a notebook from [RAG_Techniques](https://github.com/NirDiamant/RAG_Techniques). Be able to defend your chunking choice with a retrieval metric.
@@ -43,33 +43,33 @@ Do 4 to 6 practical problems: parse messy CSV or JSON, a rate limiter, exponenti
 ### Week 2: agents, evaluation, and system design
 
 **Day 6: Agents fundamentals.**
-Start the [Agentic AI Crash Course](../../../free_courses/agentic_ai_crash_course/README.md) and read [Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents). Answer questions 20, 22, 23, 24, 26 aloud.
+Start the [Agentic AI Crash Course](../../../free_courses/agentic_ai_crash_course/README.md) and read [Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents). Answer the agent fundamentals questions in the [Agents and MCP](questions.md#4-agents-and-mcp) theme aloud.
 
 **Day 7: MCP and tool design.**
-Read the [MCP introduction](https://modelcontextprotocol.io/introduction) and skim the [DeepLearning.AI MCP course](https://www.deeplearning.ai/short-courses/mcp-build-rich-context-ai-apps-with-anthropic/). Answer questions 21 and 25. Sketch how you would expose one of a customer's systems as an MCP server.
+Read the [MCP introduction](https://modelcontextprotocol.io/introduction) and skim the [DeepLearning.AI MCP course](https://www.deeplearning.ai/short-courses/mcp-build-rich-context-ai-apps-with-anthropic/). Answer the MCP questions in the [Agents and MCP](questions.md#4-agents-and-mcp) theme. Sketch how you would expose one of a customer's systems as an MCP server.
 
 **Day 8: Evaluation.**
-Work through [AI Evals for Everyone](../../../free_courses/ai_evals_for_everyone/README.md) and read the [Evidently AI LLM guide](https://www.evidentlyai.com/llm-guide). Answer questions 27 to 31 aloud. This is high-yield; give it real time.
+Work through [AI Evals for Everyone](../../../free_courses/ai_evals_for_everyone/README.md) and read the [Evidently AI LLM guide](https://www.evidentlyai.com/llm-guide). Answer the [Evaluation questions](questions.md#5-evaluation) aloud. This is high-yield; give it real time.
 
 **Day 9: Deployment, cost, and reliability.**
-Read the [Production topic](../../../topics/production.md) and skim [LLM Numbers](https://github.com/ray-project/llm-numbers) and the relevant [Google SRE Book](https://sre.google/sre-book/table-of-contents/) chapters. Answer questions 32 to 38 aloud.
+Read the [Production topic](../../../topics/production.md) and skim [LLM Numbers](https://github.com/ray-project/llm-numbers) and the relevant [Google SRE Book](https://sre.google/sre-book/table-of-contents/) chapters. Answer the [Deployment, cost, and reliability questions](questions.md#6-deployment-cost-and-reliability) aloud.
 
 **Day 10: System design drills.**
 Do 2 full system-design walkthroughs on a whiteboard, out loud, 45 minutes each, from the [rounds.md](rounds.md) design prompts (private VPC HIPAA RAG; 12 fragmented data sources; agent evaluation harness). Force yourself to start with an MVP walking skeleton and name trade-offs.
 
 **Weekend: responsible AI and security, plus review.**
-Read the [Safety and Security topic](../../../topics/safety-security.md) and [Securing Agentic AI Systems](../../../resources/securing_agentic_ai_systems.md). If targeting Anthropic, read [Core Views on AI Safety](https://www.anthropic.com/news/core-views-on-ai-safety) and the [Responsible Scaling Policy](https://www.anthropic.com/rsp). Answer questions 39 to 42. Re-answer any question you fumbled earlier in the week.
+Read the [Safety and Security topic](../../../topics/safety-security.md) and [Securing Agentic AI Systems](../../../resources/securing_agentic_ai_systems.md). If targeting Anthropic, read [Core Views on AI Safety](https://www.anthropic.com/news/core-views-on-ai-safety) and the [Responsible Scaling Policy](https://www.anthropic.com/rsp). Answer the [Responsible AI and security questions](questions.md#7-responsible-ai-and-security). Re-answer any question you fumbled earlier in the week.
 
 ### Week 3: judgment, communication, behavioral, and mocks
 
 **Day 11: The decomposition round, framework.**
-Study the 5-step framework in [rounds.md](rounds.md) and read the [Palantir FDSE interview guide](https://blog.palantir.com/a-guide-to-palantir-forward-deployed-software-engineering-interviews-9c6ba9e07a4c). Do 1 full ambiguous case aloud (question 43) narrating all 5 steps.
+Study the 5-step framework in [rounds.md](rounds.md) and read the [Palantir FDSE interview guide](https://blog.palantir.com/a-guide-to-palantir-forward-deployed-software-engineering-interviews-9c6ba9e07a4c). Do 1 full ambiguous case aloud from the [Case and decomposition](questions.md#9-case-and-decomposition-judgment) questions, narrating all 5 steps.
 
 **Day 12: Decomposition, reps.**
-Do 2 more full cases aloud (question 44 and one design-case prompt from [rounds.md](rounds.md)). Time yourself to 45 minutes. Record yourself and check: did you clarify before solving, surface assumptions, sequence by risk and value, propose a thin MVP, and name failure modes?
+Do 2 more full cases aloud (another from the [Case and decomposition](questions.md#9-case-and-decomposition-judgment) questions and one design-case prompt from [rounds.md](rounds.md)). Time yourself to 45 minutes. Record yourself and check: did you clarify before solving, surface assumptions, sequence by risk and value, propose a thin MVP, and name failure modes?
 
 **Day 13: Customer simulation.**
-Run the 5 role-play scenarios (questions 46 to 49 and the credentials one). Have a friend play the frustrated or non-technical customer if possible. Drill: diagnose before prescribing, acknowledge before pushing back, offer options with trade-offs, never over-promise.
+Run the role-play scenarios in the [Customer communication and business](questions.md#10-customer-communication-and-business) questions. Have a friend play the frustrated or non-technical customer if possible. Drill: diagnose before prescribing, acknowledge before pushing back, offer options with trade-offs, never over-promise.
 
 **Day 14: Behavioral stories.**
 Write and rehearse 6 to 8 STAR stories covering the list in [rounds.md](rounds.md): end-to-end ownership, difficult stakeholder, reversed decision, alignment without authority, tight deadline with incomplete info, a real failure, a cross-customer pattern, saying no and holding the line. 60 to 90 seconds each, "I" not "we." Prepare a specific, evidence-backed "why this company."
@@ -87,10 +87,10 @@ Re-drill only your weakest 2 rounds. Re-read the company-specific shape notes fo
 For when the loop is days away. About 3 to 4 hours per day, weighted hard toward judgment rounds and evaluation.
 
 - **Day 1: Orient and self-assess.** Read [README](README.md), [rounds](rounds.md), and both FDE guides ([Exponent](https://www.tryexponent.com/blog/forward-deployed-engineer-interview-the-definitive-2026-guide-fde), [Perspective AI](https://getperspective.ai/blog/forward-deployed-engineer-interview-questions-2026-prep-guide)). Read all of [questions.md](questions.md) once, marking weak answers.
-- **Day 2: AI depth.** Speed-run the [RAG](../../../topics/rag.md), [Agents](../../../topics/agents.md), and [Evaluation](../../../topics/evaluation.md) topic pages plus [Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents). Answer questions 8 to 9, 13 to 26, and 27 to 31 aloud. Do not skip evaluation.
+- **Day 2: AI depth.** Speed-run the [RAG](../../../topics/rag.md), [Agents](../../../topics/agents.md), and [Evaluation](../../../topics/evaluation.md) topic pages plus [Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents). Answer the [Retrieval and RAG](questions.md#3-retrieval-and-rag), [Agents and MCP](questions.md#4-agents-and-mcp), and [Evaluation](questions.md#5-evaluation) questions aloud. Do not skip evaluation.
 - **Day 3: Coding and system design.** 3 practical coding problems (parse messy data, rate limiter, backoff), narrated aloud. Then 2 system-design walkthroughs from [rounds.md](rounds.md), starting each with an MVP skeleton and naming trade-offs.
-- **Day 4: Decomposition cases.** The whole day on the signature round: study the 5-step framework, then do 3 full cases aloud (questions 43 to 44 plus one), recording and reviewing against "clarify before solving."
-- **Day 5: Customer simulation and reliability.** Run all 5 role-plays (questions 46 to 49 plus credentials). Then read questions 32 to 42 and answer the deployment, cost, and responsible-AI ones aloud.
+- **Day 4: Decomposition cases.** The whole day on the signature round: study the 5-step framework, then do 3 full cases aloud from the [Case and decomposition](questions.md#9-case-and-decomposition-judgment) questions, recording and reviewing against "clarify before solving."
+- **Day 5: Customer simulation and reliability.** Run all the role-plays in the [Customer communication and business](questions.md#10-customer-communication-and-business) questions. Then read the [Deployment, cost, and reliability](questions.md#6-deployment-cost-and-reliability) and [Responsible AI and security](questions.md#7-responsible-ai-and-security) questions and answer the deployment, cost, and responsible-AI ones aloud.
 - **Day 6: Behavioral and company fit.** Write and rehearse 6 STAR stories, "I" not "we," 60 to 90 seconds each. Prepare a specific "why this company" grounded in the company's real work. If targeting Anthropic, read [Core Views on AI Safety](https://www.anthropic.com/news/core-views-on-ai-safety).
 - **Day 7: One full mock, then rest.** Compressed mock loop (coding, design, case, simulation, behavioral), self-reviewed against [rounds.md](rounds.md). Light review of weak spots. Rest before the interview.
 
