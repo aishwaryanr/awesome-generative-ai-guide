@@ -20,6 +20,10 @@ Use the topic pages to review the subject behind any question you miss:
 - [Evaluation](../topics/evaluation.md): benchmarks, LLM-as-judge, monitoring.
 - [RAG](../topics/rag.md) and [Agents](../topics/agents.md): retrieval and agentic systems.
 
+## Prepare by role
+
+Different roles are tested on different things. See **[Role-Based Interview Prep](../interview_prep/role_based_prep.md)** for role-specific tracks: AI / LLM Engineer, ML / Fine-tuning Engineer, Applied Scientist, AI Product Manager, and Solutions Architect.
+
 ## What comes next
 
 System-design interview drills (for example designing an LLM-powered search engine or a support agent) are `[planned: build phase]`.
