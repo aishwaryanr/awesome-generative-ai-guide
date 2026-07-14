@@ -21,7 +21,7 @@ Learn how LLMs work well enough to build, the application stack, and your first 
 
 ### LevelUp originals and guides
 
-- **[Agentic AI Crash Course](../free_courses/agentic_ai_crash_course/README.md)** ⭐ 📖 (2025): ten parts covering agents, tools, RAG, MCP, planning, memory, and multi-agent systems. Topic: [Agents](../topics/agents.md). Also relevant to [Understand 101](understand.md#understand-101-foundations-and-how-to-read-research).
+- **[Agentic AI Crash Course](../free_courses/agentic_ai_crash_course/README.md)** ⭐ 📖 (2025): 10 parts covering agents, tools, RAG, MCP, planning, memory, and multi-agent systems. Topic: [Agents](../topics/agents.md). Also relevant to [Understand 101](understand.md#understand-101-foundations-and-how-to-read-research).
 - **[GenAI Roadmap (5-day foundations)](../resources/genai_roadmap.md)** ⭐ 📖 (2024) 🟡 aging: a structured on-ramp to LLM foundations. Topic: [Foundations](../topics/foundations.md).
 - **[RAG Roadmap (3-day)](../resources/RAG_roadmap.md)** ⭐ 📖 (2024) 🟡 aging: a short path into retrieval-augmented generation. Topic: [RAG](../topics/rag.md).
 - **[Agents Roadmap (5-day)](../resources/agents_roadmap.md)** ⭐ 📖 (2024) 🟡 aging: a week-long path into LLM agents. Topic: [Agents](../topics/agents.md).
@@ -62,7 +62,7 @@ The building blocks: RAG, agents and tools, evaluation, fine-tuning, guardrails.
 
 ### LevelUp originals and guides
 
-- **[AI Evals for Everyone](../free_courses/ai_evals_for_everyone/README.md)** ⭐ 📖 (2026) certified: ten chapters on evaluating LLM and agentic systems. Topic: [Evaluation](../topics/evaluation.md). Advanced chapters continue in [Build 301](#build-301-production-and-frontier).
+- **[AI Evals for Everyone](../free_courses/ai_evals_for_everyone/README.md)** ⭐ 📖 (2026) certified: 10 chapters on evaluating LLM and agentic systems. Topic: [Evaluation](../topics/evaluation.md). Advanced chapters continue in [Build 301](#build-301-production-and-frontier).
 - **[Agentic RAG 101](../resources/agentic_rag_101.md)** ⭐ 📖 (2024) 🟡 aging: retrieval combined with agentic control. Topics: [RAG](../topics/rag.md), [Agents](../topics/agents.md).
 - **[Fine-tuning 101](../resources/fine_tuning_101.md)** ⭐ 📖 (2025): the basics of adapting a model. Topic: [Fine-tuning](../topics/fine-tuning.md).
 - **[Agentic AI Notebooks (LinkedIn Learning)](../resources/agentic_ai_course_lil/README.md)** ⭐ 🛠️ (2026): hands-on notebooks for action autonomy and planning autonomy. Topic: [Agents](../topics/agents.md).
