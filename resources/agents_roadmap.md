@@ -6,6 +6,16 @@ Agents are how most real LLM applications get built now: a model wrapped in a ha
 
 > Updated for 2026. Agents changed more than any other area since 2024: reasoning models, the Model Context Protocol, agent harnesses, and real evaluation are now the core, so this roadmap is built around them.
 
+```text
+The loop every agent runs:
+
+   PLAN  -->  ACT (call a tool)  -->  OBSERVE (read the result)
+     ^                                         |
+     |_________________ until done ____________|
+
+An agent = a model + this loop + tools + memory + gates (the harness).
+```
+
 ## Day 1: What Is an Agent
 
 The mental model first: an agent is a model plus a harness. Understand the loop before the tools.
