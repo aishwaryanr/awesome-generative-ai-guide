@@ -1,5 +1,7 @@
 # Topic: Safety and Security
 
+> 📚 **Full course list:** the complete, always-current set of free courses on this topic lives in [All free courses: Safety and Security](../courses.md#safety-and-security). The entries below are organized by journey and level.
+
 Keeping AI systems safe and secure: guardrails, prompt injection, agentic attack vectors, red teaming, responsible use, and policy.
 
 **Tags:** `Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp Labs original / 🌐 External · year`.

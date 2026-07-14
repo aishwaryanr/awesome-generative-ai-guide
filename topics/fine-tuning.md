@@ -1,5 +1,7 @@
 # Topic: Fine-tuning
 
+> 📚 **Full course list:** the complete, always-current set of free courses on this topic lives in [All free courses: Fine-tuning and Post-training](../courses.md#fine-tuning-and-post-training). The entries below are organized by journey and level.
+
 Adapting a base model to your task: full fine-tuning, parameter-efficient methods (LoRA, PEFT), quantization, and RLHF.
 
 **Tags:** `Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp Labs original / 🌐 External · year`.

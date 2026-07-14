@@ -1,5 +1,7 @@
 # Topic: Multimodal
 
+> 📚 **Full course list:** the complete, always-current set of free courses on this topic lives in [All free courses: Multimodal](../courses.md#multimodal). The entries below are organized by journey and level.
+
 Models that work across text, images, audio, and video: diffusion models, vision-language models, and multimodal application patterns. A thin subject in the repo today, covered mainly by external courses plus a 2024 guide.
 
 **Tags:** `Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp Labs original / 🌐 External · year`.

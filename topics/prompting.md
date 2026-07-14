@@ -1,5 +1,7 @@
 # Topic: Prompting and Context
 
+> 📚 **Full course list:** the complete, always-current set of free courses on this topic lives in [All free courses: Prompting and Context](../courses.md#prompting-and-context). The entries below are organized by journey and level.
+
 Writing effective prompts, structuring context, and the techniques that get reliable output from a model. This subject is currently thin in the repo and leans on external courses plus the archived 2024 course.
 
 **Tags:** `Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp Labs original / 🌐 External · year`.

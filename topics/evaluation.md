@@ -1,5 +1,7 @@
 # Topic: Evaluation and Observability
 
+> 📚 **Full course list:** the complete, always-current set of free courses on this topic lives in [All free courses: Evaluation and Observability](../courses.md#evaluation-and-observability). The entries below are organized by journey and level.
+
 Measuring whether an LLM or agentic system works: benchmarks, LLM-as-judge, reference datasets, production monitoring, and red teaming. One of the repo's strongest subjects, anchored by the AI Evals course and the evaluation research table.
 
 **Tags:** `Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp Labs original / 🌐 External · year`.
