@@ -6,6 +6,17 @@ How to use it: each day has a **learn** block and a **practice** block. Do the p
 
 ---
 
+## Timeline
+
+```text
+4-week plan. Adds the AI-specific layer on top of general PM fundamentals.
+
+  Week 1 |== Foundations + capability judgment ====|
+  Week 2 |== Evaluation, metrics, and cost =========|
+  Week 3 |== Agents, technical literacy, responsible AI ==|
+  Week 4 |== Strategy, execution, behavioral =======| --> LOOP
+```
+
 ## 4-Week Plan (about 1 to 2 hours per day)
 
 ### Week 1: Foundations and capability judgment
