@@ -6,6 +6,15 @@ If you're feeling overwhelmed by the scattered knowledge about LLMs, this roadma
 
 > Updated for 2026. The way people build with LLMs has changed: most builders never fine-tune a model, they assemble prompting, context, retrieval, and tools into an agent, then evaluate it. So the core 5 days below take you from foundations to a working, evaluated agent. Fine-tuning is here too, as an optional advanced day for when you actually need it.
 
+```text
+FOUNDATIONS --> PROMPTING --> RAG --> AGENTS & TOOLS --> EVALUATION & SHIPPING
+ (Day 1)        (Day 2)      (Day 3)   (Day 4)            (Day 5)
+ how LLMs       context      retrieval model + harness,   does it work
+ work           engineering            the loop, MCP      in production?
+
+                                            + optional advanced day: fine-tuning
+```
+
 ## Day 1: LLM and Reasoning Model Foundations
 
 **Watch (about 1 hour):**
