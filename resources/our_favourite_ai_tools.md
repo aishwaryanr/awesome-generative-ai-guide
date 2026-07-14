@@ -163,3 +163,21 @@ One of its latest features, Audio Overview, transforms text-based sources into e
 
 **Getting Started with NotebookLM:**  
 - [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)  
+
+---
+
+# AI Video Tools
+*Platforms for generating, editing, and automating video content with AI.*
+
+## iLoveVideoEditor
+
+**iLoveVideoEditor** is an AI-powered video creation and editing platform designed for developers, creators, and automation workflows. It provides a headless rendering engine, a visual editor, and official SDKs, plus a Model Context Protocol (MCP) server that lets AI agents generate and edit videos programmatically.
+[Visit iLoveVideoEditor](https://ilovevideoeditor.com)
+
+iLoveVideoEditor supports programmatic video composition, captions, effects, and multi-format rendering through its API and SDKs. The MCP server enables compatible AI agents and assistants to create, edit, and render videos using natural-language instructions.
+[Explore the GitHub organization](https://github.com/ilovevideoeditor) | [MCP Server](https://github.com/ilovevideoeditor/mcp-server)
+
+**Getting Started with iLoveVideoEditor:**
+- [Official Website](https://ilovevideoeditor.com)
+- [MCP Server Repository](https://github.com/ilovevideoeditor/mcp-server)
+- [API Documentation](https://docs.ilovevideoeditor.com)
