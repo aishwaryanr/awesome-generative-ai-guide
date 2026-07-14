@@ -2,7 +2,7 @@
 
 If you're feeling overwhelmed by the scattered knowledge about LLMs, this roadmap and curated resources from top sources are here to guide you. Dedicate 2 to 3 hours daily to work through the resources thoroughly, and by the fifth day you'll be ready to build your own LLM application. **This roadmap is designed for individuals with basic machine learning knowledge.** Once you've established your foundation, use this repository to dive into research papers, explore additional courses, and keep building.
 
-![Applied_LLMs_(28).png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/img/Applied_LLMs_(28).png)
+![5-Day LLM Foundations Roadmap](img/llm_foundations_roadmap.png)
 
 > Updated for 2026. The way people build with LLMs has changed: most builders never fine-tune a model, they assemble prompting, context, retrieval, and tools into an agent, then evaluate it. So the core 5 days below take you from foundations to a working, evaluated agent. Fine-tuning is here too, as an optional advanced day for when you actually need it.
 
