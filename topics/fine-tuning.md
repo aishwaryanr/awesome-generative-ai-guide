@@ -2,13 +2,13 @@
 
 Adapting a base model to your task: full fine-tuning, parameter-efficient methods (LoRA, PEFT), quantization, and RLHF.
 
-**Tags:** `Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp original / 🌐 External · year`.
+**Tags:** `Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp Labs original / 🌐 External · year`.
 
 ---
 
 ## 🏗️ Build 201
 
-LevelUp originals:
+LevelUp Labs originals:
 
 - **[Fine-tuning 101](../resources/fine_tuning_101.md)** ⭐ 📖 (2025): the basics of adapting a model, types of fine-tuning, and common challenges.
 - **[Applied LLMs Mastery 2024, week 3: LLM fine-tuning](../free_courses/Applied_LLMs_Mastery_2024/week3_finetuning_llms.md)** ⭐ 📖 (2024) 🔴 archived.

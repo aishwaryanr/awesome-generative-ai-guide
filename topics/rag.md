@@ -2,7 +2,7 @@
 
 Retrieval-augmented generation: grounding a model in your data, vector search, chunking, reranking, and agentic retrieval. This is one of the repo's strongest subjects, spanning build-a-RAG-app work and RAG research.
 
-**Tags:** `Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp original / 🌐 External · year`.
+**Tags:** `Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp Labs original / 🌐 External · year`.
 
 ---
 
@@ -12,7 +12,7 @@ Retrieval-augmented generation: grounding a model in your data, vector search, c
 
 ## 🏗️ Build 201
 
-LevelUp originals:
+LevelUp Labs originals:
 
 - **[Agentic RAG 101](../resources/agentic_rag_101.md)** ⭐ 📖 (2024) 🟡 aging: retrieval combined with agentic control.
 - **[Applied LLMs Mastery 2024, week 4: RAG](../free_courses/Applied_LLMs_Mastery_2024/week4_RAG.md)** ⭐ 📖 (2024) 🔴 archived.

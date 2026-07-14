@@ -2,7 +2,7 @@
 
 A path inside the [Build AI](../journeys/build.md) journey for anyone preparing for a generative AI interview. It wraps the repo's question bank and points you at the topic pages to shore up weak areas.
 
-**Tags:** `Format 📖 Read / 📝 Practice · Source ⭐ LevelUp original · year`.
+**Tags:** `Format 📖 Read / 📝 Practice · Source ⭐ LevelUp Labs original · year`.
 
 ---
 

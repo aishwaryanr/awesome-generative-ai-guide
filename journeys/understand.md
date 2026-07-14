@@ -6,7 +6,7 @@ For students, researchers, and the curious who want to follow the research and t
 - [Understand 201 🟡: active research areas](#understand-201-active-research-areas)
 - [Understand 301 🔴: the frontier feed](#understand-301-the-frontier-feed)
 
-**How to read a row:** title, then tags. `Level 🟢/🟡/🔴 · Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp original / 🌐 External · year`.
+**How to read a row:** title, then tags. `Level 🟢/🟡/🔴 · Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp Labs original / 🌐 External · year`.
 
 Related: [browse all topics](../README.md#browse-by-topic) · sibling journeys [Use AI](use.md) and [Build AI](build.md).
 
@@ -16,7 +16,7 @@ Related: [browse all topics](../README.md#browse-by-topic) · sibling journeys [
 
 Transformers, pretraining, seminal papers, and how to read a paper.
 
-### LevelUp originals and guides
+### LevelUp Labs originals and guides
 
 - **[Survey Papers](../research_updates/survey_papers.md)** ⭐ 📖 (2024) 🔴 aging: a curated set of survey papers across LLM topics.
 - **[LLM Lingo](../resources/llm_lingo)** ⭐ 📖: a 6-part glossary of commonly used LLM terms with plain-language definitions. Topic: [Foundations](../topics/foundations.md). Also relevant to [Build 101](build.md#build-101-foundations-to-build).

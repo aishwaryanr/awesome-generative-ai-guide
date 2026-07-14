@@ -2,7 +2,7 @@
 
 A curated sequence through the Build journey toward one outcome: shipping a real agentic system. Every step below is existing repo content, ordered so each builds on the last. This is a named path inside [Build AI](../journeys/build.md), not a separate course.
 
-**Tags:** `Level 🟢/🟡/🔴 · Format 📖 Read / 🎥 Video / 🛠️ Notebook · Source ⭐ LevelUp original · year`.
+**Tags:** `Level 🟢/🟡/🔴 · Format 📖 Read / 🎥 Video / 🛠️ Notebook · Source ⭐ LevelUp Labs original · year`.
 
 ---
 

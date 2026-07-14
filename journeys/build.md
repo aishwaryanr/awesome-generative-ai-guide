@@ -9,7 +9,7 @@ Climb the levels in order, or jump to the level that matches you:
 - [Build 301 🔴: production and frontier](#build-301-production-and-frontier)
 - [Named paths](#named-paths)
 
-**How to read a row:** title, then tags. `Level 🟢/🟡/🔴 · Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp original / 🌐 External · year`.
+**How to read a row:** title, then tags. `Level 🟢/🟡/🔴 · Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp Labs original / 🌐 External · year`.
 
 Related: [browse all topics](../README.md#browse-by-topic) · sibling journeys [Use AI](use.md) and [Understand AI](understand.md).
 
@@ -19,7 +19,7 @@ Related: [browse all topics](../README.md#browse-by-topic) · sibling journeys [
 
 Learn how LLMs work well enough to build, the application stack, and your first LLM app.
 
-### LevelUp originals and guides
+### LevelUp Labs originals and guides
 
 - **[Agentic AI Crash Course](../free_courses/agentic_ai_crash_course/README.md)** ⭐ 📖 (2025): 10 parts covering agents, tools, RAG, MCP, planning, memory, and multi-agent systems. Topic: [Agents](../topics/agents.md). Also relevant to [Understand 101](understand.md#understand-101-foundations-and-how-to-read-research).
 - **[GenAI Roadmap (5-day foundations)](../resources/genai_roadmap.md)** ⭐ 📖 (2024) 🟡 aging: a structured on-ramp to LLM foundations. Topic: [Foundations](../topics/foundations.md).
@@ -60,7 +60,7 @@ Next: [Build 201](#build-201-build-real-systems).
 
 The building blocks: RAG, agents and tools, evaluation, fine-tuning, guardrails. This is where you build real systems.
 
-### LevelUp originals and guides
+### LevelUp Labs originals and guides
 
 - **[AI Evals for Everyone](../free_courses/ai_evals_for_everyone/README.md)** ⭐ 📖 (2026) certified: 10 chapters on evaluating LLM and agentic systems. Topic: [Evaluation](../topics/evaluation.md). Advanced chapters continue in [Build 301](#build-301-production-and-frontier).
 - **[Agentic RAG 101](../resources/agentic_rag_101.md)** ⭐ 📖 (2024) 🟡 aging: retrieval combined with agentic control. Topics: [RAG](../topics/rag.md), [Agents](../topics/agents.md).
@@ -187,7 +187,7 @@ Next: [Build 301](#build-301-production-and-frontier).
 
 Production and scale: LLMOps, advanced agents and RAG, evaluation at scale, cost and latency, security, and system design.
 
-### LevelUp originals and guides
+### LevelUp Labs originals and guides
 
 - **[Securing Agentic AI Systems](../resources/securing_agentic_ai_systems.md)** ⭐ 📖 (2026): attack vectors and defenses for agentic systems. Topic: [Safety and Security](../topics/safety-security.md).
 - **[AI Evals for Everyone: production and monitoring](../free_courses/ai_evals_for_everyone/README.md)** ⭐ 📖 (2026): the production challenge and monitoring chapters extend evaluation to running systems. Topic: [Evaluation](../topics/evaluation.md).

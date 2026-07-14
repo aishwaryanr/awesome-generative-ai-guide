@@ -2,7 +2,7 @@
 
 How language models work: transformers, pretraining, the vocabulary, and the mental model you need before building or reading research. The same subject appears at different depths in different journeys, listed below.
 
-**Tags:** `Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp original / 🌐 External · year`.
+**Tags:** `Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp Labs original / 🌐 External · year`.
 
 ---
 

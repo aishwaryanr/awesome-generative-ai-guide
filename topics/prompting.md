@@ -2,7 +2,7 @@
 
 Writing effective prompts, structuring context, and the techniques that get reliable output from a model. This subject is currently thin in the repo and leans on external courses plus the archived 2024 course.
 
-**Tags:** `Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp original / 🌐 External · year`.
+**Tags:** `Format 📖 Read / 🎥 Video / 🛠️ Notebook / 📝 Practice · Source ⭐ LevelUp Labs original / 🌐 External · year`.
 
 ---
 
