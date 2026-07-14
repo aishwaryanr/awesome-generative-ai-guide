@@ -1,5 +1,7 @@
 # Introduction to MM LLMs
 
+> ⚠️ **Archived (2024 edition).** Since this was written, multimodal moved to native, omni-modal models (GPT-4o, Gemini, Qwen-Omni and successors) that handle text, images, audio, and video in one model. The architecture fundamentals below (modality encoders, connectors, the LLM backbone) still hold and are worth reading. For current models and courses, see the [Multimodal topic page](../topics/multimodal.md).
+
 ![Applied LLMs - 2024-05-03T122206.505.png](https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/resources/img/Applied_LLMs_-_2024-05-03T122206.505.png)
 
 ### **1. Introduction to Multimodal LLMs**
