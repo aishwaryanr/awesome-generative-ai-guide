@@ -1,3 +1,7 @@
+> ⚠️ **Archived (2024 edition).** This material reflects the state of the field when
+> written and is kept for reference. For current material see the
+> [repository index](../../README.md).
+
 | Date | Name | Summary | Topics |
 |-------|-------------|------|------|
 | 29 March 2024 |[Gecko: Versatile Text Embeddings Distilled from Large Language Models](https://arxiv.org/abs/2403.20327) | Gecko introduces a novel approach for creating compact and efficient text embeddings by distilling knowledge from large language models into a retriever. Utilizing a two-step distillation process that generates diverse, synthetic paired data, Gecko achieves superior retrieval performance. With a focus on compactness, it outperforms larger models and higher-dimensional embeddings on the Massive Text Embedding Benchmark (MTEB), demonstrating its efficacy and potential in improving information retrieval tasks. | LLM Embeddings|
