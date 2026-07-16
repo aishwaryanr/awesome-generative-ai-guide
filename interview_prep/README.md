@@ -37,6 +37,7 @@ Not sure which is you? A quick comparison:
 No matter the role, every loop expects fluency in the core ideas. Start with the question bank, then use the topic pages and courses to go deeper where you are thin.
 
 - **[60 GenAI Interview Questions](60_gen_ai_questions.md)**: the broad, role-agnostic question bank covering the concepts that come up in nearly every AI interview. Read this first.
+- **[System design case studies](system-design/README.md)**: worked AI system design interviews (question, answer, follow-ups) on a 5-layer spine, with runnable code. The signature round for AI Engineers and Forward-Deployed Engineers.
 
 **Repository topics** (concept-by-concept reference reading):
 
