@@ -6,7 +6,7 @@ A generative AI system design interview, worked end to end: **the question, a fu
 
 > **Read this with your coding agent.** This case study is public, so you can point Claude Code, Codex, Cursor, or any agent harness at it and have it walk you through interactively, then run the code. Paste a prompt like:
 >
-> *"Read https://github.com/aishwaryanr/awesome-generative-ai-guide/tree/main/system-design/customer-support-agent (the README.md and the code/ folder). Walk me through the 5-layer spine, then quiz me one layer at a time on the design decisions and the tradeoffs. When we get to the code, run `code/run.py` and explain what each node in the graph does."*
+> *"Read https://github.com/aishwaryanr/awesome-generative-ai-guide/tree/main/interview_prep/system-design/customer-support-agent (the README.md and the code/ folder). Walk me through the 5-layer spine, then quiz me one layer at a time on the design decisions and the tradeoffs. When we get to the code, run `code/run.py` and explain what each node in the graph does."*
 >
 > You can also ask it to reimplement the design in a different SDK or framework you prefer.
 
@@ -137,7 +137,7 @@ The reason a reranker beats the first-stage order comes down to *how* it reads. 
 
 **7. Relevance floor and abstention.** This is the single most important safety control in the whole system, because it converts "I could not find this" into an escalation instead of a confident hallucination. Set a threshold on the reranker score, or add a lightweight grader that judges whether the retrieved context is sufficient (the idea behind [Self-RAG](https://arxiv.org/abs/2310.11511) and [Corrective RAG](https://arxiv.org/abs/2401.15884): retrieve, grade, then answer, re-retrieve, or abstain). *Because we assumed a wrong action is costly,* set the floor conservatively so the agent escalates rather than guesses. *What data decides it:* sweep the threshold and plot escalation precision against answer coverage on a labeled should-answer versus should-escalate set, then pick the point that keeps incorrect answers under the ceiling you set in scoping.
 
-**When to reach further.** [GraphRAG](https://arxiv.org/abs/2404.16130) for questions that hop across several documents, and agentic retrieval (the agent issues its own follow-up searches) when one query cannot get there. *We assumed a single article usually answers,* so single-shot hybrid retrieval is enough here; drop that assumption, with multi-hop questions or a product knowledge graph, and GraphRAG earns its place. The repo's [RAG topic page](../../topics/rag.md) collects the primary sources for each of these stages.
+**When to reach further.** [GraphRAG](https://arxiv.org/abs/2404.16130) for questions that hop across several documents, and agentic retrieval (the agent issues its own follow-up searches) when one query cannot get there. *We assumed a single article usually answers,* so single-shot hybrid retrieval is enough here; drop that assumption, with multi-hop questions or a product knowledge graph, and GraphRAG earns its place. The repo's [RAG topic page](../../../topics/rag.md) collects the primary sources for each of these stages.
 
 > **Real finding: [Lost in the Middle](https://arxiv.org/abs/2307.03172).** Accuracy drops when the relevant passage sits in the middle of a long context rather than at the ends. More retrieved text is not a free win, which is why you rerank and cap k instead of stuffing the window.
 
@@ -234,7 +234,7 @@ Then run the discovery loop, because users will always find failures your metric
         +------------------------ signals feed back --------------------------- +
 ```
 
-Instrument the LangGraph app with OpenInference so every node, tool call, and model call becomes a span in **Arize** (Phoenix / AX), which is where the online evals and drift alerts run. Reading traces is how you find the exact step where the agent's judgment diverged from yours. Tooling worth knowing: Ragas and DeepEval for component metrics, promptfoo for CI gates, Arize Phoenix for tracing and online evals. *Deeper:* [AI Evals for Everyone](../../free_courses/ai_evals_for_everyone/README.md), our [Advanced AI Evals course](https://maven.com/aishwarya-kiriti/evals-problem-first), and the [Evaluation topic](../../topics/evaluation.md).
+Instrument the LangGraph app with OpenInference so every node, tool call, and model call becomes a span in **Arize** (Phoenix / AX), which is where the online evals and drift alerts run. Reading traces is how you find the exact step where the agent's judgment diverged from yours. Tooling worth knowing: Ragas and DeepEval for component metrics, promptfoo for CI gates, Arize Phoenix for tracing and online evals. *Deeper:* [AI Evals for Everyone](../../../free_courses/ai_evals_for_everyone/README.md), our [Advanced AI Evals course](https://maven.com/aishwarya-kiriti/evals-problem-first), and the [Evaluation topic](../../../topics/evaluation.md).
 
 **Layer 4, production and ops.** The loop that keeps it alive at scale: vector search with freshness and access control, reliability, latency budgets, and observability so every step is traceable. Detail is in Follow-ups 1 and 3.
 
@@ -299,7 +299,7 @@ Name where it breaks first, then scale that, cheapest lever first.
    + access control                                        online evals, alerts)
 ```
 
-Put numbers on it: tokens per request, an approximate cost per resolved ticket, and a latency budget split across stages. *Deeper:* [Production and LLMOps](../../topics/production.md).
+Put numbers on it: tokens per request, an approximate cost per resolved ticket, and a latency budget split across stages. *Deeper:* [Production and LLMOps](../../../topics/production.md).
 
 ---
 
@@ -319,7 +319,7 @@ Separate answering from acting, and gate the acting.
 
 - **Blast radius.** Least-privilege tool scopes, an immutable audit log of every action, and a design where the worst a jailbreak achieves is a needless escalation, while a wrongful refund stays impossible.
 
-*Deeper:* [Securing Agentic AI Systems](../../resources/securing_agentic_ai_systems.md) and [Safety and Security](../../topics/safety-security.md).
+*Deeper:* [Securing Agentic AI Systems](../../../resources/securing_agentic_ai_systems.md) and [Safety and Security](../../../topics/safety-security.md).
 
 ---
 
@@ -416,7 +416,7 @@ Build the harness on-policy and keep it a layer rather than a fork. Keep the mod
 
 The papers above are the ideas; these are the practice of assembling them. Start inside this repo.
 
-- **LevelUp Labs (Aishwarya and Kiriti's work):** the repo topic pages per layer ([RAG](../../topics/rag.md), [Agents](../../topics/agents.md), [Evaluation](../../topics/evaluation.md), [Production and LLMOps](../../topics/production.md), [Safety and Security](../../topics/safety-security.md)); [AI Evals for Everyone](../../free_courses/ai_evals_for_everyone/README.md) and [Harness Engineering](../../resources/harness_engineering.md); Aishwarya's YouTube ([AI Engineering: A Realistic Roadmap for Beginners](https://www.youtube.com/watch?v=pAXbl1EBHJ8), [Stop Building AI Like Traditional Software](https://www.youtube.com/watch?v=GAF_ychy32k), the [CC/CD talk](https://www.youtube.com/watch?v=z7T1pCxgvlA), the [full channel](https://www.youtube.com/@aishwaryanr4606)); and the [AI System Design course](https://maven.com/aishwarya-kiriti/genai-system-design) and [Advanced AI Evals course](https://maven.com/aishwarya-kiriti/evals-problem-first).
+- **LevelUp Labs (Aishwarya and Kiriti's work):** the repo topic pages per layer ([RAG](../../../topics/rag.md), [Agents](../../../topics/agents.md), [Evaluation](../../../topics/evaluation.md), [Production and LLMOps](../../../topics/production.md), [Safety and Security](../../../topics/safety-security.md)); [AI Evals for Everyone](../../../free_courses/ai_evals_for_everyone/README.md) and [Harness Engineering](../../../resources/harness_engineering.md); Aishwarya's YouTube ([AI Engineering: A Realistic Roadmap for Beginners](https://www.youtube.com/watch?v=pAXbl1EBHJ8), [Stop Building AI Like Traditional Software](https://www.youtube.com/watch?v=GAF_ychy32k), the [CC/CD talk](https://www.youtube.com/watch?v=z7T1pCxgvlA), the [full channel](https://www.youtube.com/@aishwaryanr4606)); and the [AI System Design course](https://maven.com/aishwarya-kiriti/genai-system-design) and [Advanced AI Evals course](https://maven.com/aishwarya-kiriti/evals-problem-first).
 - Anthropic, [Contextual Retrieval](https://www.anthropic.com/news/contextual-retrieval), [Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents), and [Multi-agent research](https://www.anthropic.com/engineering/multi-agent-research-system).
 - OpenAI, [A Practical Guide to Building Agents](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf).
 - Martin Fowler / Thoughtworks, [Emerging Patterns in Building GenAI Products](https://martinfowler.com/articles/gen-ai-patterns/).
@@ -426,4 +426,4 @@ The papers above are the ideas; these are the practice of assembling them. Start
 
 ## Related in this repo
 
-Topics: [RAG](../../topics/rag.md) · [Agents](../../topics/agents.md) · [Evaluation](../../topics/evaluation.md) · [Production and LLMOps](../../topics/production.md) · [Safety and Security](../../topics/safety-security.md). Guides: [Harness Engineering](../../resources/harness_engineering.md) · [Securing Agentic AI Systems](../../resources/securing_agentic_ai_systems.md). Prepping to be asked this? See the [interview prep hub](../../interview_prep/README.md).
+Topics: [RAG](../../../topics/rag.md) · [Agents](../../../topics/agents.md) · [Evaluation](../../../topics/evaluation.md) · [Production and LLMOps](../../../topics/production.md) · [Safety and Security](../../../topics/safety-security.md). Guides: [Harness Engineering](../../../resources/harness_engineering.md) · [Securing Agentic AI Systems](../../../resources/securing_agentic_ai_systems.md). Prepping to be asked this? See the [interview prep hub](../../README.md).
