@@ -1,0 +1,14 @@
+langgraph>=0.2
+langchain>=0.3
+langchain-core>=0.3
+
+# The real-model path is provider-agnostic (LangChain init_chat_model). To use a real model for
+# field extraction, install the integration for your provider, then set FINOPS_MODEL and the key:
+#   OpenAI:    pip install langchain-openai        FINOPS_MODEL=gpt-4o-mini      OPENAI_API_KEY=...
+#   Anthropic: pip install langchain-anthropic     FINOPS_MODEL=claude-sonnet-5  ANTHROPIC_API_KEY=...
+#   Gemini:    pip install langchain-google-genai  FINOPS_MODEL=gemini-2.0-flash GOOGLE_API_KEY=...
+# With no key set, the agent runs on the deterministic offline parser (no provider needed).
+
+# Optional, for production observability (see the case study, path to production):
+#   arize-otel
+#   openinference-instrumentation-langchain
