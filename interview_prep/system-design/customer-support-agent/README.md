@@ -1,6 +1,10 @@
 # Designing a Customer Support Agent
 
-A generative AI system design interview, worked end to end: **the question, a full answer, then the follow-ups**. It is built on one spine (the 5 layers below), grounded in Problem-First design, backed by real production data, and it ships with [runnable, provider-agnostic LangGraph code](code/) you can execute.
+## The interview question
+
+> "Design a customer support agent for an e-commerce company. It reads the help center and answers questions, can look up an order and open a support ticket through tools, and escalates to a human when it is unsure. Walk me through it."
+
+A generative AI system design interview, worked end to end: **the question, a full answer, then the follow-ups**. It is built on one spine (the 5 layers below), grounded in Problem-First design, backed by real-world benchmarks and deployment data, and it ships with [runnable, provider-agnostic LangGraph code](code/) you can execute.
 
 **AI system design is ML system design.** Start from requirements and metrics, then design the architecture to meet them. Pick the cheapest thing that clears the bar. Design for how it fails and how you measure it. Then scale. What is new is that the core component is non-deterministic, so evaluation moves from a final gate to the center of the design.
 
@@ -12,49 +16,11 @@ A generative AI system design interview, worked end to end: **the question, a fu
 
 ---
 
-## The spine: 5 layers we use for this system design
+## The spine
 
-A quick note before we get started. This is how we are going to look at the problem, and it is worth saying why up front. When you sit down to design an AI system, you need a structure to hang your reasoning on, or you jump straight to a vector database or a model name and skip the decisions that actually matter. These 5 layers are that structure. Most AI systems can be reasoned about as some combination of them, which is why we lead with the spine before touching the specific problem.
+This case is built on the same 5-layer spine as the rest of the collection: **1 the model**, **2 the wrapping layer** (the architecture: knowledge, tools, and memory), **3 evals and guardrails**, **4 production and ops**, and **5 optimization** (where multi-agent lives). System design is the work of composing them into one coherent system. For how we use this spine and why it is a starting point rather than a rulebook, see [the spine](../README.md#the-spine-how-we-think-about-ai-system-design).
 
-This is not the only way to do it, and it is not a universal template. It is a starting point. You decide which layers are load-bearing for the problem in front of you and go deep there, and as systems get more complex you will reach past this spine into more innovative approaches. For this case study, these 5 layers are our spine.
-
-- **Layer 1, the model.** The model at the center. Which model, why, and how you handle its non-determinism.
-- **Layer 2, the wrapping layer, or the architecture.** Knowledge (retrieval), tools, and memory composed around the model. This is where most of the design lives.
-- **Layer 3, evals and guardrails.** How you know any of it is good, and how you stop the bad in real time. Offline sets that gate releases, and online checks that act as guardrails on live traffic.
-- **Layer 4, production and ops.** The loop that makes it real: scale, latency, cost, reliability, observability.
-- **Layer 5, optimization.** Where you make a working system better and take on harder problems: model routing, caching, advanced retrieval, and multi-agent when a single agent genuinely is not enough.
-
-Composing these layers into one coherent system is what we mean by system design, and it is the whole of this writeup.
-
-```
-                          +-------------+
-                          |  1  MODEL   |          the model, the brain
-                          +------+------+
-                                 |
-      +------------- 2  WRAPPING LAYER (ARCHITECTURE) --------------+
-      |    [ Knowledge / RAG ]    [ Tools ]    [ Memory ]          |   the architecture
-      +---------------------------- + -----------------------------+   around the model
-                                 |
-                   +-------------+--------------+
-                   |                            |
-      3  EVALS & GUARDRAILS         4  PRODUCTION & OPS
-      (is it good? stop the bad)   (keep it alive at scale)
-                   |                            |
-      +----------------------- 5  OPTIMIZATION --------------------------+
-      |   make it better: routing, caching, advanced retrieval,          |
-      |   multi-agent (only when a single agent is not enough)           |
-      +-----------------------------------------------------------------+
-
-      system design = composing all of the above into one coherent system
-```
-
-The rest of this case study walks these layers for a support agent, iterates the design, then takes the follow-ups an interviewer actually asks.
-
----
-
-## The question
-
-> "Design a customer support agent for an e-commerce company. It reads the help center and answers questions, can look up an order and open a support ticket through tools, and escalates to a human when it is unsure. Walk me through it."
+The rest of this case study walks these layers for this problem, going deepest where it is hardest.
 
 ---
 
@@ -62,7 +28,7 @@ The rest of this case study walks these layers for a support agent, iterates the
 
 ### Step 1: scope before you architect
 
-The first move is not a vector database. It is clarifying the problem, because in AI the largest failures are designed in before a single prompt is written. Pin down 4 things ([Problem-First](https://maven.com/aishwarya-kiriti/genai-system-design)).
+The first move is clarifying the problem rather than reaching for a vector database, because in AI the largest failures are designed in before a single prompt is written. Pin down 4 things ([Problem-First](https://maven.com/aishwarya-kiriti/genai-system-design)).
 
 > **What is Problem-First?** A framework we developed and teach at [LevelUp Labs](https://levelup-labs.ai): work backwards from the business problem and the user's pain, scope hard, and only then reach for AI, choosing the smallest intervention that moves a measurable outcome. It is the spine of our [AI System Design course](https://maven.com/aishwarya-kiriti/genai-system-design). The 4 questions below are the short version.
 
@@ -79,7 +45,7 @@ The clarifying questions you need to ask (their answers set every later tradeoff
 
 Before architecting, state what you are assuming about the data, because every method in the wrapping layer below is chosen for a specific shape of data. Change an assumption and the method changes with it. For this case study, assume:
 
-- **Corpus: small and semi-structured.** A few hundred to a few thousand help-center articles in HTML and markdown, mostly prose with some tables (shipping fees, return windows) and step lists, updated occasionally (policies change monthly), not by the second. *This is why* a single vector index is plenty and freshness means re-indexing on edit rather than streaming.
+- **Corpus: small and semi-structured.** A few hundred to a few thousand help-center articles in HTML and markdown, mostly prose with some tables (shipping fees, return windows) and step lists, updated occasionally (policies change monthly) rather than by the second. *This is why* a single vector index is plenty and freshness means re-indexing on edit rather than streaming.
 - **Questions: short, and often carrying exact tokens.** One or two sentences. Many contain order ids, SKUs, tracking numbers, or error codes; many are paraphrases of the same intent ("can I send it back" means the return policy). *This is why* retrieval here is hybrid: dense for meaning and paraphrase, sparse for the exact ids.
 - **Answers: usually one article.** A typical question is resolved by a single article or section; few need several documents stitched together. *This is why* single-shot retrieval is enough and multi-hop methods are not needed yet.
 - **Volume and latency: chat-like.** Thousands of conversations a day, a response expected in a few seconds, and questions that repeat heavily. *This is why* there is a latency budget the reranker must fit inside, and why caching pays off.
@@ -97,14 +63,50 @@ Keep these in view as you read the wrapping layer: each choice below points back
 **Knowledge (retrieval).** The agent must ground every answer in your help center, or it invents policy. That is a retrieval pipeline, and every stage is a decision whose right answer depends on your data. Each choice below points back to the [assumptions](#the-assumptions-we-make-about-the-data-and-the-use-case) above. Here is the pipeline, then each stage: why it matters and what data tells you how to set it.
 
 ```
- help-center docs --1.PARSE/INGEST--> [structured text + metadata] --2.CHUNK--> [chunks]
-                                                                                    |
-                                                                              3.EMBED
-                                                                                    v
- question --5.RETRIEVE (hybrid: dense + BM25)--> candidates --6.RERANK--> top few --> 7.RELEVANCE FLOOR
-     ^                                                                                      |
-     |                                                              below floor? retrieve nothing --> ESCALATE
-     +------------------------------------ 4. VECTOR STORE / INDEX --------------------------+
+┌──────────────────────────────────────────────────────┐
+│ Knowledge pipeline: retrieval with a relevance floor │
+└──────────────────────────────────────────────────────┘
+
+  ┌────────────────────────────┐
+  │      Help-center docs      │
+  └────────────────────────────┘
+                 ▼
+  ┌────────────────────────────┐
+  │     1  Parse / ingest      │
+  │ structured text + metadata │
+  └────────────────────────────┘
+                 ▼
+  ┌────────────────────────────┐
+  │          2  Chunk          │
+  └────────────────────────────┘
+                 ▼
+  ┌────────────────────────────┐
+  │          3  Embed          │
+  └────────────────────────────┘
+                 ▼
+  ┌────────────────────────────┐
+  │  4  Vector store / index   │
+  └────────────────────────────┘
+                 ▼
+  ┌────────────────────────────┐
+  │        5  Retrieve         │
+  │    hybrid: dense + BM25    │
+  └────────────────────────────┘
+                 ▼
+  ┌────────────────────────────┐
+  │         6  Rerank          │
+  │          top few           │
+  └────────────────────────────┘
+                 ▼
+  ┌────────────────────────────┐
+  │     7  Relevance floor     │
+  └──────────────┬─────────────┘
+            ┌────┴────────────────┐
+above floor ▼                     ▼ below floor
+  ┌───────────────────┐  ┌────────────────┐
+  │ To agent / answer │  │ Escalate / say │
+  └───────────────────┘  │  I don't know  │
+                         └────────────────┘
 ```
 
 **1. Parse and ingest.** Help-center content is HTML and markdown with real structure: headings, tables, ordered steps. Naive text extraction flattens that and the retriever loses the scent. Parse structure-aware, and for any PDFs or complex documents use a layout-aware parser ([Docling](https://github.com/docling-project/docling), [LlamaParse](https://github.com/run-llama/llama_cloud_services), [Reducto](https://reducto.ai/)) rather than a raw text dump. Attach metadata to every chunk (article id, section, `updated_at`, locale, product), because freshness, filtering, and access control all ride on it. *Given our assumption* that the corpus is mostly prose with a few tables, a structure-aware markdown parse covers most of it, and you reach for a layout parser only for the shipping and fee tables. *What data decides it:* audit your messiest documents (nested tables, multi-column layouts) and measure how often parsing mangles them.
@@ -125,7 +127,7 @@ Because our questions carry both meaning and exact ids, you want both methods, w
 When a question is too short or vague to retrieve well, three techniques rewrite it before searching, and you can add them one at a time as needed:
 - **Query rewriting**: have the model turn a fragment into a fuller question ("broken" becomes "my item arrived damaged, what are my options") that retrieves better. Useful when users type terse fragments. [[explainer](https://arxiv.org/abs/2305.14283)]
 - **Multi-query**: have the model produce several phrasings of the same question, retrieve for each, and combine the results, so one awkward wording does not sink the search. [[explainer](https://python.langchain.com/docs/how_to/MultiQueryRetriever/)]
-- **HyDE** (Hypothetical Document Embeddings): have the model draft a rough, made-up answer to the question, then retrieve the real chunks closest to that draft, on the idea that an answer resembles the target document more than the bare question does. You can use HyDE when questions and answers tend to be worded very differently. [[explainer](https://arxiv.org/abs/2212.10496)]
+- **HyDE** (Hypothetical Document Embeddings): have the model draft a rough, made-up answer to the question, then retrieve the real chunks closest to that draft, on the idea that an answer resembles the target document more than the bare question does. You can use HyDE when questions and answers tend to be worded differently. [[explainer](https://arxiv.org/abs/2212.10496)]
 
 *How you would evaluate it:* bucket a sample of real questions by type and see where dense-only retrieval misses. If exact-id lookups are a meaningful share of those misses, the sparse arm is not optional. Watch a retrieval-quality measure (recall@k is a common one) as you tune, where the exact metric matters less than tracking the same one over time.
 
@@ -140,6 +142,11 @@ The reason a reranker beats the first-stage order comes down to *how* it reads. 
 **When to reach further.** [GraphRAG](https://arxiv.org/abs/2404.16130) for questions that hop across several documents, and agentic retrieval (the agent issues its own follow-up searches) when one query cannot get there. *We assumed a single article usually answers,* so single-shot hybrid retrieval is enough here; drop that assumption, with multi-hop questions or a product knowledge graph, and GraphRAG earns its place. The repo's [RAG topic page](../../../topics/rag.md) collects the primary sources for each of these stages.
 
 > **Real finding: [Lost in the Middle](https://arxiv.org/abs/2307.03172).** Accuracy drops when the relevant passage sits in the middle of a long context rather than at the ends. More retrieved text is not a free win, which is why you rerank and cap k instead of stuffing the window.
+
+**What is shifting in 2026.** Two changes sit alongside this pipeline and complement it, and neither retires the foundation above. Understanding the pipeline is what lets you place them well.
+
+- **Agentic retrieval.** Beyond one static retrieve step, the agent can issue its own iterative searches, read what returns, and decide whether to search again before it answers ([agentic RAG explainer](https://weaviate.io/blog/what-is-agentic-rag)). It helps on the harder ticket that needs a couple of hops, a policy plus a specific exception, say. For the repetitive 70% that a single article resolves, the classic single-shot pipeline stays the right tool, because it is cheaper, faster, and precise, so you keep it as the default and let the agent loop earn its place on the questions that need it.
+- **Long-context models.** Context windows now reach into the millions of tokens, so with a corpus of a few thousand articles you can fit far more into the prompt and lean less on aggressive chunking ([long context](https://ai.google.dev/gemini-api/docs/long-context)). That simplifies the build for a small help center. Retrieval still earns its place at chat volume: pulling the few right chunks is cheaper and faster per request than sending a large window every time, precision keeps the answer grounded in the right article, freshness comes from re-indexing on edit, and a long window can bury the relevant passage in the middle ([Lost in the Middle](https://arxiv.org/abs/2307.03172)). So you can relax chunking as windows grow, and keep retrieval as the primary path for cost, speed, precision, and freshness.
 
 **Tools (actions).** Tools are the agent's hands. Each one is a typed, allowlisted contract rather than open-ended code execution.
 
@@ -165,9 +172,11 @@ Together, knowledge, tools, and memory are the architecture wrapped around the m
 
 **Layer 3, evals and guardrails.** You cannot ship what you cannot measure, and for an agent this is the center of the design, worked throughout the build. Evals tell you whether the system is good; guardrails are the subset of those checks that run in real time and act, blocking an ungrounded or unsafe answer and firing the human handoff the moment something is off. There is no single "accuracy" number, and no generic metric you can copy off a shelf, because "good" means something different for every product. So start where we teach you to start: **from failure modes.** Ask what could go wrong that would be unacceptable for this business (a wrong refund, a hallucinated policy, a missed escalation), then translate each into an observable, measurable behavior. The metrics below are a menu you draw from once you know your failure modes, and the target is the minimum set that gives the most signal for your product.
 
+**Measure against today's baseline rather than an abstract target.** The right bar is the status quo: what your current human support agents resolve and how satisfied customers are with them. Where questions go unanswered today because staffing every one is too costly, an agent that handles them reliably clears a low bar by existing. Where human agents already resolve a queue well, the AI has to match or beat their resolution rate and satisfaction, measured retrospectively from your historical tickets. That keeps the eval honest and tied to the business decision rather than chasing a round accuracy number.
+
 Evaluate at three levels: **each component** (did retrieval find the right doc, did the model ground its answer, did it call the right tool), **the whole task** end to end (was the ticket actually resolved), and **live traffic** (is it still good in production).
 
-> **Real finding: [tau-bench](https://arxiv.org/abs/2406.12045).** On a tool-using agent, a single-attempt pass rate looks respectable, but pass^k (succeed on all k independent tries) collapses as k grows. A support agent that works 1 time in 1 and fails 1 time in 4 is not shippable. Reliability is the bar, above average accuracy.
+> **Real finding: [tau2-bench](https://arxiv.org/abs/2506.07982) (2025).** On a tool-using agent, a single-attempt pass rate looks respectable, but pass^k (succeed on all k independent tries) collapses as k grows. A support agent that passes on a single try yet fails 1 run in 4 is not shippable. Reliability is the bar, above average accuracy.
 
 **Three ways to measure a behavior.** Every metric is implemented one of three ways. Reach for the cheapest and most reliable one the behavior allows.
 - **Code-based metrics.** Deterministic checks: did it call `order_lookup` with the right id, is the output valid, does the answer cite a real source, did it refuse. Fast, reliable, cheap. Use wherever "good" is objectively checkable, and compare against a reference dataset (golden answers) here.
@@ -189,7 +198,7 @@ Most real systems use all three together.
 
 That table is deliberately broad so you know the landscape. Treat it as a reference to draw from: these are the metrics teams typically reach for, and your job is to choose wisely and instrument only the few that earn their place. A dashboard with 30 metrics and no owner tells you nothing. Pick the two or three per component that map to your real failure modes and drop the rest.
 
-Report **pass^k** alongside the average, because a support agent that succeeds 1 try in 1 yet fails 1 in 4 is not shippable (the tau-bench finding above). For this product, faithfulness is the highest-signal single metric: it measures hallucination directly, the failure that erodes trust fastest.
+Report **pass^k** alongside the average, because a support agent that succeeds 1 try in 1 yet fails 1 in 4 is not shippable (the tau2-bench finding above). For this product, faithfulness is the highest-signal single metric: it measures hallucination directly, the failure that erodes trust fastest.
 
 **Choosing which metrics to actually run: Impact, Reliability, Cost.** Running every metric is expensive, so score each candidate on three dimensions and keep the high-signal ones.
 - **Impact:** does it reveal an actionable problem, or is it merely interesting?
@@ -221,24 +230,13 @@ The metrics you watch on live traffic:
 
 Then run the discovery loop, because users will always find failures your metrics were never built for. Sample live traffic on **signals** (thumbs-down, retries, rephrasing, explicit escalation requests, abandonment). When a signal keeps firing but your metrics look clean, that gap is the tell: a human reads those traces, names the quality dimension you were not measuring, and it becomes a new metric added back into the reference dataset. Evaluation is never finished. You build for the failures you can anticipate, and you monitor to discover the ones you cannot.
 
-```
-   user signals (thumbs-down, retries, escalations, abandonment)
-        |
-   sample + read traces --> metrics miss it? --> name new dimension
-        ^                                              |
-        |                                       new metric into
-   reference dataset <--- offline gate (CI) <---  reference set
-        |
-   pass gate --> canary --> deploy --> guardrails + flywheel on live traffic ---+
-        ^                                                                        |
-        +------------------------ signals feed back --------------------------- +
-```
+![Eval and discovery loop: pre-deployment validation, then production monitoring, with the reference set growing each cycle](../assets/eval_discovery_loop.png)
 
 Instrument the LangGraph app with OpenInference so every node, tool call, and model call becomes a span in **Arize** (Phoenix / AX), which is where the online evals and drift alerts run. Reading traces is how you find the exact step where the agent's judgment diverged from yours. Tooling worth knowing: Ragas and DeepEval for component metrics, promptfoo for CI gates, Arize Phoenix for tracing and online evals. *Deeper:* [AI Evals for Everyone](../../../free_courses/ai_evals_for_everyone/README.md), our [Advanced AI Evals course](https://maven.com/aishwarya-kiriti/evals-problem-first), and the [Evaluation topic](../../../topics/evaluation.md).
 
 **Layer 4, production and ops.** The loop that keeps it alive at scale: vector search with freshness and access control, reliability, latency budgets, and observability so every step is traceable. Detail is in Follow-ups 1 and 3.
 
-**Layer 5, optimization.** Where a working system gets better and takes on harder problems: model routing (a cheap model for the easy majority, a strong model for the rest), prompt and semantic caching, advanced retrieval, and multi-agent. For this system the optimizations that pay off are routing and caching; multi-agent is not needed, and Follow-up 5 shows why. As cases get more complex, this is where the more innovative approaches enter.
+**Layer 5, optimization.** Where a working system gets better and takes on harder problems: model routing (a cheap model for the easy majority, a strong model for the rest), prompt and semantic caching, advanced retrieval, and multi-agent. For this system routing and caching pay off first, and an orchestrator over specialist sub-agents is the natural next step as the support surface grows into distinct domains, which Follow-up 5 designs.
 
 Composing these layers into one coherent system is exactly what Step 3 does.
 
@@ -249,19 +247,44 @@ You do not have to build this in one shot, and it helps to say how you would get
 Composed, the layers give one architecture:
 
 ```
-   +---------------------- OBSERVABILITY: every node, tool, and model call is a span (Arize) ----------------------+
-   |                                                                                                              |
- user --> INPUT GUARDRAIL --> RETRIEVE ---------> AGENT LOOP (bounded, ReAct) <------> TOOLS (allowlisted, typed)
-          (injection, PII)    hybrid + rerank            |            ^                order_lookup / create_ticket
-                              + relevance floor          |            |                / issue_refund*
-                                                         v            |
-                                              MEMORY (session + retrieved customer context)
-                                                         |
-                                                         v
-                                    OUTPUT GUARDRAIL --> grounded & safe? --yes--> ANSWER + cited source
-                                                                    \--no / low confidence / high-impact-->
-                                                                                        ESCALATE --> human
-                                              (* issue_refund requires human approval, Follow-up 2)
+┌───────────────────────────────────────────────────────────────────┐
+│ Observability: every node, tool, and model call is a span (Arize) │
+└───────────────────────────────────────────────────────────────────┘
+
+  ┌────────────────────┐
+  │        User        │
+  └────────────────────┘
+             ▼
+  ┌────────────────────┐
+  │  Input guardrail   │
+  │  injection · PII   │
+  └────────────────────┘
+             ▼
+  ┌────────────────────┐
+  │      Retrieve      │
+  │ hybrid · rerank ·  │
+  │  relevance floor   │
+  └────────────────────┘
+             ▼           act / observe
+  ┌────────────────────┐    ┌─────────────────────┐
+  │     Agent loop     │    │ Tools (allowlisted) │
+  │   bounded ReAct    │◀──▶│   order_lookup ·    │
+  └────────────────────┘    │   create_ticket ·   │
+             ▼              │    issue_refund*    │
+  ┌────────────────────┐    └─────────────────────┘
+  │       Memory       │
+  │ session + customer │
+  └────────────────────┘
+             ▼
+  ┌────────────────────┐
+  │  Output guardrail  │
+  │  grounded & safe?  │
+  └──────────┬─────────┘
+          ┌──┴────────────────┐
+      yes ▼                   ▼ no / high-impact
+  ┌──────────────┐  ┌──────────────────┐
+  │ Answer + src │  │ Escalate → human │
+  └──────────────┘  └──────────────────┘
 ```
 
 Read it as the spine composed: the model (layer 1), wrapped in retrieval, tools, and memory (layer 2), gated by evals (layer 3) that run inline as guardrails and offline as a flywheel, run under production observability (layer 4), with optimization (layer 5) held to what this system actually needs, which is model routing and caching rather than a second agent. Composing exactly these pieces into one coherent system is the system design. The relevance floor and the output guardrail are what make escalation the safe default: when the agent cannot ground an answer or the action is high-impact, it hands off to a human with full context rather than guessing.
@@ -289,14 +312,34 @@ Name where it breaks first, then scale that, cheapest lever first.
 - **Infrastructure (layer 4, production and ops).** Horizontal scale behind a queue, connection pooling to tool services, backpressure so a spike degrades gracefully instead of failing.
 
 ```
- clients --> gateway --> [input guardrails] --> agent service (LangGraph, N replicas)
-                                                    |
-        +-------------------+---------------+-------+-------------+
-   vector store        tool services     model router       memory store
-   + reranker          (orders,tickets)  (small <-> large)  (conversation)
-        |                                                        |
-   ingestion / freshness                                   Arize (traces,
-   + access control                                        online evals, alerts)
+┌─────────────────────┐
+│ Production topology │
+└─────────────────────┘
+
+                                               ┌──────────────────┐
+                                               │     Clients      │
+                                               └──────────────────┘
+                                                         ▼
+                                               ┌──────────────────┐
+                                               │     Gateway      │
+                                               └──────────────────┘
+                                                         ▼
+                                               ┌──────────────────┐
+                                               │ Input guardrails │
+                                               └──────────────────┘
+                                                         ▼
+                                            ┌────────────────────────┐
+                                            │     Agent service      │
+                                            │ LangGraph · N replicas │
+                                            └────────────┬───────────┘
+                        ┌────────────────────────────────┴────────────────────────────────┐
+                        ▼                     ▼                     ▼                     ▼
+              ┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐
+              │   Vector store   │  │  Tool services   │  │   Model router   │  │   Memory store   │
+              │    + reranker    │  │ orders · tickets │  │  small ↔ large   │  │   conversation   │
+              └──────────────────┘  └──────────────────┘  └──────────────────┘  └──────────────────┘
+
+  ingestion / freshness + access control feed the vector store; Arize collects traces, online evals, and alerts
 ```
 
 Put numbers on it: tokens per request, an approximate cost per resolved ticket, and a latency budget split across stages. *Deeper:* [Production and LLMOps](../../../topics/production.md).
@@ -311,10 +354,19 @@ Separate answering from acting, and gate the acting.
 - **Untrusted input.** Retrieved documents and user messages are untrusted; the agent never executes instructions found in them. The sharp way to see the risk is the **[lethal trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/)**:
 
 ```
-     untrusted content   +   access to private data   +   ability to act/communicate
-              \                       |                            /
-               \______________ any 2 are manageable ____________/
-                          all 3 together is dangerous
+  The lethal trifecta
+
+           ┌───────────────────┐   ┌──────────────┐   ┌──────────────────┐
+           │ Untrusted content │   │  Access to   │   │ Ability to act / │
+           │                   │   │ private data │   │   communicate    │
+           └─────────┬─────────┘   └───────┬──────┘   └─────────┬────────┘
+                     └─────────────────────┼────────────────────┘
+                                           ▼
+                          ┌────────────────────────────────┐
+                          │ All three at once is dangerous │
+                          └────────────────────────────────┘
+
+            any two are manageable; keep all three from meeting in one path
 ```
 
 - **Blast radius.** Least-privilege tool scopes, an immutable audit log of every action, and a design where the worst a jailbreak achieves is a needless escalation, while a wrongful refund stays impossible.
@@ -346,7 +398,7 @@ That single constraint promotes 2 normally-optional components into load-bearing
 
 ## Follow-up 5: "When would you use multiple agents, and how would you extend this design?"
 
-For this support flow, a single agent with tools is the right call: the conversation is one coherent thread, and a second agent would add coordination cost while the capability stays the same. As the scope grows, multi-agent (layer 5, optimization) becomes the natural next step, so it is worth knowing exactly when it earns its place and how you would extend this design to get there.
+You begin this support flow as a single agent with tools on purpose: the conversation is one coherent thread, and starting simple lets you prove retrieval, tools, and escalation before you add moving parts. As the product grows into distinct support domains, an orchestrator routing to specialist sub-agents is the expected next step, and it genuinely helps once billing, returns, technical troubleshooting, and account security each need their own knowledge and tools. It is worth designing for now, so you know when to reach for it and how the architecture extends.
 
 **When multi-agent earns its place:**
 - **The work decomposes into independent sub-tasks that can run in parallel.** The quality and latency gains then outweigh the extra tokens. Research-style tasks that fan out across many sources are the classic fit.
@@ -357,21 +409,47 @@ For this support flow, a single agent with tools is the right call: the conversa
 **How you would extend this architecture.** Keep the single-agent design intact and add an orchestrator (a supervisor that classifies intent and delegates) in front of specialist sub-agents. Each specialist owns its own tools, retrieval scope, and memory, and the same input and output guardrails, evals, escalation, and observability now wrap the whole system across agents.
 
 ```
-   +------------------------ OBSERVABILITY: spans across every agent -------------------------+
-   |                                                                                          |
- user --> INPUT GUARDRAIL --> ORCHESTRATOR (classify intent, delegate, then compose the reply)
-                                        |
-          +-----------------+----------+-----------+---------------------+
-          v                 v                      v                     v
-     RETURNS agent     BILLING agent         TECH-SUPPORT agent     ACCOUNT agent
-     returns KB        billing KB             troubleshooting KB     auth-gated tools
-     + return tools    + refund*              + device tools         + identity checks
-          |                 |                      |                     |
-          +-----------------+----------+-----------+---------------------+
-                                       v
-                          OUTPUT GUARDRAIL --> grounded & safe? --yes--> ANSWER
-                                                        \--no / high-impact--> ESCALATE --> human
-                              (* refund still requires human approval, Follow-up 2)
+┌─────────────────────────────────────────┐
+│ Observability: spans across every agent │
+└─────────────────────────────────────────┘
+
+                                  ┌──────────────────┐
+                                  │       User       │
+                                  └──────────────────┘
+                                            ▼
+                                  ┌──────────────────┐
+                                  │ Input guardrail  │
+                                  │ injection · PII  │
+                                  └──────────────────┘
+                                            ▼
+                        ┌──────────────────────────────────────┐
+                        │             Orchestrator             │
+                        │ classify intent · delegate · compose │
+                        └───────────────────┬──────────────────┘
+                 ┌──────────────────────────┴──────────────────────────┐
+                 ▼                 ▼                 ▼                 ▼
+         ┌──────────────┐  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐
+         │   Returns    │  │   Billing    │  │ Tech-support │  │   Account    │
+         │    agent     │  │    agent     │  │    agent     │  │    agent     │
+         └───────┬──────┘  └───────┬──────┘  └───────┬──────┘  └───────┬──────┘
+                 └─────────────────┴────────┬────────┴─────────────────┘
+                                            ▼
+                                  ┌───────────────────┐
+                                  │   Orchestrator    │
+                                  │ compose the reply │
+                                  └───────────────────┘
+                                            ▼
+                                  ┌──────────────────┐
+                                  │ Output guardrail │
+                                  │ grounded & safe? │
+                                  └─────────┬────────┘
+                                 ┌──────────┴────────────┐
+                             yes ▼                       ▼ no / high-impact
+                         ┌──────────────┐      ┌──────────────────┐
+                         │ Answer + src │      │ Escalate → human │
+                         └──────────────┘      └──────────────────┘
+
+  each agent has its own KB + tools; refund and identity actions need human approval
 ```
 
 > **Real data: Anthropic's multi-agent research system.** A lead-plus-subagents setup beat a single agent by about 90.2% on their research eval, while using about 15x the tokens, and token usage explained roughly 80% of the performance gap. The takeaway is to spend those tokens where task value and genuine parallelism justify them, and to stay single-agent where they do not. [[Anthropic](https://www.anthropic.com/engineering/multi-agent-research-system)]
@@ -397,7 +475,7 @@ Build the harness on-policy and keep it a layer rather than a fork. Keep the mod
 - **Klarna (2024 to 2025):** 700 agents' worth of work, 2.3M chats in month 1 (about two-thirds of volume), 11 min to under 2 min, 35+ languages, 25% fewer repeat inquiries, ~40M dollars profit, then a public walk-back toward keeping humans reachable. Deflection is real; the human path is not optional. [[press](https://www.klarna.com/international/press/klarna-ai-assistant-handles-two-thirds-of-customer-service-chats-in-its-first-month/)] [[walk-back](https://www.customerexperiencedive.com/news/klarna-reinvests-human-talent-customer-service-AI-chatbot/747586/)]
 - **Anthropic multi-agent:** +90.2% on research, ~15x tokens, token use explains ~80% of variance; only worth it when task value beats token cost. [[blog](https://www.anthropic.com/engineering/multi-agent-research-system)]
 - **Prompt caching:** up to ~90% cost and ~85% latency reduction on the cached portion; the highest-leverage support-agent optimization given identical system prompts.
-- **tau-bench:** pass^k collapses as k grows; reliability is the shippable bar, above average accuracy.
+- **tau2-bench (2025):** pass^k collapses as k grows; reliability is the shippable bar, above average accuracy.
 - **Lost in the Middle:** long context buries relevant passages; retrieval needs a relevance floor and a reranker.
 
 ---
@@ -409,7 +487,7 @@ Build the harness on-policy and keep it a layer rather than a fork. Keep the mod
 - [Lost in the Middle](https://arxiv.org/abs/2307.03172) (Liu 2023): why more context is not free.
 - [Self-RAG](https://arxiv.org/abs/2310.11511) and [Corrective RAG](https://arxiv.org/abs/2401.15884): retrieval that decides when to retrieve, re-retrieve, or abstain.
 - [Chain-of-Verification](https://arxiv.org/abs/2309.11495): check the draft before returning it, to cut hallucination.
-- [tau-bench](https://arxiv.org/abs/2406.12045): evaluating tool-using agents on multi-turn tasks with a reliability metric.
+- [tau2-bench](https://arxiv.org/abs/2506.07982) (2025): evaluating tool-using agents on multi-turn tasks in a dual-control setting, reporting pass^k so reliability shows up alongside average accuracy.
 - Anthropic, [Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents) and [How we built our multi-agent research system](https://www.anthropic.com/engineering/multi-agent-research-system).
 
 ## Further reading
@@ -420,7 +498,7 @@ The papers above are the ideas; these are the practice of assembling them. Start
 - Anthropic, [Contextual Retrieval](https://www.anthropic.com/news/contextual-retrieval), [Building Effective Agents](https://www.anthropic.com/engineering/building-effective-agents), and [Multi-agent research](https://www.anthropic.com/engineering/multi-agent-research-system).
 - OpenAI, [A Practical Guide to Building Agents](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf).
 - Martin Fowler / Thoughtworks, [Emerging Patterns in Building GenAI Products](https://martinfowler.com/articles/gen-ai-patterns/).
-- [Arize observability docs](https://arize.com/docs/) and [LangGraph conceptual docs](https://langchain-ai.github.io/langgraph/concepts/), the tracing loop and state-machine primitives the [code](code/) uses.
+- [Arize observability docs](https://arize.com/docs/) and [LangGraph conceptual docs](https://langchain-ai.github.io/langgraph/concepts/why-langgraph/), the tracing loop and state-machine primitives the [code](code/) uses.
 
 ---
 
