@@ -1,7 +1,6 @@
 # AI Interview Hub
 
-<!-- Hero image goes here: drop the roadmap graphic at img/ai_interview_hub.png and uncomment -->
-<!-- ![AI Interview Hub](img/ai_interview_hub.png) -->
+![AI Interview Hub: role-based prep, worked system design, and shared AI depth](img/ai_interview_hub.png)
 
 The most complete, role-specific map of how AI interviews actually work in 2026, and everything you need to walk in ready.
 
