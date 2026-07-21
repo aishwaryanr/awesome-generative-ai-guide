@@ -4,7 +4,7 @@
 
 The most complete, role-specific map of how AI interviews actually work in 2026, and everything you need to walk in ready.
 
-This hub is reverse-engineered from **500+ real job descriptions** and **direct conversations with people who hire at FAANG+, OpenAI, Anthropic, and peer labs**. It is not generic advice scraped off the internet. Every role, every round, and every question bank here reflects what these loops are really testing, and how they have shifted as the job changed.
+This hub is reverse-engineered from **500+ real job descriptions** and **direct conversations with people who hire at FAANG+, Bay Area startups and frontier model companies**. It is not generic advice scraped off the internet. Every role, every round, and every question bank here reflects what these loops are really testing, and how they have shifted as the job changed.
 
 Generative-AI interviews stopped testing one generic skill set. What an AI Engineer is grilled on looks nothing like what a Product Manager, a Forward-Deployed Engineer, or a Strategist faces. So this hub is organized by the job you are actually interviewing for: pick your role, work its folder end to end, and pull from a shared library of worked system-design cases, concept deep-dives, and free courses.
 
