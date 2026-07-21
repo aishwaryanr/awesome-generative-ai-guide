@@ -54,6 +54,8 @@ Free, created by [Aishwarya Naresh Reganti](https://www.linkedin.com/in/aishwary
 
 For every free course (LevelUp Labs originals and vetted external), organized by topic, see the full **[All Free Courses, by Topic](courses.md)** list.
 
+**Want to learn live with us?** The courses above are free. We also teach cohort-based courses on Maven, and more than 3,000 builders have learned with us so far: **[AI System Design](https://maven.com/aishwarya-kiriti/genai-system-design)** (design real generative-AI systems end to end, the Problem-First way) and **[Advanced AI Evals](https://maven.com/aishwarya-kiriti/evals-problem-first)** (the evaluation and improvement loops behind reliable LLM and agent products). See [all our live courses](https://maven.com/aishwarya-kiriti).
+
 ---
 
 ## :star: Top AI Tools List

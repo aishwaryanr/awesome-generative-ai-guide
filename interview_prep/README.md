@@ -196,6 +196,7 @@ Concept-by-concept reference pages. Every loop expects fluency in these. Read th
 ### Courses
 
 - **[All free courses, by topic](../courses.md):** the full catalog in this guide, grouped by topic, starting with LevelUp's own material. Each role folder also points to the best courses for that specific loop.
+- **Learn live with us.** Beyond the free material, we teach cohort-based courses on Maven, and more than 3,000 builders have learned with us so far. The two most relevant to this hub: **[AI System Design](https://maven.com/aishwarya-kiriti/genai-system-design)** and **[Advanced AI Evals](https://maven.com/aishwarya-kiriti/evals-problem-first)**. See [all our live courses](https://maven.com/aishwarya-kiriti).
 
 ### 60 GenAI questions (fundamentals warm-up)
 
