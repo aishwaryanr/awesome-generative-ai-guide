@@ -1,6 +1,6 @@
 # Runnable example: the customer support agent
 
-A small, readable LangGraph implementation of the agent designed in the [case study](../README.md). It implements the core architecture: retrieval to ground answers, a bounded agent loop that can call tools, a guardrail that refuses or escalates when an answer is not grounded, and a human handoff. It is example code, not a scaled system. The path to real scale, optimization, and production observability is described in the case study follow-ups, not coded here.
+A small, readable LangGraph implementation of the agent designed in the [case study](../README.md). It implements the core architecture: retrieval to ground answers, a bounded agent loop that can call tools, a guardrail that refuses or escalates when an answer is not grounded, and a human handoff. It is example code rather than a scaled system. The path to real scale, optimization, and production observability is described in the case study follow-ups rather than coded here.
 
 ## Run it
 
@@ -12,7 +12,7 @@ python run.py                              # run all scenarios and self-check
 python run.py "Where is my order 5012?"    # ask the agent your own question
 ```
 
-It runs fully offline, so no API key is needed. With no argument, `run.py` sends 5 scenarios through the graph (an answered policy question, an order lookup via a tool, a ticket creation, a refund that escalates for human approval, and an out-of-scope question that escalates) and asserts the expected path for each, so it doubles as a test. Pass a question in quotes to ask the agent directly.
+It runs fully offline, so no API key is needed, and it ships with small built-in sample data so it works out of the box. With no argument, `run.py` sends 5 scenarios through the graph (an answered policy question, an order lookup via a tool, a ticket creation, a refund that escalates for human approval, and an out-of-scope question that escalates) and asserts the expected path for each, so it doubles as a test. Pass a question in quotes to ask the agent directly.
 
 ## Where to start reading
 
