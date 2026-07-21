@@ -8,7 +8,7 @@ This hub is reverse-engineered from **500+ real job descriptions** and **direct 
 
 Generative-AI interviews stopped testing one generic skill set. What an AI Engineer is grilled on looks nothing like what a Product Manager, a Forward-Deployed Engineer, or a Strategist faces. So this hub is organized by the job you are actually interviewing for: pick your role, work its folder end to end, and pull from a shared library of worked system-design cases, concept deep-dives, and free courses.
 
-Built by **[Aishwarya Naresh Reganti](https://www.linkedin.com/in/aishwarya-naresh-reganti/)**, CEO of LevelUp Labs, and **[Kiriti Badam](https://www.linkedin.com/in/sai-kiriti-badam/)**, Applied AI at OpenAI Codex.
+Built by **[Aishwarya Naresh Reganti](https://www.linkedin.com/in/areganti/)**, CEO of LevelUp Labs, and **[Kiriti Badam](https://www.linkedin.com/in/sai-kiriti-badam/)**, Applied AI at OpenAI Codex.
 
 **What is inside**
 
