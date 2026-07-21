@@ -1,0 +1,16 @@
+langgraph>=0.2
+langchain>=0.3
+langchain-core>=0.3
+
+# ALL DATA IN THIS EXAMPLE IS SYNTHETIC. Never point it at real protected health information.
+
+# The real-model path is provider-agnostic (LangChain init_chat_model). To use a real model,
+# install the integration for your provider, then set CLINICAL_SCRIBE_MODEL and the matching key:
+#   OpenAI:    pip install langchain-openai        CLINICAL_SCRIBE_MODEL=gpt-4o-mini      OPENAI_API_KEY=...
+#   Anthropic: pip install langchain-anthropic     CLINICAL_SCRIBE_MODEL=claude-sonnet-5  ANTHROPIC_API_KEY=...
+#   Gemini:    pip install langchain-google-genai  CLINICAL_SCRIBE_MODEL=gemini-2.0-flash GOOGLE_API_KEY=...
+# With no key set, the scribe runs on the deterministic offline policy (no provider needed).
+
+# Optional, for production observability (see the case study, path to production):
+#   arize-otel
+#   openinference-instrumentation-langchain

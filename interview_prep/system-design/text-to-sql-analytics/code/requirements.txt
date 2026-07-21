@@ -1,0 +1,15 @@
+langgraph>=0.2
+langchain>=0.3
+langchain-core>=0.3
+# sqlite3 is part of the Python standard library, so there is nothing to install for the database.
+
+# The real-model path is provider-agnostic (LangChain init_chat_model). To use a real model,
+# install the integration for your provider, then set SQL_AGENT_MODEL and the matching key:
+#   OpenAI:    pip install langchain-openai        SQL_AGENT_MODEL=gpt-4o-mini      OPENAI_API_KEY=...
+#   Anthropic: pip install langchain-anthropic     SQL_AGENT_MODEL=claude-sonnet-5  ANTHROPIC_API_KEY=...
+#   Gemini:    pip install langchain-google-genai  SQL_AGENT_MODEL=gemini-2.0-flash GOOGLE_API_KEY=...
+# With no key set, the copilot runs on the deterministic offline logic (no provider needed).
+
+# Optional, for production observability (see the case study, production and ops):
+#   arize-otel
+#   openinference-instrumentation-langchain
