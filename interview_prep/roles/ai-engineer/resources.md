@@ -52,7 +52,7 @@ This repository is built for exactly this prep. Ground yourself here first, then
 - [ReAct: Synergizing Reasoning and Acting in Language Models](https://arxiv.org/abs/2210.03629) (2022, foundational anchor): the reason-act-observe loop behind most agents.
 - [Toolformer](https://arxiv.org/abs/2302.04761) (2023, foundational anchor): models learning to call tools.
 - [LLM Powered Autonomous Agents](https://lilianweng.github.io/posts/2023-06-23-agent/) (Lilian Weng, 2023): a clear synthesis of planning, memory, and tool use.
-- [Agents](https://huyenchip.com/2025/01/07/agents.html) (Chip Huyen, 2025): a grounded, current overview of agent design.
+- [LLM-powered autonomous agents](https://lilianweng.github.io/posts/2023-06-23-agent/) (Lilian Weng, 2023): a grounded, vendor-neutral overview of agent design, planning, memory, and tool use.
 - Repo materials: [Agents topic page](../../../topics/agents.md), [Agents 101 Guide](../../../resources/agents_101_guide.md), [Agentic Search and Retrieval Table](../../../research_updates/agentic_search_retrieval_table.md).
 
 ## Evaluation
@@ -60,7 +60,7 @@ This repository is built for exactly this prep. Ground yourself here first, then
 - [LLM evaluation: a beginner's guide](https://www.evidentlyai.com/llm-guide/llm-evaluation) (Evidently, current): a solid grounding in LLM-as-judge, offline versus online, and metrics.
 - [Ragas documentation](https://docs.ragas.io/en/stable/) (current): the RAG triad and metrics made concrete, with code.
 - [Extrinsic Hallucinations in LLMs](https://lilianweng.github.io/posts/2024-07-07-hallucination/) (Lilian Weng, 2024): why models hallucinate and how to think about detection.
-- [Common pitfalls when building generative AI applications](https://huyenchip.com/2025/01/16/ai-engineering-pitfalls.html) (Chip Huyen, 2025): evaluation and production pitfalls, exactly the judgment interviewers probe.
+- [Emerging Architectures for LLM Applications](https://a16z.com/emerging-architectures-for-llm-applications/) (a16z): the end-to-end production stack (retrieval, guardrails, caching, observability), exactly the judgment interviewers probe.
 - Repo materials: [Evaluation topic page](../../../topics/evaluation.md), [AI Evaluation 2025 Table](../../../research_updates/ai_evaluation_2025_table.md).
 
 ## Reasoning models and the state of the field
