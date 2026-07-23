@@ -150,6 +150,17 @@ Replit Agents also support collaborative coding by offering insights and suggest
 - [Replit Agents Documentation](https://docs.replit.com/replitai/agent)  
 - [YouTube: Meet the Replit Agent](https://www.youtube.com/watch?v=IYiVPrxY8-Y)
 
+## Tura
+
+**Tura** is an open-source, local-first coding agent written in Rust. It gives developers CLI, TUI, desktop, and web interfaces while keeping model credentials and provider choices under the user's control.  
+[Explore Tura](https://turaai.net/)
+
+Tura can work with OpenAI-compatible endpoints and local model providers. Its repository also publishes reproducible benchmark artifacts, making it useful for developers who want to inspect and compare an agent's behavior instead of relying only on product claims.
+
+**Getting Started with Tura:**  
+- [Tura source and setup guide](https://github.com/Tura-AI/tura#readme)  
+- [Reproducible benchmark](https://turaai.net/benchmark)
+
 ## NotebookLM
 
 **NotebookLM** is an AI-powered research and note-taking assistant developed by Google Labs. Designed to help users make sense of complex information, it grounds its responses in the sources you upload, such as documents, PDFs, and Google Slides, providing citations and relevant quotes for accuracy. 
