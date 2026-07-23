@@ -163,3 +163,19 @@ One of its latest features, Audio Overview, transforms text-based sources into e
 
 **Getting Started with NotebookLM:**  
 - [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)  
+
+---
+
+# AI Audio Tools
+*Applications that use AI to capture, transcribe, and organize spoken audio.*
+
+## Echo99
+
+**Echo99** is a private macOS call recorder that captures microphone and system audio as separate tracks. It transcribes recordings and labels speakers on-device, keeping recordings and transcripts on the Mac.
+[Visit Echo99](https://www.echo99.app/)
+
+Echo99 works with calls in any app without a meeting bot or account. It is a native app for macOS 14.4 and later.
+
+**Getting Started with Echo99:**
+- [Official Website](https://www.echo99.app/)
+- [Getting Started Guide](https://www.echo99.app/getting-started)
