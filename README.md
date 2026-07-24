@@ -122,3 +122,8 @@ year = {2026}
 [MIT License](LICENSE.md)
 
 <sup>**</sup> Sponsored sections, where present, are marked. We do not endorse or guarantee the product or service and are not responsible for any issues arising from its use. Please evaluate and use at your discretion.
+
+
+## Community Additions
+
+- [CinéVague — Auteur Cinema Designer](https://github.com/zfryrgnci/CineVague-Film-Project-Designer) - A multi-agent arthouse filmmaking desktop application simulating a virtual studio.
