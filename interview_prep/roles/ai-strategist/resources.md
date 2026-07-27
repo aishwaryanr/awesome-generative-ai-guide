@@ -25,8 +25,8 @@ Curated, free resources to prepare for the AI Strategist loop. Every external li
 - [Anthropic: Tips for building AI agents (video)](https://www.youtube.com/watch?v=LP5OCa20Zpg): short, practical, current.
 - [OpenAI: A practical guide to building agents (PDF)](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf): a business-oriented framing of agents, tools, and guardrails.
 - [Anthropic: Effective context engineering for AI agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents): why what enters the context window matters more than phrasing.
-- [Chip Huyen: Agents](https://huyenchip.com/2025/01/07/agents.html): a clear, vendor-neutral breakdown of agent design and failure modes.
-- [Chip Huyen: Building LLM applications for production](https://huyenchip.com/2023/04/11/llm-engineering.html): still-useful foundational anchor on the production gap.
+- [LLM-powered autonomous agents](https://lilianweng.github.io/posts/2023-06-23-agent/) (Lilian Weng): a clear, vendor-neutral breakdown of agent design and failure modes.
+- [Emerging Architectures for LLM Applications](https://a16z.com/emerging-architectures-for-llm-applications/) (a16z): the production stack and the gap between a demo and a shipped system.
 - [Prompting Guide](https://www.promptingguide.ai/): a broad, current reference on prompting and context techniques.
 - [Google: Prompt engineering resources](https://developers.google.com/machine-learning/resources/prompt-eng): concise official guidance.
 - [Kaggle and Google: Prompt engineering whitepaper](https://www.kaggle.com/whitepaper-prompt-engineering): deeper, structured treatment.

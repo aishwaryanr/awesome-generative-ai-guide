@@ -5,6 +5,8 @@ optional paid certificates). For a guided sequence toward a goal, see the
 [learning paths](paths/); for the full catalog with levels, see the [journeys](journeys/)
 and [topic pages](topics/).
 
+**Want to learn live with us?** These courses are free. We also teach cohort-based courses on Maven, where more than 3,000 builders have learned with us so far: **[AI System Design](https://maven.com/aishwarya-kiriti/genai-system-design)** and **[Advanced AI Evals](https://maven.com/aishwarya-kiriti/evals-problem-first)**. See [all our live courses](https://maven.com/aishwarya-kiriti).
+
 ## Foundations
 
 - **[Generative AI Genius](free_courses/generative_ai_genius/README.md)** ⭐ 📖 (2024): a beginner introduction to generative AI.

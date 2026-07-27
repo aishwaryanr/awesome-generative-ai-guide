@@ -30,8 +30,8 @@ Curated, free resources for AI PM prep. Every external link was checked and retu
 - [Building Effective Agents (Anthropic)](https://www.anthropic.com/engineering/building-effective-agents): the reference on when to use a workflow versus an agent, and the common patterns. Essential for the technical-literacy and product-sense rounds.
 - [How we built our multi-agent research system (Anthropic)](https://www.anthropic.com/engineering/built-multi-agent-research-system): multi-agent tradeoffs, cost, and evaluation from a shipped system.
 - [Effective Context Engineering for AI Agents (Anthropic)](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents): the context-as-product-lever framing.
-- [Building a Generative AI Platform (Chip Huyen, 2024)](https://huyenchip.com/2024/07/25/genai-platform.html): the full production architecture (routing, RAG, guardrails, caching, observability) a PM should picture. Foundational anchor.
-- [Building LLM Applications for Production (Chip Huyen, 2023)](https://huyenchip.com/2023/04/11/llm-engineering.html): the enduring gotchas of shipping LLM products. Foundational anchor.
+- [A practical guide to building agents](https://cdn.openai.com/business-guides-and-resources/a-practical-guide-to-building-agents.pdf) (OpenAI, 2025): the production architecture and orchestration (routing, guardrails, caching, observability) a PM should picture. Foundational anchor.
+- [Emerging patterns in building GenAI products](https://martinfowler.com/articles/gen-ai-patterns/) (Martin Fowler, Thoughtworks): the enduring patterns and gotchas of shipping LLM products. Foundational anchor.
 - [Emerging Architectures for LLM Applications (a16z)](https://a16z.com/emerging-architectures-for-llm-applications/): the canonical reference-architecture diagram. Foundational anchor.
 - [Model Context Protocol (intro)](https://modelcontextprotocol.io/docs/getting-started/intro) and the [MCP home](https://modelcontextprotocol.io/): the standard for connecting agents to tools and data.
 

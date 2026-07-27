@@ -44,7 +44,7 @@ Or see every free course in one place: **[All free courses, by topic](courses.md
 
 ## :mortar_board: Featured LevelUp Labs courses
 
-Free, created by [Aishwarya Naresh Reganti](https://www.linkedin.com/in/aishwarya-naresh-reganti/) and the [LevelUp Labs](https://levelup-labs.ai/) team, several with certification:
+Free, created by [Aishwarya Naresh Reganti](https://www.linkedin.com/in/areganti/) and the [LevelUp Labs](https://levelup-labs.ai/) team, several with certification:
 
 - **[AI Evals for Everyone](free_courses/ai_evals_for_everyone/README.md)** (certified): 10 chapters on evaluating LLM and agentic systems.
 - **[OpenClaw Mastery for Everyone](free_courses/openclaw_mastery_for_everyone/README.md)** (certified): a 10-day path to configure and run your own personal AI assistant.
@@ -53,6 +53,8 @@ Free, created by [Aishwarya Naresh Reganti](https://www.linkedin.com/in/aishwary
 - **[Applied LLMs Mastery (2024 edition)](free_courses/Applied_LLMs_Mastery_2024/README.MD)**: an 11-week foundational course, archived as a 2024 edition. [Course website](https://areganti.notion.site/Applied-LLMs-Mastery-2024-562ddaa27791463e9a1286199325045c).
 
 For every free course (LevelUp Labs originals and vetted external), organized by topic, see the full **[All Free Courses, by Topic](courses.md)** list.
+
+**Want to learn live with us?** The courses above are free. We also teach cohort-based courses on Maven, and more than 3,000 builders have learned with us so far: **[AI System Design](https://maven.com/aishwarya-kiriti/genai-system-design)** (design real generative-AI systems end to end, the Problem-First way) and **[Advanced AI Evals](https://maven.com/aishwarya-kiriti/evals-problem-first)** (the evaluation and improvement loops behind reliable LLM and agent products). See [all our live courses](https://maven.com/aishwarya-kiriti).
 
 ---
 

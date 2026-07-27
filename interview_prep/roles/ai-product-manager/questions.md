@@ -474,7 +474,7 @@ Treat public benchmarks as a coarse filter, not a decision: many popular ones ar
 
 AI features complicate A/B testing because the output is non-deterministic, quality is multi-dimensional (helpfulness, correctness, safety, cost, latency), and novelty effects can inflate early engagement. A simple click or conversion metric can move for reasons unrelated to answer quality, so you pair the outcome metric with quality guardrails and sometimes human-rated samples per arm. You also watch cost and latency per arm, run long enough to get past novelty, and segment by input type because a model change can help common cases and hurt the long tail. The rigor is defining the success metric and the guardrails before the test, not fishing for a win after.
 
-**Learn more:** [genai platform (Chip Huyen)](https://huyenchip.com/2024/07/25/genai-platform.html)
+**Learn more:** [Emerging Architectures for LLM Applications (a16z)](https://a16z.com/emerging-architectures-for-llm-applications/)
 
 </details>
 
@@ -530,7 +530,7 @@ Cache the stable prefix of the context, keep the context minimal and well-ordere
 
 When a smaller model already clears the quality bar for the task, the larger one just adds cost and latency with no user-visible gain. Many production tasks (classification, extraction, short structured responses, routing) are handled well by small or mid models, so you reserve the frontier model for genuinely hard reasoning. The disciplined approach is to set the quality bar, find the cheapest model that meets it on your eval set, and route by difficulty. Defaulting to the biggest model everywhere is a common and expensive mistake.
 
-**Learn more:** [genai platform (Chip Huyen)](https://huyenchip.com/2024/07/25/genai-platform.html)
+**Learn more:** [Emerging Architectures for LLM Applications (a16z)](https://a16z.com/emerging-architectures-for-llm-applications/)
 
 </details>
 
@@ -732,7 +732,7 @@ Unlike traditional software, marginal cost is real and scales with usage, so fla
 
 The model is rarely the moat because competitors can call the same API, so durability comes from what surrounds it: proprietary data and feedback loops, deep workflow integration and distribution, switching costs, and a superior evaluation and quality process that competitors cannot easily copy. A tight loop where usage generates data that improves the product compounds over time. Brand, trust, and being embedded in a user's real workflow also hold. As a PM you invest in the data flywheel, the integration surface, and the eval discipline rather than assuming the model choice is the differentiator.
 
-**Learn more:** [genai platform (Chip Huyen)](https://huyenchip.com/2024/07/25/genai-platform.html)
+**Learn more:** [Emerging Architectures for LLM Applications (a16z)](https://a16z.com/emerging-architectures-for-llm-applications/)
 
 </details>
 
@@ -759,7 +759,7 @@ Tie it to a business outcome, not to activity: time saved, tickets deflected or 
 
 Assume the frontier labs will absorb thin wrappers, so you build where they will not or cannot: deep integration into a specific workflow, proprietary data and context they do not have, domain expertise and trust, and the last-mile reliability, compliance, and support an enterprise needs. You compete on being embedded in how a particular user or industry actually works, not on being a nicer chat window over the same model. Owning the data flywheel and the eval discipline for your niche is what a general model release does not replicate. The strategic question in every roadmap review is whether a new base-model feature makes you redundant or makes you better, and you steer toward the latter.
 
-**Learn more:** [genai platform (Chip Huyen)](https://huyenchip.com/2024/07/25/genai-platform.html)
+**Learn more:** [Emerging Architectures for LLM Applications (a16z)](https://a16z.com/emerging-architectures-for-llm-applications/)
 
 </details>
 
