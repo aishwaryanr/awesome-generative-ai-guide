@@ -25,6 +25,8 @@ What LLMs are (no math), prompting basics, and using ChatGPT and Claude well.
 
 Power-user prompting and context techniques, connecting tools, using agent harnesses for your own work, and building personal multi-step automations.
 
+- **[AMD Strix Halo Local LLM Guide](https://github.com/hogeheer499-commits/strix-halo-guide)** 🌐 📖 (2026): a reproducible path from a Ryzen AI MAX+ 395 system to working local AI, covering BIOS and Linux setup, Ollama, llama.cpp, Vulkan/RADV, ROCm, model selection, benchmarks, and failed routes.
+
 - **[OpenClaw Mastery for Everyone](../free_courses/openclaw_mastery_for_everyone/README.md)** ⭐ 📖 (2026) certified: a 10-day path to configure and run your own personal AI assistant. Topic: [Agents](../topics/agents.md) (personal). Also relevant to [Build 101](build.md#build-101-foundations-to-build). See also the [best OpenClaw resources](../free_courses/openclaw_mastery_for_everyone/best-openclaw-resources.md) and [getting your API key](../free_courses/openclaw_mastery_for_everyone/getting-your-api-key.md).
 
 Using agent harnesses for your own work (Topic: [Agents](../topics/agents.md)):
