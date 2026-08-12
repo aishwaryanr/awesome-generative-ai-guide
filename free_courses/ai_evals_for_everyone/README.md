@@ -10,7 +10,7 @@ Welcome to **AI Evals for Everyone**, a beginner-friendly 101 course that clears
 
 [![Watch on YouTube](https://img.shields.io/badge/YouTube-Watch%20Now-red?style=for-the-badge&logo=youtube)](https://www.youtube.com/playlist?list=PLZoalK-hTD4VPIkRXNdSEwcTCt2QUgEPR)
 
-**Bonus Content**: The YouTube series includes **3 additional hands-on chapters** on **Building Evals with Arize AI** - practical tutorials to implement everything you've learned!
+**Bonus Content**: The YouTube series includes **3 additional hands-on chapters** on **Building Evals with [Arize AI](https://app.arize.com/auth/join?utm_source=aish&utm_medium=partner&utm_campaign=learnarize2026&utm_content=free-signup)** - practical tutorials to implement everything you've learned!
 
 [**Watch the Full Playlist →**](https://www.youtube.com/playlist?list=PLZoalK-hTD4VPIkRXNdSEwcTCt2QUgEPR)
 
@@ -79,7 +79,7 @@ Start from zero and learn step-by-step how to build AI evaluation systems. This 
 ## 🔗 Additional Resources
 
 ### 🎬 YouTube Video Series
-**[Watch the Complete Video Course](https://www.youtube.com/playlist?list=PLZoalK-hTD4VPIkRXNdSEwcTCt2QUgEPR)** - All chapters available as videos, plus 3 bonus hands-on chapters on building evals with Arize AI!
+**[Watch the Complete Video Course](https://www.youtube.com/playlist?list=PLZoalK-hTD4VPIkRXNdSEwcTCt2QUgEPR)** - All chapters available as videos, plus 3 bonus hands-on chapters on building evals with [Arize AI](https://app.arize.com/auth/join?utm_source=aish&utm_medium=partner&utm_campaign=learnarize2026&utm_content=free-signup)!
 
 ### 🎯 Our Maven Courses
 
