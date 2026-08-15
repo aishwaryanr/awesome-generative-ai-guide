@@ -34,6 +34,7 @@ The pieces of a harness, one at a time. All from the [Agentic AI Crash Course](.
 - **Memory** → [part 7](../free_courses/agentic_ai_crash_course/part7_memory_in_agents.md) ⭐
 - **MCP** → [part 5](../free_courses/agentic_ai_crash_course/part5_what_is_mcp_and_why_care.md) ⭐ and Anthropic's **[Introduction to MCP](https://anthropic.skilljar.com/introduction-to-model-context-protocol)** 🌐 🎥
 - **Multi-agent and sub-agents** → [part 8](../free_courses/agentic_ai_crash_course/part8_multi_agent_systems.md) ⭐
+- **[DeepSeek Harness Handbook](https://github.com/sandbaseai/deepseek-harness-handbook)** 🌐 📖: a source-backed field guide to one composable agent runtime, connecting the loop, tools, MCP, subagents, sessions, approval, sandboxing, and production checks.
 
 ## 4. Evaluate and ship the harness
 
