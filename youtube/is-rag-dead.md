@@ -2,13 +2,18 @@
 
 [Watch on YouTube](https://youtu.be/FJQTT2B-imk) · 2026-08-18
 
+![What we cover in this video](images/is-rag-dead.png)
+
+<!-- agenda slide -->
+
 ## In this video
 
-- What RAG actually is, and the retrieval half where all the real work happens
-- Camp 1: context windows got bigger, so just paste everything in
-- Camp 2: one-shot RAG is finished, retrieval went agentic
-- Camp 3: vector databases are dead
-- Where retrieval is heading, and what to keep in mind building with it today
+- **What RAG actually is**: chunking, embeddings, retrieval, and why the retrieval half is where the real work happens
+- **Why people say RAG is dead**: camp 1 context windows got huge, camp 2 one-shot RAG breaks, camp 3 vector databases are dead
+- **Agentic retrieval**: search, inspect, rewrite, search again, synthesise, instead of one lookup
+- **Beyond vector search**: keyword, SQL, knowledge graphs, direct file reading, and hybrid retrieval
+- **The knowledge runtime**: citations, access control, conflict detection, audit trail, grounding
+- **When to use what**: one-shot RAG, agentic, hybrid, or a full knowledge runtime
 
 ## Resources
 
