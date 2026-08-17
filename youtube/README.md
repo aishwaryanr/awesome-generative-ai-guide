@@ -6,6 +6,7 @@ Transcripts, resources, and sources for every video on my channel.
 
 | Video | What it covers | Published |
 |---|---|---|
+| [Is RAG Dead?](is-rag-dead.md) | What RAG is, the 3 camps calling it dead, and which of them are right | 2026-08-18 |
 | [Building AI Agents That Actually Work](ai-automation-mistakes.md) | The 4 mistakes that waste the most time automating with AI | 2026-08-04 |
 | [Is Learning to Code Still Worth It in 2026?](learning-to-code.md) | Why every prediction of coding's death has been wrong | 2026-07-21 |
 | [I Automate My Entire Company With Codex](codex-operating-system.md) | The 4-layer system for running a company on AI agents | 2026-07-13 |
