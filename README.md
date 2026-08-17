@@ -15,6 +15,7 @@ Pick the door that fits you. Each journey has its own 101 to 301 path.
 - 🔬 **I want to understand the research** → [Understand AI](journeys/understand.md)
 - 💬 **I'm prepping for an interview** → [Interview Prep hub](interview_prep/README.md)
 - 📚 **I just want to browse every free course** → [All free courses, by topic](courses.md)
+- 📺 **I'd rather watch** → [Video transcripts and resources](youtube/README.md)
 
 ---
 
