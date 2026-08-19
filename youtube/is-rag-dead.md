@@ -1,6 +1,6 @@
 # Is RAG Dead?
 
-[Watch on YouTube](https://youtu.be/FJQTT2B-imk) · 2026-08-18
+[Watch on YouTube](https://www.youtube.com/watch?v=FJQTT2B-imk) · 2026-08-18
 
 ![What we cover in this video](images/is-rag-dead.png)
 
@@ -25,151 +25,103 @@
 
 ## Sources
 
-- Menlo Ventures, *2024: The State of Generative AI in the Enterprise*: enterprise RAG adoption rose to 51%, from 31% the year before. [menlovc.com](https://menlovc.com/2024-the-state-of-generative-ai-in-the-enterprise/)
-- Databricks, *State of Data + AI*: roughly 70% of generative AI companies use retrieval or vector databases; vector database use grew 377% year over year. [databricks.com](https://www.databricks.com/resources/analyst-paper/state-of-data-ai)
 - Latent Space, *"RAG is Dead, Context Engineering is King"*, with Jeff Huber of Chroma, 19 Aug 2025. The phrase is the episode's headline, not a quote from him; in the episode he says he dislikes the term RAG. [latent.space](https://www.latent.space/p/chroma)
 - Nicolas Bustamante, *"The RAG Obituary: Killed by agents, buried by context windows"*, 2025. [nicolasbustamante.com](https://www.nicolasbustamante.com/p/the-rag-obituary-killed-by-agents)
 
 ## Transcript
 
-_Transcribed from the recording. Will be replaced with the YouTube captions once they are generated._
+The internet can't seem to agree on RAG. Half say it's dead, while the other half say it's one of the most important things that you can learn in AI right now. So this video settles it once and for all. I will break down what RAG actually is, the three most popular reasons people keep calling it dead, and the design patterns that the best AI teams are using to quietly evolve RAG into a full knowledge runtime layer.
 
-The internet can't agree on RAG. Half say it's dead, half say it's the single most important thing you can learn in AI right now.
+So here's everything we'll cover. You can take a screenshot and keep it, or the HD version is also available on my GitHub repository that's linked in the description.
 
-So this video settles it. I'll break down what RAG actually is, the three camps calling it dead, and which of them are actually right, how it's quietly evolved into what the best teams now build, a knowledge runtime, and what you need to keep in mind building with RAG today so you're not stuck doing it the outdated way.
+I have been building these systems for several years now, first as a tech lead at AWS, and now in my own company. So everything that we discuss in this video is what I've seen firsthand on the field. So let's get started.
 
-I've been building these systems since 2024, first as a tech lead at AWS and now for my own company. This is what I've been seeing firsthand in the field, not what I'm hearing about online.
+RAG stands for retrieval augmented generation, and it's pretty much this, right? Before an AI answers a question, it looks up a knowledge base of information. And that is because on its own, the model only knows what it was trained on. It doesn't know your company's documents, and its knowledge stops at its training date. And RAG is almost like the open book version of AI. Fetch the relevant pages, then answer.
 
-Let's get started.
+So first things first, what actually is RAG? At its simplest, it's the step that runs in the gap between your question and the AI's answer. It goes and finds the right information even before the model responds.
 
-So, first things first: what actually is RAG? At its simplest, it's the step that runs in the gap between your question and the AI's answer: it goes and finds the right information before the model responds. Let me show you what that looks like.
+So picture a real question. Someone asks, "How much vacation time do I actually get in this company?" And that answer lives in your company handbook, which the model has probably never read. So on its own, all it can do is guess. And RAG's job is to find that page before the model says even a single word.
 
-Think about a brilliant new hire on their first day. They've read everything out in the world, they're sharp, and they'll answer any question with total confidence. But they have never opened a single one of your company's documents.
+Seems pretty simple, right? But the process itself is not that trivial. You can't just hand the model everything you've got. There's a limit on how much information it can take in at once, and that's usually called the context length or the context window of the model. And your handbook, your policies, years of documentation cannot fit all at once into the model, and that's where we go to the next step. You'll have to retrieve and pull all of the relevant information that can be given to your AI model so that it can come up with the right answer.
 
-So ask them something specific about how your company works, and you'll get a confident, reasonable-sounding answer that's completely made up. That's an AI model on its own: answering from general memory, with no idea what's actually in your files.
+So how do we do that? The solution to that is that you break it up into small passages, usually called chunks, and then you pull back a single passage or chunk instead of the entire manual, depending on what the question is. So you can pretty much store all of these chunks of information, and depending on the kind of question that is being asked, you can retrieve the relevant chunks, maybe based on the keywords that are being used in the question, etc., right? So that is the whole process of chunking and retrieval.
 
-RAG is what happens when you hand that new hire your documents before they answer. Same person, except now they're working from your real sources instead of guessing.
+Then you hit another problem, which is let's say an employee asked about vacation time, but the page might say paid time off, right? Like a synonym of the word you're looking for. So if there are no shared words, matching on words alone might not be enough.
 
-So picture a real question. Someone asks, how much vacation time do I actually get? That answer lives in your company handbook, which the model has never read, so on its own all it can do is guess. RAG's job is to go find that page before the model says a word.
+And that is where RAG systems usually use this notion of vector-based searching or meaning-based searching. Each of these chunks is run through a model called an embedding or a vector model and converted into a list of numbers that capture the meaning or the semantics of these chunks. And generally, these numbers as a whole are called embeddings or vectors. Passages that mean similar things end up with similar numbers, and they're pretty much sitting close to each other. And you store all of them in a specific kind of a database called a vector database. Vacation time finds annual leave instantly, or any synonym instantly, because these numbers are derived based on meaning and not the exact keywords.
 
-And right away you hit the reason this isn't trivial: you can't just hand the model everything you've got. There's a limit on how much text it can take in at once, called the context window, and your handbook, your policies, years of documents, don't come close to fitting. So retrieval has to walk in and pull the one page that actually answers the question.
+Everything we discussed so far is the first half of RAG, or retrieval augmented generation, which is retrieval, basically. The second part is generation, which is kind of easier compared to retrieval. The model takes that chunk and writes your answer from it, right? Whatever was retrieved in the retrieval phase.
 
-So how does it find that page? First, you can't search a whole document as one lump, so you break it into small passages called chunks, and now you can pull back a single paragraph instead of the entire manual.
+So the whole point of RAG is that your AI stops guessing and starts working from the actual sources. The policy that changed last week, the document your team updated yesterday, the data that actually lives in your systems, and what usually AI models are not trained on.
 
-Then comes the real problem. You asked about vacation time, but the page you need might say paid time off, or annual leave. Not one shared word, so matching on the words alone would miss it.
+In its original form, this is pretty simple and static. You index your documents once, and every question runs through a single lookup and gets one answer. This is usually called naive RAG or one-shot RAG. For knowledge that is stable and contained, a product manual or a benefits policy or a support FAQ that's not changing very frequently, this is genuinely enough, and it still works as of today.
 
-So instead, you match on meaning. You run each chunk through a model that turns it into a long list of numbers that captures what it means, called an embedding, or a vector. Passages that mean similar things end up with similar numbers, sitting close together, and you store all of them in what's called a vector database.
+And for a good amount of time, maybe starting 2023 and up till 2024, one-shot RAG on vector databases was pretty much everywhere. It was one of the first things anyone building with AI would learn. And then something happened in late 2024, and the tone pretty much flipped. And the same rooms that couldn't stop talking about RAG started calling it dead.
 
-Now your question gets turned into that same kind of numbers, and the system pulls back the chunks sitting closest to it. Vacation time finds annual leave instantly, with no words in common.
+So the argument RAG is dead never gets settled because it's not really one argument. It's three, coming from three different groups or camps of people. And each camp is usually talking about something very different. So let's understand them one by one.
 
-That's the retrieval half, and it's where all the real work is. Generation is the easy part after it: the model takes that page and writes your answer from it.
+When generative AI models got super popular back in late 2022, they could only read a little text at once. For instance, a few thousand words, maybe roughly a few pages. Now, that gap is called the context length or context window, like we discussed before. So if you wanted to ask AI to maybe answer questions about your company's documents, you had to be very selective about what you fed it, and that was the problem that RAG was trying to solve, right?
 
-And hold onto one thing, because it matters later. Searching by meaning like this is called vector search, and it's just one way to find the right page. It's the one that took off, but it isn't the only option.
+But over the years, now we're in 2026, something significantly changed. The latest models can now take millions of words all at once, and that gave rise to the first camp, which is the context window argument. If the context window of an AI model is so large, why do we have to build a retrieval pipeline? Just dump your entire knowledge base, meaning all of your documents, along with the question as context to the model, and let the model sort it out.
 
-So the whole point of RAG is that your AI stops guessing and starts working from the source: the policy that changed last week, the document your team updated yesterday, the data that lives in your systems.
+Now, there are two problems with this argument, right? And both of them start to make sense not in demos, but actually on large-scale data.
 
-In its original form, this was simple and static. You index your documents once, and every question runs a single lookup and gets one answer. Call that one-shot RAG. For knowledge that's stable and contained, a product manual, a benefits policy, a support FAQ, it's genuinely enough, and it still works today.
+The first is that a big context window doesn't necessarily mean that the model can perform accurately on the entire window. There's tons of research in the past that says that models tend to get lost when there is a lot of information that is stored in large context windows. This entire problem is called the lost in the middle problem, and there is evidence that models, although they promise large context windows, cannot reason through the entire length of them just because they get confused.
 
-And for a while, one-shot RAG on a vector database was everywhere, one of the first things anyone building with AI learned. Then the tone flipped, and the same rooms that couldn't stop talking about it started calling it dead.
+The second is the most practical one, which is cost. And this is the one that kind of shows up in practice, right? You literally pay for every word that you put into a model on every single question. And you're pretty much paying a large amount of cost when retrieval could have done the job for you. So even if context windows or models got 10 or even 20 times bigger tomorrow, you'd still want to send in relevant and small information so that you can save on cost and latency and all these kind of operational things.
 
-So is RAG dead? That depends entirely on who you ask, because they're not all talking about the same thing.
+So when someone says RAG is dead because context windows or models are getting bigger than ever, you now know why even though context windows get much bigger in the future, RAG might not be dead in the sense that the need for retrieval might not be completely eliminated, given that we need to be really thinking about operational costs and how we build these systems for large-scale databases.
 
-"RAG is dead" never gets settled because it isn't one argument, it's three, coming from three different camps. And each camp is usually talking about something different, so let's take them one at a time.
+Now, that leaves us with two more camps. So one of these camps says that the basic version of RAG, which is one-shot RAG, is pretty much over at this point. And the other says that the technology that it runs on is dead. And both of them are worth thinking about seriously if you're someone who's building RAG systems. So now let's get a little deeper into what camp 2 is saying.
 
-When AI models first arrived, they could only read a little text at once, a few thousand tokens, roughly a few pages. That cap is the context window. So if you wanted AI to answer questions about your company's documents, you had to be very selective about what you fed it, which is exactly the problem RAG was built to solve.
+Camp 2 is about the original version of RAG, which is one question, one lookup, and one answer. Real questions can get way more complicated than that can handle. And for a while, it was pretty much enough for most enterprises. But as questions got more complex, as models got smarter, one lookup was rarely enough.
 
-Then something changed. The newest models can now take in a million words or more at once. And that gave rise to camp one, the context-window argument: if the window is that big, why retrieve anything? Just dump your entire knowledge base, meaning all your documents, in with every question, and let the model sort it out.
+Users would generally ask something with multiple parts. For instance, compare these options, summarize what changed in the quarter, brief me on something that I don't understand yet from multiple sources, and the system would come back with a half-baked answer because it would have only one opportunity to get the right documents.
 
-There are two problems with that, and you feel both the moment you try it on real data.
+Engineers and researchers started building manual workarounds around this, and it almost became a game of whack-a-mole. Across 2023 and 2024, there was a flood of research papers trying to fix this exact problem.
 
-The first: a big context window doesn't mean the model actually reasons well across all of it. The detail that matters gets buried in the pile, and the answers quietly get worse the more you stuff in. Capacity is not the same as attention.
+And that's when the question started flipping, right? Instead of hand-engineering all of these fixes, what if the AI system itself was smart enough to do this? For instance, when it notices on its first search that the answer that's come up is probably incomplete, or the documents retrieved were incomplete, can it fire another search in order to make sure that that incomplete information can be re-retrieved, right?
 
-The second is cost, and this is the one that settles it in practice. You pay for every word you put into a model, on every single question. Paste your whole knowledge base into every question, and you're paying to re-read all of it every time anyone asks anything, and a company's knowledge only grows.
+And that's exactly what happened with this whole idea of agentic retrieval. And that's one of the most common ways RAG has transformed in the recent past. And the core idea is very similar to how humans do research, right? You search, you skim, you realize you asked the wrong thing, you regenerate questions, you look for information, and do multiple turns of it before coming back with a final answer instead of trying to retrieve all documentation at once.
 
-Retrieval exists precisely so you can send the few right pages instead of the entire library: cheaper, faster, and a better answer. Even if context windows got ten or twenty times bigger tomorrow, you'd still want what you send to stay small and clean.
+Now, as this entire idea of agentic retrieval became way more common, model companies started post-training their models, or deliberately teaching their models, to work in this way. So when the first search is weak, the model rewrites its own search and tries again with nobody scripting it. The reranking, the multiple searches, going in loops, all of that is handled by the system itself, rather than hand engineering a bunch of tricks that do not scale.
 
-So when someone tells you RAG is dead because context windows got bigger, that's the one to push back on. Bigger windows are useful, but they don't replace retrieval.
+So remember that all methods have their pros and cons. For instance, agentic retrieval costs more per answer because the model is thinking and looping instead of doing one quick fetch. So it's super useful only when the problem actually calls for it.
 
-That leaves two more camps, and unlike this one, they're not wrong. One says the basic version of RAG is finished, the other says the technology it runs on is dead, and both are worth taking seriously.
+And once the agent or the model starts deciding how to search, it's no longer stuck with one way to do it. That's exactly what camp three is about. Let's talk about that.
 
-And both of them got there through the same shift, the one that turned retrieval from something you set up into something the model does for itself.
+Now, the third camp pretty much goes after the technology under RAG. They're half right, and once you see the other half, you'll kind of understand what the debate is about.
 
-Camp two is about the original version of RAG: one question, one lookup, one answer. Real questions got more complicated than that could handle.
+Now, the argument goes somewhat like this, right? They think vector databases are the foundation that RAG was built on, and vector databases are kind of dead in many domains, so RAG must be dead too. That's mainly because of the changes that coding assistants or harnesses like Claude Code or Codex have brought up in the recent past.
 
-The original version worked like this: one question, one lookup, one answer. Simple, and for a while, enough. But as questions got more complex, one lookup wasn't enough.
+So a lot of coding assistants that work across large repositories, they don't embed code bases into vector databases. They pretty much open folders, they scan file names, and they read the relevant files directly, almost the way a developer would do. All of this information is not embedded like we explained in the vector database case. And turns out that for tasks like coding, this actually works pretty well and much better than embedding information, because code is very structural in nature over large-scale documents which are very subjective and semantic in nature.
 
-You'd ask something with multiple parts. Compare these options. Summarize what changed this quarter. Brief me on something I don't understand yet. And the system would come back with half an answer, or the wrong one.
+Now, people glued the word RAG to vector database so tightly that the moment vector databases looked like the wrong tool for some domains and jobs, it sounded like all of retrieval was dying, or all of RAG was dying. But vector search was only just one method all the time. Retrieval can happen in multiple different ways, and depending on the domain and depending on the kind of documents that are available, that exact method has to be decided by the engineer who's building it. Sometimes it could be stored as a knowledge graph, sometimes it could just happen through keyword search, sometimes in coding assistants it can just happen through grep, which is very similar to keyword search, and so on. And in my experience, many real systems end up blending several of these at once, and that is usually called hybrid retrieval, which means use different methods to improve your retrieval.
 
-So engineers started building manual workarounds, and it became a game of whack-a-mole. Across 2023 and 2024 there was a flood of research into fixing it.
+So that begs the question, are vector databases actually dead? It really depends entirely on your domain. For use cases that involve generating code, it has been empirically proven that it's barely needed, because code is full of exact things: function names, file paths, specific terms, and the agent finds those faster by searching keywords rather than embedding them into a vector database.
 
-Rewrite the vague question into sharper search terms. Invent a fake ideal answer and search with that, a trick that even got its own name, HyDE. Re-rank the results. Fire several searches at once and merge what came back. Every one a workaround an engineer had to build and wire in by hand.
+But think of a use case like customer support, where you wired up a knowledge base, and the agent has to answer based on the knowledge base's information. And let's say a customer comes up and says that my card keeps getting declined. And the actual document that answers this question is probably titled something like payment authorization failures. It doesn't have one single shared word with the question, yet the meaning or the semantics are very identical. So keyword search cannot really work well in this case, because it's all about the meaning and not the exact words.
 
-Then the question flipped. Instead of hand-engineering those fixes, what if the model itself was smart enough to do this, to notice its first search came back weak and decide, on its own, to go again?
+So maybe the lesson for you is to match the method with your data and domain, and treat anyone selling a single answer to this question with suspicion.
 
-That's exactly what happened, and the word for it is agentic retrieval.
+Now that we've seen all of these three camps and dug deep on what they actually mean, let's understand what the future of RAG is.
 
-An agent is a model that doesn't just answer in one shot. It works toward a goal in a loop: it looks at what it has, decides the next move, runs a search, reads the result, and keeps going until it has enough. Which is more or less how you research something you don't understand yet. You search, you skim, you realize you asked the wrong thing, you search again.
+Now, getting RAG to give you a good answer is one problem, but getting it to give you an answer you can actually trust is the harder problem. And it's what the next generation of these systems is being built around.
 
-The newer models are post-trained, meaning deliberately taught, to work this way. So when the first search is weak, the model rewrites its own search and tries again, with nobody scripting it. Everything engineers used to wire in by hand, the search rewrites, the re-ranking, the multiple searches, the model now does on its own.
+Now, picture giving two AI tools the exact same question, each using RAG to find answers from your company's documentation. And the first one loops through a few searches and gives you a clean and confident answer. But you have no idea which documents it pulled from, whether it was even authorized to read them, or whether two of these sources contradict each other. It's pretty much opaque as to why that answer was received.
 
-Camp two says one-shot RAG is dead, and they're right, but only about that. Open-ended questions, multi-step problems, knowledge that keeps shifting, one-shot is going to keep letting you down, and agentic retrieval is what handles those.
+And the second one gives you the same answer, but with every claim tied to the exact source and reasoning as to why it came. It has notes on why two documents disagree or why one was chosen, and a flag of which part of the answer that it affects, and also a signal of how certain it is so that you can know whether to act or dig deeper. And all of this is super auditable and has a bunch of access rules.
 
-It costs more per answer, because the model is thinking and looping instead of doing one quick fetch, so it gets used when the problem actually calls for it. This is what most companies run now.
+Now, the first answer is what you take at face value. The second is something that you can hand to an auditor. But what's being added in some of the fastest growing companies that are building RAG systems today is a lot of guardrails. Every claim tied to the source, a record of what that looks like, a flag when two sources contradict, and an honest signal of how sure it is, or a confidence score. Now, you can call this a knowledge runtime, which is the evolution of where RAG is at today.
 
-And once the agent is deciding how to search, it's no longer stuck with one way to do it. That's exactly what camp three is about.
+And the biggest issue with all of these three camps that think RAG is dead is that they're making the same underlying mistake, which is treating retrieval as a one-time decision rather than something that evolves over time.
 
-The third camp goes after the technology underneath RAG. They're half right, and once you see which half, the rest of the debate falls into place.
+So that leaves us with the question we started with. Is RAG actually dead? And hope by now you have the answer to it. Basic one-shot RAG is definitely fading, and retrieval has still become one of the most important components of building modern AI systems.
 
-The argument goes like this: vector databases are the foundation RAG was built on, and vector databases are dead, so RAG must be dead too.
+And the only hypothetical case where RAG would be dead is that a model can read your entire knowledge base with GBs and GBs of data one single time, remember every detail of it perfectly, and never has to look up anything again. In that world, you wouldn't need retrieval. The model would simply know everything.
 
-The clearest test is sitting inside tools developers already use every day. A lot of the coding assistants that go find the right code for you don't embed your codebase into a vector database at all. They open folders, scan file names, and read the relevant files directly, almost exactly the way a developer would.
+But again, here's why that world will pretty much never arrive. Your knowledge never stops changing, new documents keep coming up, new decisions keep getting changed, new policies, and all of this, right? So there's no way the model can read everything at once and remember it forever, because knowledge itself is changing. So even if a model had perfect memory, it would have to keep rereading all of it just to stay current. And the moment something changes, it has to notice that and update information, which is retrieval, right?
 
-Same goal, find the right context before answering, completely different method. And for that particular job, reading the files directly turns out to be the better one.
+So what is the biggest lesson from today's video? Retrieval, or RAG, isn't really dying, but it's quietly evolving into a much more comprehensive knowledge or a context layer that some of the best teams are actually building with today.
 
-This is the thing I told you to hold onto at the start. People glued the word RAG to vector database so tightly that the moment vector databases looked like the wrong tool for some jobs, it sounded like all of retrieval was dying. But vector search was always just one method.
-
-Once the agent is the one driving, it picks whichever one fits the question in front of it. Keyword search, the plain word-matching that powered search engines for years, for exact terms. An ordinary database query for structured records. A knowledge graph, a web of entities and how they connect, when the answer is a relationship: this employee is on this team, which owns this product. Or reading the files directly.
-
-And most real systems end up blending several of these at once, common enough that it has a name, hybrid retrieval.
-
-So are vector databases actually dead? It depends entirely on your domain, and this is the clean way to say what vector search can and can't do. For code, it's barely needed, because code is full of exact things, function names, file paths, specific terms, and the agent finds those faster by searching keywords and reading files directly.
-
-But move to a customer support knowledge base and it flips. A customer types, my card keeps getting declined. The document that answers them is titled, payment authorization failures. Not a single shared word, and yet the meaning is identical. Keyword search misses that entirely, vector search catches it instantly.
-
-So match the method to your data, and treat anyone selling a single answer for every problem with suspicion.
-
-Between the agent running the search and choosing the right tool for it, the answers get a lot more reliable. So both of the real camps lead to the same place, which leaves just one thing left: where all of this is heading.
-
-Getting RAG to give you a good answer is one problem. Getting it to give you an answer you can actually trust is the harder one, and it's what the next generation of these systems is being built around.
-
-Picture giving two AI tools the exact same question, each using RAG to answer from your company's documents.
-
-The first loops through a few searches and gives you a clean, confident answer. You have no idea which documents it pulled from, whether it was even authorized to read them, or whether two of those sources contradict each other.
-
-The second gives you the same answer, but with every claim tied to the exact source it came from. A note that two of the documents disagree, and a flag on which part of the answer that affects. A signal of how certain it is, so you know whether to act or dig deeper.
-
-And underneath all of it, access rules: a contractor asking about salary bands won't get that answer, because access is restricted by role. The first answer you take at face value. The second you could hand to an auditor.
-
-Underneath, it's the same agentic retrieval we just talked about. What's being added is a layer of guardrails: every claim tied to its source, a record of what it looked at, a flag when two sources disagree, an honest signal of how sure it is, and access control. Some people call this a knowledge runtime.
-
-This is also why the death of the vector database was always overblown. The same companies everyone wrote off are quietly racing to become exactly this trustworthy layer that sits around retrieval and makes it safe to rely on.
-
-And what both real camps were reacting to, without knowing it, is the same underlying mistake: treating retrieval as a one-time decision rather than something that evolves. One camp thought one-shot RAG could be set up and left alone, the other thought one retrieval method could handle every task, and both got proven wrong by the next version exposing a problem the previous one couldn't handle.
-
-Worth noting too: memory, the thing that lets an AI remember your preferences and your past work, is this same retrieval idea, just pointed at remembering you instead of your documents.
-
-Retrieval isn't a feature you bolt on and forget. It's becoming the core of how AI works with real information, in real organizations, with real stakes. This is what the serious settings grow into: regulated industries, sensitive data, many teams with different permissions, anywhere a wrong or unauthorized answer causes real damage. It's not where most people start, it's what they grow into, once trust and access genuinely matter.
-
-So that's where RAG is heading: from a single fixed lookup, to a model that researches on its own, to a system with real guardrails you can trust. Which leaves one last, honest question. When would RAG actually, finally be dead?
-
-So, is RAG dead? No. Basic, one-shot RAG is fading, and retrieval grew up. It went from a single fixed lookup, to a model that runs the search itself across whatever method fits, to a system with real guardrails you can trust.
-
-But let's answer the question properly. When would RAG truly be dead? Picture the one world where it would be. A model reads your entire knowledge base a single time, remembers every detail of it perfectly and forever, and never has to look anything up again. In that world, you wouldn't need retrieval, the model would simply know everything.
-
-Here's why that world doesn't arrive. Your knowledge never stops changing: new documents, new decisions, updated policies, constantly. So even a model with perfect memory would have to keep re-reading all of it just to stay current, and the moment something changes, it has to notice and go pull it in. Which is retrieval, again.
-
-The only way to escape retrieval is a perfect, permanent memory of a world that never moves, and that world doesn't exist.
-
-So retrieval isn't dying. It's quietly becoming the thing that makes AI genuinely useful on your own information, instead of a confident stranger guessing from memory.
-
-The next time someone tells you RAG is dead, you'll know what they actually mean, you'll know they're only half right, and you won't fall for the hype.
+So the next time someone tells you RAG is dead, you'll know exactly what they mean. You'll know what questions to ask them, and you'll understand what the hype is all about. All the very best.
