@@ -124,6 +124,19 @@ With Opik, you can log, view, and evaluate your LLM (Large Language Model) trace
 # AI-Powered Tools  
 *Products designed to streamline the AI development lifecycle, from prototyping to debugging and performance tuning.*
 
+## agent-qa
+
+**agent-qa** is an open-source self-improving QA agent for software teams. It executes natural-language tests across web and mobile applications, re-observes the interface and tries another path when an interaction fails, and uses execution memory to improve future runs.
+
+[Explore agent-qa on GitHub](https://github.com/vostride/agent-qa)
+
+The project provides a dashboard and CLI for developers, plus an MCP server and skills for coding agents. It supports OpenAI- and Anthropic-compatible endpoints, Gemini, local models, Codex, and Claude Code authentication.
+
+**Getting Started with agent-qa:**
+
+- [Documentation](https://vostride.com/docs/agent-qa)
+- [Quickstart](https://vostride.com/docs/agent-qa/quickstart)
+
 ## Vercel v0
 
 **Vercel v0** is an experimental, AI-enhanced version of Vercel's deployment platform, tailored specifically for developers working on AI-driven applications. It integrates state-of-the-art performance tuning and debugging tools into the development workflow, allowing developers to deploy applications with optimal speed and efficiency.  
