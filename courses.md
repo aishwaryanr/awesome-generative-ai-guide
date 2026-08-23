@@ -165,4 +165,5 @@ and [topic pages](topics/).
 - **[Training and Fine-Tuning LLMs for Production](https://learn.activeloop.ai/courses/llms)** 🌐 📖 by Activeloop
 - 🆕 **[Building with the Claude API](https://anthropic.skilljar.com/claude-with-the-anthropic-api)** 🌐 📖 (2025) by Anthropic Academy: production API patterns and tool use.
 - 🆕 **[LLM Zoomcamp](https://datatalks.club/blog/llm-zoomcamp.html)** 🌐 🛠️ (2025) by DataTalks.Club: a free hands-on LLM engineering bootcamp.
+- 🆕 **[AI Engineer Notebooks](https://github.com/calmrocks/ai-engineer-notebooks)** 🌐 🛠️ (2026) by calmrocks: framework-free Colab notebooks for the AI Engineer / FDE stack — model APIs, RAG, evals-as-the-spine, agents (loop, tool design, guardrails, MCP, Skills), fine-tuning vs LoRA, security, and LLMOps; runs on the free Groq API.
 
