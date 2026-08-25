@@ -19,6 +19,10 @@ Free external courses (full context on [Build 201](../journeys/build.md#build-20
 - **[Evaluating and Debugging Generative AI Models Using Weights and Biases](https://learn.deeplearning.ai/evaluating-debugging-generative-ai)** 🌐 🎥 by DeepLearning.AI
 - **[Quality and Safety for LLM Applications](https://www.deeplearning.ai/short-courses/quality-safety-llm-applications/)** 🌐 🎥 by DeepLearning.AI
 
+Reference benchmarks (worked examples of applied evaluation):
+
+- **[ImageBench](https://imagebench.ai)** 🌐 📖 (2026): a live text-to-image benchmark ranking 52 models (GPT Image 2, Nano Banana Pro, Flux 2, Ideogram v4, Seedream V5, Imagen 4, and more) on 192 prompts with VLM judges. Every generated image is published, so the pass/fail decisions and judge behavior are inspectable end to end. Score blends capability (VLM-judged pass rate) with aesthetic preference on a 0–100 scale; [methodology](https://imagebench.ai/methodology-v1).
+
 ## 🏗️ Build 301
 
 - **[AI Evals for Everyone: production and monitoring chapters](../free_courses/ai_evals_for_everyone/README.md)** ⭐ 📖 (2026): evaluation extended to running systems.
