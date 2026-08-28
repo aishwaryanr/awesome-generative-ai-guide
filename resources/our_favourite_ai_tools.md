@@ -163,3 +163,11 @@ One of its latest features, Audio Overview, transforms text-based sources into e
 
 **Getting Started with NotebookLM:**  
 - [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)  
+
+## SandBase CLI
+
+**SandBase CLI** is an open-source local MCP gateway for using AI models from compatible clients. It connects 25 client targets—including Claude Code, Cursor, Codex, Gemini CLI, and OpenClaw—to a catalog of 2,000+ models and APIs through discover, inspect, and run tools.
+[Visit SandBase CLI](https://github.com/sandbaseai/cli)
+
+**Getting Started with SandBase CLI:**
+- [Install and connect](https://github.com/sandbaseai/cli#quick-start)
