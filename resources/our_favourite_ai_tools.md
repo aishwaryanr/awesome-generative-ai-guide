@@ -126,7 +126,7 @@ With Opik, you can log, view, and evaluate your LLM (Large Language Model) trace
 
 ## agent-qa
 
-**agent-qa** is an open-source self-improving QA agent for software teams. It executes natural-language tests across web and mobile applications, re-observes the interface and tries another path when an interaction fails, and uses execution memory to improve future runs.
+**agent-qa** is a source-available self-improving QA agent for software teams. It executes natural-language tests across web and mobile applications, re-observes the interface and tries another path when an interaction fails, and uses execution memory to improve future runs.
 
 [Explore agent-qa on GitHub](https://github.com/vostride/agent-qa)
 
