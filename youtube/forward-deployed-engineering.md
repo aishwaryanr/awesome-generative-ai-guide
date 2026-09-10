@@ -21,6 +21,8 @@
 Every role in this video is on the board, and it's kept updated:
 **[fde.levelup-labs.ai](https://fde.levelup-labs.ai)**
 
+[![FDE Job Board: find open roles for forward deployed engineering, see what companies actually require, and build the skills to qualify](images/forward-deployed-engineering-board.png)](https://fde.levelup-labs.ai)
+
 Filter by location, by experience asked for, and by the skill signals in the listing, then
 apply at the source. The skill map breaks the roadmap into all 3 layers and shows how often
 the listings name each skill.
