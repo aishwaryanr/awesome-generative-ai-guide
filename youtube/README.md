@@ -6,6 +6,7 @@ Transcripts, resources, and sources for every video on my channel.
 
 | Video | What it covers | Published |
 |---|---|---|
+| [Forward Deployed Engineer: Hype, Reality & a Realistic Roadmap](forward-deployed-engineering.md) | What the role actually is, the 3-layer roadmap, and 4 myths checked against 1,040 live job listings | 2026-09-11 |
 | [Make Claude Code 10x Better and Cheaper: 16 Research-Backed Tips](claude-code-5-levels.md) | The 5 levels of working with Claude Code and Codex, and 16 tips with the prompts to apply them | 2026-09-03 |
 | [AI Engineering Has Changed: The 5 Concepts You Need in 2026](five-shifts-ai-engineering.md) | Prompt, context, harness, loop, and graph engineering, and how each one was born from the last | 2026-08-27 |
 | [Is RAG Dead?](is-rag-dead.md) | What RAG is, the 3 camps calling it dead, and which of them are right | 2026-08-18 |
