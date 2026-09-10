@@ -2,8 +2,8 @@
 
 The companion cheat sheet for [Forward Deployed Engineer: Hype, Reality & a Realistic Roadmap](forward-deployed-engineering.md).
 
-Every number here comes from 1,040 live job listings across 330+ companies, read directly
-from the companies' own job boards. Browse and filter all of them at
+Every number here comes from 1000+ live job listings, read directly from the
+companies' own job boards. Browse and filter all of them at
 **[fde.levelup-labs.ai](https://fde.levelup-labs.ai)**.
 
 ---

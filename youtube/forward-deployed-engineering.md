@@ -43,7 +43,7 @@ The roadmap, the listing test, and the myths in one file:
 
 ## Sources
 
-- **The job data in this video.** 1,040 live postings across 330+ companies, read directly from companies' own applicant tracking endpoints, measured against 882 ordinary AI engineering roles at the same kind of companies. Browse and filter all of it at [fde.levelup-labs.ai](https://fde.levelup-labs.ai).
+- **The job data in this video.** 1000+ live postings, read directly from companies' own applicant tracking endpoints, and measured against ordinary AI engineering roles at the same kind of companies. Browse and filter all of it at [fde.levelup-labs.ai](https://fde.levelup-labs.ai).
 - Cadie Thompson and Lakshmi Varanasi, Business Insider, updated 18 May 2026, for the growth figure behind the "hottest job" framing. The piece carries a correction: *"An earlier version of this story misstated Indeed's data on forward-deployed engineer job postings as individual job posts. The figures cited are indexed values relative to a January 2025 baseline."* The corrected text reads that April 2026 postings were 5,230% above January 2025 levels, roughly 729% year over year. These are index values against a January 2025 baseline, not counts of jobs, and the underlying data was shared privately with the outlet, so no reader can check it. The uncorrected version is what reached the trade press and the popular videos.
 - Newcomer, on Decagon, for the argument that the role may be transient as AI systems converge and the software starts to sell itself. [newcomer.co](https://newcomer.co/p/decagon-hit-100-million-betting-against)
 - Palantir originated the role, and had more forward deployed engineers than software engineers until roughly 2016, when Foundry shipped and the ratio flipped.
