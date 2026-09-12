@@ -18,6 +18,7 @@ Models that work across text, images, audio, and video: diffusion models, vision
 
 - **[11-777: Multimodal Machine Learning](https://www.youtube.com/playlist?list=PL-Fhd_vrvisNM7pbbevXKAbT_Xmub37fA)** 🌐 🎥 by Carnegie Mellon University
 - **[Prompt Engineering for Vision Models](https://www.deeplearning.ai/short-courses/prompt-engineering-for-vision-models/)** 🌐 🎥 by DeepLearning.AI
+- **[NanoAvatar](https://github.com/wpydcr/NanoAvatar)** 🌐 📝 (2026): run audio-driven talking avatars locally on Android or an NVIDIA GPU; includes inference source, model weights, and an Android demo.
 
 ---
 
