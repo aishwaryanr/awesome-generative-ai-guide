@@ -123,6 +123,7 @@ and [topic pages](topics/).
 - 🆕 **[LLM Apps Evaluation](https://wandb.ai/site/courses/evals/)** 🌐 🎥 (2025) by Weights and Biases: build reliable evaluation pipelines.
 - **[Red Teaming LLM Applications](https://www.deeplearning.ai/short-courses/red-teaming-llm-applications/?utm_campaign=giskard-launch&utm_medium=headband&utm_source=dlai-homepage)** 🌐 🎥 by DeepLearning.AI
 - 🆕 **[AI Red-Teaming and AI Safety Masterclass](https://learnprompting.org/courses/ai-red-teaming-and-ai-safety)** 🌐 📖 (2025) by Learn Prompting: LLM security fundamentals.
+- **[AI Agent Evaluation](https://hallieren.github.io/ai-agent-evaluation/)** 🌐 📖 (2026) by Hallie Ren: free open-source book on evaluating LLM agents, 16 chapters with template packs and zero-dependency labs.
 
 ## Multimodal
 
