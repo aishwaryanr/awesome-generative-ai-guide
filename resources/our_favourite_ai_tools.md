@@ -117,6 +117,14 @@ With Opik, you can log, view, and evaluate your LLM (Large Language Model) trace
 - [Opik Documentation](https://www.comet.ml/docs/opik/quickstart)
 - [YouTube: Introducing Opik: Open-Source LLM Evaluation from Comet](https://www.youtube.com/watch?v=B4oboG62lyA)
 
+## Speakeasy
+
+**Speakeasy** is an enterprise AI control plane for governing access, policy, and auditability across agents, MCP servers, and Skills. It provides a central way to understand AI usage and define what connected AI systems can access.
+[Explore Speakeasy](https://www.speakeasy.com/product/ai-control-plane)
+
+**Getting Started with Speakeasy:**
+- [AI Control Plane documentation](https://www.speakeasy.com/docs/ai-control-plane)
+
 
 
 ---
