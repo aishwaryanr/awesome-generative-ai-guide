@@ -61,6 +61,7 @@ For every free course (LevelUp Labs originals and vetted external), organized by
 
 ## :star: Top AI Tools List
 
+- [MagicKit](https://magickit.47.80.8.174.nip.io) - Free all-in-one AI toolbox for image generation (FLUX), text writing, and video creation. No sign-up or API key required. MIT licensed. [Source](https://github.com/kaketiti/magickit)
 Discover our favorite AI tools spanning every layer of AI application development. See [Our Favourite AI Tools](resources/our_favourite_ai_tools.md).
 
 ---
