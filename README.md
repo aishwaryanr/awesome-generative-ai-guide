@@ -91,6 +91,7 @@ Newest first:
 ---
 
 ## :paperclip: Resources
+- [NextReset](https://nextreset.ai/) - Independent, source-linked Codex reset history and official AI incident references, with a browser-local personal timer; no private account access or timing guarantees.
 
 - [ICLR 2024 Paper Summaries](https://areganti.notion.site/06f0d4fe46a94d62bff2ae001cfec22c?v=d501ca62e4b745768385d698f173ae14)
 - [LLM Lingo](resources/llm_lingo): a 6-part glossary of common LLM terms.
