@@ -163,3 +163,12 @@ One of its latest features, Audio Overview, transforms text-based sources into e
 
 **Getting Started with NotebookLM:**  
 - [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)  
+
+## Cortex
+
+**Cortex** is an open-source CLI that generates interactive API documentation, typed SDKs, and MCP servers from API specifications. The generated server gives agents typed tools and project documentation without a separate hand-written integration.
+[Visit Cortex](https://cortexdocs.dev)
+
+**Getting Started with Cortex:**
+- [Cortex Documentation](https://docs.cortexdocs.dev)
+- [Cortex on GitHub](https://github.com/cortex-docs/cortex)
