@@ -159,6 +159,9 @@ One of its latest features, Audio Overview, transforms text-based sources into e
 
 [Visit NotebookLM](https://notebooklm.google/)
 
+**Getting Started with NotebookLM:**  
+- [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)  
+
 ## UpRes
 
 **UpRes** is a multi-model AI upscaling platform designed for developers and creative teams to restore and enlarge images and videos up to 8K. It provides 14 specialized model aliases (covering photos, portraits, illustrations, and videos) accessible via web, developer REST API, CLI, and MCP server for agentic automation workflows.  
@@ -170,7 +173,3 @@ UpRes is particularly useful for AI development workflows where generated media 
 - [UpRes API & Documentation](https://upres.ai/models)  
 - [UpRes CLI on npm](https://www.npmjs.com/package/upres-cli)
 
-
-
-**Getting Started with NotebookLM:**  
-- [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)  
