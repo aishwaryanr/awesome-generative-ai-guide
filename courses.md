@@ -111,6 +111,7 @@ and [topic pages](topics/).
 - 🆕 **[Claude Code in Action](https://anthropic.skilljar.com/claude-code-in-action)** 🌐 🎥 (2025) by Anthropic Academy: agentic coding, explore-plan-code-commit.
 - 🆕 **[Learn Cursor](https://cursor.com/learn)** 🌐 🎥 (2025) by Cursor: official agents, coding, and review tutorials.
 - 🆕 **[OpenAI Codex Essentials](https://www.freecodecamp.org/news/openai-codex-essentials-ai-assisted-agentic-development-course/)** 🌐 🎥 (2025) by freeCodeCamp: agentic development workflows with Codex.
+- **[LogicWiz GenAI Course](https://logicwiz.ai/genai/)** 🌐 🛠️: a free hands-on course on Python, RAG, agents and MCP, with step-through animations and in-browser labs. Chapters 1 to 3 need no account, later chapters need a free account.
 
 ## Evaluation and Observability
 
