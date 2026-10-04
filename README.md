@@ -6,7 +6,6 @@ Generative AI is moving fast, and this repository is a comprehensive hub for gen
 
 ---
 
-- [ModelBenchmark](https://modelbenchmark.io) — Independent AI model rankings combining 16 public benchmarks for 202 models, plus prices, context windows, release dates, and a 2,406-model catalog.
 ## What do you want to do?
 
 Pick the door that fits you. Each journey has its own 101 to 301 path.
@@ -97,6 +96,7 @@ Newest first:
 - [LLM Lingo](resources/llm_lingo): a 6-part glossary of common LLM terms.
 - [Monthly Best GenAI Papers](research_updates/): the monthly paper lists (see [Understand AI](journeys/understand.md#understand-301-the-frontier-feed)).
 
+- [ModelBenchmark](https://modelbenchmark.io) — Independent AI model rankings combining 16 public benchmarks for 202 models, plus prices, context windows, release dates, and a 2,406-model catalog.
 ---
 
 ## :black_nib: Contributing
