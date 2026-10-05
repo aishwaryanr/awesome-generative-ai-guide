@@ -38,6 +38,7 @@ and [topic pages](topics/).
 - 🆕 **[CS336: Language Modeling from Scratch](https://cs336.stanford.edu/)** 🌐 📖 (2025) by Stanford: the full LLM pipeline.
 - 🆕 **[How Transformer LLMs Work](https://www.deeplearning.ai/courses/how-transformer-llms-work)** 🌐 🎥 (2025) by DeepLearning.AI (Jay Alammar): visual intuition for transformer internals.
 - 🆕 **[Pretraining LLMs](https://www.deeplearning.ai/courses/pretraining-llms)** 🌐 🎥 (2025) by DeepLearning.AI and Upstage: pretraining end to end, from data to eval.
+- 🆕 **[Learn AI in Plain Language](https://jhalmuri.ai/learn)** 🌐 📖 (2026) by Jhalmuri.ai: a free, no-jargon starting path for non-technical learners, in English, Hindi and Bengali.
 
 ## Prompting and Context
 
