@@ -183,5 +183,3 @@ Remember: the vocabulary matters less than the underlying concepts. Focus on bui
 - **New to AI?** Check out our **[#1 rated Enterprise AI Course on Maven](https://maven.com/aishwarya-kiriti/genai-system-design)** for comprehensive guidance on building production-ready AI systems from scratch.
 - **Already building AI?** Take our newly launched **[Advanced Evals course](https://maven.com/aishwarya-kiriti/evals-problem-first)** for systematically improving your AI products through advanced evaluation techniques.
 
-*📝 Note: Use code **GITHUB15** for 15% off on Maven courses (valid until January 15th, 2025)*
-
