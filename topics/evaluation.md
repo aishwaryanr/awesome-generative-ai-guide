@@ -1,6 +1,6 @@
 # Topic: Evaluation and Observability
 
-> 📚 **Full course list:** the complete, always-current set of free courses on this topic lives in [All free courses: Evaluation and Observability](../courses.md#evaluation-and-observability). The entries below are organized by journey and level.
+> 📚 **Full course list:** course links for this topic live in [Courses by topic: Evaluation and Observability](../courses.md#evaluation-and-observability). The entries below are organized by journey and level.
 
 Measuring whether an LLM or agentic system works: benchmarks, LLM-as-judge, reference datasets, production monitoring, and red teaming. One of the repo's strongest subjects, anchored by the AI Evals course and the evaluation research table.
 
@@ -13,7 +13,7 @@ Measuring whether an LLM or agentic system works: benchmarks, LLM-as-judge, refe
 - **[AI Evals for Everyone](../free_courses/ai_evals_for_everyone/README.md)** ⭐ 📖 (2026) certified: 10 chapters on evaluating LLM and agentic systems.
 - **[Applied LLMs Mastery 2024, week 6: evaluation techniques](../free_courses/Applied_LLMs_Mastery_2024/week6_llm_evaluation.md)** ⭐ 📖 (2024) 🔴 archived.
 
-Free external courses (full context on [Build 201](../journeys/build.md#build-201-build-real-systems)):
+External courses (access varies by provider; see [Build 201](../journeys/build.md#build-201-build-real-systems)):
 
 - **[Building and Evaluating Advanced RAG Applications](https://learn.deeplearning.ai/building-evaluating-advanced-rag)** 🌐 🎥 by DeepLearning.AI
 - **[Evaluating and Debugging Generative AI Models Using Weights and Biases](https://learn.deeplearning.ai/evaluating-debugging-generative-ai)** 🌐 🎥 by DeepLearning.AI

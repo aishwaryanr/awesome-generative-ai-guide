@@ -29,7 +29,7 @@ Learn how LLMs work well enough to build, the application stack, and your first 
 - **[Multimodal LLMs Guide](../resources/mm_llms_guide.md)** ⭐ 📖 (2024) 🔴 stale: an introduction to multimodal models. Topic: [Multimodal](../topics/multimodal.md).
 - **[Applied LLMs Mastery 2024 (2024 edition)](../free_courses/Applied_LLMs_Mastery_2024/README.MD)** ⭐ 📖 (2024) 🔴 archived: weeks 1 to 4 and 11 cover foundations, prompting, fine-tuning, and RAG. See [week 1: foundations](../free_courses/Applied_LLMs_Mastery_2024/week1_part1_foundations.md), [week 11: transformers and neural networks](../free_courses/Applied_LLMs_Mastery_2024/week11_foundations.md). Topic: [Foundations](../topics/foundations.md).
 
-### Free external courses
+### External courses (access varies by provider)
 
 Foundations courses that also serve builders live primarily on [Understand 101](understand.md#understand-101-foundations-and-how-to-read-research). Below are the build-focused starters and the agent MOOCs.
 
@@ -70,7 +70,7 @@ The building blocks: RAG, agents and tools, evaluation, fine-tuning, guardrails.
 - **[GenAI Projects](../resources/gen_ai_projects.md)** ⭐ 📝 (2024) 🔴 aging: more project ideas.
 - **[Applied LLMs Mastery 2024 (2024 edition)](../free_courses/Applied_LLMs_Mastery_2024/README.MD)** ⭐ 📖 (2024) 🔴 archived: weeks 5 to 9 cover tooling, evaluation, building an app end to end, deployment, and challenges. See [week 5: tools](../free_courses/Applied_LLMs_Mastery_2024/week5_tools_for_LLM_apps.md), [week 7: build your own app](../free_courses/Applied_LLMs_Mastery_2024/week7_build_llm_app.md).
 
-### Free external courses
+### External courses (access varies by provider)
 
 Application building:
 
@@ -192,7 +192,7 @@ Production and scale: LLMOps, advanced agents and RAG, evaluation at scale, cost
 - **[Securing Agentic AI Systems](../resources/securing_agentic_ai_systems.md)** ⭐ 📖 (2026): attack vectors and defenses for agentic systems. Topic: [Safety and Security](../topics/safety-security.md).
 - **[AI Evals for Everyone: production and monitoring](../free_courses/ai_evals_for_everyone/README.md)** ⭐ 📖 (2026): the production challenge and monitoring chapters extend evaluation to running systems. Topic: [Evaluation](../topics/evaluation.md).
 
-### Free external courses
+### External courses (access varies by provider)
 
 LLMOps and production (Topic: [Production and LLMOps](../topics/production.md)):
 
@@ -220,7 +220,7 @@ Curated sequences through the levels toward a specific outcome:
 
 - **[Agent Builder](../paths/agent-builder.md)**: Agentic AI Crash Course to Agentic RAG 101 to AI Evals to Securing Agentic AI Systems.
 - **[Harness Engineering](../paths/harness-engineering.md)**: agent = model + harness. From using Claude Code, Cursor, and Codex to assembling and evaluating your own harness (tools, context, memory, MCP, multi-agent).
-- **[Interview Prep](../paths/interview-prep.md)**: the 60 GenAI interview questions, topic-tagged.
+- **[Interview Prep](../paths/interview-prep.md)**: the shared GenAI interview questions, topic-tagged.
 
 ---
 

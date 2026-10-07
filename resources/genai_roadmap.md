@@ -98,4 +98,4 @@ Most builders reach for prompting, RAG, and agents long before they fine-tune. W
 
 ---
 
-**Where to next:** browse [all free courses by topic](../courses.md), follow the monthly [best papers](../research_updates/2026_papers) and the [State of AI report](../research_updates/state_of_ai_2025_report/README.md), or pick a [learning path](../paths/agent-builder.md) and keep going.
+**Where to next:** browse [course catalog by topic](../courses.md), follow the monthly [best papers](../research_updates/2026_papers) and the [State of AI report](../research_updates/state_of_ai_2025_report/README.md), or pick a [learning path](../paths/agent-builder.md) and keep going.

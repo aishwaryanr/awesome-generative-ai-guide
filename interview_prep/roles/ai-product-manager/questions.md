@@ -1,6 +1,6 @@
 # AI Product Manager: Question Bank
 
-94 questions with concise model answers, grouped by theme. Every question is a click-to-open collapsible: the answer is 3 to 6 sentences, enough to anchor your own, not a script to recite, and each ends with a "Learn more" pointer for going deeper. Add a specific example from your own work to every one before an interview. Pair with the [60 GenAI Interview Questions](../../60_gen_ai_questions.md) and the [Role-Based Prep](../../README.md).
+94 questions with concise model answers, grouped by theme. Every question is a click-to-open collapsible: the answer is 3 to 6 sentences, enough to anchor your own, not a script to recite, and each ends with a "Learn more" pointer for going deeper. Add a specific example from your own work to every one before an interview. Pair with the [GenAI Interview Questions](../../60_gen_ai_questions.md) and the [Role-Based Prep](../../README.md).
 
 Themes:
 1. [Capability judgment and product sense](#1-capability-judgment-and-product-sense) (Q1-13)
@@ -875,4 +875,4 @@ Translate capability into plain business terms and anchor on what is measured, n
 
 ---
 
-Keep going: verify your weak areas against [resources.md](resources.md), the [topic pages](../../../topics/foundations.md), and the [60 GenAI Interview Questions](../../60_gen_ai_questions.md). Then run the [prep plan](prep-plan.md).
+Keep going: verify your weak areas against [resources.md](resources.md), the [topic pages](../../../topics/foundations.md), and the [GenAI Interview Questions](../../60_gen_ai_questions.md). Then run the [prep plan](prep-plan.md).
