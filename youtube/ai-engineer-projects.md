@@ -3,8 +3,6 @@
 [Watch on YouTube](https://www.youtube.com/@aish_reganti) · 2026-10-08
 <!-- TODO: replace with the video URL -->
 
-![Project 1, the Document Intelligence Pipeline: skills you'll build, recommended tools, and the CUAD dataset](images/ai-engineer-projects-document-intelligence.png)
-
 ## In this video
 
 - **What gets an AI engineer hired**: projects that show the decisions you made, the architecture trade-offs, and how close your build is to what companies ship, instead of a list of keywords like RAG, agents and MCP
@@ -62,8 +60,6 @@ Each project lists the dataset to start from, the tool stack shown in the video,
 - **Tool stack**: [LangGraph](https://docs.langchain.com/oss/python/langgraph/overview) for state, tools and human approval, the [MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk) for tool integration, [Temporal](https://temporal.io) as an optional durable workflow layer, FastAPI, Docker with Cloud Run, and Arize
 - **Evals**: task success rate, tool accuracy, escalation rate, and pass^k
 - **What it proves to a hiring manager**: where the human sits, what evals you built, what guardrails you put in, and how you debugged the traces
-
-![Project 5, the Multi-Step Autonomous Agent: skills you'll build, recommended tools, and the tau2-bench benchmark](images/ai-engineer-projects-autonomous-agent.png)
 
 ### Project 6: Working backwards
 
