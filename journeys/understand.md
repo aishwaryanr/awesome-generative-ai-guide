@@ -1,6 +1,6 @@
 # 🔬 Understand AI
 
-For students, researchers, and the curious who want to follow the research and the frontier. This journey is a living feed: revived monthly-paper lists, research tables kept current, and the annual State of AI report.
+For students, researchers, and the curious who want to follow the research and the frontier. This journey gathers monthly-paper lists, research tables, and the annual State of AI report. The latest monthly list currently covers June 2026.
 
 - [Understand 101 🟢: foundations and how to read research](#understand-101-foundations-and-how-to-read-research)
 - [Understand 201 🟡: active research areas](#understand-201-active-research-areas)
@@ -23,14 +23,13 @@ Transformers, pretraining, seminal papers, and how to read a paper.
 - **[Agentic AI Crash Course](../free_courses/agentic_ai_crash_course/README.md)** ⭐ 📖 (2025): a conceptual grounding in agents that also serves builders. Primary home: [Build 101](build.md#build-101-foundations-to-build).
 - **[Generative AI Genius](../free_courses/generative_ai_genius/README.md)** ⭐ 📖 (2024): a beginner introduction. Primary home: [Use 101](use.md#use-101-start-using-ai).
 
-### Free external courses (foundations)
+### External courses: foundations (access varies by provider)
 
 The foundations courses below are the primary starting point for understanding LLMs, and they also serve builders working through [Build 101](build.md#build-101-foundations-to-build). Topic: [Foundations](../topics/foundations.md).
 
 - **[Large Language Models](https://rycolab.io/classes/llm-s23/)** 🌐 📖 by ETH Zurich
 - **[Understanding Large Language Models](https://www.cs.princeton.edu/courses/archive/fall22/cos597G/)** 🌐 📖 by Princeton
-- **[Transformers course](https://huggingface.co/learn/nlp-course/chapter1/1)** 🌐 📖 by Huggingface
-- **[NLP course](https://huggingface.co/learn/nlp-course/chapter1/1)** 🌐 📖 by Huggingface
+- **[LLM Course](https://huggingface.co/learn/llm-course/chapter1/1)** 🌐 📖 by Hugging Face
 - **[CS324 - Large Language Models](https://stanford-cs324.github.io/winter2022/)** 🌐 📖 by Stanford
 - **[Generative AI with Large Language Models](https://www.coursera.org/learn/generative-ai-with-llms)** 🌐 📖 by Coursera
 - **[Introduction to Generative AI](https://www.coursera.org/learn/introduction-to-generative-ai)** 🌐 📖 by Coursera

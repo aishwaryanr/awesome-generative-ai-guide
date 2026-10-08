@@ -1,6 +1,6 @@
-# FDE Free Courses
+# FDE Courses
 
-The best free courses for the Forward-Deployed Engineer loop, grouped by topic. Start with this repository's own courses (they are self-contained and current), then use the verified external courses to go deeper. Every external link returns HTTP 200. Free only.
+Curated courses for the Forward-Deployed Engineer loop, grouped by topic. Start with this repository's own courses (they are self-contained and current), then use external course pages to go deeper. Access terms and link availability can change, so check provider pages before enrolling.
 
 An FDE needs breadth over narrow depth: enough foundations to reason clearly, real fluency in RAG and agents, genuine evaluation skill, and the deployment and reliability mindset. Sequence accordingly.
 
@@ -10,7 +10,7 @@ An FDE needs breadth over narrow depth: enough foundations to reason clearly, re
 
 - [Agentic AI Crash Course](../../../free_courses/agentic_ai_crash_course/README.md): builds agent fundamentals (tools, memory, loops, orchestration) that the design and agent questions assume. Do this first if agents are your weak spot.
 - [AI Evals for Everyone](../../../free_courses/ai_evals_for_everyone/README.md): builds evaluation skill, which is the single most-probed AI depth area for FDE roles at OpenAI and Anthropic ("how do you know it works?"). Do not skip this.
-- [All free courses by topic (repository index)](../../../courses.md): the full catalog to find a course for any gap.
+- [Courses and learning resources by topic (repository index)](../../../courses.md): the full catalog to find a course for any gap.
 - Structured tracks: [Harness Engineering path](../../../paths/harness-engineering.md) and [Agent Builder path](../../../paths/agent-builder.md) sequence exactly what an AI FDE deploys.
 
 ---

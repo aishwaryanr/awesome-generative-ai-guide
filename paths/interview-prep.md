@@ -8,7 +8,7 @@ A path inside the [Build AI](../journeys/build.md) journey for anyone preparing 
 
 ## Question bank
 
-- **[60 GenAI Interview Questions](../interview_prep/60_gen_ai_questions.md)** ⭐ 📖 (2025): common generative AI interview questions with answers, spanning foundations, prompting, fine-tuning, evaluation, and research trends.
+- **[GenAI Interview Questions](../interview_prep/60_gen_ai_questions.md)** ⭐ 📖 (2025): common generative AI interview questions with answers, spanning foundations, prompting, fine-tuning, evaluation, and research trends.
 
 ## Shore up by topic
 
@@ -26,7 +26,7 @@ Different roles are tested on different things. See the **[Role-Based Interview 
 
 ## What comes next
 
-System-design interview drills (for example designing an LLM-powered search engine or a support agent) are `[planned: build phase]`.
+The system-design interview cases are available in the [AI System Design Case Studies](../interview_prep/system-design/README.md) collection.
 
 ---
 

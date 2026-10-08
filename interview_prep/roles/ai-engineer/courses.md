@@ -1,6 +1,6 @@
-# AI Engineer: Free Courses
+# AI Engineer: Courses
 
-The best free courses for this role, grouped by topic. This repository's own courses come first because they are self-contained and built for practitioners; verified external courses follow. Every external link was checked and returned HTTP 200 at the time of writing. You do not need all of these: pick one per weak area and build alongside it.
+A curated set of courses for this role, grouped by topic. This repository's own courses come first because they are self-contained and built for practitioners; external course pages supplement them. Access terms and link availability can change, so check provider pages before enrolling. You do not need all of these: pick one per weak area and build alongside it.
 
 Jump to: [Full course index](#the-full-index-in-this-repo) - [Agents and tool use](#agents-and-tool-use) - [Evaluation](#evaluation) - [Prompting](#prompting) - [RAG](#retrieval-and-rag) - [End-to-end AI engineering](#end-to-end-ai-engineering) - [Fine-tuning (adjacent)](#fine-tuning-adjacent-depth)
 
@@ -8,9 +8,9 @@ Jump to: [Full course index](#the-full-index-in-this-repo) - [Agents and tool us
 
 ## The full index in this repo
 
-For the complete, always-current set of free courses organized by topic, start here:
+For the course catalog organized by topic, start here:
 
-- [All free courses, by topic](../../../courses.md): the master index in this repository.
+- [Courses and learning resources, by topic](../../../courses.md): the master index in this repository.
 
 ## Agents and tool use
 

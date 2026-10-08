@@ -1,13 +1,13 @@
 # FDE Prep Resources
 
-Curated, free resources for the Forward-Deployed Engineer loop, grouped by topic. Every external link was verified to return HTTP 200. Start with this repository's own material, then use the external anchors to go deeper. Favor the 2025 and 2026 material; older items are labeled as foundational anchors.
+Curated resources for the Forward-Deployed Engineer loop, grouped by topic. External links point to source pages, but availability can change; verify them before relying on them. Start with this repository's own material, then use the external anchors to go deeper. Favor the 2025 and 2026 material; older items are labeled as foundational anchors.
 
 ---
 
 ## Start here: this repository
 
 - [FDE README](README.md), [rounds](rounds.md), [questions](questions.md), [courses](courses.md), and [prep-plan](prep-plan.md) in this folder.
-- [60 GenAI Interview Questions](../../60_gen_ai_questions.md) and [Role-Based Interview Prep](../../README.md) (the Solutions Architect and LLM Engineer tracks overlap most with FDE).
+- [GenAI Interview Questions](../../60_gen_ai_questions.md) and [Role-Based Interview Prep](../../README.md) (the Solutions Architect and LLM Engineer tracks overlap most with FDE).
 - Topic pages: [Foundations](../../../topics/foundations.md), [Prompting](../../../topics/prompting.md), [RAG](../../../topics/rag.md), [Fine-tuning](../../../topics/fine-tuning.md), [Agents](../../../topics/agents.md), [Evaluation](../../../topics/evaluation.md), [Multimodal](../../../topics/multimodal.md), [Production and LLMOps](../../../topics/production.md), [Safety and Security](../../../topics/safety-security.md).
 - Journeys and paths: [Build AI](../../../journeys/build.md), [Use AI](../../../journeys/use.md), [Understand AI](../../../journeys/understand.md), [Harness Engineering](../../../paths/harness-engineering.md), [Agent Builder](../../../paths/agent-builder.md).
 - Guides: [Agentic RAG 101](../../../resources/agentic_rag_101.md), [Agents 101](../../../resources/agents_101_guide.md), [Fine-tuning 101](../../../resources/fine_tuning_101.md), [Securing Agentic AI Systems](../../../resources/securing_agentic_ai_systems.md).

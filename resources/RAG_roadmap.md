@@ -56,4 +56,4 @@ The frontier: agentic retrieval, GraphRAG, reranking, and the long-context trade
 
 ---
 
-**Where to next:** the full [RAG topic page](../topics/rag.md), [all free courses by topic](../courses.md), or the [Agent Builder path](../paths/agent-builder.md).
+**Where to next:** the full [RAG topic page](../topics/rag.md), [course catalog by topic](../courses.md), or the [Agent Builder path](../paths/agent-builder.md).

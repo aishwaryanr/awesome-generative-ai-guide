@@ -60,7 +60,7 @@ Assumes roughly 10 to 15 hours per week. Read [rounds.md](rounds.md) once up fro
 - **Day 14:** Coding round practice: implement, from scratch and timed, a chunk-retrieve-cite function, a structured-extraction function with validation, and a capped tool loop. Handle every unhappy path.
 - **Day 15:** Polish the anchor project README and demo. Do a full mock loop with a friend or out loud: coding, system design, behavioral.
 - **Day 16:** Review your weak areas from the mocks. Re-answer any [questions.md](questions.md) items you fumbled. Prepare questions for the hiring manager.
-- **Buffer:** Skim [60 GenAI Interview Questions](../../60_gen_ai_questions.md) and the [State of AI 2025 Report](../../../research_updates/state_of_ai_2025_report/README.md) to catch anything current you missed.
+- **Buffer:** Skim [GenAI Interview Questions](../../60_gen_ai_questions.md) and the [State of AI 2025 Report](../../../research_updates/state_of_ai_2025_report/README.md) to catch anything current you missed.
 
 ---
 
@@ -74,7 +74,7 @@ Assumes the onsite is days away and you can commit 4 to 6 focused hours per day.
 - **Day 4:** System design: the [System design questions](questions.md#system-design). Do two timed 45-minute designs out loud (a support agent, and enterprise RAG with access control). Force yourself to start from requirements and put numbers on cost and latency.
 - **Day 5:** Behavioral and judgment: the [Business and judgment questions](questions.md#business-and-judgment). Write and rehearse 4 to 5 stories, one about an AI failure in production. Finalize your project demo and a clear README.
 - **Day 6:** Full mock loop out loud: one coding problem (chunk-retrieve-cite or structured extraction with validation), one system design, one behavioral. Fix the biggest gap the mock exposes.
-- **Day 7 (light):** Re-skim your weak [questions.md](questions.md) sections and the [60 GenAI Interview Questions](../../60_gen_ai_questions.md). Prepare questions for the hiring manager. Rest.
+- **Day 7 (light):** Re-skim your weak [questions.md](questions.md) sections and the [GenAI Interview Questions](../../60_gen_ai_questions.md). Prepare questions for the hiring manager. Rest.
 
 ---
 

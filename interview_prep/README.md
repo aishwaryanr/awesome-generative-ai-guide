@@ -6,7 +6,7 @@ The most complete, role-specific map of how AI interviews actually work in 2026,
 
 This hub is reverse-engineered from **500+ real job descriptions** and **direct conversations with people who hire at FAANG+, Bay Area startups and frontier model companies**. It is not generic advice scraped off the internet. Every role, every round, and every question bank here reflects what these loops are really testing, and how they have shifted as the job changed.
 
-Generative-AI interviews stopped testing one generic skill set. What an AI Engineer is grilled on looks nothing like what a Product Manager, a Forward-Deployed Engineer, or a Strategist faces. So this hub is organized by the job you are actually interviewing for: pick your role, work its folder end to end, and pull from a shared library of worked system-design cases, concept deep-dives, and free courses.
+Generative-AI interviews stopped testing one generic skill set. What an AI Engineer is grilled on looks nothing like what a Product Manager, a Forward-Deployed Engineer, or a Strategist faces. So this hub is organized by the job you are actually interviewing for: pick your role, work its folder end to end, and pull from a shared library of worked system-design cases, concept deep-dives, and courses.
 
 Built by **[Aishwarya Naresh Reganti](https://www.linkedin.com/in/areganti/)**, CEO of LevelUp Labs, and **[Kiriti Badam](https://www.linkedin.com/in/sai-kiriti-badam/)**, Applied AI at OpenAI Codex.
 
@@ -18,8 +18,8 @@ Built by **[Aishwarya Naresh Reganti](https://www.linkedin.com/in/areganti/)**, 
 | **24 role guides** | each role has an overview, a rounds breakdown, a question bank, resources, courses, and a prep plan |
 | **10 system-design case studies** | worked interviews on one 5-layer spine, each with an engineer writeup, a PM writeup, and runnable code |
 | **9 topic deep-dives** | foundations, prompting, RAG, agents, evaluation, fine-tuning, production, safety, multimodal |
-| **1,000+ question bank** | the role-agnostic warm-up covering what comes up in nearly every AI interview |
-| **Free courses** | the full catalog, grouped by topic, starting with LevelUp's own material |
+| **50-question bank** | the role-agnostic warm-up covering what comes up in nearly every AI interview |
+| **Course catalog** | courses and learning resources, grouped by topic |
 
 ---
 
@@ -197,12 +197,12 @@ Concept-by-concept reference pages. Every loop expects fluency in these. Read th
 
 ### Courses
 
-- **[All free courses, by topic](../courses.md):** the full catalog in this guide, grouped by topic, starting with LevelUp's own material. Each role folder also points to the best courses for that specific loop.
+- **[Courses and learning resources, by topic](../courses.md):** the course catalog, grouped by topic, starting with LevelUp's own material. Each role folder also points to the best courses for that specific loop.
 - **Learn live with us.** Beyond the free material, we teach cohort-based courses on Maven, and more than 3,000 builders have learned with us so far. The two most relevant to this hub: **[AI System Design](https://maven.com/aishwarya-kiriti/genai-system-design)** and **[Advanced AI Evals](https://maven.com/aishwarya-kiriti/evals-problem-first)**. See [all our live courses](https://maven.com/aishwarya-kiriti).
 
-### 60 GenAI questions (fundamentals warm-up)
+### GenAI questions (fundamentals warm-up)
 
-- **[60 GenAI Interview Questions](60_gen_ai_questions.md):** a broad, role-agnostic bank (1,000+ lines) covering the concepts that surface in almost any AI interview. A good gut-check before a screen. It is a warm-up, not the main event: the depth lives in your role folder and the system-design cases.
+- **[GenAI Interview Questions](60_gen_ai_questions.md):** a broad, role-agnostic bank (1,000+ lines) covering the concepts that surface in almost any AI interview. A good gut-check before a screen. It is a warm-up, not the main event: the depth lives in your role folder and the system-design cases.
 
 ---
 
@@ -214,4 +214,4 @@ Everything in this section, one click away.
   - Each with: Overview (README) · Rounds · Question bank (questions) · Resources · Courses · Prep plan
 - **System design:** [overview](system-design/README.md) · [customer-support](system-design/customer-support-agent/README.md) · [enterprise research](system-design/enterprise-research-assistant/README.md) · [text-to-SQL](system-design/text-to-sql-analytics/README.md) · [financial-ops](system-design/financial-ops-decisioning/README.md) · [security and compliance](system-design/security-compliance-agent/README.md) · [coding agent](system-design/coding-agent/README.md) · [document decisioning](system-design/document-decisioning/README.md) · [voice support](system-design/voice-support-agent/README.md) · [SDR sales](system-design/sdr-sales-agent/README.md) · [clinical scribe](system-design/clinical-scribe/README.md) (each has a PM version and a code folder)
 - **Topics:** [foundations](../topics/foundations.md) · [prompting](../topics/prompting.md) · [RAG](../topics/rag.md) · [agents](../topics/agents.md) · [evaluation](../topics/evaluation.md) · [fine-tuning](../topics/fine-tuning.md) · [production](../topics/production.md) · [safety and security](../topics/safety-security.md) · [multimodal](../topics/multimodal.md)
-- **More:** [60 GenAI questions](60_gen_ai_questions.md) · [all free courses](../courses.md)
+- **More:** [GenAI questions](60_gen_ai_questions.md) · [course catalog](../courses.md)
