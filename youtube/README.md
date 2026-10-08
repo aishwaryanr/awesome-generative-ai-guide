@@ -6,6 +6,9 @@ Transcripts, resources, and sources for every video on my channel.
 
 | Video | What it covers | Published |
 |---|---|---|
+| [AI Engineer Projects That Get You Hired](ai-engineer-projects.md) | 6 portfolio projects in increasing difficulty, with the dataset, tool stack, and evals for each | 2026-10-08 |
+| [You need to learn Local AI in 2026](local-ai.md) | What local AI is, why it took off, how to run it, and where it breaks at scale | 2026-10-01 |
+| [Jev Explained in 12 mins (Without the Hype)](jev-explained.md) | What Jev is, the 3 things it can do, where it breaks down, and how it pairs with LLMs | 2026-09-24 |
 | [The Most Important Skill for AI Engineers: Evals Explained](ai-evals.md) | What AI evals are, model evals vs product evals, the 3 ways to build them, and a full first-eval walkthrough | 2026-09-17 |
 | [Forward Deployed Engineer: Hype, Reality & a Realistic Roadmap](forward-deployed-engineering.md) | What the role actually is, the 3-layer roadmap, and 4 myths checked against 1000+ live job listings | 2026-09-11 |
 | [Make Claude Code 10x Better and Cheaper: 16 Research-Backed Tips](claude-code-5-levels.md) | The 5 levels of working with Claude Code and Codex, and 16 tips with the prompts to apply them | 2026-09-03 |
