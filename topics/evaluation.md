@@ -18,6 +18,7 @@ Free external courses (full context on [Build 201](../journeys/build.md#build-20
 - **[Building and Evaluating Advanced RAG Applications](https://learn.deeplearning.ai/building-evaluating-advanced-rag)** 🌐 🎥 by DeepLearning.AI
 - **[Evaluating and Debugging Generative AI Models Using Weights and Biases](https://learn.deeplearning.ai/evaluating-debugging-generative-ai)** 🌐 🎥 by DeepLearning.AI
 - **[Quality and Safety for LLM Applications](https://www.deeplearning.ai/short-courses/quality-safety-llm-applications/)** 🌐 🎥 by DeepLearning.AI
+- **[AI Agent Evaluation](https://hallieren.github.io/ai-agent-evaluation/)** 🌐 📖 (2026) by Hallie Ren: free open-source book, 16 chapters on evaluating LLM agents (endpoint scoring, path attribution, side effects, judges, variance, release gates), each with a template pack and a zero-dependency lab.
 
 ## 🏗️ Build 301
 
