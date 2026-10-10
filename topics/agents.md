@@ -24,6 +24,7 @@ Agents that plan, use tools, hold memory, and coordinate: single-agent and multi
 ## 🧑‍💻 Use 201 and 301
 
 - **[OpenClaw Mastery for Everyone](../free_courses/openclaw_mastery_for_everyone/README.md)** ⭐ 📖 (2026) certified: configure and run your own personal AI assistant.
+- **[Why is Codex browsing slow?](https://codexbrowse.site/codex-browser-slow)** 🌐 📖 📝 (2026) by Brain Liu / BrowseSprint: a manual diagnostic for browser workflows, with session controls, three baseline and three changed runs, and failed outcomes retained.
 
 ## 🏗️ Build 301
 
