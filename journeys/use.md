@@ -32,6 +32,7 @@ Using agent harnesses for your own work (Topic: [Agents](../topics/agents.md)):
 - 🆕 **[Claude Code in Action](https://anthropic.skilljar.com/claude-code-in-action)** 🌐 🎥 (2025) by Anthropic Academy: agentic coding, explore-plan-code-commit.
 - 🆕 **[Learn Cursor](https://cursor.com/learn)** 🌐 🎥 (2025) by Cursor: official agents, coding, and review tutorials.
 - 🆕 **[OpenAI Codex Essentials](https://www.freecodecamp.org/news/openai-codex-essentials-ai-assisted-agentic-development-course/)** 🌐 🎥 (2025) by freeCodeCamp: agentic development workflows with Codex.
+- **[Why is Codex browsing slow?](https://codexbrowse.site/codex-browser-slow)** 🌐 📖 📝 (2026) by Brain Liu / BrowseSprint: a manual diagnostic for browser workflows, with session controls, three baseline and three changed runs, and failed outcomes retained.
 
 Beyond these, dedicated external material for power-user prompting and personal automation is still thin. `[planned: build phase]` for deeper Use 201 and 301 content.
 
