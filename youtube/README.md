@@ -6,6 +6,7 @@ Transcripts, resources, and sources for every video on my channel.
 
 | Video | What it covers | Published |
 |---|---|---|
+| [How MCP Works in 2026 Explained For Beginners](mcp-in-2026.md) | MCP foundations, hosts/clients/servers, APIs vs. skills vs. plugins, and the four changes in 2026 | Coming up soon |
 | [AI Engineer Projects That Get You Hired](ai-engineer-projects.md) | 6 portfolio projects in increasing difficulty, with the dataset, tool stack, and evals for each | 2026-10-08 |
 | [You need to learn Local AI in 2026](local-ai.md) | What local AI is, why it took off, how to run it, and where it breaks at scale | 2026-10-01 |
 | [Jev Explained in 12 mins (Without the Hype)](jev-explained.md) | What Jev is, the 3 things it can do, where it breaks down, and how it pairs with LLMs | 2026-09-24 |
