@@ -11,9 +11,11 @@ Usage:
 import os
 import re
 import sys
+from pathlib import Path
 
-SECTIONS_DIR = "sections"
-OUTPUT_FILE = "index.html"
+REPORT_DIR = Path(__file__).resolve().parent
+SECTIONS_DIR = REPORT_DIR / "sections"
+OUTPUT_FILE = REPORT_DIR / "index.html"
 STYLES_FILE = "styles.css"
 SCRIPT_FILE = "script.js"
 
@@ -61,6 +63,20 @@ HTML_FOOTER = '''
 '''
 
 
+def normalize_image_paths(section_content):
+    """Resolve section-relative image sources from the generated report root.
+
+    Sections contain both ../images/ and images/ sources. Keep already
+    root-relative and external sources unchanged, including their formatting.
+    """
+    return re.sub(
+        r"(<img\b[^>]*?\s+src\s*=\s*['\"])\.\./images/",
+        r"\1images/",
+        section_content,
+        flags=re.IGNORECASE,
+    )
+
+
 def build():
     """Combine all section files into index.html"""
     content = HTML_HEADER
@@ -68,8 +84,8 @@ def build():
     for section_file in SECTION_FILES:
         filepath = os.path.join(SECTIONS_DIR, section_file)
         if os.path.exists(filepath):
-            with open(filepath, 'r') as f:
-                section_content = f.read()
+            with open(filepath, 'r', encoding='utf-8') as f:
+                section_content = normalize_image_paths(f.read())
                 content += f"\n{section_content}\n"
             print(f"Added: {section_file}")
         else:
@@ -77,7 +93,7 @@ def build():
 
     content += HTML_FOOTER
 
-    with open(OUTPUT_FILE, 'w') as f:
+    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
         f.write(content)
 
     print(f"\nBuilt {OUTPUT_FILE} successfully!")
