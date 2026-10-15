@@ -18,6 +18,7 @@ What LLMs are (no math), prompting basics, and using ChatGPT and Claude well.
 - **[Generative AI Genius](../free_courses/generative_ai_genius/README.md)** ⭐ 📖 (2024): a beginner introduction to generative AI. Also relevant to [Understand 101](understand.md#understand-101-foundations-and-how-to-read-research).
 - **[Our Favourite AI Tools](../resources/our_favourite_ai_tools.md)** ⭐ 📖 (2025): the current tool landscape across the AI application stack.
 - **[60 AI Projects](../resources/60_ai_projects.md)** ⭐ 📝 (2025): hands-on projects to practice with, also a [Build 201](build.md#build-201-build-real-systems) practice bank.
+- [Your AI Director](https://youraidirector.com) - Free plain-language guides that teach everyday people to direct AI tools for real work.
 
 ---
 
