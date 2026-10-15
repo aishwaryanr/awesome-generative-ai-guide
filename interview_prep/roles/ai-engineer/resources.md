@@ -1,6 +1,6 @@
 # AI Engineer: Resources
 
-Curated free resources to prepare, grouped by topic. Every external link was checked and returned HTTP 200 at the time of writing. Repo-internal links (this repository's own material) come first in each section because they are already organized for interview prep. Favor the 2025-2026 items; older entries are labeled as foundational anchors.
+Curated resources to prepare, grouped by topic. External links point to source pages, but availability can change; verify them before relying on them. Repo-internal links (this repository's own material) come first in each section because they are already organized for interview prep. Favor the 2025-2026 items; older entries are labeled as foundational anchors.
 
 Jump to: [Start here (in this repo)](#start-here-in-this-repo) - [LLM fundamentals](#llm-fundamentals) - [Prompting and context engineering](#prompting-and-context-engineering) - [RAG](#retrieval-and-rag) - [Agents, tools, MCP](#agents-tools-and-mcp) - [Evaluation](#evaluation) - [Reasoning models and the field](#reasoning-models-and-the-state-of-the-field) - [Safety and security](#safety-and-security) - [Interview-specific](#interview-specific) - [Practice repos](#hands-on-practice-repos)
 
@@ -11,7 +11,7 @@ Jump to: [Start here (in this repo)](#start-here-in-this-repo) - [LLM fundamenta
 This repository is built for exactly this prep. Ground yourself here first, then go external for depth.
 
 - [Topic: Foundations](../../../topics/foundations.md), [Prompting](../../../topics/prompting.md), [RAG](../../../topics/rag.md), [Agents](../../../topics/agents.md), [Evaluation](../../../topics/evaluation.md), [Production](../../../topics/production.md), [Safety and Security](../../../topics/safety-security.md): each topic page is organized by journey and level with the best free material.
-- [60 GenAI Interview Questions](../../60_gen_ai_questions.md): the repo's flagship question bank.
+- [GenAI Interview Questions](../../60_gen_ai_questions.md): the repo's flagship question bank.
 - [Role-Based Interview Prep](../../README.md): quick role tracks including AI / LLM Engineer.
 - [GenAI Roadmap](../../../resources/genai_roadmap.md), [Agents Roadmap](../../../resources/agents_roadmap.md), [RAG Roadmap](../../../resources/RAG_roadmap.md): structured learning paths.
 - [Journeys: Build](../../../journeys/build.md), [Use](../../../journeys/use.md), [Understand](../../../journeys/understand.md).

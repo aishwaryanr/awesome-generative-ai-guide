@@ -8,7 +8,7 @@ Deep, self-contained prep for the **AI Engineer** role: the person who builds LL
 2. [rounds.md](rounds.md): every round in the loop, what each tests, what "good" looks like, and example prompts.
 3. [questions.md](questions.md): a 60+ question bank with model answers, grouped by theme. The heart of this folder.
 4. [resources.md](resources.md): the best free reading, talks, papers, and repos, verified and grouped by topic.
-5. [courses.md](courses.md): the best free courses, starting with this repository's own.
+5. [courses.md](courses.md): curated courses, starting with this repository's own.
 6. [prep-plan.md](prep-plan.md): a day-by-day plan (3-week track plus a 1-week crunch).
 
 ---
@@ -72,8 +72,8 @@ Use these to shore up any topic. Paths are relative to this folder.
 - **Topics:** [Foundations](../../../topics/foundations.md) - [Prompting](../../../topics/prompting.md) - [RAG](../../../topics/rag.md) - [Agents](../../../topics/agents.md) - [Evaluation](../../../topics/evaluation.md) - [Fine-tuning](../../../topics/fine-tuning.md) - [Production](../../../topics/production.md) - [Safety and Security](../../../topics/safety-security.md) - [Multimodal](../../../topics/multimodal.md)
 - **Journeys:** [Build](../../../journeys/build.md) - [Use](../../../journeys/use.md) - [Understand](../../../journeys/understand.md)
 - **Paths:** [Harness Engineering](../../../paths/harness-engineering.md) - [Agent Builder](../../../paths/agent-builder.md)
-- **Core question banks:** [60 GenAI Interview Questions](../../60_gen_ai_questions.md) - [Role-Based Interview Prep](../../README.md)
-- **Free courses (all, by topic):** [courses.md](../../../courses.md)
+- **Core question banks:** [GenAI Interview Questions](../../60_gen_ai_questions.md) - [Role-Based Interview Prep](../../README.md)
+- **Course catalog:** [courses.md](../../../courses.md)
 
 ---
 

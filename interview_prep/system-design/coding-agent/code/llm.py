@@ -13,7 +13,7 @@ make next. This file gives you two implementations behind one function, propose_
 Selecting a model (any one of these):
     export CODING_AGENT_MODEL="gpt-4o-mini"        + OPENAI_API_KEY
     export CODING_AGENT_MODEL="claude-sonnet-5"    + ANTHROPIC_API_KEY
-    export CODING_AGENT_MODEL="gemini-2.0-flash"   + GOOGLE_API_KEY
+    export CODING_AGENT_MODEL="gemini-3.6-flash"   + GOOGLE_API_KEY
 If CODING_AGENT_MODEL is unset, the provider is auto-detected from whichever key is present.
 Install the matching integration: langchain-openai, langchain-anthropic, or
 langchain-google-genai.
@@ -30,8 +30,8 @@ CANDIDATE_OPERATORS = ["+", "*", "//", "%"]
 _AUTODETECT = [
     ("OPENAI_API_KEY", "gpt-4o-mini", "openai"),
     ("ANTHROPIC_API_KEY", "claude-sonnet-5", "anthropic"),
-    ("GOOGLE_API_KEY", "gemini-2.0-flash", "google_genai"),
-    ("GEMINI_API_KEY", "gemini-2.0-flash", "google_genai"),
+    ("GOOGLE_API_KEY", "gemini-3.6-flash", "google_genai"),
+    ("GEMINI_API_KEY", "gemini-3.6-flash", "google_genai"),
 ]
 
 

@@ -1,6 +1,6 @@
 # Topic: Retrieval and RAG
 
-> 📚 **Full course list:** the complete, always-current set of free courses on this topic lives in [All free courses: Retrieval and RAG](../courses.md#retrieval-and-rag). The entries below are organized by journey and level.
+> 📚 **Full course list:** course links for this topic live in [Courses by topic: Retrieval and RAG](../courses.md#retrieval-and-rag). The entries below are organized by journey and level.
 
 Retrieval-augmented generation: grounding a model in your data, vector search, chunking, reranking, and agentic retrieval. This is one of the repo's strongest subjects, spanning build-a-RAG-app work and RAG research.
 
@@ -19,7 +19,7 @@ LevelUp Labs originals:
 - **[Agentic RAG 101](../resources/agentic_rag_101.md)** ⭐ 📖 (2024) 🟡 aging: retrieval combined with agentic control.
 - **[Applied LLMs Mastery 2024, week 4: RAG](../free_courses/Applied_LLMs_Mastery_2024/week4_RAG.md)** ⭐ 📖 (2024) 🔴 archived.
 
-Free external courses (full context on [Build 201](../journeys/build.md#build-201-build-real-systems)):
+External courses (access varies by provider; see [Build 201](../journeys/build.md#build-201-build-real-systems)):
 
 - **[LangChain and Vector Databases in Production](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqbVhnQW8xNDdhSU9IUDVLXzFhV2N0UkNRMkZrQXxBQ3Jtc0traUxHMzZJcGJQYjlyckYxaGxYVWlsOFNGUFlFVEdhNzdjTWpPUlQ2TF9XczRqNkxMVGpJTnd5YmYzV0prQ0IwZURNcHhIZ3h1Z051VTl5MXBBLUN0dkM0NHRkQTFua1Jpc0VCRFJUb0ZQZG95b0JqMA&q=https%3A%2F%2Flearn.activeloop.ai%2Fcourses%2Flangchain&v=gKUTDC13jys)** 🌐 🎥 by Activeloop
 - **[Building Applications with Vector Databases](https://learn.deeplearning.ai/building-applications-vector-databases)** 🌐 🎥 by DeepLearning.AI

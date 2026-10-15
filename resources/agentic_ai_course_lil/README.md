@@ -131,7 +131,6 @@ This CC/CD pattern works for production systems and teaches you how to systemati
 
 **Aishwarya Naresh Reganti**
 
-[0]: # (Replace these placeholder URLs with actual course URLs)
 
 [lil-course-url]: https://www.linkedin.com/learning/agentic-ai-build-your-first-agentic-ai-system
 [lil-thumbnail-url]: https://media.licdn.com/dms/image/v2/D4E0DAQG0eDHsyOSqTA/learning-public-crop_675_1200/B4EZVdqqdwHUAY-/0/1741033220778?e=2147483647&v=beta&t=FxUDo6FA8W8CiFROwqfZKL_mzQhYx9loYLfjN-LNjgA

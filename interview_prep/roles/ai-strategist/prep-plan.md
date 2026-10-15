@@ -39,7 +39,7 @@ Read [Evaluation topic](../../../topics/evaluation.md) and begin [AI Evals for E
 Read [Production topic](../../../topics/production.md). Answer the [Cost, latency, and production questions](questions.md#e-cost-latency-and-production). Practice explaining total cost of ownership and why pilots die between pilot and production.
 
 **Day 7: Consolidate and self-test.**
-Do a closed-book pass of all Section A to E questions (1 to 57). Mark the ones you fumbled and reread just those topics. Skim the repo's [60 GenAI interview questions](../../60_gen_ai_questions.md) for anything new.
+Do a closed-book pass of all Section A to E questions (1 to 57). Mark the ones you fumbled and reread just those topics. Skim the repo's [GenAI interview questions](../../60_gen_ai_questions.md) for anything new.
 
 ### Week 2: Build strategy judgment (the case and the numbers)
 

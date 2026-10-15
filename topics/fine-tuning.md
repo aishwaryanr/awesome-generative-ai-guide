@@ -1,6 +1,6 @@
 # Topic: Fine-tuning
 
-> 📚 **Full course list:** the complete, always-current set of free courses on this topic lives in [All free courses: Fine-tuning and Post-training](../courses.md#fine-tuning-and-post-training). The entries below are organized by journey and level.
+> 📚 **Full course list:** course links for this topic live in [Courses by topic: Fine-tuning and Post-training](../courses.md#fine-tuning-and-post-training). The entries below are organized by journey and level.
 
 Adapting a base model to your task: full fine-tuning, parameter-efficient methods (LoRA, PEFT), quantization, and RLHF.
 
@@ -15,7 +15,7 @@ LevelUp Labs originals:
 - **[Fine-tuning 101](../resources/fine_tuning_101.md)** ⭐ 📖 (2025): the basics of adapting a model, types of fine-tuning, and common challenges.
 - **[Applied LLMs Mastery 2024, week 3: LLM fine-tuning](../free_courses/Applied_LLMs_Mastery_2024/week3_finetuning_llms.md)** ⭐ 📖 (2024) 🔴 archived.
 
-Free external courses (full context on [Build 201](../journeys/build.md#build-201-build-real-systems)):
+External courses (access varies by provider; see [Build 201](../journeys/build.md#build-201-build-real-systems)):
 
 - **[Reinforcement Learning from Human Feedback](https://learn.deeplearning.ai/reinforcement-learning-from-human-feedback)** 🌐 🎥 by DeepLearning.AI
 - **[Finetuning Large Language Models](https://learn.deeplearning.ai/finetuning-large-language-models)** 🌐 🎥 by DeepLearning.AI

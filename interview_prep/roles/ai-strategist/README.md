@@ -8,7 +8,7 @@ Read the files in order:
 2. **[rounds.md](rounds.md)**: every round you will face, what each tests, what "good" looks like, and example prompts.
 3. **[questions.md](questions.md)**: a 40-question bank with model answers, covering AI fluency and business strategy.
 4. **[resources.md](resources.md)**: verified free reading, talks, papers, and repos.
-5. **[courses.md](courses.md)**: the best free courses, starting with this repository's own.
+5. **[courses.md](courses.md)**: curated courses, starting with this repository's own.
 6. **[prep-plan.md](prep-plan.md)**: a day-by-day 3-week plan plus a 1-week crunch version.
 
 ---
@@ -86,7 +86,7 @@ Use these to build real fluency, not just talking points:
 - **Market context you will be quizzed on**: [State of AI 2025 report](../../../research_updates/state_of_ai_2025_report/README.md).
 - **The current research tables**: [RAG](../../../research_updates/rag_research_table.md), [AI evaluation 2025](../../../research_updates/ai_evaluation_2025_table.md), [Agentic search and retrieval](../../../research_updates/agentic_search_retrieval_table.md).
 - **Roadmaps and guides**: [GenAI roadmap](../../../resources/genai_roadmap.md), [Agents roadmap](../../../resources/agents_roadmap.md), [RAG roadmap](../../../resources/RAG_roadmap.md), [Agentic RAG 101](../../../resources/agentic_rag_101.md), [Agents 101](../../../resources/agents_101_guide.md), [Securing agentic AI systems](../../../resources/securing_agentic_ai_systems.md).
-- **The question banks**: [60 GenAI interview questions](../../60_gen_ai_questions.md) and [role-based prep](../../README.md).
+- **The question banks**: [GenAI interview questions](../../60_gen_ai_questions.md) and [role-based prep](../../README.md).
 - **Builder paths** (to understand what your engineers actually do): [Harness engineering](../../../paths/harness-engineering.md), [Agent builder](../../../paths/agent-builder.md).
 
 Next: **[rounds.md](rounds.md)**.

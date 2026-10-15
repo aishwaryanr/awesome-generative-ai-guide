@@ -2,7 +2,7 @@
 
 A large bank of questions with concise, correct model answers, grouped by theme. Every question is a click-to-open collapsible: read the question, form your own answer, then open it to check. Answers run 3 to 6 sentences, enough to anchor your own, not a script to recite. This is current for 2025-2026 (agents, MCP, context engineering, reasoning models, pass^k, contextual retrieval, cost and latency), and every answer ends with a "Learn more" pointer to go deeper.
 
-Pair this with the repo's broader banks: [60 GenAI Interview Questions](../../60_gen_ai_questions.md) and the [interview-prep path](../../../paths/interview-prep.md).
+Pair this with the repo's broader banks: [GenAI Interview Questions](../../60_gen_ai_questions.md) and the [interview-prep path](../../../paths/interview-prep.md).
 
 **Themes:** [LLM fundamentals](#llm-fundamentals) - [Prompting and context engineering](#prompting-and-context-engineering) - [RAG](#retrieval-and-rag) - [Agents and tool use](#agents-and-tool-use) - [Evaluation](#evaluation) - [Reasoning models](#reasoning-models) - [Cost, latency, deployment](#cost-latency-and-deployment) - [Safety and responsible AI](#safety-and-responsible-ai) - [System design](#system-design) - [Business and judgment](#business-and-judgment)
 

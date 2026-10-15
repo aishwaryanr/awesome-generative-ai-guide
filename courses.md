@@ -1,7 +1,6 @@
-# All Free Courses, by Topic
+# Courses and Learning Resources, by Topic
 
-Every free course in this guide, grouped by topic. All are free to take (some offer
-optional paid certificates). For a guided sequence toward a goal, see the
+Free courses and external course pages, grouped by topic. Provider access options can change, and some external listings may require payment; check the provider's enrollment terms. For a guided sequence toward a goal, see the
 [learning paths](paths/); for the full catalog with levels, see the [journeys](journeys/)
 and [topic pages](topics/).
 
@@ -15,7 +14,7 @@ and [topic pages](topics/).
 - 🆕 **[Reasoning with o1](https://www.deeplearning.ai/courses/reasoning-with-o1)** 🌐 🎥 (2025) by DeepLearning.AI and OpenAI: prompting reasoning models and test-time compute.
 - **[Large Language Models](https://rycolab.io/classes/llm-s23/)** 🌐 📖 by ETH Zurich
 - **[Understanding Large Language Models](https://www.cs.princeton.edu/courses/archive/fall22/cos597G/)** 🌐 📖 by Princeton
-- **[Transformers course](https://huggingface.co/learn/nlp-course/chapter1/1)** 🌐 📖 by Huggingface
+- **[LLM Course](https://huggingface.co/learn/llm-course/chapter1/1)** 🌐 📖 by Hugging Face
 - **[CS324 - Large Language Models](https://stanford-cs324.github.io/winter2022/)** 🌐 📖 by Stanford
 - **[Generative AI with Large Language Models](https://www.coursera.org/learn/generative-ai-with-llms)** 🌐 📖 by Coursera
 - **[Introduction to Generative AI](https://www.coursera.org/learn/introduction-to-generative-ai)** 🌐 📖 by Coursera

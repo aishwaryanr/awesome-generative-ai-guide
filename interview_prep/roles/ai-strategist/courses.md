@@ -1,6 +1,6 @@
 # Courses
 
-The best free courses for an AI Strategist, starting with this repository's own (built for exactly this fluency) and then verified external ones. Every external link returned HTTP 200 at the time of writing. You do not need to finish all of these. Pick based on your weakest round in [rounds.md](rounds.md).
+Curated courses and learning resources for an AI Strategist, starting with this repository's own (built for exactly this fluency) and then external course pages. Access terms and link availability can change, so check provider pages before enrolling. You do not need to finish all of these. Pick based on your weakest round in [rounds.md](rounds.md).
 
 ---
 

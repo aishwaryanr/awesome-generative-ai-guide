@@ -14,7 +14,7 @@ Pick the door that fits you. Each journey has its own 101 to 301 path.
 - 🏗️ **I want to build AI systems** → [Build AI](journeys/build.md)
 - 🔬 **I want to understand the research** → [Understand AI](journeys/understand.md)
 - 💬 **I'm prepping for an interview** → [Interview Prep hub](interview_prep/README.md)
-- 📚 **I just want to browse every free course** → [All free courses, by topic](courses.md)
+- 📚 **I just want to browse the course catalog** → [Courses and learning resources, by topic](courses.md)
 - 📺 **I'd rather watch** → [Video transcripts and resources](youtube/README.md)
 
 ---
@@ -27,9 +27,9 @@ Pick your row (who you are) and your column (how far you want to go), then click
 |---|---|---|---|
 | 🧑‍💻 **[Use AI](journeys/use.md)** | [what LLMs are; prompting basics; chat tools well](journeys/use.md#use-101-start-using-ai) | [power-prompting; projects; connecting tools; agent harnesses at work](journeys/use.md#use-201-and-301-power-user-and-personal-automation) | [personal automation; multi-step agent workflows for yourself](journeys/use.md#use-201-and-301-power-user-and-personal-automation) |
 | 🏗️ **[Build AI](journeys/build.md)** | [how LLMs work enough to build; the app stack; your first LLM app](journeys/build.md#build-101-foundations-to-build) | [RAG, agents, evaluation, fine-tuning, guardrails](journeys/build.md#build-201-build-real-systems) | [LLMOps, production scale, advanced agents and RAG, security, system design](journeys/build.md#build-301-production-and-frontier) |
-| 🔬 **[Understand AI](journeys/understand.md)** | [transformers; key papers; how to read a paper](journeys/understand.md#understand-101-foundations-and-how-to-read-research) | [active research areas: reasoning, agents, RAG, evaluation](journeys/understand.md#understand-201-active-research-areas) | [the frontier: monthly papers, research tables, State of AI](journeys/understand.md#understand-301-the-frontier-feed) |
+| 🔬 **[Understand AI](journeys/understand.md)** | [transformers; key papers; how to read a paper](journeys/understand.md#understand-101-foundations-and-how-to-read-research) | [active research areas: reasoning, agents, RAG, evaluation](journeys/understand.md#understand-201-active-research-areas) | [the frontier: monthly paper archive (latest: June 2026), research tables, State of AI](journeys/understand.md#understand-301-the-frontier-feed) |
 
-Build is the flagship journey and the deepest one. The 90+ free courses and code notebooks that used to be one long list are now sorted into these cells by level and tagged by topic.
+Build is the flagship journey and the deepest one. The 90+ learning resources and code notebooks that used to be one long list are now sorted into these cells by level and tagged by topic.
 
 ---
 
@@ -39,7 +39,7 @@ Already know your subject? Jump straight to it. Each topic page gathers everythi
 
 [LLM Foundations](topics/foundations.md) · [Prompting and Context](topics/prompting.md) · [Retrieval and RAG](topics/rag.md) · [Fine-tuning](topics/fine-tuning.md) · [AI Agents](topics/agents.md) · [Evaluation and Observability](topics/evaluation.md) · [Multimodal](topics/multimodal.md) · [Production and LLMOps](topics/production.md) · [Safety and Security](topics/safety-security.md)
 
-Or see every free course in one place: **[All free courses, by topic](courses.md)**.
+Or see the course and learning-resource catalog in one place: **[Courses and learning resources, by topic](courses.md)**.
 
 ---
 
@@ -53,7 +53,7 @@ Free, created by [Aishwarya Naresh Reganti](https://www.linkedin.com/in/areganti
 - **[Generative AI Genius](free_courses/generative_ai_genius/README.md)**: a no-math beginner introduction to generative AI.
 - **[Applied LLMs Mastery (2024 edition)](free_courses/Applied_LLMs_Mastery_2024/README.MD)**: an 11-week foundational course, archived as a 2024 edition. [Course website](https://areganti.notion.site/Applied-LLMs-Mastery-2024-562ddaa27791463e9a1286199325045c).
 
-For every free course (LevelUp Labs originals and vetted external), organized by topic, see the full **[All Free Courses, by Topic](courses.md)** list.
+For courses and learning resources by topic, see the **[Courses and Learning Resources, by Topic](courses.md)** catalog. Provider access terms vary; check each listing before enrolling.
 
 **Want to learn live with us?** The courses above are free. We also teach cohort-based courses on Maven, and more than 3,000 builders have learned with us so far: **[AI System Design](https://maven.com/aishwarya-kiriti/genai-system-design)** (design real generative-AI systems end to end, the Problem-First way) and **[Advanced AI Evals](https://maven.com/aishwarya-kiriti/evals-problem-first)** (the evaluation and improvement loops behind reliable LLM and agent products). See [all our live courses](https://maven.com/aishwarya-kiriti).
 
@@ -74,7 +74,7 @@ A full **[Role-Based Interview Prep hub](interview_prep/README.md)**: pick your 
 - 🚀 **[Forward-Deployed Engineer](interview_prep/roles/forward-deployed-engineer/README.md)**: build, integrate, and deploy at the customer under ambiguity.
 - 🧭 **[AI Strategist](interview_prep/roles/ai-strategist/README.md)**: strategy, ROI, build vs buy, governance, and change management.
 
-Everyone starts with the shared **[60 GenAI Interview Questions](interview_prep/60_gen_ai_questions.md)**, then works their role. System-design interview drills are planned for a later build phase.
+Everyone starts with the shared **[GenAI Interview Questions](interview_prep/60_gen_ai_questions.md)**, then works their role. The 10 system-design interview case studies are ready in the [AI System Design Case Studies](interview_prep/system-design/README.md) collection.
 
 ---
 
@@ -94,7 +94,7 @@ Newest first:
 
 - [ICLR 2024 Paper Summaries](https://areganti.notion.site/06f0d4fe46a94d62bff2ae001cfec22c?v=d501ca62e4b745768385d698f173ae14)
 - [LLM Lingo](resources/llm_lingo): a 6-part glossary of common LLM terms.
-- [Monthly Best GenAI Papers](research_updates/): the monthly paper lists (see [Understand AI](journeys/understand.md#understand-301-the-frontier-feed)).
+- [Monthly Best GenAI Papers](research_updates/): monthly paper lists, latest list June 2026 (see [Understand AI](journeys/understand.md#understand-301-the-frontier-feed)).
 
 ---
 

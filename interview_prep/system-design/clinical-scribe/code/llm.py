@@ -21,7 +21,7 @@ example, and there must never be.
 Selecting a model (any one of these):
     export CLINICAL_SCRIBE_MODEL="gpt-4o-mini"        + OPENAI_API_KEY
     export CLINICAL_SCRIBE_MODEL="claude-sonnet-5"    + ANTHROPIC_API_KEY
-    export CLINICAL_SCRIBE_MODEL="gemini-2.0-flash"   + GOOGLE_API_KEY
+    export CLINICAL_SCRIBE_MODEL="gemini-3.6-flash"   + GOOGLE_API_KEY
 If CLINICAL_SCRIBE_MODEL is unset, the provider is auto-detected from whichever key is present.
 Install the matching integration: langchain-openai, langchain-anthropic, or
 langchain-google-genai.
@@ -45,8 +45,8 @@ _OBJECTIVE_CUES = ("exam", "temperature", "blood pressure", "swelling", "tender"
 _AUTODETECT = [
     ("OPENAI_API_KEY", "gpt-4o-mini", "openai"),
     ("ANTHROPIC_API_KEY", "claude-sonnet-5", "anthropic"),
-    ("GOOGLE_API_KEY", "gemini-2.0-flash", "google_genai"),
-    ("GEMINI_API_KEY", "gemini-2.0-flash", "google_genai"),
+    ("GOOGLE_API_KEY", "gemini-3.6-flash", "google_genai"),
+    ("GEMINI_API_KEY", "gemini-3.6-flash", "google_genai"),
 ]
 
 

@@ -1,8 +1,8 @@
-# AI Product Manager: Free Courses
+# AI Product Manager: Courses
 
-The best free courses for AI PM prep, grouped by topic. Start with this repository's own courses, which are written for practitioners and PMs, then use the external ones to fill gaps. Every external link was checked and returned HTTP 200. Free means free to access or free to audit.
+Curated courses for AI PM prep, grouped by topic. Start with this repository's own courses, which are written for practitioners and PMs, then use external course pages to fill gaps. Access terms and link availability can change, so check provider pages before enrolling.
 
-For the full free-course catalog by topic, see the repo's [courses.md](../../../courses.md).
+For the course catalog by topic, see the repo's [courses.md](../../../courses.md).
 
 ---
 
@@ -10,7 +10,7 @@ For the full free-course catalog by topic, see the repo's [courses.md](../../../
 
 - **[AI Evals for Everyone](../../../free_courses/ai_evals_for_everyone/README.md)**: builds the exact skill the metrics round tests. Offline eval sets, LLM-as-judge, faithfulness, online monitoring, and how to define a quality bar. Do this one first; the evaluation round is the round that most predicts the hire.
 - **[Agentic AI Crash Course](../../../free_courses/agentic_ai_crash_course/README.md)**: builds an intuition for what agents are, when to use one, and how they fail. Directly feeds the technical-literacy and agent-design questions.
-- **[Applied GenAI and other courses (repo catalog)](../../../courses.md)**: the full grouped list of free courses maintained in this repo.
+- **[Applied GenAI and other courses (repo catalog)](../../../courses.md)**: the grouped course catalog maintained in this repo.
 
 ## AI foundations for PMs (what models can and cannot do)
 

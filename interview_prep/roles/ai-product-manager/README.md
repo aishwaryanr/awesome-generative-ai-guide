@@ -5,7 +5,7 @@ A deep, self-contained prep folder for the **AI Product Manager (AI PM)** role. 
 - **[rounds.md](rounds.md)**: every interview round, what it tests, how it is run, what good looks like, common mistakes, and realistic prompts.
 - **[questions.md](questions.md)**: a 45-question bank with concise model answers, grouped by theme.
 - **[resources.md](resources.md)**: the best free reading, talks, papers, and repos, all links verified.
-- **[courses.md](courses.md)**: the best free courses, starting with this repository's own.
+- **[courses.md](courses.md)**: curated courses, starting with this repository's own.
 - **[prep-plan.md](prep-plan.md)**: a 4-week plan and a 1-week crunch plan, sequenced day by day.
 
 ---
@@ -63,4 +63,4 @@ The **evaluation and technical-depth round is the one that most predicts the hir
 3. Close gaps with the topic pages and [resources.md](resources.md) / [courses.md](courses.md).
 4. Follow [prep-plan.md](prep-plan.md) to sequence everything into a dated path.
 
-Related repo starting points: the [60 GenAI Interview Questions](../../60_gen_ai_questions.md), the [Role-Based Interview Prep](../../README.md) tracks, the [GenAI](../../../resources/genai_roadmap.md), [Agents](../../../resources/agents_roadmap.md), and [RAG](../../../resources/RAG_roadmap.md) roadmaps, and the [State of AI 2025 report](../../../research_updates/state_of_ai_2025_report/README.md) for current context.
+Related repo starting points: the [GenAI Interview Questions](../../60_gen_ai_questions.md), the [Role-Based Interview Prep](../../README.md) tracks, the [GenAI](../../../resources/genai_roadmap.md), [Agents](../../../resources/agents_roadmap.md), and [RAG](../../../resources/RAG_roadmap.md) roadmaps, and the [State of AI 2025 report](../../../research_updates/state_of_ai_2025_report/README.md) for current context.

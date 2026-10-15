@@ -43,7 +43,7 @@ export UW_AGENT_MODEL="claude-sonnet-5" ANTHROPIC_API_KEY="sk-ant-..."
 
 # Gemini
 pip install langchain-google-genai
-export UW_AGENT_MODEL="gemini-2.0-flash" GOOGLE_API_KEY="..."
+export UW_AGENT_MODEL="gemini-3.6-flash" GOOGLE_API_KEY="..."
 
 python run.py
 ```

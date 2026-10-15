@@ -2,7 +2,7 @@
 
 A large, current question bank for the Forward-Deployed Engineer loop, grouped by theme. Every question is a click-to-open collapsible with a concise model answer and a "Learn more" link. Answers are meant to anchor your own, not to be recited. There are 99 questions across 10 themes.
 
-Pair this with the repository's [60 GenAI Interview Questions](../../60_gen_ai_questions.md) and the other [Role-Based Interview Prep](../../README.md) tracks.
+Pair this with the repository's [GenAI Interview Questions](../../60_gen_ai_questions.md) and the other [Role-Based Interview Prep](../../README.md) tracks.
 
 Jump to: [Role and motivation](#1-role-and-motivation) · [GenAI foundations](#2-genai-foundations) · [Retrieval and RAG](#3-retrieval-and-rag) · [Agents and MCP](#4-agents-and-mcp) · [Evaluation](#5-evaluation) · [Deployment, cost, and reliability](#6-deployment-cost-and-reliability) · [Responsible AI and security](#7-responsible-ai-and-security) · [Practical coding and data engineering](#8-practical-coding-and-data-engineering) · [Case and decomposition](#9-case-and-decomposition-judgment) · [Customer communication and business](#10-customer-communication-and-business)
 

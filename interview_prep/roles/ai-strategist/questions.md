@@ -1,6 +1,6 @@
 # Question Bank
 
-88 questions with concise model answers, grouped by theme. Answers are anchors, not scripts: know the mechanism and the trade-off so you can defend a follow-up. Every question is a click-to-open collapsible, and every answer ends with a place to go deeper. Pair this with the repo's [60 GenAI interview questions](../../60_gen_ai_questions.md) and the [role-based prep index](../../README.md).
+88 questions with concise model answers, grouped by theme. Answers are anchors, not scripts: know the mechanism and the trade-off so you can defend a follow-up. Every question is a click-to-open collapsible, and every answer ends with a place to go deeper. Pair this with the repo's [GenAI interview questions](../../60_gen_ai_questions.md) and the [role-based prep index](../../README.md).
 
 Themes: [A. AI fundamentals and fluency](#a-ai-fundamentals-and-fluency) - [B. RAG, fine-tuning, and knowledge](#b-rag-fine-tuning-and-knowledge) - [C. Agents, reasoning, MCP, context](#c-agents-reasoning-mcp-and-context) - [D. Evaluation and quality](#d-evaluation-and-quality) - [E. Cost, latency, and production](#e-cost-latency-and-production) - [F. Business, ROI, prioritization, build-vs-buy](#f-business-roi-prioritization-and-build-vs-buy) - [G. Risk, responsible AI, governance](#g-risk-responsible-ai-and-governance) - [H. Change management and org](#h-change-management-and-org)
 
