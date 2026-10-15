@@ -1,5 +1,7 @@
 # Common Generative AI Interview Questions
 
+62 questions with answers across generative models (12), large language models (17), multimodal models (12), embeddings (14), and training, inference and evaluation (7). Numbering restarts in each section; the existing filename is retained so links keep working.
+
 Owner: Aishwarya Nr
 
 ## Generative Models

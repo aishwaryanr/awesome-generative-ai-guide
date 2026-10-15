@@ -18,7 +18,7 @@ Built by **[Aishwarya Naresh Reganti](https://www.linkedin.com/in/areganti/)**, 
 | **24 role guides** | each role has an overview, a rounds breakdown, a question bank, resources, courses, and a prep plan |
 | **10 system-design case studies** | worked interviews on one 5-layer spine, each with an engineer writeup, a PM writeup, and runnable code |
 | **9 topic deep-dives** | foundations, prompting, RAG, agents, evaluation, fine-tuning, production, safety, multimodal |
-| **50-question bank** | the role-agnostic warm-up covering what comes up in nearly every AI interview |
+| **62-question bank** | the role-agnostic warm-up covering what comes up in nearly every AI interview |
 | **Course catalog** | courses and learning resources, grouped by topic |
 
 ---
