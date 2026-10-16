@@ -163,3 +163,12 @@ One of its latest features, Audio Overview, transforms text-based sources into e
 
 **Getting Started with NotebookLM:**  
 - [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)  
+
+
+## Frink
+
+**Frink** is a desktop app. Fine-tuned automation for everyone: visual workflows where AI coding agents act on your tickets, errors and schedules, and ask before they change anything. Works with Claude Code, Codex, OpenCode, GitHub Copilot and Cursor. Local and open source, on macOS and Linux.  
+[Visit Frink](https://frink.dev)
+
+**Getting Started with Frink:**  
+- [Frink on GitHub](https://github.com/benord-labs/frink)
