@@ -11,6 +11,7 @@ Generative AI is moving fast, and this repository is a comprehensive hub for gen
 Pick the door that fits you. Each journey has its own 101 to 301 path.
 
 - 🧑‍💻 **I want to use AI in my work** → [Use AI](journeys/use.md)
+- [How to Automate Repetitive Office Tasks with AI: A Beginner's Guide](https://fuzonwatches.com/how-to-automate-repetitive-office-tasks-with-ai-a-beginners-guide/) – Real workflows to automate repetitive office work with AI tools. Level: Intermediate.
 - 🏗️ **I want to build AI systems** → [Build AI](journeys/build.md)
 - 🔬 **I want to understand the research** → [Understand AI](journeys/understand.md)
 - 💬 **I'm prepping for an interview** → [Interview Prep hub](interview_prep/README.md)
