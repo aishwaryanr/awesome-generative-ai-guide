@@ -11,6 +11,7 @@ Generative AI is moving fast, and this repository is a comprehensive hub for gen
 Pick the door that fits you. Each journey has its own 101 to 301 path.
 
 - 🧑‍💻 **I want to use AI in my work** → [Use AI](journeys/use.md)
+- [Prompt Engineering for Beginners](https://fuzonwatches.com/prompt-engineering-for-beginners-the-only-guide-you-need/) – Step-by-step guide to writing better AI prompts, power-prompting patterns, and common mistakes. Level: Beginner.
 - 🏗️ **I want to build AI systems** → [Build AI](journeys/build.md)
 - 🔬 **I want to understand the research** → [Understand AI](journeys/understand.md)
 - 💬 **I'm prepping for an interview** → [Interview Prep hub](interview_prep/README.md)
