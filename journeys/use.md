@@ -33,6 +33,8 @@ Using agent harnesses for your own work (Topic: [Agents](../topics/agents.md)):
 - 🆕 **[Learn Cursor](https://cursor.com/learn)** 🌐 🎥 (2025) by Cursor: official agents, coding, and review tutorials.
 - 🆕 **[OpenAI Codex Essentials](https://www.freecodecamp.org/news/openai-codex-essentials-ai-assisted-agentic-development-course/)** 🌐 🎥 (2025) by freeCodeCamp: agentic development workflows with Codex.
 
+- **[InvoiceFlowAI](https://github.com/EthanYoQ/Invoice-Downloader)** 🌐 📝 (2026): a desktop example of collecting email or local invoices, reviewing extracted fields and exporting an Excel summary. Its README explains setup and the workflow, including optional external recognition services.
+
 Beyond these, dedicated external material for power-user prompting and personal automation is still thin. `[planned: build phase]` for deeper Use 201 and 301 content.
 
 ---
