@@ -6,7 +6,7 @@ Video guides, transcripts, descriptions, code, and resources from my channel.
 
 | Video | What it covers | Published |
 |---|---|---|
-| [Build your own company harness](build-your-own-harness.md) | NS Work notebook, local application, and the 4 responsibilities of a company harness | Planned: 2026-10-29 |
+| [2,000+ Hours of Learning Harness Engineering in 18 Minutes](build-your-own-harness.md) | NS Work notebook, local application, and the 4 responsibilities of a company harness | 2026-10-29 |
 | [2,000+ Hours of Learning Agentic AI System Design in 20 Minutes](ai-system-design.md) | A 5-layer design framework, KARC, and 10 worked cases with code | 2026-10-22 |
 | [How MCP Works in 2026 Explained For Beginners](mcp-in-2026.md) | MCP foundations, hosts/clients/servers, APIs vs. skills vs. plugins, and the four changes in 2026 | 2026-10-15 |
 | [AWS AI Lead: 6 Real-World AI Projects I Wish I Saw on Resumes](ai-engineer-projects.md) | 6 portfolio projects in increasing difficulty, with the dataset, tool stack, and evals for each | 2026-10-08 |
@@ -25,7 +25,7 @@ Video guides, transcripts, descriptions, code, and resources from my channel.
 
 ---
 
-Published long-form guides include their video link, transcript, companion resources, and full YouTube description. The Harness release page links to the code ahead of publication; its transcript follows after the video is live. For runnable code, start with [NS Work](code/ns-work-harness/README.md) or the [system-design cases](../interview_prep/system-design/README.md). Some videos also have a companion file you can hand to your agent, like the [16 Claude Code tips](claude-code-16-tips.md).
+Published long-form guides include their video link, transcript, companion resources, and full YouTube description. For runnable code, start with [NS Work](code/ns-work-harness/README.md) or the [system-design cases](../interview_prep/system-design/README.md). Some videos also have a companion file you can hand to your agent, like the [16 Claude Code tips](claude-code-16-tips.md).
 
 For the October short-form videos, see the [Shorts resource index](shorts-october-2026.md).
 

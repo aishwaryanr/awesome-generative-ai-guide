@@ -2,8 +2,7 @@
 
 **Published YouTube description:** [Read the full description](descriptions/ai-engineer-projects.txt)
 
-[Watch on YouTube](https://www.youtube.com/@aish_reganti) · 2026-10-08
-<!-- TODO: replace with the video URL -->
+[Watch on YouTube](https://www.youtube.com/watch?v=jOF-AhGIP4Q) · 2026-10-08
 
 ## In this video
 

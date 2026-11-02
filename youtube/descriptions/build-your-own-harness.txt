@@ -1,0 +1,49 @@
+🔔 Join our next Applied AI cohort, taught by me and an OpenAI lead. Use YT25 for 25% off:
+https://maven.com/aishwarya-kiriti/genai-system-design?promoCode=YT25
+
+Link to the code used in the video: https://github.com/aishwaryanr/awesome-generative-ai-guide/blob/main/youtube/build-your-own-harness.md
+
+AI models are getting smarter. But the model alone isn't what makes an AI agent useful in production.
+
+In this video, I break down harness engineering, one of the most important skills for building reliable production AI agents. 
+
+We'll build our own company AI harness called NS Work from scratch and explore how to give AI models the context, tools, permissions, and memory they need to get real work done.
+
+🚀 What you'll learn
+✅ What harness engineering is and why AI models need more than just prompts
+✅ Why the software layer around an AI model can dramatically improve agent performance
+✅ How to build a company AI harness using LangGraph's Deep Agents
+✅ How to use AGENTS.md and company skills to give AI agents the right context
+✅ How to connect AI agents to company databases, APIs, customer records, and internal tools
+✅ How middleware helps control agent loops, enforce limits, and track tasks
+✅ How subagents can handle specialized tasks and review AI-generated work
+✅ How to implement role-based permissions for sales, engineering, and finance teams
+✅ How human approval checkpoints can prevent unauthorized actions
+✅ How to use SQLite checkpoints to save conversations and resume unfinished tasks
+✅ How context management and summarization middleware help agents handle long conversations
+✅ The four essential components of a production AI harness: context, actions, boundaries, and persistence
+
+Timestamps
+0:00 Harness Engineering
+0:38 Why Harnesses Matter
+2:26 Building an AI Harness
+2:56 Core Components
+3:35 LangGraph Setup
+4:43 Context and Skills
+8:00 Tools and Middleware
+9:49 Subagents
+11:34 Permissions and Approvals
+14:59 Memory and Checkpoints
+17:18 Final Demo
+18:27 Conclusion
+
+🔔 Subscribe for weekly videos on tech, AI, software engineering, and career advice!
+
+My LinkedIn: https://www.linkedin.com/in/areganti/
+Website: https://levelup-labs.ai/
+Free Newsletter: https://thenuancedperspective.substack.com/
+Free Courses: https://levelup-labs.ai/education
+My GitHub (AI resources): https://github.com/aishwaryanr/awesome-generative-ai-guide
+Instagram: https://instagram.com/aish_reganti
+
+#ai #harnessengineering #aiagents #agenticai #aiengineering #langgraph #deepagents #llm #generativeai #aitools #llmengineering #contextengineering #mcp #python #softwareengineering #coding #programming #developers #techcareers
