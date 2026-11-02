@@ -203,6 +203,8 @@ Concept-by-concept reference pages. Every loop expects fluency in these. Read th
 ### GenAI questions (fundamentals warm-up)
 
 - **[GenAI Interview Questions](60_gen_ai_questions.md):** a broad, role-agnostic bank (1,000+ lines) covering the concepts that surface in almost any AI interview. A good gut-check before a screen. It is a warm-up, not the main event: the depth lives in your role folder and the system-design cases.
+- **[100 AI Engineer Interview Questions](https://github.com/Johnnnmai/ai-engineer-interview-questions):** 100 graded questions with full model answers covering LLMs, RAG, agents, system design, MLOps, and coding. Includes a free [answer self-checker](https://johnnnmai.github.io/ai-engineer-interview-questions/answer-check/).
+- **[Awesome AI Engineer Interview](https://github.com/Johnnnmai/awesome-ai-engineer-interview):** a data-driven field guide built from 2,445 real job descriptions and 51 company interview processes, with bilingual EN+ZH coverage.
 
 ---
 
