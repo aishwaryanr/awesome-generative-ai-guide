@@ -18,6 +18,7 @@ Curated resources for the Forward-Deployed Engineer loop, grouped by topic. Exte
 
 ## The FDE role and interview loop
 
+- [Forward Deployed Engineer (FDE) Field Guide](https://github.com/Bosheng2020/fde-field-guide): an open, bilingual English–Chinese guide to role boundaries, field discovery, production AI delivery, evaluation, adoption, and field-to-product learning, with the FIELD Framework, an FDE delivery maturity model, reusable templates, and fictional cases.
 - [Forward Deployed Engineer Interview: The Definitive 2026 Guide (Exponent)](https://www.tryexponent.com/blog/forward-deployed-engineer-interview-the-definitive-2026-guide-fde): the most complete free breakdown of the loop, round by round, with company differences.
 - [Forward Deployed Engineer Interview Questions: 2026 Prep Guide (Perspective AI)](https://getperspective.ai/blog/forward-deployed-engineer-interview-questions-2026-prep-guide): rounds, pass rates, weights, and common red flags.
 - [Palantir's Forward-Deployed Engineering Playbook (Perspective AI)](https://getperspective.ai/blog/palantir-forward-deployed-engineering-playbook-anthropic-openai-copying): what an FDE does day-to-day and how OpenAI and Anthropic adapted the model.
