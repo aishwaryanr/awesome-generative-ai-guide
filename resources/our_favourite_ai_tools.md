@@ -42,6 +42,17 @@ Developers can also access extensive guides, tutorials, and community support th
 - [Official Getting Started Guide](https://python.langchain.com/docs/introduction/?utm_source=chatgpt.com)  
 <!-- - [YouTube: LangChain Explained in 13 Minutes | QuickStart Tutorial for Beginners](https://www.youtube.com/watch?v=aywZrzNaKjs) -->
 
+## Heym
+
+**Heym** is a self-hosted agent runtime for building and operating LLM workflows. It combines agent tool use with deterministic graph steps, sub-workflows, retries, and human approval checkpoints. A visual editor, API, and MCP interface provide ways to work with the same runtime.
+[Visit Heym on GitHub](https://github.com/heymrun/heym)
+
+For builders moving from a prototype to an operated service, its execution history, traces, model costs, and evaluations help inspect runs and compare outcomes. Deployment requires PostgreSQL and responsibility for the host environment. Heym is source-available under [MIT with the Commons Clause condition](https://github.com/heymrun/heym/blob/main/COMMONS-CLAUSE.md).
+
+**Getting Started with Heym:**
+- [Quick Start and Deployment](https://github.com/heymrun/heym#-quick-start)
+- [Agent Node Documentation](https://github.com/heymrun/heym/blob/main/frontend/src/docs/content/nodes/agent-node.md)
+
 ---
 
 # Low-Code/No-Code AI Tools  
