@@ -8,7 +8,7 @@ Generative AI is moving fast, and this repository is a comprehensive hub for gen
 
 ## What do you want to do?
 
-Pick the door that fits you. Each journey has its own 101 to 301 path.
+Pick the door that fits you. Each journey has its own 101 to 301 paths.
 
 - 🧑‍💻 **I want to use AI in my work** → [Use AI](journeys/use.md)
 - 🏗️ **I want to build AI systems** → [Build AI](journeys/build.md)
