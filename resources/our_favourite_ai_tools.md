@@ -162,4 +162,15 @@ One of its latest features, Audio Overview, transforms text-based sources into e
 
 
 **Getting Started with NotebookLM:**  
-- [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)  
+- [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)
+## AlphaDrama
+
+**AlphaDrama** is an AI-native SaaS platform designed for high-efficiency short drama and multi-scene video production. Powered by specialized multi-agent workflows, it transforms novels and scripts into production-ready episodic videos. Key capabilities include automated script rewriting, character and outfit asset extraction for long-term consistency across 50+ scenes, cinematic storyboard decomposition, synchronized voiceover generation, and automated timeline video stitching.  
+[Visit AlphaDrama](https://www.getalphadrama.com/)
+
+AlphaDrama coordinates state-of-the-art vision and generative video models through a unified state-machine architecture, bridging the gap between isolated AI prompts and industrial serial drama production.
+
+**Getting Started with AlphaDrama:**  
+- [AlphaDrama Official Website](https://www.getalphadrama.com/)  
+- [AlphaDrama GitHub Repository](https://github.com/Alwzc/AlphaDrama)  
+- [Technical Architecture Deep Dive](https://dev.to/_19ec095744cd8d9cce9ae/how-we-built-a-multi-agent-ai-system-for-full-stack-short-drama-video-production-2i0m)
