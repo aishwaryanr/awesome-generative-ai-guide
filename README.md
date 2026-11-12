@@ -65,6 +65,7 @@ Discover our favorite AI tools spanning every layer of AI application developmen
 
 ---
 
+[AI Chat Exporter](https://chromewebstore.google.com/detail/dhjbkabkopajddjinfdlooppcajoclag) - Export AI chats (ChatGPT, Gemini, DeepSeek) to PDF, Markdown, and more.
 ## :computer: Interview Prep
 
 A full **[Role-Based Interview Prep hub](interview_prep/README.md)**: pick your role and work its folder end to end (overview, interview rounds, a deep question bank with answers, resources, courses, and a prep plan).
