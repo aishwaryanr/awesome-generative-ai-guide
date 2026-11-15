@@ -163,3 +163,12 @@ One of its latest features, Audio Overview, transforms text-based sources into e
 
 **Getting Started with NotebookLM:**  
 - [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)  
+
+## No Stairs Please MCP
+
+**No Stairs Please MCP** is a remote Model Context Protocol (MCP) server that gives AI assistants direct access to structured data on independent US live-music venues, including room capacity, stage dimensions, load-in access, PA/backline specs, and drive-time tour routing.
+[Explore No Stairs Please MCP](https://nostairsplease.com/mcp)
+
+**Getting Started with No Stairs Please MCP:**  
+- [No Stairs Please MCP Endpoint](https://nostairsplease.com/mcp)  
+- [No Stairs Please Venue Directory](https://nostairsplease.com/)  
