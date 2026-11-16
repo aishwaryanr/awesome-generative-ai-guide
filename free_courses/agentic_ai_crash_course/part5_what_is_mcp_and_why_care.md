@@ -102,6 +102,79 @@ If something better comes along before MCP becomes “the HTTP of agents,” the
 
 ---
 
+## Try It: Discover a Tool and Check Its Evidence
+
+In Part 3, we saw how a program can call a tool. Here, you'll ask an MCP server which tools it offers, inspect the search tool's inputs, and find the passage that supports a claim.
+
+Use Python 3.11 or later and the [official MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk/tree/v2.3.0). In a virtual environment, install the versions used in this exercise.
+
+```sh
+python -m pip install mcp==2.3.0 httpx2==2.16.2
+```
+
+Save the code below as `mcp_search.py` and run `python mcp_search.py`. It sends the example query to the [public Parallel MCP server](https://docs.parallel.ai/integrations/mcp/installation). The exercise requires internet access and runs without an account, an API key, or a model.
+
+```python
+import asyncio
+import json
+from urllib.parse import urlsplit
+
+import httpx2
+from mcp import Client
+from mcp.client.streamable_http import streamable_http_client
+
+ENDPOINT = "https://mcp.parallel.ai/mcp"
+CLAIM = "Our solar system has eight planets."
+
+
+async def main():
+    async with httpx2.AsyncClient(
+        headers={"User-Agent": "awesome-generative-ai-guide/mcp-lab"},
+        timeout=30.0,
+        trust_env=False,
+    ) as http:
+        transport = streamable_http_client(ENDPOINT, http_client=http)
+        async with Client(transport, read_timeout_seconds=30) as client:
+            tools = (await client.list_tools()).tools
+            print("Available tools:", ", ".join(tool.name for tool in tools))
+            search = next((tool for tool in tools if tool.name == "web_search"), None)
+            if search is None:
+                raise SystemExit("The MCP server did not advertise web_search.")
+            print("Search input schema:", json.dumps(search.input_schema, indent=2))
+
+            result = await client.call_tool(
+                search.name,
+                {
+                    "objective": "Find a NASA passage stating how many planets are in our solar system.",
+                    "search_queries": ["site:science.nasa.gov solar system eight planets"],
+                },
+            )
+
+    if result.is_error:
+        raise SystemExit(f"Search failed: {result.content}")
+
+    for source in (result.structured_content or {}).get("results", []):
+        url = urlsplit(source["url"])
+        if url.scheme != "https" or url.hostname != "science.nasa.gov":
+            continue
+        for excerpt in source.get("excerpts", []):
+            for line in excerpt.splitlines():
+                if "our solar system has eight planets:" in line.casefold():
+                    print(f"\n{CLAIM} [1]\n[1] {source['url']}")
+                    print("\nPassage returned by the tool:\n" + line)
+                    return
+
+    raise SystemExit("No returned NASA passage supported the example claim. Try a more specific query.")
+
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+The script prints the tool names and the search tool's input schema before making the call. It prints the example claim only when it finds a matching NASA excerpt, then shows the source URL and the exact text returned by the tool. Search results can change. Open the URL and check the excerpt in context. Then change the objective and search query to ask a different public question. To inspect the new results, print their URLs and excerpts in place of the NASA matching loop. Pick a passage and write a sentence it supports. If the service rate-limits the request, wait a bit and run the script again.
+
+---
+
 ## Further Reading & Resources
 
 - We did a **[full deep-dive article](https://thenuancedperspective.substack.com/p/mcp-overhyped-misunderstood-and-actually)** on MCP, including clients, servers, and real-world use cases (written by Kiriti Badam, OpenAI).  
