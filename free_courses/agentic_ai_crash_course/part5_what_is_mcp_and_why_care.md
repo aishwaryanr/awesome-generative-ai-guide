@@ -106,13 +106,13 @@ If something better comes along before MCP becomes “the HTTP of agents,” the
 
 In Part 3, we saw how a program can call a tool. Here, you'll ask an MCP server which tools it offers, inspect the search tool's inputs, and find the passage that supports a claim.
 
-Use Python 3.10 or later and the [official MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk/tree/v2.3.0). In a virtual environment, install the versions used in this exercise.
+Use Python 3.11 or later and the [official MCP Python SDK](https://github.com/modelcontextprotocol/python-sdk/tree/v2.3.0). In a virtual environment, install the versions used in this exercise.
 
 ```sh
 python -m pip install mcp==2.3.0 httpx2==2.16.2
 ```
 
-Save the code below as `mcp_search.py` and run `python mcp_search.py`. It sends the example query to the [public Parallel MCP server](https://docs.parallel.ai/integrations/mcp/quickstart). The exercise requires internet access and runs without an account, an API key, or a model.
+Save the code below as `mcp_search.py` and run `python mcp_search.py`. It sends the example query to the [public Parallel MCP server](https://docs.parallel.ai/integrations/mcp/installation). The exercise requires internet access and runs without an account, an API key, or a model.
 
 ```python
 import asyncio
