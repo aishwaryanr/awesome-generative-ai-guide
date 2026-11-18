@@ -164,4 +164,5 @@ and [topic pages](topics/).
 - **[Training and Fine-Tuning LLMs for Production](https://learn.activeloop.ai/courses/llms)** 🌐 📖 by Activeloop
 - 🆕 **[Building with the Claude API](https://anthropic.skilljar.com/claude-with-the-anthropic-api)** 🌐 📖 (2025) by Anthropic Academy: production API patterns and tool use.
 - 🆕 **[LLM Zoomcamp](https://datatalks.club/blog/llm-zoomcamp.html)** 🌐 🛠️ (2025) by DataTalks.Club: a free hands-on LLM engineering bootcamp.
+- 🆕 **[AI Engineer Portfolio Projects](https://github.com/landedjobs/ai-engineer-portfolio-projects)** 🌐 🛠️ (2026) by landed: 86 project ideas and 10 step-by-step build guides (RAG, agents, MCP, evals, fine-tuning).
 
