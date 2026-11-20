@@ -163,3 +163,17 @@ One of its latest features, Audio Overview, transforms text-based sources into e
 
 **Getting Started with NotebookLM:**  
 - [Get started with NotebookLM and NotebookLM Plus](https://support.google.com/notebooklm/answer/15724458?hl=en)  
+
+## FlashData
+
+**FlashData** is a unified real-time web data platform built for AI agents, RAG pipelines, and developer workflows—combining Google Search SERP, YouTube Data & timestamped transcripts, and cloud-storage YouTube video delivery behind one API, CLI, and hosted MCP server (`https://data.flashdata.dev/mcp`). Eligible new accounts can start with a one-time free trial credit after email verification with no credit card required.  
+[Visit FlashData](https://flashdata.dev/)
+
+Instead of stitching together separate SERP scrapers, YouTube caption extractors, and media download pipelines, developers and coding agents can connect a single API key or hosted MCP endpoint to retrieve structured Google Search results (organic, AI Overviews, News, Images, Maps), YouTube metadata/transcripts/channels/comments, and direct S3/R2/OSS video deliveries.
+
+Pricing follows transparent usage-based pay-as-you-go rates ($0/month; Google Search $1.00/1k requests, YouTube Data $0.50/1k standard requests, YouTube Download $0.10/GB delivered) alongside optional monthly plans starting at $49/month.
+
+**Getting Started with FlashData:**  
+- [FlashData Documentation](https://flashdata.dev/docs)  
+- [FlashData Hosted MCP Setup](https://flashdata.dev/mcp)  
+- [FlashData Skills Repository (GitHub)](https://github.com/flashdatadev/flashdata-skills)
