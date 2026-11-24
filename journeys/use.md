@@ -33,6 +33,8 @@ Using agent harnesses for your own work (Topic: [Agents](../topics/agents.md)):
 - 🆕 **[Learn Cursor](https://cursor.com/learn)** 🌐 🎥 (2025) by Cursor: official agents, coding, and review tutorials.
 - 🆕 **[OpenAI Codex Essentials](https://www.freecodecamp.org/news/openai-codex-essentials-ai-assisted-agentic-development-course/)** 🌐 🎥 (2025) by freeCodeCamp: agentic development workflows with Codex.
 
+- **[Pagekin](https://github.com/EthanYoQ/Pagekin)** 🌐 📝 (2026): practice a multi-step fiction workflow. Draft a chapter from an outline and project context, then compare revisions before accepting them. See the [English walkthrough](https://www.youtube.com/watch?v=8CJ762OUbUI).
+
 Beyond these, dedicated external material for power-user prompting and personal automation is still thin. `[planned: build phase]` for deeper Use 201 and 301 content.
 
 ---
