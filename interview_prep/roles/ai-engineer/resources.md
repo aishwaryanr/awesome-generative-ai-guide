@@ -79,6 +79,7 @@ This repository is built for exactly this prep. Ground yourself here first, then
 
 - [AI Engineering Field Guide](https://github.com/alexeygrigorev/ai-engineering-field-guide) (2026): research into real AI engineering interview assignments, take-home challenges, and hiring practices. The take-home breakdown is especially useful.
 - [AI Engineering Interview Questions](https://github.com/amitshekhariitbhu/ai-engineering-interview-questions) (current): a broad Q and A cheat sheet to self-quiz against.
+- [Awesome AI Engineer Interview](https://github.com/landedjobs/awesome-ai-engineer-interview) (2026): 267 real questions by topic with worked system design answers, plus company interview loops.
 
 ## Hands-on practice repos
 
